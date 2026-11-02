@@ -17,7 +17,9 @@ button,input,select{font:inherit}button{cursor:pointer}a{color:inherit}
 .brand-name{font-size:34px;line-height:1;font-weight:800;letter-spacing:-1.3px;white-space:nowrap}
 .brand-name em{font-style:normal;color:#05c77b}.brand-sub{font-size:13px;letter-spacing:1.35px;line-height:1.8;white-space:nowrap}
 .nav{display:flex;align-items:center;gap:4px;flex:1;min-width:0;height:100%}
-.nav a{height:49px;padding:0 13px;display:flex;align-items:center;justify-content:center;gap:9px;border-radius:10px;text-decoration:none;color:#f1f5f9;white-space:nowrap;font-size:15px;position:relative}\n.nav-icon{width:19px;height:19px;flex:0 0 19px;display:block;object-fit:contain}\n.nav a.active .nav-icon{color:#91edc1}
+.nav a{height:49px;padding:0 13px;display:flex;align-items:center;justify-content:center;gap:9px;border-radius:10px;text-decoration:none;color:#f1f5f9;white-space:nowrap;font-size:15px;position:relative}
+.nav .nav-icon{display:block;width:19px;height:19px;min-width:19px;max-width:19px;min-height:19px;max-height:19px;flex:0 0 19px;object-fit:contain;opacity:1;}
+.nav a.active .nav-icon{opacity:1;}
 .nav a.active{background:#ffffff0d;color:#91edc1}.nav a.active:after{content:"";height:4px;position:absolute;bottom:0;left:14px;right:14px;background:#08c977;border-radius:5px}
 .nav a:hover{background:#ffffff0c}
 .api-status{border:1px solid #087f55;border-radius:28px;padding:11px 17px;white-space:nowrap;background:#006a4626;color:#c7f7dd;font-size:14px;display:flex;align-items:center;gap:9px}
