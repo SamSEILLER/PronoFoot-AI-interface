@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#243744">
+<link rel="icon" type="image/svg+xml" href="./assets/football-ai-circuit.svg">
+<title>PronoFoot AI — Football Prediction Lab</title>
+<style>
+:root{color-scheme:light;--ink:#0a1b46;--muted:#4f6d99;--green:#08b968;--green2:#00a85c;--line:#e5edf7;--bg:#f3f8fc;--panel:#ffffffd9;--pale:#f5f8fc;--shadow:0 3px 12px rgba(17,43,72,.035)}
+*{box-sizing:border-box}html{min-width:320px;background:var(--bg);scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font-family:Inter,"Segoe UI",Roboto,Arial,sans-serif;font-size:14px;line-height:1.4;background:linear-gradient(180deg,#f5f9fd 0,#eef5fa 100%);min-height:100vh}
+button,input,select{font:inherit}button{cursor:pointer}a{color:inherit}
+.topbar{height:86px;padding:0 20px;display:flex;align-items:center;gap:25px;color:#f9fbff;background:linear-gradient(110deg,#1c2c38 0%,#293b48 57%,#1b303e 100%);box-shadow:0 2px 8px #172e3b18}
+.brand{display:flex;align-items:center;gap:12px;min-width:290px;text-decoration:none;color:#fff}
+.brand-logo{width:56px;height:56px;flex:0 0 56px}.brand-wordmark{min-width:0}
+.brand-name{font-size:34px;line-height:1;font-weight:800;letter-spacing:-1.3px;white-space:nowrap}
+.brand-name em{font-style:normal;color:#05c77b}.brand-sub{font-size:13px;letter-spacing:1.35px;line-height:1.8;white-space:nowrap}
+.nav{display:flex;align-items:center;gap:4px;flex:1;min-width:0;height:100%}
+.nav a{height:49px;padding:0 13px;display:flex;align-items:center;justify-content:center;border-radius:10px;text-decoration:none;color:#f1f5f9;white-space:nowrap;font-size:15px;position:relative}
+.nav a.active{background:#ffffff0d;color:#91edc1}.nav a.active:after{content:"";height:4px;position:absolute;bottom:0;left:14px;right:14px;background:#08c977;border-radius:5px}
+.nav a:hover{background:#ffffff0c}
+.api-status{border:1px solid #087f55;border-radius:28px;padding:11px 17px;white-space:nowrap;background:#006a4626;color:#c7f7dd;font-size:14px;display:flex;align-items:center;gap:9px}
+.api-status strong{color:#14df80;font-weight:650}.dot{width:12px;height:12px;border-radius:50%;background:#08d46b;display:inline-block;box-shadow:0 0 12px #08d46b55}
+main{max-width:1900px;margin:0 auto;padding:15px 18px 24px}
+.workspace{display:grid;grid-template-columns:minmax(0,1.055fr) minmax(0,.945fr);gap:12px;align-items:stretch;min-height:calc(100vh - 166px)}
+.panel{min-width:0;background:var(--panel);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);min-height:520px}
+.left-panel{padding:11px 13px 12px}.right-panel{padding:14px 12px 12px}
+.footer{max-width:1900px;margin:0 auto;padding:0 18px 18px;font-size:11px;color:#647b9c;text-align:center}
+@media(max-width:1550px){.topbar{gap:15px;padding:0 16px}.brand{min-width:255px}.brand-name{font-size:29px}.brand-logo{width:48px;height:48px;flex-basis:48px}.nav a{padding:0 8px;font-size:13px}.api-status{font-size:12px;padding:10px 12px}.workspace{grid-template-columns:minmax(0,1.03fr) minmax(0,.97fr)}}
+@media(max-width:1120px){.topbar{height:auto;min-height:82px;flex-wrap:wrap;padding:12px 16px;gap:10px}.brand{min-width:0;flex:1}.nav{order:3;flex-basis:100%;height:45px;overflow-x:auto}.api-status{margin-left:auto}.workspace{grid-template-columns:1fr;min-height:0}.panel{min-height:360px}}
+@media(max-width:650px){main{padding:10px}.topbar{padding:11px 10px}.brand-logo{width:40px;height:40px;flex-basis:40px}.brand-name{font-size:24px}.brand-sub{font-size:9px;letter-spacing:1px}.api-status{font-size:10px;padding:8px 10px;gap:5px}.dot{width:9px;height:9px}.nav a{font-size:12px;padding:0 9px}.panel{min-height:280px}.footer{padding:0 10px 14px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="topbar">
+<a class="brand" href="./index.html" aria-label="PronoFoot AI accueil">
+<img class="brand-logo" src="./assets/football-ai-circuit.svg" alt="Logo PronoFoot">
+<span class="brand-wordmark"><span class="brand-name">PronoFoot <em>AI</em></span><br><span class="brand-sub">FOOTBALL PREDICTION LAB</span></span>
+</a>
+<nav class="nav" aria-label="Navigation principale"><a class="active" href="./index.html" aria-current="page">Accueil</a></nav>
+<div class="api-status" id="apiStatus"><span class="dot"></span><span>Interface : <strong>Structure initiale</strong></span></div>
+</header>
+<main><div class="workspace" aria-label="Espace de travail principal">
+<section class="panel left-panel" aria-label="Bloc de gauche"></section>
+<section class="panel right-panel" aria-label="Bloc de droite"></section>
+</div></main>
+<footer class="footer">PronoFoot AI · Football Prediction Lab</footer>
+</body>
+</html>
