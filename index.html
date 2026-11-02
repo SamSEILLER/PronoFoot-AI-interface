@@ -17,7 +17,7 @@ button,input,select{font:inherit}button{cursor:pointer}a{color:inherit}
 .brand-name{font-size:34px;line-height:1;font-weight:800;letter-spacing:-1.3px;white-space:nowrap}
 .brand-name em{font-style:normal;color:#05c77b}.brand-sub{font-size:13px;letter-spacing:1.35px;line-height:1.8;white-space:nowrap}
 .nav{display:flex;align-items:center;gap:4px;flex:1;min-width:0;height:100%}
-.nav a{height:49px;padding:0 13px;display:flex;align-items:center;justify-content:center;gap:9px;border-radius:10px;text-decoration:none;color:#f1f5f9;white-space:nowrap;font-size:15px;position:relative}\n.nav-icon{width:18px;height:18px;flex:0 0 18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;opacity:.92}\n.nav a.active .nav-icon{color:#91edc1}
+.nav a{height:49px;padding:0 13px;display:flex;align-items:center;justify-content:center;gap:9px;border-radius:10px;text-decoration:none;color:#f1f5f9;white-space:nowrap;font-size:15px;position:relative}\n.nav-icon{width:19px;height:19px;flex:0 0 19px;display:block;object-fit:contain}\n.nav a.active .nav-icon{color:#91edc1}
 .nav a.active{background:#ffffff0d;color:#91edc1}.nav a.active:after{content:"";height:4px;position:absolute;bottom:0;left:14px;right:14px;background:#08c977;border-radius:5px}
 .nav a:hover{background:#ffffff0c}
 .api-status{border:1px solid #087f55;border-radius:28px;padding:11px 17px;white-space:nowrap;background:#006a4626;color:#c7f7dd;font-size:14px;display:flex;align-items:center;gap:9px}
@@ -39,7 +39,7 @@ main{max-width:1900px;margin:0 auto;padding:15px 18px 24px}
 <img class="brand-logo" src="./assets/football-ai-circuit.svg" alt="Logo PronoFoot">
 <span class="brand-wordmark"><span class="brand-name">PronoFoot <em>AI</em></span><br><span class="brand-sub">FOOTBALL PREDICTION LAB</span></span>
 </a>
-<nav class="nav" aria-label="Navigation principale"><a class="active" href="./index.html" aria-current="page"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18M8 14h3"/></svg>Matchs à venir</a><a href="./history.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 2.64-6.36L3 8"/><path d="M3 3v5h5M12 7v5l3 2"/></svg>Historique</a><a href="./classements.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 0 1-10 0V4Z"/><path d="M7 6H4v2a4 4 0 0 0 4 4M17 6h3v2a4 4 0 0 1-4 4"/></svg>Classement</a></nav>
+<nav class="nav" aria-label="Navigation principale"><a class="active" href="./index.html" aria-current="page"><img class="nav-icon" src="./assets/icon-matches.svg" alt="" aria-hidden="true">Matchs à venir</a><a href="./history.html"><img class="nav-icon" src="./assets/icon-history.svg" alt="" aria-hidden="true">Historique</a><a href="./classements.html"><img class="nav-icon" src="./assets/icon-ranking.svg" alt="" aria-hidden="true">Classement</a></nav>
 <div class="api-status" id="apiStatus"><span class="dot"></span><span>Interface : <strong>Structure initiale</strong></span></div>
 </header>
 <main><div class="workspace" aria-label="Espace de travail principal">
