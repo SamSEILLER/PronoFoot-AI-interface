@@ -82,6 +82,30 @@ main{max-width:1900px;margin:0 auto;padding:15px 18px 24px}
  .api-status .dot{width:7px;height:7px;box-shadow:0 0 7px #08d46b55}
 }
 
+
+/* Live health indicator for the two upstream data collections */
+.topbar{position:relative}
+.api-status{appearance:none;font-family:inherit;cursor:pointer}
+.api-status .dot{background:#9aa8b5;box-shadow:none;flex:0 0 auto}
+.api-status.status-ok{border-color:#087f55;background:#006a4626;color:#c7f7dd}
+.api-status.status-ok .dot,.source-status-indicator.status-ok{background:#08d46b;box-shadow:0 0 10px #08d46b55}
+.api-status.status-warning{border-color:#b7791f;background:#9a67001f;color:#ffdf9a}
+.api-status.status-warning .dot,.source-status-indicator.status-warning{background:#f0a52b;box-shadow:0 0 9px #f0a52b55}
+.api-status.status-error{border-color:#c24141;background:#a51d1d24;color:#ffc1c1}
+.api-status.status-error .dot,.source-status-indicator.status-error{background:#ef4444;box-shadow:0 0 9px #ef444455}
+.api-status.status-loading .dot,.source-status-indicator.status-loading{background:#9aa8b5}
+.status-chevron{font-size:15px;line-height:1;opacity:.8}
+.source-status-details{position:absolute;z-index:20;right:18px;top:calc(100% - 2px);width:min(430px,calc(100vw - 24px));padding:15px;background:#fff;color:#0a1b46;border:1px solid #dce6f1;border-radius:12px;box-shadow:0 12px 35px #142b4530}
+.source-status-heading{display:flex;justify-content:space-between;gap:12px;align-items:center;font-weight:750;font-size:13px;margin-bottom:13px}
+.source-status-heading span{font-size:10px;font-weight:500;color:#71839a;text-align:right}
+.source-status-row{display:flex;gap:10px;padding:10px 0;border-top:1px solid #edf1f6}
+.source-status-indicator{width:9px;height:9px;flex:0 0 9px;border-radius:50%;margin-top:5px;background:#9aa8b5}
+.source-status-row strong{font-size:12px}
+.source-status-row p{margin:3px 0;color:#4f6d99;font-size:12px}
+.source-status-row small{color:#7a8ba2;font-size:10px;line-height:1.4}
+.source-status-footnote{border-top:1px solid #edf1f6;padding-top:10px;margin-top:4px;color:#71839a;font-size:10px;line-height:1.5}
+@media(max-width:650px){.source-status-details{right:8px;top:calc(100% - 2px)}.api-status{max-width:100%;min-width:0}}
+
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
@@ -92,12 +116,83 @@ main{max-width:1900px;margin:0 auto;padding:15px 18px 24px}
 <span class="brand-wordmark"><span class="brand-name">PronoFoot <em>AI</em></span><br><span class="brand-sub">FOOTBALL PREDICTION LAB</span></span>
 </a>
 <nav class="nav" aria-label="Navigation principale"><a class="active" href="./index.html" aria-current="page"><img class="nav-icon" src="./assets/icon-matches.svg" alt="" aria-hidden="true">Matchs à venir</a><a href="./history.html"><img class="nav-icon" src="./assets/icon-history.svg" alt="" aria-hidden="true">Historique</a><a href="./classements.html"><img class="nav-icon" src="./assets/icon-ranking.svg" alt="" aria-hidden="true">Classement</a></nav>
-<div class="api-status" id="apiStatus"><span class="dot"></span><span>Interface : <strong>Structure initiale</strong></span></div>
+<button class="api-status status-loading" id="apiStatus" type="button" aria-expanded="false" aria-controls="sourceStatusDetails">
+<span class="dot" aria-hidden="true"></span><span id="apiStatusLabel">Sources : <strong>Vérification…</strong></span><span class="status-chevron" aria-hidden="true">⌄</span>
+</button>
+<div class="source-status-details" id="sourceStatusDetails" hidden>
+<div class="source-status-heading">État des sources de données <span id="statusUpdatedAt">Chargement…</span></div>
+<div class="source-status-row"><span class="source-status-indicator" id="historyIndicator"></span><div><strong>Historique des matchs · PitchAPI</strong><p id="historyStatusText">En attente des données…</p><small id="historyStatusMeta"></small></div></div>
+<div class="source-status-row"><span class="source-status-indicator" id="oddsIndicator"></span><div><strong>Cotes · Odds-API.io</strong><p id="oddsStatusText">En attente des données…</p><small id="oddsStatusMeta"></small></div></div>
+<div class="source-status-footnote">Vert : deux collectes récentes sans anomalie · Orange : avertissement ou données de plus de 24 h · Rouge : les deux collectes sont en échec et anciennes.</div>
+</div>
 </header>
 <main><div class="workspace" aria-label="Espace de travail principal">
 <section class="panel left-panel" aria-label="Bloc de gauche"></section>
 <section class="panel right-panel" aria-label="Bloc de droite"></section>
 </div></main>
 <footer class="footer">PronoFoot AI · Football Prediction Lab</footer>
+
+<script>
+(() => {
+  const STATUS_URL = "https://samseiller.github.io/PronoFoot-AI-Site/data/site-status.json";
+  const button = document.getElementById("apiStatus");
+  const details = document.getElementById("sourceStatusDetails");
+  const label = document.getElementById("apiStatusLabel");
+  const updated = document.getElementById("statusUpdatedAt");
+  const statusText = (source) => {
+    if (!source) return "Statut non disponible";
+    const state = source.status || "warning";
+    return state === "ok" ? "Collecte réussie, données à jour" : state === "error" ? "Collecte en échec et données anciennes" : "Avertissement ou données à vérifier";
+  };
+  const formatDate = (value) => {
+    if (!value) return "Date indisponible";
+    const date = new Date(value);
+    return Number.isNaN(date.getTime()) ? "Date invalide" : date.toLocaleString("fr-FR", {dateStyle:"short", timeStyle:"short", timeZone:"Europe/Paris"}) + " (Paris)";
+  };
+  const setSource = (prefix, source) => {
+    const state = source && ["ok", "warning", "error"].includes(source.status) ? source.status : "loading";
+    document.getElementById(prefix + "Indicator").className = "source-status-indicator status-" + state;
+    document.getElementById(prefix + "StatusText").textContent = statusText(source);
+    const age = source && Number.isFinite(source.age_hours) ? Math.round(source.age_hours * 10) / 10 + " h" : "âge inconnu";
+    const meta = prefix === "history"
+      ? (source?.records ?? 0) + " matchs · " + (source?.failed_seasons ?? 0) + " saison(s) en échec · " + (source?.errors ?? 0) + " erreur(s) · " + age
+      : (source?.matched_events ?? 0) + " associés · " + (source?.events_with_odds ?? 0) + " avec cotes · " + (source?.unmatched ?? 0) + " non associé(s) · " + (source?.errors ?? 0) + " erreur(s) · " + age;
+    document.getElementById(prefix + "StatusMeta").textContent = source?.detail ? source.detail + " · " + age : meta;
+  };
+  button.addEventListener("click", () => {
+    const opening = button.getAttribute("aria-expanded") !== "true";
+    button.setAttribute("aria-expanded", String(opening));
+    details.hidden = !opening;
+  });
+  document.addEventListener("click", (event) => {
+    if (!details.hidden && !details.contains(event.target) && !button.contains(event.target)) {
+      details.hidden = true;
+      button.setAttribute("aria-expanded", "false");
+    }
+  });
+  fetch(STATUS_URL + "?v=" + Date.now(), {cache:"no-store"})
+    .then((response) => { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); })
+    .then((data) => {
+      const state = ["ok", "warning", "error"].includes(data.status) ? data.status : "warning";
+      button.classList.remove("status-loading");
+      button.classList.add("status-" + state);
+      const words = state === "ok" ? "Sources à jour" : state === "error" ? "Sources indisponibles" : "Données à vérifier";
+      label.innerHTML = "Sources : <strong></strong>";
+      label.querySelector("strong").textContent = words;
+      updated.textContent = "Contrôle : " + formatDate(data.generated_at_utc);
+      setSource("history", data.history);
+      setSource("odds", data.odds);
+    })
+    .catch(() => {
+      button.classList.remove("status-loading");
+      button.classList.add("status-warning");
+      label.innerHTML = "Sources : <strong>Statut indisponible</strong>";
+      updated.textContent = "Fichier de statut inaccessible";
+      setSource("history", null);
+      setSource("odds", null);
+    });
+})();
+</script>
+
 </body>
 </html>
