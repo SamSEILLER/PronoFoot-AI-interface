@@ -396,9 +396,10 @@ main{max-width:1900px;margin:0 auto;padding:15px 18px 24px}
     .then(data => {
       const competitions = Array.isArray(data.competitions) ? data.competitions.filter(item=>item && item.id && item.name) : [];
       if (data.season) seasonNode.textContent = data.season;
-      if (data.updated_at) {
-        const date = new Date(data.updated_at);
-        updatedNode.textContent = Number.isNaN(date.getTime()) ? "Mise à jour : date inconnue" : "Mis à jour le " + date.toLocaleString("fr-FR",{dateStyle:"short",timeStyle:"short"});
+      const updatedAt = data.updated_at || data.generated_at;
+      if (updatedAt) {
+        const date = new Date(updatedAt);
+        updatedNode.textContent = Number.isNaN(date.getTime()) ? "Mise à jour : date inconnue" : "Mis à jour le " + date.toLocaleString("fr-FR",{dateStyle:"short",timeStyle:"short",timeZone:"Europe/Paris"}) + " (Paris)";
       } else updatedNode.textContent = "Mise à jour non renseignée";
       if (!competitions.length) {
         select.innerHTML = '<option value="">Aucune compétition disponible</option>';
