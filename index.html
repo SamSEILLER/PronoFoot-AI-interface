@@ -142,7 +142,12 @@ main{max-width:1900px;margin:0 auto;padding:15px 18px 24px}
   const statusText = (source) => {
     if (!source) return "Statut non disponible";
     const state = source.status || "warning";
-    return state === "ok" ? "Collecte réussie, données à jour" : state === "error" ? "Collecte en échec et données anciennes" : "Avertissement ou données à vérifier";
+    const collection = source.collection_status;
+    if (state === "error") return "Collecte en échec ou données indisponibles";
+    if (collection === "PARTIAL") return "Collecte partielle — certains matchs ou événements restent à vérifier";
+    if (state === "ok" && collection === "COMPLETE") return "Collecte complète, sans erreur signalée";
+    if (state === "ok") return "Collecte réussie, données à jour";
+    return "Vigilance — données ou couverture à vérifier";
   };
   const formatDate = (value) => {
     if (!value) return "Date indisponible";
@@ -153,11 +158,32 @@ main{max-width:1900px;margin:0 auto;padding:15px 18px 24px}
     const state = source && ["ok", "warning", "error"].includes(source.status) ? source.status : "loading";
     document.getElementById(prefix + "Indicator").className = "source-status-indicator status-" + state;
     document.getElementById(prefix + "StatusText").textContent = statusText(source);
-    const age = source && Number.isFinite(source.age_hours) ? Math.round(source.age_hours * 10) / 10 + " h" : "âge inconnu";
-    const meta = prefix === "history"
-      ? (source?.records ?? 0) + " matchs · " + (source?.failed_seasons ?? 0) + " saison(s) en échec · " + (source?.errors ?? 0) + " erreur(s) · " + age
-      : (source?.matched_events ?? 0) + " associés · " + (source?.events_with_odds ?? 0) + " avec cotes · " + (source?.unmatched ?? 0) + " non associé(s) · " + (source?.errors ?? 0) + " erreur(s) · " + age;
-    document.getElementById(prefix + "StatusMeta").textContent = source?.detail ? source.detail + " · " + age : meta;
+    if (!source) {
+      document.getElementById(prefix + "StatusMeta").textContent = "Aucune information reçue depuis le fichier de statut.";
+      return;
+    }
+    const age = Number.isFinite(source.age_hours) ? Math.round(source.age_hours * 10) / 10 + " h" : "âge inconnu";
+    const lastSuccess = source.last_success_at_utc ? "Dernière réussite : " + formatDate(source.last_success_at_utc) : "Dernière réussite inconnue";
+    const provider = source.provider ? source.provider + " · " : "";
+    let meta;
+    if (prefix === "history") {
+      const coverage = Number.isFinite(source.competitions_collected) && Number.isFinite(source.competitions_total)
+        ? source.competitions_collected + "/" + source.competitions_total + " compétitions collectées"
+        : "couverture des compétitions non précisée";
+      meta = provider + (source.records ?? 0) + " enregistrements · " + coverage
+        + " · " + (source.failed_seasons ?? 0) + " saison(s) en échec · " + (source.errors ?? 0) + " erreur(s)";
+    } else {
+      const summary = source.summary || {};
+      const markets = Number.isFinite(summary.market_count) ? summary.market_count + " marchés" : null;
+      const anomalies = Number.isFinite(source.anomalies) ? source.anomalies + " anomalie(s)" : null;
+      const requests = Number.isFinite(summary.requests_attempted) && Number.isFinite(summary.request_budget)
+        ? summary.requests_attempted + "/" + summary.request_budget + " requêtes utilisées" : null;
+      meta = provider + (source.matched_events ?? 0) + " matchs associés · " + (source.events_with_odds ?? 0)
+        + " avec cotes · " + (source.unmatched ?? 0) + " non associés"
+        + (markets ? " · " + markets : "") + (anomalies ? " · " + anomalies : "")
+        + (requests ? " · " + requests : "") + " · " + (source.errors ?? 0) + " erreur(s)";
+    }
+    document.getElementById(prefix + "StatusMeta").textContent = meta + " · " + age + " · " + lastSuccess;
   };
   button.addEventListener("click", () => {
     const opening = button.getAttribute("aria-expanded") !== "true";
