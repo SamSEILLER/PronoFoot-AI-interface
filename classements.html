@@ -212,6 +212,16 @@ main{max-width:1900px;margin:0 auto;padding:15px 18px 24px}
  .standings-position{width:19px;height:19px}
 }
 
+
+/* Abbreviated column labels on mobile only */
+@media(max-width:650px){
+ .standings-table th{font-size:0;white-space:nowrap;overflow-wrap:normal}
+ .standings-table th::after{content:attr(data-short);font-size:9px;line-height:1.1}
+}
+@media(max-width:380px){
+ .standings-table th::after{font-size:8px}
+}
+
 </style>
 </head>
 <body>
@@ -379,7 +389,7 @@ main{max-width:1900px;margin:0 auto;padding:15px 18px 24px}
       const logoHtml = logo ? '<img src="'+safe(logo)+'" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement(\'span\'),{className:\'standings-team-fallback\',textContent:'+JSON.stringify(initials)+'}))">' : '<span class="standings-team-fallback">'+safe(initials)+'</span>';
       return '<tr><td><span class="standings-position">'+safe(position)+'</span></td><td class="team-cell"><span class="standings-team">'+logoHtml+'<span>'+safe(teamName)+'</span></span></td><td>'+safe(played)+'</td><td>'+safe(wins)+'</td><td>'+safe(draws)+'</td><td>'+safe(losses)+'</td><td>'+safe(scored)+'</td><td>'+safe(conceded)+'</td><td class="'+diffClass+'">'+(Number(diff)>0?"+":"")+safe(diff)+'</td><td class="standings-points">'+safe(points)+'</td></tr>';
     }).join("");
-    content.innerHTML = '<div class="standings-table-wrap"><table class="standings-table"><thead><tr><th>Position</th><th>Équipe</th><th>Matchs joués</th><th>Victoires</th><th>Matchs nuls</th><th>Défaites</th><th>Buts marqués</th><th>Buts encaissés</th><th>Différence de buts</th><th>Points</th></tr></thead><tbody>'+body+'</tbody></table></div>';
+    content.innerHTML = '<div class="standings-table-wrap"><table class="standings-table"><thead><tr><th data-short="Pos.">Position</th><th data-short="Équipe">Équipe</th><th data-short="MJ">Matchs joués</th><th data-short="V">Victoires</th><th data-short="N">Matchs nuls</th><th data-short="D">Défaites</th><th data-short="BP">Buts marqués</th><th data-short="BC">Buts encaissés</th><th data-short="Diff.">Différence de buts</th><th data-short="Pts">Points</th></tr></thead><tbody>'+body+'</tbody></table></div>';
   };
   fetch(DATA_URL + "?v=" + Date.now(), {cache:"no-store"})
     .then(response => { if (!response.ok) throw new Error("Fichier de classement absent (HTTP "+response.status+")"); return response.json(); })
