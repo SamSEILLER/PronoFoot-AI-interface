@@ -83,15 +83,64 @@
         .filter((entry) => Number.isFinite(entry.kickoff) && entry.kickoff > now)
         .sort((a, b) => a.kickoff - b.kickoff);
 
-      list.replaceChildren();
-      upcoming.forEach(({ match }) => {
-        const card = renderMatch(match);
-        if (card) list.appendChild(card);
-      });
+      const dateButtons = Array.from(document.querySelectorAll("[data-date-filter]"));
+      const teamSearch = document.getElementById("matchTeamSearch");
+      let activeDateFilter = "today";
 
-      if (!list.children.length) {
-        list.textContent = "Aucun match futur disponible dans les données publiées.";
-      }
+      const parisDateKey = (timestamp) => {
+        const parts = new Intl.DateTimeFormat("en-CA", {
+          timeZone: "Europe/Paris", year: "numeric", month: "2-digit", day: "2-digit"
+        }).formatToParts(new Date(timestamp));
+        const values = Object.fromEntries(parts.map((part) => [part.type, part.value]));
+        return values.year + "-" + values.month + "-" + values.day;
+      };
+      const shiftDateKey = (key, days) => {
+        const [year, month, day] = key.split("-").map(Number);
+        const date = new Date(Date.UTC(year, month - 1, day + days));
+        return date.toISOString().slice(0, 10);
+      };
+      const renderFilteredMatches = () => {
+        const today = parisDateKey(Date.now());
+        const tomorrow = shiftDateKey(today, 1);
+        const query = (teamSearch?.value || "").trim().toLocaleLowerCase("fr");
+        const filtered = upcoming.filter(({ match, kickoff }) => {
+          const matchDate = parisDateKey(kickoff);
+          const dateMatches = activeDateFilter === "all"
+            || (activeDateFilter === "today" && matchDate === today)
+            || (activeDateFilter === "tomorrow" && matchDate === tomorrow);
+          const teamMatches = !query || [match.home_team, match.away_team]
+            .some((team) => String(team).toLocaleLowerCase("fr").includes(query));
+          return dateMatches && teamMatches;
+        });
+
+        list.replaceChildren();
+        filtered.forEach(({ match }) => {
+          const card = renderMatch(match);
+          if (card) list.appendChild(card);
+        });
+        if (!list.children.length) {
+          const empty = document.createElement("p");
+          empty.className = "match-filter-count";
+          empty.textContent = upcoming.length
+            ? "Aucun match ne correspond à ces filtres."
+            : "Aucun match futur disponible dans les données publiées.";
+          list.appendChild(empty);
+        }
+      };
+
+      dateButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          activeDateFilter = button.dataset.dateFilter;
+          dateButtons.forEach((item) => {
+            const active = item === button;
+            item.classList.toggle("is-active", active);
+            item.setAttribute("aria-pressed", String(active));
+          });
+          renderFilteredMatches();
+        });
+      });
+      teamSearch?.addEventListener("input", renderFilteredMatches);
+      renderFilteredMatches();
     })
     .catch((error) => {
       console.error("Chargement des matchs futurs impossible :", error);
