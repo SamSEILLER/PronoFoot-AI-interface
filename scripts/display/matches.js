@@ -85,8 +85,12 @@
 
       const dateButtons = Array.from(document.querySelectorAll("[data-date-filter]"));
       const teamSearch = document.getElementById("matchTeamSearch");
-      let activeDateFilter = "today";
-      const dateFilterDays = { today: 1, "2days": 2, "4days": 4, week: 7 };
+      let activeDateFilter = "today-tomorrow";
+      const dateFilterRanges = {
+        "today-tomorrow": [0, 1],
+        "days-2-4": [2, 4],
+        "days-5-7": [5, 7]
+      };
 
       const parisDateKey = (timestamp) => {
         const parts = new Intl.DateTimeFormat("en-CA", {
@@ -102,12 +106,13 @@
       };
       const renderFilteredMatches = () => {
         const today = parisDateKey(Date.now());
-        const days = dateFilterDays[activeDateFilter] || 1;
-        const lastDate = shiftDateKey(today, days - 1);
+        const [startOffset, endOffset] = dateFilterRanges[activeDateFilter] || [0, 1];
+        const firstDate = shiftDateKey(today, startOffset);
+        const lastDate = shiftDateKey(today, endOffset);
         const query = (teamSearch?.value || "").trim().toLocaleLowerCase("fr");
         const filtered = upcoming.filter(({ match, kickoff }) => {
           const matchDate = parisDateKey(kickoff);
-          const dateMatches = matchDate >= today && matchDate <= lastDate;
+          const dateMatches = matchDate >= firstDate && matchDate <= lastDate;
           const teamMatches = !query || [match.home_team, match.away_team]
             .some((team) => String(team).toLocaleLowerCase("fr").includes(query));
           return dateMatches && teamMatches;
