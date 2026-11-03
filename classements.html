@@ -1,1 +1,420 @@
 <!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#243744">
+<link rel="icon" type="image/svg+xml" href="./assets/football-ai-circuit.svg">
+<title>Classement — PronoFoot AI · Football Prediction Lab</title>
+<style>
+:root{color-scheme:light;--ink:#0a1b46;--muted:#4f6d99;--green:#08b968;--green2:#00a85c;--line:#e5edf7;--bg:#f3f8fc;--panel:#ffffffd9;--pale:#f5f8fc;--shadow:0 3px 12px rgba(17,43,72,.035)}
+*{box-sizing:border-box}html{min-width:320px;background:var(--bg);scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font-family:Inter,"Segoe UI",Roboto,Arial,sans-serif;font-size:14px;line-height:1.4;background:linear-gradient(180deg,#f5f9fd 0,#eef5fa 100%);min-height:100vh}
+button,input,select{font:inherit}button{cursor:pointer}a{color:inherit}
+.topbar{height:86px;padding:0 20px;display:flex;align-items:center;gap:25px;color:#f9fbff;background:linear-gradient(110deg,#1c2c38 0%,#293b48 57%,#1b303e 100%);box-shadow:0 2px 8px #172e3b18}
+.brand{display:flex;align-items:center;gap:12px;min-width:290px;text-decoration:none;color:#fff}
+.brand-logo{width:56px;height:56px;flex:0 0 56px}.brand-wordmark{min-width:0}
+.brand-name{font-size:34px;line-height:1;font-weight:800;letter-spacing:-1.3px;white-space:nowrap}
+.brand-name em{font-style:normal;color:#05c77b}.brand-sub{font-size:13px;letter-spacing:1.35px;line-height:1.8;white-space:nowrap}
+.nav{display:flex;align-items:center;gap:4px;flex:1;min-width:0;height:100%}
+.nav a{height:49px;padding:0 13px;display:flex;align-items:center;justify-content:center;gap:9px;border-radius:10px;text-decoration:none;color:#f1f5f9;white-space:nowrap;font-size:15px;position:relative}
+.nav .nav-icon{display:block;width:19px;height:19px;min-width:19px;max-width:19px;min-height:19px;max-height:19px;flex:0 0 19px;object-fit:contain;opacity:1;}
+.nav a.active .nav-icon{opacity:1;}
+.nav a.active{background:#ffffff0d;color:#91edc1}.nav a.active:after{content:"";height:4px;position:absolute;bottom:0;left:14px;right:14px;background:#08c977;border-radius:5px}
+.nav a:hover{background:#ffffff0c}
+.api-status{border:1px solid #087f55;border-radius:28px;padding:11px 17px;white-space:nowrap;background:#006a4626;color:#c7f7dd;font-size:14px;display:flex;align-items:center;gap:9px}
+.api-status strong{color:#14df80;font-weight:650}.dot{width:12px;height:12px;border-radius:50%;background:#08d46b;display:inline-block;box-shadow:0 0 12px #08d46b55}
+main{max-width:1900px;margin:0 auto;padding:15px 18px 24px}
+.workspace{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:12px;align-items:stretch;min-height:calc(100vh - 166px)}
+.panel{min-width:0;background:var(--panel);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);min-height:520px}
+.left-panel{padding:11px 13px 12px}.right-panel{padding:14px 12px 12px}
+.footer{max-width:1900px;margin:0 auto;padding:0 18px 18px;font-size:11px;color:#647b9c;text-align:center}
+@media(max-width:1550px){.topbar{gap:15px;padding:0 16px}.brand{min-width:255px}.brand-name{font-size:29px}.brand-logo{width:48px;height:48px;flex-basis:48px}.nav a{padding:0 8px;font-size:13px}.api-status{font-size:12px;padding:10px 12px}.workspace{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr)}}
+@media(max-width:1120px){.topbar{height:auto;min-height:82px;flex-wrap:wrap;padding:12px 16px;gap:10px}.brand{min-width:0;flex:1}.nav{order:3;flex-basis:100%;height:45px;overflow-x:auto}.api-status{margin-left:auto}.workspace{grid-template-columns:1fr;min-height:0}.panel{min-height:360px}}
+@media(max-width:650px){main{padding:10px}.topbar{padding:11px 10px}.brand-logo{width:40px;height:40px;flex-basis:40px}.brand-name{font-size:24px}.brand-sub{font-size:9px;letter-spacing:1px}.api-status{font-size:10px;padding:8px 10px;gap:5px}.dot{width:9px;height:9px}.nav a{font-size:12px;padding:0 9px}.panel{min-height:280px}.footer{padding:0 10px 14px}}
+
+/* Responsive layout refinements */
+.nav a:focus-visible,.brand:focus-visible{outline:2px solid #ffffff;outline-offset:3px}
+@media(max-width:1120px){
+ .topbar{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;height:auto;min-height:0;padding:12px 18px;gap:12px 16px}
+ .brand{min-width:0;flex:initial}
+ .nav{grid-column:1/-1;grid-row:2;order:initial;display:flex;flex-wrap:wrap;justify-content:flex-start;gap:6px;height:auto;min-height:46px;overflow:visible}
+ .nav a{flex:0 0 auto;min-height:44px}
+ .api-status{grid-column:2;grid-row:1;margin:0;justify-self:end;max-width:100%;font-size:12px;padding:9px 12px}
+ .workspace{grid-template-columns:minmax(0,1fr);min-height:0}
+ .panel{min-height:320px}
+}
+@media(max-width:650px){
+ .topbar{grid-template-columns:minmax(0,1fr);padding:12px 12px 10px;gap:10px}
+ .brand{grid-column:1;grid-row:1;gap:9px}
+ .brand-logo{width:42px;height:42px;flex:0 0 42px}
+ .brand-name{font-size:25px;letter-spacing:-.8px}
+ .brand-sub{font-size:9px;letter-spacing:1px;line-height:1.5}
+ .api-status{grid-column:1;grid-row:2;justify-self:start;margin:0;font-size:11px;padding:7px 10px}
+ .nav{grid-column:1;grid-row:3;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;width:100%;min-height:0}
+ .nav a{height:auto;min-height:58px;padding:7px 3px;display:flex;flex-direction:column;gap:4px;font-size:11px;line-height:1.2;white-space:normal;text-align:center;border-radius:8px}
+ .nav .nav-icon{width:19px;height:19px;min-width:19px;max-width:19px;min-height:19px;max-height:19px;flex-basis:19px}
+ .nav a.active:after{height:3px;left:10px;right:10px}
+ main{padding:10px 10px 18px}
+ .workspace{display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
+ .panel{min-height:260px;border-radius:10px}
+ .left-panel,.right-panel{padding:11px 10px}
+ .footer{padding:0 10px 14px}
+}
+@media(max-width:360px){
+ .brand-name{font-size:20px}
+ .brand-logo{width:32px;height:32px;flex-basis:32px}
+ .nav a{font-size:11px}
+ .api-status{font-size:9px}
+}
+@media(max-width:650px){
+ .topbar{grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto auto;align-items:center;column-gap:8px;row-gap:10px}
+ .brand{grid-column:1;grid-row:1;min-width:0;gap:7px}
+ .api-status{grid-column:2;grid-row:1;justify-self:end;align-self:center;margin:0;max-width:100%}
+ .nav{grid-column:1/-1;grid-row:2;margin-top:14px}
+
+ .brand-logo{width:36px;height:36px;flex:0 0 36px}
+ .brand-name{font-size:21px;letter-spacing:-.65px}
+ .brand-sub{font-size:8px;letter-spacing:.8px;line-height:1.35}
+ .nav a{font-size:14px;min-height:57px;padding:7px 3px;gap:4px}
+ .nav .nav-icon{width:18px;height:18px;min-width:18px;max-width:18px;min-height:18px;max-height:18px;flex-basis:18px}
+ .api-status{font-size:10px;line-height:1.15;padding:6px 8px;gap:5px;border-radius:18px}
+ .api-status .dot{width:7px;height:7px;box-shadow:0 0 7px #08d46b55}
+}
+
+
+/* Live health indicator for the two upstream data collections */
+.topbar{position:relative}
+.api-status{appearance:none;font-family:inherit;cursor:pointer;gap:8px;padding:7px 12px;border-radius:22px;font-size:13px;line-height:1.2;transition:border-color .15s,background .15s}
+.api-status:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+.status-symbol{width:19px;height:19px;display:inline-flex;align-items:center;justify-content:center;flex:0 0 19px;border-radius:50%;font-size:13px;font-weight:900;line-height:1}
+.api-status-label{white-space:nowrap;color:#f8fafc;font-weight:650}
+.api-status-label strong{font-weight:800}
+.api-status.status-ok{border-color:#08b968;background:#063d2b;color:#08e080}
+.api-status.status-ok .status-symbol{background:#08c875;color:#062c20}
+.api-status.status-ok .api-status-label strong{color:#24e58b}
+.api-status.status-warning{border-color:#e5a51a;background:#49340b;color:#ffd15a}
+.api-status.status-warning .status-symbol{background:#f0ad24;color:#382500}
+.api-status.status-warning .api-status-label strong{color:#ffd34f}
+.api-status.status-error{border-color:#ef5350;background:#481c22;color:#ff7774}
+.api-status.status-error .status-symbol{background:#ef5350;color:#fff}
+.api-status.status-error .api-status-label strong{color:#ff7774}
+.api-status.status-loading .status-symbol,.source-status-indicator.status-loading{background:#718096;color:#fff}
+.source-status-indicator.status-ok{background:#08d46b;box-shadow:0 0 10px #08d46b55}
+.source-status-indicator.status-warning{background:#f0a52b;box-shadow:0 0 9px #f0a52b55}
+.source-status-indicator.status-error{background:#ef4444;box-shadow:0 0 9px #ef444455}
+.source-status-details{position:absolute;z-index:20;right:18px;top:calc(100% - 2px);width:min(430px,calc(100vw - 24px));padding:15px;background:#fff;color:#0a1b46;border:1px solid #dce6f1;border-radius:12px;box-shadow:0 12px 35px #142b4530}
+.source-status-heading{display:flex;justify-content:space-between;gap:12px;align-items:center;font-weight:750;font-size:13px;margin-bottom:13px}
+.source-status-heading span{font-size:10px;font-weight:500;color:#71839a;text-align:right}
+.source-status-row{display:flex;gap:10px;padding:10px 0;border-top:1px solid #edf1f6}
+.source-status-indicator{width:9px;height:9px;flex:0 0 9px;border-radius:50%;margin-top:5px;background:#9aa8b5}
+.source-status-row strong{font-size:12px}
+.source-status-row p{margin:3px 0;color:#4f6d99;font-size:12px}
+.source-status-row small{color:#7a8ba2;font-size:10px;line-height:1.4}
+.source-status-footnote{border-top:1px solid #edf1f6;padding-top:10px;margin-top:4px;color:#71839a;font-size:10px;line-height:1.5}
+@media(max-width:650px){.source-status-details{right:8px;top:calc(100% - 2px)}.api-status{max-width:100%;min-width:0}}
+
+/* Mobile header: slightly more compact brand group */
+@media(max-width:650px){
+ .brand{min-width:max-content;flex-shrink:0;gap:6px}
+ .brand-logo{width:36px;height:36px;flex:0 0 36px}
+ .brand-name{font-size:21px;letter-spacing:-.6px}
+ .brand-sub{font-size:8px;letter-spacing:.8px;line-height:1.4}
+ .api-status{align-items:center}
+ }
+@media(max-width:420px){
+ .topbar{grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto auto;column-gap:6px;row-gap:10px}
+ .brand{grid-column:1;grid-row:1;justify-self:start;min-width:0;gap:5px}
+ .api-status{grid-column:2;grid-row:1;justify-self:end;align-self:center;margin:0;max-width:100%;font-size:9px;padding:5px 7px;gap:4px}
+ .api-status .status-symbol{width:15px;height:15px;flex-basis:15px;font-size:11px}
+ .nav{grid-column:1/-1;grid-row:2;margin-top:0}
+}
+@media(max-width:360px){
+ .brand-name{font-size:21px}
+ .brand-logo{width:36px;height:36px;flex:0 0 36px}
+ .api-status{font-size:10px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* League standings page — content only; shared header and footer remain unchanged */
+.standings-page{display:block;min-height:0}
+.standings-panel{min-height:0;padding:22px 24px 26px}
+.standings-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;margin-bottom:22px}
+.standings-eyebrow{margin:0 0 5px;color:#08a967;font-size:11px;font-weight:800;letter-spacing:1.25px;text-transform:uppercase}
+.standings-title{margin:0;color:var(--ink);font-size:25px;line-height:1.2;font-weight:800;letter-spacing:-.5px}
+.standings-subtitle{margin:7px 0 0;color:var(--muted);font-size:13px}
+.standings-season{flex:0 0 auto;padding:9px 13px;border:1px solid #dcebe5;border-radius:10px;background:#f2fbf6;color:#087c4c;text-align:right}
+.standings-season small{display:block;color:#5b8b75;font-size:10px;font-weight:700;letter-spacing:.7px;text-transform:uppercase}
+.standings-season strong{display:block;margin-top:2px;font-size:15px}
+.standings-toolbar{display:flex;align-items:end;gap:14px;margin-bottom:16px;padding:15px;background:#f7fafd;border:1px solid var(--line);border-radius:11px}
+.standings-filter{display:flex;flex-direction:column;gap:6px;min-width:min(100%,330px)}
+.standings-filter label{color:#526b8d;font-size:11px;font-weight:750;letter-spacing:.45px}
+.standings-filter select{width:100%;height:42px;padding:0 38px 0 12px;border:1px solid #d7e2ee;border-radius:8px;background:#fff;color:#132b50;font-size:13px;font-weight:650}
+.standings-updated{margin-left:auto;padding-bottom:10px;color:#8191a6;font-size:11px;text-align:right}
+.standings-table-wrap{width:100%;overflow-x:auto;border:1px solid var(--line);border-radius:11px;background:#fff}
+.standings-table{width:100%;border-collapse:separate;border-spacing:0;min-width:950px;font-variant-numeric:tabular-nums}
+.standings-table th{padding:13px 10px;background:#f5f8fc;border-bottom:1px solid #e5edf7;color:#637995;font-size:10px;font-weight:800;letter-spacing:.35px;text-align:center;white-space:nowrap}
+.standings-table th:nth-child(2){text-align:left;padding-left:16px}
+.standings-table td{height:54px;padding:10px;border-bottom:1px solid #edf2f7;color:#263d5d;font-size:12px;text-align:center;white-space:nowrap}
+.standings-table tbody tr:last-child td{border-bottom:0}
+.standings-table tbody tr:hover{background:#f8fbfe}
+.standings-table td.team-cell{text-align:left;padding-left:16px;font-weight:750;color:#10264a}
+.standings-position{display:inline-flex;align-items:center;justify-content:center;width:27px;height:27px;border-radius:7px;background:#f0f4f8;color:#526985;font-weight:800}
+.standings-team{display:flex;align-items:center;gap:10px}
+.standings-team img{width:25px;height:25px;object-fit:contain}
+.standings-team-fallback{width:25px;height:25px;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;background:#edf3f8;color:#69809c;font-size:10px;font-weight:800}
+.standings-points{font-size:14px!important;font-weight:850;color:#087c4c!important}
+.standings-diff-positive{color:#07965a!important;font-weight:750}
+.standings-diff-negative{color:#d14b50!important;font-weight:750}
+.standings-legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:13px;color:#71839a;font-size:10px}
+.standings-legend span{display:inline-flex;align-items:center;gap:6px}
+.standings-legend i{width:8px;height:8px;border-radius:2px;background:#08b968}
+.standings-empty{padding:38px 20px;border:1px dashed #cbd8e6;border-radius:11px;background:#fbfdff;text-align:center}
+.standings-empty strong{display:block;color:#233b5d;font-size:14px}
+.standings-empty p{max-width:600px;margin:8px auto 0;color:#71839a;font-size:12px;line-height:1.6}
+.standings-error{color:#b94343!important}
+@media(max-width:700px){
+ .standings-panel{padding:16px 12px 18px}
+ .standings-heading{gap:10px;flex-direction:column;margin-bottom:16px}
+ .standings-title{font-size:22px}
+ .standings-season{align-self:flex-start;text-align:left;padding:7px 11px}
+ .standings-toolbar{align-items:stretch;flex-direction:column;gap:8px;padding:12px}
+ .standings-filter{min-width:0}
+ .standings-updated{margin:0;padding:0;text-align:left}
+ .standings-empty{padding:28px 14px}
+}
+
+
+/* Mobile table: show every statistic without horizontal scrolling */
+@media(max-width:650px){
+ .standings-table-wrap{overflow-x:hidden;border-radius:8px}
+ .standings-table{width:100%;min-width:0;table-layout:fixed}
+ .standings-table th{padding:8px 1px;font-size:9px;letter-spacing:0;white-space:normal;line-height:1.1;overflow-wrap:anywhere}
+ .standings-table td{height:43px;padding:5px 1px;font-size:10px;white-space:nowrap}
+ .standings-table th:first-child,.standings-table td:first-child{width:31px}
+ .standings-table th:nth-child(2),.standings-table td:nth-child(2){width:clamp(82px,29vw,118px)}
+ .standings-table th:nth-child(n+3),.standings-table td:nth-child(n+3){width:auto}
+ .standings-table td.team-cell{padding-left:4px;overflow:hidden}
+ .standings-team{gap:4px;min-width:0}
+ .standings-team img,.standings-team-fallback{width:17px;height:17px;flex:0 0 17px;font-size:8px}
+ .standings-team>span:last-child{display:block;min-width:0;overflow:hidden;text-overflow:ellipsis;font-size:9px}
+ .standings-position{width:21px;height:21px;border-radius:5px;font-size:9px}
+ .standings-points{font-size:11px!important}
+ .standings-legend{gap:7px 11px;font-size:9px}
+}
+@media(max-width:380px){
+ .standings-panel{padding:13px 7px 15px}
+ .standings-table th{font-size:8px;padding:7px 0}
+ .standings-table td{font-size:9px;padding:4px 0}
+ .standings-table th:first-child,.standings-table td:first-child{width:27px}
+ .standings-table th:nth-child(2),.standings-table td:nth-child(2){width:78px}
+ .standings-team>span:last-child{font-size:8px}
+ .standings-position{width:19px;height:19px}
+}
+
+</style>
+</head>
+<body>
+<header class="topbar">
+<a class="brand" href="./index.html" aria-label="PronoFoot AI accueil">
+<img class="brand-logo" src="./assets/football-ai-circuit.svg" alt="Logo PronoFoot">
+<span class="brand-wordmark"><span class="brand-name">PronoFoot <em>AI</em></span><br><span class="brand-sub">FOOTBALL PREDICTION LAB</span></span>
+</a>
+<nav class="nav" aria-label="Navigation principale"><a href="./index.html"><img class="nav-icon" src="./assets/icon-matches.svg" alt="" aria-hidden="true">Matchs à venir</a><a href="./history.html"><img class="nav-icon" src="./assets/icon-history.svg" alt="" aria-hidden="true">Historique</a><a class="active" href="./classements.html" aria-current="page"><img class="nav-icon" src="./assets/icon-ranking.svg" alt="" aria-hidden="true">Classement</a></nav>
+<button class="api-status status-loading" id="apiStatus" type="button" aria-expanded="false" aria-controls="sourceStatusDetails" aria-label="État des sources : vérification en cours">
+<span class="status-symbol" id="apiStatusSymbol" aria-hidden="true">…</span><span class="api-status-label">Sources : <strong id="apiStatusLabel">…</strong></span>
+</button>
+<div class="source-status-details" id="sourceStatusDetails" hidden>
+<div class="source-status-heading">État des sources de données <span id="statusUpdatedAt">Chargement…</span></div>
+<div class="source-status-row"><span class="source-status-indicator" id="historyIndicator"></span><div><strong>Historique des matchs · PitchAPI</strong><p id="historyStatusText">En attente des données…</p><small id="historyStatusMeta"></small></div></div>
+<div class="source-status-row"><span class="source-status-indicator" id="oddsIndicator"></span><div><strong>Cotes · Odds-API.io</strong><p id="oddsStatusText">En attente des données…</p><small id="oddsStatusMeta"></small></div></div>
+<div class="source-status-footnote">Vert : deux collectes récentes sans anomalie · Orange : avertissement ou données de plus de 24 h · Rouge : les deux collectes sont en échec et anciennes.</div>
+</div>
+</header>
+<main><div class="standings-page" aria-label="Classement des compétitions">
+<section class="panel standings-panel" aria-labelledby="standingsTitle">
+  <div class="standings-heading">
+    <div><h1 class="standings-title" id="standingsTitle">Classement des championnats</h1><p class="standings-subtitle">Consultez les performances et la position des équipes dans chaque compétition.</p></div>
+    <div class="standings-season"><small>Saison en cours</small><strong id="currentSeason">Non disponible</strong></div>
+  </div>
+  <div class="standings-toolbar">
+    <div class="standings-filter"><label for="competitionSelect">COMPÉTITION DISPONIBLE</label><select id="competitionSelect" disabled><option value="">Chargement des compétitions…</option></select></div>
+    <div class="standings-updated" id="standingsUpdated">En attente des données de classement</div>
+  </div>
+  <div id="standingsContent" aria-live="polite">
+    <div class="standings-empty"><strong>Chargement du classement…</strong><p>Les classements seront affichés à partir des données publiées par le moteur PronoFoot AI.</p></div>
+  </div>
+  <div class="standings-legend"><span><i></i> Points au classement</span><span>V : victoires · N : matchs nuls · D : défaites</span><span>Buts marqués et encaissés par équipe</span></div>
+</section>
+</div></main>
+<footer class="footer">PronoFoot AI · Football Prediction Lab</footer>
+
+<script>
+(() => {
+  const STATUS_URL = "./data/site-status.json";
+  const button = document.getElementById("apiStatus");
+  const details = document.getElementById("sourceStatusDetails");
+  const label = document.getElementById("apiStatusLabel");
+  const symbol = document.getElementById("apiStatusSymbol");
+  const updated = document.getElementById("statusUpdatedAt");
+  const statusText = (source) => {
+    if (!source) return "Statut non disponible";
+    const state = source.status || "warning";
+    const collection = source.collection_status;
+    if (state === "error") return "Collecte en échec ou données indisponibles";
+    if (collection === "PARTIAL") return "Collecte partielle — certains matchs ou événements restent à vérifier";
+    if (state === "ok" && collection === "COMPLETE") return "Collecte complète, sans erreur signalée";
+    if (state === "ok") return "Collecte réussie, données à jour";
+    return "Vigilance — données ou couverture à vérifier";
+  };
+  const formatDate = (value) => {
+    if (!value) return "Date indisponible";
+    const date = new Date(value);
+    return Number.isNaN(date.getTime()) ? "Date invalide" : date.toLocaleString("fr-FR", {dateStyle:"short", timeStyle:"short", timeZone:"Europe/Paris"}) + " (Paris)";
+  };
+  const setSource = (prefix, source) => {
+    const state = source && ["ok", "warning", "error"].includes(source.status) ? source.status : "loading";
+    document.getElementById(prefix + "Indicator").className = "source-status-indicator status-" + state;
+    document.getElementById(prefix + "StatusText").textContent = statusText(source);
+    if (!source) {
+      document.getElementById(prefix + "StatusMeta").textContent = "Aucune information reçue depuis le fichier de statut.";
+      return;
+    }
+    const age = Number.isFinite(source.age_hours) ? Math.round(source.age_hours * 10) / 10 + " h" : "âge inconnu";
+    const lastSuccess = source.last_success_at_utc ? "Dernière réussite : " + formatDate(source.last_success_at_utc) : "Dernière réussite inconnue";
+    const provider = source.provider ? source.provider + " · " : "";
+    let meta;
+    if (prefix === "history") {
+      const coverage = Number.isFinite(source.competitions_collected) && Number.isFinite(source.competitions_total)
+        ? source.competitions_collected + "/" + source.competitions_total + " compétitions collectées"
+        : "couverture des compétitions non précisée";
+      meta = provider + (source.records ?? 0) + " enregistrements · " + coverage
+        + " · " + (source.failed_seasons ?? 0) + " saison(s) en échec · " + (source.errors ?? 0) + " erreur(s)";
+    } else {
+      const summary = source.summary || {};
+      const markets = Number.isFinite(summary.market_count) ? summary.market_count + " marchés" : null;
+      const anomalies = Number.isFinite(source.anomalies) ? source.anomalies + " anomalie(s)" : null;
+      const requests = Number.isFinite(summary.requests_attempted) && Number.isFinite(summary.request_budget)
+        ? summary.requests_attempted + "/" + summary.request_budget + " requêtes utilisées" : null;
+      meta = provider + (source.matched_events ?? 0) + " matchs associés · " + (source.events_with_odds ?? 0)
+        + " avec cotes · " + (source.unmatched ?? 0) + " non associés"
+        + (markets ? " · " + markets : "") + (anomalies ? " · " + anomalies : "")
+        + (requests ? " · " + requests : "") + " · " + (source.errors ?? 0) + " erreur(s)";
+    }
+    document.getElementById(prefix + "StatusMeta").textContent = meta + " · " + age + " · " + lastSuccess;
+  };
+  button.addEventListener("click", () => {
+    const opening = button.getAttribute("aria-expanded") !== "true";
+    button.setAttribute("aria-expanded", String(opening));
+    details.hidden = !opening;
+  });
+  document.addEventListener("click", (event) => {
+    if (!details.hidden && !details.contains(event.target) && !button.contains(event.target)) {
+      details.hidden = true;
+      button.setAttribute("aria-expanded", "false");
+    }
+  });
+  fetch(STATUS_URL + "?v=" + Date.now(), {cache:"no-store"})
+    .then((response) => { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); })
+    .then((data) => {
+      const state = ["ok", "warning", "error"].includes(data.status) ? data.status : "warning";
+      button.classList.remove("status-loading");
+      button.classList.add("status-" + state);
+      const words = state === "ok" ? "OK" : state === "error" ? "Erreur" : "Vigilance";
+      symbol.textContent = state === "ok" ? "✓" : state === "error" ? "×" : "!";
+      label.textContent = words;
+      button.setAttribute("aria-label", "État des sources : " + words + ". Ouvrir le détail");
+      updated.textContent = "Contrôle : " + formatDate(data.generated_at_utc);
+      setSource("history", data.history);
+      setSource("odds", data.odds);
+    })
+    .catch(() => {
+      button.classList.remove("status-loading");
+      button.classList.add("status-error");
+      symbol.textContent = "×";
+      label.textContent = "Erreur";
+      button.setAttribute("aria-label", "État des sources : erreur. Ouvrir le détail");
+      updated.textContent = "Fichier de statut inaccessible";
+      setSource("history", null);
+      setSource("odds", null);
+    });
+})();
+</script>
+
+
+<script>
+(() => {
+  "use strict";
+  const DATA_URL = "./data/standings.json";
+  const select = document.getElementById("competitionSelect");
+  const seasonNode = document.getElementById("currentSeason");
+  const content = document.getElementById("standingsContent");
+  const updatedNode = document.getElementById("standingsUpdated");
+  const safe = (value) => String(value ?? "").replace(/[&<>"']/g, (char) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
+  const number = (value) => Number.isFinite(Number(value)) ? Number(value) : "—";
+  const showEmpty = (title, message, isError=false) => {
+    content.innerHTML = '<div class="standings-empty"><strong'+(isError?' class="standings-error"':'')+'>'+safe(title)+'</strong><p>'+safe(message)+'</p></div>';
+  };
+  const renderCompetition = (competition) => {
+    const rows = Array.isArray(competition.standings) ? competition.standings : [];
+    if (!rows.length) {
+      showEmpty("Classement indisponible", "Aucune ligne de classement n’est publiée pour cette compétition et cette saison.");
+      return;
+    }
+    const body = rows.map((row, index) => {
+      const team = row.team || {};
+      const teamName = team.name || row.team_name || row.name || "Équipe inconnue";
+      const logo = team.logo || row.team_logo || "";
+      const position = number(row.position ?? row.rank ?? index + 1);
+      const played = number(row.played ?? row.matches_played);
+      const wins = number(row.wins);
+      const draws = number(row.draws);
+      const losses = number(row.losses);
+      const scored = number(row.goals_for ?? row.goals_scored);
+      const conceded = number(row.goals_against ?? row.goals_conceded);
+      const diff = number(row.goal_difference ?? (Number.isFinite(Number(scored)) && Number.isFinite(Number(conceded)) ? Number(scored)-Number(conceded) : NaN));
+      const points = number(row.points);
+      const initials = teamName.trim().split(/\s+/).slice(0,2).map(part=>part[0]||"").join("").toUpperCase();
+      const diffClass = Number(diff) > 0 ? "standings-diff-positive" : Number(diff) < 0 ? "standings-diff-negative" : "";
+      const logoHtml = logo ? '<img src="'+safe(logo)+'" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement(\'span\'),{className:\'standings-team-fallback\',textContent:'+JSON.stringify(initials)+'}))">' : '<span class="standings-team-fallback">'+safe(initials)+'</span>';
+      return '<tr><td><span class="standings-position">'+safe(position)+'</span></td><td class="team-cell"><span class="standings-team">'+logoHtml+'<span>'+safe(teamName)+'</span></span></td><td>'+safe(played)+'</td><td>'+safe(wins)+'</td><td>'+safe(draws)+'</td><td>'+safe(losses)+'</td><td>'+safe(scored)+'</td><td>'+safe(conceded)+'</td><td class="'+diffClass+'">'+(Number(diff)>0?"+":"")+safe(diff)+'</td><td class="standings-points">'+safe(points)+'</td></tr>';
+    }).join("");
+    content.innerHTML = '<div class="standings-table-wrap"><table class="standings-table"><thead><tr><th>Position</th><th>Équipe</th><th>Matchs joués</th><th>Victoires</th><th>Matchs nuls</th><th>Défaites</th><th>Buts marqués</th><th>Buts encaissés</th><th>Différence de buts</th><th>Points</th></tr></thead><tbody>'+body+'</tbody></table></div>';
+  };
+  fetch(DATA_URL + "?v=" + Date.now(), {cache:"no-store"})
+    .then(response => { if (!response.ok) throw new Error("Fichier de classement absent (HTTP "+response.status+")"); return response.json(); })
+    .then(data => {
+      const competitions = Array.isArray(data.competitions) ? data.competitions.filter(item=>item && item.id && item.name) : [];
+      if (data.season) seasonNode.textContent = data.season;
+      if (data.updated_at) {
+        const date = new Date(data.updated_at);
+        updatedNode.textContent = Number.isNaN(date.getTime()) ? "Mise à jour : date inconnue" : "Mis à jour le " + date.toLocaleString("fr-FR",{dateStyle:"short",timeStyle:"short"});
+      } else updatedNode.textContent = "Mise à jour non renseignée";
+      if (!competitions.length) {
+        select.innerHTML = '<option value="">Aucune compétition disponible</option>';
+        select.disabled = true;
+        showEmpty("Aucun classement disponible", "Le fichier de données est présent, mais ne contient aucune compétition avec un classement exploitable.");
+        return;
+      }
+      select.innerHTML = competitions.map(item=>'<option value="'+safe(item.id)+'">'+safe(item.name)+'</option>').join("");
+      select.disabled = false;
+      const renderSelected = () => {
+        const selected = competitions.find(item=>String(item.id)===select.value);
+        if (!selected) return;
+        seasonNode.textContent = selected.season || data.season || "Non renseignée";
+        renderCompetition(selected);
+      };
+      select.addEventListener("change", renderSelected);
+      renderSelected();
+    })
+    .catch(error => {
+      select.innerHTML = '<option value="">Compétitions indisponibles</option>';
+      select.disabled = true;
+      seasonNode.textContent = "Non disponible";
+      updatedNode.textContent = "Données de classement non publiées";
+      showEmpty("Classement momentanément indisponible", "Aucun fichier data/standings.json n’est actuellement publié sur le site. Le tableau n’affiche volontairement aucune statistique fictive. Le moteur doit d’abord exporter les classements réels.", true);
+    });
+})();
+</script>
+</body>
+</html>
