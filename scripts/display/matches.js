@@ -1,5 +1,5 @@
 /**
- * Affiche les prochains matchs depuis le fichier public agrégé par le moteur V2.
+ * Affiche tous les matchs futurs depuis le fichier public agrégé par le moteur V2.
  * Les dates sources sont UTC ; l'affichage est converti en heure de Paris.
  */
 (() => {
@@ -74,14 +74,17 @@
     })
     .then((matches) => {
       if (!Array.isArray(matches)) throw new Error("Format de données inattendu");
+
+      const now = Date.now();
       const upcoming = matches
         .filter((match) => match && match.match_category === "future" && match.status !== "cancelled")
-        .filter((match) => match.home_team && match.away_team && match.kickoff_utc)
-        .sort((a, b) => Date.parse(a.kickoff_utc) - Date.parse(b.kickoff_utc));
+        .filter((match) => match.home_team && match.away_team)
+        .map((match) => ({ match, kickoff: Date.parse(match.kickoff_utc) }))
+        .filter((entry) => Number.isFinite(entry.kickoff) && entry.kickoff > now)
+        .sort((a, b) => a.kickoff - b.kickoff);
 
       list.replaceChildren();
-      const nextMatches = upcoming.slice(0, 40);
-      nextMatches.forEach((match) => {
+      upcoming.forEach(({ match }) => {
         const card = renderMatch(match);
         if (card) list.appendChild(card);
       });
