@@ -103,7 +103,7 @@ main{max-width:1900px;margin:0 auto;padding:15px 18px 24px}
 .source-status-indicator.status-ok{background:#08d46b;box-shadow:0 0 10px #08d46b55}
 .source-status-indicator.status-warning{background:#f0a52b;box-shadow:0 0 9px #f0a52b55}
 .source-status-indicator.status-error{background:#ef4444;box-shadow:0 0 9px #ef444455}
-.status-chevron{font-size:14px;line-height:1;opacity:.85;color:currentColor}
+.status-chevron{display:inline-flex;align-items:center;justify-content:center;width:14px;height:19px;flex:0 0 14px;font-size:17px;line-height:1;opacity:.85;color:currentColor;transform:translateY(-1px)}
 .source-status-details{position:absolute;z-index:20;right:18px;top:calc(100% - 2px);width:min(430px,calc(100vw - 24px));padding:15px;background:#fff;color:#0a1b46;border:1px solid #dce6f1;border-radius:12px;box-shadow:0 12px 35px #142b4530}
 .source-status-heading{display:flex;justify-content:space-between;gap:12px;align-items:center;font-weight:750;font-size:13px;margin-bottom:13px}
 .source-status-heading span{font-size:10px;font-weight:500;color:#71839a;text-align:right}
@@ -115,6 +115,26 @@ main{max-width:1900px;margin:0 auto;padding:15px 18px 24px}
 .source-status-footnote{border-top:1px solid #edf1f6;padding-top:10px;margin-top:4px;color:#71839a;font-size:10px;line-height:1.5}
 @media(max-width:650px){.source-status-details{right:8px;top:calc(100% - 2px)}.api-status{max-width:100%;min-width:0}}
 
+/* Mobile header: keep the complete brand size and align the status chevron */
+@media(max-width:650px){
+ .brand{min-width:max-content;flex-shrink:0;gap:7px}
+ .brand-logo{width:42px;height:42px;flex:0 0 42px}
+ .brand-name{font-size:25px;letter-spacing:-.8px}
+ .brand-sub{font-size:9px;letter-spacing:1px;line-height:1.5}
+ .api-status{align-items:center}
+ .status-chevron{width:14px;height:18px;font-size:17px;transform:translateY(-1px)}
+}
+@media(max-width:420px){
+ .topbar{grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto auto}
+ .brand{grid-column:1;grid-row:1;justify-self:start}
+ .api-status{grid-column:1;grid-row:2;justify-self:start}
+ .nav{grid-column:1;grid-row:3;margin-top:0}
+}
+@media(max-width:360px){
+ .brand-name{font-size:25px}
+ .brand-logo{width:42px;height:42px;flex:0 0 42px}
+ .api-status{font-size:10px}
+}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
