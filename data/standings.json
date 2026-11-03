@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-03T19:37:36.111667Z",
-  "updated_at": "2026-11-03T19:37:36.111667Z",
+  "generated_at": "2026-11-03T20:18:39.565192Z",
+  "updated_at": "2026-11-03T20:18:39.565192Z",
   "season": null,
   "competitions": [
     {
@@ -2668,6 +2668,20 @@
           "position": 4
         },
         {
+          "team_id": "t_1TAfIz",
+          "team_name": "Sporting CP",
+          "team_logo": "https://cdn.pitchapi.dev/images/teams/5817bbd34cd3f72b924b6fe60740c7176bc383aa030a4d10832bffab27318dd9.webp",
+          "played": 4,
+          "wins": 3,
+          "draws": 0,
+          "losses": 1,
+          "goals_for": 8,
+          "goals_against": 4,
+          "points": 9,
+          "goal_difference": 4,
+          "position": 5
+        },
+        {
           "team_id": "t_0HSzvM",
           "team_name": "Real Betis",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/3032d6554f9f217984830cb35b054bd116c0546d5f31686fe446efafe48e79e1.webp",
@@ -2679,20 +2693,6 @@
           "goals_against": 4,
           "points": 9,
           "goal_difference": 3,
-          "position": 5
-        },
-        {
-          "team_id": "t_0iJNOA",
-          "team_name": "VfB Stuttgart",
-          "team_logo": "https://cdn.pitchapi.dev/images/teams/3e4064e2cf85702db11b273fb3d69d3bad241733eba932255961f48a2a08b452.webp",
-          "played": 3,
-          "wins": 2,
-          "draws": 1,
-          "losses": 0,
-          "goals_for": 7,
-          "goals_against": 2,
-          "points": 7,
-          "goal_difference": 5,
           "position": 6
         },
         {
@@ -2710,6 +2710,20 @@
           "position": 7
         },
         {
+          "team_id": "t_0iJNOA",
+          "team_name": "VfB Stuttgart",
+          "team_logo": "https://cdn.pitchapi.dev/images/teams/3e4064e2cf85702db11b273fb3d69d3bad241733eba932255961f48a2a08b452.webp",
+          "played": 4,
+          "wins": 2,
+          "draws": 1,
+          "losses": 1,
+          "goals_for": 7,
+          "goals_against": 4,
+          "points": 7,
+          "goal_difference": 3,
+          "position": 8
+        },
+        {
           "team_id": "t_32jSEF",
           "team_name": "Barcelona",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/71881ba9f1d678143d4d2b88feab251ce8a840eca4c46768e756e73e5170687c.webp",
@@ -2721,7 +2735,7 @@
           "goals_against": 6,
           "points": 6,
           "goal_difference": 5,
-          "position": 8
+          "position": 9
         },
         {
           "team_id": "t_0oXTvZ",
@@ -2735,7 +2749,7 @@
           "goals_against": 5,
           "points": 6,
           "goal_difference": 5,
-          "position": 9
+          "position": 10
         },
         {
           "team_id": "t_0UCNPX",
@@ -2749,7 +2763,7 @@
           "goals_against": 5,
           "points": 6,
           "goal_difference": 4,
-          "position": 10
+          "position": 11
         },
         {
           "team_id": "t_1mTmMO",
@@ -2761,20 +2775,6 @@
           "losses": 1,
           "goals_for": 9,
           "goals_against": 6,
-          "points": 6,
-          "goal_difference": 3,
-          "position": 11
-        },
-        {
-          "team_id": "t_1TAfIz",
-          "team_name": "Sporting CP",
-          "team_logo": "https://cdn.pitchapi.dev/images/teams/5817bbd34cd3f72b924b6fe60740c7176bc383aa030a4d10832bffab27318dd9.webp",
-          "played": 3,
-          "wins": 2,
-          "draws": 0,
-          "losses": 1,
-          "goals_for": 7,
-          "goals_against": 4,
           "points": 6,
           "goal_difference": 3,
           "position": 12
@@ -2794,6 +2794,20 @@
           "position": 13
         },
         {
+          "team_id": "t_15TWxO",
+          "team_name": "Galatasaray",
+          "team_logo": "https://cdn.pitchapi.dev/images/teams/b2f762b5bacdd581c3d182ca109615814151ee90e37749cb276d5a9bda88b13a.webp",
+          "played": 4,
+          "wins": 2,
+          "draws": 0,
+          "losses": 2,
+          "goals_for": 8,
+          "goals_against": 9,
+          "points": 6,
+          "goal_difference": -1,
+          "position": 14
+        },
+        {
           "team_id": "t_1cpjqO",
           "team_name": "Bayern München",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/1e2afd379a7d354c930f790c1f9ab0c2b50654cf4d47f20ffb269b8cfe309bca.webp",
@@ -2805,7 +2819,7 @@
           "goals_against": 5,
           "points": 5,
           "goal_difference": 5,
-          "position": 14
+          "position": 15
         },
         {
           "team_id": "t_0RhqmW",
@@ -2819,7 +2833,7 @@
           "goals_against": 5,
           "points": 4,
           "goal_difference": 3,
-          "position": 15
+          "position": 16
         },
         {
           "team_id": "t_3NIiXl",
@@ -2833,21 +2847,21 @@
           "goals_against": 3,
           "points": 4,
           "goal_difference": 1,
-          "position": 16
+          "position": 17
         },
         {
           "team_id": "t_4Wrrym",
           "team_name": "Shakhtar Donetsk",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/457b04795e1905f9d7ca7e967d13a8c19883a168ff968db24b9023334b4254d2.webp",
-          "played": 3,
+          "played": 4,
           "wins": 1,
           "draws": 1,
-          "losses": 1,
+          "losses": 2,
           "goals_for": 4,
-          "goals_against": 3,
+          "goals_against": 4,
           "points": 4,
-          "goal_difference": 1,
-          "position": 17
+          "goal_difference": 0,
+          "position": 18
         },
         {
           "team_id": "t_1jOgDP",
@@ -2861,7 +2875,7 @@
           "goals_against": 2,
           "points": 4,
           "goal_difference": 0,
-          "position": 18
+          "position": 19
         },
         {
           "team_id": "t_4SV4jg",
@@ -2875,7 +2889,7 @@
           "goals_against": 8,
           "points": 3,
           "goal_difference": 0,
-          "position": 19
+          "position": 20
         },
         {
           "team_id": "t_3CPHHF",
@@ -2889,7 +2903,7 @@
           "goals_against": 6,
           "points": 3,
           "goal_difference": -1,
-          "position": 20
+          "position": 21
         },
         {
           "team_id": "t_2I313i",
@@ -2903,7 +2917,7 @@
           "goals_against": 6,
           "points": 3,
           "goal_difference": -1,
-          "position": 21
+          "position": 22
         },
         {
           "team_id": "t_2toJRF",
@@ -2917,20 +2931,6 @@
           "goals_against": 7,
           "points": 3,
           "goal_difference": -2,
-          "position": 22
-        },
-        {
-          "team_id": "t_15TWxO",
-          "team_name": "Galatasaray",
-          "team_logo": "https://cdn.pitchapi.dev/images/teams/b2f762b5bacdd581c3d182ca109615814151ee90e37749cb276d5a9bda88b13a.webp",
-          "played": 3,
-          "wins": 1,
-          "draws": 0,
-          "losses": 2,
-          "goals_for": 6,
-          "goals_against": 9,
-          "points": 3,
-          "goal_difference": -3,
           "position": 23
         },
         {
@@ -3116,7 +3116,7 @@
           "position": 36
         }
       ],
-      "matches_counted": 54
+      "matches_counted": 56
     },
     {
       "id": "uefa-europa-league",
