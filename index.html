@@ -85,16 +85,25 @@ main{max-width:1900px;margin:0 auto;padding:15px 18px 24px}
 
 /* Live health indicator for the two upstream data collections */
 .topbar{position:relative}
-.api-status{appearance:none;font-family:inherit;cursor:pointer}
-.api-status .dot{background:#9aa8b5;box-shadow:none;flex:0 0 auto}
-.api-status.status-ok{border-color:#087f55;background:#006a4626;color:#c7f7dd}
-.api-status.status-ok .dot,.source-status-indicator.status-ok{background:#08d46b;box-shadow:0 0 10px #08d46b55}
-.api-status.status-warning{border-color:#b7791f;background:#9a67001f;color:#ffdf9a}
-.api-status.status-warning .dot,.source-status-indicator.status-warning{background:#f0a52b;box-shadow:0 0 9px #f0a52b55}
-.api-status.status-error{border-color:#c24141;background:#a51d1d24;color:#ffc1c1}
-.api-status.status-error .dot,.source-status-indicator.status-error{background:#ef4444;box-shadow:0 0 9px #ef444455}
-.api-status.status-loading .dot,.source-status-indicator.status-loading{background:#9aa8b5}
-.status-chevron{font-size:15px;line-height:1;opacity:.8}
+.api-status{appearance:none;font-family:inherit;cursor:pointer;gap:8px;padding:7px 12px;border-radius:22px;font-size:13px;line-height:1.2;transition:border-color .15s,background .15s}
+.api-status:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+.status-symbol{width:19px;height:19px;display:inline-flex;align-items:center;justify-content:center;flex:0 0 19px;border-radius:50%;font-size:13px;font-weight:900;line-height:1}
+.api-status-label{white-space:nowrap;color:#f8fafc;font-weight:650}
+.api-status-label strong{font-weight:800}
+.api-status.status-ok{border-color:#08b968;background:#063d2b;color:#08e080}
+.api-status.status-ok .status-symbol{background:#08c875;color:#062c20}
+.api-status.status-ok .api-status-label strong{color:#24e58b}
+.api-status.status-warning{border-color:#e5a51a;background:#49340b;color:#ffd15a}
+.api-status.status-warning .status-symbol{background:#f0ad24;color:#382500}
+.api-status.status-warning .api-status-label strong{color:#ffd34f}
+.api-status.status-error{border-color:#ef5350;background:#481c22;color:#ff7774}
+.api-status.status-error .status-symbol{background:#ef5350;color:#fff}
+.api-status.status-error .api-status-label strong{color:#ff7774}
+.api-status.status-loading .status-symbol,.source-status-indicator.status-loading{background:#718096;color:#fff}
+.source-status-indicator.status-ok{background:#08d46b;box-shadow:0 0 10px #08d46b55}
+.source-status-indicator.status-warning{background:#f0a52b;box-shadow:0 0 9px #f0a52b55}
+.source-status-indicator.status-error{background:#ef4444;box-shadow:0 0 9px #ef444455}
+.status-chevron{font-size:14px;line-height:1;opacity:.85;color:currentColor}
 .source-status-details{position:absolute;z-index:20;right:18px;top:calc(100% - 2px);width:min(430px,calc(100vw - 24px));padding:15px;background:#fff;color:#0a1b46;border:1px solid #dce6f1;border-radius:12px;box-shadow:0 12px 35px #142b4530}
 .source-status-heading{display:flex;justify-content:space-between;gap:12px;align-items:center;font-weight:750;font-size:13px;margin-bottom:13px}
 .source-status-heading span{font-size:10px;font-weight:500;color:#71839a;text-align:right}
@@ -116,8 +125,8 @@ main{max-width:1900px;margin:0 auto;padding:15px 18px 24px}
 <span class="brand-wordmark"><span class="brand-name">PronoFoot <em>AI</em></span><br><span class="brand-sub">FOOTBALL PREDICTION LAB</span></span>
 </a>
 <nav class="nav" aria-label="Navigation principale"><a class="active" href="./index.html" aria-current="page"><img class="nav-icon" src="./assets/icon-matches.svg" alt="" aria-hidden="true">Matchs à venir</a><a href="./history.html"><img class="nav-icon" src="./assets/icon-history.svg" alt="" aria-hidden="true">Historique</a><a href="./classements.html"><img class="nav-icon" src="./assets/icon-ranking.svg" alt="" aria-hidden="true">Classement</a></nav>
-<button class="api-status status-loading" id="apiStatus" type="button" aria-expanded="false" aria-controls="sourceStatusDetails">
-<span class="dot" aria-hidden="true"></span><span id="apiStatusLabel">Sources : <strong>Vérification…</strong></span><span class="status-chevron" aria-hidden="true">⌄</span>
+<button class="api-status status-loading" id="apiStatus" type="button" aria-expanded="false" aria-controls="sourceStatusDetails" aria-label="État des sources : vérification en cours">
+<span class="status-symbol" id="apiStatusSymbol" aria-hidden="true">…</span><span class="api-status-label">Sources : <strong id="apiStatusLabel">…</strong></span><span class="status-chevron" aria-hidden="true">⌄</span>
 </button>
 <div class="source-status-details" id="sourceStatusDetails" hidden>
 <div class="source-status-heading">État des sources de données <span id="statusUpdatedAt">Chargement…</span></div>
@@ -138,6 +147,7 @@ main{max-width:1900px;margin:0 auto;padding:15px 18px 24px}
   const button = document.getElementById("apiStatus");
   const details = document.getElementById("sourceStatusDetails");
   const label = document.getElementById("apiStatusLabel");
+  const symbol = document.getElementById("apiStatusSymbol");
   const updated = document.getElementById("statusUpdatedAt");
   const statusText = (source) => {
     if (!source) return "Statut non disponible";
@@ -202,17 +212,20 @@ main{max-width:1900px;margin:0 auto;padding:15px 18px 24px}
       const state = ["ok", "warning", "error"].includes(data.status) ? data.status : "warning";
       button.classList.remove("status-loading");
       button.classList.add("status-" + state);
-      const words = state === "ok" ? "Sources à jour" : state === "error" ? "Sources indisponibles" : "Données à vérifier";
-      label.innerHTML = "Sources : <strong></strong>";
-      label.querySelector("strong").textContent = words;
+      const words = state === "ok" ? "OK" : state === "error" ? "Erreur" : "Vigilance";
+      symbol.textContent = state === "ok" ? "✓" : state === "error" ? "×" : "!";
+      label.textContent = words;
+      button.setAttribute("aria-label", "État des sources : " + words + ". Ouvrir le détail");
       updated.textContent = "Contrôle : " + formatDate(data.generated_at_utc);
       setSource("history", data.history);
       setSource("odds", data.odds);
     })
     .catch(() => {
       button.classList.remove("status-loading");
-      button.classList.add("status-warning");
-      label.innerHTML = "Sources : <strong>Statut indisponible</strong>";
+      button.classList.add("status-error");
+      symbol.textContent = "×";
+      label.textContent = "Erreur";
+      button.setAttribute("aria-label", "État des sources : erreur. Ouvrir le détail");
       updated.textContent = "Fichier de statut inaccessible";
       setSource("history", null);
       setSource("odds", null);
