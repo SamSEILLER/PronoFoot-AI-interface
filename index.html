@@ -170,6 +170,22 @@ main{max-width:1900px;margin:0 auto;padding:15px 18px 24px}
  .match-kickoff{font-size:12px}
  .match-competition{font-size:10px}
 }
+
+/* Filtres des matchs à venir */
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.match-filters{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:0 0 12px;padding:10px 12px;background:#ffffffd9;border:1px solid var(--line);border-radius:11px;box-shadow:var(--shadow)}
+.match-date-filters{display:flex;align-items:center;gap:9px;flex-wrap:wrap;min-width:0}
+.match-filters-label{font-weight:750;color:var(--ink);white-space:nowrap;margin-right:3px}
+.match-filter-button{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:0 16px;border:1px solid #dce6f1;border-radius:9px;background:#fff;color:var(--ink);font-weight:700;white-space:nowrap;transition:background .15s,border-color .15s,color .15s}
+.match-filter-button:hover{border-color:#9db5ce;background:#f6f9fc}
+.match-filter-button.is-active{background:linear-gradient(110deg,#08bd70,#159b8e);border-color:transparent;color:#fff;box-shadow:0 3px 8px #08a96b25}
+.match-team-search{display:flex;align-items:center;flex:0 1 260px;min-width:190px}
+.match-team-search input{width:100%;height:42px;padding:0 13px;border:1px solid #dce6f1;border-radius:9px;background:#fff;color:var(--ink);outline:none}
+.match-team-search input:focus{border-color:#159b8e;box-shadow:0 0 0 3px #159b8e18}
+.match-filter-count{color:var(--muted);font-size:11px;padding:0 2px}
+@media(max-width:760px){.match-filters{align-items:stretch;flex-direction:column}.match-team-search{flex:initial;min-width:0;width:100%}}
+@media(max-width:480px){.match-filters{padding:10px;gap:10px}.match-date-filters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.match-filters-label{grid-column:1/-1}.match-filter-button{min-height:38px;padding:0 5px;font-size:11px}.match-team-search input{height:40px}}
+
 </style>
 </head>
 <body>
@@ -189,6 +205,20 @@ main{max-width:1900px;margin:0 auto;padding:15px 18px 24px}
 <div class="source-status-footnote">Vert : deux collectes récentes sans anomalie · Orange : avertissement ou données de plus de 24 h · Rouge : les deux collectes sont en échec et anciennes.</div>
 </div>
 </header>
+
+<div class="match-filters" role="region" aria-label="Filtres des matchs">
+  <div class="match-date-filters" role="group" aria-label="Filtrer par date">
+    <span class="match-filters-label">Filtres par date :</span>
+    <button class="match-filter-button is-active" type="button" data-date-filter="today" aria-pressed="true">Aujourd'hui</button>
+    <button class="match-filter-button" type="button" data-date-filter="tomorrow" aria-pressed="false">Demain</button>
+    <button class="match-filter-button" type="button" data-date-filter="all" aria-pressed="false">Tous les matchs</button>
+  </div>
+  <label class="match-team-search">
+    <span class="visually-hidden">Rechercher une équipe</span>
+    <input id="matchTeamSearch" type="search" placeholder="Rechercher une équipe…" autocomplete="off">
+  </label>
+</div>
+
 <main><div class="workspace" aria-label="Espace de travail principal">
 <section class="panel left-panel" aria-labelledby="upcomingMatchesTitle">
 <div class="matches-panel-heading">
