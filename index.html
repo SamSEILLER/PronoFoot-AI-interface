@@ -237,12 +237,13 @@ main{display:flex;flex:1 1 auto;flex-direction:column;min-height:0;padding:15px 
 /* Arrondis uniformes hors header */
 body *:not(.topbar):not(.topbar *){border-radius:10px!important}
 
-/* Contenu du header, espace de travail et footer alignés sur 1600px */
+/* Contenu du header, zone principale et footer alignés sur 1600px */
 .topbar{
  padding-left:max(20px,calc((100% - 1600px)/2 + 20px));
  padding-right:max(20px,calc((100% - 1600px)/2 + 20px));
 }
-.workspace{align-self:center;width:min(100%,1600px);max-width:1600px;margin-left:auto;margin-right:auto}
+main{align-self:center;width:min(100%,1600px);max-width:1600px;margin-left:auto;margin-right:auto}
+.workspace{align-self:stretch;width:100%;max-width:none;margin-left:0;margin-right:0}
 .footer{align-self:center;width:min(100%,1600px);max-width:1600px}
 
 @media(max-width:1100px){
