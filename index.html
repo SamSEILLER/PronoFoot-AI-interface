@@ -368,6 +368,31 @@ main{
  .match-stats-button{grid-column:4;grid-row:2;min-width:0;padding:6px 7px;font-size:12px}
 }
 
+
+/* Répartition de l'espace : listing 60 %, sidebar 40 % */
+.workspace{
+  display:grid!important;
+  grid-template-columns:minmax(0,3fr) minmax(0,2fr)!important;
+  gap:12px!important;
+  align-items:stretch;
+  width:100%;
+}
+.matches-list-section{
+  min-width:0;
+  padding:0!important;
+  background:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+}
+.right-panel{
+  display:block;
+  min-width:0;
+}
+@media(max-width:1120px){
+  .workspace{grid-template-columns:minmax(0,1fr)!important}
+}
+
 </style>
 </head>
 <body>
@@ -396,10 +421,13 @@ main{
   <button class="filter-btn" type="button" data-date-filter="days-4-6" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M16 3v4M8 3v4M3 10h18M6 14h12M6 17h12"></path></svg><span class="filter-copy"><span class="filter-title" data-filter-title="days-4-6"></span><span class="filter-dates" data-filter-dates="days-4-6"></span></span></button>
   <input class="search" id="matchTeamSearch" type="search" placeholder="⌕  Rechercher une équipe…" aria-label="Rechercher une équipe" autocomplete="off">
 </section>
-<section class="matches-list-section" aria-label="Liste des matchs de la période">
+<div class="workspace" aria-label="Espace de travail principal">
+<section class="left-panel matches-list-section" aria-label="Liste des matchs de la période">
 <div class="match-period-summary"><span class="match-count-icon" aria-hidden="true">▦</span><strong id="matchPeriodCount" aria-live="polite">0 match</strong></div>
 <div class="upcoming-matches-list" id="upcomingMatchesList" aria-live="polite"></div>
 </section>
+<aside class="panel right-panel" aria-label="Sidebar"></aside>
+</div>
 <template id="upcomingMatchTemplate">
 <article class="upcoming-match-card">
 <div class="match-meta">
