@@ -884,6 +884,18 @@ input,
   min-width:600px!important;
 }
 
+
+
+/* Très petits écrans : masquer les colonnes Matchs joués (MJ) et Différence (Diff.) */
+@media(max-width:600px){
+  .standings-table th:nth-child(3),
+  .standings-table td:nth-child(3),
+  .standings-table th:nth-child(9),
+  .standings-table td:nth-child(9){
+    display:none!important;
+  }
+}
+
 </style>
 </head>
 <body>
