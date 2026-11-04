@@ -619,6 +619,39 @@ input,
 /* Harmonisation des coins des liens de navigation */
 .nav a{border-radius:3px!important}
 
+/* Correctif prioritaire mobile : afficher les deux informations malgré les règles concurrentes */
+@media(max-width:700px){
+  #standingsUpdated{
+    display:block!important;
+    visibility:visible!important;
+    opacity:1!important;
+    position:static!important;
+    width:100%!important;
+    height:auto!important;
+    max-height:none!important;
+    min-height:16px!important;
+    overflow:visible!important;
+    clip:auto!important;
+    flex:0 0 auto!important;
+  }
+  .standings-title-row > .standings-season{
+    display:inline-flex!important;
+    visibility:visible!important;
+    opacity:1!important;
+    position:static!important;
+    width:auto!important;
+    height:auto!important;
+    max-height:none!important;
+    overflow:visible!important;
+    flex:0 0 auto!important;
+  }
+  .standings-title-row > .standings-season small,
+  .standings-title-row > .standings-season strong{
+    visibility:visible!important;
+    opacity:1!important;
+  }
+}
+
 </style>
 </head>
 <body>
