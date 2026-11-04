@@ -393,6 +393,62 @@ main{
   .workspace{grid-template-columns:minmax(0,1fr)!important}
 }
 
+
+/* Optimisation des lignes de matchs : colonnes proportionnées à la largeur réelle */
+.upcoming-match-card{
+  grid-template-columns:minmax(132px,.82fr) minmax(128px,.92fr) minmax(0,1.12fr) 42px minmax(0,1.12fr) 88px;
+  gap:10px;
+  min-height:88px;
+  padding:8px 12px 8px 14px;
+}
+.upcoming-match-card::before{
+  left:3px;
+  top:9px;
+  bottom:9px;
+  width:4px;
+}
+.match-meta{
+  min-height:70px;
+  padding:7px 10px;
+  border-right:1px solid #d5e2f3;
+}
+.match-kickoff{gap:4px}
+.match-kickoff .match-date{font-size:13px;white-space:nowrap}
+.match-kickoff .match-time{font-size:22px}
+.match-competition{gap:8px}
+.competition-mark{width:22px;flex:0 0 22px;font-size:21px}
+.competition-copy strong{font-size:12px;line-height:1.25}
+.competition-copy small{font-size:11px}
+.match-team{gap:8px}
+.match-team-logo{width:38px;height:38px;flex:0 0 38px}
+.match-team-name{
+  min-width:0;
+  font-size:15px;
+  line-height:1.22;
+  overflow-wrap:normal;
+  word-break:normal;
+  hyphens:auto;
+}
+.match-versus{padding:6px 9px;border-radius:8px;font-size:12px}
+.match-stats-button{min-width:80px;padding:8px 9px;border-radius:7px;font-size:13px;gap:6px}
+
+/* Sur les écrans intermédiaires, la liste passe au-dessus de la sidebar */
+@media(min-width:701px) and (max-width:1120px){
+  .upcoming-match-card{
+    grid-template-columns:minmax(145px,.8fr) minmax(150px,.95fr) minmax(0,1.2fr) 44px minmax(0,1.2fr) 90px;
+    gap:12px;
+    min-height:92px;
+    padding-right:14px;
+  }
+  .match-team-logo{width:40px;height:40px;flex-basis:40px}
+  .match-team-name{font-size:16px}
+  .competition-copy strong{font-size:13px}
+}
+@media(max-width:700px){
+  .upcoming-match-card{gap:7px 9px;min-height:0}
+  .match-team-name{font-size:12px;overflow-wrap:normal;word-break:normal}
+}
+
 </style>
 </head>
 <body>
