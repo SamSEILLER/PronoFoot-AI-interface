@@ -382,6 +382,72 @@ main{
  background:transparent;
 }
 .standings-table-wrap::-webkit-scrollbar-track-piece:end{background:#edf2f7}
+/* Lignes alternées permanentes et aucune forme arrondie dans le tableau */
+.standings-table,
+.standings-table *{border-radius:0!important}
+.standings-table tbody tr:nth-child(odd){background:#fff!important}
+.standings-table tbody tr:nth-child(even){background:#f7fafd!important}
+.standings-table tbody tr:hover{background:inherit!important}
+
+/* Barre de défilement dédiée : elle commence sous l'en-tête */
+.standings-table-wrap{scrollbar-width:none!important}
+.standings-table-wrap::-webkit-scrollbar{display:none!important;width:0!important;height:0!important}
+.standings-custom-scrollbar{
+ position:absolute;
+ z-index:4;
+ top:50px;
+ right:3px;
+ bottom:4px;
+ width:9px;
+ border-radius:8px!important;
+ background:rgba(224,233,242,.58);
+ opacity:0;
+ transition:opacity .2s ease;
+ touch-action:none;
+}
+#standingsContent:hover .standings-custom-scrollbar.is-scrollable,
+.standings-custom-scrollbar.is-scrollable{opacity:1}
+.standings-custom-scrollbar-thumb{
+ position:absolute;
+ top:0;
+ left:1px;
+ width:7px;
+ min-height:34px;
+ border-radius:8px!important;
+ background:linear-gradient(180deg,#9bb1c8,#718ba7);
+ box-shadow:0 1px 4px rgba(20,45,70,.18);
+ cursor:grab;
+ touch-action:none;
+}
+.standings-custom-scrollbar-thumb:active{cursor:grabbing;background:#526f90}
+
+/* Nouveau bouton retour en haut : pastille claire et flèche verte */
+.standings-scroll-top{
+ right:18px;
+ bottom:18px;
+ width:52px;
+ height:52px;
+ border:1px solid #d8e7df;
+ border-radius:50%!important;
+ background:#fff;
+ color:#078451;
+ font-size:31px;
+ font-family:Arial,sans-serif;
+ font-weight:800;
+ line-height:1;
+ box-shadow:0 5px 18px rgba(20,45,70,.2);
+}
+.standings-scroll-top:hover{
+ background:#078451;
+ color:#fff;
+ border-color:#078451;
+ box-shadow:0 7px 20px rgba(5,99,62,.28);
+}
+@media(max-width:650px){
+ .standings-custom-scrollbar{right:2px;width:7px;top:47px}
+ .standings-custom-scrollbar-thumb{width:5px}
+ .standings-scroll-top{right:12px;bottom:12px;width:46px;height:46px;font-size:28px}
+}
 </style>
 </head>
 <body>
@@ -549,12 +615,50 @@ main{
       const logoHtml = logo ? '<img src="'+safe(logo)+'" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement(\'span\'),{className:\'standings-team-fallback\',textContent:'+JSON.stringify(initials)+'}))">' : '<span class="standings-team-fallback">'+safe(initials)+'</span>';
       return '<tr><td><span class="standings-position">'+safe(position)+'</span></td><td class="team-cell"><span class="standings-team">'+logoHtml+'<span>'+safe(teamName)+'</span></span></td><td>'+safe(played)+'</td><td>'+safe(wins)+'</td><td>'+safe(draws)+'</td><td>'+safe(losses)+'</td><td>'+safe(scored)+'</td><td>'+safe(conceded)+'</td><td class="'+diffClass+'">'+(Number(diff)>0?"+":"")+safe(diff)+'</td><td class="standings-points">'+safe(points)+'</td></tr>';
     }).join("");
-    content.innerHTML = '<div class="standings-table-wrap" aria-label="Tableau du classement"><table class="standings-table"><thead><tr><th data-short="Pos.">Position</th><th data-short="Équipe">Équipe</th><th data-short="MJ">Matchs joués</th><th data-short="V">Victoires</th><th data-short="N">Matchs nuls</th><th data-short="D">Défaites</th><th data-short="BM">Buts marqués</th><th data-short="BC">Buts encaissés</th><th data-short="Diff.">Différence de buts</th><th data-short="Pts">Points</th></tr></thead><tbody>'+body+'</tbody></table></div><button type="button" class="standings-scroll-top" aria-label="Revenir en haut du classement">↑</button>';
+    content.innerHTML = '<div class="standings-table-wrap" aria-label="Tableau du classement"><table class="standings-table"><thead><tr><th data-short="Pos.">Position</th><th data-short="Équipe">Équipe</th><th data-short="MJ">Matchs joués</th><th data-short="V">Victoires</th><th data-short="N">Matchs nuls</th><th data-short="D">Défaites</th><th data-short="BM">Buts marqués</th><th data-short="BC">Buts encaissés</th><th data-short="Diff.">Différence de buts</th><th data-short="Pts">Points</th></tr></thead><tbody>'+body+'</tbody></table></div><div class="standings-custom-scrollbar" aria-hidden="true"><div class="standings-custom-scrollbar-thumb"></div></div><button type="button" class="standings-scroll-top" aria-label="Revenir en haut du classement">⌃</button>';
     const tableScroller = content.querySelector(".standings-table-wrap");
     const scrollTopButton = content.querySelector(".standings-scroll-top");
-    const updateScrollButton = () => scrollTopButton.classList.toggle("is-visible", tableScroller.scrollTop > 120);
-    tableScroller.addEventListener("scroll", updateScrollButton, {passive:true});
+    const customTrack = content.querySelector(".standings-custom-scrollbar");
+    const customThumb = content.querySelector(".standings-custom-scrollbar-thumb");
+    let dragStartY = 0;
+    let dragStartScroll = 0;
+    const updateCustomScrollbar = () => {
+      const viewport = tableScroller.clientHeight;
+      const total = tableScroller.scrollHeight;
+      const trackHeight = customTrack.clientHeight;
+      const thumbHeight = Math.max(34, trackHeight * viewport / total);
+      const maxThumbTravel = Math.max(0, trackHeight - thumbHeight);
+      const maxScroll = Math.max(0, total - viewport);
+      const thumbTop = maxScroll ? (tableScroller.scrollTop / maxScroll) * maxThumbTravel : 0;
+      customThumb.style.height = thumbHeight + "px";
+      customThumb.style.transform = "translateY(" + thumbTop + "px)";
+      customTrack.classList.toggle("is-scrollable", maxScroll > 0);
+      scrollTopButton.classList.toggle("is-visible", tableScroller.scrollTop > 120);
+    };
+    tableScroller.addEventListener("scroll", updateCustomScrollbar, {passive:true});
+    window.addEventListener("resize", updateCustomScrollbar);
+    customThumb.addEventListener("pointerdown", event => {
+      event.preventDefault();
+      dragStartY = event.clientY;
+      dragStartScroll = tableScroller.scrollTop;
+      customThumb.setPointerCapture(event.pointerId);
+    });
+    customThumb.addEventListener("pointermove", event => {
+      if (!customThumb.hasPointerCapture(event.pointerId)) return;
+      const trackHeight = customTrack.clientHeight;
+      const thumbHeight = customThumb.offsetHeight;
+      const maxTravel = Math.max(1, trackHeight - thumbHeight);
+      const maxScroll = Math.max(0, tableScroller.scrollHeight - tableScroller.clientHeight);
+      tableScroller.scrollTop = dragStartScroll + (event.clientY - dragStartY) * maxScroll / maxTravel;
+    });
+    customTrack.addEventListener("pointerdown", event => {
+      if (event.target === customThumb) return;
+      const rect = customTrack.getBoundingClientRect();
+      const ratio = Math.max(0, Math.min(1, (event.clientY - rect.top) / rect.height));
+      tableScroller.scrollTo({top: ratio * (tableScroller.scrollHeight - tableScroller.clientHeight),behavior:"smooth"});
+    });
     scrollTopButton.addEventListener("click", () => tableScroller.scrollTo({top:0,behavior:"smooth"}));
+    requestAnimationFrame(updateCustomScrollbar);
   };
   fetch(DATA_URL + "?v=" + Date.now(), {cache:"no-store"})
     .then(response => { if (!response.ok) throw new Error("Fichier de classement absent (HTTP "+response.status+")"); return response.json(); })
