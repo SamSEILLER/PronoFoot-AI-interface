@@ -506,6 +506,22 @@ input,
   border-radius:3px!important;
 }
 
+/* Correctif : les styles de l'en-tête sticky masquaient les abréviations mobiles */
+@media(max-width:650px){
+  .standings-table thead th{
+    font-size:0!important;
+  }
+  .standings-table thead th::after{
+    content:attr(data-short);
+    display:inline;
+    font-size:9px!important;
+    line-height:1.1;
+  }
+}
+@media(max-width:380px){
+  .standings-table thead th::after{font-size:8px!important}
+}
+
 </style>
 </head>
 <body>
