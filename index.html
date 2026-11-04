@@ -310,6 +310,64 @@ main{
   border-radius:4px!important;
 }
 
+
+/* Nouveau listing : lignes ouvertes, sans encadré global */
+.matches-list-section{width:100%;min-width:0}
+.match-period-summary{display:inline-flex;align-items:center;gap:12px;margin:0 0 16px;padding:9px 22px;border-radius:28px;background:#e5efff;color:#09275f}
+.match-count-icon{font-size:25px;line-height:1}
+.match-period-summary strong{font-size:19px;font-weight:800}
+.upcoming-matches-list{display:flex;flex-direction:column;gap:0;width:100%;min-width:0;overflow:visible}
+.upcoming-match-card{position:relative;display:grid;grid-template-columns:205px 220px minmax(0,1fr) 54px minmax(0,1fr) 112px;align-items:center;gap:16px;min-width:0;min-height:100px;padding:9px 16px 9px 3px;border:0;border-radius:0;box-shadow:none;background:#fff}
+.upcoming-match-card:nth-child(even){background:#f0f6ff}
+.upcoming-match-card::before{content:"";position:absolute;left:3px;top:8px;bottom:8px;width:6px;border-radius:4px;background:#285c9c}
+.upcoming-match-card:first-child::before{background:#259b70}
+.match-meta{display:flex;align-items:center;justify-content:center;min-height:82px;margin-left:0;padding:8px 12px 8px 18px;border-right:2px solid #cbdcf5;background:#f1f6fd;text-align:center}
+.match-kickoff{display:flex;flex-direction:column;gap:3px;font-size:17px;font-weight:800;line-height:1.25;color:#071d49;font-variant-numeric:tabular-nums;white-space:normal}
+.match-kickoff .match-date{font-size:15px}
+.match-kickoff .match-time{font-size:25px}
+.match-competition{display:flex;align-items:center;gap:12px;min-width:0;color:#10264f}
+.competition-mark{display:flex;align-items:center;justify-content:center;width:28px;height:34px;color:#e87527;font-size:25px}
+.competition-copy{display:flex;flex-direction:column;gap:3px;min-width:0}
+.competition-copy strong{font-size:14px;font-weight:850;text-transform:uppercase}
+.competition-copy small{font-size:14px;color:#52739e;line-height:1.3}
+.match-team{display:flex;align-items:center;gap:12px;min-width:0}
+.match-team-away{justify-content:flex-start}
+.match-team-logo{width:46px;height:46px;flex:0 0 46px;object-fit:contain}
+.match-team-name{font-size:18px;font-weight:800;line-height:1.2;color:#071d49;overflow-wrap:anywhere}
+.match-versus{justify-self:center;padding:7px 13px;border-radius:10px;background:#e5effb;color:#12366d;font-size:15px;font-weight:850}
+.match-stats-button{justify-self:end;display:flex;align-items:center;justify-content:center;gap:8px;min-width:104px;padding:10px 12px;border:1.5px solid #8eafe3;border-radius:11px;background:transparent;color:#12366d;font-size:17px;font-weight:800}
+.match-stats-button:disabled{cursor:not-allowed;opacity:1}
+@media(max-width:1050px){
+ .upcoming-match-card{grid-template-columns:170px 170px minmax(0,1fr) 42px minmax(0,1fr) 88px;gap:10px;padding-right:10px}
+ .match-kickoff .match-date{font-size:13px}
+ .match-kickoff .match-time{font-size:22px}
+ .match-team-logo{width:36px;height:36px;flex-basis:36px}
+ .match-team-name{font-size:15px}
+ .competition-copy small{font-size:12px}
+ .match-stats-button{min-width:82px;font-size:14px;padding:8px}
+}
+@media(max-width:700px){
+ .match-period-summary{margin-bottom:10px;padding:7px 15px}
+ .match-period-summary strong{font-size:16px}
+ .upcoming-match-card{grid-template-columns: minmax(0,1fr) 42px minmax(0,1fr) 76px;gap:7px 9px;min-height:0;padding:10px 8px 10px 12px}
+ .upcoming-match-card::before{left:2px;top:7px;bottom:7px;width:4px}
+ .match-meta{grid-column:1/3;grid-row:1;justify-content:flex-start;min-height:0;margin-left:0;padding:2px 0 4px 5px;border:0;background:transparent;text-align:left}
+ .match-kickoff{flex-direction:row;align-items:baseline;gap:8px;font-size:12px}
+ .match-kickoff .match-date{font-size:12px}
+ .match-kickoff .match-time{font-size:15px}
+ .match-competition{grid-column:3/5;grid-row:1;justify-content:flex-end;gap:5px}
+ .competition-mark{width:18px;font-size:17px}
+ .competition-copy strong{font-size:10px}
+ .competition-copy small{font-size:10px}
+ .match-team-home{grid-column:1;grid-row:2}
+ .match-versus{grid-column:2;grid-row:2;padding:5px 7px;font-size:11px}
+ .match-team-away{grid-column:3;grid-row:2}
+ .match-team-logo{width:27px;height:27px;flex-basis:27px}
+ .match-team{gap:5px}
+ .match-team-name{font-size:12px}
+ .match-stats-button{grid-column:4;grid-row:2;min-width:0;padding:6px 7px;font-size:12px}
+}
+
 </style>
 </head>
 <body>
@@ -338,20 +396,16 @@ main{
   <button class="filter-btn" type="button" data-date-filter="days-4-6" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M16 3v4M8 3v4M3 10h18M6 14h12M6 17h12"></path></svg><span class="filter-copy"><span class="filter-title" data-filter-title="days-4-6"></span><span class="filter-dates" data-filter-dates="days-4-6"></span></span></button>
   <input class="search" id="matchTeamSearch" type="search" placeholder="⌕  Rechercher une équipe…" aria-label="Rechercher une équipe" autocomplete="off">
 </section>
-<div class="workspace" aria-label="Espace de travail principal">
-<section class="panel left-panel" aria-labelledby="upcomingMatchesTitle">
-<div class="matches-panel-heading">
-<h1 class="matches-panel-title" id="upcomingMatchesTitle">Matchs à venir</h1>
-<span class="matches-panel-caption">Calendrier des prochaines rencontres</span>
-</div>
+<section class="matches-list-section" aria-label="Liste des matchs de la période">
+<div class="match-period-summary"><span class="match-count-icon" aria-hidden="true">▦</span><strong id="matchPeriodCount" aria-live="polite">0 match</strong></div>
 <div class="upcoming-matches-list" id="upcomingMatchesList" aria-live="polite"></div>
+</section>
 <template id="upcomingMatchTemplate">
 <article class="upcoming-match-card">
 <div class="match-meta">
 <time class="match-kickoff" data-field="kickoff"></time>
-<div class="match-competition"><span data-field="competition"></span><span data-field="round"></span></div>
 </div>
-<div class="match-teams">
+<div class="match-competition"><span class="competition-mark" aria-hidden="true">◉</span><span class="competition-copy"><strong data-field="competition"></strong><small data-field="round"></small></span></div>
 <div class="match-team match-team-home">
 <img class="match-team-logo" data-field="home-logo" alt="" hidden>
 <span class="match-team-name" data-field="home-name"></span>
@@ -361,13 +415,9 @@ main{
 <img class="match-team-logo" data-field="away-logo" alt="" hidden>
 <span class="match-team-name" data-field="away-name"></span>
 </div>
-</div>
-<button class="match-stats-button" type="button" disabled aria-disabled="true">Stats</button>
+<button class="match-stats-button" type="button" disabled aria-disabled="true">▥ <span>Stats</span></button>
 </article>
-</template>
-</section>
-<section class="panel right-panel" aria-label="Bloc de droite"></section>
-</div></main>
+</template></main>
 <footer class="footer">PronoFoot AI · Football Prediction Lab</footer>
 
 <script>
