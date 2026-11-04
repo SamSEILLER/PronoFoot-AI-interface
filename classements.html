@@ -713,6 +713,43 @@ input,
     visibility:hidden!important;
   }
 }
+
+/* Si la zone de tableau dispose de moins de 100px, rendre le défilement à la page */
+body.standings-native-page-scroll,
+body.standings-native-page-scroll html{
+  height:auto!important;
+  min-height:100%!important;
+  overflow-y:auto!important;
+  overflow-x:hidden!important;
+}
+body.standings-native-page-scroll{
+  display:block!important;
+  height:auto!important;
+  min-height:100vh!important;
+}
+body.standings-native-page-scroll main,
+body.standings-native-page-scroll .standings-page,
+body.standings-native-page-scroll .standings-panel{
+  display:block!important;
+  height:auto!important;
+  min-height:0!important;
+  overflow:visible!important;
+}
+body.standings-native-page-scroll #standingsContent{
+  display:block!important;
+  height:auto!important;
+  min-height:0!important;
+  overflow:visible!important;
+}
+body.standings-native-page-scroll .standings-table-wrap{
+  height:auto!important;
+  max-height:none!important;
+  overflow:visible!important;
+}
+body.standings-native-page-scroll .standings-custom-scrollbar,
+body.standings-native-page-scroll .standings-scroll-top{
+  display:none!important;
+}
 </style>
 </head>
 <body>
@@ -893,6 +930,15 @@ input,
     let dragStartY = 0;
     let dragStartScroll = 0;
     const updateCustomScrollbar = () => {
+      const wasNativePageScroll = document.body.classList.contains("standings-native-page-scroll");
+      if (wasNativePageScroll) document.body.classList.remove("standings-native-page-scroll");
+      const useNativePageScroll = tableScroller.clientHeight < 100;
+      document.body.classList.toggle("standings-native-page-scroll", useNativePageScroll);
+      if (useNativePageScroll) {
+        customTrack.classList.remove("is-scrollable");
+        scrollTopButton.classList.remove("is-visible");
+        return;
+      }
       const viewport = tableScroller.clientHeight;
       const total = tableScroller.scrollHeight;
       const trackHeight = customTrack.clientHeight;
