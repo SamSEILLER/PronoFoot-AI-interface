@@ -175,18 +175,45 @@ main{max-width:1900px;margin:0 auto;padding:15px 18px 24px}
 .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .filters{height:68px;display:flex;align-items:center;gap:12px;padding:9px 20px;background:#ffffffc9;border:1px solid var(--line);border-radius:11px;box-shadow:var(--shadow);margin:0 0 14px}
 .filter-label{display:flex;align-items:center;gap:12px;font-size:17px;font-weight:750;white-space:nowrap;margin-right:7px}
-.filter-btn{min-height:54px;display:flex;align-items:center;gap:10px;padding:6px 16px;background:#fbfdff;border:1px solid var(--line);border-radius:9px;color:var(--ink);font-weight:650;white-space:nowrap;box-shadow:0 2px 5px #1a3b5906;transition:background .18s ease}
-.filter-copy{display:flex;flex-direction:column;align-items:flex-start;gap:1px;line-height:1.2}
+.filter-btn{min-width:0;min-height:54px;display:flex;align-items:center;gap:10px;padding:6px 16px;background:#fbfdff;border:1px solid var(--line);border-radius:9px;color:var(--ink);font-weight:650;white-space:nowrap;box-shadow:0 2px 5px #1a3b5906;transition:background .18s ease,box-shadow .18s ease,transform .18s ease}
+.filter-copy{min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:1px;line-height:1.2}
 .filter-title{font-size:13px;font-weight:750}
 .filter-dates{font-size:11px;font-weight:550;opacity:.76}
 .filter-btn.is-active{background:linear-gradient(115deg,#0bc36d,#21868b);border:0;color:#fff;box-shadow:0 3px 8px #00a95d22}
-.filter-btn:not(.active):hover{background:#f0f3f2}
+.filter-btn:not(.is-active):hover{background:#f0f3f2;box-shadow:0 3px 9px #1a3b5912;transform:translateY(-1px)}
+.filter-btn.is-active:hover{background:linear-gradient(115deg,#0bc36d,#21868b);box-shadow:0 5px 12px #00a95d38;filter:brightness(1.06);transform:translateY(-1px)}
+.filter-btn:focus-visible{outline:2px solid #159b8e;outline-offset:3px}
 .filter-btn .icon{width:21px;height:21px;display:inline-block;flex:0 0 auto;vertical-align:middle;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .filter-btn .icon.large{width:25px;height:25px}
 .search{margin-left:auto;width:220px;max-width:24vw;height:42px;padding:0 13px;border:1px solid var(--line);border-radius:9px;background:#fff;color:var(--ink);outline-color:var(--green)}
 .search:focus{border-color:#159b8e;box-shadow:0 0 0 3px #159b8e18}
-@media(max-width:900px){.filters{height:auto;min-height:68px;padding:10px;gap:7px;flex-wrap:wrap}.filter-label{width:100%;font-size:15px;margin:0 0 2px}.filter-btn{flex:1 1 auto;justify-content:center;padding:6px 10px;gap:7px}.filter-copy{align-items:center}.filter-title{font-size:12px}.filter-dates{font-size:10px}.search{margin:0;flex:1 1 100%;width:100%;max-width:none}}
-@media(max-width:520px){.filter-btn{min-width:0;padding:6px 7px;gap:5px}.filter-btn .icon{width:17px;height:17px}.filter-title{font-size:11px}.filter-dates{font-size:9px}}
+@media(max-width:1100px){
+ .filters{height:auto;min-height:0;padding:10px;gap:8px;flex-wrap:wrap}
+ .filter-label{width:100%;font-size:15px;margin:0 0 2px}
+ .filter-btn{flex:1 1 calc(33.333% - 8px);justify-content:center;padding:7px 9px;gap:7px}
+ .filter-copy{align-items:center;text-align:center}
+ .filter-title{font-size:12px}
+ .filter-dates{font-size:10px}
+ .search{margin:0;flex:1 1 100%;width:100%;max-width:none}
+}
+@media(max-width:600px){
+ .filters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch;gap:7px;padding:9px}
+ .filter-label,.search{grid-column:1/-1;width:100%}
+ .filter-label{margin:0 0 1px}
+ .filter-btn{width:100%;min-width:0;min-height:58px;padding:7px 4px;gap:3px;flex-direction:column;white-space:normal}
+ .filter-btn .icon{width:17px;height:17px;flex:0 0 17px}
+ .filter-copy{width:100%;min-width:0;align-items:center}
+ .filter-title{font-size:10px;line-height:1.15;overflow-wrap:anywhere}
+ .filter-dates{font-size:9px;line-height:1.15}
+ .search{grid-column:1/-1;margin:0}
+}
+@media(max-width:360px){
+ .filters{gap:5px;padding:7px}
+ .filter-btn{min-height:56px;padding:6px 2px}
+ .filter-btn .icon{display:none}
+ .filter-title{font-size:9px}
+ .filter-dates{font-size:8px}
+}
 
 </style>
 </head>
