@@ -657,6 +657,132 @@ input,
   #standingsContent{margin-top:10px}
   .standings-legend{margin-top:10px}
 }
+
+/* Maquette compacte : titre et filtres réunis dans un seul panneau */
+.standings-panel{
+  padding:18px 20px 16px!important;
+  background:#ffffffd9;
+}
+.standings-heading{
+  display:flex!important;
+  flex-direction:row!important;
+  align-items:center!important;
+  gap:18px!important;
+  margin:0!important;
+}
+.standings-heading-copy{flex:1;min-width:0}
+.standings-title-row{
+  display:flex!important;
+  flex-direction:row!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  flex-wrap:nowrap!important;
+  gap:16px!important;
+  min-width:0;
+}
+.standings-title{
+  flex:0 0 auto;
+  font-size:24px!important;
+  white-space:nowrap;
+}
+.standings-subtitle{
+  margin:0!important;
+  padding-left:16px;
+  border-left:1px solid #9aabc1;
+  font-size:13px!important;
+  line-height:1.4;
+}
+.standings-season{
+  flex:0 0 auto;
+  padding:8px 12px!important;
+  text-align:center!important;
+  white-space:nowrap;
+}
+.standings-season small{font-size:9px!important}
+.standings-season strong{font-size:16px!important}
+.standings-toolbar{
+  display:flex!important;
+  flex-direction:row!important;
+  align-items:center!important;
+  gap:14px!important;
+  margin:14px 0 0!important;
+  padding:12px 0 0!important;
+  border:0!important;
+  border-top:1px solid #dce6f2!important;
+  border-radius:0!important;
+  background:transparent!important;
+}
+.standings-filter{
+  display:grid!important;
+  grid-template-columns:auto minmax(220px,330px);
+  align-items:center!important;
+  gap:12px!important;
+  min-width:0!important;
+}
+.standings-filter label{white-space:nowrap}
+.standings-filter select{height:40px!important}
+.standings-updated{
+  margin-left:auto!important;
+  padding:0!important;
+  white-space:nowrap;
+  font-size:11px!important;
+}
+@media(max-width:900px){
+  .standings-title{font-size:21px!important}
+  .standings-title-row{gap:10px!important}
+  .standings-subtitle{font-size:12px!important;padding-left:10px}
+  .standings-filter{grid-template-columns:1fr;gap:5px!important}
+}
+@media(max-width:700px){
+  .standings-panel{padding:14px 12px!important}
+  .standings-heading{align-items:flex-start!important;gap:10px!important}
+  .standings-title-row{flex-wrap:wrap!important;gap:5px 0!important}
+  .standings-title{font-size:20px!important;white-space:normal}
+  .standings-subtitle{
+    flex-basis:100%;
+    padding:0!important;
+    border:0!important;
+    font-size:11px!important;
+  }
+  .standings-season{
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    gap:2px!important;
+    padding:6px 8px!important;
+    border:1px solid #dcebe5!important;
+    border-radius:4px!important;
+    background:#f2fbf6!important;
+  }
+  .standings-season small{font-size:8px!important}
+  .standings-season strong{font-size:13px!important}
+  .standings-toolbar{
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:stretch!important;
+    gap:8px!important;
+    margin-top:10px!important;
+    padding-top:10px!important;
+  }
+  .standings-filter{
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:stretch!important;
+    width:100%;
+    gap:5px!important;
+  }
+  .standings-filter select{width:100%;max-width:none}
+  .standings-updated{
+    display:block!important;
+    width:100%;
+    min-height:0!important;
+    margin:0!important;
+    padding:0!important;
+    text-align:left!important;
+    white-space:normal!important;
+    font-size:10px!important;
+  }
+}
 </style>
 </head>
 <body>
@@ -682,16 +808,16 @@ input,
     <div class="standings-heading-copy">
       <div class="standings-title-row">
         <h1 class="standings-title" id="standingsTitle">Classement des championnats</h1>
-        <div class="standings-season"><small>Saison en cours</small><strong id="currentSeason">Non disponible</strong></div>
+        <p class="standings-subtitle">Consultez les performances et la position des équipes dans chaque compétition.</p>
       </div>
-      <p class="standings-subtitle">Consultez les performances et la position des équipes dans chaque compétition.</p>
     </div>
+    <div class="standings-season"><small>Saison en cours</small><strong id="currentSeason">Non disponible</strong></div>
+  </div>
+  <div class="standings-toolbar">
+    <div class="standings-filter"><label for="competitionSelect">COMPÉTITION DISPONIBLE</label><select id="competitionSelect" disabled><option value="">Chargement des compétitions…</option></select></div>
+    <div class="standings-updated" id="standingsUpdated">En attente des données de classement</div>
   </div>
 </section>
-<div class="standings-toolbar">
-  <div class="standings-filter"><label for="competitionSelect">COMPÉTITION DISPONIBLE</label><select id="competitionSelect" disabled><option value="">Chargement des compétitions…</option></select></div>
-  <div class="standings-updated" id="standingsUpdated">En attente des données de classement</div>
-</div>
 <div id="standingsContent" aria-live="polite">
   <div class="standings-empty"><strong>Chargement du classement…</strong><p>Les classements seront affichés à partir des données publiées par le moteur PronoFoot AI.</p></div>
 </div>
