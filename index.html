@@ -234,17 +234,29 @@ main{display:flex;flex:1 1 auto;flex-direction:column;min-height:0;padding:15px 
 .left-panel{min-height:0}
 .upcoming-matches-list{flex:1 1 auto;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding-right:3px}
 .footer{flex:0 0 auto;padding:7px 18px 10px}
-body *:not(.topbar):not(.topbar *){border-radius:5px!important}
+/* Arrondis uniformes hors header */
+body *:not(.topbar):not(.topbar *){border-radius:10px!important}
+
+/* Contenu du header, espace de travail et footer alignés sur 1600px */
+.topbar{
+ padding-left:max(20px,calc((100% - 1600px)/2 + 20px));
+ padding-right:max(20px,calc((100% - 1600px)/2 + 20px));
+}
+.workspace{width:100%;max-width:1600px;margin-left:auto;margin-right:auto}
+.footer{width:100%;max-width:1600px}
+
 @media(max-width:1100px){
  main{padding:10px 10px 8px}
  .filters{padding:10px 20px}
  .workspace{min-height:0}
  .panel{min-height:0}
+ .topbar{padding-left:16px;padding-right:16px}
 }
 @media(max-width:650px){
  main{padding:10px 10px 7px}
  .filters{width:auto;padding:10px 9px}
  .footer{padding:6px 10px 8px}
+ .topbar{padding-left:12px;padding-right:12px}
 }
 </style>
 </head>
