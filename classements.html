@@ -855,6 +855,28 @@ input,
   background:#fff!important;
 }
 
+
+
+/* Sous 1120px : masquer réellement les intitulés longs et ne garder que l'abréviation */
+@media(max-width:1120px){
+  .standings-table thead th{
+    font-size:0!important;
+    color:transparent!important;
+    white-space:nowrap!important;
+    overflow-wrap:normal!important;
+  }
+  .standings-table thead th::after{
+    content:attr(data-short)!important;
+    display:inline-block!important;
+    color:#f4fbff!important;
+    font-size:9px!important;
+    line-height:1.1!important;
+  }
+}
+@media(max-width:380px){
+  .standings-table thead th::after{font-size:8px!important}
+}
+
 </style>
 </head>
 <body>
