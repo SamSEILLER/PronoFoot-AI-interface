@@ -587,6 +587,35 @@ input,
   }
 }
 
+/* Mobile : empêcher la barre de mise à jour d'être comprimée ou masquée */
+@media(max-width:700px){
+  .standings-panel{
+    min-height:0;
+  }
+  .standings-heading,
+  .standings-toolbar,
+  .standings-legend{
+    flex:0 0 auto!important;
+  }
+  .standings-toolbar{
+    height:auto!important;
+    min-height:0!important;
+    overflow:visible!important;
+  }
+  .standings-updated{
+    display:block!important;
+    flex:0 0 auto!important;
+    align-self:stretch!important;
+    height:auto!important;
+    max-height:none!important;
+    min-height:16px!important;
+    overflow:visible!important;
+    clip:auto!important;
+    color:#526b8d!important;
+    line-height:1.45!important;
+  }
+}
+
 </style>
 </head>
 <body>
