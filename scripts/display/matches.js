@@ -9,13 +9,10 @@
   if (!list || !template) return;
 
   const dateFormatter = new Intl.DateTimeFormat("fr-FR", {
-    weekday: "short",
-    day: "2-digit",
-    month: "short",
-    year: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
-    timeZone: "Europe/Paris"
+    weekday: "short", day: "2-digit", month: "short", year: "numeric", timeZone: "Europe/Paris"
+  });
+  const timeFormatter = new Intl.DateTimeFormat("fr-FR", {
+    hour: "2-digit", minute: "2-digit", timeZone: "Europe/Paris"
   });
 
   const safeLogoUrl = (value) => {
@@ -53,8 +50,13 @@
 
     const fragment = template.content.cloneNode(true);
     const card = fragment.querySelector(".upcoming-match-card");
-    const time = setText(card, "kickoff", dateFormatter.format(kickoff));
-    if (time) time.dateTime = kickoff.toISOString();
+    const time = card.querySelector('[data-field="kickoff"]');
+    if (time) {
+      time.innerHTML = '<span class="match-date"></span><span class="match-time"></span>';
+      time.querySelector(".match-date").textContent = dateFormatter.format(kickoff);
+      time.querySelector(".match-time").textContent = timeFormatter.format(kickoff);
+      time.dateTime = kickoff.toISOString();
+    }
 
     setText(card, "competition", match.competition || "");
     const round = setText(card, "round", match.round ? " · " + match.round : "");
@@ -85,6 +87,7 @@
 
       const dateButtons = Array.from(document.querySelectorAll("[data-date-filter]"));
       const teamSearch = document.getElementById("matchTeamSearch");
+      const countNode = document.getElementById("matchPeriodCount");
       let activeDateFilter = "today-tomorrow";
       const dateFilterRanges = {
         "today-tomorrow": [0, 1],
@@ -149,6 +152,7 @@
         });
 
         list.replaceChildren();
+        if (countNode) countNode.textContent = filtered.length + (filtered.length === 1 ? " match" : " matchs");
         filtered.forEach(({ match }) => {
           const card = renderMatch(match);
           if (card) list.appendChild(card);
