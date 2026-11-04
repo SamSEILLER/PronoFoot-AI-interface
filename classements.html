@@ -368,6 +368,20 @@ main{
  .standings-scroll-top{transition:none}
  .standings-table-wrap{scroll-behavior:auto}
 }
+
+/* Finition du tableau : séparateurs discrets et lignes alternées */
+.standings-table th+th,
+.standings-table td+td{border-left:1px solid rgba(104,129,153,.12)}
+.standings-table tbody tr:nth-child(even){background:#f7fafd}
+.standings-table tbody tr:nth-child(odd){background:#fff}
+.standings-table tbody tr:hover{background:#eef5fa}
+
+/* Décaler visuellement le début de la piste de scrollbar sous l'en-tête */
+.standings-table-wrap::-webkit-scrollbar-track-piece:start{
+ margin-top:48px;
+ background:transparent;
+}
+.standings-table-wrap::-webkit-scrollbar-track-piece:end{background:#edf2f7}
 </style>
 </head>
 <body>
