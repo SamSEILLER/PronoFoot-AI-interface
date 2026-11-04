@@ -223,21 +223,21 @@ main{max-width:1900px;margin:0 auto;padding:15px 18px 24px}
  .filter-dates{font-size:8px}
 }
 
-/* Header fixe ; filtres de date dans le flux normal et défilants avec la page */
-:root{--fixed-header-height:86px}
+/* Header et filtres fixes pendant le défilement */
+:root{--fixed-header-height:86px;--fixed-filter-height:68px}
 .topbar{position:fixed;top:0;left:0;right:0;width:100%;z-index:100}
 .filters{
- position:static;top:auto;left:auto;transform:none;
- width:auto;max-width:none;margin:0 0 14px;z-index:auto;
- background:#ffffffc9;box-shadow:var(--shadow);
- border-color:var(--line);
+ position:fixed;top:var(--fixed-header-height);left:50%;transform:translateX(-50%);
+ width:calc(100% - 36px);max-width:1864px;margin:0;z-index:90;
+ background:#fff;box-shadow:0 8px 18px rgba(17,43,72,.12);
+ border-color:#dce6f1;border-bottom:1px solid #d4dfeb;
 }
-main{padding-top:calc(var(--fixed-header-height) + 15px)}
-@media(max-width:1120px){:root{--fixed-header-height:138px}}
+main{padding-top:calc(var(--fixed-header-height) + var(--fixed-filter-height) + 15px)}
+@media(max-width:1120px){:root{--fixed-header-height:138px;--fixed-filter-height:154px}}
 @media(max-width:650px){
- :root{--fixed-header-height:140px}
- .filters{width:auto}
- main{padding-top:calc(var(--fixed-header-height) + 10px)}
+ :root{--fixed-header-height:140px;--fixed-filter-height:153px}
+ .filters{width:calc(100% - 20px)}
+ main{padding-top:calc(var(--fixed-header-height) + var(--fixed-filter-height) + 10px)}
 }
 @media(max-width:420px){:root{--fixed-header-height:125px}}
 </style>
