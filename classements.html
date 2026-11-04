@@ -621,6 +621,42 @@ input,
 .standings-table-wrap{
   border-radius:4px!important;
 }
+
+/* Organisation de la page Classements : en-tête, filtres, tableau, légende */
+.standings-page{
+  display:flex;
+  flex-direction:column;
+  gap:0;
+  min-height:0;
+}
+.standings-panel{
+  width:100%;
+  margin:0;
+  padding:22px 24px 26px;
+}
+.standings-toolbar{
+  width:100%;
+  margin:0;
+  border-radius:4px!important;
+}
+#standingsContent{
+  width:100%;
+  margin:12px 0 0;
+}
+.standings-table-wrap{
+  width:100%;
+  margin:0;
+}
+.standings-legend{
+  width:100%;
+  margin:13px 0 0;
+  padding:0 2px;
+}
+@media(max-width:700px){
+  .standings-panel{padding:16px 12px 18px}
+  #standingsContent{margin-top:10px}
+  .standings-legend{margin-top:10px}
+}
 </style>
 </head>
 <body>
