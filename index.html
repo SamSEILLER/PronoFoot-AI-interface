@@ -455,6 +455,78 @@ main{
 .matches-list-section{gap:0!important}
 .upcoming-matches-list{margin-top:0!important}
 
+
+/* Affichage compact des rencontres et nouveau traitement des compétitions */
+.upcoming-match-card{
+  min-height:80px;
+  gap:9px;
+  padding-top:7px;
+  padding-bottom:7px;
+}
+.match-kickoff .match-date{font-size:12px!important}
+.match-kickoff .match-time{font-size:19px!important}
+.match-team-name{font-size:13px!important;line-height:1.2}
+.match-team-logo{width:34px;height:34px;flex-basis:34px}
+.match-versus{font-size:11px;padding:5px 8px}
+.match-stats-button{font-size:12px;padding:7px 8px;min-width:74px}
+
+/* La compétition devient un petit bloc d'identification, distinct de l'horaire */
+.match-competition{
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  gap:7px;
+  min-width:0;
+  padding:7px 9px;
+  border-left:2px solid #9bb8df;
+  border-radius:0 4px 4px 0;
+  background:#f4f7fc;
+}
+.competition-mark{
+  width:19px;
+  flex:0 0 19px;
+  height:19px;
+  border-radius:50%;
+  background:#e2ebf8;
+  color:#315f99;
+  font-size:12px;
+}
+.competition-copy{gap:2px}
+.competition-copy strong{
+  font-size:10px;
+  line-height:1.25;
+  font-weight:800;
+  letter-spacing:.35px;
+  text-transform:none;
+  color:#25466f;
+}
+.competition-copy small{
+  font-size:10px;
+  line-height:1.2;
+  color:#71839c;
+}
+@media(max-width:1050px){
+  .match-team-name{font-size:13px!important}
+  .match-team-logo{width:32px;height:32px;flex-basis:32px}
+  .competition-copy strong{font-size:10px}
+  .competition-copy small{font-size:9px}
+}
+@media(max-width:700px){
+  .match-kickoff .match-date{font-size:11px!important}
+  .match-kickoff .match-time{font-size:14px!important}
+  .match-team-name{font-size:11px!important}
+  .match-team-logo{width:25px;height:25px;flex-basis:25px}
+  .match-competition{
+    padding:4px 6px;
+    gap:4px;
+    border-left-width:2px;
+    background:#f4f7fc;
+  }
+  .competition-mark{width:15px;flex-basis:15px;height:15px;font-size:10px}
+  .competition-copy strong{font-size:9px}
+  .competition-copy small{font-size:9px}
+}
+
 </style>
 </head>
 <body>
