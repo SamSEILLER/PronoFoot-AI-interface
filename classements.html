@@ -318,9 +318,20 @@ main{
  position:sticky;
  top:0;
  z-index:3;
- background:#f5f8fc;
- box-shadow:0 6px 8px -6px rgba(10,27,70,.5);
+ padding:15px 10px;
+ background:linear-gradient(180deg,#263f50 0%,#1b3444 100%);
+ border-bottom:3px solid #08b968;
+ color:#f4fbff;
+ font-size:10px;
+ font-weight:800;
+ letter-spacing:.65px;
+ text-align:center;
+ text-transform:uppercase;
+ white-space:nowrap;
+ box-shadow:0 5px 10px -7px rgba(10,27,70,.65);
 }
+.standings-table thead th+th{border-left:1px solid rgba(255,255,255,.07)}
+.standings-table thead th:nth-child(2){color:#9aefc4}
 .standings-scroll-top{
  position:absolute;
  right:18px;
@@ -329,24 +340,29 @@ main{
  display:flex;
  align-items:center;
  justify-content:center;
- width:58px;
- height:58px;
+ width:56px;
+ height:56px;
  padding:0;
- border:2px solid #ffffff;
- border-radius:50%!important;
- background:linear-gradient(145deg,#12c982,#078451);
- color:#fff;
- font-size:30px;
- font-weight:800;
+ border:1px solid rgba(8,185,104,.7);
+ border-radius:17px!important;
+ background:linear-gradient(145deg,#263f50,#122b3b);
+ color:#6ff0ad;
+ font-size:32px;
+ font-family:Arial,sans-serif;
+ font-weight:500;
  line-height:1;
- box-shadow:0 5px 18px rgba(4,91,58,.34),0 0 0 4px rgba(8,185,104,.12);
+ box-shadow:0 7px 20px rgba(10,27,70,.28),inset 0 1px 0 rgba(255,255,255,.12);
  opacity:0;
  visibility:hidden;
- transform:translateY(10px) scale(.92);
- transition:opacity .2s ease,transform .2s ease,visibility .2s ease,filter .2s ease;
+ transform:translateY(9px);
+ transition:opacity .2s ease,transform .2s ease,visibility .2s ease,background .2s ease,box-shadow .2s ease;
 }
-.standings-scroll-top.is-visible{opacity:1;visibility:visible;transform:translateY(0) scale(1)}
-.standings-scroll-top:hover{filter:brightness(1.08);box-shadow:0 7px 22px rgba(4,91,58,.42),0 0 0 5px rgba(8,185,104,.16)}
+.standings-scroll-top.is-visible{opacity:1;visibility:visible;transform:translateY(0)}
+.standings-scroll-top:hover{
+ background:linear-gradient(145deg,#087c4c,#05633e);
+ color:#fff;
+ box-shadow:0 9px 24px rgba(5,99,62,.3),inset 0 1px 0 rgba(255,255,255,.18);
+}
 .standings-scroll-top:focus-visible{outline:3px solid #8be5b9;outline-offset:4px}
 @media(prefers-reduced-motion:reduce){
  .standings-scroll-top{transition:none}
