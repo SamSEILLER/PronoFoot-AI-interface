@@ -171,6 +171,14 @@ main{max-width:1900px;margin:0 auto;padding:15px 18px 24px}
  .match-competition{font-size:10px}
 }
 
+/* Éléments persistants pendant le défilement */
+:root{--sticky-header-height:86px}
+.topbar{position:sticky;top:0;z-index:50}
+.filters{position:sticky;top:var(--sticky-header-height);z-index:40;background:#fff}
+@media(max-width:1120px){:root{--sticky-header-height:138px}}
+@media(max-width:650px){:root{--sticky-header-height:140px}}
+@media(max-width:420px){:root{--sticky-header-height:125px}}
+
 /* Barre de filtres — reproduction du style de PronoFoot-AI-Site */
 .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .filters{height:68px;display:flex;align-items:center;gap:12px;padding:9px 20px;background:#ffffffc9;border:1px solid var(--line);border-radius:11px;box-shadow:var(--shadow);margin:0 0 14px}
