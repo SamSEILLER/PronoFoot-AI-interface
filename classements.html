@@ -557,6 +557,36 @@ input,
 /* Harmonisation du panneau de détail des sources */
 #sourceStatusDetails{border-radius:3px!important}
 
+/* Mobile : rendre explicite et toujours visible le libellé de saison */
+@media(max-width:700px){
+  .standings-title-row .standings-season{
+    display:inline-flex!important;
+    flex-direction:row!important;
+    flex-wrap:nowrap!important;
+    align-items:baseline!important;
+    gap:5px!important;
+    visibility:visible!important;
+    opacity:1!important;
+  }
+  .standings-title-row .standings-season small{
+    display:inline-block!important;
+    visibility:visible!important;
+    opacity:1!important;
+    color:#4f6d99!important;
+    font-size:11px!important;
+    font-weight:800!important;
+    letter-spacing:0!important;
+    text-transform:uppercase!important;
+    white-space:nowrap!important;
+  }
+  .standings-title-row .standings-season strong{
+    display:inline-block!important;
+    visibility:visible!important;
+    opacity:1!important;
+    white-space:nowrap!important;
+  }
+}
+
 </style>
 </head>
 <body>
