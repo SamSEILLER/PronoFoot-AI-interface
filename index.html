@@ -180,7 +180,8 @@ main{max-width:1900px;margin:0 auto;padding:15px 18px 24px}
 .filter-title{font-size:13px;font-weight:750}
 .filter-dates{font-size:11px;font-weight:550;opacity:.76}
 .filter-btn.is-active{background:linear-gradient(115deg,#0bc36d,#21868b);border:0;color:#fff;box-shadow:0 3px 8px #00a95d22}
-/* Aucun changement visuel au survol : l'état actif est indiqué uniquement par sa couleur. */
+/* Survol discret réservé aux boutons inactifs. */
+.filter-btn:not(.is-active):hover{background:#f1f3f5}
 .filter-btn:focus-visible{outline:2px solid #159b8e;outline-offset:3px}
 .filter-btn .icon{width:21px;height:21px;display:inline-block;flex:0 0 auto;vertical-align:middle;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .filter-btn .icon.large{width:25px;height:25px}
@@ -200,7 +201,6 @@ main{max-width:1900px;margin:0 auto;padding:15px 18px 24px}
  .filter-label,.search{grid-column:1/-1;width:100%}
  .filter-label{margin:0 0 1px}
  .filter-btn{width:100%;min-width:0;min-height:58px;padding:7px 4px;gap:3px;flex-direction:column;white-space:normal}
- .filter-btn[data-date-filter="today-tomorrow"]{grid-column:1/-1}
  .filter-btn .icon{width:17px;height:17px;flex:0 0 17px}
  .filter-copy{width:100%;min-width:0;align-items:center}
  .filter-title{font-size:10px;line-height:1.15;overflow-wrap:anywhere}
