@@ -250,67 +250,17 @@ main{
 }
 
 
-/* Hauteur maîtrisée : le tableau défile seul, le footer reste visible */
-html,body{height:100%;min-height:0}
-body{
- display:flex;
- flex-direction:column;
- height:100vh;
- min-height:0;
- overflow:hidden;
-}
-@supports(height:100dvh){body{height:100dvh}}
-.topbar{flex:0 0 auto}
-main{
- display:flex;
- flex:1 1 auto;
- flex-direction:column;
- min-height:0;
- overflow:hidden;
-}
-.standings-page{
- display:flex;
- flex:1 1 auto;
- flex-direction:column;
- min-height:0;
-}
-.standings-panel{
- display:flex;
- flex:1 1 auto;
- flex-direction:column;
- min-height:0;
- overflow:hidden;
-}
-#standingsContent{
- flex:1 1 auto;
- min-height:0;
- overflow:auto;
- overscroll-behavior:contain;
-}
-.standings-table-wrap{
- max-height:100%;
- overflow:auto;
- overscroll-behavior:contain;
-}
-.standings-legend{flex:0 0 auto}
-.footer{flex:0 0 auto}
-
 /* Fond du header pleine largeur, sans arrondi */
 .topbar{border-radius:0!important}
 
-/* Tableau : scrollbar personnalisée, en-tête fixe et retour en haut */
-#standingsContent{position:relative;overflow:hidden}
+/* Le tableau suit désormais le défilement naturel de la page */
+#standingsContent{position:static;overflow:visible}
 .standings-table-wrap{
- height:100%;
- max-height:100%;
- overflow:auto;
- scrollbar-width:thin;
- scrollbar-color:#8ba3bd #edf2f7;
+ height:auto;
+ max-height:none;
+ overflow-x:auto;
+ overflow-y:visible;
 }
-.standings-table-wrap::-webkit-scrollbar{width:11px;height:11px}
-.standings-table-wrap::-webkit-scrollbar-track{background:#edf2f7;border-radius:10px}
-.standings-table-wrap::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#9bb1c8,#718ba7);border:2px solid #edf2f7;border-radius:10px}
-.standings-table-wrap::-webkit-scrollbar-thumb:hover{background:linear-gradient(180deg,#718ba7,#526f90)}
 .standings-table thead th{
  position:sticky;
  top:0;
@@ -373,12 +323,6 @@ main{
 .standings-table tbody tr:nth-child(odd){background:#fff}
 .standings-table tbody tr:hover{background:#eef5fa}
 
-/* Décaler visuellement le début de la piste de scrollbar sous l'en-tête */
-.standings-table-wrap::-webkit-scrollbar-track-piece:start{
- margin-top:48px;
- background:transparent;
-}
-.standings-table-wrap::-webkit-scrollbar-track-piece:end{background:#edf2f7}
 /* Lignes alternées permanentes des équipes */
 .standings-table tbody tr:nth-child(odd),
 .standings-table tbody tr:nth-child(odd) td{background:#fff!important}
@@ -386,38 +330,6 @@ main{
 .standings-table tbody tr:nth-child(even) td{background:#f5f9fd!important}
 .standings-table tbody tr:hover,
 .standings-table tbody tr:hover td{background:inherit!important}
-
-/* Barre de défilement dédiée : elle commence sous l'en-tête */
-.standings-table-wrap{scrollbar-width:none!important}
-.standings-table-wrap::-webkit-scrollbar{display:none!important;width:0!important;height:0!important}
-.standings-custom-scrollbar{
- position:absolute;
- z-index:4;
- top:50px;
- right:3px;
- bottom:4px;
- width:9px;
- border-radius:8px!important;
- background:rgba(224,233,242,.58);
- opacity:0;
- transition:opacity .2s ease;
- touch-action:none;
-}
-#standingsContent:hover .standings-custom-scrollbar.is-scrollable,
-.standings-custom-scrollbar.is-scrollable{opacity:1}
-.standings-custom-scrollbar-thumb{
- position:absolute;
- top:0;
- left:1px;
- width:7px;
- min-height:34px;
- border-radius:8px!important;
- background:linear-gradient(180deg,#9bb1c8,#718ba7);
- box-shadow:0 1px 4px rgba(20,45,70,.18);
- cursor:grab;
- touch-action:none;
-}
-.standings-custom-scrollbar-thumb:active{cursor:grabbing;background:#526f90}
 
 /* Bouton retour en haut : vert, flèche blanche et ombre portée */
 .standings-scroll-top{
@@ -442,9 +354,7 @@ main{
  box-shadow:0 7px 21px rgba(8,145,82,.42),0 3px 7px rgba(10,27,70,.18);
 }
 @media(max-width:650px){
- .standings-custom-scrollbar{right:2px;width:7px;top:47px}
- .standings-custom-scrollbar-thumb{width:5px}
- .standings-scroll-top{right:12px;bottom:12px;width:46px;height:46px;font-size:28px}
+ .standings-scroll-top{right:12px;bottom:12px}
 }
 
 /* Ajustements ciblés : contrôles verts et rayons limités aux éléments concernés. */
@@ -678,6 +588,9 @@ input,
 /* Bouton de remontée : bleu identique au header, dimensions légèrement réduites */
 .standings-scroll-top,
 .standings-scroll-top.is-visible{
+  position:fixed!important;
+  right:18px!important;
+  bottom:18px!important;
   display:inline-block!important;
   width:42px!important;
   height:42px!important;
@@ -704,46 +617,6 @@ input,
   }
 }
 
-/* Si la zone de tableau dispose de moins de 100px, rendre le défilement à la page */
-html.standings-native-page-scroll{
-  height:auto!important;
-  min-height:100%!important;
-  overflow-y:auto!important;
-  overflow-x:hidden!important;
-}
-body.standings-native-page-scroll{
-  height:auto!important;
-  min-height:100%!important;
-  overflow:visible!important;
-}
-body.standings-native-page-scroll{
-  display:block!important;
-  height:auto!important;
-  min-height:100vh!important;
-}
-body.standings-native-page-scroll main,
-body.standings-native-page-scroll .standings-page,
-body.standings-native-page-scroll .standings-panel{
-  display:block!important;
-  height:auto!important;
-  min-height:0!important;
-  overflow:visible!important;
-}
-body.standings-native-page-scroll #standingsContent{
-  display:block!important;
-  height:auto!important;
-  min-height:0!important;
-  overflow:visible!important;
-}
-body.standings-native-page-scroll .standings-table-wrap{
-  height:auto!important;
-  max-height:none!important;
-  overflow:visible!important;
-}
-body.standings-native-page-scroll .standings-custom-scrollbar,
-body.standings-native-page-scroll .standings-scroll-top{
-  display:none!important;
-}
 </style>
 </head>
 <body>
@@ -916,60 +789,14 @@ body.standings-native-page-scroll .standings-scroll-top{
       const logoHtml = logo ? '<img src="'+safe(logo)+'" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement(\'span\'),{className:\'standings-team-fallback\',textContent:'+JSON.stringify(initials)+'}))">' : '<span class="standings-team-fallback">'+safe(initials)+'</span>';
       return '<tr><td><span class="standings-position">'+safe(position)+'</span></td><td class="team-cell"><span class="standings-team">'+logoHtml+'<span>'+safe(teamName)+'</span></span></td><td>'+safe(played)+'</td><td>'+safe(wins)+'</td><td>'+safe(draws)+'</td><td>'+safe(losses)+'</td><td>'+safe(scored)+'</td><td>'+safe(conceded)+'</td><td class="'+diffClass+'">'+(Number(diff)>0?"+":"")+safe(diff)+'</td><td class="standings-points">'+safe(points)+'</td></tr>';
     }).join("");
-    content.innerHTML = '<div class="standings-table-wrap" aria-label="Tableau du classement"><table class="standings-table"><thead><tr><th data-short="Pos.">Position</th><th data-short="Équipe">Équipe</th><th data-short="MJ">Matchs joués</th><th data-short="V">Victoires</th><th data-short="N">Matchs nuls</th><th data-short="D">Défaites</th><th data-short="BM">Buts marqués</th><th data-short="BC">Buts encaissés</th><th data-short="Diff.">Différence de buts</th><th data-short="Pts">Points</th></tr></thead><tbody>'+body+'</tbody></table></div><div class="standings-custom-scrollbar" aria-hidden="true"><div class="standings-custom-scrollbar-thumb"></div></div><button type="button" class="standings-scroll-top" aria-label="Revenir en haut du classement">⌃</button>';
-    const tableScroller = content.querySelector(".standings-table-wrap");
+    content.innerHTML = '<div class="standings-table-wrap" aria-label="Tableau du classement"><table class="standings-table"><thead><tr><th data-short="Pos.">Position</th><th data-short="Équipe">Équipe</th><th data-short="MJ">Matchs joués</th><th data-short="V">Victoires</th><th data-short="N">Matchs nuls</th><th data-short="D">Défaites</th><th data-short="BM">Buts marqués</th><th data-short="BC">Buts encaissés</th><th data-short="Diff.">Différence de buts</th><th data-short="Pts">Points</th></tr></thead><tbody>'+body+'</tbody></table></div><button type="button" class="standings-scroll-top" aria-label="Revenir en haut de la page">⌃</button>';
     const scrollTopButton = content.querySelector(".standings-scroll-top");
-    const customTrack = content.querySelector(".standings-custom-scrollbar");
-    const customThumb = content.querySelector(".standings-custom-scrollbar-thumb");
-    let dragStartY = 0;
-    let dragStartScroll = 0;
-    const updateCustomScrollbar = () => {
-      const wasNativePageScroll = document.body.classList.contains("standings-native-page-scroll");
-      if (wasNativePageScroll) document.body.classList.remove("standings-native-page-scroll");
-      const useNativePageScroll = tableScroller.clientHeight < 100;
-      document.body.classList.toggle("standings-native-page-scroll", useNativePageScroll);
-      document.documentElement.classList.toggle("standings-native-page-scroll", useNativePageScroll);
-      if (useNativePageScroll) {
-        customTrack.classList.remove("is-scrollable");
-        scrollTopButton.classList.remove("is-visible");
-        return;
-      }
-      const viewport = tableScroller.clientHeight;
-      const total = tableScroller.scrollHeight;
-      const trackHeight = customTrack.clientHeight;
-      const thumbHeight = Math.max(34, trackHeight * viewport / total);
-      const maxThumbTravel = Math.max(0, trackHeight - thumbHeight);
-      const maxScroll = Math.max(0, total - viewport);
-      const thumbTop = maxScroll ? (tableScroller.scrollTop / maxScroll) * maxThumbTravel : 0;
-      customThumb.style.height = thumbHeight + "px";
-      customThumb.style.transform = "translateY(" + thumbTop + "px)";
-      customTrack.classList.toggle("is-scrollable", maxScroll > 0);
-      scrollTopButton.classList.toggle("is-visible", tableScroller.scrollTop > 120);
+    const updateScrollTopButton = () => {
+      scrollTopButton.classList.toggle("is-visible", window.scrollY > 120);
     };
-    tableScroller.addEventListener("scroll", updateCustomScrollbar, {passive:true});
-    window.addEventListener("resize", updateCustomScrollbar);
-    customThumb.addEventListener("pointerdown", event => {
-      event.preventDefault();
-      dragStartY = event.clientY;
-      dragStartScroll = tableScroller.scrollTop;
-      customThumb.setPointerCapture(event.pointerId);
-    });
-    customThumb.addEventListener("pointermove", event => {
-      if (!customThumb.hasPointerCapture(event.pointerId)) return;
-      const trackHeight = customTrack.clientHeight;
-      const thumbHeight = customThumb.offsetHeight;
-      const maxTravel = Math.max(1, trackHeight - thumbHeight);
-      const maxScroll = Math.max(0, tableScroller.scrollHeight - tableScroller.clientHeight);
-      tableScroller.scrollTop = dragStartScroll + (event.clientY - dragStartY) * maxScroll / maxTravel;
-    });
-    customTrack.addEventListener("pointerdown", event => {
-      if (event.target === customThumb) return;
-      const rect = customTrack.getBoundingClientRect();
-      const ratio = Math.max(0, Math.min(1, (event.clientY - rect.top) / rect.height));
-      tableScroller.scrollTo({top: ratio * (tableScroller.scrollHeight - tableScroller.clientHeight),behavior:"smooth"});
-    });
-    scrollTopButton.addEventListener("click", () => tableScroller.scrollTo({top:0,behavior:"smooth"}));
-    requestAnimationFrame(updateCustomScrollbar);
+    window.addEventListener("scroll", updateScrollTopButton, {passive:true});
+    scrollTopButton.addEventListener("click", () => window.scrollTo({top:0,behavior:"smooth"}));
+    requestAnimationFrame(updateScrollTopButton);
   };
   fetch(DATA_URL + "?v=" + Date.now(), {cache:"no-store"})
     .then(response => { if (!response.ok) throw new Error("Fichier de classement absent (HTTP "+response.status+")"); return response.json(); })
