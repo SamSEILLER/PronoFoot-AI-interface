@@ -382,12 +382,13 @@ main{
  background:transparent;
 }
 .standings-table-wrap::-webkit-scrollbar-track-piece:end{background:#edf2f7}
-/* Lignes alternées permanentes et aucune forme arrondie dans le tableau */
-.standings-table,
-.standings-table *{border-radius:0!important}
-.standings-table tbody tr:nth-child(odd){background:#fff!important}
-.standings-table tbody tr:nth-child(even){background:#f7fafd!important}
-.standings-table tbody tr:hover{background:inherit!important}
+/* Lignes alternées permanentes des équipes */
+.standings-table tbody tr:nth-child(odd),
+.standings-table tbody tr:nth-child(odd) td{background:#fff!important}
+.standings-table tbody tr:nth-child(even),
+.standings-table tbody tr:nth-child(even) td{background:#f5f9fd!important}
+.standings-table tbody tr:hover,
+.standings-table tbody tr:hover td{background:inherit!important}
 
 /* Barre de défilement dédiée : elle commence sous l'en-tête */
 .standings-table-wrap{scrollbar-width:none!important}
@@ -421,27 +422,27 @@ main{
 }
 .standings-custom-scrollbar-thumb:active{cursor:grabbing;background:#526f90}
 
-/* Nouveau bouton retour en haut : pastille claire et flèche verte */
+/* Bouton retour en haut : vert, flèche blanche et ombre portée */
 .standings-scroll-top{
  right:18px;
  bottom:18px;
  width:52px;
  height:52px;
- border:1px solid #d8e7df;
+ border:1px solid #08a65f;
  border-radius:50%!important;
- background:#fff;
- color:#078451;
+ background:#08b968;
+ color:#fff;
  font-size:31px;
  font-family:Arial,sans-serif;
  font-weight:800;
  line-height:1;
- box-shadow:0 5px 18px rgba(20,45,70,.2);
+ box-shadow:0 5px 16px rgba(8,185,104,.38),0 2px 5px rgba(10,27,70,.16);
 }
 .standings-scroll-top:hover{
- background:#078451;
+ background:#079b59;
  color:#fff;
- border-color:#078451;
- box-shadow:0 7px 20px rgba(5,99,62,.28);
+ border-color:#078b50;
+ box-shadow:0 7px 21px rgba(8,145,82,.42),0 3px 7px rgba(10,27,70,.18);
 }
 @media(max-width:650px){
  .standings-custom-scrollbar{right:2px;width:7px;top:47px}
