@@ -522,6 +522,38 @@ input,
   .standings-table thead th::after{font-size:8px!important}
 }
 
+/* Mobile : garder la date de mise à jour visible sous le sélecteur */
+@media(max-width:700px){
+  .standings-toolbar{
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:stretch!important;
+    width:100%;
+  }
+  .standings-filter{
+    width:100%;
+    flex:0 0 auto;
+  }
+  .standings-updated{
+    display:block!important;
+    position:static!important;
+    flex:0 0 auto!important;
+    width:100%;
+    min-width:0;
+    min-height:16px;
+    margin:0!important;
+    padding:2px 0 0!important;
+    color:#526b8d!important;
+    font-size:11px;
+    line-height:1.4;
+    text-align:left!important;
+    white-space:normal;
+    overflow-wrap:anywhere;
+    visibility:visible!important;
+    opacity:1!important;
+  }
+}
+
 </style>
 </head>
 <body>
