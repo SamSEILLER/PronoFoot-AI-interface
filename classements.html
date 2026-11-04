@@ -786,6 +786,29 @@ input,
     font-size:10px!important;
   }
 }
+
+/* Finition de la légende et alternance grise du tableau */
+.standings-legend{
+  margin:11px 0 5px 0!important;
+  padding:0 15px!important;
+}
+.standings-table tbody tr:nth-child(even),
+.standings-table tbody tr:nth-child(even) td{
+  background:#e1e1e1!important;
+}
+/* Désactivation complète des effets de survol des lignes */
+.standings-table tbody tr:hover,
+.standings-table tbody tr:hover td{
+  background:inherit!important;
+  box-shadow:none!important;
+  filter:none!important;
+  transform:none!important;
+}
+.standings-table tbody tr,
+.standings-table tbody tr td{
+  box-shadow:none!important;
+  transition:none!important;
+}
 </style>
 </head>
 <body>
