@@ -269,6 +269,40 @@ input,
 .standings-table-wrap{
   border-radius:4px!important;
 }
+
+
+/* Liste des matchs à hauteur naturelle : défilement de la page entière */
+body{
+  height:auto!important;
+  min-height:100vh!important;
+  overflow-x:hidden!important;
+  overflow-y:auto!important;
+}
+@supports (min-height:100dvh){
+  body{min-height:100dvh!important}
+}
+main{
+  display:block!important;
+  flex:0 0 auto!important;
+  min-height:0!important;
+}
+.workspace{
+  flex:0 0 auto!important;
+  min-height:0!important;
+}
+.panel,
+.left-panel{
+  min-height:0!important;
+}
+.upcoming-matches-list{
+  flex:0 0 auto!important;
+  min-height:0!important;
+  height:auto!important;
+  max-height:none!important;
+  overflow:visible!important;
+  overscroll-behavior:auto!important;
+}
+
 </style>
 </head>
 <body>
