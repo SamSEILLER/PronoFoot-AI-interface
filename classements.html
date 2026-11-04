@@ -679,9 +679,9 @@ input,
 .standings-scroll-top,
 .standings-scroll-top.is-visible{
   display:inline-block!important;
-  width:48px!important;
-  height:48px!important;
-  line-height:54px!important;
+  width:42px!important;
+  height:42px!important;
+  line-height:48px!important;
   background:linear-gradient(110deg,#1c2c38 0%,#293b48 57%,#1b303e 100%)!important;
   font-size:28px!important;
 }
@@ -693,6 +693,7 @@ input,
   .standings-scroll-top.is-visible{
     width:42px!important;
     height:42px!important;
+    line-height:48px!important;
     font-size:25px!important;
   }
 }
@@ -702,6 +703,14 @@ input,
   .standings-legend{display:none!important}
 }
 
+
+/* Masquer la saison et la date de mise à jour sur mobile */
+@media(max-width:700px){
+  #standingsUpdated,
+  .standings-season{
+    display:none!important;
+  }
+}
 </style>
 </head>
 <body>
