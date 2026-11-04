@@ -88,8 +88,8 @@
       let activeDateFilter = "today-tomorrow";
       const dateFilterRanges = {
         "today-tomorrow": [0, 1],
-        "days-2-4": [2, 4],
-        "days-5-7": [5, 7]
+        "days-2-3": [2, 3],
+        "days-4-6": [4, 6]
       };
 
       const parisDateKey = (timestamp) => {
@@ -104,6 +104,36 @@
         const date = new Date(Date.UTC(year, month - 1, day + days));
         return date.toISOString().slice(0, 10);
       };
+      const weekdayFormatter = new Intl.DateTimeFormat("fr-FR", {
+        weekday: "long", timeZone: "Europe/Paris"
+      });
+      const shortDateFormatter = new Intl.DateTimeFormat("fr-FR", {
+        day: "numeric", month: "short", timeZone: "Europe/Paris"
+      });
+      const updateFilterLabels = () => {
+        const today = parisDateKey(Date.now());
+        Object.entries(dateFilterRanges).forEach(([key, [startOffset, endOffset]]) => {
+          const first = shiftDateKey(today, startOffset);
+          const last = shiftDateKey(today, endOffset);
+          const firstDate = new Date(first + "T12:00:00Z");
+          const lastDate = new Date(last + "T12:00:00Z");
+          const title = document.querySelector('[data-filter-title="' + key + '"]');
+          const dates = document.querySelector('[data-filter-dates="' + key + '"]');
+          if (title) {
+            const firstDay = weekdayFormatter.format(firstDate);
+            const lastDay = weekdayFormatter.format(lastDate);
+            title.textContent = firstDay.charAt(0).toLocaleUpperCase("fr") + firstDay.slice(1)
+              + (startOffset === endOffset ? "" : " & " + lastDay);
+          }
+          if (dates) {
+            dates.textContent = startOffset === 0
+              ? shortDateFormatter.format(firstDate) + " & " + shortDateFormatter.format(lastDate)
+              : shortDateFormatter.format(firstDate) + " – " + shortDateFormatter.format(lastDate);
+          }
+        });
+      };
+      updateFilterLabels();
+
       const renderFilteredMatches = () => {
         const today = parisDateKey(Date.now());
         const [startOffset, endOffset] = dateFilterRanges[activeDateFilter] || [0, 1];
