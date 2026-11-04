@@ -300,6 +300,57 @@ main{
 
 /* Fond du header pleine largeur, sans arrondi */
 .topbar{border-radius:0!important}
+
+/* Tableau : scrollbar personnalisée, en-tête fixe et retour en haut */
+#standingsContent{position:relative;overflow:hidden}
+.standings-table-wrap{
+ height:100%;
+ max-height:100%;
+ overflow:auto;
+ scrollbar-width:thin;
+ scrollbar-color:#8ba3bd #edf2f7;
+}
+.standings-table-wrap::-webkit-scrollbar{width:11px;height:11px}
+.standings-table-wrap::-webkit-scrollbar-track{background:#edf2f7;border-radius:10px}
+.standings-table-wrap::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#9bb1c8,#718ba7);border:2px solid #edf2f7;border-radius:10px}
+.standings-table-wrap::-webkit-scrollbar-thumb:hover{background:linear-gradient(180deg,#718ba7,#526f90)}
+.standings-table thead th{
+ position:sticky;
+ top:0;
+ z-index:3;
+ background:#f5f8fc;
+ box-shadow:0 5px 9px -5px rgba(10,27,70,.42);
+ transition:box-shadow .18s ease;
+}
+.standings-table-wrap:has(tbody tr:hover) thead th{box-shadow:0 6px 12px -5px rgba(10,27,70,.48)}
+.standings-scroll-top{
+ position:absolute;
+ right:14px;
+ bottom:14px;
+ z-index:5;
+ display:inline-flex;
+ align-items:center;
+ gap:6px;
+ padding:10px 14px;
+ border:1px solid #087c4c;
+ border-radius:22px!important;
+ background:#087c4c;
+ color:#fff;
+ font-size:12px;
+ font-weight:750;
+ box-shadow:0 4px 14px rgba(8,124,76,.25);
+ opacity:0;
+ visibility:hidden;
+ transform:translateY(8px);
+ transition:opacity .18s ease,transform .18s ease,visibility .18s ease,background .18s ease;
+}
+.standings-scroll-top.is-visible{opacity:1;visibility:visible;transform:translateY(0)}
+.standings-scroll-top:hover{background:#06663f}
+.standings-scroll-top:focus-visible{outline:3px solid #8be5b9;outline-offset:3px}
+@media(prefers-reduced-motion:reduce){
+ .standings-scroll-top{transition:none}
+ .standings-table-wrap{scroll-behavior:auto}
+}
 </style>
 </head>
 <body>
@@ -467,7 +518,12 @@ main{
       const logoHtml = logo ? '<img src="'+safe(logo)+'" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement(\'span\'),{className:\'standings-team-fallback\',textContent:'+JSON.stringify(initials)+'}))">' : '<span class="standings-team-fallback">'+safe(initials)+'</span>';
       return '<tr><td><span class="standings-position">'+safe(position)+'</span></td><td class="team-cell"><span class="standings-team">'+logoHtml+'<span>'+safe(teamName)+'</span></span></td><td>'+safe(played)+'</td><td>'+safe(wins)+'</td><td>'+safe(draws)+'</td><td>'+safe(losses)+'</td><td>'+safe(scored)+'</td><td>'+safe(conceded)+'</td><td class="'+diffClass+'">'+(Number(diff)>0?"+":"")+safe(diff)+'</td><td class="standings-points">'+safe(points)+'</td></tr>';
     }).join("");
-    content.innerHTML = '<div class="standings-table-wrap"><table class="standings-table"><thead><tr><th data-short="Pos.">Position</th><th data-short="Équipe">Équipe</th><th data-short="MJ">Matchs joués</th><th data-short="V">Victoires</th><th data-short="N">Matchs nuls</th><th data-short="D">Défaites</th><th data-short="BM">Buts marqués</th><th data-short="BC">Buts encaissés</th><th data-short="Diff.">Différence de buts</th><th data-short="Pts">Points</th></tr></thead><tbody>'+body+'</tbody></table></div>';
+    content.innerHTML = '<div class="standings-table-wrap" aria-label="Tableau du classement"><table class="standings-table"><thead><tr><th data-short="Pos.">Position</th><th data-short="Équipe">Équipe</th><th data-short="MJ">Matchs joués</th><th data-short="V">Victoires</th><th data-short="N">Matchs nuls</th><th data-short="D">Défaites</th><th data-short="BM">Buts marqués</th><th data-short="BC">Buts encaissés</th><th data-short="Diff.">Différence de buts</th><th data-short="Pts">Points</th></tr></thead><tbody>'+body+'</tbody></table></div><button type="button" class="standings-scroll-top" aria-label="Revenir en haut du classement">↑ <span>Haut</span></button>';
+    const tableScroller = content.querySelector(".standings-table-wrap");
+    const scrollTopButton = content.querySelector(".standings-scroll-top");
+    const updateScrollButton = () => scrollTopButton.classList.toggle("is-visible", tableScroller.scrollTop > 120);
+    tableScroller.addEventListener("scroll", updateScrollButton, {passive:true});
+    scrollTopButton.addEventListener("click", () => tableScroller.scrollTo({top:0,behavior:"smooth"}));
   };
   fetch(DATA_URL + "?v=" + Date.now(), {cache:"no-store"})
     .then(response => { if (!response.ok) throw new Error("Fichier de classement absent (HTTP "+response.status+")"); return response.json(); })
