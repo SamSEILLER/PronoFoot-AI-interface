@@ -449,6 +449,12 @@ main{
   .match-team-name{font-size:12px;overflow-wrap:normal;word-break:normal}
 }
 
+
+/* Liste épurée : le compteur de matchs est retiré */
+.match-period-summary{display:none!important}
+.matches-list-section{gap:0!important}
+.upcoming-matches-list{margin-top:0!important}
+
 </style>
 </head>
 <body>
@@ -479,7 +485,6 @@ main{
 </section>
 <div class="workspace" aria-label="Espace de travail principal">
 <section class="left-panel matches-list-section" aria-label="Liste des matchs de la période">
-<div class="match-period-summary"><span class="match-count-icon" aria-hidden="true">▦</span><strong id="matchPeriodCount" aria-live="polite">0 match</strong></div>
 <div class="upcoming-matches-list" id="upcomingMatchesList" aria-live="polite"></div>
 </section>
 <aside class="panel right-panel" aria-label="Sidebar"></aside>
