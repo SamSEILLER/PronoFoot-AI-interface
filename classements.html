@@ -675,6 +675,26 @@ input,
   color:#fff!important;
 }
 
+/* Bouton de remontée : bleu identique au header, dimensions légèrement réduites */
+.standings-scroll-top,
+.standings-scroll-top.is-visible{
+  width:48px!important;
+  height:48px!important;
+  background:linear-gradient(110deg,#1c2c38 0%,#293b48 57%,#1b303e 100%)!important;
+  font-size:28px!important;
+}
+.standings-scroll-top:hover{
+  background:linear-gradient(110deg,#172630 0%,#223440 57%,#162a37 100%)!important;
+}
+@media(max-width:650px){
+  .standings-scroll-top,
+  .standings-scroll-top.is-visible{
+    width:42px!important;
+    height:42px!important;
+    font-size:25px!important;
+  }
+}
+
 </style>
 </head>
 <body>
