@@ -222,6 +222,36 @@ main{max-width:1900px;margin:0 auto;padding:15px 18px 24px}
  .standings-table th::after{font-size:8px}
 }
 
+
+/* Harmonisation globale : arrondis à 10px, header inclus */
+*{border-radius:10px!important}
+
+/* Le fond du header reste pleine largeur ; son contenu est centré sur 1600px */
+.topbar{
+ padding-left:max(20px,calc((100% - 1600px)/2 + 20px));
+ padding-right:max(20px,calc((100% - 1600px)/2 + 20px));
+}
+
+/* Zone principale et footer limités à 1600px */
+main{
+ width:100%;
+ max-width:1600px;
+ margin-left:auto;
+ margin-right:auto;
+}
+.footer{
+ width:100%;
+ max-width:1600px;
+ margin-left:auto;
+ margin-right:auto;
+}
+@media(max-width:1120px){
+ .topbar{padding-left:16px;padding-right:16px}
+}
+@media(max-width:650px){
+ .topbar{padding-left:12px;padding-right:12px}
+}
+
 </style>
 </head>
 <body>
