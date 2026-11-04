@@ -138,6 +138,7 @@ main{max-width:1900px;margin:0 auto;padding:15px 18px 24px}
 
 /* League standings page — content only; shared header and footer remain unchanged */
 .standings-page{display:block;min-height:0}
+#standingsContent{margin-top:12px}
 .standings-panel{min-height:0;padding:22px 24px 26px}
 .standings-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;margin-bottom:22px}
 .standings-eyebrow{margin:0 0 5px;color:#08a967;font-size:11px;font-weight:800;letter-spacing:1.25px;text-transform:uppercase}
@@ -654,11 +655,11 @@ input,
     <div class="standings-filter"><label for="competitionSelect">COMPÉTITION DISPONIBLE</label><select id="competitionSelect" disabled><option value="">Chargement des compétitions…</option></select></div>
     <div class="standings-updated" id="standingsUpdated">En attente des données de classement</div>
   </div>
-  <div id="standingsContent" aria-live="polite">
-    <div class="standings-empty"><strong>Chargement du classement…</strong><p>Les classements seront affichés à partir des données publiées par le moteur PronoFoot AI.</p></div>
-  </div>
   <div class="standings-legend"><span><i></i> Points au classement</span><span>V : victoires · N : matchs nuls · D : défaites</span><span>Buts marqués et encaissés par équipe</span></div>
 </section>
+<div id="standingsContent" aria-live="polite">
+  <div class="standings-empty"><strong>Chargement du classement…</strong><p>Les classements seront affichés à partir des données publiées par le moteur PronoFoot AI.</p></div>
+</div>
 </div></main>
 <footer class="footer">PronoFoot AI · Football Prediction Lab</footer>
 
