@@ -843,6 +843,18 @@ input,
 .standings-table td{
   box-shadow:none!important;
 }
+
+
+/* Le survol conserve strictement la couleur alternée de chaque ligne */
+.standings-table tbody tr:nth-child(even):hover,
+.standings-table tbody tr:nth-child(even):hover td{
+  background:#f5f5f5!important;
+}
+.standings-table tbody tr:nth-child(odd):hover,
+.standings-table tbody tr:nth-child(odd):hover td{
+  background:#fff!important;
+}
+
 </style>
 </head>
 <body>
