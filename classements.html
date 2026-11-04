@@ -253,18 +253,10 @@ main{
 /* Fond du header pleine largeur, sans arrondi */
 .topbar{border-radius:0!important}
 
-/* Le tableau suit désormais le défilement naturel de la page */
-#standingsContent{position:static;overflow:visible}
-.standings-table-wrap{
- height:auto;
- max-height:none;
- overflow-x:auto;
- overflow-y:visible;
-}
 .standings-table thead th{
- position:sticky;
- top:0;
- z-index:3;
+ position:static;
+ top:auto;
+ z-index:auto;
  padding:15px 10px;
  background:linear-gradient(180deg,#263f50 0%,#1b3444 100%);
  color:#f4fbff;
@@ -313,7 +305,6 @@ main{
 .standings-scroll-top:focus-visible{outline:3px solid #8be5b9;outline-offset:4px}
 @media(prefers-reduced-motion:reduce){
  .standings-scroll-top{transition:none}
- .standings-table-wrap{scroll-behavior:auto}
 }
 
 /* Finition du tableau : séparateurs discrets et lignes alternées */
