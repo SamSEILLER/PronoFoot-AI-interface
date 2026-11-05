@@ -980,6 +980,23 @@ main{
 /* Logos des clubs légèrement agrandis */
 .match-team-logo{width:42px;height:42px;flex:0 0 42px}
 @media(max-width:760px){.match-team-logo{width:30px;height:30px;flex-basis:30px}}
+
+/* Espace supplémentaire autour du séparateur VS */
+@media(min-width:1121px){
+  .upcoming-match-card{
+    grid-template-columns:minmax(118px,.78fr) minmax(0,1.08fr) 48px minmax(0,1.08fr) minmax(118px,.88fr)!important;
+  }
+}
+@media(min-width:701px) and (max-width:1120px){
+  .upcoming-match-card{
+    grid-template-columns:minmax(120px,.78fr) minmax(0,1.05fr) 44px minmax(0,1.05fr) minmax(112px,.85fr)!important;
+  }
+}
+@media(max-width:700px){
+  .upcoming-match-card{
+    grid-template-columns:minmax(0,1fr) 42px minmax(0,1fr)!important;
+  }
+}
 </style>
 </head>
 <body>
