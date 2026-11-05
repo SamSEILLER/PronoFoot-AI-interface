@@ -1021,6 +1021,7 @@ main{
   background:#eaf1ff!important;
   color:#2863a9!important;
 }
+.match-competition .competition-logo{display:block;width:34px;height:34px;max-width:100%;max-height:100%;object-fit:contain;}
 .match-competition .competition-cup-icon{
   width:27px!important;
   height:27px!important;
@@ -1129,7 +1130,7 @@ main{
 <div class="match-meta">
 <time class="match-kickoff" data-field="kickoff"></time>
 </div>
-<div class="match-competition"><span class="competition-mark" aria-hidden="true"><svg class="competition-cup-icon" viewBox="0 0 24 24" focusable="false"><path d="M8 3h8l-1 7a3 3 0 0 1-6 0L8 3Z"></path><path d="M8 5H4v2a4 4 0 0 0 4 4M16 5h4v2a4 4 0 0 1-4 4M12 13v5m-4 3h8m-6-3h4"></path></svg></span><span class="competition-copy"><strong data-field="competition"></strong><small data-field="round"></small></span></div>
+<div class="match-competition"><span class="competition-mark" aria-hidden="true"><img class="competition-logo" data-field="competition-logo" alt="" hidden><svg class="competition-cup-icon" data-field="competition-fallback" viewBox="0 0 24 24" focusable="false"><path d="M8 3h8l-1 7a3 3 0 0 1-6 0L8 3Z"></path><path d="M8 5H4v2a4 4 0 0 0 4 4M16 5h4v2a4 4 0 0 1-4 4M12 13v5m-4 3h8m-6-3h4"></path></svg></span><span class="competition-copy"><strong data-field="competition"></strong><small data-field="round"></small></span></div>
 <div class="match-team match-team-home">
 <img class="match-team-logo" data-field="home-logo" alt="" hidden>
 <span class="match-team-copy">
