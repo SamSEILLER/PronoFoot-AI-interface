@@ -944,17 +944,26 @@ main{
 .match-team-position[hidden]{display:none!important}
 
 /* Classement toujours au-dessus du nom du club */
-.match-team-copy{
+.match-team-home .match-team-copy{
   flex-direction:column-reverse!important;
-  align-items:center!important;
-  text-align:center!important;
+  align-items:flex-end!important;
+  text-align:right!important;
 }
-.match-team-position,
-.match-team-away .match-team-position{
-  align-self:center!important;
+.match-team-away .match-team-copy{
+  flex-direction:column-reverse!important;
+  align-items:flex-start!important;
+  text-align:left!important;
+}
+.match-team-home .match-team-position{
+  align-self:flex-end!important;
   font-size:11px!important;
 }
-.match-team-name{text-align:center!important}
+.match-team-away .match-team-position{
+  align-self:flex-start!important;
+  font-size:11px!important;
+}
+.match-team-home .match-team-name{text-align:right!important}
+.match-team-away .match-team-name{text-align:left!important}
 
 /* Supprime le padding droit de la liste des matchs */
 .upcoming-matches-list{padding-right:0px}
