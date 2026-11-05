@@ -842,6 +842,24 @@ main{
 /* Équipe B (extérieur) : nom aligné à gauche */
 .match-team-away{justify-content:flex-start!important;text-align:left!important}
 .match-team-away .match-team-name{text-align:left!important}
+
+/* Position au classement issue de standings.json */
+.match-team-position{
+  flex:0 0 auto;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:25px;
+  padding:3px 5px;
+  border-radius:5px;
+  background:#eaf1fb;
+  color:#315b91;
+  font-size:10px;
+  font-weight:800;
+  line-height:1;
+  white-space:nowrap;
+}
+.match-team-position[hidden]{display:none!important}
 </style>
 </head>
 <body>
@@ -891,11 +909,13 @@ main{
 <div class="match-team match-team-home">
 <img class="match-team-logo" data-field="home-logo" alt="" hidden>
 <span class="match-team-name" data-field="home-name"></span>
+<span class="match-team-position" data-field="home-position" hidden></span>
 </div>
 <span class="match-versus" aria-label="contre">VS</span>
 <div class="match-team match-team-away">
 <img class="match-team-logo" data-field="away-logo" alt="" hidden>
 <span class="match-team-name" data-field="away-name"></span>
+<span class="match-team-position" data-field="away-position" hidden></span>
 </div>
 
 </article>
