@@ -843,6 +843,88 @@ main{
 .match-team-away{justify-content:flex-start!important;text-align:left!important}
 .match-team-away .match-team-name{text-align:left!important}
 
+/* Présentation des équipes : classement sous le nom du club */
+.match-team{gap:9px;min-width:0}
+.match-team-copy{
+  display:flex;
+  flex:1 1 auto;
+  flex-direction:column;
+  align-items:flex-end;
+  justify-content:center;
+  gap:4px;
+  min-width:0;
+  text-align:right;
+}
+.match-team-away .match-team-copy{
+  align-items:flex-start;
+  text-align:left;
+}
+.match-team-name{display:block;max-width:100%;line-height:1.15}
+.match-team-position{
+  align-self:flex-end;
+  min-width:28px;
+  padding:3px 7px;
+  border:1px solid #d8e6f8;
+  border-radius:5px;
+  background:#eaf2ff;
+  color:#28558e;
+  font-size:10px;
+  font-weight:800;
+}
+.match-team-away .match-team-position{align-self:flex-start}
+
+/* Compétition et journée : nom lisible + numéro en pastille dédiée */
+.match-competition{
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  gap:9px;
+  min-width:0;
+  padding:8px 10px;
+  border-left:1px solid #d5e2f3;
+  background:transparent;
+}
+.match-competition .competition-mark{flex:0 0 24px;width:24px;height:24px}
+.match-competition .competition-copy{
+  display:flex;
+  flex:1 1 auto;
+  flex-direction:row;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  min-width:0;
+}
+.match-competition .competition-copy strong{
+  display:block;
+  min-width:0;
+  color:#19365f;
+  font-size:12px;
+  font-weight:800;
+  line-height:1.2;
+  text-align:left;
+}
+.match-competition .competition-copy small{
+  flex:0 0 auto;
+  padding:4px 7px;
+  border-radius:5px;
+  background:#285b99;
+  color:#fff;
+  font-size:10px;
+  font-weight:800;
+  line-height:1;
+  white-space:nowrap;
+}
+.match-competition .competition-copy small[hidden]{display:none!important}
+@media(max-width:700px){
+  .match-competition{
+    justify-content:flex-start!important;
+    padding:5px 7px!important;
+    border-left:0;
+  }
+  .match-competition .competition-copy{justify-content:flex-start}
+  .match-competition .competition-copy strong{font-size:11px}
+}
+
 /* Position au classement issue de standings.json */
 .match-team-position{
   flex:0 0 auto;
@@ -911,14 +993,18 @@ main{
 <div class="match-competition"><span class="competition-mark" aria-hidden="true"><svg class="competition-cup-icon" viewBox="0 0 24 24" focusable="false"><path d="M8 3h8l-1 7a3 3 0 0 1-6 0L8 3Z"></path><path d="M8 5H4v2a4 4 0 0 0 4 4M16 5h4v2a4 4 0 0 1-4 4M12 13v5m-4 3h8m-6-3h4"></path></svg></span><span class="competition-copy"><strong data-field="competition"></strong><small data-field="round"></small></span></div>
 <div class="match-team match-team-home">
 <img class="match-team-logo" data-field="home-logo" alt="" hidden>
+<span class="match-team-copy">
 <span class="match-team-name" data-field="home-name"></span>
 <span class="match-team-position" data-field="home-position" hidden></span>
+</span>
 </div>
 <span class="match-versus" aria-label="contre">VS</span>
 <div class="match-team match-team-away">
 <img class="match-team-logo" data-field="away-logo" alt="" hidden>
+<span class="match-team-copy">
 <span class="match-team-name" data-field="away-name"></span>
 <span class="match-team-position" data-field="away-position" hidden></span>
+</span>
 </div>
 
 </article>
