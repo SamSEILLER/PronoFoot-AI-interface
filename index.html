@@ -784,6 +784,45 @@ main{
 /* Le panneau de détail garde sa hauteur propre, indépendante de la liste des matchs */
 .match-detail-panel{align-self:start!important;min-height:400px!important}
 
+/* Compétition et phase à droite des deux équipes */
+.upcoming-match-card{
+  grid-template-columns:minmax(118px,.78fr) minmax(0,1.08fr) 38px minmax(0,1.08fr) minmax(118px,.88fr) 76px!important;
+}
+.upcoming-match-card > .match-meta{grid-column:1;grid-row:1}
+.upcoming-match-card > .match-team-home{grid-column:2;grid-row:1}
+.upcoming-match-card > .match-versus{grid-column:3;grid-row:1}
+.upcoming-match-card > .match-team-away{grid-column:4;grid-row:1}
+.upcoming-match-card > .match-competition{grid-column:5;grid-row:1;justify-content:flex-start}
+.upcoming-match-card > .match-stats-button{grid-column:6;grid-row:1}
+@media(min-width:701px) and (max-width:1120px){
+  .upcoming-match-card{
+    grid-template-columns:minmax(120px,.78fr) minmax(0,1.05fr) 34px minmax(0,1.05fr) minmax(112px,.85fr) 70px!important;
+    gap:8px;
+  }
+  .match-competition{padding:5px 6px;gap:5px}
+  .competition-copy strong{font-size:11px}
+  .competition-copy small{font-size:10px}
+}
+@media(max-width:700px){
+  .upcoming-match-card{
+    grid-template-columns:minmax(0,1fr) 34px minmax(0,1fr) 66px!important;
+    row-gap:5px;
+  }
+  .upcoming-match-card > .match-meta{grid-column:1/3;grid-row:1}
+  .upcoming-match-card > .match-team-home{grid-column:1;grid-row:2}
+  .upcoming-match-card > .match-versus{grid-column:2;grid-row:2}
+  .upcoming-match-card > .match-team-away{grid-column:3;grid-row:2}
+  .upcoming-match-card > .match-stats-button{grid-column:4;grid-row:2}
+  .upcoming-match-card > .match-competition{
+    grid-column:1/-1;
+    grid-row:3;
+    justify-content:flex-end;
+    padding:3px 6px 0;
+    border-left:0;
+    background:transparent;
+  }
+}
+
 /* Équipe B (extérieur) : nom aligné à gauche */
 .match-team-away{justify-content:flex-start!important;text-align:left!important}
 .match-team-away .match-team-name{text-align:left!important}
