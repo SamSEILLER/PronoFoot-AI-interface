@@ -63,6 +63,8 @@
     return index;
   };
 
+  let selectedMatchKey = "";
+
   const getEstimatedPhase = (match, playedIndex) => {
     const competition = playedIndex.get(String(match.competition_slug || ""));
     if (!competition || (competition.season && match.season && competition.season !== match.season)) return "";
@@ -95,6 +97,13 @@
     setText(card, "away-name", match.away_team);
     setLogo(card, "home-logo", match.provider_record?.home_team?.image_url, match.home_team);
     setLogo(card, "away-logo", match.provider_record?.away_team?.image_url, match.away_team);
+    const matchKey = String(match.id || [match.competition_slug, match.kickoff_utc, match.home_team, match.away_team].join("|"));
+    card.dataset.matchKey = matchKey;
+    card.setAttribute("role", "button");
+    card.setAttribute("tabindex", "0");
+    card.setAttribute("aria-pressed", String(matchKey === selectedMatchKey));
+    card.setAttribute("aria-label", "Sélectionner le match " + match.home_team + " contre " + match.away_team);
+    if (matchKey === selectedMatchKey) card.classList.add("is-selected");
     return fragment;
   };
 
@@ -169,6 +178,22 @@
       };
       updateFilterLabels();
 
+      const selectMatch = (card, match) => {
+        selectedMatchKey = card.dataset.matchKey || "";
+        list.querySelectorAll(".upcoming-match-card").forEach((item) => {
+          const active = item === card;
+          item.classList.toggle("is-selected", active);
+          item.setAttribute("aria-pressed", String(active));
+        });
+        const title = document.querySelector(".match-detail-empty h2");
+        const description = document.querySelector(".match-detail-empty p");
+        if (title) title.textContent = match.home_team + " – " + match.away_team;
+        if (description) {
+          const phase = getEstimatedPhase(match, playedIndex) || match.round || "";
+          description.textContent = [match.competition || "", phase].filter(Boolean).join(" · ") || "Match sélectionné";
+        }
+      };
+
       const renderFilteredMatches = () => {
         const today = parisDateKey(Date.now());
         const [startOffset, endOffset] = dateFilterRanges[activeDateFilter] || [0, 1];
@@ -187,7 +212,18 @@
         if (countNode) countNode.textContent = filtered.length + (filtered.length === 1 ? " match" : " matchs");
         filtered.forEach(({ match }) => {
           const card = renderMatch(match, playedIndex);
-          if (card) list.appendChild(card);
+          if (card) {
+            const article = card.querySelector(".upcoming-match-card");
+            article.addEventListener("click", () => selectMatch(article, match));
+            article.addEventListener("keydown", (event) => {
+              if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                selectMatch(article, match);
+              }
+            });
+            list.appendChild(card);
+            if (article.dataset.matchKey === selectedMatchKey) selectMatch(article, match);
+          }
         });
         if (!list.children.length) {
           const empty = document.createElement("p");
