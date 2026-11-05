@@ -1001,6 +1001,21 @@ main{
 /* Décalage léger des blocs équipes par rapport au VS */
 .upcoming-match-card > .match-team-home{padding-right:10px}
 .upcoming-match-card > .match-team-away{padding-left:10px}
+
+/* Championnat sur la première ligne, journée juste en dessous */
+.match-competition .competition-copy{
+  flex-direction:column!important;
+  align-items:flex-start!important;
+  justify-content:center!important;
+  gap:5px!important;
+}
+.match-competition .competition-copy strong{
+  width:100%;
+  text-align:left!important;
+}
+.match-competition .competition-copy small{
+  align-self:flex-start;
+}
 </style>
 </head>
 <body>
