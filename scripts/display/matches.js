@@ -5,6 +5,21 @@
 (() => {
   const DATA_URL = "./data/matches_future.json";
   const STANDINGS_URL = "./data/standings.json";
+
+  // Logos API-Football associés aux slugs réellement présents dans matches_future.json.
+  const COMPETITION_LOGOS = Object.freeze({
+    "be-first-division-a": 144,
+    "de-bundesliga": 78,
+    "es-la-liga": 140,
+    "fr-ligue-1": 61,
+    "fr-ligue-2": 62,
+    "gb-premier-league": 39,
+    "it-serie-a": 135,
+    "pt-primeira-liga": 94,
+    "uefa-champions-league": 2,
+    "uefa-europa-league": 3,
+    "us-mls": 253
+  });
   const list = document.getElementById("upcomingMatchesList");
   const template = document.getElementById("upcomingMatchTemplate");
   if (!list || !template) return;
@@ -43,6 +58,24 @@
       image.hidden = true;
       image.removeAttribute("src");
     }, { once: true });
+  };
+
+  const setCompetitionLogo = (root, slug, competitionName) => {
+    const image = root.querySelector('[data-field="competition-logo"]');
+    const fallback = root.querySelector('[data-field="competition-fallback"]');
+    const leagueId = COMPETITION_LOGOS[String(slug || "")];
+    if (!image || !fallback || !leagueId) return;
+    image.alt = "Logo " + (competitionName || "de la compétition");
+    image.addEventListener("load", () => {
+      image.hidden = false;
+      fallback.hidden = true;
+    }, { once: true });
+    image.addEventListener("error", () => {
+      image.hidden = true;
+      fallback.hidden = false;
+      image.removeAttribute("src");
+    }, { once: true });
+    image.src = "https://media.api-sports.io/football/leagues/" + leagueId + ".png";
   };
 
   // Indexe les statistiques de classement par compétition et identifiant d'équipe.
@@ -92,6 +125,7 @@
     }
 
     setText(card, "competition", match.competition || "");
+    setCompetitionLogo(card, match.competition_slug, match.competition);
     const phase = getEstimatedPhase(match, standingsIndex);
     const round = setText(card, "round", phase || match.round || "");
     if (round) round.hidden = !phase && !match.round;
