@@ -102,7 +102,7 @@
     const seasonMatches = !competitionStandings?.season || !match.season || competitionStandings.season === match.season;
     const homePosition = seasonMatches ? competitionStandings?.teams.get(String(match.home_team_id || ""))?.position : null;
     const awayPosition = seasonMatches ? competitionStandings?.teams.get(String(match.away_team_id || ""))?.position : null;
-    const formatPosition = (position) => position === 1 ? "1er" : position ? position + "e" : "";
+    const formatPosition = (position) => position ? "# " + position : "";
     const homePositionNode = setText(card, "home-position", formatPosition(homePosition));
     const awayPositionNode = setText(card, "away-position", formatPosition(awayPosition));
     if (homePositionNode) homePositionNode.hidden = !homePosition;
