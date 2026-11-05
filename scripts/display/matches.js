@@ -45,18 +45,21 @@
     }, { once: true });
   };
 
-  // Construit un index des matchs joués par équipe, à partir du classement publié.
-  // La valeur affichée correspond au prochain J estimé ; en cas de retard de calendrier,
-  // on retient le plus petit total des deux équipes pour ne pas annoncer un J déjà dépassé.
-  const buildPlayedIndex = (data) => {
+  // Indexe les statistiques de classement par compétition et identifiant d'équipe.
+  const buildStandingsIndex = (data) => {
     const index = new Map();
     const competitions = Array.isArray(data?.competitions) ? data.competitions : [];
     competitions.forEach((competition) => {
       const teams = new Map();
       (Array.isArray(competition.standings) ? competition.standings : []).forEach((row) => {
         const teamId = row.team_id || row.team?.id;
+        if (!teamId) return;
         const played = Number(row.played ?? row.matches_played);
-        if (teamId && Number.isInteger(played) && played >= 0) teams.set(String(teamId), played);
+        const position = Number(row.position);
+        teams.set(String(teamId), {
+          played: Number.isInteger(played) && played >= 0 ? played : null,
+          position: Number.isInteger(position) && position > 0 ? position : null
+        });
       });
       if (teams.size) index.set(String(competition.id), { season: competition.season || data.season, teams });
     });
@@ -65,16 +68,16 @@
 
   let selectedMatchKey = "";
 
-  const getEstimatedPhase = (match, playedIndex) => {
-    const competition = playedIndex.get(String(match.competition_slug || ""));
+  const getEstimatedPhase = (match, standingsIndex) => {
+    const competition = standingsIndex.get(String(match.competition_slug || ""));
     if (!competition || (competition.season && match.season && competition.season !== match.season)) return "";
-    const homePlayed = competition.teams.get(String(match.home_team_id || ""));
-    const awayPlayed = competition.teams.get(String(match.away_team_id || ""));
+    const homePlayed = competition.teams.get(String(match.home_team_id || ""))?.played;
+    const awayPlayed = competition.teams.get(String(match.away_team_id || ""))?.played;
     if (!Number.isInteger(homePlayed) || !Number.isInteger(awayPlayed)) return "";
     return "Phase - J" + (Math.min(homePlayed, awayPlayed) + 1);
   };
 
-  const renderMatch = (match, playedIndex) => {
+  const renderMatch = (match, standingsIndex) => {
     const kickoff = new Date(match.kickoff_utc);
     if (!match.home_team || !match.away_team || !Number.isFinite(kickoff.getTime())) return null;
 
@@ -89,12 +92,21 @@
     }
 
     setText(card, "competition", match.competition || "");
-    const phase = getEstimatedPhase(match, playedIndex);
+    const phase = getEstimatedPhase(match, standingsIndex);
     const round = setText(card, "round", phase || match.round || "");
     if (round) round.hidden = !phase && !match.round;
 
     setText(card, "home-name", match.home_team);
     setText(card, "away-name", match.away_team);
+    const competitionStandings = standingsIndex.get(String(match.competition_slug || ""));
+    const seasonMatches = !competitionStandings?.season || !match.season || competitionStandings.season === match.season;
+    const homePosition = seasonMatches ? competitionStandings?.teams.get(String(match.home_team_id || ""))?.position : null;
+    const awayPosition = seasonMatches ? competitionStandings?.teams.get(String(match.away_team_id || ""))?.position : null;
+    const formatPosition = (position) => position === 1 ? "1er" : position ? position + "e" : "";
+    const homePositionNode = setText(card, "home-position", formatPosition(homePosition));
+    const awayPositionNode = setText(card, "away-position", formatPosition(awayPosition));
+    if (homePositionNode) homePositionNode.hidden = !homePosition;
+    if (awayPositionNode) awayPositionNode.hidden = !awayPosition;
     setLogo(card, "home-logo", match.provider_record?.home_team?.image_url, match.home_team);
     setLogo(card, "away-logo", match.provider_record?.away_team?.image_url, match.away_team);
     const matchKey = String(match.id || [match.competition_slug, match.kickoff_utc, match.home_team, match.away_team].join("|"));
@@ -117,7 +129,7 @@
     .then(([matches, standings]) => {
       if (!Array.isArray(matches)) throw new Error("Format de données inattendu");
 
-      const playedIndex = buildPlayedIndex(standings);
+      const standingsIndex = buildStandingsIndex(standings);
       const now = Date.now();
       const upcoming = matches
         .filter((match) => match && match.match_category === "future" && match.status !== "cancelled")
@@ -189,7 +201,7 @@
         const description = document.querySelector(".match-detail-empty p");
         if (title) title.textContent = match.home_team + " – " + match.away_team;
         if (description) {
-          const phase = getEstimatedPhase(match, playedIndex) || match.round || "";
+          const phase = getEstimatedPhase(match, standingsIndex) || match.round || "";
           description.textContent = [match.competition || "", phase].filter(Boolean).join(" · ") || "Match sélectionné";
         }
       };
@@ -211,7 +223,7 @@
         list.replaceChildren();
         if (countNode) countNode.textContent = filtered.length + (filtered.length === 1 ? " match" : " matchs");
         filtered.forEach(({ match }) => {
-          const card = renderMatch(match, playedIndex);
+          const card = renderMatch(match, standingsIndex);
           if (card) {
             const article = card.querySelector(".upcoming-match-card");
             article.addEventListener("click", () => selectMatch(article, match));
