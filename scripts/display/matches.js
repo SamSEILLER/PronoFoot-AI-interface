@@ -4,6 +4,7 @@
  */
 (() => {
   const DATA_URL = "./data/matches_future.json";
+  const STANDINGS_URL = "./data/standings.json";
   const list = document.getElementById("upcomingMatchesList");
   const template = document.getElementById("upcomingMatchTemplate");
   if (!list || !template) return;
@@ -44,7 +45,34 @@
     }, { once: true });
   };
 
-  const renderMatch = (match) => {
+  // Construit un index des matchs joués par équipe, à partir du classement publié.
+  // La valeur affichée correspond au prochain J estimé ; en cas de retard de calendrier,
+  // on retient le plus petit total des deux équipes pour ne pas annoncer un J déjà dépassé.
+  const buildPlayedIndex = (data) => {
+    const index = new Map();
+    const competitions = Array.isArray(data?.competitions) ? data.competitions : [];
+    competitions.forEach((competition) => {
+      const teams = new Map();
+      (Array.isArray(competition.standings) ? competition.standings : []).forEach((row) => {
+        const teamId = row.team_id || row.team?.id;
+        const played = Number(row.played ?? row.matches_played);
+        if (teamId && Number.isInteger(played) && played >= 0) teams.set(String(teamId), played);
+      });
+      if (teams.size) index.set(String(competition.id), { season: competition.season || data.season, teams });
+    });
+    return index;
+  };
+
+  const getEstimatedPhase = (match, playedIndex) => {
+    const competition = playedIndex.get(String(match.competition_slug || ""));
+    if (!competition || (competition.season && match.season && competition.season !== match.season)) return "";
+    const homePlayed = competition.teams.get(String(match.home_team_id || ""));
+    const awayPlayed = competition.teams.get(String(match.away_team_id || ""));
+    if (!Number.isInteger(homePlayed) || !Number.isInteger(awayPlayed)) return "";
+    return "Phase - J" + (Math.min(homePlayed, awayPlayed) + 1);
+  };
+
+  const renderMatch = (match, playedIndex) => {
     const kickoff = new Date(match.kickoff_utc);
     if (!match.home_team || !match.away_team || !Number.isFinite(kickoff.getTime())) return null;
 
@@ -59,8 +87,9 @@
     }
 
     setText(card, "competition", match.competition || "");
-    const round = setText(card, "round", match.round ? " · " + match.round : "");
-    if (round && !match.round) round.hidden = true;
+    const phase = getEstimatedPhase(match, playedIndex);
+    const round = setText(card, "round", phase || match.round || "");
+    if (round) round.hidden = !phase && !match.round;
 
     setText(card, "home-name", match.home_team);
     setText(card, "away-name", match.away_team);
@@ -69,14 +98,17 @@
     return fragment;
   };
 
-  fetch(DATA_URL + "?v=" + Date.now(), { cache: "no-store" })
-    .then((response) => {
-      if (!response.ok) throw new Error("HTTP " + response.status);
-      return response.json();
-    })
-    .then((matches) => {
+  Promise.all([
+    fetch(DATA_URL + "?v=" + Date.now(), { cache: "no-store" })
+      .then((response) => { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); }),
+    fetch(STANDINGS_URL + "?v=" + Date.now(), { cache: "no-store" })
+      .then((response) => { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); })
+      .catch((error) => { console.warn("Classements indisponibles : numéro de phase masqué.", error); return null; })
+  ])
+    .then(([matches, standings]) => {
       if (!Array.isArray(matches)) throw new Error("Format de données inattendu");
 
+      const playedIndex = buildPlayedIndex(standings);
       const now = Date.now();
       const upcoming = matches
         .filter((match) => match && match.match_category === "future" && match.status !== "cancelled")
@@ -154,7 +186,7 @@
         list.replaceChildren();
         if (countNode) countNode.textContent = filtered.length + (filtered.length === 1 ? " match" : " matchs");
         filtered.forEach(({ match }) => {
-          const card = renderMatch(match);
+          const card = renderMatch(match, playedIndex);
           if (card) list.appendChild(card);
         });
         if (!list.children.length) {
