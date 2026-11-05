@@ -732,6 +732,41 @@ main{
   .desktop-only{display:none}
 }
 
+
+
+/* Ordre des éléments de l'équipe à domicile : nom puis logo */
+.match-team-home .match-team-name{order:1}
+.match-team-home .match-team-logo{order:2}
+
+/* Icône coupe à côté du nom de la compétition */
+.competition-mark{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:7px!important;
+  background:#dce9f8;
+  color:#2863a9;
+}
+.competition-cup-icon{
+  display:block;
+  width:19px;
+  height:19px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+/* Taille de la date et de l'heure */
+.match-kickoff .match-date{font-size:13px!important}
+.match-kickoff .match-time{font-size:22px!important}
+@media(max-width:760px){
+  .match-kickoff .match-date{font-size:11px!important}
+  .match-kickoff .match-time{font-size:16px!important}
+  .competition-cup-icon{width:16px;height:16px}
+}
+
 </style>
 </head>
 <body>
@@ -777,7 +812,7 @@ main{
 <div class="match-meta">
 <time class="match-kickoff" data-field="kickoff"></time>
 </div>
-<div class="match-competition"><span class="competition-mark" aria-hidden="true">◉</span><span class="competition-copy"><strong data-field="competition"></strong><small data-field="round"></small></span></div>
+<div class="match-competition"><span class="competition-mark" aria-hidden="true"><svg class="competition-cup-icon" viewBox="0 0 24 24" focusable="false"><path d="M8 3h8l-1 7a3 3 0 0 1-6 0L8 3Z"></path><path d="M8 5H4v2a4 4 0 0 0 4 4M16 5h4v2a4 4 0 0 1-4 4M12 13v5m-4 3h8m-6-3h4"></path></svg></span><span class="competition-copy"><strong data-field="competition"></strong><small data-field="round"></small></span></div>
 <div class="match-team match-team-home">
 <img class="match-team-logo" data-field="home-logo" alt="" hidden>
 <span class="match-team-name" data-field="home-name"></span>
