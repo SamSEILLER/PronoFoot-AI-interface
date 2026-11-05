@@ -781,6 +781,24 @@ main{
 /* Titres des filtres : taille uniforme sur ordinateur et mobile */
 .filters .filter-btn .filter-copy .filter-title{font-size:14px!important;font-weight:750!important}
 
+
+/* Sélection du match : retour visuel discret et accessible */
+.upcoming-match-card{cursor:pointer;transition:background-color .16s ease,box-shadow .16s ease}
+.upcoming-match-card.is-selected{
+  background:#e5efff!important;
+  box-shadow:inset 0 0 0 1px #9bbbe8,inset 4px 0 0 #3976bd!important;
+}
+.upcoming-match-card:focus-visible{outline:2px solid #3976bd;outline-offset:-2px}
+.match-stats-button{
+  display:inline-flex;align-items:center;justify-content:center;gap:6px;
+  min-width:76px;padding:7px 9px;border:1px solid #b7cbe7;border-radius:7px;
+  background:#f7faff;color:#244f83;font-size:12px;font-weight:750;
+  white-space:nowrap;pointer-events:none;
+}
+.match-stats-button svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.upcoming-match-card.is-selected .match-stats-button{background:#fff;border-color:#8eafe3;color:#17477f}
+@media(max-width:700px){.match-stats-button{min-width:0;padding:5px 6px;font-size:11px;gap:4px}.match-stats-button svg{width:13px;height:13px}}
+
 /* Le panneau de détail garde sa hauteur propre, indépendante de la liste des matchs */
 .match-detail-panel{align-self:start!important;min-height:400px!important}
 
@@ -881,7 +899,7 @@ main{
 <img class="match-team-logo" data-field="away-logo" alt="" hidden>
 <span class="match-team-name" data-field="away-name"></span>
 </div>
-<button class="match-stats-button" type="button" disabled aria-disabled="true">▥ <span>Stats</span></button>
+<span class="match-stats-button" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M5 4.5h14v15H5z"></path><path d="M8 9h8M8 12.5h8M8 16h5"></path></svg><span>Détails</span></span>
 </article>
 </template></main>
 <footer class="footer">PronoFoot AI · Football Prediction Lab</footer>
