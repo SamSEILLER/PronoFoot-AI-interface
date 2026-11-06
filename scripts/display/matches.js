@@ -8,17 +8,17 @@
 
   // Logos API-Football associés aux slugs réellement présents dans matches_future.json.
   const COMPETITION_LOGOS = Object.freeze({
-    "be-first-division-a": 144,
-    "de-bundesliga": 78,
-    "es-la-liga": 140,
-    "fr-ligue-1": 61,
-    "fr-ligue-2": 62,
-    "gb-premier-league": 39,
-    "it-serie-a": 135,
-    "pt-primeira-liga": 94,
-    "uefa-champions-league": 2,
-    "uefa-europa-league": 3,
-    "us-mls": 253
+    "be-first-division-a": "belgian-pro-league.jpg",
+    "de-bundesliga": "bundesliga.jpg",
+    "es-la-liga": "la-liga.jpg",
+    "fr-ligue-1": "ligue-1.jpg",
+    "fr-ligue-2": "ligue-2.jpg",
+    "gb-premier-league": "premier-league.jpg",
+    "it-serie-a": "serie-a.jpg",
+    "pt-primeira-liga": "primeira-liga.jpg",
+    "uefa-champions-league": "uefa-champions-league.jpg",
+    "uefa-europa-league": "uefa-europa-league.jpg",
+    "us-mls": "mls.jpg"
   });
   const list = document.getElementById("upcomingMatchesList");
   const template = document.getElementById("upcomingMatchTemplate");
@@ -63,8 +63,8 @@
   const setCompetitionLogo = (root, slug, competitionName) => {
     const image = root.querySelector('[data-field="competition-logo"]');
     const fallback = root.querySelector('[data-field="competition-fallback"]');
-    const leagueId = COMPETITION_LOGOS[String(slug || "")];
-    if (!image || !fallback || !leagueId) return;
+    const file = COMPETITION_LOGOS[String(slug || "")];
+    if (!image || !fallback || !file) return;
     image.alt = "Logo " + (competitionName || "de la compétition");
     image.addEventListener("load", () => {
       image.hidden = false;
@@ -75,7 +75,7 @@
       fallback.hidden = false;
       image.removeAttribute("src");
     }, { once: true });
-    image.src = "https://media.api-sports.io/football/leagues/" + leagueId + ".png";
+    image.src = "./assets/competitions/" + file;
   };
 
   // Indexe les statistiques de classement par compétition et identifiant d'équipe.
