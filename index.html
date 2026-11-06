@@ -1783,6 +1783,81 @@ input.search,
   }
 }
 
+
+/* Mobile — bandeau date/heure et championnat compact sur une ligne */
+@media(max-width:700px){
+  .upcoming-match-card{
+    row-gap:6px!important;
+  }
+  .upcoming-match-card > .match-meta{
+    min-height:44px!important;
+    align-items:center!important;
+    justify-content:center!important;
+    padding:0 3px!important;
+  }
+  .match-kickoff{
+    flex-direction:row!important;
+    align-items:baseline!important;
+    justify-content:center!important;
+    gap:6px!important;
+    white-space:nowrap!important;
+    line-height:1!important;
+  }
+  .match-kickoff .match-date{
+    font-size:10px!important;
+    line-height:1!important;
+  }
+  .match-kickoff .match-time{
+    font-size:15px!important;
+    line-height:1!important;
+  }
+  .upcoming-match-card > .match-competition-compact{
+    min-height:44px!important;
+    justify-content:center!important;
+    align-items:center!important;
+    padding:0 2px!important;
+  }
+  .match-competition-compact .competition-mark,
+  .match-competition-compact .competition-divider{
+    display:none!important;
+  }
+  .match-competition-compact .competition-copy{
+    display:flex!important;
+    flex-direction:row!important;
+    flex-wrap:nowrap!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:6px!important;
+    width:100%!important;
+    min-width:0!important;
+  }
+  .match-competition-compact .competition-copy strong{
+    display:block!important;
+    flex:0 1 auto!important;
+    min-width:0!important;
+    max-width:100%!important;
+    overflow:hidden!important;
+    text-overflow:ellipsis!important;
+    white-space:nowrap!important;
+    font-size:10px!important;
+    line-height:1.1!important;
+    text-align:center!important;
+  }
+  .match-competition-compact .competition-copy small{
+    flex:0 0 auto!important;
+    min-width:0!important;
+    min-height:20px!important;
+    padding:4px 6px!important;
+    font-size:9px!important;
+  }
+}
+@media(max-width:380px){
+  .match-kickoff .match-date{font-size:9px!important}
+  .match-kickoff .match-time{font-size:14px!important}
+  .match-competition-compact .competition-copy{gap:4px!important}
+  .match-competition-compact .competition-copy strong{font-size:9px!important}
+}
+
 </style>
 </head>
 <body>
