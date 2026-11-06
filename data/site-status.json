@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-11-06T12:46:58.137895Z",
+  "generated_at_utc": "2026-11-06T12:47:23.708510Z",
   "status": "warning",
   "label": "Vigilance",
   "threshold_hours": 24,
@@ -23,7 +23,7 @@
   "odds": {
     "status": "warning",
     "last_success_at_utc": "2026-11-04T03:58:05.825517Z",
-    "age_hours": 56.81,
+    "age_hours": 56.82,
     "fresh_within_24h": false,
     "threshold_hours": 24,
     "provider": "Odds-API.io / Unibet",
