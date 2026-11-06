@@ -94,7 +94,11 @@
 
     setText(card, "competition", match.competition || "");
     const phase = getEstimatedPhase(match, standingsIndex);
-    const round = setText(card, "round", phase || match.round || "");
+    const roundLabel = phase || match.round || "";
+    const roundDisplay = typeof roundLabel === "string"
+      ? roundLabel.replace(/^Journée\\s+(\\d+)$/i, "J$1")
+      : roundLabel;
+    const round = setText(card, "round", roundDisplay);
     if (round) round.hidden = !phase && !match.round;
 
     setText(card, "home-name", match.home_team);
