@@ -101,7 +101,7 @@
       "uefa europa league":"EL", "conference league":"C4", "coupe de france":"CDF"
     };
     const competitionCode = competitionCodes[competitionName.trim().toLowerCase()]
-      || competitionName.trim().split(/\\s+/).filter(Boolean).map(word => word[0]).join("").slice(0, 3).toUpperCase()
+      || competitionName.trim().split(/\s+/).filter(Boolean).map(word => word[0]).join("").slice(0, 3).toUpperCase()
       || "—";
     const competitionElement = setText(card, "competition", competitionCode);
     if (competitionElement) competitionElement.title = competitionName;
