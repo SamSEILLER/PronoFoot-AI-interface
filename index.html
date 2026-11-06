@@ -1378,67 +1378,64 @@ input.search,
 }
 
 
-/* Présentation visuelle championnat / journée : pastille ligue + badge journée */
+/* Présentation sobre : championnat en texte + badge journée */
 .match-competition-compact{
   display:flex!important;
   align-items:center!important;
   justify-content:center!important;
   min-width:0!important;
-  padding:4px 3px!important;
+  padding:4px 6px!important;
   border:0!important;
   background:transparent!important;
 }
 .match-competition-compact .competition-copy{
   display:flex!important;
-  flex-direction:column!important;
-  align-items:stretch!important;
-  justify-content:center!important;
-  gap:5px!important;
-  min-width:0!important;
-  width:100%;
-}
-.match-competition-compact .competition-copy strong{
-  display:flex!important;
+  flex-direction:row!important;
   align-items:center!important;
   justify-content:center!important;
-  gap:5px!important;
+  gap:7px!important;
   width:100%;
+  min-width:0!important;
+}
+.match-competition-compact .competition-copy strong{
+  display:inline-flex!important;
+  align-items:center!important;
+  gap:6px!important;
   min-width:0;
-  padding:6px 5px!important;
-  border-radius:6px!important;
-  background:#315f9c;
-  color:#fff!important;
-  font-size:10px!important;
-  font-weight:800!important;
-  line-height:1.15!important;
-  letter-spacing:0;
-  text-align:center!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  color:#294766!important;
+  font-size:11px!important;
+  font-weight:750!important;
+  line-height:1.2!important;
+  text-align:left!important;
   white-space:normal!important;
   overflow-wrap:anywhere;
-  box-shadow:0 1px 2px rgba(20,43,80,.12);
+  box-shadow:none!important;
 }
 .match-competition-compact .competition-copy strong::before{
   content:"";
   display:block;
-  width:6px;
-  height:6px;
-  flex:0 0 6px;
+  width:5px;
+  height:5px;
+  flex:0 0 5px;
   border-radius:50%;
-  background:rgba(255,255,255,.9);
-  box-shadow:0 0 0 2px rgba(255,255,255,.18);
+  background:#6c91b8;
 }
 .match-competition-compact .competition-copy small{
   display:inline-flex;
   align-items:center;
   justify-content:center;
   flex:0 0 auto;
-  min-width:27px;
+  min-width:28px;
   padding:4px 6px!important;
   margin:0!important;
-  border:1px solid #dce3ec!important;
-  border-radius:5px!important;
-  background:#f1f4f8!important;
-  color:#58677b!important;
+  border:0!important;
+  border-radius:4px!important;
+  background:#eaf1f8!important;
+  color:#426486!important;
   font-size:10px!important;
   font-weight:750!important;
   line-height:1!important;
@@ -1446,11 +1443,10 @@ input.search,
 }
 .match-competition-compact .competition-copy small[hidden]{display:none!important}
 @media(max-width:700px){
-  .match-competition-compact{padding:3px 1px!important}
-  .match-competition-compact .competition-copy{gap:3px!important;flex-wrap:wrap!important}
-  .match-competition-compact .competition-copy strong{font-size:10px!important;padding:4px 6px!important}
-  .match-competition-compact .competition-copy strong::before{width:5px;height:5px;flex-basis:5px}
-  .match-competition-compact .competition-copy small{font-size:9px!important;min-width:24px;padding:3px 4px!important}
+  .match-competition-compact{padding:3px 2px!important}
+  .match-competition-compact .competition-copy{gap:5px!important;flex-wrap:wrap!important}
+  .match-competition-compact .competition-copy strong{font-size:10px!important}
+  .match-competition-compact .competition-copy small{font-size:9px!important;min-width:24px;padding:3px 5px!important}
 }
 </style>
 </head>
