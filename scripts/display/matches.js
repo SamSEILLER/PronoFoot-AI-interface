@@ -103,7 +103,7 @@
     const competitionCode = competitionCodes[competitionName.trim().toLowerCase()]
       || competitionName.trim().split(/\s+/).filter(Boolean).map(word => word[0]).join("").slice(0, 3).toUpperCase()
       || "—";
-    const competitionElement = setText(card, "competition", competitionCode);
+    const competitionElement = setText(card, "competition", competitionName || competitionCode);
     const competitionPalette = {
       "premier league": "#56358f", "championship": "#345b91",
       "ligue 1": "#245b9b", "ligue 2": "#287b59",
