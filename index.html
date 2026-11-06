@@ -1364,6 +1364,19 @@ input.search,
   .match-competition-h .competition-copy small{font-size:10px!important;padding:5px 8px!important;margin-top:3px}
 }
 
+
+/* Réduction légère de la colonne championnat */
+@media(min-width:1121px){
+  .upcoming-match-card{
+    grid-template-columns:minmax(118px,.78fr) minmax(0,1.08fr) 48px minmax(0,1.08fr) minmax(106px,.78fr)!important;
+  }
+}
+@media(min-width:701px) and (max-width:1120px){
+  .upcoming-match-card{
+    grid-template-columns:minmax(120px,.78fr) minmax(0,1.05fr) 44px minmax(0,1.05fr) minmax(100px,.78fr)!important;
+  }
+}
+
 </style>
 </head>
 <body>
