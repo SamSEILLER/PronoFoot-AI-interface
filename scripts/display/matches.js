@@ -238,10 +238,9 @@
 
       const detailPanel = document.getElementById("matchDetailPanel");
       const detailTabs = [
-        { id:"overview", label:"Vue d'ensemble", icon:"▥" },
-        { id:"stats", label:"Statistiques", icon:"↗" },
-        { id:"analysis", label:"Analyse", icon:"▤" },
-        { id:"odds", label:"Cotes", icon:"♧" }
+        { id:"overview", label:"Vue d'ensemble", icon:"<svg viewBox='0 0 24 24' aria-hidden='true'><rect x='3.5' y='3.5' width='7' height='7' rx='1.5'/><rect x='13.5' y='3.5' width='7' height='7' rx='1.5'/><rect x='3.5' y='13.5' width='7' height='7' rx='1.5'/><rect x='13.5' y='13.5' width='7' height='7' rx='1.5'/></svg>" },
+        { id:"analysis", label:"Analyse & IA", icon:"<svg viewBox='0 0 24 24' aria-hidden='true'><path d='M12 3.5 13.8 9l5.7 1.8-5.7 1.8-1.8 5.7-1.8-5.7-5.7-1.8L10.2 9 12 3.5Z'/><path d='m19 14 .9 2.1L22 17l-2.1.9L19 20l-.9-2.1L16 17l2.1-.9L19 14Z'/></svg>" },
+        { id:"odds", label:"Cotes", icon:"<svg viewBox='0 0 24 24' aria-hidden='true'><path d='M3.5 6.5h17v13h-17z'/><path d='M3.5 10h17M7 3.5v3M17 3.5v3M7.5 14h3M13.5 14h3M7.5 17h3'/></svg>" }
       ];
       const renderDetailTab = (activeTab) => {
         if (!detailPanel) return;
