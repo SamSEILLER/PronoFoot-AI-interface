@@ -182,6 +182,9 @@
       const weekdayFormatter = new Intl.DateTimeFormat("fr-FR", {
         weekday: "long", timeZone: "Europe/Paris"
       });
+      const shortWeekdayFormatter = new Intl.DateTimeFormat("fr-FR", {
+        weekday: "short", timeZone: "Europe/Paris"
+      });
       const shortDateFormatter = new Intl.DateTimeFormat("fr-FR", {
         day: "numeric", month: "short", timeZone: "Europe/Paris"
       });
@@ -198,7 +201,12 @@
             const firstDay = weekdayFormatter.format(firstDate);
             const lastDay = weekdayFormatter.format(lastDate);
             title.textContent = key === "days-4-6"
-              ? "3 jours"
+              ? Array.from({ length: endOffset - startOffset + 1 }, (_, index) => {
+                  const dayKey = shiftDateKey(today, startOffset + index);
+                  const dayDate = new Date(dayKey + "T12:00:00Z");
+                  const abbreviation = shortWeekdayFormatter.format(dayDate);
+                  return abbreviation.charAt(0).toLocaleUpperCase("fr") + abbreviation.slice(1);
+                }).join(" · ")
               : firstDay.charAt(0).toLocaleUpperCase("fr") + firstDay.slice(1)
                 + (startOffset === endOffset ? "" : " & " + lastDay);
           }
