@@ -174,8 +174,26 @@
 
       const dateButtons = Array.from(document.querySelectorAll("[data-date-filter]"));
       const teamSearch = document.getElementById("matchTeamSearch");
+      const competitionFilter = document.getElementById("competitionFilter");
       const countNode = document.getElementById("matchPeriodCount");
       let activeDateFilter = "today-tomorrow";
+      let activeCompetition = "";
+      if (competitionFilter) {
+        const competitions = new Map();
+        upcoming.forEach(({ match }) => {
+          const slug = String(match.competition_slug || "");
+          const name = String(match.competition || slug);
+          if (slug) competitions.set(slug, name);
+        });
+        [...competitions.entries()]
+          .sort((a, b) => a[1].localeCompare(b[1], "fr"))
+          .forEach(([slug, name]) => {
+            const option = document.createElement("option");
+            option.value = slug;
+            option.textContent = name;
+            competitionFilter.appendChild(option);
+          });
+      }
       const dateFilterRanges = {
         "today-tomorrow": [0, 1],
         "days-2-3": [2, 3],
@@ -251,7 +269,8 @@
           const dateMatches = matchDate >= firstDate && matchDate <= lastDate;
           const teamMatches = !query || [match.home_team, match.away_team]
             .some((team) => String(team).toLocaleLowerCase("fr").includes(query));
-          return dateMatches && teamMatches;
+          const competitionMatches = !activeCompetition || String(match.competition_slug || "") === activeCompetition;
+          return dateMatches && teamMatches && competitionMatches;
         });
 
         list.replaceChildren();
@@ -293,6 +312,10 @@
         });
       });
       teamSearch?.addEventListener("input", renderFilteredMatches);
+      competitionFilter?.addEventListener("change", () => {
+        activeCompetition = competitionFilter.value;
+        renderFilteredMatches();
+      });
       renderFilteredMatches();
     })
     .catch((error) => {
