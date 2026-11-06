@@ -96,7 +96,7 @@
     const phase = getEstimatedPhase(match, standingsIndex);
     const roundLabel = phase || match.round || "";
     const roundDisplay = typeof roundLabel === "string"
-      ? roundLabel.replace(/^Journée\\s+(\\d+)$/i, "J$1")
+      ? roundLabel.replace(/^Journée\s+(\d+)$/i, "J$1")
       : roundLabel;
     const round = setText(card, "round", roundDisplay);
     if (round) round.hidden = !phase && !match.round;
