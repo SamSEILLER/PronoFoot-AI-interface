@@ -92,7 +92,19 @@
       time.dateTime = kickoff.toISOString();
     }
 
-    setText(card, "competition", match.competition || "");
+    const competitionName = match.competition || "";
+    const competitionCodes = {
+      "premier league":"PL", "championship":"CH", "ligue 1":"L1", "ligue 2":"L2",
+      "la liga":"LL", "laliga":"LL", "serie a":"SA", "bundesliga":"BL",
+      "eredivisie":"ED", "primeira liga":"P", "pro league":"PL", "belgian pro league":"BPL",
+      "champions league":"C1", "uefa champions league":"C1", "europa league":"EL",
+      "uefa europa league":"EL", "conference league":"C4", "coupe de france":"CDF"
+    };
+    const competitionCode = competitionCodes[competitionName.trim().toLowerCase()]
+      || competitionName.trim().split(/\\s+/).filter(Boolean).map(word => word[0]).join("").slice(0, 3).toUpperCase()
+      || "—";
+    const competitionElement = setText(card, "competition", competitionCode);
+    if (competitionElement) competitionElement.title = competitionName;
     const phase = getEstimatedPhase(match, standingsIndex);
     const roundLabel = phase || match.round || "";
     const roundDisplay = typeof roundLabel === "string"
