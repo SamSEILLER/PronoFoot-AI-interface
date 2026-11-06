@@ -1449,7 +1449,7 @@ input.search,
   .match-competition-compact .competition-copy small{font-size:9px!important;min-width:24px;padding:3px 5px!important}
 }
 
-/* Championnat + journée — style minimaliste (variante 4) */
+/* Championnat + journée — emblème de compétition (variante 3) */
 .match-competition-compact{
   display:flex!important;
   align-items:center!important;
@@ -1471,7 +1471,7 @@ input.search,
 .match-competition-compact .competition-copy strong{
   display:inline-flex!important;
   align-items:center!important;
-  gap:7px!important;
+  gap:8px!important;
   min-width:0;
   padding:0!important;
   border:0!important;
@@ -1487,25 +1487,37 @@ input.search,
   box-shadow:none!important;
 }
 .match-competition-compact .competition-copy strong::before{
-  content:"";
-  display:block;
-  width:6px;
-  height:6px;
-  flex:0 0 6px;
-  border-radius:50%;
-  background:#08b968;
+  content:attr(data-code);
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:31px;
+  height:29px;
+  flex:0 0 31px;
+  color:#fff;
+  background:linear-gradient(145deg,#173f70,#0b2d55);
+  clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%);
+  font-size:9px;
+  font-weight:850;
+  letter-spacing:-.2px;
+  line-height:1;
+}
+.match-competition-compact .competition-label{
+  display:inline-block;
+  min-width:0;
+  padding-left:9px;
+  border-left:1px solid #d7e1eb;
 }
 .match-competition-compact .competition-copy small{
   display:inline-flex!important;
   align-items:center;
   justify-content:center;
   flex:0 0 auto;
-  min-width:34px;
+  min-width:30px;
   margin:0!important;
-  padding:4px 7px 4px 9px!important;
-  border:0!important;
-  border-left:1px solid #d7e1eb!important;
-  border-radius:0!important;
+  padding:4px 7px!important;
+  border:1px solid #dce6f0!important;
+  border-radius:4px!important;
   background:#f1f5f9!important;
   color:#425c78!important;
   font-size:10px!important;
@@ -1517,9 +1529,10 @@ input.search,
 @media(max-width:700px){
   .match-competition-compact{padding:3px 2px!important}
   .match-competition-compact .competition-copy{gap:6px!important;flex-wrap:wrap!important}
-  .match-competition-compact .competition-copy strong{font-size:10px!important;gap:5px!important}
-  .match-competition-compact .competition-copy strong::before{width:5px;height:5px;flex-basis:5px}
-  .match-competition-compact .competition-copy small{font-size:9px!important;min-width:28px;padding:3px 5px 3px 7px!important}
+  .match-competition-compact .competition-copy strong{font-size:10px!important;gap:6px!important}
+  .match-competition-compact .competition-copy strong::before{width:27px;height:25px;flex-basis:27px;font-size:8px}
+  .match-competition-compact .competition-label{padding-left:6px}
+  .match-competition-compact .competition-copy small{font-size:9px!important;min-width:27px;padding:3px 5px!important}
 }
 
 </style>
