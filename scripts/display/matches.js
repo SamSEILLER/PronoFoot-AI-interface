@@ -236,6 +236,30 @@
       };
       updateFilterLabels();
 
+      const detailPanel = document.getElementById("matchDetailPanel");
+      const detailTabs = [
+        { id:"overview", label:"Vue d'ensemble", icon:"▥" },
+        { id:"stats", label:"Statistiques", icon:"↗" },
+        { id:"analysis", label:"Analyse", icon:"▤" },
+        { id:"odds", label:"Cotes", icon:"♧" }
+      ];
+      const renderDetailTab = (activeTab) => {
+        if (!detailPanel) return;
+        detailPanel.querySelectorAll("[data-detail-tab]").forEach((button) => {
+          const active = button.dataset.detailTab === activeTab;
+          button.classList.toggle("is-active", active);
+          button.setAttribute("aria-selected", String(active));
+        });
+        const body = detailPanel.querySelector(".match-detail-body");
+        if (!body) return;
+        const messages = {
+          overview:"Les données complémentaires de cette rencontre ne sont pas encore disponibles.",
+          stats:"Statistiques détaillées : données indisponibles pour le moment.",
+          analysis:"Analyse prédictive : données indisponibles pour le moment.",
+          odds:"Cotes des bookmakers : données indisponibles pour le moment."
+        };
+        body.textContent = messages[activeTab] || messages.overview;
+      };
       const selectMatch = (card, match) => {
         selectedMatchKey = card.dataset.matchKey || "";
         list.querySelectorAll(".upcoming-match-card").forEach((item) => {
@@ -243,14 +267,50 @@
           item.classList.toggle("is-selected", active);
           item.setAttribute("aria-pressed", String(active));
         });
-        const title = document.querySelector(".match-detail-empty h2");
-        const description = document.querySelector(".match-detail-empty p");
-        if (title) title.textContent = match.home_team + " – " + match.away_team;
-        if (description) {
-          const phase = getEstimatedPhase(match, standingsIndex) || match.round || "";
-          description.textContent = [match.competition || "", phase].filter(Boolean).join(" · ") || "Match sélectionné";
-        }
+        if (!detailPanel) return;
+        const kickoff = new Date(match.kickoff_utc);
+        const dateLabel = Number.isFinite(kickoff.getTime())
+          ? new Intl.DateTimeFormat("fr-FR",{weekday:"short",day:"2-digit",month:"short",year:"numeric",timeZone:"Europe/Paris"}).format(kickoff)
+            + " · " + new Intl.DateTimeFormat("fr-FR",{hour:"2-digit",minute:"2-digit",timeZone:"Europe/Paris"}).format(kickoff)
+          : "Date indisponible";
+        const phase = getEstimatedPhase(match, standingsIndex) || match.round || "";
+        const competition = match.competition || "Compétition inconnue";
+        const standings = standingsIndex.get(String(match.competition_slug || ""));
+        const seasonMatches = !standings?.season || !match.season || standings.season === match.season;
+        const homePosition = seasonMatches ? standings?.teams.get(String(match.home_team_id || ""))?.position : null;
+        const awayPosition = seasonMatches ? standings?.teams.get(String(match.away_team_id || ""))?.position : null;
+        const homeLogo = safeLogoUrl(match.provider_record?.home_team?.image_url);
+        const awayLogo = safeLogoUrl(match.provider_record?.away_team?.image_url);
+        const escape = (value) => String(value ?? "").replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
+        detailPanel.innerHTML = `
+          <div class="match-detail-content">
+            <div class="match-detail-top">
+              <div class="match-detail-competition"><span aria-hidden="true">🏆</span><span>${escape(competition)}</span>${phase ? "<span>· "+escape(phase)+"</span>":""}</div>
+              <div class="match-detail-date">${escape(dateLabel)}</div>
+            </div>
+            <div class="match-detail-teams">
+              <div class="match-detail-team">${homeLogo ? '<img src="'+escape(homeLogo)+'" alt="Logo '+escape(match.home_team)+'">':""}<strong>${escape(match.home_team)}</strong><small>${homePosition ? homePosition+"e":"Classement indisponible"}</small></div>
+              <div class="match-detail-vs">VS</div>
+              <div class="match-detail-team">${awayLogo ? '<img src="'+escape(awayLogo)+'" alt="Logo '+escape(match.away_team)+'">':""}<strong>${escape(match.away_team)}</strong><small>${awayPosition ? awayPosition+"e":"Classement indisponible"}</small></div>
+            </div>
+            <div class="match-detail-xg">
+              <span class="match-detail-xg-label">Buts attendus</span>
+              <span class="match-detail-xg-value">${escape(match.home_team)} <strong>Indisponible</strong></span>
+              <span aria-hidden="true">–</span>
+              <span class="match-detail-xg-value">${escape(match.away_team)} <strong>Indisponible</strong></span>
+              <span class="match-detail-xg-value">Total <strong>Indisponible</strong></span>
+            </div>
+            <div class="match-detail-tabs" role="tablist" aria-label="Données du match">
+              ${detailTabs.map(tab=>'<button type="button" class="match-detail-tab'+(tab.id==="overview"?" is-active":"")+'" role="tab" aria-selected="'+(tab.id==="overview"?"true":"false")+'" data-detail-tab="'+tab.id+'"><span aria-hidden="true">'+tab.icon+'</span><span>'+tab.label+'</span></button>').join("")}
+            </div>
+            <div class="match-detail-body" role="tabpanel">Les données complémentaires de cette rencontre ne sont pas encore disponibles.</div>
+          </div>`;
+        renderDetailTab("overview");
       };
+      detailPanel?.addEventListener("click", (event) => {
+        const button = event.target.closest("[data-detail-tab]");
+        if (button) renderDetailTab(button.dataset.detailTab);
+      });
 
       const renderFilteredMatches = () => {
         const today = parisDateKey(Date.now());
