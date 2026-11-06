@@ -1739,6 +1739,50 @@ input.search,
   .match-team-name{font-size:10px!important}
 }
 
+
+/* Mobile — masquer le classement et centrer les deux groupes supérieurs */
+@media(max-width:700px){
+  .match-team-position,
+  .match-team-position[hidden]{
+    display:none!important;
+  }
+  .match-team-logo{
+    width:32px!important;
+    height:32px!important;
+    flex:0 0 32px!important;
+  }
+  .upcoming-match-card > .match-meta{
+    align-items:center!important;
+    justify-content:center!important;
+    text-align:center!important;
+  }
+  .match-kickoff{
+    align-items:center!important;
+    text-align:center!important;
+  }
+  .upcoming-match-card > .match-competition-compact{
+    justify-content:center!important;
+    align-items:center!important;
+    padding-left:0!important;
+    padding-right:0!important;
+    text-align:center!important;
+  }
+  .match-competition-compact .competition-copy{
+    align-items:center!important;
+    justify-content:center!important;
+  }
+  .match-competition-compact .competition-copy strong{
+    text-align:center!important;
+  }
+}
+@media(max-width:380px){
+  .match-team-logo{
+    width:29px!important;
+    height:29px!important;
+    flex-basis:29px!important;
+  }
+}
+
 </style>
 </head>
 <body>
