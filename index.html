@@ -1299,6 +1299,71 @@ input.search,
   .match-competition-calendar .competition-copy small{font-size:10px!important;padding:5px 8px!important}
 }
 
+
+/* Variante H — bandeau bleu avec pictogramme de stade */
+.match-competition-h{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  gap:12px!important;
+  min-width:0;
+  min-height:64px;
+  padding:8px 11px!important;
+  border:0!important;
+  border-radius:5px!important;
+  background:linear-gradient(110deg,#1765b5 0%,#3979c8 58%,#626fc0 100%)!important;
+}
+.match-competition-h .competition-stadium-icon{
+  display:block;
+  flex:0 0 46px;
+  width:46px;
+  height:38px;
+  color:#fff;
+}
+.match-competition-h .competition-copy{
+  display:flex!important;
+  flex:1 1 auto!important;
+  min-width:0;
+  flex-direction:column!important;
+  align-items:flex-start!important;
+  justify-content:center!important;
+  gap:0!important;
+}
+.match-competition-h .competition-copy strong{
+  display:block;
+  width:100%;
+  min-width:0;
+  color:#fff!important;
+  font-size:13px!important;
+  font-weight:800!important;
+  line-height:1.25!important;
+  text-align:left!important;
+  overflow-wrap:anywhere;
+}
+.match-competition-h .competition-copy small{
+  align-self:flex-start;
+  flex:0 0 auto;
+  margin-top:5px;
+  min-width:44px;
+  padding:6px 10px!important;
+  border:0!important;
+  border-radius:5px!important;
+  background:#fff!important;
+  color:#175eae!important;
+  font-size:12px!important;
+  font-weight:900!important;
+  line-height:1!important;
+  text-align:center;
+  white-space:nowrap;
+}
+.match-competition-h .competition-copy small[hidden]{display:none!important}
+@media(max-width:700px){
+  .match-competition-h{gap:7px!important;min-height:54px;padding:6px 7px!important}
+  .match-competition-h .competition-stadium-icon{flex-basis:32px;width:32px;height:30px}
+  .match-competition-h .competition-copy strong{font-size:11px!important}
+  .match-competition-h .competition-copy small{font-size:10px!important;padding:5px 8px!important;margin-top:3px}
+}
+
 </style>
 </head>
 <body>
@@ -1347,7 +1412,7 @@ input.search,
 <div class="match-meta">
 <time class="match-kickoff" data-field="kickoff"></time>
 </div>
-<div class="match-competition match-competition-calendar"><span class="competition-copy"><strong data-field="competition"></strong><small data-field="round"></small></span></div>
+<div class="match-competition match-competition-calendar match-competition-h"><svg class="competition-stadium-icon" viewBox="0 0 48 40" aria-hidden="true" focusable="false"><path d="M5 15 24 7l19 8v15l-19 7L5 30V15Z M5 15l19 8 19-8M24 23v14M10 17v10m6-7v10m16-10v10m6-13v10M13 11l11-5 11 5M9 13l-4 2m34-2 4 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 18v-5m12 5v-5M21 23v-5m6 5v-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span class="competition-copy"><strong data-field="competition"></strong><small data-field="round"></small></span></div>
 <div class="match-team match-team-home">
 <img class="match-team-logo" data-field="home-logo" alt="" hidden>
 <span class="match-team-copy">
