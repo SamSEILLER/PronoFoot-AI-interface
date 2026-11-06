@@ -106,11 +106,8 @@
     const competitionElement = setText(card, "competition", "");
     if (competitionElement) {
       competitionElement.title = competitionName;
-      competitionElement.dataset.code = competitionCode;
-      const competitionLabel = document.createElement("span");
-      competitionLabel.className = "competition-label";
-      competitionLabel.textContent = competitionName || competitionCode;
-      competitionElement.appendChild(competitionLabel);
+      const competitionMark = card.querySelector(".competition-mark");
+      if (competitionMark) competitionMark.dataset.code = competitionCode;
     }
     const phase = getEstimatedPhase(match, standingsIndex);
     const roundLabel = phase || match.round || "";
