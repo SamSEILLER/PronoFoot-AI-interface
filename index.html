@@ -1449,10 +1449,10 @@ input.search,
   .match-competition-compact .competition-copy small{font-size:9px!important;min-width:24px;padding:3px 5px!important}
 }
 
-/* Championnat + journée — emblème de compétition (variante 3) */
+/* Championnat + journée — emblème de compétition, journée sous le nom */
 .match-competition-compact{
   display:flex!important;
-  align-items:center!important;
+  align-items:flex-start!important;
   justify-content:flex-start!important;
   min-width:0!important;
   padding:4px 6px!important;
@@ -1461,10 +1461,10 @@ input.search,
 }
 .match-competition-compact .competition-copy{
   display:flex!important;
-  flex-direction:row!important;
-  align-items:center!important;
+  flex-direction:column!important;
+  align-items:flex-start!important;
   justify-content:flex-start!important;
-  gap:8px!important;
+  gap:4px!important;
   width:100%;
   min-width:0!important;
 }
@@ -1514,7 +1514,7 @@ input.search,
   justify-content:center;
   flex:0 0 auto;
   min-width:30px;
-  margin:0!important;
+  margin:0 0 0 39px!important;
   padding:4px 7px!important;
   border:1px solid #dce6f0!important;
   border-radius:4px!important;
@@ -1528,11 +1528,11 @@ input.search,
 .match-competition-compact .competition-copy small[hidden]{display:none!important}
 @media(max-width:700px){
   .match-competition-compact{padding:3px 2px!important}
-  .match-competition-compact .competition-copy{gap:6px!important;flex-wrap:wrap!important}
+  .match-competition-compact .competition-copy{gap:4px!important}
   .match-competition-compact .competition-copy strong{font-size:10px!important;gap:6px!important}
   .match-competition-compact .competition-copy strong::before{width:27px;height:25px;flex-basis:27px;font-size:8px}
   .match-competition-compact .competition-label{padding-left:6px}
-  .match-competition-compact .competition-copy small{font-size:9px!important;min-width:27px;padding:3px 5px!important}
+  .match-competition-compact .competition-copy small{font-size:9px!important;min-width:27px;padding:3px 5px!important;margin-left:33px!important}
 }
 
 </style>
