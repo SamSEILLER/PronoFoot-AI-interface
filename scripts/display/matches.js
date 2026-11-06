@@ -104,21 +104,7 @@
       || competitionName.trim().split(/\s+/).filter(Boolean).map(word => word[0]).join("").slice(0, 3).toUpperCase()
       || "—";
     const competitionElement = setText(card, "competition", competitionName || competitionCode);
-    const competitionPalette = {
-      "premier league": "#56358f", "championship": "#345b91",
-      "ligue 1": "#245b9b", "ligue 2": "#287b59",
-      "la liga": "#b83c43", "laliga": "#b83c43",
-      "serie a": "#2871a8", "bundesliga": "#a93636",
-      "eredivisie": "#c66a24", "primeira liga": "#28745b",
-      "pro league": "#247d83", "belgian pro league": "#247d83",
-      "champions league": "#3156a4", "uefa champions league": "#3156a4",
-      "europa league": "#a85d2a", "uefa europa league": "#a85d2a",
-      "conference league": "#39816b", "coupe de france": "#586b8c"
-    };
-    if (competitionElement) {
-      competitionElement.title = competitionName;
-      competitionElement.style.backgroundColor = competitionPalette[competitionName.trim().toLowerCase()] || "#496b91";
-    }
+    if (competitionElement) competitionElement.title = competitionName;
     const phase = getEstimatedPhase(match, standingsIndex);
     const roundLabel = phase || match.round || "";
     const roundDisplay = typeof roundLabel === "string"
