@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-11-06T12:47:23.708510Z",
+  "generated_at_utc": "2026-11-06T13:00:55.865154Z",
   "status": "warning",
   "label": "Vigilance",
   "threshold_hours": 24,
   "history": {
     "status": "ok",
     "last_success_at_utc": "2026-11-06T12:44:45.874114Z",
-    "age_hours": 0.04,
+    "age_hours": 0.27,
     "fresh_within_24h": true,
     "threshold_hours": 24,
     "provider": "PitchAPI",
@@ -23,13 +23,13 @@
   "odds": {
     "status": "warning",
     "last_success_at_utc": "2026-11-04T03:58:05.825517Z",
-    "age_hours": 56.82,
+    "age_hours": 57.05,
     "fresh_within_24h": false,
     "threshold_hours": 24,
     "provider": "Odds-API.io / Unibet",
     "collection_status": "PARTIAL",
-    "last_attempt_at_utc": "2026-11-06T12:46:56.025978+00:00",
-    "anomalies": 18,
+    "last_attempt_at_utc": "2026-11-06T13:00:53.304995+00:00",
+    "anomalies": 1,
     "summary": {
       "project_root": "/home/runner/work/PronoFoot-AI-V2/PronoFoot-AI-V2",
       "future_data_directory": "/home/runner/work/PronoFoot-AI-V2/PronoFoot-AI-V2/data/processed/matches_future",
@@ -51,7 +51,7 @@
       "fixtures_by_competition": {
         "be-first-division-a": 6,
         "de-bundesliga": 6,
-        "es-la-liga": 5,
+        "es-la-liga": 6,
         "fr-ligue-1": 3,
         "fr-ligue-2": 9,
         "gb-premier-league": 5,
@@ -59,24 +59,24 @@
         "pt-primeira-liga": 4,
         "us-mls": 15
       },
-      "pitchapi_fixtures_in_window": 59,
-      "odds_api_events_in_window": 645,
-      "uniquely_matched_events": 41,
-      "unmatched_or_ambiguous_fixtures": 18,
-      "events_with_unibet_markets": 41,
+      "pitchapi_fixtures_in_window": 60,
+      "odds_api_events_in_window": 660,
+      "uniquely_matched_events": 59,
+      "unmatched_or_ambiguous_fixtures": 1,
+      "events_with_unibet_markets": 59,
       "events_without_unibet_markets": 0,
       "events_not_returned_by_multi": 0,
-      "market_count": 1579,
-      "price_line_count": 10598,
-      "requests_attempted": 6,
+      "market_count": 2220,
+      "price_line_count": 15062,
+      "requests_attempted": 7,
       "request_budget": 20,
       "events_skipped_request_budget": 0,
       "rate_limit_reached": false,
       "bookmaker_requested": "Unibet"
     },
     "errors": [],
-    "matched_events": 41,
-    "events_with_odds": 41,
-    "unmatched": 18
+    "matched_events": 59,
+    "events_with_odds": 59,
+    "unmatched": 1
   }
 }
