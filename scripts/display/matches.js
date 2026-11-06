@@ -6,20 +6,6 @@
   const DATA_URL = "./data/matches_future.json";
   const STANDINGS_URL = "./data/standings.json";
 
-  // Logos API-Football associés aux slugs réellement présents dans matches_future.json.
-  const COMPETITION_LOGOS = Object.freeze({
-    "be-first-division-a": "belgian-pro-league.jpg",
-    "de-bundesliga": "bundesliga.jpg",
-    "es-la-liga": "la-liga.jpg",
-    "fr-ligue-1": "ligue-1.jpg",
-    "fr-ligue-2": "ligue-2.jpg",
-    "gb-premier-league": "premier-league.jpg",
-    "it-serie-a": "serie-a.jpg",
-    "pt-primeira-liga": "primeira-liga.jpg",
-    "uefa-champions-league": "uefa-champions-league.jpg",
-    "uefa-europa-league": "uefa-europa-league.jpg",
-    "us-mls": "mls.jpg"
-  });
   const list = document.getElementById("upcomingMatchesList");
   const template = document.getElementById("upcomingMatchTemplate");
   if (!list || !template) return;
@@ -58,24 +44,6 @@
       image.hidden = true;
       image.removeAttribute("src");
     }, { once: true });
-  };
-
-  const setCompetitionLogo = (root, slug, competitionName) => {
-    const image = root.querySelector('[data-field="competition-logo"]');
-    const fallback = root.querySelector('[data-field="competition-fallback"]');
-    const file = COMPETITION_LOGOS[String(slug || "")];
-    if (!image || !fallback || !file) return;
-    image.alt = "Logo " + (competitionName || "de la compétition");
-    image.addEventListener("load", () => {
-      image.hidden = false;
-      fallback.hidden = true;
-    }, { once: true });
-    image.addEventListener("error", () => {
-      image.hidden = true;
-      fallback.hidden = false;
-      image.removeAttribute("src");
-    }, { once: true });
-    image.src = "./assets/competitions/" + file;
   };
 
   // Indexe les statistiques de classement par compétition et identifiant d'équipe.
@@ -125,7 +93,6 @@
     }
 
     setText(card, "competition", match.competition || "");
-    setCompetitionLogo(card, match.competition_slug, match.competition);
     const phase = getEstimatedPhase(match, standingsIndex);
     const round = setText(card, "round", phase || match.round || "");
     if (round) round.hidden = !phase && !match.round;
@@ -230,8 +197,10 @@
           if (title) {
             const firstDay = weekdayFormatter.format(firstDate);
             const lastDay = weekdayFormatter.format(lastDate);
-            title.textContent = firstDay.charAt(0).toLocaleUpperCase("fr") + firstDay.slice(1)
-              + (startOffset === endOffset ? "" : " & " + lastDay);
+            title.textContent = key === "days-4-6"
+              ? "3 jours"
+              : firstDay.charAt(0).toLocaleUpperCase("fr") + firstDay.slice(1)
+                + (startOffset === endOffset ? "" : " & " + lastDay);
           }
           if (dates) {
             dates.textContent = startOffset === 0
