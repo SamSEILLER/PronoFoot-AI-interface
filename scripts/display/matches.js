@@ -242,6 +242,35 @@
         { id:"analysis", label:"Analyse & IA", icon:"<svg viewBox='0 0 24 24' aria-hidden='true'><path d='M12 3.5 13.8 9l5.7 1.8-5.7 1.8-1.8 5.7-1.8-5.7-5.7-1.8L10.2 9 12 3.5Z'/><path d='m19 14 .9 2.1L22 17l-2.1.9L19 20l-.9-2.1L16 17l2.1-.9L19 14Z'/></svg>" },
         { id:"odds", label:"Cotes", icon:"<svg viewBox='0 0 24 24' aria-hidden='true'><path d='M3.5 6.5h17v13h-17z'/><path d='M3.5 10h17M7 3.5v3M17 3.5v3M7.5 14h3M13.5 14h3M7.5 17h3'/></svg>" }
       ];
+      let selectedDetailMatch = null;
+      let oddsEvents = null;
+      const oddsDataPromise = fetch("./data/odds_latest.json?v=" + Date.now(), { cache:"no-store" })
+        .then(response => { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); })
+        .then(payload => { oddsEvents = Array.isArray(payload?.events) ? payload.events : []; return oddsEvents; })
+        .catch(error => { console.warn("Cotes OddsAPI indisponibles :", error); oddsEvents = []; return oddsEvents; });
+      const escapeHtml = (value) => String(value ?? "").replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
+      const renderOdds = (body, match) => {
+        body.innerHTML = '<p>Chargement des cotes Odds-API.io…</p>';
+        oddsDataPromise.then(events => {
+          if (selectedDetailMatch !== match || !body.isConnected) return;
+          const event = events.find(item => String(item.pitchapi_match_id) === String(match.id || match.match_id));
+          if (!event || !Array.isArray(event.markets) || !event.markets.length) {
+            body.innerHTML = '<p><strong>Cotes indisponibles pour ce match.</strong><br>La collecte OddsAPI ne l’a pas encore associé à une rencontre PitchAPI.</p>';
+            return;
+          }
+          const rows = event.markets.map(market => {
+            const lines = (Array.isArray(market.odds) ? market.odds : []).map(line => {
+              const parts = Object.entries(line || {}).filter(([,value]) => value !== null && value !== "");
+              if (!parts.length) return "";
+              return '<div class="match-odds-line">' + parts.map(([key,value]) => '<span><small>'+escapeHtml(key)+'</small> <strong>'+escapeHtml(value)+'</strong></span>').join("") + '</div>';
+            }).filter(Boolean).join("");
+            return '<section class="match-odds-market"><h4>'+escapeHtml(market.name)+'</h4>'+ (lines || '<p>Marché sans cote exploitable.</p>') +'</section>';
+          }).join("");
+          const updated = event.markets.map(market=>market.updatedAt).filter(Boolean).sort().pop();
+          const updatedLabel = updated ? new Date(updated).toLocaleString("fr-FR",{dateStyle:"short",timeStyle:"short",timeZone:"Europe/Paris"}) : "Non précisée";
+          body.innerHTML = '<div class="match-odds-meta"><strong>'+escapeHtml(event.bookmaker || "Bookmaker")+'</strong><span>Odds-API.io</span><small>Mise à jour : '+escapeHtml(updatedLabel)+'</small></div>'+rows;
+        });
+      };
       const renderDetailTab = (activeTab) => {
         if (!detailPanel) return;
         detailPanel.querySelectorAll("[data-detail-tab]").forEach((button) => {
@@ -251,16 +280,19 @@
         });
         const body = detailPanel.querySelector(".match-detail-body");
         if (!body) return;
+        if (activeTab === "odds" && selectedDetailMatch) {
+          renderOdds(body, selectedDetailMatch);
+          return;
+        }
         const messages = {
           overview:"Les données complémentaires de cette rencontre ne sont pas encore disponibles.",
-          stats:"Statistiques détaillées : données indisponibles pour le moment.",
-          analysis:"Analyse prédictive : données indisponibles pour le moment.",
-          odds:"Cotes des bookmakers : données indisponibles pour le moment."
+          analysis:"Analyse & IA : données indisponibles pour le moment."
         };
         body.textContent = messages[activeTab] || messages.overview;
       };
       const selectMatch = (card, match) => {
         selectedMatchKey = card.dataset.matchKey || "";
+        selectedDetailMatch = match;
         list.querySelectorAll(".upcoming-match-card").forEach((item) => {
           const active = item === card;
           item.classList.toggle("is-selected", active);
