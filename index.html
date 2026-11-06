@@ -1563,10 +1563,10 @@ input.search,
   }
   .upcoming-match-card{
     display:grid!important;
-    grid-template-columns:minmax(0,1fr) 34px minmax(0,1fr)!important;
+    grid-template-columns:repeat(12,minmax(0,1fr))!important;
     grid-template-rows:auto minmax(42px,auto)!important;
     align-items:center!important;
-    column-gap:5px!important;
+    column-gap:0!important;
     row-gap:7px!important;
     min-width:0!important;
     min-height:0!important;
@@ -1579,7 +1579,7 @@ input.search,
     width:3px!important;
   }
   .upcoming-match-card > .match-meta{
-    grid-column:1!important;
+    grid-column:1/7!important;
     grid-row:1!important;
     display:flex!important;
     align-items:flex-start!important;
@@ -1612,7 +1612,7 @@ input.search,
     line-height:1!important;
   }
   .upcoming-match-card > .match-competition-compact{
-    grid-column:2/4!important;
+    grid-column:7/13!important;
     grid-row:1!important;
     justify-self:stretch!important;
     align-self:center!important;
@@ -1659,32 +1659,32 @@ input.search,
     font-size:10px!important;
   }
   .upcoming-match-card > .match-team-home{
-    grid-column:1!important;
+    grid-column:1/6!important;
     grid-row:2!important;
     justify-content:flex-end!important;
     min-width:0!important;
-    gap:5px!important;
-    padding:0 2px 0 0!important;
+    gap:10px!important;
+    padding:0 8px 0 2px!important;
     text-align:right!important;
   }
   .upcoming-match-card > .match-versus{
-    grid-column:2!important;
+    grid-column:6/8!important;
     grid-row:2!important;
     justify-self:center!important;
     align-self:center!important;
-    min-width:30px!important;
-    padding:5px 3px!important;
+    min-width:34px!important;
+    padding:6px 4px!important;
     border-radius:6px!important;
     font-size:10px!important;
     line-height:1!important;
   }
   .upcoming-match-card > .match-team-away{
-    grid-column:3!important;
+    grid-column:8/13!important;
     grid-row:2!important;
     justify-content:flex-start!important;
     min-width:0!important;
-    gap:5px!important;
-    padding:0 0 0 2px!important;
+    gap:10px!important;
+    padding:0 2px 0 8px!important;
     text-align:left!important;
   }
   .match-team-copy{
@@ -1723,11 +1723,13 @@ input.search,
 }
 @media(max-width:380px){
   .upcoming-match-card{
-    grid-template-columns:minmax(0,1fr) 30px minmax(0,1fr)!important;
-    column-gap:3px!important;
+    grid-template-columns:repeat(12,minmax(0,1fr))!important;
+    column-gap:0!important;
     padding-right:7px!important;
   }
   .upcoming-match-card > .match-competition-compact{gap:5px!important}
+  .upcoming-match-card > .match-team-home{padding-right:5px!important;gap:8px!important}
+  .upcoming-match-card > .match-team-away{padding-left:5px!important;gap:8px!important}
   .match-competition-compact .competition-mark{
     width:23px!important;height:23px!important;flex-basis:23px!important;
   }
