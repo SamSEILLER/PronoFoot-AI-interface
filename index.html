@@ -1448,6 +1448,79 @@ input.search,
   .match-competition-compact .competition-copy strong{font-size:10px!important}
   .match-competition-compact .competition-copy small{font-size:9px!important;min-width:24px;padding:3px 5px!important}
 }
+
+/* Championnat — direction éditoriale sportive */
+.match-competition-compact{
+  position:relative!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  min-width:0!important;
+  padding:4px 6px 4px 12px!important;
+  border:0!important;
+  background:transparent!important;
+}
+.match-competition-compact::before{
+  content:"";
+  position:absolute;
+  left:2px;
+  top:4px;
+  bottom:4px;
+  width:3px;
+  background:linear-gradient(180deg,#08b968 0%,#2586a0 100%);
+}
+.match-competition-compact .competition-copy{
+  display:flex!important;
+  flex-direction:row!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  gap:7px!important;
+  width:100%;
+  min-width:0!important;
+}
+.match-competition-compact .competition-copy strong{
+  display:inline!important;
+  min-width:0;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  color:#243f60!important;
+  font-size:11px!important;
+  font-weight:800!important;
+  line-height:1.25!important;
+  text-align:left!important;
+  white-space:normal!important;
+  overflow-wrap:anywhere;
+  box-shadow:none!important;
+}
+.match-competition-compact .competition-copy strong::before{content:none!important}
+.match-competition-compact .competition-copy small{
+  display:inline-flex!important;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 auto;
+  min-width:30px;
+  padding:4px 7px!important;
+  margin:0!important;
+  border:1px solid #d9e6f0!important;
+  border-radius:4px!important;
+  background:#f0f5fa!important;
+  color:#426486!important;
+  font-size:10px!important;
+  font-weight:800!important;
+  line-height:1!important;
+  white-space:nowrap;
+}
+.match-competition-compact .competition-copy small[hidden]{display:none!important}
+@media(max-width:700px){
+  .match-competition-compact{padding:3px 2px 3px 9px!important}
+  .match-competition-compact::before{left:1px;top:3px;bottom:3px;width:2px}
+  .match-competition-compact .competition-copy{gap:5px!important;flex-wrap:wrap!important}
+  .match-competition-compact .competition-copy strong{font-size:10px!important}
+  .match-competition-compact .competition-copy small{font-size:9px!important;min-width:25px;padding:3px 5px!important}
+}
+
 </style>
 </head>
 <body>
