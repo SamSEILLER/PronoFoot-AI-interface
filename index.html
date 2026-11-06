@@ -1898,6 +1898,44 @@ input.search,
   }
 }
 
+
+/* Fiche de match sélectionné */
+.match-detail-panel{display:block!important;min-height:0!important;padding:0!important;overflow:hidden}
+.match-detail-empty{min-height:300px;padding:28px}
+.match-detail-content{width:100%;color:#0a1b46}
+.match-detail-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px 8px;color:#536d8d;font-size:12px}
+.match-detail-competition{display:flex;align-items:center;gap:7px;font-weight:800;color:#193b68}
+.match-detail-date{white-space:nowrap;text-align:right}
+.match-detail-teams{display:grid;grid-template-columns:minmax(0,1fr) 48px minmax(0,1fr);align-items:center;gap:8px;padding:14px 18px 10px}
+.match-detail-team{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-width:0;text-align:center}
+.match-detail-team img{width:76px;height:76px;object-fit:contain}
+.match-detail-team strong{font-size:18px;line-height:1.2}
+.match-detail-team small{padding:4px 9px;border-radius:7px;background:#edf3f8;color:#385a7d;font-weight:800}
+.match-detail-vs{text-align:center;font-size:22px;font-weight:900}
+.match-detail-xg{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;padding:12px 10px 15px;font-size:12px}
+.match-detail-xg-label{font-weight:800;color:#47658b}
+.match-detail-xg-value{padding:7px 10px;border:1px solid #d8e5f5;border-radius:8px;background:#f7faff;color:#23466f}
+.match-detail-xg-value strong{font-weight:900}
+.match-detail-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;padding:0 12px 12px}
+.match-detail-tab{display:flex;align-items:center;justify-content:center;gap:6px;min-width:0;min-height:42px;padding:7px 5px;border:1px solid #dce7f5;border-radius:8px;background:#fff;color:#102c58;font-weight:800;font-size:12px;cursor:pointer}
+.match-detail-tab.is-active{border-color:#08b968;background:linear-gradient(110deg,#08b968,#208e8a);color:#fff;box-shadow:0 3px 9px #08b96824}
+.match-detail-tab:focus-visible{outline:2px solid #2863a9;outline-offset:2px}
+.match-detail-body{padding:13px 16px 17px;border-top:1px solid #e6edf6;background:#fbfdff;color:#526b89;font-size:13px;line-height:1.5}
+.match-detail-body strong{color:#193b68}
+.match-detail-body p{margin:0}
+@media(max-width:760px){
+ .match-detail-team img{width:58px;height:58px}
+ .match-detail-team strong{font-size:15px}
+ .match-detail-teams{grid-template-columns:minmax(0,1fr) 32px minmax(0,1fr);padding:12px 10px 8px}
+ .match-detail-vs{font-size:18px}
+ .match-detail-top{padding:12px 10px 5px;font-size:11px}
+ .match-detail-tabs{gap:5px;padding:0 8px 9px}
+ .match-detail-tab{min-height:40px;gap:4px;font-size:10px}
+ .match-detail-xg{gap:5px;padding:9px 6px 12px;font-size:11px}
+ .match-detail-xg-value{padding:6px 7px}
+ .match-detail-body{padding:11px 12px 14px}
+}
+
 </style>
 </head>
 <body>
@@ -1933,11 +1971,11 @@ input.search,
 <section class="left-panel matches-list-section" aria-label="Liste des matchs de la période">
 <div class="upcoming-matches-list" id="upcomingMatchesList" aria-live="polite"></div>
 </section>
-<aside class="panel right-panel match-detail-panel" aria-label="Détails du match">
+<aside class="panel right-panel match-detail-panel" id="matchDetailPanel" aria-label="Détails du match">
   <div class="match-detail-empty">
     <div class="match-detail-ball" aria-hidden="true">⚽</div>
     <h2>Sélectionnez un match</h2>
-    <p>Les statistiques, analyses et informations<br class="desktop-only"> détaillées s'afficheront ici.</p>
+    <p>Les informations disponibles sur la rencontre s'afficheront ici.</p>
   </div>
 </aside>
 </div>
