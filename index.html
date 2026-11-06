@@ -1276,3 +1276,32 @@ main{
 <script src="./scripts/display/matches.js" defer></script>
 </body>
 </html>
+
+
+/* Message d'état vide lorsque les filtres ne retournent aucun match */
+.match-filter-count{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  box-sizing:border-box;
+  min-height:96px;
+  margin:18px 0;
+  padding:22px 18px;
+  border:1px dashed #cbd9eb;
+  border-radius:0;
+  background:#f4f8fd;
+  color:#426080;
+  font-size:14px;
+  font-weight:700;
+  line-height:1.5;
+  text-align:center;
+}
+@media(max-width:760px){
+  .match-filter-count{
+    min-height:82px;
+    margin:14px 0;
+    padding:18px 14px;
+    font-size:13px;
+  }
+}
