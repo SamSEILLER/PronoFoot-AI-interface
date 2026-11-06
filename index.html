@@ -201,6 +201,8 @@ main{max-width:1900px;margin:0 auto;padding:15px 18px 24px}
 .filter-btn .icon{width:21px;height:21px;display:inline-block;flex:0 0 auto;vertical-align:middle;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .filter-btn .icon.large{width:25px;height:25px}
 .search{margin-left:auto;width:220px;max-width:24vw;height:42px;padding:0 13px;border:1px solid var(--line);border-radius:9px;background:#fff;color:var(--ink);outline-color:var(--green)}
+.competition-select{flex:0 1 220px;min-width:170px;height:42px;padding:0 34px 0 12px;border:1px solid var(--line);border-radius:9px;background:#fff;color:var(--ink);font:600 13px inherit;outline-color:var(--green)}
+.competition-select:focus{border-color:#159b8e;box-shadow:0 0 0 3px #159b8e18}
 .search:focus{border-color:#159b8e;box-shadow:0 0 0 3px #159b8e18}
 @media(max-width:1100px){
  .filters{height:auto;min-height:0;padding:10px;gap:8px;flex-wrap:wrap}
@@ -210,10 +212,11 @@ main{max-width:1900px;margin:0 auto;padding:15px 18px 24px}
  .filter-title{font-size:12px}
  .filter-dates{font-size:10px}
  .search{margin:0;flex:1 1 100%;width:100%;max-width:none}
+ .competition-select{flex:1 1 100%;width:100%;min-width:0}
 }
 @media(max-width:600px){
  .filters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch;gap:7px;padding:9px}
- .filter-label,.search{grid-column:1/-1;width:100%}
+ .filter-label,.search,.competition-select{grid-column:1/-1;width:100%}
  .filter-label{margin:0 0 1px}
  .filter-btn{width:100%;min-width:0;min-height:58px;padding:7px 4px;gap:3px;flex-direction:column;white-space:normal}
  .filter-btn .icon{width:17px;height:17px;flex:0 0 17px}
@@ -1170,6 +1173,10 @@ main{
   <button class="filter-btn is-active" type="button" data-date-filter="today-tomorrow" aria-pressed="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M16 3v4M8 3v4M3 10h18M8 15l2 2 5-5"></path></svg><span class="filter-copy"><span class="filter-title">Aujourd'hui &amp; demain</span><span class="filter-dates" data-filter-dates="today-tomorrow"></span></span></button>
   <button class="filter-btn" type="button" data-date-filter="days-2-3" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M16 3v4M8 3v4M3 10h18M8 14h3M13 14h3M8 17h3M13 17h3"></path></svg><span class="filter-copy"><span class="filter-title" data-filter-title="days-2-3"></span><span class="filter-dates" data-filter-dates="days-2-3"></span></span></button>
   <button class="filter-btn" type="button" data-date-filter="days-4-6" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M16 3v4M8 3v4M3 10h18M6 14h12M6 17h12"></path></svg><span class="filter-copy"><span class="filter-title" data-filter-title="days-4-6"></span><span class="filter-dates" data-filter-dates="days-4-6"></span></span></button>
+  <label class="visually-hidden" for="competitionFilter">Filtrer par championnat</label>
+  <select class="competition-select" id="competitionFilter" aria-label="Filtrer par championnat">
+    <option value="">Tous les championnats</option>
+  </select>
   <input class="search" id="matchTeamSearch" type="search" placeholder="⌕  Rechercher une équipe…" aria-label="Rechercher une équipe" autocomplete="off">
 </section>
 <div class="workspace" aria-label="Espace de travail principal">
