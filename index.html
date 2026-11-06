@@ -1474,15 +1474,16 @@ input.search,
   background:#eaf2fb;
   color:#173e65;
 }
-.match-competition-compact .competition-logo{
+.match-competition-compact .competition-cup{
   display:block;
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  padding:3px;
+  width:21px;
+  height:21px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
 }
-.match-competition-compact .competition-logo[hidden]{display:none!important}
-.match-competition-compact .competition-mark[hidden]{display:none!important}
 .match-competition-compact .competition-divider{
   align-self:stretch;
   width:1px;
@@ -1597,7 +1598,7 @@ input.search,
 <div class="match-meta">
 <time class="match-kickoff" data-field="kickoff"></time>
 </div>
-<div class="match-competition match-competition-compact" aria-label="Championnat et journée"><span class="competition-mark" aria-hidden="true"><img class="competition-logo" alt="" loading="lazy" decoding="async"></span><span class="competition-divider" aria-hidden="true"></span><span class="competition-copy"><strong data-field="competition"></strong><small data-field="round"></small></span></div>
+<div class="match-competition match-competition-compact" aria-label="Championnat et journée"><span class="competition-mark" aria-hidden="true"><svg class="competition-cup" viewBox="0 0 24 24" focusable="false"><path d="M8 4h8v4a4 4 0 0 1-8 0V4Z"/><path d="M8 6H5v2a4 4 0 0 0 4 4M16 6h3v2a4 4 0 0 1-4 4M12 12v5m-4 3h8m-6-3h4"/></svg></span><span class="competition-divider" aria-hidden="true"></span><span class="competition-copy"><strong data-field="competition"></strong><small data-field="round"></small></span></div>
 <div class="match-team match-team-home">
 <img class="match-team-logo" data-field="home-logo" alt="" hidden>
 <span class="match-team-copy">
