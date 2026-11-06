@@ -1858,6 +1858,32 @@ input.search,
   .match-competition-compact .competition-copy strong{font-size:9px!important}
 }
 
+
+/* Mobile — masquer le championnat et centrer date + heure */
+@media(max-width:700px){
+  .upcoming-match-card > .match-competition-compact{
+    display:none!important;
+  }
+  .upcoming-match-card > .match-meta{
+    grid-column:1/-1!important;
+    grid-row:1!important;
+    justify-content:center!important;
+    align-items:center!important;
+    width:100%!important;
+    min-height:38px!important;
+    padding:0!important;
+    text-align:center!important;
+  }
+  .match-kickoff{
+    width:100%!important;
+    flex-direction:row!important;
+    align-items:baseline!important;
+    justify-content:center!important;
+    gap:7px!important;
+    text-align:center!important;
+  }
+}
+
 </style>
 </head>
 <body>
