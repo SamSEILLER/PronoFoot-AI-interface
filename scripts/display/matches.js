@@ -103,8 +103,15 @@
     const competitionCode = competitionCodes[competitionName.trim().toLowerCase()]
       || competitionName.trim().split(/\s+/).filter(Boolean).map(word => word[0]).join("").slice(0, 3).toUpperCase()
       || "—";
-    const competitionElement = setText(card, "competition", competitionName || competitionCode);
-    if (competitionElement) competitionElement.title = competitionName;
+    const competitionElement = setText(card, "competition", "");
+    if (competitionElement) {
+      competitionElement.title = competitionName;
+      competitionElement.dataset.code = competitionCode;
+      const competitionLabel = document.createElement("span");
+      competitionLabel.className = "competition-label";
+      competitionLabel.textContent = competitionName || competitionCode;
+      competitionElement.appendChild(competitionLabel);
+    }
     const phase = getEstimatedPhase(match, standingsIndex);
     const roundLabel = phase || match.round || "";
     const roundDisplay = typeof roundLabel === "string"
