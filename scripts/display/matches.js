@@ -93,21 +93,42 @@
     }
 
     const competitionName = match.competition || "";
+    const competitionKey = competitionName.trim().toLowerCase();
     const competitionCodes = {
       "premier league":"PL", "championship":"CH", "ligue 1":"L1", "ligue 2":"L2",
       "la liga":"LL", "laliga":"LL", "serie a":"SA", "bundesliga":"BL",
-      "eredivisie":"ED", "primeira liga":"P", "pro league":"PL", "belgian pro league":"BPL",
+      "eredivisie":"ED", "primeira liga":"P", "pro league":"BPL", "belgian pro league":"BPL",
       "champions league":"C1", "uefa champions league":"C1", "europa league":"EL",
       "uefa europa league":"EL", "conference league":"C4", "coupe de france":"CDF"
     };
-    const competitionCode = competitionCodes[competitionName.trim().toLowerCase()]
+    const competitionLogoIds = {
+      "premier league":39, "championship":40, "ligue 1":61, "ligue 2":62,
+      "la liga":140, "laliga":140, "serie a":135, "bundesliga":78,
+      "eredivisie":88, "primeira liga":94, "pro league":144, "belgian pro league":144,
+      "champions league":2, "uefa champions league":2, "europa league":3,
+      "uefa europa league":3, "conference league":848, "coupe de france":66
+    };
+    const competitionCode = competitionCodes[competitionKey]
       || competitionName.trim().split(/\s+/).filter(Boolean).map(word => word[0]).join("").slice(0, 3).toUpperCase()
       || "—";
     const competitionElement = setText(card, "competition", competitionName || competitionCode);
     if (competitionElement) {
       competitionElement.title = competitionName || competitionCode;
       const competitionMark = card.querySelector(".competition-mark");
-      if (competitionMark) competitionMark.dataset.code = competitionCode;
+      const competitionLogo = card.querySelector(".competition-logo");
+      const competitionLogoId = competitionLogoIds[competitionKey];
+      if (competitionLogo && competitionMark) {
+        if (competitionLogoId) {
+          competitionLogo.src = `https://media.api-sports.io/football/leagues/${competitionLogoId}.png`;
+          competitionLogo.alt = `Logo ${competitionName}`;
+          competitionLogo.hidden = false;
+          competitionMark.hidden = false;
+        } else {
+          competitionLogo.removeAttribute("src");
+          competitionLogo.hidden = true;
+          competitionMark.hidden = true;
+        }
+      }
     }
     const phase = getEstimatedPhase(match, standingsIndex);
     const roundLabel = phase || match.round || "";
