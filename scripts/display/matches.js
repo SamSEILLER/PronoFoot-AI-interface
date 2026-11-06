@@ -103,9 +103,9 @@
     const competitionCode = competitionCodes[competitionName.trim().toLowerCase()]
       || competitionName.trim().split(/\s+/).filter(Boolean).map(word => word[0]).join("").slice(0, 3).toUpperCase()
       || "—";
-    const competitionElement = setText(card, "competition", "");
+    const competitionElement = setText(card, "competition", competitionName || competitionCode);
     if (competitionElement) {
-      competitionElement.title = competitionName;
+      competitionElement.title = competitionName || competitionCode;
       const competitionMark = card.querySelector(".competition-mark");
       if (competitionMark) competitionMark.dataset.code = competitionCode;
     }
