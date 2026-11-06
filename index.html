@@ -1031,7 +1031,6 @@ main{
   background:#eaf1ff!important;
   color:#2863a9!important;
 }
-.match-competition .competition-logo{display:block;width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain;border-radius:8px;}
 .match-competition .competition-cup-icon{
   width:23px!important;
   height:23px!important;
@@ -1216,6 +1215,10 @@ input.search,
   padding:6px 10px 7px 10px!important;
 }
 
+
+/* Pictogramme trophée moderne commun à toutes les compétitions */
+.competition-cup-icon{display:block;width:26px!important;height:26px!important;overflow:visible;color:#e87527;filter:drop-shadow(0 1px 1px rgba(108,67,20,.16));stroke-linejoin:round}
+.match-competition .competition-mark{background:linear-gradient(145deg,#fff7e8,#f4dfb9)!important;border:1px solid #ead1a5;box-shadow:inset 0 1px 0 #fff,0 1px 3px rgba(33,52,77,.08)}
 </style>
 </head>
 <body>
@@ -1264,7 +1267,7 @@ input.search,
 <div class="match-meta">
 <time class="match-kickoff" data-field="kickoff"></time>
 </div>
-<div class="match-competition"><span class="competition-mark" aria-hidden="true"><img class="competition-logo" data-field="competition-logo" alt="" hidden><svg class="competition-cup-icon" data-field="competition-fallback" viewBox="0 0 24 24" focusable="false"><path d="M8 3h8l-1 7a3 3 0 0 1-6 0L8 3Z"></path><path d="M8 5H4v2a4 4 0 0 0 4 4M16 5h4v2a4 4 0 0 1-4 4M12 13v5m-4 3h8m-6-3h4"></path></svg></span><span class="competition-copy"><strong data-field="competition"></strong><small data-field="round"></small></span></div>
+<div class="match-competition"><span class="competition-mark" aria-hidden="true"><svg class="competition-cup-icon" viewBox="0 0 32 32" focusable="false"><path d="M10 4h12l-1.2 11.1a4.8 4.8 0 0 1-9.6 0L10 4Z" fill="currentColor" opacity=".95"/><path d="M10.6 7H5.5v3.2a6 6 0 0 0 6 6M21.4 7h5.1v3.2a6 6 0 0 1-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M16 20v4m-5 3h10m-8-3h6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="m16 7 .8 2.1 2.2.1-1.7 1.4.6 2.1-1.9-1.2-1.9 1.2.6-2.1-1.7-1.4 2.2-.1L16 7Z" fill="#fff" opacity=".95"/></svg></span><span class="competition-copy"><strong data-field="competition"></strong><small data-field="round"></small></span></div>
 <div class="match-team match-team-home">
 <img class="match-team-logo" data-field="home-logo" alt="" hidden>
 <span class="match-team-copy">
