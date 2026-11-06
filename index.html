@@ -1219,6 +1219,24 @@ input.search,
 /* Pictogramme trophée moderne commun à toutes les compétitions */
 .competition-cup-icon{display:block;width:26px!important;height:26px!important;overflow:visible;color:#285b99;filter:none;stroke-linejoin:round}
 .match-competition .competition-mark{background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0!important;color:#285b99!important}
+
+
+/* Bouton retour en haut : même comportement et présentation que la page Classements */
+.standings-scroll-top{
+  position:fixed!important;right:18px!important;bottom:18px!important;z-index:100;
+  display:flex;align-items:center;justify-content:center;width:42px;height:42px;padding:0;
+  border:0!important;border-radius:5px!important;
+  background:linear-gradient(110deg,#1c2c38 0%,#293b48 57%,#1b303e 100%)!important;
+  color:#fff!important;font:800 23px/1 Arial,sans-serif;line-height:1!important;
+  box-shadow:0 5px 16px rgba(8,185,104,.32),0 2px 5px rgba(10,27,70,.14)!important;
+  opacity:0;visibility:hidden;transform:translateY(9px);
+  transition:opacity .2s ease,transform .2s ease,visibility .2s ease,background .2s ease,box-shadow .2s ease;
+}
+.standings-scroll-top.is-visible{opacity:1;visibility:visible;transform:translateY(0)}
+.standings-scroll-top:hover{background:linear-gradient(110deg,#172630 0%,#223440 57%,#162a37 100%)!important;color:#fff!important}
+.standings-scroll-top:focus-visible{outline:3px solid #8be5b9;outline-offset:4px}
+@media(max-width:650px){.standings-scroll-top{right:12px!important;bottom:12px!important}}
+@media(prefers-reduced-motion:reduce){.standings-scroll-top{transition:none}}
 </style>
 </head>
 <body>
@@ -1267,7 +1285,7 @@ input.search,
 <div class="match-meta">
 <time class="match-kickoff" data-field="kickoff"></time>
 </div>
-<div class="match-competition"><span class="competition-mark" aria-hidden="true"><svg class="competition-cup-icon" viewBox="0 0 32 32" focusable="false"><path d="M10 4h12l-1.2 11.1a4.8 4.8 0 0 1-9.6 0L10 4Z" fill="currentColor" opacity=".95"/><path d="M10.6 7H5.5v3.2a6 6 0 0 0 6 6M21.4 7h5.1v3.2a6 6 0 0 1-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M16 20v4m-5 3h10m-8-3h6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="m16 7 .8 2.1 2.2.1-1.7 1.4.6 2.1-1.9-1.2-1.9 1.2.6-2.1-1.7-1.4 2.2-.1L16 7Z" fill="#fff" opacity=".95"/></svg></span><span class="competition-copy"><strong data-field="competition"></strong><small data-field="round"></small></span></div>
+<div class="match-competition"><span class="competition-mark" aria-hidden="true"><svg class="competition-cup-icon" viewBox="0 0 32 32" focusable="false"><path d="M8 4.5h16c-.2 5.4-1 10.2-3 13.6-1.1 1.9-2.7 3.2-5 4.6-2.3-1.4-3.9-2.7-5-4.6-2-3.4-2.8-8.2-3-13.6Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8.5 8H4.8c-.1 5 2.1 8 7.3 10.3M23.5 8h3.7c.1 5-2.1 8-7.3 10.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M23 6.5c-1.8 5.5-5.1 10.2-10.4 14.8M16 23v4m-5 2h10" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="competition-copy"><strong data-field="competition"></strong><small data-field="round"></small></span></div>
 <div class="match-team match-team-home">
 <img class="match-team-logo" data-field="home-logo" alt="" hidden>
 <span class="match-team-copy">
@@ -1287,6 +1305,7 @@ input.search,
 </article>
 </template></main>
 <footer class="footer">PronoFoot AI · Football Prediction Lab</footer>
+<button type="button" class="standings-scroll-top" id="pageScrollTop" aria-label="Revenir en haut de la page">⌃</button>
 
 <script>
 (() => {
@@ -1377,6 +1396,20 @@ input.search,
       setSource("history", null);
       setSource("odds", null);
     });
+})();
+</script>
+
+<script>
+(() => {
+  const button = document.getElementById("pageScrollTop");
+  if (!button) return;
+  const updateVisibility = () => button.classList.toggle("is-visible", window.scrollY > 120);
+  window.addEventListener("scroll", updateVisibility, { passive: true });
+  button.addEventListener("click", () => {
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+  });
+  updateVisibility();
 })();
 </script>
 
