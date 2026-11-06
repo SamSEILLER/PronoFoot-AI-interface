@@ -320,9 +320,9 @@
               <div class="match-detail-date">${escape(dateLabel)}</div>
             </div>
             <div class="match-detail-teams">
-              <div class="match-detail-team">${homeLogo ? '<img src="'+escape(homeLogo)+'" alt="Logo '+escape(match.home_team)+'">':""}<strong>${escape(match.home_team)}</strong><small>${homePosition ? homePosition+"e":"Classement indisponible"}</small></div>
+              <div class="match-detail-team">${homeLogo ? '<img src="'+escape(homeLogo)+'" alt="Logo '+escape(match.home_team)+'">':""}<strong>${escape(match.home_team)}</strong><small class="match-team-position">${homePosition ? homePosition+"e":"Classement indisponible"}</small></div>
               <div class="match-detail-vs">VS</div>
-              <div class="match-detail-team">${awayLogo ? '<img src="'+escape(awayLogo)+'" alt="Logo '+escape(match.away_team)+'">':""}<strong>${escape(match.away_team)}</strong><small>${awayPosition ? awayPosition+"e":"Classement indisponible"}</small></div>
+              <div class="match-detail-team">${awayLogo ? '<img src="'+escape(awayLogo)+'" alt="Logo '+escape(match.away_team)+'">':""}<strong>${escape(match.away_team)}</strong><small class="match-team-position">${awayPosition ? awayPosition+"e":"Classement indisponible"}</small></div>
             </div>
             <div class="match-detail-xg">
               <span class="match-detail-xg-label">Buts attendus</span>
