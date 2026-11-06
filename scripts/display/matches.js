@@ -107,7 +107,7 @@
     const homePlayed = competition.teams.get(String(match.home_team_id || ""))?.played;
     const awayPlayed = competition.teams.get(String(match.away_team_id || ""))?.played;
     if (!Number.isInteger(homePlayed) || !Number.isInteger(awayPlayed)) return "";
-    return "Phase - J" + (Math.min(homePlayed, awayPlayed) + 1);
+    return "Journée " + (Math.min(homePlayed, awayPlayed) + 1);
   };
 
   const renderMatch = (match, standingsIndex) => {
