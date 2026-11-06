@@ -1377,6 +1377,60 @@ input.search,
   }
 }
 
+
+/* Affichage compact et discret du championnat et de la journée */
+.match-competition-compact{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  min-width:0!important;
+  padding:4px 3px!important;
+  border:0!important;
+  background:transparent!important;
+}
+.match-competition-compact .competition-copy{
+  display:flex!important;
+  flex-direction:row!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:5px!important;
+  min-width:0!important;
+  width:100%;
+}
+.match-competition-compact .competition-copy strong{
+  display:block;
+  min-width:0;
+  color:#52647b!important;
+  font-size:11px!important;
+  font-weight:750!important;
+  line-height:1.1!important;
+  text-align:center!important;
+  overflow-wrap:anywhere;
+}
+.match-competition-compact .competition-copy small{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 auto;
+  min-width:27px;
+  padding:3px 5px!important;
+  margin:0!important;
+  border:0!important;
+  border-radius:4px!important;
+  background:#eef2f6!important;
+  color:#66758a!important;
+  font-size:10px!important;
+  font-weight:700!important;
+  line-height:1.1!important;
+  white-space:nowrap;
+}
+.match-competition-compact .competition-copy small[hidden]{display:none!important}
+@media(max-width:700px){
+  .match-competition-compact{padding:3px 1px!important}
+  .match-competition-compact .competition-copy{gap:3px!important;flex-wrap:wrap!important}
+  .match-competition-compact .competition-copy strong{font-size:10px!important}
+  .match-competition-compact .competition-copy small{font-size:9px!important;min-width:24px;padding:3px 4px!important}
+}
 </style>
 </head>
 <body>
@@ -1425,7 +1479,7 @@ input.search,
 <div class="match-meta">
 <time class="match-kickoff" data-field="kickoff"></time>
 </div>
-<div class="match-competition match-competition-calendar match-competition-h"><span class="competition-copy"><strong data-field="competition"></strong><small data-field="round"></small></span></div>
+<div class="match-competition match-competition-compact" aria-label="Championnat et journée"><span class="competition-copy"><strong data-field="competition"></strong><small data-field="round"></small></span></div>
 <div class="match-team match-team-home">
 <img class="match-team-logo" data-field="home-logo" alt="" hidden>
 <span class="match-team-copy">
