@@ -1115,6 +1115,35 @@ main{
 /* Typographie du nom de compétition et badge de journée */
 .match-competition .competition-copy strong { font-size: 13px!important; line-height: 1em!important; }
 .match-competition .competition-copy small { padding: 5px 10px!important; border-radius: 5px!important; font-size: 10px!important; color: #ffffff!important; background: #285b99!important; }
+
+/* Message d'état vide lorsque les filtres ne retournent aucun match */
+.match-filter-count{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  box-sizing:border-box;
+  min-height:96px;
+  margin:18px 0;
+  padding:22px 18px;
+  border:1px dashed #cbd9eb;
+  border-radius:0;
+  background:#f4f8fd;
+  color:#426080;
+  font-size:14px;
+  font-weight:700;
+  line-height:1.5;
+  text-align:center;
+}
+@media(max-width:760px){
+  .match-filter-count{
+    min-height:82px;
+    margin:14px 0;
+    padding:18px 14px;
+    font-size:13px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -1277,31 +1306,3 @@ main{
 </body>
 </html>
 
-
-/* Message d'état vide lorsque les filtres ne retournent aucun match */
-.match-filter-count{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  width:100%;
-  box-sizing:border-box;
-  min-height:96px;
-  margin:18px 0;
-  padding:22px 18px;
-  border:1px dashed #cbd9eb;
-  border-radius:0;
-  background:#f4f8fd;
-  color:#426080;
-  font-size:14px;
-  font-weight:700;
-  line-height:1.5;
-  text-align:center;
-}
-@media(max-width:760px){
-  .match-filter-count{
-    min-height:82px;
-    margin:14px 0;
-    padding:18px 14px;
-    font-size:13px;
-  }
-}
