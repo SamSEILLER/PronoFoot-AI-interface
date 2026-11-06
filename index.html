@@ -1110,6 +1110,32 @@ main{
   min-height: 72px;
 }
 
+
+/* Logos de compétitions : SVG transparents affichés en 50 × 50 px */
+.match-competition .competition-mark{
+  flex:0 0 50px!important;
+  width:50px!important;
+  height:50px!important;
+  padding:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+}
+.match-competition .competition-logo{
+  display:block;
+  width:50px!important;
+  height:50px!important;
+  max-width:50px!important;
+  max-height:50px!important;
+  object-fit:contain!important;
+  border-radius:0!important;
+}
+@media(max-width:700px){
+  .match-competition .competition-mark{
+    flex-basis:50px!important;
+    width:50px!important;
+    height:50px!important;
+  }
+}
 </style>
 </head>
 <body>

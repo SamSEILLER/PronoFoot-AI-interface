@@ -8,17 +8,17 @@
 
   // Logos API-Football associés aux slugs réellement présents dans matches_future.json.
   const COMPETITION_LOGOS = Object.freeze({
-    "be-first-division-a": "belgian-pro-league.jpg",
-    "de-bundesliga": "bundesliga.jpg",
-    "es-la-liga": "la-liga.jpg",
-    "fr-ligue-1": "ligue-1.jpg",
-    "fr-ligue-2": "ligue-2.jpg",
-    "gb-premier-league": "premier-league.jpg",
-    "it-serie-a": "serie-a.jpg",
-    "pt-primeira-liga": "primeira-liga.jpg",
-    "uefa-champions-league": "uefa-champions-league.jpg",
-    "uefa-europa-league": "uefa-europa-league.jpg",
-    "us-mls": "mls.jpg"
+    "be-first-division-a": "belgian-pro-league.svg",
+    "de-bundesliga": "bundesliga.svg",
+    "es-la-liga": "la-liga.svg",
+    "fr-ligue-1": "ligue-1.svg",
+    "fr-ligue-2": "ligue-2.svg",
+    "gb-premier-league": "premier-league.svg",
+    "it-serie-a": "serie-a.svg",
+    "pt-primeira-liga": "primeira-liga.svg",
+    "uefa-champions-league": "uefa-champions-league.svg",
+    "uefa-europa-league": "uefa-europa-league.svg",
+    "us-mls": "mls.svg"
   });
   const list = document.getElementById("upcomingMatchesList");
   const template = document.getElementById("upcomingMatchTemplate");
