@@ -1967,6 +1967,20 @@ input.search,
     border-radius:10px!important;
   }
 }
+
+/* La fiche reste immédiatement sous la ligne sélectionnée dans la liste mobile. */
+@media(max-width:760px){
+  #upcomingMatchesList > .match-detail-inline-mobile{
+    display:block!important;
+    position:static!important;
+    order:initial!important;
+    align-self:stretch;
+    flex:0 0 auto;
+    width:100%!important;
+    max-width:100%;
+    margin:0 0 9px!important;
+  }
+}
 </style>
 </head>
 <body>
