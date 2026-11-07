@@ -2131,3 +2131,19 @@ input.search,
 </body>
 </html>
 
+
+
+/* Mobile : la fiche du match sélectionné apparaît dans le flux, sous sa carte. */
+@media(max-width:760px){
+  .matches-list-section{display:flex;flex-direction:column;min-width:0}
+  .upcoming-matches-list{display:flex;flex-direction:column;min-width:0;overflow:visible}
+  .match-detail-panel{
+    display:block!important;
+    width:100%;
+    min-width:0;
+    min-height:0!important;
+    margin:0 0 2px;
+    padding:0!important;
+    border-radius:10px!important;
+  }
+}
