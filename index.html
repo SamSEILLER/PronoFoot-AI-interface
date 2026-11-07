@@ -1951,6 +1951,22 @@ input.search,
 .match-odds-line>span{display:inline-flex;gap:4px;align-items:center;padding:4px 7px;border:1px solid #e0e9f4;border-radius:5px;background:#fff;color:#47617e;font-size:11px}
 .match-odds-line small{color:#71859d;font-size:10px}.match-odds-line strong{color:#153b69;font-variant-numeric:tabular-nums}
 
+
+
+/* Mobile : la fiche du match sélectionné apparaît dans le flux, sous sa carte. */
+@media(max-width:760px){
+  .matches-list-section{display:flex;flex-direction:column;min-width:0}
+  .upcoming-matches-list{display:flex;flex-direction:column;min-width:0;overflow:visible}
+  .match-detail-panel{
+    display:block!important;
+    width:100%;
+    min-width:0;
+    min-height:0!important;
+    margin:0 0 2px;
+    padding:0!important;
+    border-radius:10px!important;
+  }
+}
 </style>
 </head>
 <body>
@@ -2131,19 +2147,3 @@ input.search,
 </body>
 </html>
 
-
-
-/* Mobile : la fiche du match sélectionné apparaît dans le flux, sous sa carte. */
-@media(max-width:760px){
-  .matches-list-section{display:flex;flex-direction:column;min-width:0}
-  .upcoming-matches-list{display:flex;flex-direction:column;min-width:0;overflow:visible}
-  .match-detail-panel{
-    display:block!important;
-    width:100%;
-    min-width:0;
-    min-height:0!important;
-    margin:0 0 2px;
-    padding:0!important;
-    border-radius:10px!important;
-  }
-}
