@@ -301,8 +301,12 @@
         if (!detailPanel) return;
         const mobileLayout = window.matchMedia("(max-width: 760px)").matches;
         if (mobileLayout) {
-          card.insertAdjacentElement("afterend", detailPanel);
+          // La fiche est un élément frère immédiat de la carte sélectionnée,
+          // dans la liste : elle ne peut donc pas se retrouver après tous les matchs.
+          list.insertBefore(detailPanel, card.nextSibling);
+          detailPanel.classList.add("match-detail-inline-mobile");
         } else {
+          detailPanel.classList.remove("match-detail-inline-mobile");
           const workspace = detailPanel.closest(".workspace");
           const matchesSection = document.querySelector(".matches-list-section");
           if (workspace && matchesSection) workspace.insertBefore(detailPanel, matchesSection.nextSibling);
@@ -367,6 +371,7 @@
         });
 
         if (detailPanel && detailPanel.parentElement === list) {
+          detailPanel.classList.remove("match-detail-inline-mobile");
           const workspace = detailPanel.closest(".workspace");
           const matchesSection = document.querySelector(".matches-list-section");
           if (workspace && matchesSection) workspace.insertBefore(detailPanel, matchesSection.nextSibling);
