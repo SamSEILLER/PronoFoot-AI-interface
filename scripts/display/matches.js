@@ -299,6 +299,14 @@
           item.setAttribute("aria-pressed", String(active));
         });
         if (!detailPanel) return;
+        const mobileLayout = window.matchMedia("(max-width: 760px)").matches;
+        if (mobileLayout) {
+          card.insertAdjacentElement("afterend", detailPanel);
+        } else {
+          const workspace = detailPanel.closest(".workspace");
+          const matchesSection = document.querySelector(".matches-list-section");
+          if (workspace && matchesSection) workspace.insertBefore(detailPanel, matchesSection.nextSibling);
+        }
         const kickoff = new Date(match.kickoff_utc);
         const dateLabel = Number.isFinite(kickoff.getTime())
           ? new Intl.DateTimeFormat("fr-FR",{weekday:"short",day:"2-digit",month:"short",year:"numeric",timeZone:"Europe/Paris"}).format(kickoff)
@@ -358,6 +366,11 @@
           return dateMatches && teamMatches && competitionMatches;
         });
 
+        if (detailPanel && detailPanel.parentElement === list) {
+          const workspace = detailPanel.closest(".workspace");
+          const matchesSection = document.querySelector(".matches-list-section");
+          if (workspace && matchesSection) workspace.insertBefore(detailPanel, matchesSection.nextSibling);
+        }
         list.replaceChildren();
         if (countNode) countNode.textContent = filtered.length + (filtered.length === 1 ? " match" : " matchs");
         filtered.forEach(({ match }) => {
