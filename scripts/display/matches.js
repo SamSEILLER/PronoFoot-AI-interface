@@ -82,7 +82,7 @@
     return competitionCountryFlags[slug] || "";
   };
   const countryFlagHtml = (code, className) => code
-    ? '<img class="' + className + '" src="https://flagcdn.com/w40/' + code.toLowerCase() + '.png" alt="Drapeau ' + code + '" width="20" height="14" loading="lazy" decoding="async">'
+    ? '<img class="' + className + '" src="./assets/flags/' + code.toLowerCase() + '.svg" alt="Drapeau ' + code + '" width="20" height="14" loading="lazy" decoding="async">'
     : "";
 
   let selectedMatchKey = "";
