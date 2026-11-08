@@ -369,7 +369,7 @@
             }).join("");
             return '<section class="history-team-form"><div class="history-team-heading"><strong>'+escapeHtml(name)+'</strong><span class="history-form-count">'+results.length+' match'+(results.length>1?"s":"")+'</span></div>'+
               '<div class="history-form-results">'+(chips||'<span class="history-empty-inline">Aucun résultat terminé disponible.</span>')+'</div>'+
-              '<div class="history-form-stats"><span><b class="is-win-text">'+stats.V+' V</b><small>Victoires</small></span><span><b class="is-draw-text">'+stats.N+' N</b><small>Nuls</small></span><span><b class="is-loss-text">'+stats.D+' D</b><small>Défaites</small></span><span><b'+stats.gf+'</b><small>Buts +</small></span><span><b'+stats.ga+'</b><small>Buts −</small></span></div>'+
+              '<div class="history-form-stats"><span><b class="is-win-text">'+stats.V+' V</b><small>Victoires</small></span><span><b>'+stats.N+' N</b><small>Nuls</small></span><span><b class="is-loss-text">'+stats.D+' D</b><small>Défaites</small></span><span><b'+stats.gf+'</b><small>Buts +</small></span><span><b'+stats.ga+'</b><small>Buts −</small></span></div>'+
               '</section>';
           };
           const homeKey=normalizeHistoryTeam(match.home_team);
