@@ -519,7 +519,7 @@
       });
 
       const renderFilteredMatches = () => {
-        const today = parisDateKey(Date.now());
+        const today = parisDateKey(SIMULATED_NOW);
         const [startOffset, endOffset] = dateFilterRanges[activeDateFilter] || [0, 1];
         const firstDate = shiftDateKey(today, startOffset);
         const lastDate = shiftDateKey(today, endOffset);
