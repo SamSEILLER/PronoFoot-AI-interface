@@ -293,7 +293,7 @@
       const renderHistoryOverview = (body, match) => {
         body.innerHTML = '<p class="history-loading">Chargement de la forme récente et des confrontations…</p>';
         loadHistoryData().then(({ recentForm, headToHead }) => {
-          if (selectedDetailMatch !== match || !body.isConnected) return;
+          if (selectedDetailMatch !== match || !body.isConnected || !detailPanel.querySelector('[data-detail-tab="overview"]')?.classList.contains("is-active")) return;
           const teams = recentForm?.teams || {};
           const pairs = headToHead?.pairs || {};
           const findTeam = (name) => {
