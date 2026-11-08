@@ -138,7 +138,11 @@
     const seasonMatches = !competitionStandings?.season || !match.season || competitionStandings.season === match.season;
     const homePosition = seasonMatches ? competitionStandings?.teams.get(String(match.home_team_id || ""))?.position : null;
     const awayPosition = seasonMatches ? competitionStandings?.teams.get(String(match.away_team_id || ""))?.position : null;
-    const formatPosition = (position) => position !== null && position !== undefined && String(position).trim() !== "" ? "# " + String(position).trim().replace(/^#\s*/, "") : "";
+    const formatPosition = (position) => {
+      const rankText = String(position ?? "").trim().replace(/^#\s*/, "").replace(/(?:er|e|ème|eme)$/i, "");
+      const rank = Number(rankText);
+      return Number.isInteger(rank) && rank > 0 ? "# " + rank : "";
+    };
     const homePositionNode = setText(card, "home-position", formatPosition(homePosition));
     const awayPositionNode = setText(card, "away-position", formatPosition(awayPosition));
     if (homePositionNode) homePositionNode.hidden = !homePosition;
