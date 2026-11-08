@@ -81,18 +81,6 @@
     const slug = String(match?.competition_slug || "").trim().toLowerCase();
     return competitionCountryFlags[slug] || "";
   };
-  const countryFlagImage = (code, className) => {
-    if (!code) return null;
-    const image = document.createElement("img");
-    image.className = className;
-    image.src = "https://flagcdn.com/w40/" + code.toLowerCase() + ".png";
-    image.alt = "Drapeau " + code;
-    image.width = 20;
-    image.height = 14;
-    image.loading = "lazy";
-    image.decoding = "async";
-    return image;
-  };
   const countryFlagHtml = (code, className) => code
     ? '<img class="' + className + '" src="https://flagcdn.com/w40/' + code.toLowerCase() + '.png" alt="Drapeau ' + code + '" width="20" height="14" loading="lazy" decoding="async">'
     : "";
@@ -119,11 +107,6 @@
       time.innerHTML = '<span class="match-date"></span><span class="match-time"></span>';
       time.querySelector(".match-date").textContent = dateFormatter.format(kickoff);
       time.querySelector(".match-time").textContent = timeFormatter.format(kickoff);
-      const countryFlag = getCompetitionCountryFlag(match);
-      if (countryFlag) {
-        const mobileFlag = countryFlagImage(countryFlag, "competition-country-flag-mobile");
-        if (mobileFlag) time.insertBefore(mobileFlag, time.firstChild);
-      }
       time.dateTime = kickoff.toISOString();
     }
 
@@ -140,13 +123,6 @@
       || competitionName.trim().split(/\s+/).filter(Boolean).map(word => word[0]).join("").slice(0, 3).toUpperCase()
       || "—";
     const competitionElement = setText(card, "competition", competitionName || competitionCode);
-    const countryFlag = getCompetitionCountryFlag(match);
-    if (competitionElement && countryFlag) {
-      const flag = countryFlagImage(countryFlag, "competition-country-flag");
-      const competitionMark = card.querySelector(".competition-mark");
-      if (competitionMark) competitionMark.appendChild(flag);
-      else competitionElement.parentElement.insertBefore(flag, competitionElement);
-    }
     if (competitionElement) competitionElement.title = competitionName || competitionCode;
     const phase = getEstimatedPhase(match, standingsIndex);
     const roundLabel = phase || match.round || "";
@@ -452,8 +428,8 @@
         detailPanel.innerHTML = `
           <div class="match-detail-content">
             <div class="match-detail-top">
-              <div class="match-detail-competition"><span aria-hidden="true">🏆</span>${countryFlagHtml(countryFlag, "competition-country-flag")}<span>${escape(competition)}</span>${phase ? "<span>· "+escape(phase)+"</span>":""}</div>
-              <div class="match-detail-date"><span>${escape(dateLabel)}</span><span class="match-detail-clock" aria-hidden="true">◷</span></div>
+              <div class="match-detail-competition">${countryFlagHtml(countryFlag, "competition-country-flag")}<span>${escape(competition)}</span>${phase ? "<span>· "+escape(phase)+"</span>":""}</div>
+              <div class="match-detail-date"><span>${escape(dateLabel)}</span><span class="match-detail-clock" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 7v5l3.5 2"></path></svg></span></div>
             </div>
             <div class="match-detail-teams">
               <div class="match-detail-team">${homeLogo ? '<img src="'+escape(homeLogo)+'" alt="Logo '+escape(match.home_team)+'">':""}<strong>${escape(match.home_team)}</strong><small class="match-team-position">${homePosition ? homePosition+"e":"Classement indisponible"}</small></div>
