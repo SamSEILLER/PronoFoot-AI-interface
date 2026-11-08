@@ -72,7 +72,7 @@
     "de-bundesliga":"🇩🇪",
     "es-la-liga":"🇪🇸",
     "fr-ligue-1":"🇫🇷",
-    "gb-premier-league":"🏴",
+    "gb-premier-league":"🇬🇧",
     "it-serie-a":"🇮🇹",
     "jp-j1-league":"🇯🇵",
     "pt-primeira-liga":"🇵🇹"
