@@ -68,14 +68,14 @@
   };
 
   const competitionCountryFlags = {
-    "be-first-division-a":"🇧🇪",
-    "de-bundesliga":"🇩🇪",
-    "es-la-liga":"🇪🇸",
-    "fr-ligue-1":"🇫🇷",
-    "gb-premier-league":"🇬🇧",
-    "it-serie-a":"🇮🇹",
-    "jp-j1-league":"🇯🇵",
-    "pt-primeira-liga":"🇵🇹"
+    "be-first-division-a":"BE",
+    "de-bundesliga":"DE",
+    "es-la-liga":"ES",
+    "fr-ligue-1":"FR",
+    "gb-premier-league":"GB",
+    "it-serie-a":"IT",
+    "jp-j1-league":"JP",
+    "pt-primeira-liga":"PT"
   };
   const getCompetitionCountryFlag = (match) => {
     const slug = String(match?.competition_slug || "").trim().toLowerCase();
