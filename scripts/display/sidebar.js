@@ -84,7 +84,7 @@
       meta = provider + (source.matched_events ?? 0) + " matchs associés · " + (source.events_with_odds ?? 0)
         + " avec cotes · " + (source.unmatched ?? 0) + " non associés"
         + (markets ? " · " + markets : "") + (anomalies ? " · " + anomalies : "")
-        + (requests ? " · " + requests : "") + " · " + (source.errors ?? 0) + " erreur(s)";
+        + (requests ? " · " + requests : "") + " · " + (Array.isArray(source.errors) ? source.errors.length : (source.errors ?? 0)) + " erreur(s)";
     }
     metaNode.textContent = meta + " · " + age + " · " + lastSuccess;
   };
