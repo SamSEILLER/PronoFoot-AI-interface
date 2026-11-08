@@ -1922,9 +1922,22 @@ input.search,
 .match-detail-date{white-space:nowrap;text-align:right}.match-detail-date{display:inline-flex;align-items:center;justify-content:flex-end;gap:2px}
 .match-detail-teams{display:grid;grid-template-columns:minmax(0,1fr) 48px minmax(0,1fr);align-items:center;gap:8px;padding:14px 18px 10px}
 .match-detail-team{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-width:0;text-align:center}
-.match-detail-team img{width:76px;height:76px;object-fit:contain}
+.match-detail-team img{
+  width:76px;
+  height:76px;
+  object-fit:contain;
+  margin:10px 0px;
+}
 .match-detail-team strong{font-size:18px;line-height:1.2}
-.match-detail-team small{align-self:center;min-width:28px;padding:3px 7px;border:1px solid #d8e6f8;border-radius:5px;background:#eaf2ff;color:#28558e;font-size:10px;font-weight:800;text-align:center}
+.match-detail-team small{
+  background:#eeeeee;
+  border:0;
+  min-width:25px;
+  padding:5px 5px;
+  border-radius:5px;
+  color:#2863a9;
+  font-size:13px;
+}
 .match-detail-vs{text-align:center;font-size:22px;font-weight:900}
 .match-detail-xg{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;padding:12px 10px 15px;font-size:12px}
 .match-detail-xg-label{font-weight:800;color:#47658b}
@@ -2086,6 +2099,12 @@ input.search,
 }
 
 
+
+/* Onglet Cotes : limiter la liste complète à 400px et permettre son défilement */
+.match-detail-body:has(.match-odds-meta){
+  max-height:400px!important;
+  overflow-y:auto!important;
+}
 
 /* Fiche de match : hauteur naturelle et identique pour les trois onglets */
 .match-detail-body{
