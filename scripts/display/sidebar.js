@@ -74,7 +74,7 @@
         ? source.competitions_collected + "/" + source.competitions_total + " compétitions collectées"
         : "couverture des compétitions non précisée";
       meta = provider + (source.records ?? 0) + " enregistrements · " + coverage
-        + " · " + (source.failed_seasons ?? 0) + " saison(s) en échec · " + (source.errors ?? 0) + " erreur(s)";
+        + " · " + (source.failed_seasons ?? 0) + " saison(s) en échec · " + (Array.isArray(source.errors) ? source.errors.length : (source.errors ?? 0)) + " erreur(s)";
     } else {
       const summary = source.summary || {};
       const markets = Number.isFinite(summary.market_count) ? summary.market_count + " marchés" : null;
