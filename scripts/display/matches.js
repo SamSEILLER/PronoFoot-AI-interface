@@ -81,6 +81,21 @@
     const slug = String(match?.competition_slug || "").trim().toLowerCase();
     return competitionCountryFlags[slug] || "";
   };
+  const countryFlagImage = (code, className) => {
+    if (!code) return null;
+    const image = document.createElement("img");
+    image.className = className;
+    image.src = "https://flagcdn.com/w40/" + code.toLowerCase() + ".png";
+    image.alt = "Drapeau " + code;
+    image.width = 20;
+    image.height = 14;
+    image.loading = "lazy";
+    image.decoding = "async";
+    return image;
+  };
+  const countryFlagHtml = (code, className) => code
+    ? '<img class="' + className + '" src="https://flagcdn.com/w40/' + code.toLowerCase() + '.png" alt="Drapeau ' + code + '" width="20" height="14" loading="lazy" decoding="async">'
+    : "";
 
   let selectedMatchKey = "";
 
@@ -106,12 +121,8 @@
       time.querySelector(".match-time").textContent = timeFormatter.format(kickoff);
       const countryFlag = getCompetitionCountryFlag(match);
       if (countryFlag) {
-        const mobileFlag = document.createElement("span");
-        mobileFlag.className = "competition-country-flag-mobile";
-        mobileFlag.setAttribute("role", "img");
-        mobileFlag.setAttribute("aria-label", "Pays de la compétition");
-        mobileFlag.textContent = countryFlag;
-        time.insertBefore(mobileFlag, time.firstChild);
+        const mobileFlag = countryFlagImage(countryFlag, "competition-country-flag-mobile");
+        if (mobileFlag) time.insertBefore(mobileFlag, time.firstChild);
       }
       time.dateTime = kickoff.toISOString();
     }
@@ -131,11 +142,7 @@
     const competitionElement = setText(card, "competition", competitionName || competitionCode);
     const countryFlag = getCompetitionCountryFlag(match);
     if (competitionElement && countryFlag) {
-      const flag = document.createElement("span");
-      flag.className = "competition-country-flag";
-      flag.setAttribute("aria-label", "Pays de la compétition");
-      flag.setAttribute("role", "img");
-      flag.textContent = countryFlag;
+      const flag = countryFlagImage(countryFlag, "competition-country-flag");
       const competitionMark = card.querySelector(".competition-mark");
       if (competitionMark) competitionMark.appendChild(flag);
       else competitionElement.parentElement.insertBefore(flag, competitionElement);
@@ -445,7 +452,7 @@
         detailPanel.innerHTML = `
           <div class="match-detail-content">
             <div class="match-detail-top">
-              <div class="match-detail-competition"><span aria-hidden="true">🏆</span>${countryFlag ? '<span class="competition-country-flag" role="img" aria-label="Pays de la compétition">'+countryFlag+'</span>':""}<span>${escape(competition)}</span>${phase ? "<span>· "+escape(phase)+"</span>":""}</div>
+              <div class="match-detail-competition"><span aria-hidden="true">🏆</span>${countryFlagHtml(countryFlag, "competition-country-flag")}<span>${escape(competition)}</span>${phase ? "<span>· "+escape(phase)+"</span>":""}</div>
               <div class="match-detail-date"><span>${escape(dateLabel)}</span><span class="match-detail-clock" aria-hidden="true">◷</span></div>
             </div>
             <div class="match-detail-teams">
