@@ -306,7 +306,7 @@
         });
       };
       const normalizeHistoryTeam = (value) => String(value || "")
-        .normalize("NFKD").replace(/[\\u0300-\\u036f]/g, "")
+        .normalize("NFKD").replace(/[\u0300-\u036f]/g, "")
         .toLocaleLowerCase("fr").replace(/[^a-z0-9]+/g, " ").trim();
       const renderHistoryOverview = (body, match) => {
         body.innerHTML = '<p class="history-loading">Chargement de la forme récente et des confrontations…</p>';
@@ -327,10 +327,10 @@
               new Intl.DateTimeFormat("fr-FR", {day:"2-digit",month:"short",year:"numeric",timeZone:"UTC"}).format(date);
           };
           const competitionLabel = (value) => String(value || "Compétition inconnue")
-            .replace(/-/g, " ").replace(/\\b\\w/g, char => char.toUpperCase());
+            .replace(/-/g, " ").replace(/\b\w/g, char => char.toUpperCase());
           const shortCompetition = (value) => {
             const label = competitionLabel(value);
-            const words = label.split(/\\s+/).filter(Boolean);
+            const words = label.split(/\s+/).filter(Boolean);
             return (words.length > 1 ? words.map(word => word[0]).join("") : label.slice(0,4)).toUpperCase().slice(0,5);
           };
           const getFormMatches = (team) => {
@@ -350,7 +350,7 @@
             results.forEach(item => {
               const result=String(item?.result || "").toUpperCase();
               if (Object.prototype.hasOwnProperty.call(stats,result)) stats[result]++;
-              const score=String(item?.score || "").match(/^(\\d+)\\s*[-–:]\\s*(\\d+)$/);
+              const score=String(item?.score || "").match(/^(\d+)\s*[-–:]\s*(\d+)$/);
               if(score){stats.for+=Number(score[1]);stats.against+=Number(score[2]);}
             });
             const chips = results.map(item => {
@@ -359,7 +359,7 @@
               const matchCompetition=String(item?.competition_id || "").trim().toLowerCase();
               const otherCompetition=Boolean(targetCompetition && matchCompetition && targetCompetition!==matchCompetition);
               const compLabel=competitionLabel(item?.competition_id);
-              const tooltip=compactHistoryDate(item?.date)+" · "+compLabel+"\\n"+name+" "+String(item?.score || "Score indisponible")+" "+String(item?.opponent || "Adversaire inconnu");
+              const tooltip=compactHistoryDate(item?.date)+" · "+compLabel+"\n"+name+" "+String(item?.score || "Score indisponible")+" "+String(item?.opponent || "Adversaire inconnu");
               return '<span class="history-form-item"><span class="history-form-chip '+cls+(otherCompetition?" is-other-competition":"")+'" data-tooltip="'+escapeHtml(tooltip)+'" tabindex="0" aria-label="'+escapeHtml((result||"Résultat inconnu")+" — "+tooltip)+'">'+escapeHtml(result||"—")+'</span>'+
                 (otherCompetition?'<small class="history-form-comp-badge" title="'+escapeHtml(compLabel)+'">'+escapeHtml(shortCompetition(item?.competition_id))+'</small>':'')+'</span>';
             }).join("");
