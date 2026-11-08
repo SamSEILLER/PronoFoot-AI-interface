@@ -301,14 +301,27 @@
             if (teams[key]) return teams[key];
             return Object.values(teams).find(item => normalizeHistoryTeam(item?.name) === key) || null;
           };
+          const targetCompetition = String(match.competition_slug || match.competition_id || match.provider_competition_id || "").trim().toLowerCase();
+          const compactHistoryDate = (value) => {
+            if (!value) return "Date inconnue";
+            const date = new Date(value);
+            return Number.isNaN(date.getTime()) ? String(value).slice(0, 10) :
+              new Intl.DateTimeFormat("fr-FR", {day:"2-digit",month:"2-digit",year:"2-digit",timeZone:"UTC"}).format(date);
+          };
+          const competitionLabel = (value) => String(value || "Compétition inconnue")
+            .replace(/-/g, " ").replace(/\\b\\w/g, char => char.toUpperCase());
           const formRow = (name) => {
             const team = findTeam(name);
             const results = Array.isArray(team?.matches) ? team.matches.slice(-5) : [];
             const chips = results.map(item => {
               const result = String(item?.result || "").toUpperCase();
               const cls = result === "V" ? "is-win" : result === "N" ? "is-draw" : result === "D" ? "is-loss" : "is-unknown";
-              const title = [item?.date, item?.competition_id, item?.score, item?.opponent].filter(Boolean).join(" · ");
-              return '<span class="history-form-chip '+cls+'" title="'+escapeHtml(title)+'" aria-label="'+escapeHtml((result || "Résultat inconnu")+" — "+title)+'">'+escapeHtml(result || "—")+'</span>';
+              const matchCompetition = String(item?.competition_id || "").trim().toLowerCase();
+              const otherCompetition = Boolean(targetCompetition && matchCompetition && targetCompetition !== matchCompetition);
+              const tooltip = compactHistoryDate(item?.date) + " · " + competitionLabel(item?.competition_id) +
+                "\\n" + name + " " + String(item?.score || "Score indisponible") + " " + String(item?.opponent || "Adversaire inconnu");
+              const classes = "history-form-chip " + cls + (otherCompetition ? " is-other-competition" : "");
+              return '<span class="'+classes+'" data-tooltip="'+escapeHtml(tooltip)+'" tabindex="0" aria-label="'+escapeHtml((result || "Résultat inconnu")+" — "+tooltip)+'">'+escapeHtml(result || "—")+'</span>';
             }).join("");
             return '<div class="history-team-form"><strong>'+escapeHtml(name)+'</strong><div class="history-form-results">'+
               (chips || '<span class="history-empty-inline">Aucun résultat terminé disponible dans l’historique.</span>')+
