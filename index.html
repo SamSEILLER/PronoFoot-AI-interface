@@ -336,11 +336,11 @@ main{
 .match-kickoff .match-date{font-size:15px}
 .match-kickoff .match-time{font-size:25px}
 .match-kickoff-clock{display:inline-flex;align-items:center;margin-left:6px;font-size:17px;line-height:1;color:#52739e;vertical-align:middle}
-.competition-country-flag{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;min-width:22px;padding:2px 4px;border-radius:3px;background:#eef2f7;color:#29435f;font-size:10px;font-weight:800;letter-spacing:.35px;line-height:1.2}
+.competition-country-flag{display:inline-block;width:20px;height:14px;flex:0 0 20px;object-fit:cover;vertical-align:middle;border-radius:2px;box-shadow:0 0 0 1px #10264f22}
 .competition-mark .competition-country-flag{margin-left:3px}
 .competition-country-flag-mobile{display:none}
 @media(max-width:700px){
-  .competition-country-flag-mobile{display:inline-flex;align-items:center;justify-content:center;min-width:22px;padding:2px 4px;border-radius:3px;background:#eef2f7;color:#29435f;font-size:10px;font-weight:800;letter-spacing:.35px;line-height:1.2;margin-right:4px}
+  .competition-country-flag-mobile{display:inline-block;width:20px;height:14px;object-fit:cover;vertical-align:middle;margin-right:4px;border-radius:2px;box-shadow:0 0 0 1px #10264f22}
 }
 .match-detail-clock{display:inline-flex;align-items:center;margin-left:5px;font-size:15px;line-height:1;color:#52739e}
 .match-competition{display:flex;align-items:center;gap:12px;min-width:0;color:#10264f}
@@ -2090,7 +2090,7 @@ input.search,
 </script>
 
 <script src="./scripts/display/sidebar.js" defer></script>
-<script src="./scripts/display/matches.js?v=20261108-1512" defer></script>
+<script src="./scripts/display/matches.js?v=20261108-1518" defer></script>
 </body>
 </html>
 
