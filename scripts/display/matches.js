@@ -248,6 +248,16 @@
         .then(response => { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); })
         .then(payload => { oddsEvents = Array.isArray(payload?.events) ? payload.events : []; return oddsEvents; })
         .catch(error => { console.warn("Cotes OddsAPI indisponibles :", error); oddsEvents = []; return oddsEvents; });
+      const historyDataPromise = Promise.all([
+        fetch("./data/recent-form.json?v=" + Date.now(), { cache:"no-store" })
+          .then(response => { if (!response.ok) throw new Error("recent-form HTTP " + response.status); return response.json(); }),
+        fetch("./data/head-to-head.json?v=" + Date.now(), { cache:"no-store" })
+          .then(response => { if (!response.ok) throw new Error("head-to-head HTTP " + response.status); return response.json(); })
+      ]).then(([recentForm, headToHead]) => ({ recentForm, headToHead }))
+        .catch(error => {
+          console.warn("Historique des équipes indisponible :", error);
+          return { recentForm:{ teams:{} }, headToHead:{ pairs:{} } };
+        });
       const escapeHtml = (value) => String(value ?? "").replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
       const renderOdds = (body, match) => {
         body.innerHTML = '<p>Chargement des cotes Odds-API.io…</p>';
@@ -271,6 +281,54 @@
           body.innerHTML = '<div class="match-odds-meta"><strong>'+escapeHtml(event.bookmaker || "Bookmaker")+'</strong><span>Odds-API.io</span><small>Mise à jour : '+escapeHtml(updatedLabel)+'</small></div>'+rows;
         });
       };
+      const normalizeHistoryTeam = (value) => String(value || "")
+        .normalize("NFKD").replace(/[\\u0300-\\u036f]/g, "")
+        .toLocaleLowerCase("fr").replace(/[^a-z0-9]+/g, " ").trim();
+      const renderHistoryOverview = (body, match) => {
+        body.innerHTML = '<p class="history-loading">Chargement de la forme récente et des confrontations…</p>';
+        historyDataPromise.then(({ recentForm, headToHead }) => {
+          if (selectedDetailMatch !== match || !body.isConnected) return;
+          const teams = recentForm?.teams || {};
+          const pairs = headToHead?.pairs || {};
+          const findTeam = (name) => {
+            const key = normalizeHistoryTeam(name);
+            if (teams[key]) return teams[key];
+            return Object.values(teams).find(item => normalizeHistoryTeam(item?.name) === key) || null;
+          };
+          const formRow = (name) => {
+            const team = findTeam(name);
+            const results = Array.isArray(team?.matches) ? team.matches.slice(-5) : [];
+            const chips = results.map(item => {
+              const result = String(item?.result || "").toUpperCase();
+              const cls = result === "V" ? "is-win" : result === "N" ? "is-draw" : result === "D" ? "is-loss" : "is-unknown";
+              const title = [item?.date, item?.competition_id, item?.score, item?.opponent].filter(Boolean).join(" · ");
+              return '<span class="history-form-chip '+cls+'" title="'+escapeHtml(title)+'" aria-label="'+escapeHtml((result || "Résultat inconnu")+" — "+title)+'">'+escapeHtml(result || "—")+'</span>';
+            }).join("");
+            return '<div class="history-team-form"><strong>'+escapeHtml(name)+'</strong><div class="history-form-results">'+
+              (chips || '<span class="history-empty-inline">Aucun résultat terminé disponible dans l’historique.</span>')+
+              '</div></div>';
+          };
+          const homeKey = normalizeHistoryTeam(match.home_team);
+          const awayKey = normalizeHistoryTeam(match.away_team);
+          const pair = Object.values(pairs).find(item => {
+            const a = normalizeHistoryTeam(item?.team_a), b = normalizeHistoryTeam(item?.team_b);
+            return (a === homeKey && b === awayKey) || (a === awayKey && b === homeKey);
+          });
+          const h2hMatches = Array.isArray(pair?.matches) ? pair.matches.slice(0, 5) : [];
+          const h2hHtml = h2hMatches.length
+            ? '<p class="history-summary">'+escapeHtml(String(pair.matches.length))+' confrontation(s) archivée(s) · 5 plus récentes affichées</p>'+
+              '<div class="history-h2h-list">'+h2hMatches.map(item => {
+                const date = item.date ? new Date(item.date).toLocaleDateString("fr-FR",{day:"2-digit",month:"2-digit",year:"numeric",timeZone:"UTC"}) : "Date inconnue";
+                return '<div class="history-h2h-row"><div class="history-h2h-meta"><span>'+escapeHtml(date)+'</span><span>'+escapeHtml(item.competition_name || item.competition_id || "Compétition inconnue")+'</span></div>'+
+                  '<div class="history-h2h-scoreline"><span>'+escapeHtml(item.home || "—")+'</span><strong>'+escapeHtml(item.score_home)+' – '+escapeHtml(item.score_away)+'</strong><span>'+escapeHtml(item.away || "—")+'</span></div></div>';
+              }).join("")+'</div>'
+            : '<p class="history-empty">Aucune confrontation directe terminée trouvée dans les archives disponibles.</p>';
+          const generated = recentForm?.generated_at_utc || headToHead?.generated_at_utc;
+          const freshness = generated ? 'Données générées le '+escapeHtml(new Date(generated).toLocaleString("fr-FR",{dateStyle:"short",timeStyle:"short",timeZone:"Europe/Paris"})) : "Date de génération indisponible";
+          body.innerHTML = '<div class="history-overview-grid"><section class="history-card"><h3>Forme récente</h3><p class="history-caption">Les cinq derniers matchs terminés disponibles · du plus ancien au plus récent</p>'+
+            formRow(match.home_team)+formRow(match.away_team)+'</section><section class="history-card"><h3>Confrontations directes</h3>'+h2hHtml+'</section></div><p class="history-data-meta">'+freshness+' · Historique issu des matchs PitchAPI archivés.</p>';
+        });
+      };
       const renderDetailTab = (activeTab) => {
         if (!detailPanel) return;
         detailPanel.querySelectorAll("[data-detail-tab]").forEach((button) => {
@@ -282,6 +340,10 @@
         if (!body) return;
         if (activeTab === "odds" && selectedDetailMatch) {
           renderOdds(body, selectedDetailMatch);
+          return;
+        }
+        if (activeTab === "overview" && selectedDetailMatch) {
+          renderHistoryOverview(body, selectedDetailMatch);
           return;
         }
         const messages = {
