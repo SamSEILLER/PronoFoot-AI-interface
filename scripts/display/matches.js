@@ -340,18 +340,26 @@
           const getFormMatches = (team) => {
             const all = Array.isArray(team?.matches) ? team.matches.slice() : [];
             all.sort((a,b) => String(a.date || "").localeCompare(String(b.date || "")));
-            if (!targetCompetition) return { matches:all.slice(-5), note:"Championnat de la rencontre non identifié" };
+            if (!targetCompetition) {
+              const recent = all.slice(-5);
+              return { matches:recent, statsMatches:recent, note:"5 derniers matchs · compétition non identifiée" };
+            }
             const league = all.filter(item => String(item.competition_id || "").toLowerCase() === targetCompetition).slice(-5);
             const others = all.filter(item => String(item.competition_id || "").toLowerCase() !== targetCompetition)
               .sort((a,b) => String(b.date || "").localeCompare(String(a.date || ""))).slice(0,2).reverse();
-            return { matches:league.concat(others).sort((a,b) => String(a.date || "").localeCompare(String(b.date || ""))), note:"5 derniers matchs du championnat · jusqu’à 2 autres compétitions" };
+            return {
+              matches:league.concat(others).sort((a,b) => String(a.date || "").localeCompare(String(b.date || ""))),
+              statsMatches:league,
+              note:"5 derniers matchs du championnat · jusqu’à 2 autres compétitions"
+            };
           };
           const formRow = (name) => {
             const team = findTeam(name);
             const selection = getFormMatches(team);
             const results = selection.matches;
+            const statsMatches = Array.isArray(selection.statsMatches) ? selection.statsMatches : results;
             const stats = {V:0,N:0,D:0,gf:0,ga:0};
-            results.forEach(item => {
+            statsMatches.forEach(item => {
               const result=String(item?.result || "").toUpperCase();
               if (Object.prototype.hasOwnProperty.call(stats,result)) stats[result]++;
               const score=String(item?.score || "").match(/^(\d+)\s*[-–:]\s*(\d+)$/);
