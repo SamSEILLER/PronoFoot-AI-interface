@@ -930,22 +930,8 @@ section.filters{
 </style>
 </head>
 <body>
-<header class="topbar">
-<a class="brand" href="./index.html" aria-label="PronoFoot AI accueil">
-<img class="brand-logo" src="./assets/football-ai-circuit.svg" alt="Logo PronoFoot">
-<span class="brand-wordmark"><span class="brand-name">PronoFoot <em>AI</em></span><br><span class="brand-sub">FOOTBALL PREDICTION LAB</span></span>
-</a>
-<nav class="nav" aria-label="Navigation principale"><a href="./index.html"><img class="nav-icon" src="./assets/icon-matches.svg" alt="" aria-hidden="true">Matchs à venir</a><a href="./history.html"><img class="nav-icon" src="./assets/icon-history.svg" alt="" aria-hidden="true">Historique</a><a class="active" href="./classements.html" aria-current="page"><img class="nav-icon" src="./assets/icon-ranking.svg" alt="" aria-hidden="true">Classement</a></nav>
-<button class="api-status status-loading" id="apiStatus" type="button" aria-expanded="false" aria-controls="sourceStatusDetails" aria-label="État des sources : vérification en cours">
-<span class="status-symbol" id="apiStatusSymbol" aria-hidden="true">…</span><span class="api-status-label">Sources : <strong id="apiStatusLabel">…</strong></span>
-</button>
-<div class="source-status-details" id="sourceStatusDetails" hidden>
-<div class="source-status-heading">État des sources de données <span id="statusUpdatedAt">Chargement…</span></div>
-<div class="source-status-row"><span class="source-status-indicator" id="historyIndicator"></span><div><strong>Historique des matchs · PitchAPI</strong><p id="historyStatusText">En attente des données…</p><small id="historyStatusMeta"></small></div></div>
-<div class="source-status-row"><span class="source-status-indicator" id="oddsIndicator"></span><div><strong>Cotes · Odds-API.io</strong><p id="oddsStatusText">En attente des données…</p><small id="oddsStatusMeta"></small></div></div>
-<div class="source-status-footnote">Vert : deux collectes récentes sans anomalie · Orange : avertissement ou données de plus de 24 h · Rouge : les deux collectes sont en échec et anciennes.</div>
-</div>
-</header>
+<div id="sidebarMount"></div>
+
 <main><div class="standings-page" aria-label="Classement des compétitions">
 <section class="panel standings-panel" aria-labelledby="standingsTitle">
   <div class="standings-heading">
@@ -969,97 +955,7 @@ section.filters{
 </div></main>
 <footer class="footer">PronoFoot AI · Football Prediction Lab</footer>
 
-<script>
-(() => {
-  const STATUS_URL = "./data/site-status.json";
-  const button = document.getElementById("apiStatus");
-  const details = document.getElementById("sourceStatusDetails");
-  const label = document.getElementById("apiStatusLabel");
-  const symbol = document.getElementById("apiStatusSymbol");
-  const updated = document.getElementById("statusUpdatedAt");
-  const statusText = (source) => {
-    if (!source) return "Statut non disponible";
-    const state = source.status || "warning";
-    const collection = source.collection_status;
-    if (state === "error") return "Collecte en échec ou données indisponibles";
-    if (collection === "PARTIAL") return "Collecte partielle — certains matchs ou événements restent à vérifier";
-    if (state === "ok" && collection === "COMPLETE") return "Collecte complète, sans erreur signalée";
-    if (state === "ok") return "Collecte réussie, données à jour";
-    return "Vigilance — données ou couverture à vérifier";
-  };
-  const formatDate = (value) => {
-    if (!value) return "Date indisponible";
-    const date = new Date(value);
-    return Number.isNaN(date.getTime()) ? "Date invalide" : date.toLocaleString("fr-FR", {dateStyle:"short", timeStyle:"short", timeZone:"Europe/Paris"}) + " (Paris)";
-  };
-  const setSource = (prefix, source) => {
-    const state = source && ["ok", "warning", "error"].includes(source.status) ? source.status : "loading";
-    document.getElementById(prefix + "Indicator").className = "source-status-indicator status-" + state;
-    document.getElementById(prefix + "StatusText").textContent = statusText(source);
-    if (!source) {
-      document.getElementById(prefix + "StatusMeta").textContent = "Aucune information reçue depuis le fichier de statut.";
-      return;
-    }
-    const age = Number.isFinite(source.age_hours) ? Math.round(source.age_hours * 10) / 10 + " h" : "âge inconnu";
-    const lastSuccess = source.last_success_at_utc ? "Dernière réussite : " + formatDate(source.last_success_at_utc) : "Dernière réussite inconnue";
-    const provider = source.provider ? source.provider + " · " : "";
-    let meta;
-    if (prefix === "history") {
-      const coverage = Number.isFinite(source.competitions_collected) && Number.isFinite(source.competitions_total)
-        ? source.competitions_collected + "/" + source.competitions_total + " compétitions collectées"
-        : "couverture des compétitions non précisée";
-      meta = provider + (source.records ?? 0) + " enregistrements · " + coverage
-        + " · " + (source.failed_seasons ?? 0) + " saison(s) en échec · " + (source.errors ?? 0) + " erreur(s)";
-    } else {
-      const summary = source.summary || {};
-      const markets = Number.isFinite(summary.market_count) ? summary.market_count + " marchés" : null;
-      const anomalies = Number.isFinite(source.anomalies) ? source.anomalies + " anomalie(s)" : null;
-      const requests = Number.isFinite(summary.requests_attempted) && Number.isFinite(summary.request_budget)
-        ? summary.requests_attempted + "/" + summary.request_budget + " requêtes utilisées" : null;
-      meta = provider + (source.matched_events ?? 0) + " matchs associés · " + (source.events_with_odds ?? 0)
-        + " avec cotes · " + (source.unmatched ?? 0) + " non associés"
-        + (markets ? " · " + markets : "") + (anomalies ? " · " + anomalies : "")
-        + (requests ? " · " + requests : "") + " · " + (source.errors ?? 0) + " erreur(s)";
-    }
-    document.getElementById(prefix + "StatusMeta").textContent = meta + " · " + age + " · " + lastSuccess;
-  };
-  button.addEventListener("click", () => {
-    const opening = button.getAttribute("aria-expanded") !== "true";
-    button.setAttribute("aria-expanded", String(opening));
-    details.hidden = !opening;
-  });
-  document.addEventListener("click", (event) => {
-    if (!details.hidden && !details.contains(event.target) && !button.contains(event.target)) {
-      details.hidden = true;
-      button.setAttribute("aria-expanded", "false");
-    }
-  });
-  fetch(STATUS_URL + "?v=" + Date.now(), {cache:"no-store"})
-    .then((response) => { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); })
-    .then((data) => {
-      const state = ["ok", "warning", "error"].includes(data.status) ? data.status : "warning";
-      button.classList.remove("status-loading");
-      button.classList.add("status-" + state);
-      const words = state === "ok" ? "OK" : state === "error" ? "Erreur" : "Vigilance";
-      symbol.textContent = state === "ok" ? "✓" : state === "error" ? "×" : "!";
-      label.textContent = words;
-      button.setAttribute("aria-label", "État des sources : " + words + ". Ouvrir le détail");
-      updated.textContent = "Contrôle : " + formatDate(data.generated_at_utc);
-      setSource("history", data.history);
-      setSource("odds", data.odds);
-    })
-    .catch(() => {
-      button.classList.remove("status-loading");
-      button.classList.add("status-error");
-      symbol.textContent = "×";
-      label.textContent = "Erreur";
-      button.setAttribute("aria-label", "État des sources : erreur. Ouvrir le détail");
-      updated.textContent = "Fichier de statut inaccessible";
-      setSource("history", null);
-      setSource("odds", null);
-    });
-})();
-</script>
+
 
 
 <script>
@@ -1144,6 +1040,7 @@ section.filters{
     });
 })();
 </script>
+<script src="./scripts/display/sidebar.js" defer></script>
 </body>
 </html>
 
