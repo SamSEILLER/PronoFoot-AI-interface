@@ -67,6 +67,21 @@
     return index;
   };
 
+  const competitionCountryFlags = {
+    "be-first-division-a":"🇧🇪",
+    "de-bundesliga":"🇩🇪",
+    "es-la-liga":"🇪🇸",
+    "fr-ligue-1":"🇫🇷",
+    "gb-premier-league":"🏴",
+    "it-serie-a":"🇮🇹",
+    "jp-j1-league":"🇯🇵",
+    "pt-primeira-liga":"🇵🇹"
+  };
+  const getCompetitionCountryFlag = (match) => {
+    const slug = String(match?.competition_slug || "").trim().toLowerCase();
+    return competitionCountryFlags[slug] || "";
+  };
+
   let selectedMatchKey = "";
 
   const getEstimatedPhase = (match, standingsIndex) => {
@@ -89,6 +104,11 @@
       time.innerHTML = '<span class="match-date"></span><span class="match-time"></span>';
       time.querySelector(".match-date").textContent = dateFormatter.format(kickoff);
       time.querySelector(".match-time").textContent = timeFormatter.format(kickoff);
+      const clock = document.createElement("span");
+      clock.className = "match-kickoff-clock";
+      clock.setAttribute("aria-hidden", "true");
+      clock.textContent = "◷";
+      time.appendChild(clock);
       time.dateTime = kickoff.toISOString();
     }
 
@@ -105,6 +125,15 @@
       || competitionName.trim().split(/\s+/).filter(Boolean).map(word => word[0]).join("").slice(0, 3).toUpperCase()
       || "—";
     const competitionElement = setText(card, "competition", competitionName || competitionCode);
+    const countryFlag = getCompetitionCountryFlag(match);
+    if (competitionElement && countryFlag) {
+      const flag = document.createElement("span");
+      flag.className = "competition-country-flag";
+      flag.setAttribute("aria-label", "Pays de la compétition");
+      flag.setAttribute("role", "img");
+      flag.textContent = countryFlag;
+      competitionElement.parentElement.insertBefore(flag, competitionElement);
+    }
     if (competitionElement) competitionElement.title = competitionName || competitionCode;
     const phase = getEstimatedPhase(match, standingsIndex);
     const roundLabel = phase || match.round || "";
@@ -399,6 +428,7 @@
           : "Date indisponible";
         const phase = getEstimatedPhase(match, standingsIndex) || match.round || "";
         const competition = match.competition || "Compétition inconnue";
+        const countryFlag = getCompetitionCountryFlag(match);
         const standings = standingsIndex.get(String(match.competition_slug || ""));
         const seasonMatches = !standings?.season || !match.season || standings.season === match.season;
         const homePosition = seasonMatches ? standings?.teams.get(String(match.home_team_id || ""))?.position : null;
@@ -409,8 +439,8 @@
         detailPanel.innerHTML = `
           <div class="match-detail-content">
             <div class="match-detail-top">
-              <div class="match-detail-competition"><span aria-hidden="true">🏆</span><span>${escape(competition)}</span>${phase ? "<span>· "+escape(phase)+"</span>":""}</div>
-              <div class="match-detail-date">${escape(dateLabel)}</div>
+              <div class="match-detail-competition"><span aria-hidden="true">🏆</span>${countryFlag ? '<span class="competition-country-flag" role="img" aria-label="Pays de la compétition">'+countryFlag+'</span>':""}<span>${escape(competition)}</span>${phase ? "<span>· "+escape(phase)+"</span>":""}</div>
+              <div class="match-detail-date"><span>${escape(dateLabel)}</span><span class="match-detail-clock" aria-hidden="true">◷</span></div>
             </div>
             <div class="match-detail-teams">
               <div class="match-detail-team">${homeLogo ? '<img src="'+escape(homeLogo)+'" alt="Logo '+escape(match.home_team)+'">':""}<strong>${escape(match.home_team)}</strong><small class="match-team-position">${homePosition ? homePosition+"e":"Classement indisponible"}</small></div>
