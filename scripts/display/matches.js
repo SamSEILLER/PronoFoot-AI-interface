@@ -545,7 +545,7 @@
           }
         });
         const dayHeading = document.getElementById("matchDayHeading");
-        if (dayHeading) dayHeading.innerHTML = '<span class="match-day-label">Matchs du jour</span><span class="match-day-count">' + list.childElementCount + ' matchs</span>';
+        if (dayHeading) dayHeading.querySelector(".match-day-count span").textContent = list.childElementCount + " matchs";
         if (!list.children.length) {
           const empty = document.createElement("p");
           empty.className = "match-filter-count";
