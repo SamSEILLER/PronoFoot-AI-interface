@@ -109,6 +109,15 @@
       clock.setAttribute("aria-hidden", "true");
       clock.textContent = "◷";
       time.appendChild(clock);
+      const countryFlag = getCompetitionCountryFlag(match);
+      if (countryFlag) {
+        const mobileFlag = document.createElement("span");
+        mobileFlag.className = "competition-country-flag-mobile";
+        mobileFlag.setAttribute("role", "img");
+        mobileFlag.setAttribute("aria-label", "Pays de la compétition");
+        mobileFlag.textContent = countryFlag;
+        time.insertBefore(mobileFlag, time.firstChild);
+      }
       time.dateTime = kickoff.toISOString();
     }
 
