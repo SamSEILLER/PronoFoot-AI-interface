@@ -411,7 +411,18 @@
           const homePct=total?h2hStats.home/total*100:0;
           const drawPct=total?h2hStats.draw/total*100:0;
           const awayPct=total?h2hStats.away/total*100:0;
-          const donutStyle=total?'background:conic-gradient(#159947 0% '+homePct+'%,#9aa8b8 '+homePct+'% '+(homePct+drawPct)+'%,#dc3545 '+(homePct+drawPct)+'% 100%)':'background:#e7edf4';
+          const donutSegments=[{color:"#159947",value:homePct},{color:"#f2c230",value:drawPct},{color:"#dc3545",value:awayPct}].filter(segment=>segment.value>0);
+          const donutGap=donutSegments.length>1?0.8:0;
+          const donutUsable=100-donutGap*donutSegments.length;
+          let donutCursor=0;
+          const donutStops=[];
+          donutSegments.forEach(segment=>{
+            const segmentEnd=donutCursor+(segment.value/100)*donutUsable;
+            donutStops.push(segment.color+" "+donutCursor+"% "+segmentEnd+"%");
+            if(donutGap){donutStops.push("#ffffff "+segmentEnd+"% "+(segmentEnd+donutGap)+"%");}
+            donutCursor=segmentEnd+donutGap;
+          });
+          const donutStyle=total?'background:conic-gradient(from -90deg,'+donutStops.join(",")+')':'background:#e7edf4';
           const h2hRows=h2hMatches.map(item=>{
             const scoreHome=item.score_home??"—",scoreAway=item.score_away??"—";
             const hs=Number(item.score_home),as=Number(item.score_away);
