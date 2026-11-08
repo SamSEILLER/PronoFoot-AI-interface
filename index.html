@@ -342,7 +342,8 @@ main{
 @media(max-width:700px){
   .competition-country-flag-mobile{display:inline-block;width:20px;height:14px;object-fit:cover;vertical-align:middle;margin-right:4px;border-radius:2px;box-shadow:0 0 0 1px #10264f22}
 }
-.match-detail-clock{display:inline-flex;align-items:center;margin-left:5px;font-size:15px;line-height:1;color:#52739e}
+.match-detail-clock{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;margin-left:5px;color:#52739e;flex:0 0 18px}
+.match-detail-clock svg{display:block;width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .match-competition{display:flex;align-items:center;gap:12px;min-width:0;color:#10264f}
 .competition-mark{display:flex;align-items:center;justify-content:center;width:28px;height:34px;color:#e87527;font-size:25px}
 .competition-copy{display:flex;flex-direction:column;gap:3px;min-width:0}
@@ -890,6 +891,10 @@ main{
   font-weight:800;
 }
 .match-team-away .match-team-position{align-self:flex-start}
+.match-team-home .match-team-position {
+  background: #eeeeee;
+  border: 0;
+}
 .match-team-away .match-team-position{background:#eeeeee;border:0}
 
 /* Compétition et journée : nom lisible + numéro en pastille dédiée */
@@ -2090,7 +2095,7 @@ input.search,
 </script>
 
 <script src="./scripts/display/sidebar.js" defer></script>
-<script src="./scripts/display/matches.js?v=20261108-1518" defer></script>
+<script src="./scripts/display/matches.js?v=20261108-1525" defer></script>
 </body>
 </html>
 
