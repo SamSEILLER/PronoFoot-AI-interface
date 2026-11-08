@@ -1997,31 +1997,71 @@ input.search,
 }
 
 /* Historique du match : forme récente et confrontations directes */
-.history-overview-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:start}
-.history-card{min-width:0;padding:14px;border:1px solid #e4ebf4;border-radius:11px;background:#fff}
-.history-card h3{margin:0 0 5px;color:#0a1b46;font-size:15px;font-weight:800}
-.history-caption,.history-summary,.history-data-meta{margin:0 0 10px;color:#71839a;font-size:11px;line-height:1.5}
-.history-team-form{display:flex;flex-direction:column;gap:7px;padding:10px 0;border-top:1px solid #edf1f6}
-.history-team-form strong{font-size:12px;color:#203b60}
-.history-form-results{display:flex;flex-wrap:wrap;gap:6px;align-items:center;min-height:28px}
-.history-form-chip{position:relative;display:inline-flex;width:27px;height:27px;align-items:center;justify-content:center;border:2px solid transparent;border-radius:50%;color:#fff;font-size:11px;font-weight:850;cursor:help;outline-offset:3px}
-.history-form-chip.is-win{background:#16A34A;color:#fff}.history-form-chip.is-draw{background:#EAB308;color:#111827}.history-form-chip.is-loss{background:#DC2626;color:#fff}.history-form-chip.is-unknown{background:#8a98a8;color:#fff}
-.history-form-chip.is-other-competition{border:2px dashed currentColor;box-shadow:inset 0 0 0 1px #ffffff70}
+.history-overview-grid{display:flex;flex-direction:column;gap:13px;min-width:0}
+.history-card{min-width:0;padding:0;border:1px solid #dfe8f2;border-radius:12px;background:#fff;overflow:hidden;box-shadow:0 3px 12px #183b6010}
+.history-card-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 14px;background:#eef4fa;border-bottom:1px solid #dfe8f2}
+.history-card-heading h3{margin:0;color:#173657;font-size:14px;font-weight:800;letter-spacing:-.01em}
+.history-card-heading p{margin:3px 0 0;color:#70839a;font-size:11px;line-height:1.35}
+.history-count-badge{flex:0 0 auto;padding:5px 9px;border:1px solid #c8d8e9;border-radius:18px;background:#f8fbff;color:#294b70;font-size:10px;font-weight:750;white-space:nowrap}
+.history-form-teams{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;padding:4px 12px}
+.history-team-form{display:flex;flex-direction:column;gap:9px;min-width:0;padding:13px 12px;border-top:0}
+.history-team-form+ .history-team-form{border-left:1px solid #e4ebf3}
+.history-team-heading{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.history-team-heading strong{overflow:hidden;color:#142c4e;font-size:14px;font-weight:850;text-overflow:ellipsis;white-space:nowrap}
+.history-form-count{color:#8292a6;font-size:10px;white-space:nowrap}
+.history-form-results{display:flex;flex-wrap:wrap;gap:7px;align-items:center;min-height:34px}
+.history-form-item{position:relative;display:inline-flex;flex-direction:column;align-items:center;gap:3px;min-width:28px}
+.history-form-chip{position:relative;display:inline-flex;width:30px;height:30px;align-items:center;justify-content:center;border:2px solid transparent;border-radius:7px;color:#fff;font-size:13px;font-weight:850;cursor:help;outline-offset:3px}
+.history-form-chip.is-win{background:#159947;color:#fff}.history-form-chip.is-draw{background:#9aa8b8;color:#fff}.history-form-chip.is-loss{background:#d93636;color:#fff}.history-form-chip.is-unknown{background:#8a98a8;color:#fff}
+.history-form-comp-badge{max-width:38px;overflow:hidden;color:#54718f;font-size:8px;font-weight:800;line-height:1;text-overflow:ellipsis;white-space:nowrap}
 .history-form-chip::after{content:attr(data-tooltip);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translate(-50%,4px);z-index:30;width:max-content;max-width:min(260px,75vw);padding:7px 9px;border:1px solid #dbe5f1;border-radius:7px;background:#102746;color:#fff;font-size:11px;font-weight:600;line-height:1.4;text-align:left;white-space:pre-line;box-shadow:0 5px 16px #10274626;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .12s,transform .12s}
 .history-form-chip:hover::after,.history-form-chip:focus-visible::after{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.history-form-stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px;padding:8px 7px;border-radius:8px;background:#f1f5fa;text-align:center}
+.history-form-stats span{display:flex;flex-direction:column;gap:2px;min-width:0;border-right:1px solid #d6e0eb}
+.history-form-stats span:last-child{border:0}
+.history-form-stats b{color:#173d70;font-size:15px;font-weight:850}
+.history-form-stats b.is-win-text{color:#159947}.history-form-stats b.is-loss-text{color:#d93636}
+.history-form-stats small{color:#70839a;font-size:9px}
 .history-empty-inline,.history-empty{color:#71839a;font-size:11px;line-height:1.5}
-.history-empty{padding:10px;background:#f7f9fc;border-radius:8px}
-.history-h2h-list{display:flex;flex-direction:column}
-.history-h2h-row{padding:9px 0;border-top:1px solid #edf1f6}
-.history-h2h-meta{display:flex;justify-content:space-between;gap:8px;margin-bottom:6px;color:#71839a;font-size:10px}
-.history-h2h-meta span:last-child{text-align:right}
-.history-h2h-scoreline{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:7px;font-size:11px}
-.history-h2h-scoreline span:first-child{text-align:left}.history-h2h-scoreline span:last-child{text-align:right}
-.history-h2h-scoreline strong{padding:4px 7px;border-radius:6px;background:#f0f5fa;color:#17375d;font-size:12px;white-space:nowrap}
-.history-data-meta{margin:9px 2px 0;font-size:10px}
+.history-empty{margin:12px;padding:10px;background:#f7f9fc;border-radius:8px}
+.history-h2h-layout{display:grid;grid-template-columns:minmax(210px,.72fr) minmax(0,1.6fr);gap:14px;padding:13px}
+.history-h2h-summary{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:10px;border-right:1px solid #e1e9f2}
+.history-donut{display:flex;width:142px;height:142px;align-items:center;justify-content:center;border-radius:50%;position:relative}
+.history-donut:before{content:"";position:absolute;inset:13px;border-radius:50%;background:#fff}
+.history-donut>div{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;color:#142c4e}
+.history-donut strong{font-size:30px;line-height:1.05;font-weight:900}
+.history-donut small{margin-top:3px;color:#61758e;font-size:11px}
+.history-h2h-legend{display:flex;flex-direction:column;gap:7px;width:100%;font-size:10px;color:#506783}
+.history-h2h-legend span{display:flex;align-items:center;gap:6px;min-width:0}
+.history-h2h-legend i{width:10px;height:10px;flex:0 0 10px;border-radius:3px}
+.history-h2h-legend i.home{background:#1765bd}.history-h2h-legend i.draw{background:#9aa8b8}.history-h2h-legend i.away{background:#12b9df}
+.history-h2h-legend b{color:#142c4e;font-size:12px}
+.history-h2h-list{display:flex;flex-direction:column;min-width:0}
+.history-h2h-row{padding:7px 9px;border-top:1px solid #edf1f6}
+.history-h2h-row:nth-child(even){border-radius:7px;background:#f3f6fa}
+.history-h2h-meta{display:flex;justify-content:space-between;gap:8px;margin-bottom:4px;color:#71839a;font-size:10px}
+.history-h2h-competition{overflow:hidden;text-align:right;text-overflow:ellipsis;white-space:nowrap}
+.history-h2h-scoreline{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:7px;color:#1c2f4b;font-size:11px}
+.history-h2h-scoreline span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.history-h2h-scoreline span:first-child{text-align:right}.history-h2h-scoreline span:last-child{text-align:left}
+.history-h2h-scoreline strong{min-width:58px;padding:4px 8px;border-radius:7px;background:#e1efff;color:#17457d;font-size:13px;text-align:center;white-space:nowrap}
+.history-data-meta{margin:8px 2px 0;color:#8291a3;font-size:10px;line-height:1.4}
 .history-loading{padding:12px;color:#71839a;font-size:12px}
-@media(max-width:760px){.history-overview-grid{grid-template-columns:minmax(0,1fr)}}
-
+@media(max-width:760px){
+ .history-form-teams{grid-template-columns:minmax(0,1fr);padding:4px 10px}
+ .history-team-form{padding:12px 3px}
+ .history-team-form+.history-team-form{border-left:0;border-top:1px solid #e4ebf3}
+ .history-h2h-layout{grid-template-columns:minmax(0,1fr);gap:8px;padding:10px}
+ .history-h2h-summary{flex-direction:row;justify-content:flex-start;border-right:0;border-bottom:1px solid #e1e9f2;padding:5px 8px 12px}
+ .history-donut{width:108px;height:108px;flex:0 0 108px}
+ .history-donut:before{inset:10px}
+ .history-donut strong{font-size:24px}
+ .history-h2h-legend{gap:5px}
+ .history-card-heading{padding:9px 11px}
+ .history-card-heading h3{font-size:13px}
+ .history-h2h-scoreline{font-size:10px;gap:5px}
+ .history-h2h-scoreline strong{min-width:52px;font-size:12px}
+}
 
 
 /* Ajustements demandés — badge de compétition et proportions desktop */
