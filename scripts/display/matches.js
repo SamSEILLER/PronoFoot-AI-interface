@@ -104,11 +104,6 @@
       time.innerHTML = '<span class="match-date"></span><span class="match-time"></span>';
       time.querySelector(".match-date").textContent = dateFormatter.format(kickoff);
       time.querySelector(".match-time").textContent = timeFormatter.format(kickoff);
-      const clock = document.createElement("span");
-      clock.className = "match-kickoff-clock";
-      clock.setAttribute("aria-hidden", "true");
-      clock.textContent = "◷";
-      time.appendChild(clock);
       const countryFlag = getCompetitionCountryFlag(match);
       if (countryFlag) {
         const mobileFlag = document.createElement("span");
