@@ -132,7 +132,9 @@
       flag.setAttribute("aria-label", "Pays de la compétition");
       flag.setAttribute("role", "img");
       flag.textContent = countryFlag;
-      competitionElement.parentElement.insertBefore(flag, competitionElement);
+      const competitionMark = card.querySelector(".competition-mark");
+      if (competitionMark) competitionMark.appendChild(flag);
+      else competitionElement.parentElement.insertBefore(flag, competitionElement);
     }
     if (competitionElement) competitionElement.title = competitionName || competitionCode;
     const phase = getEstimatedPhase(match, standingsIndex);
