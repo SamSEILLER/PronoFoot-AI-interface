@@ -3,7 +3,9 @@
  * Les dates sources sont UTC ; l'affichage est converti en heure de Paris.
  */
 (() => {
-  const DATA_URL = "./data/matches_future.json";
+  const TEST_MODE = new URLSearchParams(window.location.search).get("mode") === "test";
+  const DATA_URL = TEST_MODE ? "./data/matches_test.json" : "./data/matches_future.json";
+  const SIMULATED_NOW = Date.now() - (TEST_MODE ? 7 * 24 * 60 * 60 * 1000 : 0);
   const STANDINGS_URL = "./data/standings.json";
 
   const list = document.getElementById("upcomingMatchesList");
@@ -162,16 +164,25 @@
   Promise.all([
     fetch(DATA_URL + "?v=" + Date.now(), { cache: "no-store" })
       .then((response) => { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); }),
-    fetch(STANDINGS_URL + "?v=" + Date.now(), { cache: "no-store" })
+    (TEST_MODE ? Promise.resolve(null) : fetch(STANDINGS_URL + "?v=" + Date.now(), { cache: "no-store" }))
       .then((response) => { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); })
       .catch((error) => { console.warn("Classements indisponibles : numéro de phase masqué.", error); return null; })
   ])
     .then(([matches, standings]) => {
-      if (!Array.isArray(matches)) throw new Error("Format de données inattendu");
+      const matchRecords = TEST_MODE ? matches?.matches : matches;
+      if (!Array.isArray(matchRecords)) throw new Error("Format de données inattendu");
 
       const standingsIndex = buildStandingsIndex(standings);
-      const now = Date.now();
-      const upcoming = matches
+      const now = SIMULATED_NOW;
+      if (TEST_MODE) {
+        const banner = document.createElement("div");
+        banner.className = "test-mode-banner";
+        const virtualDate = new Intl.DateTimeFormat("fr-FR", { dateStyle:"full", timeStyle:"short", timeZone:"Europe/Paris" }).format(new Date(now));
+        banner.textContent = "MODE TEST · Date simulée : " + virtualDate + " · Cotes désactivées · Données de démonstration";
+        const main = document.querySelector("main");
+        if (main) main.prepend(banner);
+      }
+      const upcoming = matchRecords
         .filter((match) => match && match.match_category === "future" && match.status !== "cancelled")
         .filter((match) => match.home_team && match.away_team)
         .map((match) => ({ match, kickoff: Date.parse(match.kickoff_utc) }))
@@ -228,7 +239,7 @@
         day: "numeric", month: "short", timeZone: "Europe/Paris"
       });
       const updateFilterLabels = () => {
-        const today = parisDateKey(Date.now());
+        const today = parisDateKey(SIMULATED_NOW);
         Object.entries(dateFilterRanges).forEach(([key, [startOffset, endOffset]]) => {
           const first = shiftDateKey(today, startOffset);
           const last = shiftDateKey(today, endOffset);
@@ -266,17 +277,17 @@
       ];
       let selectedDetailMatch = null;
       let oddsEvents = null;
-      const oddsDataPromise = fetch("./data/odds_latest.json?v=" + Date.now(), { cache:"no-store" })
+      const oddsDataPromise = (TEST_MODE ? Promise.resolve([]) : fetch("./data/odds_latest.json?v=" + Date.now(), { cache:"no-store" })
         .then(response => { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); })
         .then(payload => { oddsEvents = Array.isArray(payload?.events) ? payload.events : []; return oddsEvents; })
-        .catch(error => { console.warn("Cotes OddsAPI indisponibles :", error); oddsEvents = []; return oddsEvents; });
+        .catch(error => { console.warn("Cotes OddsAPI indisponibles :", error); oddsEvents = []; return oddsEvents; }));
       let historyDataPromise = null;
       const loadHistoryData = () => {
         if (!historyDataPromise) {
           historyDataPromise = Promise.all([
-            fetch("./data/recent-form.json?v=" + Date.now(), { cache:"no-store" })
+            fetch((TEST_MODE ? "./data/recent-form_test.json" : "./data/recent-form.json") + "?v=" + Date.now(), { cache:"no-store" })
               .then(response => { if (!response.ok) throw new Error("recent-form HTTP " + response.status); return response.json(); }),
-            fetch("./data/head-to-head.json?v=" + Date.now(), { cache:"no-store" })
+            fetch((TEST_MODE ? "./data/head-to-head_test.json" : "./data/head-to-head.json") + "?v=" + Date.now(), { cache:"no-store" })
               .then(response => { if (!response.ok) throw new Error("head-to-head HTTP " + response.status); return response.json(); })
           ]).then(([recentForm, headToHead]) => ({ recentForm, headToHead }))
             .catch(error => {
@@ -288,6 +299,7 @@
       };
       const escapeHtml = (value) => String(value ?? "").replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
       const renderOdds = (body, match) => {
+        if (TEST_MODE) { body.textContent = "Cotes désactivées en mode TEST : aucune cote réelle ou simulée n’est chargée."; return; }
         body.innerHTML = '<p>Chargement des cotes Odds-API.io…</p>';
         oddsDataPromise.then(events => {
           if (selectedDetailMatch !== match || !body.isConnected) return;
