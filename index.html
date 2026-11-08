@@ -323,7 +323,7 @@ main{
 
 /* Nouveau listing : lignes ouvertes, sans encadré global */
 .matches-list-section{width:100%;min-width:0}
-.match-day-heading{margin:0 0 12px;color:#142c4e;font-size:18px;font-weight:800}
+.match-day-heading{display:flex;align-items:center;gap:10px;margin:0 0 12px;color:#142c4e}\n.match-day-label{font-size:18px;font-weight:800;letter-spacing:-.2px}\n.match-day-count{display:inline-flex;align-items:center;padding:4px 10px;border-radius:12px;background:#edf2f7;color:#42627f;font-size:12px;font-weight:750}
 .match-period-summary{display:inline-flex;align-items:center;gap:12px;margin:0 0 16px;padding:9px 22px;border-radius:28px;background:#e5efff;color:#09275f}
 .match-count-icon{font-size:25px;line-height:1}
 .match-period-summary strong{font-size:19px;font-weight:800}
@@ -2164,7 +2164,7 @@ input.search,
 </section>
 <div class="workspace" aria-label="Espace de travail principal">
 <section class="left-panel matches-list-section" aria-label="Liste des matchs de la période">
-<div class="match-day-heading" id="matchDayHeading"># Matchs du jour : 0 matchs</div>
+<div class="match-day-heading" id="matchDayHeading"><span class="match-day-label">Matchs du jour</span><span class="match-day-count">0 matchs</span></div>
 <div class="upcoming-matches-list" id="upcomingMatchesList" aria-live="polite"></div>
 </section>
 <aside class="panel right-panel match-detail-panel" id="matchDetailPanel" aria-label="Détails du match">
