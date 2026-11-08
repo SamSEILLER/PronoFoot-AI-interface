@@ -346,12 +346,12 @@
             const team = findTeam(name);
             const selection = getFormMatches(team);
             const results = selection.matches;
-            const stats = {V:0,N:0,D:0,for:0,against:0};
+            const stats = {V:0,N:0,D:0,gf:0,ga:0};
             results.forEach(item => {
               const result=String(item?.result || "").toUpperCase();
               if (Object.prototype.hasOwnProperty.call(stats,result)) stats[result]++;
               const score=String(item?.score || "").match(/^(\d+)\s*[-–:]\s*(\d+)$/);
-              if(score){stats.for+=Number(score[1]);stats.against+=Number(score[2]);}
+              if(score){stats.gf+=Number(score[1]);stats.ga+=Number(score[2]);}
             });
             const chips = results.map(item => {
               const result=String(item?.result || "").toUpperCase();
@@ -365,7 +365,7 @@
             }).join("");
             return '<section class="history-team-form"><div class="history-team-heading"><strong>'+escapeHtml(name)+'</strong><span class="history-form-count">'+results.length+' match'+(results.length>1?"s":"")+'</span></div>'+
               '<div class="history-form-results">'+(chips||'<span class="history-empty-inline">Aucun résultat terminé disponible.</span>')+'</div>'+
-              '<div class="history-form-stats"><span><b class="is-win-text">'+stats.V+' V</b><small>Victoires</small></span><span><b>'+stats.N+' N</b><small>Nuls</small></span><span><b class="is-loss-text">'+stats.D+' D</b><small>Défaites</small></span><span><b>'+stats.for+'</b><small>Buts +</small></span><span><b>'+stats.against+'</b><small>Buts −</small></span></div>'+
+              '<div class="history-form-stats"><span><b class="is-win-text">'+stats.V+' V</b><small>Victoires</small></span><span><b>'+stats.N+' N</b><small>Nuls</small></span><span><b class="is-loss-text">'+stats.D+' D</b><small>Défaites</small></span><span><b'+stats.gf+'</b><small>Buts +</small></span><span><b'+stats.ga+'</b><small>Buts −</small></span></div>'+
               '</section>';
           };
           const homeKey=normalizeHistoryTeam(match.home_team);
