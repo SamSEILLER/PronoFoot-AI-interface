@@ -248,16 +248,22 @@
         .then(response => { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); })
         .then(payload => { oddsEvents = Array.isArray(payload?.events) ? payload.events : []; return oddsEvents; })
         .catch(error => { console.warn("Cotes OddsAPI indisponibles :", error); oddsEvents = []; return oddsEvents; });
-      const historyDataPromise = Promise.all([
-        fetch("./data/recent-form.json?v=" + Date.now(), { cache:"no-store" })
-          .then(response => { if (!response.ok) throw new Error("recent-form HTTP " + response.status); return response.json(); }),
-        fetch("./data/head-to-head.json?v=" + Date.now(), { cache:"no-store" })
-          .then(response => { if (!response.ok) throw new Error("head-to-head HTTP " + response.status); return response.json(); })
-      ]).then(([recentForm, headToHead]) => ({ recentForm, headToHead }))
-        .catch(error => {
-          console.warn("Historique des équipes indisponible :", error);
-          return { recentForm:{ teams:{} }, headToHead:{ pairs:{} } };
-        });
+      let historyDataPromise = null;
+      const loadHistoryData = () => {
+        if (!historyDataPromise) {
+          historyDataPromise = Promise.all([
+            fetch("./data/recent-form.json?v=" + Date.now(), { cache:"no-store" })
+              .then(response => { if (!response.ok) throw new Error("recent-form HTTP " + response.status); return response.json(); }),
+            fetch("./data/head-to-head.json?v=" + Date.now(), { cache:"no-store" })
+              .then(response => { if (!response.ok) throw new Error("head-to-head HTTP " + response.status); return response.json(); })
+          ]).then(([recentForm, headToHead]) => ({ recentForm, headToHead }))
+            .catch(error => {
+              console.warn("Historique des équipes indisponible :", error);
+              return { recentForm:{ teams:{} }, headToHead:{ pairs:{} } };
+            });
+        }
+        return historyDataPromise;
+      };
       const escapeHtml = (value) => String(value ?? "").replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
       const renderOdds = (body, match) => {
         body.innerHTML = '<p>Chargement des cotes Odds-API.io…</p>';
@@ -286,7 +292,7 @@
         .toLocaleLowerCase("fr").replace(/[^a-z0-9]+/g, " ").trim();
       const renderHistoryOverview = (body, match) => {
         body.innerHTML = '<p class="history-loading">Chargement de la forme récente et des confrontations…</p>';
-        historyDataPromise.then(({ recentForm, headToHead }) => {
+        loadHistoryData().then(({ recentForm, headToHead }) => {
           if (selectedDetailMatch !== match || !body.isConnected) return;
           const teams = recentForm?.teams || {};
           const pairs = headToHead?.pairs || {};
