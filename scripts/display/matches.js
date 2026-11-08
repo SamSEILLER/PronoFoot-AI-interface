@@ -536,6 +536,8 @@
             if (article.dataset.matchKey === selectedMatchKey) selectMatch(article, match);
           }
         });
+        const dayHeading = document.getElementById("matchDayHeading");
+        if (dayHeading) dayHeading.textContent = "# Matchs du jour : " + list.childElementCount + " matchs";
         if (!list.children.length) {
           const empty = document.createElement("p");
           empty.className = "match-filter-count";
