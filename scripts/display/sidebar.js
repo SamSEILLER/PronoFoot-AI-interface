@@ -82,7 +82,8 @@
       const requests = Number.isFinite(summary.requests_attempted) && Number.isFinite(summary.request_budget)
         ? summary.requests_attempted + "/" + summary.request_budget + " requêtes utilisées" : null;
       meta = provider + (source.matched_events ?? 0) + " matchs associés · " + (source.events_with_odds ?? 0)
-        + " avec cotes · " + (source.unmatched ?? 0) + " non associés"
+        + " avec cotes · " + (source.fixtures_not_matched ?? source.unmatched ?? 0) + " non rapprochés"
+        + " · " + (source.fixtures_absent_from_odds_api_feed ?? 0) + " absents du flux Odds API"
         + (markets ? " · " + markets : "") + (anomalies ? " · " + anomalies : "")
         + (requests ? " · " + requests : "") + " · " + (Array.isArray(source.errors) ? source.errors.length : (source.errors ?? 0)) + " erreur(s)";
     }
