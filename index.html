@@ -338,6 +338,10 @@ main{
 .match-kickoff-clock{display:inline-flex;align-items:center;margin-left:6px;font-size:17px;line-height:1;color:#52739e;vertical-align:middle}
 .competition-country-flag{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;font-size:17px;line-height:1;filter:saturate(1.05)}
 .competition-mark .competition-country-flag{font-size:15px;margin-left:2px}
+.competition-country-flag-mobile{display:none}
+@media(max-width:700px){
+  .competition-country-flag-mobile{display:inline-flex;align-items:center;font-size:15px;line-height:1;margin-right:2px}
+}
 .match-detail-clock{display:inline-flex;align-items:center;margin-left:5px;font-size:15px;line-height:1;color:#52739e}
 .match-competition{display:flex;align-items:center;gap:12px;min-width:0;color:#10264f}
 .competition-mark{display:flex;align-items:center;justify-content:center;width:28px;height:34px;color:#e87527;font-size:25px}
@@ -2085,7 +2089,7 @@ input.search,
 </script>
 
 <script src="./scripts/display/sidebar.js" defer></script>
-<script src="./scripts/display/matches.js" defer></script>
+<script src="./scripts/display/matches.js?v=20261108-1505" defer></script>
 </body>
 </html>
 
