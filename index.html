@@ -323,14 +323,14 @@ main{
 
 /* Nouveau listing : lignes ouvertes, sans encadré global */
 .matches-list-section{width:100%;min-width:0}
-.match-day-heading{display:flex;align-items:center;gap:16px;min-height:70px;margin:0 0 14px;padding:6px 2px;background:transparent;border:0;border-radius:0;box-shadow:none;overflow:visible}
-.match-day-icon{display:flex;align-items:center;justify-content:center;flex:0 0 38px;width:38px;height:38px;background:transparent;color:#17385f}
-.match-day-icon svg{display:block;width:36px;height:36px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
-.match-day-divider{width:3px;height:44px;flex:0 0 3px;border-radius:3px;background:#b9d6ec}
-.match-day-label{color:#142f53;font-size:clamp(21px,2vw,30px);font-weight:800;letter-spacing:-.55px;line-height:1.15}
-.match-day-count{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:48px;margin-left:auto;padding:7px 18px;border:0;border-radius:999px;background:#e5eff8;box-shadow:none;color:#17385f;font-size:clamp(15px,1.5vw,21px);font-weight:750;line-height:1;white-space:nowrap}
-.match-day-count svg{width:30px;height:30px;flex:0 0 30px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-@media(max-width:650px){.match-day-heading{gap:8px;min-height:58px;margin-bottom:10px;padding:4px 0}.match-day-icon{flex-basis:28px;width:28px;height:28px}.match-day-icon svg{width:27px;height:27px}.match-day-divider{height:34px;width:2px;flex-basis:2px}.match-day-label{font-size:clamp(15px,4vw,20px);letter-spacing:-.35px}.match-day-count{gap:5px;min-height:36px;padding:6px 9px;font-size:13px}.match-day-count svg{width:22px;height:22px;flex-basis:22px}}
+.match-day-heading{display:flex;align-items:center;gap:12px;min-height:48px;margin:0 0 12px;padding:3px 0;background:transparent;border:0;border-radius:0;box-shadow:none;overflow:visible}
+.match-day-icon{display:flex;align-items:center;justify-content:center;flex:0 0 28px;width:28px;height:28px;background:transparent;color:#17385f}
+.match-day-icon svg{display:block;width:27px;height:27px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.match-day-divider{width:2px;height:32px;flex:0 0 2px;border-radius:2px;background:#08a66a}
+.match-day-label{color:#142f53;font-size:19px;font-weight:800;letter-spacing:-.35px;line-height:1.15}
+.match-day-count{display:inline-flex;align-items:center;justify-content:center;gap:6px;margin-left:auto;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;color:#079653;font-size:16px;font-weight:750;line-height:1;white-space:nowrap}
+.match-day-count svg{width:23px;height:23px;flex:0 0 23px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:650px){.match-day-heading{gap:7px;min-height:40px;margin-bottom:9px;padding:2px 0}.match-day-icon{flex-basis:24px;width:24px;height:24px}.match-day-icon svg{width:23px;height:23px}.match-day-divider{height:27px;width:2px;flex-basis:2px}.match-day-label{font-size:16px;letter-spacing:-.3px}.match-day-count{gap:4px;font-size:13px}.match-day-count svg{width:19px;height:19px;flex-basis:19px}}
 .match-period-summary{display:inline-flex;align-items:center;gap:12px;margin:0 0 16px;padding:9px 22px;border-radius:28px;background:#e5efff;color:#09275f}
 .match-count-icon{font-size:25px;line-height:1}
 .match-period-summary strong{font-size:19px;font-weight:800}
@@ -2179,7 +2179,7 @@ input.search,
 </section>
 <div class="workspace" aria-label="Espace de travail principal">
 <section class="left-panel matches-list-section" aria-label="Liste des matchs de la période">
-<div class="match-day-heading" id="matchDayHeading"><span class="match-day-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="7" y="10" width="34" height="31" rx="5"/><path d="M15 6v9M33 6v9M7 19h34M16 27h.01M24 27h.01M32 27h.01M16 34h.01M24 34h.01M32 34h.01"/></svg></span><span class="match-day-divider" aria-hidden="true"></span><span class="match-day-label">Matchs du jour</span><span class="match-day-count"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="20"/><path d="m24 14 7 5-3 9h-8l-3-9 7-5ZM8 18l9 1M31 19l9-1M12 35l8-7M36 35l-8-7M20 28l-4 11M28 28l4 11"/></svg><span>0 matchs</span></span></div>
+<div class="match-day-heading" id="matchDayHeading"><span class="match-day-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="7" y="10" width="34" height="31" rx="5"/><path d="M15 6v9M33 6v9M7 19h34M16 27h.01M24 27h.01M32 27h.01M16 34h.01M24 34h.01M32 34h.01"/></svg></span><span class="match-day-divider" aria-hidden="true"></span><span class="match-day-label">Calendrier des matchs</span><span class="match-day-count"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="20"/><path d="m24 14 7 5-3 9h-8l-3-9 7-5ZM8 18l9 1M31 19l9-1M12 35l8-7M36 35l-8-7M20 28l-4 11M28 28l4 11"/></svg><span>0 matchs</span></span></div>
 <div class="upcoming-matches-list" id="upcomingMatchesList" aria-live="polite"></div>
 </section>
 <aside class="panel right-panel match-detail-panel" id="matchDetailPanel" aria-label="Détails du match">
