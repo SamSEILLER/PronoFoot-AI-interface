@@ -411,11 +411,16 @@
           const homePct=total?h2hStats.home/total*100:0;
           const drawPct=total?h2hStats.draw/total*100:0;
           const awayPct=total?h2hStats.away/total*100:0;
-          const donutStyle=total?'background:conic-gradient(#1765bd 0% '+homePct+'%,#9aa8b8 '+homePct+'% '+(homePct+drawPct)+'%,#12b9df '+(homePct+drawPct)+'% 100%)':'background:#e7edf4';
+          const donutStyle=total?'background:conic-gradient(#159947 0% '+homePct+'%,#9aa8b8 '+homePct+'% '+(homePct+drawPct)+'%,#dc3545 '+(homePct+drawPct)+'% 100%)':'background:#e7edf4';
           const h2hRows=h2hMatches.map(item=>{
             const scoreHome=item.score_home??"—",scoreAway=item.score_away??"—";
+            const hs=Number(item.score_home),as=Number(item.score_away);
+            const valid=Number.isFinite(hs)&&Number.isFinite(as);
+            const homeWon=valid&&hs!==as&&((hs>as&&normalizeHistoryTeam(item.home)===homeKey)||(as>hs&&normalizeHistoryTeam(item.away)===homeKey));
+            const awayWon=valid&&hs!==as&&!homeWon;
+            const outcomeClass=!valid?"unknown":hs===as?"draw":homeWon?"win":"loss";
             return '<div class="history-h2h-row"><div class="history-h2h-meta"><span>'+escapeHtml(compactHistoryDate(item.date))+'</span><span class="history-h2h-competition">'+escapeHtml(item.competition_name||competitionLabel(item.competition_id))+'</span></div>'+
-              '<div class="history-h2h-scoreline"><span>'+escapeHtml(item.home||"—")+'</span><strong>'+escapeHtml(scoreHome)+' – '+escapeHtml(scoreAway)+'</strong><span>'+escapeHtml(item.away||"—")+'</span></div></div>';
+              '<div class="history-h2h-scoreline"><span>'+escapeHtml(item.home||"—")+'</span><strong class="'+outcomeClass+'">'+escapeHtml(scoreHome)+' – '+escapeHtml(scoreAway)+'</strong><span>'+escapeHtml(item.away||"—")+'</span></div></div>';
           }).join("");
           const generated=recentForm?.generated_at_utc||headToHead?.generated_at_utc;
           const freshness=generated?'Données mises à jour le '+escapeHtml(new Date(generated).toLocaleString("fr-FR",{dateStyle:"short",timeStyle:"short",timeZone:"Europe/Paris"})):"Date de mise à jour indisponible";
@@ -424,7 +429,7 @@
             '<div class="history-form-teams">'+formRow(match.home_team)+formRow(match.away_team)+'</div></section>'+
             '<section class="history-card history-h2h-card"><div class="history-card-heading"><span class="history-heading-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="7" cy="7" r="3"/><circle cx="17" cy="7" r="3"/><path d="M2.5 19c.5-3 2-4.5 4.5-4.5s4 1.5 4.5 4.5M12.5 19c.5-3 2-4.5 4.5-4.5s4 1.5 4.5 4.5"/><path d="M10 10h4"/></svg></span><div><h3>Confrontations directes (H2H)</h3><p>Toutes compétitions · archives disponibles</p></div></div>'+
             (total?'<div class="history-h2h-layout"><div class="history-h2h-summary"><div class="history-donut" style="'+donutStyle+'"><div><strong>'+total+'</strong><small>matchs</small></div></div>'+
-              '<div class="history-h2h-legend"><span><i class="home"></i><b>'+h2hStats.home+'</b> '+escapeHtml(match.home_team)+'</span><span><i class="draw"></i><b>'+h2hStats.draw+'</b> Nuls</span><span><i class="away"></i><b>'+h2hStats.away+'</b> '+escapeHtml(match.away_team)+'</span></div></div>'+
+              '<div class="history-h2h-legend"><span><i class="home"></i><span><b>'+h2hStats.home+' Victoires</b><small>('+Math.round(homePct)+' %)</small></span></span><span><i class="draw"></i><span><b>'+h2hStats.draw+' Nul'+(h2hStats.draw>1?'s':'')+'</b><small>('+Math.round(drawPct)+' %)</small></span></span><span><i class="away"></i><span><b>'+h2hStats.away+' Défaite'+(h2hStats.away>1?'s':'')+'</b><small>('+Math.round(awayPct)+' %)</small></span></span></div></div>'+
               '<div class="history-h2h-list">'+h2hRows+'</div></div>':'<p class="history-empty">Aucune confrontation directe terminée trouvée dans les archives disponibles.</p>')+
             '</section></div><p class="history-data-meta">'+freshness+' · Historique issu des matchs PitchAPI archivés.</p>';
         });
