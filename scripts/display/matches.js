@@ -324,46 +324,85 @@
             if (!value) return "Date inconnue";
             const date = new Date(value);
             return Number.isNaN(date.getTime()) ? String(value).slice(0, 10) :
-              new Intl.DateTimeFormat("fr-FR", {day:"2-digit",month:"2-digit",year:"2-digit",timeZone:"UTC"}).format(date);
+              new Intl.DateTimeFormat("fr-FR", {day:"2-digit",month:"short",year:"numeric",timeZone:"UTC"}).format(date);
           };
           const competitionLabel = (value) => String(value || "Compétition inconnue")
             .replace(/-/g, " ").replace(/\\b\\w/g, char => char.toUpperCase());
+          const shortCompetition = (value) => {
+            const label = competitionLabel(value);
+            const words = label.split(/\\s+/).filter(Boolean);
+            return (words.length > 1 ? words.map(word => word[0]).join("") : label.slice(0,4)).toUpperCase().slice(0,5);
+          };
+          const getFormMatches = (team) => {
+            const all = Array.isArray(team?.matches) ? team.matches.slice() : [];
+            all.sort((a,b) => String(a.date || "").localeCompare(String(b.date || "")));
+            if (!targetCompetition) return { matches:all.slice(-5), note:"Championnat de la rencontre non identifié" };
+            const league = all.filter(item => String(item.competition_id || "").toLowerCase() === targetCompetition).slice(-5);
+            const others = all.filter(item => String(item.competition_id || "").toLowerCase() !== targetCompetition)
+              .sort((a,b) => String(b.date || "").localeCompare(String(a.date || ""))).slice(0,2).reverse();
+            return { matches:league.concat(others).sort((a,b) => String(a.date || "").localeCompare(String(b.date || ""))), note:"5 derniers matchs du championnat · jusqu’à 2 autres compétitions" };
+          };
           const formRow = (name) => {
             const team = findTeam(name);
-            const results = Array.isArray(team?.matches) ? team.matches.slice(-5) : [];
+            const selection = getFormMatches(team);
+            const results = selection.matches;
+            const stats = {V:0,N:0,D:0,for:0,against:0};
+            results.forEach(item => {
+              const result=String(item?.result || "").toUpperCase();
+              if (Object.prototype.hasOwnProperty.call(stats,result)) stats[result]++;
+              const score=String(item?.score || "").match(/^(\\d+)\\s*[-–:]\\s*(\\d+)$/);
+              if(score){stats.for+=Number(score[1]);stats.against+=Number(score[2]);}
+            });
             const chips = results.map(item => {
-              const result = String(item?.result || "").toUpperCase();
-              const cls = result === "V" ? "is-win" : result === "N" ? "is-draw" : result === "D" ? "is-loss" : "is-unknown";
-              const matchCompetition = String(item?.competition_id || "").trim().toLowerCase();
-              const otherCompetition = Boolean(targetCompetition && matchCompetition && targetCompetition !== matchCompetition);
-              const tooltip = compactHistoryDate(item?.date) + " · " + competitionLabel(item?.competition_id) +
-                "\\n" + name + " " + String(item?.score || "Score indisponible") + " " + String(item?.opponent || "Adversaire inconnu");
-              const classes = "history-form-chip " + cls + (otherCompetition ? " is-other-competition" : "");
-              return '<span class="'+classes+'" data-tooltip="'+escapeHtml(tooltip)+'" tabindex="0" aria-label="'+escapeHtml((result || "Résultat inconnu")+" — "+tooltip)+'">'+escapeHtml(result || "—")+'</span>';
+              const result=String(item?.result || "").toUpperCase();
+              const cls=result==="V"?"is-win":result==="N"?"is-draw":result==="D"?"is-loss":"is-unknown";
+              const matchCompetition=String(item?.competition_id || "").trim().toLowerCase();
+              const otherCompetition=Boolean(targetCompetition && matchCompetition && targetCompetition!==matchCompetition);
+              const compLabel=competitionLabel(item?.competition_id);
+              const tooltip=compactHistoryDate(item?.date)+" · "+compLabel+"\\n"+name+" "+String(item?.score || "Score indisponible")+" "+String(item?.opponent || "Adversaire inconnu");
+              return '<span class="history-form-item"><span class="history-form-chip '+cls+(otherCompetition?" is-other-competition":"")+'" data-tooltip="'+escapeHtml(tooltip)+'" tabindex="0" aria-label="'+escapeHtml((result||"Résultat inconnu")+" — "+tooltip)+'">'+escapeHtml(result||"—")+'</span>'+
+                (otherCompetition?'<small class="history-form-comp-badge" title="'+escapeHtml(compLabel)+'">'+escapeHtml(shortCompetition(item?.competition_id))+'</small>':'')+'</span>';
             }).join("");
-            return '<div class="history-team-form"><strong>'+escapeHtml(name)+'</strong><div class="history-form-results">'+
-              (chips || '<span class="history-empty-inline">Aucun résultat terminé disponible dans l’historique.</span>')+
-              '</div></div>';
+            return '<section class="history-team-form"><div class="history-team-heading"><strong>'+escapeHtml(name)+'</strong><span class="history-form-count">'+results.length+' match'+(results.length>1?"s":"")+'</span></div>'+
+              '<div class="history-form-results">'+(chips||'<span class="history-empty-inline">Aucun résultat terminé disponible.</span>')+'</div>'+
+              '<div class="history-form-stats"><span><b class="is-win-text">'+stats.V+' V</b><small>Victoires</small></span><span><b>'+stats.N+' N</b><small>Nuls</small></span><span><b class="is-loss-text">'+stats.D+' D</b><small>Défaites</small></span><span><b>'+stats.for+'</b><small>Buts +</small></span><span><b>'+stats.against+'</b><small>Buts −</small></span></div>'+
+              '</section>';
           };
-          const homeKey = normalizeHistoryTeam(match.home_team);
-          const awayKey = normalizeHistoryTeam(match.away_team);
-          const pair = Object.values(pairs).find(item => {
-            const a = normalizeHistoryTeam(item?.team_a), b = normalizeHistoryTeam(item?.team_b);
-            return (a === homeKey && b === awayKey) || (a === awayKey && b === homeKey);
+          const homeKey=normalizeHistoryTeam(match.home_team);
+          const awayKey=normalizeHistoryTeam(match.away_team);
+          const pair=Object.values(pairs).find(item=>{
+            const a=normalizeHistoryTeam(item?.team_a),b=normalizeHistoryTeam(item?.team_b);
+            return (a===homeKey&&b===awayKey)||(a===awayKey&&b===homeKey);
           });
-          const h2hMatches = Array.isArray(pair?.matches) ? pair.matches.slice(0, 5) : [];
-          const h2hHtml = h2hMatches.length
-            ? '<p class="history-summary">'+escapeHtml(String(pair.matches.length))+' confrontation(s) archivée(s) · 5 plus récentes affichées</p>'+
-              '<div class="history-h2h-list">'+h2hMatches.map(item => {
-                const date = item.date ? new Date(item.date).toLocaleDateString("fr-FR",{day:"2-digit",month:"2-digit",year:"numeric",timeZone:"UTC"}) : "Date inconnue";
-                return '<div class="history-h2h-row"><div class="history-h2h-meta"><span>'+escapeHtml(date)+'</span><span>'+escapeHtml(item.competition_name || item.competition_id || "Compétition inconnue")+'</span></div>'+
-                  '<div class="history-h2h-scoreline"><span>'+escapeHtml(item.home || "—")+'</span><strong>'+escapeHtml(item.score_home)+' – '+escapeHtml(item.score_away)+'</strong><span>'+escapeHtml(item.away || "—")+'</span></div></div>';
-              }).join("")+'</div>'
-            : '<p class="history-empty">Aucune confrontation directe terminée trouvée dans les archives disponibles.</p>';
-          const generated = recentForm?.generated_at_utc || headToHead?.generated_at_utc;
-          const freshness = generated ? 'Données générées le '+escapeHtml(new Date(generated).toLocaleString("fr-FR",{dateStyle:"short",timeStyle:"short",timeZone:"Europe/Paris"})) : "Date de génération indisponible";
-          body.innerHTML = '<div class="history-overview-grid"><section class="history-card"><h3>Forme récente</h3><p class="history-caption">Les cinq derniers matchs terminés disponibles · du plus ancien au plus récent</p>'+
-            formRow(match.home_team)+formRow(match.away_team)+'</section><section class="history-card"><h3>Confrontations directes</h3>'+h2hHtml+'</section></div><p class="history-data-meta">'+freshness+' · Historique issu des matchs PitchAPI archivés.</p>';
+          const h2hMatches=Array.isArray(pair?.matches)?pair.matches.slice().sort((a,b)=>String(b.date||"").localeCompare(String(a.date||""))):[];
+          const h2hStats={home:0,draw:0,away:0};
+          h2hMatches.forEach(item=>{
+            const hs=Number(item.score_home),as=Number(item.score_away);
+            if(!Number.isFinite(hs)||!Number.isFinite(as))return;
+            if(hs===as)h2hStats.draw++;
+            else if((hs>as&&normalizeHistoryTeam(item.home)===homeKey)||(as>hs&&normalizeHistoryTeam(item.away)===homeKey))h2hStats.home++;
+            else h2hStats.away++;
+          });
+          const total=h2hMatches.length;
+          const homePct=total?h2hStats.home/total*100:0;
+          const drawPct=total?h2hStats.draw/total*100:0;
+          const awayPct=total?h2hStats.away/total*100:0;
+          const donutStyle=total?'background:conic-gradient(#1765bd 0% '+homePct+'%,#9aa8b8 '+homePct+'% '+(homePct+drawPct)+'%,#12b9df '+(homePct+drawPct)+'% 100%)':'background:#e7edf4';
+          const h2hRows=h2hMatches.map(item=>{
+            const scoreHome=item.score_home??"—",scoreAway=item.score_away??"—";
+            return '<div class="history-h2h-row"><div class="history-h2h-meta"><span>'+escapeHtml(compactHistoryDate(item.date))+'</span><span class="history-h2h-competition">'+escapeHtml(item.competition_name||competitionLabel(item.competition_id))+'</span></div>'+
+              '<div class="history-h2h-scoreline"><span>'+escapeHtml(item.home||"—")+'</span><strong>'+escapeHtml(scoreHome)+' – '+escapeHtml(scoreAway)+'</strong><span>'+escapeHtml(item.away||"—")+'</span></div></div>';
+          }).join("");
+          const generated=recentForm?.generated_at_utc||headToHead?.generated_at_utc;
+          const freshness=generated?'Données mises à jour le '+escapeHtml(new Date(generated).toLocaleString("fr-FR",{dateStyle:"short",timeStyle:"short",timeZone:"Europe/Paris"})):"Date de mise à jour indisponible";
+          body.innerHTML='<div class="history-overview-grid">'+
+            '<section class="history-card history-form-card"><div class="history-card-heading"><div><h3>Forme récente</h3><p>5 matchs du championnat · jusqu’à 2 hors championnat</p></div><span class="history-count-badge">5 + 2 max.</span></div>'+
+            '<div class="history-form-teams">'+formRow(match.home_team)+formRow(match.away_team)+'</div></section>'+
+            '<section class="history-card history-h2h-card"><div class="history-card-heading"><div><h3>Confrontations directes (H2H)</h3><p>Toutes compétitions · toutes les archives disponibles</p></div><span class="history-count-badge">'+total+' match'+(total>1?"s":"")+'</span></div>'+
+            (total?'<div class="history-h2h-layout"><div class="history-h2h-summary"><div class="history-donut" style="'+donutStyle+'"><div><strong>'+total+'</strong><small>matchs</small></div></div>'+
+              '<div class="history-h2h-legend"><span><i class="home"></i><b>'+h2hStats.home+'</b> '+escapeHtml(match.home_team)+'</span><span><i class="draw"></i><b>'+h2hStats.draw+'</b> Nuls</span><span><i class="away"></i><b>'+h2hStats.away+'</b> '+escapeHtml(match.away_team)+'</span></div></div>'+
+              '<div class="history-h2h-list">'+h2hRows+'</div></div>':'<p class="history-empty">Aucune confrontation directe terminée trouvée dans les archives disponibles.</p>')+
+            '</section></div><p class="history-data-meta">'+freshness+' · Historique issu des matchs PitchAPI archivés.</p>';
         });
       };
       const renderDetailTab = (activeTab) => {
