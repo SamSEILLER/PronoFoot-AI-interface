@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-11-08T09:00:48.428772Z",
+  "generated_at_utc": "2026-11-08T09:06:13.083672Z",
   "status": "ok",
   "label": "Opérationnel",
   "threshold_hours": 24,
   "history": {
     "status": "ok",
     "last_success_at_utc": "2026-11-08T06:52:20.689622Z",
-    "age_hours": 2.14,
+    "age_hours": 2.23,
     "fresh_within_24h": true,
     "threshold_hours": 24,
     "provider": "PitchAPI",
@@ -23,7 +23,7 @@
   "odds": {
     "status": "ok",
     "last_success_at_utc": "2026-11-08T09:00:25.045230Z",
-    "age_hours": 0.01,
+    "age_hours": 0.1,
     "fresh_within_24h": true,
     "threshold_hours": 24,
     "provider": "Odds-API.io / Unibet",
@@ -74,11 +74,15 @@
       "request_budget": 20,
       "events_skipped_request_budget": 0,
       "rate_limit_reached": false,
-      "bookmaker_requested": "Unibet"
+      "bookmaker_requested": "Unibet",
+      "fixtures_not_matched": 2,
+      "fixtures_absent_from_odds_api_feed": 0
     },
     "errors": [],
     "matched_events": 32,
     "events_with_odds": 32,
-    "unmatched": 2
+    "unmatched": 2,
+    "fixtures_not_matched": 2,
+    "fixtures_absent_from_odds_api_feed": 0
   }
 }
