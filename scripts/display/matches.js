@@ -164,9 +164,9 @@
   Promise.all([
     fetch(DATA_URL + "?v=" + Date.now(), { cache: "no-store" })
       .then((response) => { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); }),
-    (TEST_MODE ? Promise.resolve(null) : fetch(STANDINGS_URL + "?v=" + Date.now(), { cache: "no-store" }))
+    (TEST_MODE ? Promise.resolve(null) : fetch(STANDINGS_URL + "?v=" + Date.now(), { cache: "no-store" })
       .then((response) => { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); })
-      .catch((error) => { console.warn("Classements indisponibles : numéro de phase masqué.", error); return null; })
+      .catch((error) => { console.warn("Classements indisponibles : numéro de phase masqué.", error); return null; }))
   ])
     .then(([matches, standings]) => {
       const matchRecords = TEST_MODE ? matches?.matches : matches;
