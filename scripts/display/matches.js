@@ -475,9 +475,9 @@
               <div class="match-detail-date"><span>${escape(dateLabel)}</span><span class="match-detail-clock" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 7v5l3.5 2"></path></svg></span></div>
             </div>
             <div class="match-detail-teams">
-              <div class="match-detail-team">${homeLogo ? '<img src="'+escape(homeLogo)+'" alt="Logo '+escape(match.home_team)+'">':""}<strong>${escape(match.home_team)}</strong><small class="match-team-position">${homePosition ? homePosition+"e":"Classement indisponible"}</small></div>
+              <div class="match-detail-team">${homeLogo ? '<img src="'+escape(homeLogo)+'" alt="Logo '+escape(match.home_team)+'">':""}<strong>${escape(match.home_team)}</strong><small class="match-team-position">${homePosition ? "# "+homePosition:"Classement indisponible"}</small></div>
               <div class="match-detail-vs">VS</div>
-              <div class="match-detail-team">${awayLogo ? '<img src="'+escape(awayLogo)+'" alt="Logo '+escape(match.away_team)+'">':""}<strong>${escape(match.away_team)}</strong><small class="match-team-position">${awayPosition ? awayPosition+"e":"Classement indisponible"}</small></div>
+              <div class="match-detail-team">${awayLogo ? '<img src="'+escape(awayLogo)+'" alt="Logo '+escape(match.away_team)+'">':""}<strong>${escape(match.away_team)}</strong><small class="match-team-position">${awayPosition ? "# "+awayPosition:"Classement indisponible"}</small></div>
             </div>
             <div class="match-detail-xg">
               <span class="match-detail-xg-label">Buts attendus</span>
