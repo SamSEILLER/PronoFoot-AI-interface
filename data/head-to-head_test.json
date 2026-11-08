@@ -1,0 +1,2416 @@
+{
+  "provider": "pitchapi_processed_history",
+  "generated_at_utc": "2026-11-08T22:17:39.950364+00:00",
+  "matches_considered": 9254,
+  "pairs": {
+    "los angeles fc|seattle sounders fc": {
+      "team_a": "Los Angeles FC",
+      "team_b": "Seattle Sounders FC",
+      "matches": [
+        {
+          "date": "2026-05-25T01:15:00Z",
+          "home": "Los Angeles FC",
+          "away": "Seattle Sounders FC",
+          "score_home": 1,
+          "score_away": 0,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2025-05-15T02:30:00Z",
+          "home": "Los Angeles FC",
+          "away": "Seattle Sounders FC",
+          "score_home": 4,
+          "score_away": 0,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2025-03-08T21:45:00Z",
+          "home": "Seattle Sounders FC",
+          "away": "Los Angeles FC",
+          "score_home": 5,
+          "score_away": 2,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2024-11-24T03:30:00Z",
+          "home": "Los Angeles FC",
+          "away": "Seattle Sounders FC",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2024-07-21T02:30:00Z",
+          "home": "Seattle Sounders FC",
+          "away": "Los Angeles FC",
+          "score_home": 0,
+          "score_away": 3,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2024-02-24T21:45:00Z",
+          "home": "Los Angeles FC",
+          "away": "Seattle Sounders FC",
+          "score_home": 2,
+          "score_away": 1,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        }
+      ]
+    },
+    "chicago fire fc|columbus crew": {
+      "team_a": "Chicago Fire FC",
+      "team_b": "Columbus Crew",
+      "matches": [
+        {
+          "date": "2026-03-08T00:30:00Z",
+          "home": "Columbus Crew",
+          "away": "Chicago Fire FC",
+          "score_home": 0,
+          "score_away": 0,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2025-09-28T00:30:00Z",
+          "home": "Chicago Fire FC",
+          "away": "Columbus Crew",
+          "score_home": 2,
+          "score_away": 0,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2025-02-23T00:30:00Z",
+          "home": "Columbus Crew",
+          "away": "Chicago Fire FC",
+          "score_home": 4,
+          "score_away": 2,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2024-05-19T00:30:00Z",
+          "home": "Chicago Fire FC",
+          "away": "Columbus Crew",
+          "score_home": 1,
+          "score_away": 3,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2024-03-10T00:30:00Z",
+          "home": "Columbus Crew",
+          "away": "Chicago Fire FC",
+          "score_home": 2,
+          "score_away": 1,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        }
+      ]
+    },
+    "houston dynamo fc|portland timbers": {
+      "team_a": "Houston Dynamo FC",
+      "team_b": "Portland Timbers",
+      "matches": [
+        {
+          "date": "2026-03-15T00:30:00Z",
+          "home": "Houston Dynamo FC",
+          "away": "Portland Timbers",
+          "score_home": 3,
+          "score_away": 2,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2025-09-21T00:30:00Z",
+          "home": "Houston Dynamo FC",
+          "away": "Portland Timbers",
+          "score_home": 1,
+          "score_away": 0,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2025-03-30T23:00:00Z",
+          "home": "Portland Timbers",
+          "away": "Houston Dynamo FC",
+          "score_home": 3,
+          "score_away": 1,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2024-06-02T02:30:00Z",
+          "home": "Portland Timbers",
+          "away": "Houston Dynamo FC",
+          "score_home": 2,
+          "score_away": 2,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2024-03-17T00:30:00Z",
+          "home": "Houston Dynamo FC",
+          "away": "Portland Timbers",
+          "score_home": 1,
+          "score_away": 0,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        }
+      ]
+    },
+    "los angeles fc|minnesota united": {
+      "team_a": "Los Angeles FC",
+      "team_b": "Minnesota United",
+      "matches": [
+        {
+          "date": "2026-04-25T20:45:00Z",
+          "home": "Minnesota United",
+          "away": "Los Angeles FC",
+          "score_home": 0,
+          "score_away": 1,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2025-07-17T00:30:00Z",
+          "home": "Minnesota United",
+          "away": "Los Angeles FC",
+          "score_home": 0,
+          "score_away": 1,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2025-02-22T21:45:00Z",
+          "home": "Los Angeles FC",
+          "away": "Minnesota United",
+          "score_home": 1,
+          "score_away": 0,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2024-05-30T02:45:00Z",
+          "home": "Los Angeles FC",
+          "away": "Minnesota United",
+          "score_home": 2,
+          "score_away": 0,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2024-03-17T00:30:00Z",
+          "home": "Minnesota United",
+          "away": "Los Angeles FC",
+          "score_home": 2,
+          "score_away": 0,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        }
+      ]
+    },
+    "fc tokyo|kashima antlers": {
+      "team_a": "FC Tokyo",
+      "team_b": "Kashima Antlers",
+      "matches": [
+        {
+          "date": "2026-05-23T08:30:00Z",
+          "home": "Kashima Antlers",
+          "away": "FC Tokyo",
+          "score_home": 1,
+          "score_away": 0,
+          "competition_id": "jp-j1-league",
+          "competition_name": "J1 League"
+        },
+        {
+          "date": "2026-02-07T04:30:00Z",
+          "home": "FC Tokyo",
+          "away": "Kashima Antlers",
+          "score_home": 1,
+          "score_away": 1,
+          "competition_id": "jp-j1-league",
+          "competition_name": "J1 League"
+        },
+        {
+          "date": "2025-08-10T10:00:00Z",
+          "home": "FC Tokyo",
+          "away": "Kashima Antlers",
+          "score_home": 0,
+          "score_away": 1,
+          "competition_id": "jp-j1-league",
+          "competition_name": "J1 League"
+        },
+        {
+          "date": "2025-03-01T05:00:00Z",
+          "home": "Kashima Antlers",
+          "away": "FC Tokyo",
+          "score_home": 2,
+          "score_away": 0,
+          "competition_id": "jp-j1-league",
+          "competition_name": "J1 League"
+        },
+        {
+          "date": "2024-07-20T09:00:00Z",
+          "home": "Kashima Antlers",
+          "away": "FC Tokyo",
+          "score_home": 2,
+          "score_away": 1,
+          "competition_id": "jp-j1-league",
+          "competition_name": "J1 League"
+        },
+        {
+          "date": "2024-04-07T08:00:00Z",
+          "home": "FC Tokyo",
+          "away": "Kashima Antlers",
+          "score_home": 2,
+          "score_away": 0,
+          "competition_id": "jp-j1-league",
+          "competition_name": "J1 League"
+        }
+      ]
+    },
+    "dc united|new york city fc": {
+      "team_a": "DC United",
+      "team_b": "New York City FC",
+      "matches": [
+        {
+          "date": "2026-05-03T19:00:00Z",
+          "home": "New York City FC",
+          "away": "DC United",
+          "score_home": 0,
+          "score_away": 2,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2025-08-30T23:30:00Z",
+          "home": "New York City FC",
+          "away": "DC United",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2025-05-14T23:30:00Z",
+          "home": "DC United",
+          "away": "New York City FC",
+          "score_home": 0,
+          "score_away": 0,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2024-09-14T23:30:00Z",
+          "home": "DC United",
+          "away": "New York City FC",
+          "score_home": 1,
+          "score_away": 1,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2024-04-20T23:30:00Z",
+          "home": "New York City FC",
+          "away": "DC United",
+          "score_home": 2,
+          "score_away": 0,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        }
+      ]
+    },
+    "colorado rapids|fc dallas": {
+      "team_a": "Colorado Rapids",
+      "team_b": "FC Dallas",
+      "matches": [
+        {
+          "date": "2026-05-24T01:30:00Z",
+          "home": "Colorado Rapids",
+          "away": "FC Dallas",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2025-09-21T00:30:00Z",
+          "home": "FC Dallas",
+          "away": "Colorado Rapids",
+          "score_home": 3,
+          "score_away": 1,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2025-03-02T02:30:00Z",
+          "home": "Colorado Rapids",
+          "away": "FC Dallas",
+          "score_home": 3,
+          "score_away": 3,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2024-09-01T00:30:00Z",
+          "home": "FC Dallas",
+          "away": "Colorado Rapids",
+          "score_home": 2,
+          "score_away": 3,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2024-04-21T01:30:00Z",
+          "home": "Colorado Rapids",
+          "away": "FC Dallas",
+          "score_home": 2,
+          "score_away": 1,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        }
+      ]
+    },
+    "inter miami cf|new england revolution": {
+      "team_a": "Inter Miami CF",
+      "team_b": "New England Revolution",
+      "matches": [
+        {
+          "date": "2026-04-25T23:30:00Z",
+          "home": "Inter Miami CF",
+          "away": "New England Revolution",
+          "score_home": 1,
+          "score_away": 1,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2025-10-04T23:30:00Z",
+          "home": "Inter Miami CF",
+          "away": "New England Revolution",
+          "score_home": 4,
+          "score_away": 1,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2025-07-09T23:30:00Z",
+          "home": "New England Revolution",
+          "away": "Inter Miami CF",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2024-10-19T22:00:00Z",
+          "home": "Inter Miami CF",
+          "away": "New England Revolution",
+          "score_home": 6,
+          "score_away": 2,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2024-04-27T23:30:00Z",
+          "home": "New England Revolution",
+          "away": "Inter Miami CF",
+          "score_home": 1,
+          "score_away": 4,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        }
+      ]
+    },
+    "houston dynamo fc|st louis city": {
+      "team_a": "Houston Dynamo FC",
+      "team_b": "St. Louis City",
+      "matches": [
+        {
+          "date": "2026-08-23T00:30:00Z",
+          "home": "St. Louis City",
+          "away": "Houston Dynamo FC",
+          "score_home": 2,
+          "score_away": 1,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2025-08-31T00:30:00Z",
+          "home": "St. Louis City",
+          "away": "Houston Dynamo FC",
+          "score_home": 2,
+          "score_away": 3,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2025-06-29T00:30:00Z",
+          "home": "Houston Dynamo FC",
+          "away": "St. Louis City",
+          "score_home": 1,
+          "score_away": 0,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2024-10-06T00:30:00Z",
+          "home": "St. Louis City",
+          "away": "Houston Dynamo FC",
+          "score_home": 3,
+          "score_away": 0,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2024-05-05T00:30:00Z",
+          "home": "Houston Dynamo FC",
+          "away": "St. Louis City",
+          "score_home": 0,
+          "score_away": 0,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        }
+      ]
+    },
+    "la galaxy|real salt lake": {
+      "team_a": "LA Galaxy",
+      "team_b": "Real Salt Lake",
+      "matches": [
+        {
+          "date": "2026-04-26T23:00:00Z",
+          "home": "LA Galaxy",
+          "away": "Real Salt Lake",
+          "score_home": 2,
+          "score_away": 1,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2025-06-01T02:30:00Z",
+          "home": "LA Galaxy",
+          "away": "Real Salt Lake",
+          "score_home": 2,
+          "score_away": 0,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2025-04-05T20:30:00Z",
+          "home": "Real Salt Lake",
+          "away": "LA Galaxy",
+          "score_home": 2,
+          "score_away": 0,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2024-06-23T01:30:00Z",
+          "home": "Real Salt Lake",
+          "away": "LA Galaxy",
+          "score_home": 0,
+          "score_away": 1,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2024-05-12T02:30:00Z",
+          "home": "LA Galaxy",
+          "away": "Real Salt Lake",
+          "score_home": 2,
+          "score_away": 2,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        }
+      ]
+    },
+    "kashiwa reysol|kawasaki frontale": {
+      "team_a": "Kashiwa Reysol",
+      "team_b": "Kawasaki Frontale",
+      "matches": [
+        {
+          "date": "2026-05-10T07:00:00Z",
+          "home": "Kashiwa Reysol",
+          "away": "Kawasaki Frontale",
+          "score_home": 1,
+          "score_away": 0,
+          "competition_id": "jp-j1-league",
+          "competition_name": "J1 League"
+        },
+        {
+          "date": "2026-02-08T06:00:00Z",
+          "home": "Kawasaki Frontale",
+          "away": "Kashiwa Reysol",
+          "score_home": 5,
+          "score_away": 3,
+          "competition_id": "jp-j1-league",
+          "competition_name": "J1 League"
+        },
+        {
+          "date": "2025-09-28T10:00:00Z",
+          "home": "Kawasaki Frontale",
+          "away": "Kashiwa Reysol",
+          "score_home": 4,
+          "score_away": 4,
+          "competition_id": "jp-j1-league",
+          "competition_name": "J1 League"
+        },
+        {
+          "date": "2025-02-22T05:00:00Z",
+          "home": "Kashiwa Reysol",
+          "away": "Kawasaki Frontale",
+          "score_home": 1,
+          "score_away": 1,
+          "competition_id": "jp-j1-league",
+          "competition_name": "J1 League"
+        },
+        {
+          "date": "2024-07-20T10:00:00Z",
+          "home": "Kashiwa Reysol",
+          "away": "Kawasaki Frontale",
+          "score_home": 2,
+          "score_away": 3,
+          "competition_id": "jp-j1-league",
+          "competition_name": "J1 League"
+        },
+        {
+          "date": "2024-05-25T07:00:00Z",
+          "home": "Kawasaki Frontale",
+          "away": "Kashiwa Reysol",
+          "score_home": 1,
+          "score_away": 1,
+          "competition_id": "jp-j1-league",
+          "competition_name": "J1 League"
+        }
+      ]
+    },
+    "kyoto sanga fc|nagoya grampus": {
+      "team_a": "Kyoto Sanga FC",
+      "team_b": "Nagoya Grampus",
+      "matches": [
+        {
+          "date": "2026-05-10T07:00:00Z",
+          "home": "Nagoya Grampus",
+          "away": "Kyoto Sanga FC",
+          "score_home": 3,
+          "score_away": 0,
+          "competition_id": "jp-j1-league",
+          "competition_name": "J1 League"
+        },
+        {
+          "date": "2026-03-22T05:00:00Z",
+          "home": "Kyoto Sanga FC",
+          "away": "Nagoya Grampus",
+          "score_home": 1,
+          "score_away": 1,
+          "competition_id": "jp-j1-league",
+          "competition_name": "J1 League"
+        },
+        {
+          "date": "2025-08-10T10:00:00Z",
+          "home": "Nagoya Grampus",
+          "away": "Kyoto Sanga FC",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "jp-j1-league",
+          "competition_name": "J1 League"
+        },
+        {
+          "date": "2025-05-11T05:00:00Z",
+          "home": "Kyoto Sanga FC",
+          "away": "Nagoya Grampus",
+          "score_home": 1,
+          "score_away": 1,
+          "competition_id": "jp-j1-league",
+          "competition_name": "J1 League"
+        },
+        {
+          "date": "2024-08-07T10:00:00Z",
+          "home": "Kyoto Sanga FC",
+          "away": "Nagoya Grampus",
+          "score_home": 3,
+          "score_away": 2,
+          "competition_id": "jp-j1-league",
+          "competition_name": "J1 League"
+        },
+        {
+          "date": "2024-05-26T06:00:00Z",
+          "home": "Nagoya Grampus",
+          "away": "Kyoto Sanga FC",
+          "score_home": 1,
+          "score_away": 1,
+          "competition_id": "jp-j1-league",
+          "competition_name": "J1 League"
+        }
+      ]
+    },
+    "philadelphia union|toronto fc": {
+      "team_a": "Philadelphia Union",
+      "team_b": "Toronto FC",
+      "matches": [
+        {
+          "date": "2026-04-22T23:30:00Z",
+          "home": "Toronto FC",
+          "away": "Philadelphia Union",
+          "score_home": 3,
+          "score_away": 3,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2025-08-09T23:30:00Z",
+          "home": "Philadelphia Union",
+          "away": "Toronto FC",
+          "score_home": 1,
+          "score_away": 1,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2025-05-28T23:30:00Z",
+          "home": "Toronto FC",
+          "away": "Philadelphia Union",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2024-07-13T23:30:00Z",
+          "home": "Toronto FC",
+          "away": "Philadelphia Union",
+          "score_home": 2,
+          "score_away": 1,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2024-05-29T23:30:00Z",
+          "home": "Philadelphia Union",
+          "away": "Toronto FC",
+          "score_home": 0,
+          "score_away": 0,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        }
+      ]
+    },
+    "fc cincinnati|nashville sc": {
+      "team_a": "FC Cincinnati",
+      "team_b": "Nashville SC",
+      "matches": [
+        {
+          "date": "2026-08-30T00:30:00Z",
+          "home": "Nashville SC",
+          "away": "FC Cincinnati",
+          "score_home": 4,
+          "score_away": 0,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2025-09-13T23:30:00Z",
+          "home": "FC Cincinnati",
+          "away": "Nashville SC",
+          "score_home": 2,
+          "score_away": 1,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2025-03-30T00:30:00Z",
+          "home": "Nashville SC",
+          "away": "FC Cincinnati",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2024-09-22T00:30:00Z",
+          "home": "Nashville SC",
+          "away": "FC Cincinnati",
+          "score_home": 2,
+          "score_away": 2,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2024-05-29T23:30:00Z",
+          "home": "FC Cincinnati",
+          "away": "Nashville SC",
+          "score_home": 0,
+          "score_away": 2,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        }
+      ]
+    },
+    "austin fc|portland timbers": {
+      "team_a": "Austin FC",
+      "team_b": "Portland Timbers",
+      "matches": [
+        {
+          "date": "2026-08-30T02:30:00Z",
+          "home": "Portland Timbers",
+          "away": "Austin FC",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2025-04-05T23:45:00Z",
+          "home": "Austin FC",
+          "away": "Portland Timbers",
+          "score_home": 0,
+          "score_away": 0,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2025-03-02T03:30:00Z",
+          "home": "Portland Timbers",
+          "away": "Austin FC",
+          "score_home": 1,
+          "score_away": 0,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2024-10-03T02:30:00Z",
+          "home": "Portland Timbers",
+          "away": "Austin FC",
+          "score_home": 0,
+          "score_away": 1,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2024-05-30T00:30:00Z",
+          "home": "Austin FC",
+          "away": "Portland Timbers",
+          "score_home": 0,
+          "score_away": 2,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        }
+      ]
+    },
+    "charlotte fc|inter miami cf": {
+      "team_a": "Charlotte FC",
+      "team_b": "Inter Miami CF",
+      "matches": [
+        {
+          "date": "2026-03-14T23:30:00Z",
+          "home": "Charlotte FC",
+          "away": "Inter Miami CF",
+          "score_home": 0,
+          "score_away": 0,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2025-09-13T23:30:00Z",
+          "home": "Charlotte FC",
+          "away": "Inter Miami CF",
+          "score_home": 3,
+          "score_away": 0,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2025-03-09T20:00:00Z",
+          "home": "Inter Miami CF",
+          "away": "Charlotte FC",
+          "score_home": 1,
+          "score_away": 0,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2024-09-28T23:30:00Z",
+          "home": "Inter Miami CF",
+          "away": "Charlotte FC",
+          "score_home": 1,
+          "score_away": 1,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2024-07-03T23:30:00Z",
+          "home": "Charlotte FC",
+          "away": "Inter Miami CF",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        }
+      ]
+    },
+    "cf montreal|vancouver whitecaps": {
+      "team_a": "CF Montréal",
+      "team_b": "Vancouver Whitecaps",
+      "matches": [
+        {
+          "date": "2025-03-09T02:30:00Z",
+          "home": "Vancouver Whitecaps",
+          "away": "CF Montréal",
+          "score_home": 2,
+          "score_away": 0,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2024-07-06T23:30:00Z",
+          "home": "CF Montréal",
+          "away": "Vancouver Whitecaps",
+          "score_home": 1,
+          "score_away": 1,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        }
+      ]
+    },
+    "new england revolution|orlando city": {
+      "team_a": "New England Revolution",
+      "team_b": "Orlando City",
+      "matches": [
+        {
+          "date": "2026-09-19T23:30:00Z",
+          "home": "New England Revolution",
+          "away": "Orlando City",
+          "score_home": 4,
+          "score_away": 2,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2025-07-19T23:30:00Z",
+          "home": "New England Revolution",
+          "away": "Orlando City",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2025-05-10T23:30:00Z",
+          "home": "Orlando City",
+          "away": "New England Revolution",
+          "score_home": 3,
+          "score_away": 3,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2024-09-14T23:30:00Z",
+          "home": "Orlando City",
+          "away": "New England Revolution",
+          "score_home": 3,
+          "score_away": 0,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2024-07-13T23:30:00Z",
+          "home": "New England Revolution",
+          "away": "Orlando City",
+          "score_home": 1,
+          "score_away": 3,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        }
+      ]
+    },
+    "minnesota united|san jose earthquakes": {
+      "team_a": "Minnesota United",
+      "team_b": "San Jose Earthquakes",
+      "matches": [
+        {
+          "date": "2026-08-23T02:30:00Z",
+          "home": "San Jose Earthquakes",
+          "away": "Minnesota United",
+          "score_home": 1,
+          "score_away": 5,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2025-07-13T00:30:00Z",
+          "home": "Minnesota United",
+          "away": "San Jose Earthquakes",
+          "score_home": 4,
+          "score_away": 1,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2025-03-09T03:30:00Z",
+          "home": "San Jose Earthquakes",
+          "away": "Minnesota United",
+          "score_home": 0,
+          "score_away": 1,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2024-09-01T02:30:00Z",
+          "home": "San Jose Earthquakes",
+          "away": "Minnesota United",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2024-07-21T00:30:00Z",
+          "home": "Minnesota United",
+          "away": "San Jose Earthquakes",
+          "score_home": 2,
+          "score_away": 0,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        }
+      ]
+    },
+    "lecce|torino": {
+      "team_a": "Lecce",
+      "team_b": "Torino",
+      "matches": [
+        {
+          "date": "2026-02-01T11:30:00Z",
+          "home": "Torino",
+          "away": "Lecce",
+          "score_home": 1,
+          "score_away": 0,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        },
+        {
+          "date": "2025-11-30T11:30:00Z",
+          "home": "Lecce",
+          "away": "Torino",
+          "score_home": 2,
+          "score_away": 1,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        },
+        {
+          "date": "2025-05-18T18:45:00Z",
+          "home": "Lecce",
+          "away": "Torino",
+          "score_home": 1,
+          "score_away": 0,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        },
+        {
+          "date": "2024-09-15T13:00:00Z",
+          "home": "Torino",
+          "away": "Lecce",
+          "score_home": 0,
+          "score_away": 0,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        }
+      ]
+    },
+    "deportivo alaves|sevilla": {
+      "team_a": "Deportivo Alavés",
+      "team_b": "Sevilla",
+      "matches": [
+        {
+          "date": "2026-02-14T17:30:00Z",
+          "home": "Sevilla",
+          "away": "Deportivo Alavés",
+          "score_home": 1,
+          "score_away": 1,
+          "competition_id": "es-la-liga",
+          "competition_name": "La Liga"
+        },
+        {
+          "date": "2025-09-20T16:30:00Z",
+          "home": "Deportivo Alavés",
+          "away": "Sevilla",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "es-la-liga",
+          "competition_name": "La Liga"
+        },
+        {
+          "date": "2025-04-20T16:30:00Z",
+          "home": "Sevilla",
+          "away": "Deportivo Alavés",
+          "score_home": 1,
+          "score_away": 1,
+          "competition_id": "es-la-liga",
+          "competition_name": "La Liga"
+        },
+        {
+          "date": "2024-09-20T19:00:00Z",
+          "home": "Deportivo Alavés",
+          "away": "Sevilla",
+          "score_home": 2,
+          "score_away": 1,
+          "competition_id": "es-la-liga",
+          "competition_name": "La Liga"
+        }
+      ]
+    },
+    "fulham|newcastle united": {
+      "team_a": "Fulham",
+      "team_b": "Newcastle United",
+      "matches": [
+        {
+          "date": "2026-05-24T15:00:00Z",
+          "home": "Fulham",
+          "away": "Newcastle United",
+          "score_home": 2,
+          "score_away": 0,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        },
+        {
+          "date": "2025-10-25T14:00:00Z",
+          "home": "Newcastle United",
+          "away": "Fulham",
+          "score_home": 2,
+          "score_away": 1,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        },
+        {
+          "date": "2025-02-01T15:00:00Z",
+          "home": "Newcastle United",
+          "away": "Fulham",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        },
+        {
+          "date": "2024-09-21T14:00:00Z",
+          "home": "Fulham",
+          "away": "Newcastle United",
+          "score_home": 3,
+          "score_away": 1,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        }
+      ]
+    },
+    "atlanta united|red bull new york": {
+      "team_a": "Atlanta United",
+      "team_b": "Red Bull New York",
+      "matches": [
+        {
+          "date": "2026-08-15T23:30:00Z",
+          "home": "Atlanta United",
+          "away": "Red Bull New York",
+          "score_home": 2,
+          "score_away": 1,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2025-05-31T23:30:00Z",
+          "home": "Red Bull New York",
+          "away": "Atlanta United",
+          "score_home": 2,
+          "score_away": 0,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2025-03-09T00:30:00Z",
+          "home": "Atlanta United",
+          "away": "Red Bull New York",
+          "score_home": 0,
+          "score_away": 0,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2024-10-05T23:30:00Z",
+          "home": "Atlanta United",
+          "away": "Red Bull New York",
+          "score_home": 2,
+          "score_away": 1,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2024-09-21T23:30:00Z",
+          "home": "Red Bull New York",
+          "away": "Atlanta United",
+          "score_home": 2,
+          "score_away": 2,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        }
+      ]
+    },
+    "augsburg|rb leipzig": {
+      "team_a": "Augsburg",
+      "team_b": "RB Leipzig",
+      "matches": [
+        {
+          "date": "2026-03-07T14:30:00Z",
+          "home": "RB Leipzig",
+          "away": "Augsburg",
+          "score_home": 2,
+          "score_away": 1,
+          "competition_id": "de-bundesliga",
+          "competition_name": "Bundesliga"
+        },
+        {
+          "date": "2025-10-25T13:30:00Z",
+          "home": "Augsburg",
+          "away": "RB Leipzig",
+          "score_home": 0,
+          "score_away": 6,
+          "competition_id": "de-bundesliga",
+          "competition_name": "Bundesliga"
+        },
+        {
+          "date": "2025-02-14T19:30:00Z",
+          "home": "Augsburg",
+          "away": "RB Leipzig",
+          "score_home": 0,
+          "score_away": 0,
+          "competition_id": "de-bundesliga",
+          "competition_name": "Bundesliga"
+        },
+        {
+          "date": "2024-09-28T13:30:00Z",
+          "home": "RB Leipzig",
+          "away": "Augsburg",
+          "score_home": 4,
+          "score_away": 0,
+          "competition_id": "de-bundesliga",
+          "competition_name": "Bundesliga"
+        }
+      ]
+    },
+    "kv mechelen|oh leuven": {
+      "team_a": "KV Mechelen",
+      "team_b": "OH Leuven",
+      "matches": [
+        {
+          "date": "2026-02-01T18:15:00Z",
+          "home": "OH Leuven",
+          "away": "KV Mechelen",
+          "score_home": 2,
+          "score_away": 2,
+          "competition_id": "be-first-division-a",
+          "competition_name": "Belgian Pro League"
+        },
+        {
+          "date": "2025-10-25T16:15:00Z",
+          "home": "KV Mechelen",
+          "away": "OH Leuven",
+          "score_home": 1,
+          "score_away": 1,
+          "competition_id": "be-first-division-a",
+          "competition_name": "Belgian Pro League"
+        },
+        {
+          "date": "2025-05-03T16:15:00Z",
+          "home": "OH Leuven",
+          "away": "KV Mechelen",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "be-first-division-a",
+          "competition_name": "Belgian Pro League"
+        },
+        {
+          "date": "2025-04-13T14:00:00Z",
+          "home": "KV Mechelen",
+          "away": "OH Leuven",
+          "score_home": 1,
+          "score_away": 1,
+          "competition_id": "be-first-division-a",
+          "competition_name": "Belgian Pro League"
+        },
+        {
+          "date": "2025-01-31T19:45:00Z",
+          "home": "OH Leuven",
+          "away": "KV Mechelen",
+          "score_home": 1,
+          "score_away": 0,
+          "competition_id": "be-first-division-a",
+          "competition_name": "Belgian Pro League"
+        },
+        {
+          "date": "2024-10-05T14:00:00Z",
+          "home": "KV Mechelen",
+          "away": "OH Leuven",
+          "score_home": 5,
+          "score_away": 0,
+          "competition_id": "be-first-division-a",
+          "competition_name": "Belgian Pro League"
+        }
+      ]
+    },
+    "everton|newcastle united": {
+      "team_a": "Everton",
+      "team_b": "Newcastle United",
+      "matches": [
+        {
+          "date": "2026-02-28T15:00:00Z",
+          "home": "Newcastle United",
+          "away": "Everton",
+          "score_home": 2,
+          "score_away": 3,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        },
+        {
+          "date": "2025-11-29T17:30:00Z",
+          "home": "Everton",
+          "away": "Newcastle United",
+          "score_home": 1,
+          "score_away": 4,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        },
+        {
+          "date": "2025-05-25T15:00:00Z",
+          "home": "Newcastle United",
+          "away": "Everton",
+          "score_home": 0,
+          "score_away": 1,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        },
+        {
+          "date": "2024-10-05T16:30:00Z",
+          "home": "Everton",
+          "away": "Newcastle United",
+          "score_home": 0,
+          "score_away": 0,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        }
+      ]
+    },
+    "bologna|parma": {
+      "team_a": "Bologna",
+      "team_b": "Parma",
+      "matches": [
+        {
+          "date": "2026-02-08T11:30:00Z",
+          "home": "Bologna",
+          "away": "Parma",
+          "score_home": 0,
+          "score_away": 1,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        },
+        {
+          "date": "2025-11-02T17:00:00Z",
+          "home": "Parma",
+          "away": "Bologna",
+          "score_home": 1,
+          "score_away": 3,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        },
+        {
+          "date": "2025-02-22T14:00:00Z",
+          "home": "Parma",
+          "away": "Bologna",
+          "score_home": 2,
+          "score_away": 0,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        },
+        {
+          "date": "2024-10-06T13:00:00Z",
+          "home": "Bologna",
+          "away": "Parma",
+          "score_home": 0,
+          "score_away": 0,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        }
+      ]
+    },
+    "kortrijk|kv mechelen": {
+      "team_a": "Kortrijk",
+      "team_b": "KV Mechelen",
+      "matches": [
+        {
+          "date": "2024-11-29T19:45:00Z",
+          "home": "Kortrijk",
+          "away": "KV Mechelen",
+          "score_home": 3,
+          "score_away": 1,
+          "competition_id": "be-first-division-a",
+          "competition_name": "Belgian Pro League"
+        },
+        {
+          "date": "2024-10-20T17:15:00Z",
+          "home": "KV Mechelen",
+          "away": "Kortrijk",
+          "score_home": 3,
+          "score_away": 0,
+          "competition_id": "be-first-division-a",
+          "competition_name": "Belgian Pro League"
+        }
+      ]
+    },
+    "udinese|venezia": {
+      "team_a": "Udinese",
+      "team_b": "Venezia",
+      "matches": [
+        {
+          "date": "2025-02-01T14:00:00Z",
+          "home": "Udinese",
+          "away": "Venezia",
+          "score_home": 3,
+          "score_away": 2,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        },
+        {
+          "date": "2024-10-30T17:30:00Z",
+          "home": "Venezia",
+          "away": "Udinese",
+          "score_home": 3,
+          "score_away": 2,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        }
+      ]
+    },
+    "arouca|famalicao": {
+      "team_a": "Arouca",
+      "team_b": "Famalicão",
+      "matches": [
+        {
+          "date": "2026-03-06T20:15:00Z",
+          "home": "Famalicão",
+          "away": "Arouca",
+          "score_home": 1,
+          "score_away": 0,
+          "competition_id": "pt-primeira-liga",
+          "competition_name": "Primeira Liga"
+        },
+        {
+          "date": "2025-10-05T14:30:00Z",
+          "home": "Arouca",
+          "away": "Famalicão",
+          "score_home": 1,
+          "score_away": 1,
+          "competition_id": "pt-primeira-liga",
+          "competition_name": "Primeira Liga"
+        },
+        {
+          "date": "2025-04-05T17:00:00Z",
+          "home": "Arouca",
+          "away": "Famalicão",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "pt-primeira-liga",
+          "competition_name": "Primeira Liga"
+        },
+        {
+          "date": "2024-11-09T18:00:00Z",
+          "home": "Famalicão",
+          "away": "Arouca",
+          "score_home": 0,
+          "score_away": 0,
+          "competition_id": "pt-primeira-liga",
+          "competition_name": "Primeira Liga"
+        }
+      ]
+    },
+    "sporting charleroi|westerlo": {
+      "team_a": "Sporting Charleroi",
+      "team_b": "Westerlo",
+      "matches": [
+        {
+          "date": "2026-05-16T14:00:00Z",
+          "home": "Sporting Charleroi",
+          "away": "Westerlo",
+          "score_home": 0,
+          "score_away": 1,
+          "competition_id": "be-first-division-a",
+          "competition_name": "Belgian Pro League"
+        },
+        {
+          "date": "2026-04-05T16:30:00Z",
+          "home": "Westerlo",
+          "away": "Sporting Charleroi",
+          "score_home": 2,
+          "score_away": 0,
+          "competition_id": "be-first-division-a",
+          "competition_name": "Belgian Pro League"
+        },
+        {
+          "date": "2026-02-22T18:15:00Z",
+          "home": "Westerlo",
+          "away": "Sporting Charleroi",
+          "score_home": 2,
+          "score_away": 1,
+          "competition_id": "be-first-division-a",
+          "competition_name": "Belgian Pro League"
+        },
+        {
+          "date": "2025-11-08T17:15:00Z",
+          "home": "Sporting Charleroi",
+          "away": "Westerlo",
+          "score_home": 2,
+          "score_away": 0,
+          "competition_id": "be-first-division-a",
+          "competition_name": "Belgian Pro League"
+        },
+        {
+          "date": "2025-05-09T18:45:00Z",
+          "home": "Sporting Charleroi",
+          "away": "Westerlo",
+          "score_home": 4,
+          "score_away": 3,
+          "competition_id": "be-first-division-a",
+          "competition_name": "Belgian Pro League"
+        },
+        {
+          "date": "2025-04-11T18:45:00Z",
+          "home": "Westerlo",
+          "away": "Sporting Charleroi",
+          "score_home": 2,
+          "score_away": 2,
+          "competition_id": "be-first-division-a",
+          "competition_name": "Belgian Pro League"
+        },
+        {
+          "date": "2025-02-22T17:15:00Z",
+          "home": "Westerlo",
+          "away": "Sporting Charleroi",
+          "score_home": 1,
+          "score_away": 3,
+          "competition_id": "be-first-division-a",
+          "competition_name": "Belgian Pro League"
+        },
+        {
+          "date": "2024-11-09T19:45:00Z",
+          "home": "Sporting Charleroi",
+          "away": "Westerlo",
+          "score_home": 1,
+          "score_away": 0,
+          "competition_id": "be-first-division-a",
+          "competition_name": "Belgian Pro League"
+        }
+      ]
+    },
+    "atalanta|parma": {
+      "team_a": "Atalanta",
+      "team_b": "Parma",
+      "matches": [
+        {
+          "date": "2026-01-25T14:00:00Z",
+          "home": "Atalanta",
+          "away": "Parma",
+          "score_home": 4,
+          "score_away": 0,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        },
+        {
+          "date": "2025-08-30T16:30:00Z",
+          "home": "Parma",
+          "away": "Atalanta",
+          "score_home": 1,
+          "score_away": 1,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        },
+        {
+          "date": "2025-05-25T18:45:00Z",
+          "home": "Atalanta",
+          "away": "Parma",
+          "score_home": 2,
+          "score_away": 3,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        },
+        {
+          "date": "2024-11-23T19:45:00Z",
+          "home": "Parma",
+          "away": "Atalanta",
+          "score_home": 1,
+          "score_away": 3,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        }
+      ]
+    },
+    "vfb stuttgart|werder bremen": {
+      "team_a": "VfB Stuttgart",
+      "team_b": "Werder Bremen",
+      "matches": [
+        {
+          "date": "2026-04-26T13:30:00Z",
+          "home": "VfB Stuttgart",
+          "away": "Werder Bremen",
+          "score_home": 1,
+          "score_away": 1,
+          "competition_id": "de-bundesliga",
+          "competition_name": "Bundesliga"
+        },
+        {
+          "date": "2025-12-14T18:30:00Z",
+          "home": "Werder Bremen",
+          "away": "VfB Stuttgart",
+          "score_home": 0,
+          "score_away": 4,
+          "competition_id": "de-bundesliga",
+          "competition_name": "Bundesliga"
+        },
+        {
+          "date": "2025-04-13T13:30:00Z",
+          "home": "VfB Stuttgart",
+          "away": "Werder Bremen",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "de-bundesliga",
+          "competition_name": "Bundesliga"
+        },
+        {
+          "date": "2024-11-30T14:30:00Z",
+          "home": "Werder Bremen",
+          "away": "VfB Stuttgart",
+          "score_home": 2,
+          "score_away": 2,
+          "competition_id": "de-bundesliga",
+          "competition_name": "Bundesliga"
+        }
+      ]
+    },
+    "gil vicente|vitoria de guimaraes": {
+      "team_a": "Gil Vicente",
+      "team_b": "Vitória de Guimarães",
+      "matches": [
+        {
+          "date": "2026-04-18T19:30:00Z",
+          "home": "Gil Vicente",
+          "away": "Vitória de Guimarães",
+          "score_home": 0,
+          "score_away": 1,
+          "competition_id": "pt-primeira-liga",
+          "competition_name": "Primeira Liga"
+        },
+        {
+          "date": "2025-12-08T20:30:00Z",
+          "home": "Vitória de Guimarães",
+          "away": "Gil Vicente",
+          "score_home": 0,
+          "score_away": 0,
+          "competition_id": "pt-primeira-liga",
+          "competition_name": "Primeira Liga"
+        },
+        {
+          "date": "2025-04-11T19:15:00Z",
+          "home": "Gil Vicente",
+          "away": "Vitória de Guimarães",
+          "score_home": 0,
+          "score_away": 1,
+          "competition_id": "pt-primeira-liga",
+          "competition_name": "Primeira Liga"
+        },
+        {
+          "date": "2024-12-02T18:45:00Z",
+          "home": "Vitória de Guimarães",
+          "away": "Gil Vicente",
+          "score_home": 4,
+          "score_away": 0,
+          "competition_id": "pt-primeira-liga",
+          "competition_name": "Primeira Liga"
+        }
+      ]
+    },
+    "manchester city|nottingham forest": {
+      "team_a": "Manchester City",
+      "team_b": "Nottingham Forest",
+      "matches": [
+        {
+          "date": "2026-03-04T19:30:00Z",
+          "home": "Manchester City",
+          "away": "Nottingham Forest",
+          "score_home": 2,
+          "score_away": 2,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        },
+        {
+          "date": "2025-12-27T12:30:00Z",
+          "home": "Nottingham Forest",
+          "away": "Manchester City",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        },
+        {
+          "date": "2025-03-08T12:30:00Z",
+          "home": "Nottingham Forest",
+          "away": "Manchester City",
+          "score_home": 1,
+          "score_away": 0,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        },
+        {
+          "date": "2024-12-04T19:30:00Z",
+          "home": "Manchester City",
+          "away": "Nottingham Forest",
+          "score_home": 3,
+          "score_away": 0,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        }
+      ]
+    },
+    "moreirense|sporting cp": {
+      "team_a": "Moreirense",
+      "team_b": "Sporting CP",
+      "matches": [
+        {
+          "date": "2026-02-21T18:00:00Z",
+          "home": "Moreirense",
+          "away": "Sporting CP",
+          "score_home": 0,
+          "score_away": 3,
+          "competition_id": "pt-primeira-liga",
+          "competition_name": "Primeira Liga"
+        },
+        {
+          "date": "2025-09-22T19:15:00Z",
+          "home": "Sporting CP",
+          "away": "Moreirense",
+          "score_home": 3,
+          "score_away": 0,
+          "competition_id": "pt-primeira-liga",
+          "competition_name": "Primeira Liga"
+        },
+        {
+          "date": "2025-04-18T19:30:00Z",
+          "home": "Sporting CP",
+          "away": "Moreirense",
+          "score_home": 3,
+          "score_away": 1,
+          "competition_id": "pt-primeira-liga",
+          "competition_name": "Primeira Liga"
+        },
+        {
+          "date": "2024-12-05T20:15:00Z",
+          "home": "Moreirense",
+          "away": "Sporting CP",
+          "score_home": 2,
+          "score_away": 1,
+          "competition_id": "pt-primeira-liga",
+          "competition_name": "Primeira Liga"
+        }
+      ]
+    },
+    "bayern munchen|mainz 05": {
+      "team_a": "Bayern München",
+      "team_b": "Mainz 05",
+      "matches": [
+        {
+          "date": "2026-04-25T13:30:00Z",
+          "home": "Mainz 05",
+          "away": "Bayern München",
+          "score_home": 3,
+          "score_away": 4,
+          "competition_id": "de-bundesliga",
+          "competition_name": "Bundesliga"
+        },
+        {
+          "date": "2025-12-14T16:30:00Z",
+          "home": "Bayern München",
+          "away": "Mainz 05",
+          "score_home": 2,
+          "score_away": 2,
+          "competition_id": "de-bundesliga",
+          "competition_name": "Bundesliga"
+        },
+        {
+          "date": "2025-04-26T13:30:00Z",
+          "home": "Bayern München",
+          "away": "Mainz 05",
+          "score_home": 3,
+          "score_away": 0,
+          "competition_id": "de-bundesliga",
+          "competition_name": "Bundesliga"
+        },
+        {
+          "date": "2024-12-14T14:30:00Z",
+          "home": "Mainz 05",
+          "away": "Bayern München",
+          "score_home": 2,
+          "score_away": 1,
+          "competition_id": "de-bundesliga",
+          "competition_name": "Bundesliga"
+        }
+      ]
+    },
+    "athletic club|osasuna": {
+      "team_a": "Athletic Club",
+      "team_b": "Osasuna",
+      "matches": [
+        {
+          "date": "2026-04-21T17:00:00Z",
+          "home": "Athletic Club",
+          "away": "Osasuna",
+          "score_home": 1,
+          "score_away": 0,
+          "competition_id": "es-la-liga",
+          "competition_name": "La Liga"
+        },
+        {
+          "date": "2026-01-03T15:15:00Z",
+          "home": "Osasuna",
+          "away": "Athletic Club",
+          "score_home": 1,
+          "score_away": 1,
+          "competition_id": "es-la-liga",
+          "competition_name": "La Liga"
+        },
+        {
+          "date": "2025-03-30T16:30:00Z",
+          "home": "Athletic Club",
+          "away": "Osasuna",
+          "score_home": 0,
+          "score_away": 0,
+          "competition_id": "es-la-liga",
+          "competition_name": "La Liga"
+        },
+        {
+          "date": "2024-12-21T17:30:00Z",
+          "home": "Osasuna",
+          "away": "Athletic Club",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "es-la-liga",
+          "competition_name": "La Liga"
+        }
+      ]
+    },
+    "real madrid|valencia": {
+      "team_a": "Real Madrid",
+      "team_b": "Valencia",
+      "matches": [
+        {
+          "date": "2026-02-08T20:00:00Z",
+          "home": "Valencia",
+          "away": "Real Madrid",
+          "score_home": 0,
+          "score_away": 2,
+          "competition_id": "es-la-liga",
+          "competition_name": "La Liga"
+        },
+        {
+          "date": "2025-11-01T20:00:00Z",
+          "home": "Real Madrid",
+          "away": "Valencia",
+          "score_home": 4,
+          "score_away": 0,
+          "competition_id": "es-la-liga",
+          "competition_name": "La Liga"
+        },
+        {
+          "date": "2025-04-05T14:15:00Z",
+          "home": "Real Madrid",
+          "away": "Valencia",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "es-la-liga",
+          "competition_name": "La Liga"
+        },
+        {
+          "date": "2025-01-03T20:00:00Z",
+          "home": "Valencia",
+          "away": "Real Madrid",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "es-la-liga",
+          "competition_name": "La Liga"
+        }
+      ]
+    },
+    "strasbourg|toulouse": {
+      "team_a": "Strasbourg",
+      "team_b": "Toulouse",
+      "matches": [
+        {
+          "date": "2026-05-03T15:15:00Z",
+          "home": "Strasbourg",
+          "away": "Toulouse",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "fr-ligue-1",
+          "competition_name": "Ligue 1"
+        },
+        {
+          "date": "2025-12-06T18:00:00Z",
+          "home": "Toulouse",
+          "away": "Strasbourg",
+          "score_home": 1,
+          "score_away": 0,
+          "competition_id": "fr-ligue-1",
+          "competition_name": "Ligue 1"
+        },
+        {
+          "date": "2025-03-16T16:15:00Z",
+          "home": "Strasbourg",
+          "away": "Toulouse",
+          "score_home": 2,
+          "score_away": 1,
+          "competition_id": "fr-ligue-1",
+          "competition_name": "Ligue 1"
+        },
+        {
+          "date": "2025-01-12T16:15:00Z",
+          "home": "Toulouse",
+          "away": "Strasbourg",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "fr-ligue-1",
+          "competition_name": "Ligue 1"
+        }
+      ]
+    },
+    "shimizu s pulse|tokyo verdy": {
+      "team_a": "Shimizu S-Pulse",
+      "team_b": "Tokyo Verdy",
+      "matches": [
+        {
+          "date": "2025-10-25T05:00:00Z",
+          "home": "Shimizu S-Pulse",
+          "away": "Tokyo Verdy",
+          "score_home": 1,
+          "score_away": 0,
+          "competition_id": "jp-j1-league",
+          "competition_name": "J1 League"
+        },
+        {
+          "date": "2025-02-16T05:00:00Z",
+          "home": "Tokyo Verdy",
+          "away": "Shimizu S-Pulse",
+          "score_home": 0,
+          "score_away": 1,
+          "competition_id": "jp-j1-league",
+          "competition_name": "J1 League"
+        }
+      ]
+    },
+    "feyenoord|inter": {
+      "team_a": "Feyenoord",
+      "team_b": "Inter",
+      "matches": [
+        {
+          "date": "2025-03-11T20:00:00Z",
+          "home": "Inter",
+          "away": "Feyenoord",
+          "score_home": 2,
+          "score_away": 1,
+          "competition_id": "uefa-champions-league",
+          "competition_name": "Ligue des champions UEFA"
+        },
+        {
+          "date": "2025-03-05T17:45:00Z",
+          "home": "Feyenoord",
+          "away": "Inter",
+          "score_home": 0,
+          "score_away": 2,
+          "competition_id": "uefa-champions-league",
+          "competition_name": "Ligue des champions UEFA"
+        }
+      ]
+    },
+    "fagiano okayama fc|yokohama f marinos": {
+      "team_a": "Fagiano Okayama FC",
+      "team_b": "Yokohama F.Marinos",
+      "matches": [
+        {
+          "date": "2025-06-21T10:00:00Z",
+          "home": "Yokohama F.Marinos",
+          "away": "Fagiano Okayama FC",
+          "score_home": 0,
+          "score_away": 1,
+          "competition_id": "jp-j1-league",
+          "competition_name": "J1 League"
+        },
+        {
+          "date": "2025-03-29T03:55:00Z",
+          "home": "Fagiano Okayama FC",
+          "away": "Yokohama F.Marinos",
+          "score_home": 1,
+          "score_away": 0,
+          "competition_id": "jp-j1-league",
+          "competition_name": "J1 League"
+        }
+      ]
+    },
+    "san diego fc|sporting kansas city": {
+      "team_a": "San Diego FC",
+      "team_b": "Sporting Kansas City",
+      "matches": [
+        {
+          "date": "2026-03-08T01:30:00Z",
+          "home": "Sporting Kansas City",
+          "away": "San Diego FC",
+          "score_home": 0,
+          "score_away": 1,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2025-08-10T00:45:00Z",
+          "home": "Sporting Kansas City",
+          "away": "San Diego FC",
+          "score_home": 0,
+          "score_away": 2,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2025-05-18T02:30:00Z",
+          "home": "San Diego FC",
+          "away": "Sporting Kansas City",
+          "score_home": 0,
+          "score_away": 0,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        }
+      ]
+    },
+    "laval|saint etienne": {
+      "team_a": "Laval",
+      "team_b": "Saint-Étienne",
+      "matches": [
+        {
+          "date": "2026-02-21T19:00:00Z",
+          "home": "Saint-Étienne",
+          "away": "Laval",
+          "score_home": 2,
+          "score_away": 1,
+          "competition_id": "fr-ligue-2",
+          "competition_name": "Ligue 2"
+        },
+        {
+          "date": "2025-08-09T18:00:00Z",
+          "home": "Laval",
+          "away": "Saint-Étienne",
+          "score_home": 3,
+          "score_away": 3,
+          "competition_id": "fr-ligue-2",
+          "competition_name": "Ligue 2"
+        }
+      ]
+    },
+    "borussia monchengladbach|hamburger sv": {
+      "team_a": "Borussia Mönchengladbach",
+      "team_b": "Hamburger SV",
+      "matches": [
+        {
+          "date": "2026-01-17T14:30:00Z",
+          "home": "Hamburger SV",
+          "away": "Borussia Mönchengladbach",
+          "score_home": 0,
+          "score_away": 0,
+          "competition_id": "de-bundesliga",
+          "competition_name": "Bundesliga"
+        },
+        {
+          "date": "2025-08-24T15:30:00Z",
+          "home": "Borussia Mönchengladbach",
+          "away": "Hamburger SV",
+          "score_home": 0,
+          "score_away": 0,
+          "competition_id": "de-bundesliga",
+          "competition_name": "Bundesliga"
+        }
+      ]
+    },
+    "alverca|benfica": {
+      "team_a": "Alverca",
+      "team_b": "Benfica",
+      "matches": [
+        {
+          "date": "2026-02-08T20:30:00Z",
+          "home": "Benfica",
+          "away": "Alverca",
+          "score_home": 2,
+          "score_away": 1,
+          "competition_id": "pt-primeira-liga",
+          "competition_name": "Primeira Liga"
+        },
+        {
+          "date": "2025-08-31T17:00:00Z",
+          "home": "Alverca",
+          "away": "Benfica",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "pt-primeira-liga",
+          "competition_name": "Primeira Liga"
+        }
+      ]
+    },
+    "nancy|red star": {
+      "team_a": "Nancy",
+      "team_b": "Red Star",
+      "matches": [
+        {
+          "date": "2026-02-13T19:00:00Z",
+          "home": "Red Star",
+          "away": "Nancy",
+          "score_home": 2,
+          "score_away": 1,
+          "competition_id": "fr-ligue-2",
+          "competition_name": "Ligue 2"
+        },
+        {
+          "date": "2025-09-19T18:00:00Z",
+          "home": "Nancy",
+          "away": "Red Star",
+          "score_home": 0,
+          "score_away": 1,
+          "competition_id": "fr-ligue-2",
+          "competition_name": "Ligue 2"
+        }
+      ]
+    },
+    "clermont foot|rodez": {
+      "team_a": "Clermont Foot",
+      "team_b": "Rodez",
+      "matches": [
+        {
+          "date": "2026-02-13T19:00:00Z",
+          "home": "Clermont Foot",
+          "away": "Rodez",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "fr-ligue-2",
+          "competition_name": "Ligue 2"
+        },
+        {
+          "date": "2025-09-19T18:00:00Z",
+          "home": "Rodez",
+          "away": "Clermont Foot",
+          "score_home": 0,
+          "score_away": 1,
+          "competition_id": "fr-ligue-2",
+          "competition_name": "Ligue 2"
+        }
+      ]
+    },
+    "dunkerque|guingamp": {
+      "team_a": "Dunkerque",
+      "team_b": "Guingamp",
+      "matches": [
+        {
+          "date": "2026-02-06T19:00:00Z",
+          "home": "Dunkerque",
+          "away": "Guingamp",
+          "score_home": 0,
+          "score_away": 0,
+          "competition_id": "fr-ligue-2",
+          "competition_name": "Ligue 2"
+        },
+        {
+          "date": "2025-09-23T18:30:00Z",
+          "home": "Guingamp",
+          "away": "Dunkerque",
+          "score_home": 2,
+          "score_away": 1,
+          "competition_id": "fr-ligue-2",
+          "competition_name": "Ligue 2"
+        }
+      ]
+    },
+    "leeds united|tottenham hotspur": {
+      "team_a": "Leeds United",
+      "team_b": "Tottenham Hotspur",
+      "matches": [
+        {
+          "date": "2026-05-11T19:00:00Z",
+          "home": "Tottenham Hotspur",
+          "away": "Leeds United",
+          "score_home": 1,
+          "score_away": 1,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        },
+        {
+          "date": "2025-10-04T11:30:00Z",
+          "home": "Leeds United",
+          "away": "Tottenham Hotspur",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        }
+      ]
+    },
+    "grenoble|reims": {
+      "team_a": "Grenoble",
+      "team_b": "Reims",
+      "matches": [
+        {
+          "date": "2026-02-14T13:00:00Z",
+          "home": "Grenoble",
+          "away": "Reims",
+          "score_home": 0,
+          "score_away": 0,
+          "competition_id": "fr-ligue-2",
+          "competition_name": "Ligue 2"
+        },
+        {
+          "date": "2025-10-04T12:00:00Z",
+          "home": "Reims",
+          "away": "Grenoble",
+          "score_home": 2,
+          "score_away": 4,
+          "competition_id": "fr-ligue-2",
+          "competition_name": "Ligue 2"
+        }
+      ]
+    },
+    "brest|lorient": {
+      "team_a": "Brest",
+      "team_b": "Lorient",
+      "matches": [
+        {
+          "date": "2026-02-07T18:00:00Z",
+          "home": "Brest",
+          "away": "Lorient",
+          "score_home": 2,
+          "score_away": 0,
+          "competition_id": "fr-ligue-1",
+          "competition_name": "Ligue 1"
+        },
+        {
+          "date": "2025-10-19T15:15:00Z",
+          "home": "Lorient",
+          "away": "Brest",
+          "score_home": 3,
+          "score_away": 3,
+          "competition_id": "fr-ligue-1",
+          "competition_name": "Ligue 1"
+        }
+      ]
+    },
+    "roma|sassuolo": {
+      "team_a": "Roma",
+      "team_b": "Sassuolo",
+      "matches": [
+        {
+          "date": "2026-01-10T17:00:00Z",
+          "home": "Roma",
+          "away": "Sassuolo",
+          "score_home": 2,
+          "score_away": 0,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        },
+        {
+          "date": "2025-10-26T14:00:00Z",
+          "home": "Sassuolo",
+          "away": "Roma",
+          "score_home": 0,
+          "score_away": 1,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        }
+      ]
+    },
+    "annecy fc|boulogne": {
+      "team_a": "Annecy FC",
+      "team_b": "Boulogne",
+      "matches": [
+        {
+          "date": "2026-05-02T18:00:00Z",
+          "home": "Boulogne",
+          "away": "Annecy FC",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "fr-ligue-2",
+          "competition_name": "Ligue 2"
+        },
+        {
+          "date": "2025-10-31T19:00:00Z",
+          "home": "Annecy FC",
+          "away": "Boulogne",
+          "score_home": 1,
+          "score_away": 1,
+          "competition_id": "fr-ligue-2",
+          "competition_name": "Ligue 2"
+        }
+      ]
+    },
+    "cercle brugge|raal la louviere": {
+      "team_a": "Cercle Brugge",
+      "team_b": "RAAL La Louvière",
+      "matches": [
+        {
+          "date": "2026-05-09T14:00:00Z",
+          "home": "RAAL La Louvière",
+          "away": "Cercle Brugge",
+          "score_home": 4,
+          "score_away": 1,
+          "competition_id": "be-first-division-a",
+          "competition_name": "Belgian Pro League"
+        },
+        {
+          "date": "2026-04-11T14:00:00Z",
+          "home": "Cercle Brugge",
+          "away": "RAAL La Louvière",
+          "score_home": 3,
+          "score_away": 0,
+          "competition_id": "be-first-division-a",
+          "competition_name": "Belgian Pro League"
+        },
+        {
+          "date": "2026-03-15T18:15:00Z",
+          "home": "Cercle Brugge",
+          "away": "RAAL La Louvière",
+          "score_home": 1,
+          "score_away": 3,
+          "competition_id": "be-first-division-a",
+          "competition_name": "Belgian Pro League"
+        },
+        {
+          "date": "2025-11-02T18:15:00Z",
+          "home": "RAAL La Louvière",
+          "away": "Cercle Brugge",
+          "score_home": 2,
+          "score_away": 1,
+          "competition_id": "be-first-division-a",
+          "competition_name": "Belgian Pro League"
+        }
+      ]
+    },
+    "arsenal|slavia prague": {
+      "team_a": "Arsenal",
+      "team_b": "Slavia Prague",
+      "matches": [
+        {
+          "date": "2025-11-04T17:45:00Z",
+          "home": "Slavia Prague",
+          "away": "Arsenal",
+          "score_home": 0,
+          "score_away": 3,
+          "competition_id": "uefa-champions-league",
+          "competition_name": "Ligue des champions UEFA"
+        }
+      ]
+    },
+    "alverca|casa pia ac": {
+      "team_a": "Alverca",
+      "team_b": "Casa Pia AC",
+      "matches": [
+        {
+          "date": "2026-04-12T14:30:00Z",
+          "home": "Alverca",
+          "away": "Casa Pia AC",
+          "score_home": 3,
+          "score_away": 1,
+          "competition_id": "pt-primeira-liga",
+          "competition_name": "Primeira Liga"
+        },
+        {
+          "date": "2025-11-29T15:30:00Z",
+          "home": "Casa Pia AC",
+          "away": "Alverca",
+          "score_home": 0,
+          "score_away": 2,
+          "competition_id": "pt-primeira-liga",
+          "competition_name": "Primeira Liga"
+        }
+      ]
+    },
+    "auxerre|paris fc": {
+      "team_a": "Auxerre",
+      "team_b": "Paris FC",
+      "matches": [
+        {
+          "date": "2026-02-08T16:15:00Z",
+          "home": "Auxerre",
+          "away": "Paris FC",
+          "score_home": 0,
+          "score_away": 0,
+          "competition_id": "fr-ligue-1",
+          "competition_name": "Ligue 1"
+        },
+        {
+          "date": "2025-11-29T18:00:00Z",
+          "home": "Paris FC",
+          "away": "Auxerre",
+          "score_home": 1,
+          "score_away": 1,
+          "competition_id": "fr-ligue-1",
+          "competition_name": "Ligue 1"
+        }
+      ]
+    },
+    "fiorentina|sassuolo": {
+      "team_a": "Fiorentina",
+      "team_b": "Sassuolo",
+      "matches": [
+        {
+          "date": "2026-04-26T10:30:00Z",
+          "home": "Fiorentina",
+          "away": "Sassuolo",
+          "score_home": 0,
+          "score_away": 0,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        },
+        {
+          "date": "2025-12-06T14:00:00Z",
+          "home": "Sassuolo",
+          "away": "Fiorentina",
+          "score_home": 3,
+          "score_away": 1,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        }
+      ]
+    },
+    "avispa fukuoka|v varen nagasaki": {
+      "team_a": "Avispa Fukuoka",
+      "team_b": "V-Varen Nagasaki",
+      "matches": [
+        {
+          "date": "2026-04-11T05:03:00Z",
+          "home": "Avispa Fukuoka",
+          "away": "V-Varen Nagasaki",
+          "score_home": 1,
+          "score_away": 0,
+          "competition_id": "jp-j1-league",
+          "competition_name": "J1 League"
+        },
+        {
+          "date": "2026-03-15T05:00:00Z",
+          "home": "V-Varen Nagasaki",
+          "away": "Avispa Fukuoka",
+          "score_home": 1,
+          "score_away": 0,
+          "competition_id": "jp-j1-league",
+          "competition_name": "J1 League"
+        }
+      ]
+    }
+  }
+}
