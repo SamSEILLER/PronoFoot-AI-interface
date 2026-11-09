@@ -324,6 +324,41 @@
       const normalizeHistoryTeam = (value) => String(value || "")
         .normalize("NFKD").replace(/[\u0300-\u036f]/g, "")
         .toLocaleLowerCase("fr").replace(/[^a-z0-9]+/g, " ").trim();
+      let formChartInstance = null;
+      const renderFormChart = (rows) => {
+        const canvas = document.getElementById("historyFormChart");
+        if (!canvas) return;
+        const draw = (ChartConstructor) => {
+          if (!canvas.isConnected) return;
+          if (!ChartConstructor) {
+            const wrapper=canvas.parentElement;
+            if(wrapper) wrapper.innerHTML='<p class="history-form-chart-fallback">Graphique indisponible — les résultats détaillés restent consultables ci-dessus.</p>';
+            return;
+          }
+          if (formChartInstance) formChartInstance.destroy();
+          formChartInstance = new ChartConstructor(canvas, {
+            type:"bar",
+            data:{
+              labels:rows.map(row=>row.name),
+              datasets:[
+                {label:"Victoires",data:rows.map(row=>row.V),backgroundColor:"#16A34A",borderRadius:3},
+                {label:"Nuls",data:rows.map(row=>row.N),backgroundColor:"#EAB308",borderRadius:3},
+                {label:"Défaites",data:rows.map(row=>row.D),backgroundColor:"#DC2626",borderRadius:3}
+              ]
+            },
+            options:{
+              indexAxis:"y",responsive:true,maintainAspectRatio:false,animation:false,
+              plugins:{legend:{position:"bottom",labels:{boxWidth:9,boxHeight:9,font:{size:9},padding:10}}},
+              scales:{
+                x:{stacked:true,beginAtZero:true,ticks:{precision:0,font:{size:9}},grid:{display:false}},
+                y:{stacked:true,ticks:{font:{size:10}},grid:{display:false}}
+              }
+            }
+          });
+        };
+        if (window.chartJsReady && typeof window.chartJsReady.then==="function") window.chartJsReady.then(draw);
+        else draw(window.Chart);
+      };
       const renderHistoryOverview = (body, match) => {
         body.innerHTML = '<p class="history-loading">Chargement de la forme récente et des confrontations…</p>';
         loadHistoryData().then(({ recentForm, headToHead }) => {
@@ -365,7 +400,8 @@
               note:"5 derniers matchs du championnat · jusqu’à 2 autres compétitions"
             };
           };
-          const formRow = (name) => {
+          const formChartStats = [];
+      const formRow = (name) => {
             const team = findTeam(name);
             const selection = getFormMatches(team);
             const results = selection.matches;
@@ -377,6 +413,11 @@
               const score=String(item?.score || "").match(/^(\d+)\s*[-–:]\s*(\d+)$/);
               if(score){stats.gf+=Number(score[1]);stats.ga+=Number(score[2]);}
             });
+            formChartStats.push({name,V:stats.V,N:stats.N,D:stats.D});
+            const foreignCount = results.filter(item => {
+              const competition=String(item?.competition_id || "").trim().toLowerCase();
+              return Boolean(targetCompetition && competition && competition!==targetCompetition);
+            }).length;
             const chips = results.map(item => {
               const result=String(item?.result || "").toUpperCase();
               const cls=result==="V"?"is-win":result==="N"?"is-draw":result==="D"?"is-loss":"is-unknown";
@@ -385,9 +426,9 @@
               const compLabel=competitionLabel(item?.competition_id);
               const tooltip=compactHistoryDate(item?.date)+" · "+compLabel+"\n"+name+" "+String(item?.score || "Score indisponible")+" "+String(item?.opponent || "Adversaire inconnu");
               return '<span class="history-form-item"><span class="history-form-chip '+cls+(otherCompetition?" is-other-competition":"")+'" data-tooltip="'+escapeHtml(tooltip)+'" tabindex="0" aria-label="'+escapeHtml((result||"Résultat inconnu")+" — "+tooltip)+'">'+escapeHtml(result||"—")+'</span>'+
-                (otherCompetition?'<small class="history-form-comp-badge" title="'+escapeHtml(compLabel)+'">'+escapeHtml(shortCompetition(item?.competition_id))+'</small>':'')+'</span>';
+                (otherCompetition?'<small class="history-form-comp-badge" title="Autre compétition : '+escapeHtml(compLabel)+'">AUTRE · '+escapeHtml(shortCompetition(item?.competition_id))+'</small>':'')+'</span>';
             }).join("");
-            return '<section class="history-team-form"><div class="history-team-heading"><strong>'+escapeHtml(name)+'</strong><span class="history-form-count">'+results.length+' match'+(results.length>1?"s":"")+'</span></div>'+
+            return '<section class="history-team-form"><div class="history-team-heading"><strong>'+escapeHtml(name)+'</strong><span class="history-form-count">'+results.length+' match'+(results.length>1?"s":"")+(foreignCount?' · '+foreignCount+' hors championnat':'')+'</span></div>'+
               '<div class="history-form-results">'+(chips||'<span class="history-empty-inline">Aucun résultat terminé disponible.</span>')+'</div>'+
               '<div class="history-form-stats"><span><b class="is-win-text">'+stats.V+'</b><small>Victoires</small></span><span><b>'+stats.N+'</b><small>Nuls</small></span><span><b class="is-loss-text">'+stats.D+'</b><small>Défaites</small></span><span><b>'+stats.gf+'</b><small>Buts +</small></span><span><b>'+stats.ga+'</b><small>Buts −</small></span></div>'+
               '</section>';
@@ -437,12 +478,13 @@
           const freshness=generated?'Données mises à jour le '+escapeHtml(new Date(generated).toLocaleString("fr-FR",{dateStyle:"short",timeStyle:"short",timeZone:"Europe/Paris"})):"Date de mise à jour indisponible";
           body.innerHTML='<div class="history-overview-grid">'+
             '<section class="history-card history-form-card"><div class="history-card-heading"><span class="history-heading-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h17"/><path d="m7 15 4-4 3 2 6-7"/><path d="M16 6h4v4"/></svg></span><div><h3>Forme récente</h3><p>Résultats récents des deux équipes</p></div></div>'+
-            '<div class="history-form-teams">'+formRow(match.home_team)+formRow(match.away_team)+'</div></section>'+
+            '<div class="history-form-teams">'+formRow(match.home_team)+formRow(match.away_team)+'</div><div class="history-form-chart-wrap"><div class="history-form-chart-heading">Bilan V / N / D · championnat du match</div><div class="history-form-chart-canvas"><canvas id="historyFormChart" role="img" aria-label="Comparaison des victoires, nuls et défaites dans le championnat du match"></canvas></div></div></section>'+
             '<section class="history-card history-h2h-card"><div class="history-card-heading"><span class="history-heading-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="7" cy="7" r="3"/><circle cx="17" cy="7" r="3"/><path d="M2.5 19c.5-3 2-4.5 4.5-4.5s4 1.5 4.5 4.5M12.5 19c.5-3 2-4.5 4.5-4.5s4 1.5 4.5 4.5"/><path d="M10 10h4"/></svg></span><div><h3>Confrontations directes (H2H)</h3><p>Toutes compétitions · archives disponibles</p></div></div>'+
             (total?'<div class="history-h2h-layout"><div class="history-h2h-summary"><div class="history-donut" style="'+donutStyle+'"><div><strong>'+total+'</strong><small>matchs</small></div></div>'+
               '<div class="history-h2h-legend"><span><i class="home"></i><span><b>'+h2hStats.home+' Victoires</b><small>('+Math.round(homePct)+' %)</small></span></span><span><i class="draw"></i><span><b>'+h2hStats.draw+' Nul'+(h2hStats.draw>1?'s':'')+'</b><small>('+Math.round(drawPct)+' %)</small></span></span><span><i class="away"></i><span><b>'+h2hStats.away+' Défaite'+(h2hStats.away>1?'s':'')+'</b><small>('+Math.round(awayPct)+' %)</small></span></span></div></div>'+
               '<div class="history-h2h-list">'+h2hRows+'</div></div>':'<p class="history-empty">Aucune confrontation directe terminée trouvée dans les archives disponibles.</p>')+
             '</section></div><p class="history-data-meta">'+freshness+' · Historique issu des matchs PitchAPI archivés.</p>';
+          renderFormChart(formChartStats);
         });
       };
       const renderDetailTab = (activeTab) => {
