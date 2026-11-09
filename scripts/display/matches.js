@@ -443,7 +443,7 @@
               return '<span class="history-form-item"><span class="history-form-chip '+cls+(otherCompetition?" is-other-competition":"")+'" data-tooltip="'+escapeHtml(tooltip)+'" tabindex="0" aria-label="'+escapeHtml((result||"Résultat inconnu")+" — "+tooltip)+'">'+escapeHtml(result||"—")+'</span>'+
                 (otherCompetition?'<small class="history-form-comp-badge" title="Autre compétition : '+escapeHtml(compLabel)+'">'+escapeHtml(shortCompetition(item?.competition_id))+'</small>':'')+'</span>';
             }).join("");
-            return '<section class="history-team-form"><div class="history-team-heading"><strong>'+escapeHtml(name)+'</strong><span class="history-form-count">'+results.length+' match'+(results.length>1?"s":"")+(foreignCount?' · '+foreignCount+' hors championnat':'')+'</span></div>'+
+            return '<section class="history-team-form"><div class="history-team-heading"><strong>'+escapeHtml(name)+'</strong><span class="history-form-count">'+results.length+' match'+(results.length>1?"s":"")+'</span></div>'+
               '<div class="history-form-results">'+(chips||'<span class="history-empty-inline">Aucun résultat terminé disponible.</span>')+'</div>'+
               '<div class="history-form-stats"><span><b class="is-win-text">'+stats.V+'</b><small>Victoires</small></span><span><b>'+stats.N+'</b><small>Nuls</small></span><span><b class="is-loss-text">'+stats.D+'</b><small>Défaites</small></span><span><b>'+stats.gf+'</b><small>Buts +</small></span><span><b>'+stats.ga+'</b><small>Buts −</small></span></div>'+
               '</section>';
