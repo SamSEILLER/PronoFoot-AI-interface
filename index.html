@@ -2053,13 +2053,13 @@ input.search,
 .history-donut>div{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;color:#142c4e}
 .history-donut strong{font-size:25px;line-height:1.05;font-weight:900}
 .history-donut small{margin-top:3px;color:#61758e;font-size:11px}
-.history-h2h-legend{display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;justify-content:space-around;gap:10px;width:100%;font-size:12px;color:#506783}
-.history-h2h-legend span{display:flex;align-items:center;gap:5px;min-width:0}
-.history-h2h-legend span span{display:flex;flex-direction:row;align-items:baseline;gap:3px}
-.history-h2h-legend i{width:10px;height:10px;flex:0 0 10px;border-radius:3px}
-.history-h2h-legend i.home{background:#159947}.history-h2h-legend i.draw{background:#f2c230}.history-h2h-legend i.away{background:#dc3545}
-.history-h2h-legend b{color:#142c4e;font-size:11px}
-.history-h2h-legend small{color:#64758b;font-size:10px}
+.history-h2h-legend{display:flex;flex-direction:row;flex-wrap:nowrap;align-items:stretch;justify-content:space-around;gap:0;width:100%;font-size:12px;color:#506783}
+.history-h2h-legend span{display:flex;align-items:center;justify-content:center;gap:9px;min-width:0;flex:1;padding:5px 8px;border-right:2px solid #d6e1ed}
+.history-h2h-legend span:last-child{border-right:0}
+.history-h2h-legend span span{display:flex;flex-direction:column;align-items:flex-start;gap:1px}
+.history-h2h-legend i{width:14px;height:14px;flex:0 0 14px;border-radius:4px}
+.history-h2h-legend i.home{background:#159947}.history-h2h-legend i.draw{background:#9aa8b8}.history-h2h-legend i.away{background:#dc3545}
+.history-h2h-legend b{color:#142c4e;font-size:13px}
 .history-h2h-list{display:flex;flex-direction:column;min-width:0;justify-content:center;gap:3px}
 .history-h2h-row{padding:9px 12px;border:0;border-radius:9px}
 .history-h2h-row:nth-child(even){background:#f2f5f9}
@@ -2084,7 +2084,7 @@ input.search,
  .history-donut{width:104px;height:104px;flex:0 0 104px}
  .history-donut:before{inset:16px}
  .history-donut strong{font-size:24px}
- .history-h2h-legend{gap:7px}.history-h2h-legend b{font-size:11px}.history-h2h-legend small{font-size:10px}
+ .history-h2h-legend{gap:0}.history-h2h-legend span{padding:4px 5px;gap:5px}.history-h2h-legend i{width:11px;height:11px;flex-basis:11px}.history-h2h-legend b{font-size:10px}.history-h2h-legend small{font-size:9px}
  .history-card-heading{padding:9px 11px}
  .history-card-heading h3{font-size:13px}
  .history-h2h-scoreline{font-size:10px;gap:5px}
