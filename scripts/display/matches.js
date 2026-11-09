@@ -499,8 +499,8 @@
                 backgroundColor:["#159947","#9aa8b8","#dc3545"],
                 borderColor:"#ffffff",borderWidth:3,spacing:2,hoverOffset:3
               }]},
-              options:{responsive:true,maintainAspectRatio:false,cutout:"68%",rotation:-90,animation:false,
-                plugins:{legend:{display:false},tooltip:{callbacks:{label:(context)=>" "+context.label+" : "+context.raw+" ("+(total?Math.round(context.raw/total*100):0)+" %)"}}}}
+              options:{responsive:true,maintainAspectRatio:false,cutout:"68%",rotation:-90,animation:false,events:[],
+                plugins:{legend:{display:false},tooltip:{enabled:false}}}
             });
           };
           if(window.chartJsReady&&typeof window.chartJsReady.then==="function")window.chartJsReady.then(drawH2H);
