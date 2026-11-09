@@ -8,6 +8,31 @@
   const SIMULATED_NOW = Date.now() - (TEST_MODE ? 7 * 24 * 60 * 60 * 1000 : 0);
   const STANDINGS_URL = "./data/standings.json";
 
+  // Codes d'affichage uniques des 12 compétitions suivies.
+  // Les identifiants PitchAPI et les slugs de données restent inchangés.
+  const COMPETITION_DISPLAY_CODES = {
+    "gb-premier-league":"PL", "premier league":"PL",
+    "de-bundesliga":"BUN", "bundesliga":"BUN",
+    "es-la-liga":"LL", "la liga":"LL", "laliga":"LL",
+    "it-serie-a":"SA", "serie a":"SA",
+    "fr-ligue-1":"L1", "ligue 1":"L1",
+    "fr-ligue-2":"L2", "ligue 2":"L2",
+    "be-first-division-a":"BPL", "belgian pro league":"BPL", "first division a":"BPL",
+    "pt-primeira-liga":"PPL", "primeira liga":"PPL", "liga portugal":"PPL",
+    "us-mls":"MLS", "mls":"MLS",
+    "uefa-champions-league":"LDC", "champions league":"LDC", "uefa champions league":"LDC",
+    "uefa-europa-league":"UEL", "europa league":"UEL", "uefa europa league":"UEL",
+    "jp-j1-league":"J1", "j1 league":"J1", "japan j1 league":"J1", "j league":"J1"
+  };
+  const normalizeCompetitionKey = (value) => String(value || "")
+    .normalize("NFKD").replace(/[\u0300-\u036f]/g, "")
+    .trim().toLowerCase().replace(/\s+/g, " ");
+  const getCompetitionDisplayCode = (value, fallbackName = "") => {
+    const key = normalizeCompetitionKey(value);
+    const nameKey = normalizeCompetitionKey(fallbackName);
+    return COMPETITION_DISPLAY_CODES[key] || COMPETITION_DISPLAY_CODES[nameKey] || "";
+  };
+
   const list = document.getElementById("upcomingMatchesList");
   const template = document.getElementById("upcomingMatchTemplate");
   if (!list || !template) return;
@@ -113,18 +138,10 @@
     }
 
     const competitionName = match.competition || "";
-    const competitionKey = competitionName.trim().toLowerCase();
-    const competitionCodes = {
-      "premier league":"PL", "championship":"CH", "ligue 1":"L1", "ligue 2":"L2",
-      "la liga":"LL", "laliga":"LL", "serie a":"SA", "bundesliga":"BL",
-      "eredivisie":"ED", "primeira liga":"P", "pro league":"BPL", "belgian pro league":"BPL",
-      "champions league":"C1", "uefa champions league":"C1", "europa league":"EL",
-      "uefa europa league":"EL", "conference league":"C4", "coupe de france":"CDF"
-    };
-    const competitionCode = competitionCodes[competitionKey]
+    const competitionCode = getCompetitionDisplayCode(match.competition_slug, competitionName)
       || competitionName.trim().split(/\s+/).filter(Boolean).map(word => word[0]).join("").slice(0, 3).toUpperCase()
       || "—";
-    const competitionElement = setText(card, "competition", competitionName || competitionCode);
+    const competitionElement = setText(card, "competition", competitionCode);
     if (competitionElement) competitionElement.title = competitionName || competitionCode;
     const phase = getEstimatedPhase(match, standingsIndex);
     const roundLabel = phase || match.round || "";
@@ -379,11 +396,8 @@
           };
           const competitionLabel = (value) => String(value || "Compétition inconnue")
             .replace(/-/g, " ").replace(/\b\w/g, char => char.toUpperCase());
-          const shortCompetition = (value) => {
-            const label = competitionLabel(value);
-            const words = label.split(/\s+/).filter(Boolean);
-            return (words.length > 1 ? words.map(word => word[0]).join("") : label.slice(0,4)).toUpperCase().slice(0,5);
-          };
+          const shortCompetition = (value) => getCompetitionDisplayCode(value)
+            || competitionLabel(value).split(/\s+/).filter(Boolean).map(word => word[0]).join("").toUpperCase().slice(0,5);
           const getFormMatches = (team) => {
             const all = Array.isArray(team?.matches) ? team.matches.slice() : [];
             all.sort((a,b) => String(a.date || "").localeCompare(String(b.date || "")));
@@ -538,6 +552,7 @@
           : "Date indisponible";
         const phase = getEstimatedPhase(match, standingsIndex) || match.round || "";
         const competition = match.competition || "Compétition inconnue";
+        const competitionCode = getCompetitionDisplayCode(match.competition_slug, competition) || competition;
         const countryFlag = getCompetitionCountryFlag(match);
         const standings = standingsIndex.get(String(match.competition_slug || ""));
         const seasonMatches = !standings?.season || !match.season || standings.season === match.season;
@@ -549,7 +564,7 @@
         detailPanel.innerHTML = `
           <div class="match-detail-content">
             <div class="match-detail-top">
-              <div class="match-detail-competition">${countryFlagHtml(countryFlag, "competition-country-flag")}<span>${escape(competition)}</span>${phase ? "<span>· "+escape(phase)+"</span>":""}</div>
+              <div class="match-detail-competition">${countryFlagHtml(countryFlag, "competition-country-flag")}<span title="${escape(competition)}">${escape(competitionCode)}</span>${phase ? "<span>· "+escape(phase)+"</span>":""}</div>
               <div class="match-detail-date"><span>${escape(dateLabel)}</span><span class="match-detail-clock" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 7v5l3.5 2"></path></svg></span></div>
             </div>
             <div class="match-detail-teams">
