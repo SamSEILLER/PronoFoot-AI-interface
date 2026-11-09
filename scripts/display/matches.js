@@ -474,8 +474,8 @@
             const homeWon=valid&&hs!==as&&((hs>as&&normalizeHistoryTeam(item.home)===homeKey)||(as>hs&&normalizeHistoryTeam(item.away)===homeKey));
             const awayWon=valid&&hs!==as&&!homeWon;
             const outcomeClass=!valid?"unknown":hs===as?"draw":homeWon?"win":"loss";
-            return '<div class="history-h2h-row"><div class="history-h2h-meta"><span>'+escapeHtml(compactHistoryDate(item.date))+'</span><span class="history-h2h-competition">'+escapeHtml(getCompetitionDisplayCode(item.competition_id, item.competition_name) || item.competition_name || competitionLabel(item.competition_id))+'</span></div>'+
-              '<div class="history-h2h-scoreline"><span>'+escapeHtml(item.home||"—")+'</span><strong class="'+outcomeClass+'">'+escapeHtml(scoreHome)+' – '+escapeHtml(scoreAway)+'</strong><span>'+escapeHtml(item.away||"—")+'</span></div></div>';
+            return '<div class="history-h2h-row"><span class="history-h2h-date">'+escapeHtml(compactHistoryDate(item.date))+'</span><span class="history-h2h-competition">'+escapeHtml(getCompetitionDisplayCode(item.competition_id, item.competition_name) || item.competition_name || competitionLabel(item.competition_id))+'</span>'+
+              '<span class="history-h2h-home">'+escapeHtml(item.home||"—")+'</span><strong class="history-h2h-score '+outcomeClass+'">'+escapeHtml(scoreHome)+' – '+escapeHtml(scoreAway)+'</strong><span class="history-h2h-away">'+escapeHtml(item.away||"—")+'</span></div>';
           }).join("");
           const generated=recentForm?.generated_at_utc||headToHead?.generated_at_utc;
           const freshness=generated?'Données mises à jour le '+escapeHtml(new Date(generated).toLocaleString("fr-FR",{dateStyle:"short",timeStyle:"short",timeZone:"Europe/Paris"})):"Date de mise à jour indisponible";
