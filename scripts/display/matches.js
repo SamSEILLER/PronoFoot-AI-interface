@@ -99,14 +99,24 @@
     "de-bundesliga":"DE",
     "es-la-liga":"ES",
     "fr-ligue-1":"FR",
+    "fr-ligue-2":"FR",
     "gb-premier-league":"GB",
     "it-serie-a":"IT",
     "jp-j1-league":"JP",
-    "pt-primeira-liga":"PT"
+    "pt-primeira-liga":"PT",
+    "us-mls":"US",
+    "uefa-champions-league":"EU",
+    "uefa-europa-league":"EU"
   };
   const getCompetitionCountryFlag = (match) => {
     const slug = String(match?.competition_slug || "").trim().toLowerCase();
-    return competitionCountryFlags[slug] || "";
+    if (competitionCountryFlags[slug]) return competitionCountryFlags[slug];
+    const name = normalizeCompetitionKey(match?.competition);
+    if (name.includes("champions league") || name.includes("ligue des champions")
+      || name.includes("europa league") || name.includes("ligue europa")) return "EU";
+    if (name === "ligue 1" || name === "ligue 2") return "FR";
+    if (name === "mls" || name.includes("major league soccer")) return "US";
+    return "";
   };
   const countryFlagHtml = (code, className) => code
     ? '<img class="' + className + '" src="./assets/flags/' + code.toLowerCase() + '.svg" alt="Drapeau ' + code + '" width="20" height="14" loading="lazy" decoding="async">'
@@ -575,6 +585,10 @@
           : "Date indisponible";
         const phase = getEstimatedPhase(match, standingsIndex) || match.round || "";
         const competition = match.competition || "Compétition inconnue";
+        const competitionDisplayName = ({
+          "uefa-champions-league":"Ligue des champions",
+          "uefa-europa-league":"Ligue Europa"
+        })[String(match.competition_slug || "").trim().toLowerCase()] || competition;
         const competitionCode = getCompetitionDisplayCode(match.competition_slug, competition) || competition;
         const countryFlag = getCompetitionCountryFlag(match);
         const standings = standingsIndex.get(String(match.competition_slug || ""));
@@ -587,7 +601,7 @@
         detailPanel.innerHTML = `
           <div class="match-detail-content">
             <div class="match-detail-top">
-              <div class="match-detail-competition">${countryFlagHtml(countryFlag, "competition-country-flag")}<span title="${escape(competition)}">${escape(competition)}</span>${phase ? '<span class="match-detail-phase">'+escape(phase)+'</span>':""}</div>
+              <div class="match-detail-competition">${countryFlagHtml(countryFlag, "competition-country-flag")}<span title="${escape(competition)}">${escape(competitionDisplayName)}</span>${phase ? '<span class="match-detail-phase">'+escape(phase)+'</span>':""}</div>
               <div class="match-detail-date"><span>${escape(dateLabel)}</span><span class="match-detail-clock" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 7v5l3.5 2"></path></svg></span></div>
             </div>
             <div class="match-detail-teams">
