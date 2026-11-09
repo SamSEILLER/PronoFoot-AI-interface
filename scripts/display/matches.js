@@ -411,7 +411,7 @@
           const homePct=total?h2hStats.home/total*100:0;
           const drawPct=total?h2hStats.draw/total*100:0;
           const awayPct=total?h2hStats.away/total*100:0;
-          const donutSegments=[{color:"#159947",value:homePct},{color:"#f2c230",value:drawPct},{color:"#dc3545",value:awayPct}].filter(segment=>segment.value>0);
+          const donutSegments=[{color:"#159947",value:homePct},{color:"#9aa8b8",value:drawPct},{color:"#dc3545",value:awayPct}].filter(segment=>segment.value>0);
           const donutGap=donutSegments.length>1?0.8:0;
           const donutUsable=100-donutGap*donutSegments.length;
           let donutCursor=0;
