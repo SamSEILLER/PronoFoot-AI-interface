@@ -2238,6 +2238,67 @@ input.search,
 .match-detail-phase{font-size:11px!important}
 .history-h2h-legend>span{border:none!important}
 .history-h2h-legend>span:last-child{border-right:none!important}
+
+/* Lisibilité renforcée — liste des confrontations directes H2H */
+.history-h2h-list{
+  gap:6px!important;
+  padding:10px 12px 12px!important;
+}
+.history-h2h-row{
+  grid-template-columns:76px 48px minmax(0,1fr) 72px minmax(0,1fr)!important;
+  gap:10px!important;
+  min-height:48px;
+  padding:9px 10px!important;
+  border:1px solid #e5ebf2!important;
+  border-radius:7px!important;
+  background:#ffffff!important;
+  transition:background-color .15s ease,border-color .15s ease;
+}
+.history-h2h-row:nth-child(even){
+  background:#f5f8fc!important;
+}
+.history-h2h-row:hover{
+  background:#edf4fb!important;
+  border-color:#cbd9e8!important;
+}
+.history-h2h-date{
+  color:#52677f!important;
+  font-size:11px!important;
+  font-weight:650!important;
+  font-variant-numeric:tabular-nums;
+}
+.history-h2h-competition{
+  color:#607995!important;
+  font-size:10px!important;
+  font-weight:800!important;
+}
+.history-h2h-home,.history-h2h-away{
+  color:#193653!important;
+  font-size:12px!important;
+  font-weight:750!important;
+}
+.history-h2h-score{
+  min-width:72px!important;
+  padding:7px 8px!important;
+  border:1px solid #d6e3f1;
+  border-radius:6px!important;
+  font-size:13px!important;
+  font-weight:850!important;
+  font-variant-numeric:tabular-nums;
+}
+@media(max-width:760px){
+  .history-h2h-list{gap:5px!important;padding:8px 5px 10px!important}
+  .history-h2h-row{
+    grid-template-columns:48px 34px minmax(0,1fr) 54px minmax(0,1fr)!important;
+    gap:4px!important;
+    min-height:42px;
+    padding:7px 5px!important;
+  }
+  .history-h2h-date{font-size:9px!important}
+  .history-h2h-competition{font-size:9px!important}
+  .history-h2h-home,.history-h2h-away{font-size:10px!important;font-weight:700!important}
+  .history-h2h-score{min-width:54px!important;padding:5px 3px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
