@@ -5,7 +5,7 @@
 (() => {
   const TEST_MODE = new URLSearchParams(window.location.search).get("mode") === "test";
   const DATA_URL = TEST_MODE ? "./data/matches_test.json" : "./data/matches_future.json";
-  const SIMULATED_NOW = Date.now() - (TEST_MODE ? 7 * 24 * 60 * 60 * 1000 : 0);
+  const SIMULATED_NOW = Date.now();
   const STANDINGS_URL = "./data/standings.json";
 
   // Codes d'affichage uniques des 12 compétitions suivies.
@@ -189,13 +189,22 @@
   Promise.all([
     fetch(DATA_URL + "?v=" + Date.now(), { cache: "no-store" })
       .then((response) => { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); }),
-    (TEST_MODE ? Promise.resolve(null) : fetch(STANDINGS_URL + "?v=" + Date.now(), { cache: "no-store" })
+    fetch(STANDINGS_URL + "?v=" + Date.now(), { cache: "no-store" })
       .then((response) => { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); })
-      .catch((error) => { console.warn("Classements indisponibles : numéro de phase masqué.", error); return null; }))
+      .catch((error) => { console.warn("Classements indisponibles : numéros de classement et de journée masqués.", error); return null; })
   ])
     .then(([matches, standings]) => {
-      const matchRecords = TEST_MODE ? matches?.matches : matches;
+      let matchRecords = TEST_MODE ? matches?.matches : matches;
       if (!Array.isArray(matchRecords)) throw new Error("Format de données inattendu");
+      if (TEST_MODE) {
+        const replayStart = Date.parse(matches?.metadata?.simulated_now_utc || "");
+        if (!Number.isFinite(replayStart)) throw new Error("Date de référence absente des données de test");
+        const replayOffset = SIMULATED_NOW - replayStart;
+        matchRecords = matchRecords.map((match) => ({
+          ...match,
+          kickoff_utc: new Date(Date.parse(match.kickoff_utc) + replayOffset).toISOString()
+        }));
+      }
 
       const standingsIndex = buildStandingsIndex(standings);
       const now = SIMULATED_NOW;
