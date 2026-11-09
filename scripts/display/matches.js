@@ -499,7 +499,7 @@
                 backgroundColor:["#159947","#9aa8b8","#dc3545"],
                 borderColor:"#ffffff",borderWidth:3,spacing:2,hoverOffset:3
               }]},
-              options:{responsive:true,maintainAspectRatio:false,cutout:"68%",rotation:-90,animation:false,events:[],
+              options:{responsive:true,maintainAspectRatio:false,cutout:"63%",rotation:-90,animation:false,events:[],
                 plugins:{legend:{display:false},tooltip:{enabled:false}}}
             });
           };
