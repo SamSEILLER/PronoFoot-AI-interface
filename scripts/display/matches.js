@@ -222,8 +222,7 @@
       .then((response) => { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); }),
     fetch(STANDINGS_URL + "?v=" + Date.now(), { cache: "no-store" })
       .then((response) => { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); })
-      .catch((error) => { console.warn("Classements indisponibles : numéros de classement et de journée masqués.", error); return null; })
-    ,
+      .catch((error) => { console.warn("Classements indisponibles : numéros de classement et de journée masqués.", error); return null; }),
     TEST_MODE ? Promise.resolve(null) : fetch(SEASON_GOALS_URL + "?v=" + Date.now(), { cache: "no-store" })
       .then((response) => { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); })
       .catch((error) => { console.warn("Statistiques de buts par saison indisponibles.", error); return null; })
