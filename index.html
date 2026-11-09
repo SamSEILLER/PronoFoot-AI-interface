@@ -2036,6 +2036,14 @@ input.search,
 .history-form-chip{position:relative;display:inline-flex;width:30px;height:30px;align-items:center;justify-content:center;border:2px solid transparent;border-radius:7px;color:#fff;font-size:13px;font-weight:850;cursor:help;outline-offset:3px}
 .history-form-chip.is-win{background:#16A34A;color:#fff}.history-form-chip.is-draw{background:#EAB308;color:#263238}.history-form-chip.is-loss{background:#DC2626;color:#fff}.history-form-chip.is-unknown{background:#8a98a8;color:#fff}
 .history-form-comp-badge{max-width:38px;overflow:hidden;color:#54718f;font-size:8px;font-weight:800;line-height:1;text-overflow:ellipsis;white-space:nowrap}
+.history-form-chip.is-other-competition{border:3px solid #fff!important;outline:2px solid #315f9d;outline-offset:1px;box-shadow:0 0 0 3px #f2b84b55;transform:scale(1.06)}
+.history-form-item:has(.history-form-chip.is-other-competition){gap:5px}
+.history-form-comp-badge{max-width:none!important;padding:3px 5px;border:1px solid #d69a22;border-radius:4px;background:#fff3cf;color:#654400!important;font-size:8px!important;font-weight:900!important;letter-spacing:.25px;line-height:1.1!important;text-align:center}
+.history-form-chart-wrap{margin:4px 12px 10px;padding:10px 12px 8px;border:1px solid #dce7f3;border-radius:8px;background:#fff}
+.history-form-chart-heading{margin-bottom:5px;color:#284b73;font-size:11px;font-weight:850}
+.history-form-chart-canvas{position:relative;height:86px;max-height:86px}
+.history-form-chart-fallback{color:#71839a;font-size:10px}
+
 .history-form-chip::after{content:attr(data-tooltip);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translate(-50%,4px);z-index:30;width:max-content;max-width:min(260px,75vw);padding:7px 9px;border:1px solid #dbe5f1;border-radius:7px;background:#102746;color:#fff;font-size:11px;font-weight:600;line-height:1.4;text-align:left;white-space:pre-line;box-shadow:0 5px 16px #10274626;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .12s,transform .12s}
 .history-form-chip:hover::after,.history-form-chip:focus-visible::after{opacity:1;visibility:visible;transform:translate(-50%,0)}
 .history-form-stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px;padding:8px 7px;border-radius:8px;background:#f1f5fa;text-align:center}
@@ -2253,6 +2261,7 @@ input.search,
 </script>
 
 <script src="./scripts/display/sidebar.js" defer></script>
-<script src="./scripts/display/matches.js?v=20261109-testmode2" defer></script>
+<script src="./assets/chartjs-loader.js" defer></script>
+<script src="./scripts/display/matches.js?v=20261109-chartjs1" defer></script>
 </body>
 </html>
