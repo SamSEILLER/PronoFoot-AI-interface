@@ -7,6 +7,7 @@
   const DATA_URL = TEST_MODE ? "./data/matches_test.json" : "./data/matches_future.json";
   const SIMULATED_NOW = Date.now();
   const STANDINGS_URL = "./data/standings.json";
+  const SEASON_GOALS_URL = "./data/season-goals.json";
 
   // Codes d'affichage uniques des 12 compétitions suivies.
   // Les identifiants PitchAPI et les slugs de données restent inchangés.
@@ -90,6 +91,22 @@
         });
       });
       if (teams.size) index.set(String(competition.id), { season: competition.season || data.season, teams });
+    });
+    return index;
+  };
+
+  const buildSeasonGoalsIndex = (data) => {
+    const index = new Map();
+    (Array.isArray(data?.competitions) ? data.competitions : []).forEach((competition) => {
+      const teams = new Map();
+      (Array.isArray(competition.teams) ? competition.teams : []).forEach((team) => {
+        if (team?.team_id) teams.set(String(team.team_id), team);
+      });
+      index.set(String(competition.id), {
+        season: String(competition.season || ""),
+        matchesCounted: Number(competition.matches_counted || 0),
+        teams
+      });
     });
     return index;
   };
@@ -206,8 +223,12 @@
     fetch(STANDINGS_URL + "?v=" + Date.now(), { cache: "no-store" })
       .then((response) => { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); })
       .catch((error) => { console.warn("Classements indisponibles : numéros de classement et de journée masqués.", error); return null; })
+    ,
+    TEST_MODE ? Promise.resolve(null) : fetch(SEASON_GOALS_URL + "?v=" + Date.now(), { cache: "no-store" })
+      .then((response) => { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); })
+      .catch((error) => { console.warn("Statistiques de buts par saison indisponibles.", error); return null; })
   ])
-    .then(([matches, standings]) => {
+    .then(([matches, standings, seasonGoals]) => {
       let matchRecords = TEST_MODE ? matches?.matches : matches;
       if (!Array.isArray(matchRecords)) throw new Error("Format de données inattendu");
       if (TEST_MODE) {
@@ -221,6 +242,7 @@
       }
 
       const standingsIndex = buildStandingsIndex(standings);
+      const seasonGoalsIndex = buildSeasonGoalsIndex(seasonGoals);
       const now = SIMULATED_NOW;
       if (TEST_MODE) {
         const banner = document.createElement("div");
@@ -538,6 +560,39 @@
           else drawH2H(window.Chart);
         });
       };
+      const renderSeasonGoalAnalysis = (body, match) => {
+        body.innerHTML = '<p class="analysis-loading">Chargement des statistiques de buts de la saison…</p>';
+        const competitionSlug = String(match.competition_slug || "");
+        const competition = seasonGoalsIndex.get(competitionSlug);
+        const season = String(match.season || "");
+        if (!competition || !season || competition.season !== season) {
+          body.innerHTML = '<section class="season-goals-empty"><strong>Statistiques indisponibles</strong><p>Aucune donnée validée pour cette compétition et cette saison. Aucune autre compétition ni saison ne sera utilisée en remplacement.</p></section>';
+          return;
+        }
+        const marketLabels = [
+          ["over_0_5", "Over 0.5"],
+          ["over_1_5", "Over 1.5"],
+          ["over_2_5", "Over 2.5"],
+          ["over_3_5", "Over 3.5"],
+          ["under_2_5", "Under 2.5"]
+        ];
+        const renderTeam = (name, teamId) => {
+          const team = competition.teams.get(String(teamId || ""));
+          if (!team || !Number.isInteger(Number(team.played)) || Number(team.played) < 1) {
+            return '<section class="season-goals-team"><h4>'+escapeHtml(name)+'</h4><p>Données insuffisantes pour cette équipe dans la saison sélectionnée.</p></section>';
+          }
+          const rows = marketLabels.map(([key, label]) => {
+            const metric = team.markets?.[key];
+            if (!metric || !Number.isFinite(Number(metric.percentage))) {
+              return '<div class="season-goals-row"><span>'+label+'</span><strong>—</strong><small>Non disponible</small></div>';
+            }
+            return '<div class="season-goals-row"><span>'+label+'</span><strong>'+Number(metric.percentage).toLocaleString("fr-FR",{maximumFractionDigits:2})+' %</strong><small>'+Number(metric.count)+' / '+Number(metric.played)+' matchs</small></div>';
+          }).join("");
+          return '<section class="season-goals-team"><div class="season-goals-team-heading"><h4>'+escapeHtml(name)+'</h4><span>'+Number(team.played)+' matchs</span></div>'+rows+'</section>';
+        };
+        body.innerHTML = '<div class="season-goals-analysis"><div class="season-goals-meta"><strong>'+escapeHtml(competition.name)+'</strong><span>Saison '+escapeHtml(season)+' · '+competition.matchesCounted+' matchs retenus</span></div><div class="season-goals-grid">'+renderTeam(match.home_team,match.home_team_id)+renderTeam(match.away_team,match.away_team_id)+'</div><p class="season-goals-footnote">Fréquences historiques calculées uniquement sur les matchs terminés de la même compétition et de la même saison. Elles ne constituent pas des probabilités prédictives.</p></div>';
+      };
+
       const renderDetailTab = (activeTab) => {
         if (!detailPanel) return;
         detailPanel.querySelectorAll("[data-detail-tab]").forEach((button) => {
@@ -549,6 +604,10 @@
         if (!body) return;
         if (activeTab === "odds" && selectedDetailMatch) {
           renderOdds(body, selectedDetailMatch);
+          return;
+        }
+        if (activeTab === "analysis" && selectedDetailMatch) {
+          renderSeasonGoalAnalysis(body, selectedDetailMatch);
           return;
         }
         if (activeTab === "overview" && selectedDetailMatch) {
