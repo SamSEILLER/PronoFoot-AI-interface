@@ -137,12 +137,26 @@
       time.dateTime = kickoff.toISOString();
     }
 
-    const competitionName = match.competition || "—";
-    const competitionElement = setText(card, "competition", competitionName);
-    if (competitionElement) competitionElement.title = competitionName;
+    const competitionName = match.competition || "";
+    const competitionKey = competitionName.trim().toLowerCase();
+    const competitionCodes = {
+      "premier league":"PL", "championship":"CH", "ligue 1":"L1", "ligue 2":"L2",
+      "la liga":"LL", "laliga":"LL", "serie a":"SA", "bundesliga":"BL",
+      "eredivisie":"ED", "primeira liga":"P", "pro league":"BPL", "belgian pro league":"BPL",
+      "champions league":"C1", "uefa champions league":"C1", "europa league":"EL",
+      "uefa europa league":"EL", "conference league":"C4", "coupe de france":"CDF"
+    };
+    const competitionCode = competitionCodes[competitionKey]
+      || competitionName.trim().split(/\s+/).filter(Boolean).map(word => word[0]).join("").slice(0, 3).toUpperCase()
+      || "—";
+    const competitionElement = setText(card, "competition", competitionName || competitionCode);
+    if (competitionElement) competitionElement.title = competitionName || competitionCode;
     const phase = getEstimatedPhase(match, standingsIndex);
     const roundLabel = phase || match.round || "";
-    const round = setText(card, "round", roundLabel);
+    const roundDisplay = typeof roundLabel === "string"
+      ? roundLabel.replace(/\bJournée\s*(\d+)\b/gi, "J$1")
+      : roundLabel;
+    const round = setText(card, "round", roundDisplay);
     if (round) round.hidden = !phase && !match.round;
 
     setText(card, "home-name", match.home_team);
