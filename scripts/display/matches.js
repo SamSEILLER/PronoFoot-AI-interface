@@ -342,6 +342,7 @@
         .normalize("NFKD").replace(/[\u0300-\u036f]/g, "")
         .toLocaleLowerCase("fr").replace(/[^a-z0-9]+/g, " ").trim();
       let formChartInstance = null;
+      let h2hChartInstance = null;
       const renderFormChart = (rows) => {
         const canvas = document.getElementById("historyFormChart");
         if (!canvas) return;
@@ -466,18 +467,6 @@
           const homePct=total?h2hStats.home/total*100:0;
           const drawPct=total?h2hStats.draw/total*100:0;
           const awayPct=total?h2hStats.away/total*100:0;
-          const donutSegments=[{color:"#159947",value:homePct},{color:"#9aa8b8",value:drawPct},{color:"#dc3545",value:awayPct}].filter(segment=>segment.value>0);
-          const donutGap=donutSegments.length>1?0.8:0;
-          const donutUsable=100-donutGap*donutSegments.length;
-          let donutCursor=0;
-          const donutStops=[];
-          donutSegments.forEach(segment=>{
-            const segmentEnd=donutCursor+(segment.value/100)*donutUsable;
-            donutStops.push(segment.color+" "+donutCursor+"% "+segmentEnd+"%");
-            if(donutGap){donutStops.push("#ffffff "+segmentEnd+"% "+(segmentEnd+donutGap)+"%");}
-            donutCursor=segmentEnd+donutGap;
-          });
-          const donutStyle=total?'background:conic-gradient(from -90deg,'+donutStops.join(",")+')':'background:#e7edf4';
           const h2hRows=h2hMatches.map(item=>{
             const scoreHome=item.score_home??"—",scoreAway=item.score_away??"—";
             const hs=Number(item.score_home),as=Number(item.score_away);
@@ -494,11 +483,28 @@
             '<section class="history-card history-form-card"><div class="history-card-heading"><span class="history-heading-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h17"/><path d="m7 15 4-4 3 2 6-7"/><path d="M16 6h4v4"/></svg></span><div><h3>Forme récente</h3><p>Résultats récents des deux équipes</p></div></div>'+
             '<div class="history-form-teams">'+formRow(match.home_team)+formRow(match.away_team)+'</div><div class="history-form-chart-wrap"><div class="history-form-chart-canvas"><canvas id="historyFormChart" role="img" aria-label="Comparaison des victoires, nuls et défaites"></canvas></div></div></section>'+
             '<section class="history-card history-h2h-card"><div class="history-card-heading"><span class="history-heading-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="7" cy="7" r="3"/><circle cx="17" cy="7" r="3"/><path d="M2.5 19c.5-3 2-4.5 4.5-4.5s4 1.5 4.5 4.5M12.5 19c.5-3 2-4.5 4.5-4.5s4 1.5 4.5 4.5"/><path d="M10 10h4"/></svg></span><div><h3>Confrontations directes (H2H)</h3><p>Toutes compétitions · archives disponibles</p></div></div>'+
-            (total?'<div class="history-h2h-layout"><div class="history-h2h-summary"><div class="history-donut" style="'+donutStyle+'"><div><strong>'+total+'</strong><small>matchs</small></div></div>'+
+            (total?'<div class="history-h2h-layout"><div class="history-h2h-summary"><div class="history-h2h-chart"><canvas id="historyH2HChart" role="img" aria-label="Répartition des victoires, nuls et défaites en confrontations directes"></canvas><div class="history-h2h-chart-center"><strong>'+total+'</strong><small>matchs</small></div></div>'+
               '<div class="history-h2h-legend"><span><i class="home"></i><span><b>'+h2hStats.home+' Victoires</b><small>('+Math.round(homePct)+' %)</small></span></span><span><i class="draw"></i><span><b>'+h2hStats.draw+' Nul'+(h2hStats.draw>1?'s':'')+'</b><small>('+Math.round(drawPct)+' %)</small></span></span><span><i class="away"></i><span><b>'+h2hStats.away+' Défaite'+(h2hStats.away>1?'s':'')+'</b><small>('+Math.round(awayPct)+' %)</small></span></span></div></div>'+
               '<div class="history-h2h-list">'+h2hRows+'</div></div>':'<p class="history-empty">Aucune confrontation directe terminée trouvée dans les archives disponibles.</p>')+
             '</section></div><p class="history-data-meta">'+freshness+' · Historique issu des matchs PitchAPI archivés.</p>';
           renderFormChart(formChartStats);
+          const h2hCanvas=document.getElementById("historyH2HChart");
+          const drawH2H=(ChartConstructor)=>{
+            if(!h2hCanvas||!h2hCanvas.isConnected||!ChartConstructor)return;
+            if(h2hChartInstance)h2hChartInstance.destroy();
+            h2hChartInstance=new ChartConstructor(h2hCanvas,{
+              type:"doughnut",
+              data:{labels:[match.home_team+" · Victoires","Nuls",match.away_team+" · Victoires"],datasets:[{
+                data:[h2hStats.home,h2hStats.draw,h2hStats.away],
+                backgroundColor:["#159947","#9aa8b8","#dc3545"],
+                borderColor:"#ffffff",borderWidth:3,spacing:2,hoverOffset:3
+              }]},
+              options:{responsive:true,maintainAspectRatio:false,cutout:"68%",rotation:-90,animation:false,
+                plugins:{legend:{display:false},tooltip:{callbacks:{label:(context)=>" "+context.label+" : "+context.raw+" ("+(total?Math.round(context.raw/total*100):0)+" %)"}}}}
+            });
+          };
+          if(window.chartJsReady&&typeof window.chartJsReady.then==="function")window.chartJsReady.then(drawH2H);
+          else drawH2H(window.Chart);
         });
       };
       const renderDetailTab = (activeTab) => {
