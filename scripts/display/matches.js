@@ -137,18 +137,12 @@
       time.dateTime = kickoff.toISOString();
     }
 
-    const competitionName = match.competition || "";
-    const competitionCode = getCompetitionDisplayCode(match.competition_slug, competitionName)
-      || competitionName.trim().split(/\s+/).filter(Boolean).map(word => word[0]).join("").slice(0, 3).toUpperCase()
-      || "—";
-    const competitionElement = setText(card, "competition", competitionCode);
-    if (competitionElement) competitionElement.title = competitionName || competitionCode;
+    const competitionName = match.competition || "—";
+    const competitionElement = setText(card, "competition", competitionName);
+    if (competitionElement) competitionElement.title = competitionName;
     const phase = getEstimatedPhase(match, standingsIndex);
     const roundLabel = phase || match.round || "";
-    const roundDisplay = typeof roundLabel === "string"
-      ? roundLabel.replace(/\bJournée\s*(\d+)\b/gi, "J$1")
-      : roundLabel;
-    const round = setText(card, "round", roundDisplay);
+    const round = setText(card, "round", roundLabel);
     if (round) round.hidden = !phase && !match.round;
 
     setText(card, "home-name", match.home_team);
