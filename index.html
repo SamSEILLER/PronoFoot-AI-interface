@@ -1415,7 +1415,7 @@ input.search,
   flex-direction:row!important;
   align-items:center!important;
   justify-content:center!important;
-  gap:3px!important;
+  gap:4px!important;
   width:100%;
   min-width:0!important;
 }
@@ -1429,7 +1429,7 @@ input.search,
   border-radius:0!important;
   background:transparent!important;
   color:#294766!important;
-  font-size:11px!important;
+  font-size:12.5px!important;
   font-weight:750!important;
   line-height:1.2!important;
   text-align:left!important;
@@ -1449,7 +1449,7 @@ input.search,
   border-radius:4px!important;
   background:#eaf1f8!important;
   color:#426486!important;
-  font-size:10px!important;
+  font-size:11px!important;
   font-weight:750!important;
   line-height:1!important;
   white-space:nowrap;
@@ -1457,7 +1457,7 @@ input.search,
 .match-competition-compact .competition-copy small[hidden]{display:none!important}
 @media(max-width:700px){
   .match-competition-compact{padding:3px 2px!important}
-  .match-competition-compact .competition-copy{gap:3px!important;flex-wrap:wrap!important}
+  .match-competition-compact .competition-copy{gap:4px!important;flex-wrap:wrap!important}
   .match-competition-compact .competition-copy strong{font-size:10px!important}
   .match-competition-compact .competition-copy small{font-size:9px!important;min-width:24px;padding:3px 5px!important}
 }
@@ -2034,7 +2034,7 @@ input.search,
 .history-form-results{display:flex;flex-wrap:wrap;gap:3px;align-items:center;min-height:55px}
 .history-form-item{position:relative;display:inline-flex;flex-direction:column;align-items:center;gap:3px;min-width:28px}
 .history-form-chip{position:relative;display:inline-flex;width:30px;height:30px;align-items:center;justify-content:center;border:2px solid transparent;border-radius:7px;color:#fff;font-size:13px;font-weight:850;line-height:30px;cursor:help;outline-offset:3px}
-.history-form-chip.is-win{background:#16A34A;color:#fff}.history-form-chip.is-draw{background:#EAB308;color:#263238}.history-form-chip.is-loss{background:#DC2626;color:#fff}.history-form-chip.is-unknown{background:#8a98a8;color:#fff}
+.history-form-chip.is-win{background:#16A34A;color:#fff}.history-form-chip.is-draw{background:#9aa8b8;color:#fff}.history-form-chip.is-loss{background:#DC2626;color:#fff}.history-form-chip.is-unknown{background:#8a98a8;color:#fff}
 .history-form-comp-badge{max-width:38px;overflow:hidden;color:#54718f;font-size:8px;font-weight:800;line-height:1;text-overflow:ellipsis;white-space:nowrap}
 .history-form-chip.is-other-competition{border-color:transparent!important;outline:none;box-shadow:none;transform:none}
 .history-form-item:has(.history-form-chip.is-other-competition){gap:3px}
@@ -2062,8 +2062,8 @@ input.search,
 .history-h2h-chart-center strong{font-size:22px;line-height:20px;font-weight:900}
 .history-h2h-chart-center small{margin-top:0px;color:#555555;font-size:11px;font-weight:bold}
 .history-h2h-legend{display:flex;flex-direction:row;flex-wrap:nowrap;align-items:stretch;justify-content:space-between;gap:8px;width:100%;font-size:14px;color:#506783}
-.history-h2h-legend>span{display:flex;align-items:center;justify-content:center;gap:10px;min-width:0;flex:1;padding:9px 10px;border:1px solid #e0e8f1;border-left:1px solid #aaaaaa;border-radius:0px;background:#f7f9fc}
-.history-h2h-legend>span:last-child{border-right:1px solid #e0e8f1}
+.history-h2h-legend>span{display:flex;align-items:center;justify-content:center;gap:10px;min-width:0;flex:1;padding:9px 10px;border:none;border-radius:0px;background:#f7f9fc}
+.history-h2h-legend>span:last-child{border-right:none}
 .history-h2h-legend>span>span{display:flex;flex-direction:column;align-items:flex-start;gap:2px}
 .history-h2h-legend i{width:16px;height:16px;flex:0 0 16px;border-radius:5px}
 .history-h2h-legend i.home{background:#159947}.history-h2h-legend i.draw{background:#9aa8b8}.history-h2h-legend i.away{background:#dc3545}
@@ -2232,6 +2232,12 @@ input.search,
   white-space:nowrap;
 }
 
+
+/* Ajustements typographiques cadre 1 et cadre 2 */
+.match-detail-top,.match-detail-date,.match-detail-xg{font-size:12.5px!important}
+.match-detail-phase{font-size:11px!important}
+.history-h2h-legend>span{border:none!important}
+.history-h2h-legend>span:last-child{border-right:none!important}
 </style>
 </head>
 <body>
