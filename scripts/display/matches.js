@@ -578,7 +578,7 @@
         detailPanel.innerHTML = `
           <div class="match-detail-content">
             <div class="match-detail-top">
-              <div class="match-detail-competition">${countryFlagHtml(countryFlag, "competition-country-flag")}<span title="${escape(competition)}">${escape(competition)}</span>${phase ? "<span>· "+escape(phase)+"</span>":""}</div>
+              <div class="match-detail-competition">${countryFlagHtml(countryFlag, "competition-country-flag")}<span title="${escape(competition)}">${escape(competition)}</span>${phase ? '<span class="match-detail-phase">'+escape(phase.replace(/\\bJournée\\s*(\\d+)\\b/i,"J$1"))+'</span>':""}</div>
               <div class="match-detail-date"><span>${escape(dateLabel)}</span><span class="match-detail-clock" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 7v5l3.5 2"></path></svg></span></div>
             </div>
             <div class="match-detail-teams">
