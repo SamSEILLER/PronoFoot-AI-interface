@@ -148,6 +148,10 @@
     }
 
     const competitionName = match.competition || "";
+    const competitionDisplayName = ({
+      "uefa-champions-league":"Ligue des champions",
+      "uefa-europa-league":"Ligue Europa"
+    })[String(match.competition_slug || "").trim().toLowerCase()] || competitionName;
     const competitionKey = competitionName.trim().toLowerCase();
     const competitionCodes = {
       "premier league":"PL", "championship":"CH", "ligue 1":"L1", "ligue 2":"L2",
@@ -159,7 +163,7 @@
     const competitionCode = competitionCodes[competitionKey]
       || competitionName.trim().split(/\s+/).filter(Boolean).map(word => word[0]).join("").slice(0, 3).toUpperCase()
       || "—";
-    const competitionElement = setText(card, "competition", competitionName || competitionCode);
+    const competitionElement = setText(card, "competition", competitionDisplayName || competitionCode);
     if (competitionElement) competitionElement.title = competitionName || competitionCode;
     const phase = getEstimatedPhase(match, standingsIndex);
     const roundLabel = phase || match.round || "";
