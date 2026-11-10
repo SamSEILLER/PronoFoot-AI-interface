@@ -2347,6 +2347,18 @@ p.history-data-meta{margin:8px 2px 0!important;color:#555555!important;font-weig
 .season-goals-average+.season-goals-average{border-left:1px solid #dce6f1}
 .season-goals-average strong{color:#173f68;font-size:20px;font-weight:850;line-height:1.1;font-variant-numeric:tabular-nums}
 .season-goals-average span{color:#607995;font-size:10px;font-weight:650;line-height:1.25}
+.season-goals-distribution-heading{padding:10px 12px 3px;color:#173f68;font-size:11px;font-weight:800}
+.season-goals-distribution{display:grid;grid-template-columns:112px minmax(0,1fr);align-items:center;gap:9px;padding:8px 10px 12px;border-bottom:1px solid #edf1f6}
+.season-goals-distribution-chart{position:relative;width:108px;height:108px;min-width:0}
+.season-goals-distribution-chart canvas{display:block;width:100%!important;height:100%!important}
+.season-goals-distribution-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none;color:#173f68}
+.season-goals-distribution-center strong{font-size:19px;font-weight:850;line-height:1.1}
+.season-goals-distribution-center span{font-size:9px;color:#607995}
+.season-goals-distribution-legend{display:flex;flex-direction:column;gap:7px;min-width:0}
+.season-goals-distribution-item{display:grid;grid-template-columns:9px minmax(0,1fr) auto;align-items:center;gap:6px;color:#425b75;font-size:10px;line-height:1.2}
+.season-goals-distribution-item i{width:9px;height:9px;border-radius:2px}
+.season-goals-distribution-item strong{color:#173f68;font-size:10px;font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap}
+.season-goals-distribution-empty{margin:0;padding:10px 12px;color:#71839a;font-size:10px;line-height:1.4;border-bottom:1px solid #edf1f6}
 .season-goals-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 8px;align-items:center;padding:8px 12px;border-bottom:1px solid #edf1f6}
 .season-goals-row:last-child{border-bottom:0}
 .season-goals-row>span{color:#425b75;font-size:12px;font-weight:650}
@@ -2355,7 +2367,7 @@ p.history-data-meta{margin:8px 2px 0!important;color:#555555!important;font-weig
 .season-goals-footnote,.season-goals-empty p{margin:0;color:#71839a;font-size:11px;line-height:1.5}
 .season-goals-empty{padding:16px;border:1px solid #e5ebf2;border-radius:6px;background:#f8fafc}
 .season-goals-empty strong{display:block;margin-bottom:5px;color:#173f68;font-size:13px}
-@media(max-width:650px){.season-goals-grid{grid-template-columns:1fr;gap:9px}.season-goals-team{padding:0}.season-goals-average{padding:10px 5px}.season-goals-meta{align-items:flex-start;flex-direction:column;gap:4px}}
+@media(max-width:650px){.season-goals-grid{grid-template-columns:1fr;gap:9px}.season-goals-team{padding:0}.season-goals-average{padding:10px 5px}.season-goals-distribution{grid-template-columns:104px minmax(0,1fr);gap:8px}.season-goals-distribution-chart{width:100px;height:100px}.season-goals-distribution-item{font-size:10px}.season-goals-meta{align-items:flex-start;flex-direction:column;gap:4px}}
 
 </style>
 </head>
@@ -2432,6 +2444,6 @@ p.history-data-meta{margin:8px 2px 0!important;color:#555555!important;font-weig
 
 <script src="./scripts/display/sidebar.js" defer></script>
 <script src="./assets/chartjs-loader.js" defer></script>
-<script src="./scripts/display/matches.js?v=20261110-analysis-averages1" defer></script>
+<script src="./scripts/display/matches.js?v=20261110-analysis-goal-donuts1" defer></script>
 </body>
 </html>
