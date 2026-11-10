@@ -13,19 +13,6 @@ Modules JavaScript du site public. Ils consomment les données préparées par l
 
 Les contrats de données seront définis à partir des JSON réellement produits par le moteur avant toute implémentation fonctionnelle.
 
-## Mode test — lecture seule
-
-Le paramètre `?mode=test` active un parcours de démonstration strictement consultatif.
-
-- Les matchs proviennent de `data/matches_test.json`.
-- Les statistiques de buts saisonnières sont lues depuis `data/season-goals.json`, comme en production, afin de tester leur affichage dans l'onglet Analyse.
-- Les classements et historiques utilisent leurs fichiers de démonstration dédiés.
-- Les cotes restent désactivées.
-- Le mode test ne doit effectuer aucune écriture, modification ou suppression dans les données historiques, les résultats passés ou les fichiers du moteur.
-- Les décalages de date appliqués aux matchs de démonstration sont uniquement calculés en mémoire pour leur affichage ; ils ne sont jamais enregistrés dans les fichiers sources.
-
-Toute évolution du mode test doit préserver cette règle de lecture seule.
-
 ## Analyse — en-têtes des statistiques de buts
 
 - Les en-têtes des cartes des deux équipes reprennent le fond bleu foncé, la typographie blanche et le contraste des en-têtes de l'onglet « Vue d'ensemble ».
@@ -48,4 +35,3 @@ Toute évolution du mode test doit préserver cette règle de lecture seule.
 - Les compteurs doivent être entiers, cohérents, monotones et partager le même dénominateur que les matchs joués. Sinon, le graphique est déclaré indisponible.
 - Les nombres affichés dans la légende sont des comptes de matchs, pas des probabilités prédictives.
 - Les données restent strictement limitées à la compétition et à la saison du match sélectionné.
-- Le mode test reste en lecture seule ; aucun fichier historique ou résultat n'est modifié.
