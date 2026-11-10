@@ -32,3 +32,11 @@ Toute évolution du mode test doit préserver cette règle de lecture seule.
 - Le compteur d'équipe est libellé « matchs joués » afin de le distinguer du nombre total de matchs de la compétition.
 - Les dénominateurs des marchés restent affichés sous la forme « nombre de matchs concernés / matchs joués ».
 - Aucun JSON historique ni résultat n'est modifié par cette présentation.
+
+## Moyennes de buts par équipe
+
+- Dans chaque carte équipe de l'onglet « Analyse & IA », deux indicateurs affichent les buts marqués par match et les buts encaissés par match.
+- Les moyennes sont calculées à la volée à partir de `goals_for`, `goals_against` et `played` du fichier `data/season-goals.json`.
+- Le périmètre reste strictement celui de la compétition et de la saison du match sélectionné.
+- Si un total de buts est absent ou non numérique, la moyenne correspondante est affichée comme indisponible ; aucune valeur n'est remplacée par zéro.
+- Cette évolution est uniquement de présentation et ne modifie aucun résultat historique ni fichier de données.
