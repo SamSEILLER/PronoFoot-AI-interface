@@ -338,7 +338,7 @@
       ];
       let selectedDetailMatch = null;
       let oddsEvents = null;
-      const oddsDataPromise = fetch("./data/odds_latest.json?v=" + Date.now(), { cache:"no-store" }
+      const oddsDataPromise = fetch("./data/odds_latest.json?v=" + Date.now(), { cache:"no-store" })
         .then(response => { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); })
         .then(payload => { oddsEvents = Array.isArray(payload?.events) ? payload.events : []; return oddsEvents; })
         .catch(error => { console.warn("Cotes OddsAPI indisponibles :", error); oddsEvents = []; return oddsEvents; }));
