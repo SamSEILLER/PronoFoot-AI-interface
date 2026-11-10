@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "generated_at_utc": "2026-11-10T13:18:16.397038Z",
+  "provider": "pitchapi_processed_history",
+  "scope": "same_competition_same_season_strictly_prior_matches",
+  "model": "venue_attack_defence_poisson_baseline_v1",
+  "matches": {},
+  "quality": {
+    "history_matches_loaded": 1780,
+    "fixtures_loaded": 0,
+    "fixtures_with_predictions": 0,
+    "fixtures_without_features": 0,
+    "feature_builder": {
+      "matches_with_features": 1780,
+      "matches_skipped": 0,
+      "competition_seasons": 12,
+      "same_kickoff_batching": true
+    },
+    "source_files_missing": [],
+    "source_files_invalid": []
+  }
+}
