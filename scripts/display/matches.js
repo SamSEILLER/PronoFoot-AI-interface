@@ -275,7 +275,8 @@
       const dateFilterRanges = {
         "today-tomorrow": [0, 1],
         "days-2-3": [2, 3],
-        "days-4-6": [4, 6]
+        "days-4-6": [4, 6],
+        "days-7-13": [7, 13]
       };
 
       const parisDateKey = (timestamp) => {
