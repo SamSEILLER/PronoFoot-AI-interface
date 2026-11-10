@@ -571,11 +571,12 @@
           return;
         }
         const marketLabels = [
-          ["over_0_5", "Over 0.5"],
-          ["over_1_5", "Over 1.5"],
-          ["over_2_5", "Over 2.5"],
-          ["over_3_5", "Over 3.5"],
-          ["under_2_5", "Under 2.5"]
+          ["over_0_5", "Over 0.5 — Buts du match"],
+          ["over_1_5", "Over 1.5 — Buts du match"],
+          ["over_2_5", "Over 2.5 — Buts du match"],
+          ["over_3_5", "Over 3.5 — Buts du match"],
+          ["under_2_5", "Under 2.5 — Buts du match"],
+          ["under_3_5", "Under 3.5 — Buts du match"]
         ];
         const renderTeam = (name, teamId, side) => {
           const team = competition.teams.get(String(teamId || ""));
@@ -591,8 +592,8 @@
             + '<div class="season-goals-average"><strong>'+formatAverage(team.goals_against)+'</strong><span>Buts encaissés / match</span></div>'
             + '</div>';
           const teamScoringStats = [
-            ["scored_0_count", "Matchs sans but marqué"],
-            ["scored_2plus_count", "Matchs avec 2 buts ou +"]
+            ["scored_0_count", name + " : matchs sans but marqué"],
+            ["scored_2plus_count", name + " : matchs avec 2 buts ou plus"]
           ].map(([key, label]) => {
             const count = team[key];
             const valid = Number.isInteger(count) && count >= 0 && count <= played;
@@ -625,8 +626,28 @@
               ).join("")+'</div></div>'
             : '<p class="season-goals-distribution-empty">Répartition indisponible : compteurs historiques incomplets ou incohérents.</p>';
           const rows = marketLabels.map(([key, label]) => {
-            const metric = team.markets?.[key];
-            if (!metric || !Number.isFinite(Number(metric.percentage))) {
+            let metric = team.markets?.[key];
+            if (key === "under_3_5") {
+              const over35 = team.markets?.over_3_5;
+              const overCount = Number(over35?.count);
+              const overPlayed = Number(over35?.played);
+              metric = over35
+                && Number.isInteger(overCount)
+                && overCount >= 0
+                && overCount <= played
+                && overPlayed === played
+                ? {
+                    count: played - overCount,
+                    played,
+                    percentage: (played - overCount) * 100 / played
+                  }
+                : null;
+            }
+            if (!metric || Number(metric.played) !== played
+              || !Number.isInteger(Number(metric.count))
+              || Number(metric.count) < 0
+              || Number(metric.count) > played
+              || !Number.isFinite(Number(metric.percentage))) {
               return '<div class="season-goals-row"><span>'+label+'</span><strong>—</strong><small>Non disponible</small></div>';
             }
             return '<div class="season-goals-row"><span>'+label+'</span><strong>'+Number(metric.percentage).toLocaleString("fr-FR",{maximumFractionDigits:2})+' %</strong><small>'+Number(metric.count)+' / '+Number(metric.played)+' matchs</small></div>';
