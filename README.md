@@ -29,6 +29,7 @@ Le front-end lit le fichier `data/site-status.json`. Celui-ci est publié depuis
 - `classements.html` — page des classements.
 - `assets/` — logos et icônes de navigation.
 - `data/site-status.json` — dernier état publié des sources de données.
+- `data/goal-predictions.json` — estimations pré-match des buts attendus (λ domicile/extérieur), lorsqu'elles sont disponibles.
 
 ## Mise à jour
 
