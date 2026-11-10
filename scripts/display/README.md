@@ -12,3 +12,16 @@ Modules JavaScript du site public. Ils consomment les données préparées par l
 - `display-utils.js` : helpers DOM et formatage partagés.
 
 Les contrats de données seront définis à partir des JSON réellement produits par le moteur avant toute implémentation fonctionnelle.
+
+## Mode test — lecture seule
+
+Le paramètre `?mode=test` active un parcours de démonstration strictement consultatif.
+
+- Les matchs proviennent de `data/matches_test.json`.
+- Les statistiques de buts saisonnières sont lues depuis `data/season-goals.json`, comme en production, afin de tester leur affichage dans l'onglet Analyse.
+- Les classements et historiques utilisent leurs fichiers de démonstration dédiés.
+- Les cotes restent désactivées.
+- Le mode test ne doit effectuer aucune écriture, modification ou suppression dans les données historiques, les résultats passés ou les fichiers du moteur.
+- Les décalages de date appliqués aux matchs de démonstration sont uniquement calculés en mémoire pour leur affichage ; ils ne sont jamais enregistrés dans les fichiers sources.
+
+Toute évolution du mode test doit préserver cette règle de lecture seule.
