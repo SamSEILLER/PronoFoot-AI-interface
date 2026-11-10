@@ -591,6 +591,19 @@
             + '<div class="season-goals-average"><strong>'+formatAverage(team.goals_for)+'</strong><span>Buts marqués / match</span></div>'
             + '<div class="season-goals-average"><strong>'+formatAverage(team.goals_against)+'</strong><span>Buts encaissés / match</span></div>'
             + '</div>';
+          const venue = side === "home" ? "home" : "away";
+          const venueLabel = side === "home" ? "À domicile" : "À l'extérieur";
+          const venuePlayed = Number(team[venue + "_played"]);
+          const venueStatsValid = Number.isInteger(venuePlayed) && venuePlayed > 0
+            && Number.isFinite(Number(team[venue + "_goals_for"]))
+            && Number.isFinite(Number(team[venue + "_goals_against"]));
+          const venueStats = venueStatsValid
+            ? '<div class="season-goals-venue"><div class="season-goals-venue-heading">'+venueLabel+' · '+venuePlayed+' matchs</div>'
+              + '<div class="season-goals-averages">'
+              + '<div class="season-goals-average"><strong>'+(Number(team[venue + "_goals_for"]) / venuePlayed).toLocaleString("fr-FR",{minimumFractionDigits:2,maximumFractionDigits:2})+'</strong><span>Buts marqués / match</span></div>'
+              + '<div class="season-goals-average"><strong>'+(Number(team[venue + "_goals_against"]) / venuePlayed).toLocaleString("fr-FR",{minimumFractionDigits:2,maximumFractionDigits:2})+'</strong><span>Buts encaissés / match</span></div>'
+              + '</div></div>'
+            : '<div class="season-goals-venue"><div class="season-goals-venue-heading">'+venueLabel+'</div><p class="season-goals-team-empty">Échantillon insuffisant : aucune moyenne exploitable sur ce lieu.</p></div>';
           const teamScoringStats = [
             ["scored_0_count", name + " : matchs sans but marqué"],
             ["scored_2plus_count", name + " : matchs avec 2 buts ou plus"]
@@ -652,7 +665,7 @@
             }
             return '<div class="season-goals-row"><span>'+label+'</span><strong>'+Number(metric.percentage).toLocaleString("fr-FR",{maximumFractionDigits:2})+' %</strong><small>'+Number(metric.count)+' / '+Number(metric.played)+' matchs</small></div>';
           }).join("");
-          return '<section class="season-goals-team"><div class="season-goals-team-heading"><h4>'+escapeHtml(name)+'</h4><span>'+Number(team.played)+' matchs joués</span></div>'+averageStats+'<div class="season-goals-distribution-heading">Répartition des buts totaux par match</div>'+distributionHtml+teamScoringStats+rows+'</section>';
+          return '<section class="season-goals-team"><div class="season-goals-team-heading"><h4>'+escapeHtml(name)+'</h4><span>'+Number(team.played)+' matchs joués</span></div>'+averageStats+venueStats+'<div class="season-goals-distribution-heading">Répartition des buts totaux par match</div>'+distributionHtml+teamScoringStats+rows+'</section>';
         };
         body.innerHTML = '<div class="season-goals-analysis"><div class="season-goals-meta"><strong>'+escapeHtml(competition.name)+'</strong><span>Saison '+escapeHtml(season)+' · '+competition.matchesCounted+' matchs retenus</span></div><div class="season-goals-grid">'+renderTeam(match.home_team,match.home_team_id,'home')+renderTeam(match.away_team,match.away_team_id,'away')+'</div><p class="season-goals-footnote">Répartition fondée sur le nombre total de buts inscrits par les deux équipes dans chaque rencontre. Fréquences calculées uniquement sur les matchs terminés de la même compétition et de la même saison ; elles ne constituent pas des probabilités prédictives.</p></div>';
         const drawSeasonGoalCharts = (ChartConstructor) => {
