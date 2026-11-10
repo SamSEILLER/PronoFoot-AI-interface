@@ -580,7 +580,7 @@
         const renderTeam = (name, teamId) => {
           const team = competition.teams.get(String(teamId || ""));
           if (!team || !Number.isInteger(Number(team.played)) || Number(team.played) < 1) {
-            return '<section class="season-goals-team"><h4>'+escapeHtml(name)+'</h4><p>Données insuffisantes pour cette équipe dans la saison sélectionnée.</p></section>';
+            return '<section class="season-goals-team"><div class="season-goals-team-heading"><h4>'+escapeHtml(name)+'</h4><span>Données insuffisantes</span></div><p class="season-goals-team-empty">Données insuffisantes pour cette équipe dans la saison sélectionnée.</p></section>';
           }
           const rows = marketLabels.map(([key, label]) => {
             const metric = team.markets?.[key];
@@ -589,7 +589,7 @@
             }
             return '<div class="season-goals-row"><span>'+label+'</span><strong>'+Number(metric.percentage).toLocaleString("fr-FR",{maximumFractionDigits:2})+' %</strong><small>'+Number(metric.count)+' / '+Number(metric.played)+' matchs</small></div>';
           }).join("");
-          return '<section class="season-goals-team"><div class="season-goals-team-heading"><h4>'+escapeHtml(name)+'</h4><span>'+Number(team.played)+' matchs</span></div>'+rows+'</section>';
+          return '<section class="season-goals-team"><div class="season-goals-team-heading"><h4>'+escapeHtml(name)+'</h4><span>'+Number(team.played)+' matchs joués</span></div>'+rows+'</section>';
         };
         body.innerHTML = '<div class="season-goals-analysis"><div class="season-goals-meta"><strong>'+escapeHtml(competition.name)+'</strong><span>Saison '+escapeHtml(season)+' · '+competition.matchesCounted+' matchs retenus</span></div><div class="season-goals-grid">'+renderTeam(match.home_team,match.home_team_id)+renderTeam(match.away_team,match.away_team_id)+'</div><p class="season-goals-footnote">Fréquences historiques calculées uniquement sur les matchs terminés de la même compétition et de la même saison. Elles ne constituent pas des probabilités prédictives.</p></div>';
       };
