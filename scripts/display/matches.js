@@ -312,7 +312,9 @@
           if (title) {
             const firstDay = weekdayFormatter.format(firstDate);
             const lastDay = weekdayFormatter.format(lastDate);
-            title.textContent = key === "days-4-6"
+            title.textContent = key === "days-7-13"
+              ? "+1 semaine"
+              : key === "days-4-6"
               ? Array.from({ length: endOffset - startOffset + 1 }, (_, index) => {
                   const dayKey = shiftDateKey(today, startOffset + index);
                   const dayDate = new Date(dayKey + "T12:00:00Z");
