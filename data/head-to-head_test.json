@@ -1,7 +1,7 @@
 {
   "provider": "pitchapi_processed_history",
-  "generated_at_utc": "2026-11-09T03:43:59.327635+00:00",
-  "matches_considered": 9257,
+  "generated_at_utc": "2026-11-10T05:17:59.604461+00:00",
+  "matches_considered": 9266,
   "pairs": {
     "los angeles fc|seattle sounders fc": {
       "team_a": "Los Angeles FC",
@@ -1527,48 +1527,6 @@
         }
       ]
     },
-    "everton|newcastle united": {
-      "team_a": "Everton",
-      "team_b": "Newcastle United",
-      "matches": [
-        {
-          "date": "2026-02-28T15:00:00Z",
-          "home": "Newcastle United",
-          "away": "Everton",
-          "score_home": 2,
-          "score_away": 3,
-          "competition_id": "gb-premier-league",
-          "competition_name": "Premier League"
-        },
-        {
-          "date": "2025-11-29T17:30:00Z",
-          "home": "Everton",
-          "away": "Newcastle United",
-          "score_home": 1,
-          "score_away": 4,
-          "competition_id": "gb-premier-league",
-          "competition_name": "Premier League"
-        },
-        {
-          "date": "2025-05-25T15:00:00Z",
-          "home": "Newcastle United",
-          "away": "Everton",
-          "score_home": 0,
-          "score_away": 1,
-          "competition_id": "gb-premier-league",
-          "competition_name": "Premier League"
-        },
-        {
-          "date": "2024-10-05T16:30:00Z",
-          "home": "Everton",
-          "away": "Newcastle United",
-          "score_home": 0,
-          "score_away": 0,
-          "competition_id": "gb-premier-league",
-          "competition_name": "Premier League"
-        }
-      ]
-    },
     "aston villa|manchester united": {
       "team_a": "Aston Villa",
       "team_b": "Manchester United",
@@ -2151,48 +2109,6 @@
         }
       ]
     },
-    "atalanta|parma": {
-      "team_a": "Atalanta",
-      "team_b": "Parma",
-      "matches": [
-        {
-          "date": "2026-01-25T14:00:00Z",
-          "home": "Atalanta",
-          "away": "Parma",
-          "score_home": 4,
-          "score_away": 0,
-          "competition_id": "it-serie-a",
-          "competition_name": "Serie A"
-        },
-        {
-          "date": "2025-08-30T16:30:00Z",
-          "home": "Parma",
-          "away": "Atalanta",
-          "score_home": 1,
-          "score_away": 1,
-          "competition_id": "it-serie-a",
-          "competition_name": "Serie A"
-        },
-        {
-          "date": "2025-05-25T18:45:00Z",
-          "home": "Atalanta",
-          "away": "Parma",
-          "score_home": 2,
-          "score_away": 3,
-          "competition_id": "it-serie-a",
-          "competition_name": "Serie A"
-        },
-        {
-          "date": "2024-11-23T19:45:00Z",
-          "home": "Parma",
-          "away": "Atalanta",
-          "score_home": 1,
-          "score_away": 3,
-          "competition_id": "it-serie-a",
-          "competition_name": "Serie A"
-        }
-      ]
-    },
     "lille|rennes": {
       "team_a": "Lille",
       "team_b": "Rennes",
@@ -2274,48 +2190,6 @@
           "score_away": 2,
           "competition_id": "de-bundesliga",
           "competition_name": "Bundesliga"
-        }
-      ]
-    },
-    "gil vicente|vitoria de guimaraes": {
-      "team_a": "Gil Vicente",
-      "team_b": "Vitória de Guimarães",
-      "matches": [
-        {
-          "date": "2026-04-18T19:30:00Z",
-          "home": "Gil Vicente",
-          "away": "Vitória de Guimarães",
-          "score_home": 0,
-          "score_away": 1,
-          "competition_id": "pt-primeira-liga",
-          "competition_name": "Primeira Liga"
-        },
-        {
-          "date": "2025-12-08T20:30:00Z",
-          "home": "Vitória de Guimarães",
-          "away": "Gil Vicente",
-          "score_home": 0,
-          "score_away": 0,
-          "competition_id": "pt-primeira-liga",
-          "competition_name": "Primeira Liga"
-        },
-        {
-          "date": "2025-04-11T19:15:00Z",
-          "home": "Gil Vicente",
-          "away": "Vitória de Guimarães",
-          "score_home": 0,
-          "score_away": 1,
-          "competition_id": "pt-primeira-liga",
-          "competition_name": "Primeira Liga"
-        },
-        {
-          "date": "2024-12-02T18:45:00Z",
-          "home": "Vitória de Guimarães",
-          "away": "Gil Vicente",
-          "score_home": 4,
-          "score_away": 0,
-          "competition_id": "pt-primeira-liga",
-          "competition_name": "Primeira Liga"
         }
       ]
     },
@@ -3108,54 +2982,6 @@
         }
       ]
     },
-    "alverca|benfica": {
-      "team_a": "Alverca",
-      "team_b": "Benfica",
-      "matches": [
-        {
-          "date": "2026-02-08T20:30:00Z",
-          "home": "Benfica",
-          "away": "Alverca",
-          "score_home": 2,
-          "score_away": 1,
-          "competition_id": "pt-primeira-liga",
-          "competition_name": "Primeira Liga"
-        },
-        {
-          "date": "2025-08-31T17:00:00Z",
-          "home": "Alverca",
-          "away": "Benfica",
-          "score_home": 1,
-          "score_away": 2,
-          "competition_id": "pt-primeira-liga",
-          "competition_name": "Primeira Liga"
-        }
-      ]
-    },
-    "nancy|red star": {
-      "team_a": "Nancy",
-      "team_b": "Red Star",
-      "matches": [
-        {
-          "date": "2026-02-13T19:00:00Z",
-          "home": "Red Star",
-          "away": "Nancy",
-          "score_home": 2,
-          "score_away": 1,
-          "competition_id": "fr-ligue-2",
-          "competition_name": "Ligue 2"
-        },
-        {
-          "date": "2025-09-19T18:00:00Z",
-          "home": "Nancy",
-          "away": "Red Star",
-          "score_home": 0,
-          "score_away": 1,
-          "competition_id": "fr-ligue-2",
-          "competition_name": "Ligue 2"
-        }
-      ]
-    },
     "clermont foot|rodez": {
       "team_a": "Clermont Foot",
       "team_b": "Rodez",
@@ -3273,30 +3099,6 @@
           "score_away": 4,
           "competition_id": "fr-ligue-2",
           "competition_name": "Ligue 2"
-        }
-      ]
-    },
-    "brest|lorient": {
-      "team_a": "Brest",
-      "team_b": "Lorient",
-      "matches": [
-        {
-          "date": "2026-02-07T18:00:00Z",
-          "home": "Brest",
-          "away": "Lorient",
-          "score_home": 2,
-          "score_away": 0,
-          "competition_id": "fr-ligue-1",
-          "competition_name": "Ligue 1"
-        },
-        {
-          "date": "2025-10-19T15:15:00Z",
-          "home": "Lorient",
-          "away": "Brest",
-          "score_home": 3,
-          "score_away": 3,
-          "competition_id": "fr-ligue-1",
-          "competition_name": "Ligue 1"
         }
       ]
     },
@@ -3498,30 +3300,6 @@
           "score_away": 1,
           "competition_id": "fr-ligue-1",
           "competition_name": "Ligue 1"
-        }
-      ]
-    },
-    "fiorentina|sassuolo": {
-      "team_a": "Fiorentina",
-      "team_b": "Sassuolo",
-      "matches": [
-        {
-          "date": "2026-04-26T10:30:00Z",
-          "home": "Fiorentina",
-          "away": "Sassuolo",
-          "score_home": 0,
-          "score_away": 0,
-          "competition_id": "it-serie-a",
-          "competition_name": "Serie A"
-        },
-        {
-          "date": "2025-12-06T14:00:00Z",
-          "home": "Sassuolo",
-          "away": "Fiorentina",
-          "score_home": 3,
-          "score_away": 1,
-          "competition_id": "it-serie-a",
-          "competition_name": "Serie A"
         }
       ]
     },
