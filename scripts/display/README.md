@@ -40,3 +40,12 @@ Toute évolution du mode test doit préserver cette règle de lecture seule.
 - Le périmètre reste strictement celui de la compétition et de la saison du match sélectionné.
 - Si un total de buts est absent ou non numérique, la moyenne correspondante est affichée comme indisponible ; aucune valeur n'est remplacée par zéro.
 - Cette évolution est uniquement de présentation et ne modifie aucun résultat historique ni fichier de données.
+
+## Répartition des buts totaux par match — graphiques en anneau
+
+- L'onglet « Analyse & IA » affiche un graphique Chart.js en anneau pour chacune des deux équipes.
+- Les catégories sont calculées à partir des fréquences historiques cumulées : 0 but = joués − Over 0.5 ; 1 but = Over 0.5 − Over 1.5 ; 2 buts = Over 1.5 − Over 2.5 ; 3 buts et plus = Over 2.5.
+- Les compteurs doivent être entiers, cohérents, monotones et partager le même dénominateur que les matchs joués. Sinon, le graphique est déclaré indisponible.
+- Les nombres affichés dans la légende sont des comptes de matchs, pas des probabilités prédictives.
+- Les données restent strictement limitées à la compétition et à la saison du match sélectionné.
+- Le mode test reste en lecture seule ; aucun fichier historique ou résultat n'est modifié.
