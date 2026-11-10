@@ -2342,6 +2342,11 @@ p.history-data-meta{margin:8px 2px 0!important;color:#555555!important;font-weig
 .season-goals-team-heading h4{margin:0;color:#fff;font-size:14px;font-weight:800;letter-spacing:-.01em}
 .season-goals-team-heading span{color:#d7e5f3;font-size:10px;font-weight:600;white-space:nowrap}
 .season-goals-team-empty{margin:0;padding:12px;color:#71839a;font-size:11px;line-height:1.5}
+.season-goals-averages{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;background:#f5f8fc;border-bottom:1px solid #e4ebf3}
+.season-goals-average{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-width:0;padding:11px 6px;text-align:center}
+.season-goals-average+.season-goals-average{border-left:1px solid #dce6f1}
+.season-goals-average strong{color:#173f68;font-size:20px;font-weight:850;line-height:1.1;font-variant-numeric:tabular-nums}
+.season-goals-average span{color:#607995;font-size:10px;font-weight:650;line-height:1.25}
 .season-goals-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 8px;align-items:center;padding:8px 12px;border-bottom:1px solid #edf1f6}
 .season-goals-row:last-child{border-bottom:0}
 .season-goals-row>span{color:#425b75;font-size:12px;font-weight:650}
@@ -2427,6 +2432,6 @@ p.history-data-meta{margin:8px 2px 0!important;color:#555555!important;font-weig
 
 <script src="./scripts/display/sidebar.js" defer></script>
 <script src="./assets/chartjs-loader.js" defer></script>
-<script src="./scripts/display/matches.js?v=20261110-analysis-header1" defer></script>
+<script src="./scripts/display/matches.js?v=20261110-analysis-averages1" defer></script>
 </body>
 </html>
