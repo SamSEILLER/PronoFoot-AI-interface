@@ -590,6 +590,16 @@
             + '<div class="season-goals-average"><strong>'+formatAverage(team.goals_for)+'</strong><span>Buts marqués / match</span></div>'
             + '<div class="season-goals-average"><strong>'+formatAverage(team.goals_against)+'</strong><span>Buts encaissés / match</span></div>'
             + '</div>';
+          const teamScoringStats = [
+            ["scored_0_count", "Matchs sans but marqué"],
+            ["scored_2plus_count", "Matchs avec 2 buts ou +"]
+          ].map(([key, label]) => {
+            const count = team[key];
+            const valid = Number.isInteger(count) && count >= 0 && count <= played;
+            const percentage = valid ? (count * 100 / played).toLocaleString("fr-FR", { maximumFractionDigits:2 }) + " %" : "—";
+            const detail = valid ? count + " / " + played + " matchs" : "Non disponible";
+            return '<div class="season-goals-row"><span>'+label+'</span><strong>'+percentage+'</strong><small>'+detail+'</small></div>';
+          }).join("");
           const distributionKeys = ["over_0_5", "over_1_5", "over_2_5"];
           const distributionMetrics = distributionKeys.map(key => team.markets?.[key]);
           const distributionCounts = distributionMetrics.map(metric => Number(metric?.count));
@@ -621,7 +631,7 @@
             }
             return '<div class="season-goals-row"><span>'+label+'</span><strong>'+Number(metric.percentage).toLocaleString("fr-FR",{maximumFractionDigits:2})+' %</strong><small>'+Number(metric.count)+' / '+Number(metric.played)+' matchs</small></div>';
           }).join("");
-          return '<section class="season-goals-team"><div class="season-goals-team-heading"><h4>'+escapeHtml(name)+'</h4><span>'+Number(team.played)+' matchs joués</span></div>'+averageStats+'<div class="season-goals-distribution-heading">Répartition des buts totaux par match</div>'+distributionHtml+rows+'</section>';
+          return '<section class="season-goals-team"><div class="season-goals-team-heading"><h4>'+escapeHtml(name)+'</h4><span>'+Number(team.played)+' matchs joués</span></div>'+averageStats+'<div class="season-goals-distribution-heading">Répartition des buts totaux par match</div>'+distributionHtml+teamScoringStats+rows+'</section>';
         };
         body.innerHTML = '<div class="season-goals-analysis"><div class="season-goals-meta"><strong>'+escapeHtml(competition.name)+'</strong><span>Saison '+escapeHtml(season)+' · '+competition.matchesCounted+' matchs retenus</span></div><div class="season-goals-grid">'+renderTeam(match.home_team,match.home_team_id,'home')+renderTeam(match.away_team,match.away_team_id,'away')+'</div><p class="season-goals-footnote">Répartition fondée sur le nombre total de buts inscrits par les deux équipes dans chaque rencontre. Fréquences calculées uniquement sur les matchs terminés de la même compétition et de la même saison ; elles ne constituent pas des probabilités prédictives.</p></div>';
         const drawSeasonGoalCharts = (ChartConstructor) => {
