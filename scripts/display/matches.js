@@ -577,7 +577,7 @@
           ["over_3_5", "Over 3.5"],
           ["under_2_5", "Under 2.5"]
         ];
-        const renderTeam = (name, teamId) => {
+        const renderTeam = (name, teamId, side) => {
           const team = competition.teams.get(String(teamId || ""));
           if (!team || !Number.isInteger(Number(team.played)) || Number(team.played) < 1) {
             return '<section class="season-goals-team"><div class="season-goals-team-heading"><h4>'+escapeHtml(name)+'</h4><span>Données insuffisantes</span></div><p class="season-goals-team-empty">Données insuffisantes pour cette équipe dans la saison sélectionnée.</p></section>';
@@ -608,7 +608,7 @@
           const distributionColors = ["#16a34a", "#2585ed", "#eab308", "#ef4444"];
           const distributionHtml = distributionValid
             ? '<div class="season-goals-distribution">'
-              + '<div class="season-goals-distribution-chart"><canvas id="seasonGoalsDistribution-'+(teamId===match.home_team_id?'home':'away')+'" role="img" aria-label="Répartition des buts totaux dans les matchs de '+escapeHtml(name)+'"></canvas>'
+              + '<div class="season-goals-distribution-chart"><canvas id="seasonGoalsDistribution-'+side+'" role="img" aria-label="Répartition des buts totaux dans les matchs de '+escapeHtml(name)+'"></canvas>'
               + '<div class="season-goals-distribution-center"><strong>'+played+'</strong><span>matchs</span></div></div>'
               + '<div class="season-goals-distribution-legend">'+distributionValues.map((count,index) =>
                 '<div class="season-goals-distribution-item"><i style="background:'+distributionColors[index]+'"></i><span>'+distributionLabels[index]+'</span><strong>'+count+' / '+played+'</strong></div>'
@@ -623,7 +623,7 @@
           }).join("");
           return '<section class="season-goals-team"><div class="season-goals-team-heading"><h4>'+escapeHtml(name)+'</h4><span>'+Number(team.played)+' matchs joués</span></div>'+averageStats+'<div class="season-goals-distribution-heading">Répartition des buts totaux par match</div>'+distributionHtml+rows+'</section>';
         };
-        body.innerHTML = '<div class="season-goals-analysis"><div class="season-goals-meta"><strong>'+escapeHtml(competition.name)+'</strong><span>Saison '+escapeHtml(season)+' · '+competition.matchesCounted+' matchs retenus</span></div><div class="season-goals-grid">'+renderTeam(match.home_team,match.home_team_id)+renderTeam(match.away_team,match.away_team_id)+'</div><p class="season-goals-footnote">Répartition fondée sur le nombre total de buts inscrits par les deux équipes dans chaque rencontre. Fréquences calculées uniquement sur les matchs terminés de la même compétition et de la même saison ; elles ne constituent pas des probabilités prédictives.</p></div>';
+        body.innerHTML = '<div class="season-goals-analysis"><div class="season-goals-meta"><strong>'+escapeHtml(competition.name)+'</strong><span>Saison '+escapeHtml(season)+' · '+competition.matchesCounted+' matchs retenus</span></div><div class="season-goals-grid">'+renderTeam(match.home_team,match.home_team_id,'home')+renderTeam(match.away_team,match.away_team_id,'away')+'</div><p class="season-goals-footnote">Répartition fondée sur le nombre total de buts inscrits par les deux équipes dans chaque rencontre. Fréquences calculées uniquement sur les matchs terminés de la même compétition et de la même saison ; elles ne constituent pas des probabilités prédictives.</p></div>';
         const drawSeasonGoalCharts = (ChartConstructor) => {
           if (!ChartConstructor || !body.isConnected) return;
           body.querySelectorAll(".season-goals-distribution-chart canvas").forEach(canvas => {
