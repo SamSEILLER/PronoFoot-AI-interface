@@ -25,3 +25,10 @@ Le paramètre `?mode=test` active un parcours de démonstration strictement cons
 - Les décalages de date appliqués aux matchs de démonstration sont uniquement calculés en mémoire pour leur affichage ; ils ne sont jamais enregistrés dans les fichiers sources.
 
 Toute évolution du mode test doit préserver cette règle de lecture seule.
+
+## Analyse — en-têtes des statistiques de buts
+
+- Les en-têtes des cartes des deux équipes reprennent le fond bleu foncé, la typographie blanche et le contraste des en-têtes de l'onglet « Vue d'ensemble ».
+- Le compteur d'équipe est libellé « matchs joués » afin de le distinguer du nombre total de matchs de la compétition.
+- Les dénominateurs des marchés restent affichés sous la forme « nombre de matchs concernés / matchs joués ».
+- Aucun JSON historique ni résultat n'est modifié par cette présentation.
