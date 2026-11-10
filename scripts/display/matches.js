@@ -8,6 +8,7 @@
   const SIMULATED_NOW = Date.now();
   const STANDINGS_URL = "./data/standings.json";
   const SEASON_GOALS_URL = "./data/season-goals.json";
+  const GOAL_PREDICTIONS_URL = "./data/goal-predictions.json";
 
   // Codes d'affichage uniques des 12 compétitions suivies.
   // Les identifiants PitchAPI et les slugs de données restent inchangés.
@@ -109,6 +110,11 @@
       });
     });
     return index;
+  };
+
+  const buildGoalPredictionsIndex = (data) => {
+    const source = data?.matches && typeof data.matches === "object" ? data.matches : {};
+    return new Map(Object.entries(source).map(([key, value]) => [String(key), value]));
   };
 
   const competitionCountryFlags = {
@@ -227,9 +233,12 @@
     // historique, sans jamais écrire ni modifier les résultats ou fichiers sources.
     fetch(SEASON_GOALS_URL + "?v=" + Date.now(), { cache: "no-store" })
       .then((response) => { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); })
-      .catch((error) => { console.warn("Statistiques de buts par saison indisponibles.", error); return null; })
+      .catch((error) => { console.warn("Statistiques de buts par saison indisponibles.", error); return null; }),
+    fetch(GOAL_PREDICTIONS_URL + "?v=" + Date.now(), { cache: "no-store" })
+      .then((response) => { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); })
+      .catch((error) => { console.warn("Estimations de buts attendus indisponibles.", error); return null; })
   ])
-    .then(([matches, standings, seasonGoals]) => {
+    .then(([matches, standings, seasonGoals, goalPredictions]) => {
       let matchRecords = TEST_MODE ? matches?.matches : matches;
       if (!Array.isArray(matchRecords)) throw new Error("Format de données inattendu");
       if (TEST_MODE) {
@@ -244,6 +253,7 @@
 
       const standingsIndex = buildStandingsIndex(standings);
       const seasonGoalsIndex = buildSeasonGoalsIndex(seasonGoals);
+      const goalPredictionsIndex = buildGoalPredictionsIndex(goalPredictions);
       const now = SIMULATED_NOW;
       if (TEST_MODE) {
         const banner = document.createElement("div");
@@ -769,6 +779,19 @@
         const homeLogo = safeLogoUrl(match.provider_record?.home_team?.image_url);
         const awayLogo = safeLogoUrl(match.provider_record?.away_team?.image_url);
         const escape = (value) => String(value ?? "").replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
+        const predictionKey = String(match.match_id || match.provider_match_id || match.id || "");
+        const expectedGoals = goalPredictionsIndex.get(predictionKey)?.expected_goals;
+        const hasExpectedGoals = expectedGoals?.status === "estimated"
+          && Number.isFinite(Number(expectedGoals.lambda_home))
+          && Number.isFinite(Number(expectedGoals.lambda_away));
+        const formatLambda = (value) => Number(value).toFixed(2);
+        const xgHome = hasExpectedGoals ? formatLambda(expectedGoals.lambda_home) : "Indisponible";
+        const xgAway = hasExpectedGoals ? formatLambda(expectedGoals.lambda_away) : "Indisponible";
+        const xgTotal = hasExpectedGoals ? formatLambda(expectedGoals.total_expected_goals) : "Indisponible";
+        const xgNote = hasExpectedGoals
+          ? "Modèle statistique non calibré · échantillon : " + Number(expectedGoals.samples?.home || 0)
+            + " matchs domicile / " + Number(expectedGoals.samples?.away || 0) + " matchs extérieur."
+          : "Estimation indisponible : historique pré-match ou moyenne de compétition insuffisants.";
         detailPanel.innerHTML = `
           <div class="match-detail-content">
             <div class="match-detail-top">
@@ -781,11 +804,12 @@
               <div class="match-detail-team">${awayLogo ? '<img src="'+escape(awayLogo)+'" alt="Logo '+escape(match.away_team)+'">':""}<strong>${escape(match.away_team)}</strong><small class="match-team-position">${awayPosition ? "# "+awayPosition:"Classement indisponible"}</small></div>
             </div>
             <div class="match-detail-xg">
-              <span class="match-detail-xg-label">Buts attendus</span>
-              <span class="match-detail-xg-value">${escape(match.home_team)} <strong>Indisponible</strong></span>
+              <span class="match-detail-xg-label">Buts attendus estimés (λ)</span>
+              <span class="match-detail-xg-value">${escape(match.home_team)} <strong>${xgHome}</strong></span>
               <span aria-hidden="true">–</span>
-              <span class="match-detail-xg-value">${escape(match.away_team)} <strong>Indisponible</strong></span>
-              <span class="match-detail-xg-value">Total <strong>Indisponible</strong></span>
+              <span class="match-detail-xg-value">${escape(match.away_team)} <strong>${xgAway}</strong></span>
+              <span class="match-detail-xg-value">Total <strong>${xgTotal}</strong></span>
+              <small class="match-detail-xg-note">${escape(xgNote)}</small>
             </div>
             <div class="match-detail-tabs" role="tablist" aria-label="Données du match">
               ${detailTabs.map(tab=>'<button type="button" class="match-detail-tab'+(tab.id==="overview"?" is-active":"")+'" role="tab" aria-selected="'+(tab.id==="overview"?"true":"false")+'" data-detail-tab="'+tab.id+'"><span aria-hidden="true">'+tab.icon+'</span><span>'+tab.label+'</span></button>').join("")}
