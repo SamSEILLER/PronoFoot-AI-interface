@@ -3,9 +3,8 @@
  * Les dates sources sont UTC ; l'affichage est converti en heure de Paris.
  */
 (() => {
-  const TEST_MODE = new URLSearchParams(window.location.search).get("mode") === "test";
-  const DATA_URL = TEST_MODE ? "./data/matches_test.json" : "./data/matches_future.json";
-  const SIMULATED_NOW = Date.now();
+  const DATA_URL = "./data/matches_future.json";
+  const NOW = Date.now();
   const STANDINGS_URL = "./data/standings.json";
   const SEASON_GOALS_URL = "./data/season-goals.json";
   const GOAL_PREDICTIONS_URL = "./data/goal-predictions.json";
@@ -229,8 +228,6 @@
     fetch(STANDINGS_URL + "?v=" + Date.now(), { cache: "no-store" })
       .then((response) => { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); })
       .catch((error) => { console.warn("Classements indisponibles : numéros de classement et de journée masqués.", error); return null; }),
-    // Le mode test reste strictement en lecture seule : il consulte le même agrégat
-    // historique, sans jamais écrire ni modifier les résultats ou fichiers sources.
     fetch(SEASON_GOALS_URL + "?v=" + Date.now(), { cache: "no-store" })
       .then((response) => { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); })
       .catch((error) => { console.warn("Statistiques de buts par saison indisponibles.", error); return null; }),
@@ -239,30 +236,13 @@
       .catch((error) => { console.warn("Estimations de buts attendus indisponibles.", error); return null; })
   ])
     .then(([matches, standings, seasonGoals, goalPredictions]) => {
-      let matchRecords = TEST_MODE ? matches?.matches : matches;
+      const matchRecords = matches;
       if (!Array.isArray(matchRecords)) throw new Error("Format de données inattendu");
-      if (TEST_MODE) {
-        const replayStart = Date.parse(matches?.metadata?.simulated_now_utc || "");
-        if (!Number.isFinite(replayStart)) throw new Error("Date de référence absente des données de test");
-        const replayOffset = SIMULATED_NOW - replayStart;
-        matchRecords = matchRecords.map((match) => ({
-          ...match,
-          kickoff_utc: new Date(Date.parse(match.kickoff_utc) + replayOffset).toISOString()
-        }));
-      }
 
       const standingsIndex = buildStandingsIndex(standings);
       const seasonGoalsIndex = buildSeasonGoalsIndex(seasonGoals);
       const goalPredictionsIndex = buildGoalPredictionsIndex(goalPredictions);
-      const now = SIMULATED_NOW;
-      if (TEST_MODE) {
-        const banner = document.createElement("div");
-        banner.className = "test-mode-banner";
-        const virtualDate = new Intl.DateTimeFormat("fr-FR", { dateStyle:"full", timeStyle:"short", timeZone:"Europe/Paris" }).format(new Date(now));
-        banner.textContent = "MODE TEST · Date simulée : " + virtualDate + " · Cotes désactivées · Données de démonstration";
-        const main = document.querySelector("main");
-        if (main) main.prepend(banner);
-      }
+      const now = NOW;
       const upcoming = matchRecords
         .filter((match) => match && match.match_category === "future" && match.status !== "cancelled")
         .filter((match) => match.home_team && match.away_team)
@@ -320,7 +300,7 @@
         day: "numeric", month: "short", timeZone: "Europe/Paris"
       });
       const updateFilterLabels = () => {
-        const today = parisDateKey(SIMULATED_NOW);
+        const today = parisDateKey(NOW);
         Object.entries(dateFilterRanges).forEach(([key, [startOffset, endOffset]]) => {
           const first = shiftDateKey(today, startOffset);
           const last = shiftDateKey(today, endOffset);
@@ -358,7 +338,7 @@
       ];
       let selectedDetailMatch = null;
       let oddsEvents = null;
-      const oddsDataPromise = (TEST_MODE ? Promise.resolve([]) : fetch("./data/odds_latest.json?v=" + Date.now(), { cache:"no-store" })
+      const oddsDataPromise = fetch("./data/odds_latest.json?v=" + Date.now(), { cache:"no-store" }
         .then(response => { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); })
         .then(payload => { oddsEvents = Array.isArray(payload?.events) ? payload.events : []; return oddsEvents; })
         .catch(error => { console.warn("Cotes OddsAPI indisponibles :", error); oddsEvents = []; return oddsEvents; }));
@@ -366,9 +346,9 @@
       const loadHistoryData = () => {
         if (!historyDataPromise) {
           historyDataPromise = Promise.all([
-            fetch((TEST_MODE ? "./data/recent-form_test.json" : "./data/recent-form.json") + "?v=" + Date.now(), { cache:"no-store" })
+            fetch("./data/recent-form.json" + "?v=" + Date.now(), { cache:"no-store" })
               .then(response => { if (!response.ok) throw new Error("recent-form HTTP " + response.status); return response.json(); }),
-            fetch((TEST_MODE ? "./data/head-to-head_test.json" : "./data/head-to-head.json") + "?v=" + Date.now(), { cache:"no-store" })
+            fetch("./data/head-to-head.json" + "?v=" + Date.now(), { cache:"no-store" })
               .then(response => { if (!response.ok) throw new Error("head-to-head HTTP " + response.status); return response.json(); })
           ]).then(([recentForm, headToHead]) => ({ recentForm, headToHead }))
             .catch(error => {
@@ -380,7 +360,6 @@
       };
       const escapeHtml = (value) => String(value ?? "").replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
       const renderOdds = (body, match) => {
-        if (TEST_MODE) { body.textContent = "Cotes désactivées en mode TEST : aucune cote réelle ou simulée n’est chargée."; return; }
         body.innerHTML = '<p>Chargement des cotes Odds-API.io…</p>';
         oddsDataPromise.then(events => {
           if (selectedDetailMatch !== match || !body.isConnected) return;
@@ -824,7 +803,7 @@
       });
 
       const renderFilteredMatches = () => {
-        const today = parisDateKey(SIMULATED_NOW);
+        const today = parisDateKey(NOW);
         const [startOffset, endOffset] = dateFilterRanges[activeDateFilter] || [0, 1];
         const firstDate = shiftDateKey(today, startOffset);
         const lastDate = shiftDateKey(today, endOffset);
