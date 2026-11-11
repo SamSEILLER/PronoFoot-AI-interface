@@ -1,6 +1,6 @@
 {
   "provider": "pitchapi_processed_history",
-  "generated_at_utc": "2026-11-10T13:50:17.573653+00:00",
+  "generated_at_utc": "2026-11-11T03:49:43.532199+00:00",
   "matches_considered": 9402,
   "pairs": {
     "cerezo osaka|fc tokyo": {
@@ -262,6 +262,66 @@
           "away": "Charlotte FC",
           "score_home": 0,
           "score_away": 1,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        }
+      ]
+    },
+    "los angeles fc|st louis city": {
+      "team_a": "Los Angeles FC",
+      "team_b": "St. Louis City",
+      "matches": [
+        {
+          "date": "2026-05-14T00:30:00Z",
+          "home": "St. Louis City",
+          "away": "Los Angeles FC",
+          "score_home": 2,
+          "score_away": 1,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2026-03-15T02:30:00Z",
+          "home": "Los Angeles FC",
+          "away": "St. Louis City",
+          "score_home": 2,
+          "score_away": 0,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2025-09-28T00:30:00Z",
+          "home": "St. Louis City",
+          "away": "Los Angeles FC",
+          "score_home": 0,
+          "score_away": 3,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2025-04-27T23:00:00Z",
+          "home": "Los Angeles FC",
+          "away": "St. Louis City",
+          "score_home": 2,
+          "score_away": 2,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2024-10-03T02:30:00Z",
+          "home": "Los Angeles FC",
+          "away": "St. Louis City",
+          "score_home": 1,
+          "score_away": 0,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
+          "date": "2024-05-16T00:30:00Z",
+          "home": "St. Louis City",
+          "away": "Los Angeles FC",
+          "score_home": 0,
+          "score_away": 2,
           "competition_id": "us-mls",
           "competition_name": "MLS"
         }
@@ -2166,6 +2226,21 @@
           "score_away": 3,
           "competition_id": "fr-ligue-2",
           "competition_name": "Ligue 2"
+        }
+      ]
+    },
+    "manchester city|napoli": {
+      "team_a": "Manchester City",
+      "team_b": "Napoli",
+      "matches": [
+        {
+          "date": "2025-09-18T19:00:00Z",
+          "home": "Manchester City",
+          "away": "Napoli",
+          "score_home": 2,
+          "score_away": 0,
+          "competition_id": "uefa-champions-league",
+          "competition_name": "Ligue des champions UEFA"
         }
       ]
     },
