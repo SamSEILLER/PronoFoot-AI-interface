@@ -733,12 +733,18 @@
                 label: stat.title || stat.key || group.group_name,
                 value: stat[side]
               }))).filter((stat) => stat.value !== undefined && stat.value !== null && stat.value !== "");
-              const selected = metrics.filter((stat) => /possession|shots|tir|passes|corner|fouls|fautes|expected goals|xg/i.test(stat.label));
+              const selected = metrics.filter((stat) => /expected goals|\bxg\b/i.test(stat.label));
+              const shots = (item.shots?.periods || []).flatMap((period) => period.shots || []);
+              const opponentShots = shots.filter((shot) => String(shot.team_id || "") !== team.id);
+              const knownOpponentXg = opponentShots.filter((shot) => shot.expected_goals != null && Number.isFinite(Number(shot.expected_goals)));
+              const xga = knownOpponentXg.reduce((sum, shot) => sum + Number(shot.expected_goals), 0);
+              const xgaLabel = opponentShots.length && knownOpponentXg.length < opponentShots.length ? "xGA (partiel)" : "xGA (calculé)";
+              if (opponentShots.length && knownOpponentXg.length) selected.push({ label: xgaLabel, value: xga.toFixed(2) });
               const score = item.home_score == null || item.away_score == null ? "—" : item.home_score+" – "+item.away_score;
-              return '<div class="match-analytics-recent"><strong>'+escapeHtml(item.home_team)+' '+escapeHtml(score)+' '+escapeHtml(item.away_team)+'</strong><div class="match-analytics-metrics">'+(selected.length ? selected.map((stat) => '<span><small>'+escapeHtml(stat.label)+'</small><b>'+escapeHtml(stat.value)+'</b></span>').join("") : '<small>Statistiques détaillées indisponibles pour ce match.</small>')+'</div></div>';
+              return '<div class="match-analytics-recent"><strong>'+escapeHtml(item.home_team)+' '+escapeHtml(score)+' '+escapeHtml(item.away_team)+'</strong><div class="match-analytics-metrics">'+(selected.length ? selected.map((stat) => '<span><small>'+escapeHtml(stat.label)+'</small><b>'+escapeHtml(stat.value)+'</b></span>').join("") : '<small>Statistiques xG indisponibles pour ce match.</small>')+'</div></div>';
             }).join("");
             return '<section class="match-analytics-team"><h4>'+escapeHtml(team.name)+'</h4>'+rows+'</section>';
-          }).join("")+'</div><p class="match-analytics-note">Derniers matchs joués dans la même compétition et la même saison. Valeurs issues de PitchAPI ; les champs absents ne sont pas remplacés par zéro.</p>';
+          }).join("")+'</div><p class="match-analytics-note">Derniers matchs joués dans la même compétition et la même saison. xGA est calculé à partir des xG des tirs adverses ; il est indiqué comme partiel si des valeurs manquent. Les champs absents ne sont pas remplacés par zéro.</p>';
         };
         const renderRecentShots = () => {
           if (!analytics) return '<p class="match-detail-empty">Aucune collecte de tirs détaillés disponible pour cette compétition.</p>';
@@ -759,20 +765,39 @@
               const summary = '<strong>'+escapeHtml(match.home_team)+' '+escapeHtml(score)+' '+escapeHtml(match.away_team)+'</strong>';
               if (match.shots_status !== "available") return '<div class="match-analytics-recent">'+summary+'<p>Données de tirs indisponibles pour cette rencontre.</p></div>';
               if (!shots.length) return '<div class="match-analytics-recent">'+summary+'<p>Aucun tir enregistré pour cette équipe dans cette rencontre.</p></div>';
-              const totalXg = shots.reduce((sum, shot) => sum + (Number.isFinite(Number(shot.expected_goals)) ? Number(shot.expected_goals) : 0), 0);
-              const onTarget = shots.filter((shot) => shot.is_on_target === true).length;
-              const goals = shots.filter((shot) => shot.event_type === "Goal").length;
+              const allStats = (match.team_stats?.periods || []).find((period) => period.period === "All") || match.team_stats?.periods?.[0];
+              const side = String(match.home_team_id) === team.id ? "home" : "away";
+              const shotMetrics = (allStats?.groups || []).flatMap((group) => (group.items || []).map((stat) => ({
+                label: stat.title || stat.key || group.group_name, value: stat[side]
+              }))).filter((stat) => stat.value !== undefined && stat.value !== null && stat.value !== "");
+              const wantedShots = shotMetrics.filter((stat) => /total shots|shots on target|shots inside box|shots outside box/i.test(stat.label));
+              const metricLabels = {
+                "total shots":"Tirs totaux", "shots on target":"Tirs cadrés*",
+                "shots inside box":"Tirs dans la surface", "shots outside box":"Tirs hors surface"
+              };
+              const summaryMetrics = wantedShots.map((stat) => {
+                const key = stat.label.toLowerCase().replace(/[^a-z ]/g, "").trim();
+                return '<span><small>'+escapeHtml(metricLabels[key] || stat.label)+'</small><b>'+escapeHtml(stat.value)+'</b></span>';
+              }).join("");
+              const resultLabels = { Goal:"But", AttemptSaved:"Arrêt du gardien", Miss:"Tir manqué", Post:"Poteau ou barre" };
+              const situationLabels = {
+                RegularPlay:"Jeu ouvert", FromCorner:"Corner", SetPiece:"Coup de pied arrêté",
+                FastBreak:"Contre-attaque", FreeKick:"Coup franc", ThrowInSetPiece:"Phase arrêtée après une touche",
+                Penalty:"Penalty", IndividualPlay:"Action individuelle"
+              };
               return '<div class="match-analytics-recent">'+summary+
-                '<div class="match-analytics-metrics"><span><small>Tirs</small><b>'+shots.length+'</b></span><span><small>Cadrés*</small><b>'+onTarget+'</b></span><span><small>Buts</small><b>'+goals+'</b></span><span><small>xG tirs</small><b>'+totalXg.toFixed(2)+'</b></span></div>'+
+                '<div class="match-analytics-metrics">'+(summaryMetrics || '<small>Statistiques de tirs indisponibles.</small>')+'</div>'+
                 '<div class="match-shots-table-wrap"><table class="match-shots-table"><thead><tr><th>Min.</th><th>Joueur</th><th>Position (m)</th><th>xG</th><th>Résultat</th><th>Situation</th></tr></thead><tbody>'+
                 shots.map((shot) => {
                   const minute = shot.minute_added ? shot.minute+'+'+shot.minute_added : (shot.minute ?? "—");
-                  return '<tr><td>'+escapeHtml(minute)+'</td><td>'+escapeHtml(shot.player?.name || "Inconnu")+'</td><td>'+escapeHtml(shot.x ?? "—")+', '+escapeHtml(shot.y ?? "—")+'</td><td>'+escapeHtml(shot.expected_goals == null ? "—" : Number(shot.expected_goals).toFixed(2))+'</td><td>'+escapeHtml(shot.event_type || "—")+'</td><td>'+escapeHtml(shot.situation || "—")+'</td></tr>';
+                  const result = resultLabels[shot.event_type] || shot.event_type || "—";
+                  const situation = situationLabels[shot.situation] || shot.situation || "—";
+                  return '<tr><td>'+escapeHtml(minute)+'</td><td>'+escapeHtml(shot.player?.name || "Inconnu")+'</td><td>'+escapeHtml(shot.x ?? "—")+', '+escapeHtml(shot.y ?? "—")+'</td><td>'+escapeHtml(shot.expected_goals == null ? "—" : Number(shot.expected_goals).toFixed(2))+'</td><td>'+escapeHtml(result)+'</td><td>'+escapeHtml(situation)+'</td></tr>';
                 }).join("")+'</tbody></table></div></div>';
             }).join("");
             return '<section class="match-analytics-team"><h4>'+escapeHtml(team.name)+'</h4>'+matchesHtml+'</section>';
           }).join("");
-          return '<div class="match-analytics-grid">'+teamSections+'</div><p class="match-analytics-note">Cinq derniers matchs joués dans la même compétition et la même saison. xG additionné sur les tirs listés. *PitchAPI peut classer comme cadré un tir finalement bloqué ; ce compteur suit sa définition. Coordonnées x/y en mètres sur un terrain de 105 × 68 m.</p>';
+          return '<div class="match-analytics-grid">'+teamSections+'</div><p class="match-analytics-note">Cinq derniers matchs joués dans la même compétition et la même saison. *PitchAPI peut classer comme cadré un tir finalement bloqué ; ce compteur suit sa définition. Coordonnées x/y en mètres sur un terrain de 105 × 68 m.</p>';
         };
         if (teamStats) teamStats.innerHTML = renderRecentTeamStats();
         if (shots) shots.innerHTML = renderRecentShots();
