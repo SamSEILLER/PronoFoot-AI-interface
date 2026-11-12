@@ -776,15 +776,15 @@
               <small class="match-detail-xg-note">${escape(xgNote)}</small>
             </div>
             <div class="match-detail-accordions" aria-label="Données détaillées du match">
-              <details class="match-detail-accordion">
+              <details class="match-detail-accordion" name="match-detail">
                 <summary><span class="match-detail-accordion-icon">${detailTabs[0].icon}</span><span>Vue d'ensemble</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
                 <div class="match-detail-accordion-body" data-detail-panel="overview">Chargement des données…</div>
               </details>
-              <details class="match-detail-accordion">
+              <details class="match-detail-accordion" name="match-detail">
                 <summary><span class="match-detail-accordion-icon">${detailTabs[1].icon}</span><span>Analyse &amp; IA</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
                 <div class="match-detail-accordion-body" data-detail-panel="analysis">Chargement des données…</div>
               </details>
-              <details class="match-detail-accordion">
+              <details class="match-detail-accordion" name="match-detail">
                 <summary><span class="match-detail-accordion-icon">${detailTabs[2].icon}</span><span>Cotes</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
                 <div class="match-detail-accordion-body" data-detail-panel="odds">Chargement des données…</div>
               </details>
