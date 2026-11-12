@@ -2583,6 +2583,30 @@ p.history-data-meta{margin:8px 2px 0!important;color:#555555!important;font-weig
 @media(max-width:760px){.match-detail-accordions{padding:0 8px 11px;gap:7px}.match-detail-accordion>summary{min-height:45px;padding:8px 10px;font-size:12px}.match-detail-accordion-body{padding:11px 9px}}
 @media(prefers-reduced-motion:reduce){.match-detail-accordion-chevron{transition:none}}
 
+/* Accordéon Tirs — même identité visuelle épurée que les statistiques équipes */
+.match-detail-accordion>summary.match-detail-accordion-summary-shots{background:#eaf2fb;color:#173653;border-bottom:1px solid #dce7f3}
+.match-detail-accordion[open]>summary.match-detail-accordion-summary-shots{background:#e2edf9;color:#102f50}
+.match-detail-accordion-summary-shots .match-detail-accordion-icon,
+.match-detail-accordion-summary-shots .match-detail-accordion-chevron{color:#245b8c}
+.match-detail-accordion:has(.match-shots-team){border-color:#dce6f1;border-radius:12px}
+.match-detail-accordion:has(.match-shots-team) .match-detail-accordion-body{background:#fff;padding:12px}
+.match-shots-team{min-width:0;padding:0;background:#fff;border:0;border-radius:0}
+.match-shots-team+.match-shots-team{margin-top:16px;padding-top:14px;border-top:2px solid #e5edf6}
+.match-shots-team .match-analytics-team-heading-clean{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:0 0 8px;padding:3px 1px 9px;border:0;border-bottom:1px solid #e4edf6;background:transparent}
+.match-shots-team .match-analytics-team-heading-clean h4{margin:0;color:#102f50;font-size:15px;font-weight:850}
+.match-shots-team .match-analytics-team-heading-clean span{color:#71849a;font-size:10px;font-weight:650}
+.match-shots-match{margin:0;padding:10px 0;border-top:1px solid #edf2f7}
+.match-shots-match>strong{display:block;margin-bottom:8px;color:#173653;font-size:11px;font-weight:800;line-height:1.4}
+.match-shots-match .match-analytics-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+.match-shots-match .match-analytics-metrics span{display:flex;flex-direction:column;gap:3px;padding:8px 9px;border:0;border-radius:8px;background:#f1f6fc;min-width:0}
+.match-shots-match .match-analytics-metrics small{color:#647b92;font-size:10px}
+.match-shots-match .match-analytics-metrics b{color:#102f50;font-size:15px;font-weight:850;font-variant-numeric:tabular-nums}
+.match-shots-match .match-goals{margin:9px 0 1px}
+.match-shots-match .match-goals h5{margin:0 0 6px;color:#173653;font-size:11px;font-weight:850}
+.match-shots-match .match-goals-list li{padding:7px 9px;border:0;border-radius:7px;background:#f5f8fc}
+.match-shots-match>p{margin:5px 0;color:#71839a;font-size:11px}
+@media(max-width:420px){.match-detail-accordion:has(.match-shots-team) .match-detail-accordion-body{padding:9px}.match-shots-match .match-analytics-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.match-shots-match .match-analytics-metrics b{font-size:14px}}
+ 
 /* Buteurs par match dans le bloc des tirs récents */
 .match-goals{margin:8px 0 2px}
 .match-goals h5{margin:0 0 6px;color:#17385f;font-size:12px;font-weight:800}
