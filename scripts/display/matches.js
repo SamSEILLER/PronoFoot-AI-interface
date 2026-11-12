@@ -721,30 +721,98 @@
             { id: String(selectedDetailMatch.home_team_id || ""), name: selectedDetailMatch.home_team, side: "home" },
             { id: String(selectedDetailMatch.away_team_id || ""), name: selectedDetailMatch.away_team, side: "away" }
           ];
-          return '<div class="match-analytics-grid">' + sides.map((team) => {
+          const chartPayloads = [];
+          const cards = sides.map((team, teamIndex) => {
             const entry = analytics.teams.get(team.id);
             const recent = (entry?.recent_match_ids || []).map((id) => analytics.matchesById.get(String(id))).filter(Boolean)
-              .sort((a,b) => String(b.kickoff_utc || "").localeCompare(String(a.kickoff_utc || "")));
+              .sort((a,b) => String(a.kickoff_utc || "").localeCompare(String(b.kickoff_utc || ""))).slice(-5);
             if (!recent.length) return '<section class="match-analytics-team"><h4>'+escapeHtml(team.name)+'</h4><p>Aucun match récent exploitable dans cette compétition et cette saison.</p></section>';
-            const rows = recent.map((item) => {
+            const rows = [];
+            const labels = [], xgValues = [], xgaValues = [], goalsFor = [], goalsAgainst = [];
+            const aggregate = new Map();
+            recent.forEach((item, index) => {
               const side = String(item.home_team_id) === team.id ? "home" : "away";
+              const opponentSide = side === "home" ? "away" : "home";
               const all = (item.team_stats?.periods || []).find((period) => period.period === "All") || item.team_stats?.periods?.[0];
               const metrics = (all?.groups || []).flatMap((group) => (group.items || []).map((stat) => ({
-                label: stat.title || stat.key || group.group_name,
-                value: stat[side]
+                label: stat.title || stat.key || group.group_name, key: stat.key || "", value: stat[side]
               }))).filter((stat) => stat.value !== undefined && stat.value !== null && stat.value !== "");
-              const selected = metrics.filter((stat) => /expected goals|\bxg\b/i.test(stat.label));
+              metrics.forEach((stat) => {
+                const key = String(stat.key+" "+stat.label).toLowerCase();
+                if (/expected goals|\bxg\b/.test(key)) {
+                  const value = Number(stat.value);
+                  if (Number.isFinite(value)) xgValues[index] = value;
+                }
+                const normalized = key.replace(/[^a-z]/g,"");
+                const aliases = [
+                  ["shotsontarget", "Tirs cadrés"], ["shots on target", "Tirs cadrés"],
+                  ["totalshots", "Tirs"], ["shots", "Tirs"], ["corners", "Corners"],
+                  ["possession", "Possession (%)"]
+                ];
+                const match = aliases.find(([needle]) => normalized.includes(needle.replace(/[^a-z]/g,"")));
+                if (match && Number.isFinite(Number(stat.value))) {
+                  const label = match[1];
+                  if (!aggregate.has(label)) aggregate.set(label, []);
+                  aggregate.get(label).push(Number(stat.value));
+                }
+              });
               const shots = (item.shots?.periods || []).flatMap((period) => period.shots || []);
+              const ownShots = shots.filter((shot) => String(shot.team_id || "") === team.id);
               const opponentShots = shots.filter((shot) => String(shot.team_id || "") !== team.id);
-              const knownOpponentXg = opponentShots.filter((shot) => shot.expected_goals != null && Number.isFinite(Number(shot.expected_goals)));
-              const xga = knownOpponentXg.reduce((sum, shot) => sum + Number(shot.expected_goals), 0);
-              const xgaLabel = opponentShots.length && knownOpponentXg.length < opponentShots.length ? "xGA (partiel)" : "xGA (calculé)";
-              if (opponentShots.length && knownOpponentXg.length) selected.push({ label: xgaLabel, value: xga.toFixed(2) });
-              const score = item.home_score == null || item.away_score == null ? "—" : item.home_score+" – "+item.away_score;
-              return '<div class="match-analytics-recent"><strong>'+escapeHtml(item.home_team)+' '+escapeHtml(score)+' '+escapeHtml(item.away_team)+'</strong><div class="match-analytics-metrics">'+(selected.length ? selected.map((stat) => '<span><small>'+escapeHtml(stat.label)+'</small><b>'+escapeHtml(stat.value)+'</b></span>').join("") : '<small>Statistiques xG indisponibles pour ce match.</small>')+'</div></div>';
-            }).join("");
-            return '<section class="match-analytics-team"><h4>'+escapeHtml(team.name)+'</h4>'+rows+'</section>';
-          }).join("")+'</div><p class="match-analytics-note">Derniers matchs joués dans la même compétition et la même saison. xGA est calculé à partir des xG des tirs adverses ; il est indiqué comme partiel si des valeurs manquent. Les champs absents ne sont pas remplacés par zéro.</p>';
+              const ownKnown = ownShots.filter((shot) => shot.expected_goals != null && Number.isFinite(Number(shot.expected_goals)));
+              const opponentKnown = opponentShots.filter((shot) => shot.expected_goals != null && Number.isFinite(Number(shot.expected_goals)));
+              if (opponentShots.length && opponentKnown.length) xgaValues[index] = opponentKnown.reduce((sum, shot) => sum + Number(shot.expected_goals), 0);
+              const gf = item[side+"_score"], ga = item[opponentSide+"_score"];
+              if (gf != null && ga != null && Number.isFinite(Number(gf)) && Number.isFinite(Number(ga))) {
+                goalsFor.push(Number(gf)); goalsAgainst.push(Number(ga));
+              }
+              const score = gf == null || ga == null ? "—" : gf+" – "+ga;
+              const selected = metrics.filter((stat) => /expected goals|\bxg\b/i.test(stat.label)).slice(0,1);
+              if (opponentShots.length && opponentKnown.length) selected.push({label: opponentKnown.length < opponentShots.length ? "xGA partiel" : "xGA calculé", value: opponentKnown.reduce((sum,shot)=>sum+Number(shot.expected_goals),0).toFixed(2)});
+              const result = gf == null || ga == null ? "" : Number(gf)>Number(ga) ? "V" : Number(gf)===Number(ga) ? "N" : "D";
+              labels.push("M"+(index+1));
+              rows.unshift('<div class="match-analytics-recent"><strong>'+escapeHtml(item.home_team)+' '+escapeHtml(score)+' '+escapeHtml(item.away_team)+(result ? '<span class="match-analytics-result '+(result==="V"?"is-win":result==="N"?"is-draw":"is-loss")+'">'+result+'</span>' : '')+'</strong><div class="match-analytics-metrics">'+(selected.length ? selected.map((stat) => '<span><small>'+escapeHtml(stat.label)+'</small><b>'+escapeHtml(stat.value)+'</b></span>').join("") : '<small>Indicateurs xG indisponibles.</small>')+'</div></div>');
+            });
+            const avg = (values) => values.length ? (values.reduce((a,b)=>a+b,0)/values.length).toLocaleString("fr-FR",{minimumFractionDigits:2,maximumFractionDigits:2}) : "—";
+            const resultCounts = {V:0,N:0,D:0};
+            recent.forEach(item => {
+              const side = String(item.home_team_id) === team.id ? "home" : "away";
+              const gf=item[side+"_score"], ga=item[(side==="home"?"away":"home")+"_score"];
+              if(gf==null||ga==null) return;
+              resultCounts[Number(gf)>Number(ga)?"V":Number(gf)===Number(ga)?"N":"D"]++;
+            });
+            const avgCards = '<div class="match-analytics-kpis"><div><strong>'+avg(goalsFor)+'</strong><span>Buts marqués / match</span></div><div><strong>'+avg(goalsAgainst)+'</strong><span>Buts encaissés / match</span></div></div>';
+            const chartId = "match-team-chart-"+teamIndex;
+            chartPayloads.push({id:chartId,labels,xg:xgValues,xga:xgaValues});
+            const averages = [...aggregate.entries()].map(([label,values]) => '<div><span>'+escapeHtml(label)+'</span><strong>'+avg(values)+'</strong></div>').join("");
+            return '<section class="match-analytics-team"><header class="match-analytics-team-heading"><h4>'+escapeHtml(team.name)+'</h4><span>'+recent.length+' matchs</span></header>'+avgCards+'<div class="match-analytics-chart-title">Évolution xG / xGA</div><div class="match-analytics-chart"><canvas id="'+chartId+'" aria-label="Évolution des xG et xGA de '+escapeHtml(team.name)+'"></canvas></div><div class="match-analytics-form"><span class="is-win">V '+resultCounts.V+'</span><span class="is-draw">N '+resultCounts.N+'</span><span class="is-loss">D '+resultCounts.D+'</span></div>'+(averages ? '<div class="match-analytics-average-grid">'+averages+'</div>' : '')+'<div class="match-analytics-recent-heading">Détail des rencontres</div>'+rows.join("")+'</section>';
+          });
+          const html = '<div class="match-analytics-grid">'+cards.join("")+'</div><p class="match-analytics-note">Cinq derniers matchs dans la même compétition et la même saison. Les moyennes utilisent uniquement les valeurs disponibles. xGA est calculé à partir des xG des tirs adverses et peut être partiel ; les données absentes ne sont jamais remplacées par zéro.</p>';
+          if (teamStats) {
+            teamStats.innerHTML = html;
+            const drawCharts = (ChartConstructor) => {
+              if (!ChartConstructor || !teamStats.isConnected) return;
+              chartPayloads.forEach(payload => {
+                const canvas = teamStats.querySelector("#"+payload.id);
+                if (!canvas) return;
+                const existing = ChartConstructor.getChart?.(canvas);
+                if (existing) existing.destroy();
+                new ChartConstructor(canvas,{
+                  type:"line",
+                  data:{labels:payload.labels,datasets:[
+                    {label:"xG",data:payload.xg,borderColor:"#2878b8",backgroundColor:"#2878b8",borderWidth:2,tension:.3,spanGaps:false,pointRadius:3},
+                    {label:"xGA",data:payload.xga,borderColor:"#15966b",backgroundColor:"#15966b",borderWidth:2,tension:.3,spanGaps:false,pointRadius:3}
+                  ]},
+                  options:{responsive:true,maintainAspectRatio:false,animation:false,interaction:{mode:"index",intersect:false},
+                    plugins:{legend:{position:"bottom",labels:{usePointStyle:true,boxWidth:7,font:{size:10}}}},
+                    scales:{y:{beginAtZero:true,ticks:{font:{size:9}},grid:{color:"#edf2f7"}},x:{ticks:{font:{size:9}},grid:{display:false}}}}
+                });
+              });
+            };
+            if (window.chartJsReady && typeof window.chartJsReady.then==="function") window.chartJsReady.then(drawCharts);
+            else drawCharts(window.Chart);
+          }
+          return html;
         };
         const renderRecentShots = () => {
           if (!analytics) return '<p class="match-detail-empty">Aucune collecte de tirs détaillés disponible pour cette compétition.</p>';
@@ -795,7 +863,7 @@
           }).join("");
           return '<div class="match-analytics-grid">'+teamSections+'</div><p class="match-analytics-note">Buteurs et minutes issus des événements de buts disponibles. Les tentatives de tirs individuelles ne sont plus affichées. *PitchAPI peut classer comme cadré un tir finalement bloqué ; ce compteur suit sa définition.</p>';
         };
-                if (teamStats) teamStats.innerHTML = renderRecentTeamStats();
+                if (teamStats) renderRecentTeamStats();
         if (shots) shots.innerHTML = renderRecentShots();
       };
       const selectMatch = (card, match) => {
