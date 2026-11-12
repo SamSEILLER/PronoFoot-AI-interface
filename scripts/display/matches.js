@@ -698,9 +698,15 @@
         const overview = detailPanel.querySelector('[data-detail-panel="overview"]');
         const analysis = detailPanel.querySelector('[data-detail-panel="analysis"]');
         const odds = detailPanel.querySelector('[data-detail-panel="odds"]');
+        const teamStats = detailPanel.querySelector('[data-detail-panel="team-stats"]');
+        const shots = detailPanel.querySelector('[data-detail-panel="shots"]');
         if (overview) renderHistoryOverview(overview, selectedDetailMatch);
         if (analysis) renderSeasonGoalAnalysis(analysis, selectedDetailMatch);
         if (odds) renderOdds(odds, selectedDetailMatch);
+        // Les snapshots PitchAPI actuellement publiés ne contiennent que les
+        // identifiants, équipes, date, statut et score : ne pas inventer de stats.
+        if (teamStats) teamStats.innerHTML = '<p class="match-detail-empty">Statistiques non disponibles dans les données actuellement collectées.</p><p>Champs prévus : possession, tirs, passes, corners, fautes et xG.</p>';
+        if (shots) shots.innerHTML = '<p class="match-detail-empty">Détail des tirs non disponible dans les données actuellement collectées.</p><p>Champs prévus : position, joueur, xG, résultat et situation (jeu ouvert, coup de pied arrêté, penalty…).</p>';
       };
       const selectMatch = (card, match) => {
         selectedMatchKey = card.dataset.matchKey || "";
@@ -779,6 +785,14 @@
               <details class="match-detail-accordion" name="match-detail">
                 <summary><span class="match-detail-accordion-icon">${detailTabs[0].icon}</span><span>Vue d'ensemble</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
                 <div class="match-detail-accordion-body" data-detail-panel="overview">Chargement des données…</div>
+              </details>
+              <details class="match-detail-accordion" name="match-detail">
+                <summary><span class="match-detail-accordion-icon">📊</span><span>Statistiques équipes</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
+                <div class="match-detail-accordion-body" data-detail-panel="team-stats">Chargement des statistiques…</div>
+              </details>
+              <details class="match-detail-accordion" name="match-detail">
+                <summary><span class="match-detail-accordion-icon">🎯</span><span>Tirs</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
+                <div class="match-detail-accordion-body" data-detail-panel="shots">Chargement des tirs…</div>
               </details>
               <details class="match-detail-accordion" name="match-detail">
                 <summary><span class="match-detail-accordion-icon">${detailTabs[1].icon}</span><span>Analyse &amp; IA</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
