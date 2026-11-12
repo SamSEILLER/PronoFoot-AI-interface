@@ -2911,9 +2911,12 @@ p.history-data-meta{margin:8px 2px 0!important;color:#555555!important;font-weig
 
 /* H2H et forme récente : couleurs et badges affinés */
 .history-h2h-dot.draw,.history-h2h-track span.draw{background:#b7791f!important}
-/* Autre championnat : même alignement, repère par contour pointillé */
+/* Autre championnat : icône globe discrète, sans décalage des pastilles */
 .history-form-item{flex-direction:row!important;align-items:center!important;gap:0!important;min-width:30px!important}
-.history-form-chip.is-other-competition{border:2px dashed #102746!important;box-shadow:0 0 0 1px rgba(255,255,255,.9)!important}
+.history-form-chip.is-other-competition{border-color:transparent!important;box-shadow:none!important}
+.history-form-other-icon{position:absolute;right:-4px;bottom:-4px;z-index:2;display:flex;width:13px;height:13px;align-items:center;justify-content:center;border:1px solid #fff;border-radius:50%;background:#fff;color:#174a7e}
+.history-form-other-icon svg{display:block;width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.history-form-count{font-size:10px!important;font-weight:650!important;color:#64748b!important;white-space:nowrap}
 @media(max-width:600px){
   .history-h2h-bars{gap:13px;padding:6px 2px 12px}
   .history-h2h-bar-label b{font-size:12px}
