@@ -2488,6 +2488,90 @@ p.history-data-meta{margin:8px 2px 0!important;color:#555555!important;font-weig
 .match-goal-minute{min-width:34px;color:#078b59;font-size:11px;font-weight:800}
 .match-goals-list li strong{color:#17385f;font-size:12px}
 
+
+/* Forme récente — intégration plus compacte et cohérente avec la fiche */
+.history-form-card{
+  border-color:#d8e2ed!important;
+  box-shadow:0 2px 8px rgba(23,63,104,.055)!important;
+}
+.history-form-card .history-card-heading{
+  min-height:48px;
+  padding:9px 13px!important;
+  background:#f2f6fa!important;
+  border-bottom:1px solid #e1e9f1!important;
+  border-radius:11px 11px 0 0!important;
+}
+.history-form-card .history-card-heading h3{
+  color:#173f68!important;
+  font-size:13px!important;
+}
+.history-form-card .history-card-heading p{
+  color:#687d93!important;
+  font-size:10px!important;
+}
+.history-form-card .history-heading-icon{color:#285b85!important}
+.history-form-teams{
+  gap:0!important;
+  padding:8px!important;
+  background:#f8fafc;
+}
+.history-team-form{
+  gap:8px!important;
+  padding:10px 12px!important;
+  border:1px solid #e3eaf2!important;
+  border-radius:7px;
+  background:#fff;
+}
+.history-team-form+.history-team-form{
+  margin-left:8px;
+  border-left:1px solid #e3eaf2!important;
+}
+.history-team-heading{min-height:24px}
+.history-team-heading strong{font-size:14px!important;color:#193653!important}
+.history-form-count{
+  padding:3px 7px;
+  border-radius:4px;
+  background:#edf3f8;
+  color:#536b83!important;
+  font-size:9px!important;
+  font-weight:750;
+}
+.history-form-results{gap:5px!important;min-height:32px!important}
+.history-form-chip{
+  width:27px!important;height:27px!important;
+  border-radius:5px!important;
+  font-size:11px!important;
+  font-weight:850!important;
+}
+.history-form-stats{
+  margin-top:1px;
+  padding:7px 4px!important;
+  border:1px solid #e8eef4;
+  border-radius:6px;
+  background:#f7f9fc!important;
+}
+.history-form-stats span{gap:2px!important}
+.history-form-stats b{font-size:14px!important}
+.history-form-stats small{font-size:9px!important;color:#65798e!important}
+@media(max-width:760px){
+  .history-form-teams{grid-template-columns:repeat(2,minmax(0,1fr))!important;padding:7px!important}
+  .history-team-form{padding:9px 7px!important}
+  .history-team-form+.history-team-form{
+    margin-left:7px;border-top:0!important;border-left:1px solid #e3eaf2!important;
+  }
+  .history-team-heading{align-items:flex-start;flex-direction:column;gap:3px}
+  .history-team-heading strong{max-width:100%;font-size:12px!important;white-space:normal}
+  .history-form-results{gap:3px!important}
+  .history-form-chip{width:23px!important;height:23px!important}
+  .history-form-stats{grid-template-columns:repeat(3,minmax(0,1fr))!important;row-gap:7px}
+}
+@media(max-width:380px){
+  .history-form-teams{grid-template-columns:minmax(0,1fr)!important}
+  .history-team-form+.history-team-form{margin:7px 0 0;border-left:0!important;border-top:1px solid #e3eaf2!important}
+  .history-team-heading{align-items:center;flex-direction:row}
+  .history-form-stats{grid-template-columns:repeat(5,minmax(0,1fr))!important}
+}
+
 </style>
 
 </body>
