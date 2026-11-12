@@ -815,18 +815,17 @@
             const avgCards = '<div class="match-analytics-kpis"><div><strong>'+avg(goalsFor)+'</strong><span>Buts marqués / match</span></div><div><strong>'+avg(goalsAgainst)+'</strong><span>Buts encaissés / match</span></div></div>';
             const chartId = "match-team-chart-"+teamIndex;
             chartPayloads.push({id:chartId,labels,xg:xgValues,xga:xgaValues});
-            const averages = [...aggregate.entries()].map(([label,values]) => '<div><span>'+escapeHtml(label)+'</span><strong>'+avg(values)+'</strong></div>').join("");
             const statExplanations = [
-              ["Tirs", (value) => "L'équipe tente en moyenne "+value+" tirs par match."],
-              ["Tirs cadrés", (value) => "Elle cadre en moyenne "+value+" tirs par match."],
-              ["Possession (%)", (value) => "Elle conserve le ballon en moyenne "+value+" % du temps."],
-              ["Corners", (value) => "Elle obtient en moyenne "+value+" corners par rencontre."]
+              ["Tirs", (value) => "L'équipe tente en moyenne <strong>"+value+" tirs</strong> par match."],
+              ["Tirs cadrés", (value) => "Elle cadre en moyenne <strong>"+value+" tirs</strong> par match."],
+              ["Possession (%)", (value) => "Elle conserve le ballon en moyenne <strong>"+value+" % du temps</strong>."],
+              ["Corners", (value) => "Elle obtient en moyenne <strong>"+value+" corners</strong> par rencontre."]
             ].filter(([label]) => aggregate.has(label))
-              .map(([label, describe]) => "<li>"+escapeHtml(describe(avg(aggregate.get(label))))+"</li>").join("");
+              .map(([label, describe]) => "<li>"+describe(escapeHtml(avg(aggregate.get(label))))+"</li>").join("");
             const statsNote = statExplanations
               ? '<div class="match-analytics-note match-analytics-stats-explanation"><strong>Lecture des statistiques</strong><ul>'+statExplanations+'</ul></div>'
               : "";
-            return '<section class="match-analytics-team"><header class="match-analytics-team-heading"><h4>'+escapeHtml(team.name)+'</h4><span>'+recent.length+' matchs</span></header>'+avgCards+'<div class="match-analytics-chart-title">Évolution xG / xG Adverse</div><div class="match-analytics-chart"><canvas id="'+chartId+'" aria-label="Évolution xG et xG Adverse de '+escapeHtml(team.name)+'"></canvas></div>'+(averages ? '<div class="match-analytics-average-grid">'+averages+'</div>'+statsNote : '')+'<div class="match-analytics-recent-heading">Détail des rencontres</div>'+rows.join("")+'</section>';
+            return '<section class="match-analytics-team"><header class="match-analytics-team-heading"><h4>'+escapeHtml(team.name)+'</h4><span>'+recent.length+' matchs</span></header>'+avgCards+'<div class="match-analytics-chart-title">Évolution xG / xG Adverse</div><div class="match-analytics-chart"><canvas id="'+chartId+'" aria-label="Évolution xG et xG Adverse de '+escapeHtml(team.name)+'"></canvas></div>'+statsNote+'<div class="match-analytics-recent-heading">Détail des rencontres</div>'+rows.join("")+'</section>';
           });
           const html = '<div class="match-analytics-grid">'+cards.join("")+'</div><p class="match-analytics-note">Cinq derniers matchs dans la même compétition et la même saison. Les moyennes utilisent uniquement les valeurs disponibles. Les occasions concédées sont calculées à partir des tirs adverses disponibles et peuvent être partielles ; les données absentes ne sont jamais remplacées par zéro.</p>';
           if (teamStats) {
