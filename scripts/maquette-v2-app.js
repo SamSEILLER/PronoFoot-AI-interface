@@ -70,11 +70,11 @@ function renderDetail(){
  '<div class="lambda-note">'+(has?"Modèle "+esc(pred.model)+" · "+esc(pred.samples?.home??"—")+" matchs domicile / "+esc(pred.samples?.away??"—")+" matchs extérieur · modèle non calibré.":"Estimation indisponible pour cette rencontre.")+'</div>'+
  '<div class="averages">'+averageCard(m.home_team,ht)+averageCard(m.away_team,at)+'</div>'+
  '<div class="accordions">'+
- '<details class="accordion" open><summary><span class="accordion-icon">▦</span><div><div class="accordion-title">Vue d’ensemble</div><div class="accordion-sub">Classement, forme récente et confrontations directes</div></div><span class="arrow">⌄</span></summary><div class="accordion-content" id="overview"></div></details>'+
+ '<details class="accordion" open><summary><span class="accordion-icon">▦</span><div><div class="accordion-title">Vue d’ensemble</div><div class="accordion-sub">Forme récente et confrontations directes</div></div><span class="arrow">⌄</span></summary><div class="accordion-content" id="overview"></div></details>\n <details class="accordion" id="classements"><summary><span class="accordion-icon">🏆</span><div><div class="accordion-title">Classement complet</div><div class="accordion-sub">Tableau de la compétition et de la saison du match</div></div><span class="arrow">⌄</span></summary><div class="accordion-content" id="standings"></div></details>'+
  '<details class="accordion"><summary><span class="accordion-icon">✺</span><div><div class="accordion-title">Analyse &amp; IA</div><div class="accordion-sub">Statistiques de buts de la compétition et de la saison</div></div><span class="arrow">⌄</span></summary><div class="accordion-content" id="analysis"></div></details>'+
  '<details class="accordion"><summary><span class="accordion-icon">▱</span><div><div class="accordion-title">Cotes</div><div class="accordion-sub">Données réelles Odds-API.io / Unibet</div></div><span class="arrow">⌄</span></summary><div class="accordion-content" id="odds"></div></details>'+
  '<details class="accordion"><summary><span class="accordion-icon">▥</span><div><div class="accordion-title">Statistiques détaillées</div><div class="accordion-sub">Données domicile / extérieur et indicateurs saison</div></div><span class="arrow">⌄</span></summary><div class="accordion-content" id="stats"></div></details></div>';
- renderOverview(m);renderAnalysis(m,season,ht,at);renderOdds(m);renderStats(m,ht,at);
+ renderOverview(m);renderStandings(m,standings);renderAnalysis(m,season,ht,at);renderOdds(m);renderStats(m,ht,at);
 }
 function averageCard(name,t){
  const played=Number(t?.played)||0,forAvg=avg(t,"goals_for"),against=avg(t,"goals_against");
@@ -101,7 +101,14 @@ function renderOverview(m){
  const rows=h2hFor(m);const hrows=rows.map(x=>'<div class="h2h-row"><span>'+esc(dateFmt.format(new Date(x.date)))+'</span><span>'+esc(x.home)+'</span><b>'+esc(x.score_home)+' – '+esc(x.score_away)+'</b><span>'+esc(x.away)+'</span></div>').join("");
  body.innerHTML='<div class="history-grid">'+cards+'</div><h4>Confrontations directes · toutes compétitions</h4>'+(rows.length?'<div class="h2h-list">'+hrows+'</div>':'<p class="muted">Aucune confrontation directe disponible dans les archives.</p>')+'<p class="data-meta">Historique généré le '+esc(stamp(state.data.form.generated_at_utc))+' · PitchAPI.</p>';
 }
-function renderAnalysis(m,competition,home,away){
+
+function renderStandings(m,competition){
+ const body=$("#standings");
+ if(!competition||!Array.isArray(competition.standings)||!competition.standings.length){body.innerHTML='<p>Classement indisponible pour cette compétition et cette saison.</p>';return}
+ const rows=competition.standings.map(t=>'<tr class="'+([String(m.home_team_id),String(m.away_team_id)].includes(String(t.team_id))?'highlight':'')+'"><td>'+esc(t.position)+'</td><td>'+esc(t.team_name)+'</td><td>'+esc(t.played)+'</td><td>'+esc(t.wins)+'</td><td>'+esc(t.draws)+'</td><td>'+esc(t.losses)+'</td><td>'+esc(t.goals_for)+':'+esc(t.goals_against)+'</td><td>'+esc(t.goal_difference)+'</td><td><b>'+esc(t.points)+'</b></td></tr>').join("");
+ body.innerHTML='<div class="standings-meta">'+esc(competition.name)+' · '+esc(competition.season)+' · '+competition.standings.length+' équipes</div><div class="table-scroll"><table class="standings-table"><thead><tr><th>#</th><th>Équipe</th><th>J</th><th>V</th><th>N</th><th>D</th><th>BP:BC</th><th>Diff.</th><th>Pts</th></tr></thead><tbody>'+rows+'</tbody></table></div><p class="muted">Source : standings.json · mis à jour le '+esc(stamp(state.data.standings.updated_at||state.data.standings.generated_at))+'</p>';
+}
+\nfunction renderAnalysis(m,competition,home,away){
  const body=$("#analysis");
  if(!competition||competition.season!==m.season){body.innerHTML='<p>Statistiques indisponibles : aucune donnée pour cette compétition et cette saison. Aucun remplacement par une autre saison ou compétition.</p>';return}
  const renderTeam=(name,t)=>{
