@@ -543,9 +543,12 @@
               const otherCompetition=Boolean(targetCompetition && matchCompetition && targetCompetition!==matchCompetition);
               const compLabel=competitionLabel(item?.competition_id);
               const tooltip=compactHistoryDate(item?.date)+" · "+compLabel+"\n"+name+" "+String(item?.score || "Score indisponible")+" "+String(item?.opponent || "Adversaire inconnu");
-              return '<span class="history-form-item"><span class="history-form-chip '+cls+(otherCompetition?" is-other-competition":"")+'" data-tooltip="'+escapeHtml(tooltip)+'" tabindex="0" aria-label="'+escapeHtml((result||"Résultat inconnu")+" — "+tooltip)+'">'+escapeHtml(result||"—")+'</span></span>';
+              return '<span class="history-form-item"><span class="history-form-chip '+cls+(otherCompetition?" is-other-competition":"")+'" data-tooltip="'+escapeHtml(tooltip)+'" tabindex="0" aria-label="'+escapeHtml((result||"Résultat inconnu")+" — "+tooltip)+'">'+escapeHtml(result||"—")+'</span>'+(otherCompetition?'<span class="history-form-other-icon" aria-hidden="true"><svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="6.5"/><path d="M1.8 8h12.4M8 1.5c1.8 1.8 2.5 4 2.5 6.5S9.8 12.7 8 14.5C6.2 12.7 5.5 10.5 5.5 8S6.2 3.3 8 1.5z"/></svg></span>':'')+'</span>';
             }).join("");
-            return '<section class="history-team-form"><div class="history-team-heading"><strong>'+escapeHtml(name)+'</strong><span class="history-form-count">'+results.length+' match'+(results.length>1?"s":"")+'</span></div>'+
+            const validDates=results.map(item=>new Date(item?.date)).filter(date=>!Number.isNaN(date.getTime())).sort((a,b)=>a-b);
+            const dateLabel=(date)=>new Intl.DateTimeFormat("fr-FR",{day:"2-digit",month:"short",year:"numeric",timeZone:"UTC"}).format(date);
+            const periodLabel=validDates.length ? (dateLabel(validDates[0])===dateLabel(validDates[validDates.length-1]) ? dateLabel(validDates[0]) : "Du "+dateLabel(validDates[0])+" au "+dateLabel(validDates[validDates.length-1])) : "Période indisponible";
+            return '<section class="history-team-form"><div class="history-team-heading"><strong>'+escapeHtml(name)+'</strong><span class="history-form-count">'+escapeHtml(periodLabel)+'</span></div>'+
               '<div class="history-form-results">'+(chips||'<span class="history-empty-inline">Aucun résultat terminé disponible.</span>')+'</div>'+
               '<div class="history-form-stats"><span><small>Buts marqués</small><b>'+stats.gf+'</b></span><span><small>Buts encaissés</small><b>'+stats.ga+'</b></span></div>'+
               '</section>';
