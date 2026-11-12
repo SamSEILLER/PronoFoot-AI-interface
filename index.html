@@ -2459,6 +2459,24 @@ p.history-data-meta{margin:8px 2px 0!important;color:#555555!important;font-weig
 .match-detail-accordion[open]>summary{background:linear-gradient(105deg,#102f52 0%,#1d4d7d 100%);color:#fff}
 .match-detail-accordion[open] .match-detail-accordion-chevron{transform:rotate(180deg)}
 .match-detail-accordion-body{padding:13px 12px;border-top:1px solid #e5edf6;color:#526b89;font-size:13px;line-height:1.5;min-width:0}
+.match-analytics-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.match-analytics-team{min-width:0;border:1px solid #dce6f1;border-radius:10px;padding:11px;background:#f8fbff}
+.match-analytics-team h4{margin:0 0 9px;color:#173f68;font-size:13px}
+.match-analytics-recent{padding:8px 0;border-top:1px solid #e3ebf4}
+.match-analytics-recent>strong{display:block;font-size:11px;color:#405873;margin-bottom:6px}
+.match-analytics-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.match-analytics-metrics span{display:flex;flex-direction:column;gap:2px;background:#fff;border-radius:6px;padding:5px;min-width:0}
+.match-analytics-metrics small{font-size:10px;color:#71839a;overflow-wrap:anywhere}
+.match-analytics-metrics b{font-size:12px;color:#173f68}
+.match-analytics-note{margin:10px 0 0;color:#71839a;font-size:11px}
+.match-shots-table-wrap{overflow-x:auto;max-width:100%}
+.match-shots-table{width:100%;border-collapse:collapse;font-size:11px;white-space:nowrap}
+.match-shots-table th,.match-shots-table td{padding:7px 8px;border-bottom:1px solid #e3ebf4;text-align:left}
+.match-shots-table th{color:#526b89;background:#f3f7fb}
+.match-shots-table td{color:#344b65}
+.match-shots-table td small{display:block;color:#8190a3;font-size:10px;margin-top:2px}
+@media(max-width:760px){.match-analytics-grid{grid-template-columns:1fr}.match-analytics-metrics{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
 @media(max-width:760px){.match-detail-accordions{padding:0 8px 11px;gap:7px}.match-detail-accordion>summary{min-height:45px;padding:8px 10px;font-size:12px}.match-detail-accordion-body{padding:11px 9px}}
 @media(prefers-reduced-motion:reduce){.match-detail-accordion-chevron{transition:none}}
 </style>
