@@ -509,13 +509,19 @@
               const recent = all.slice(-5);
               return { matches:recent, statsMatches:recent, note:"5 derniers matchs · compétition non identifiée" };
             }
-            const league = all.filter(item => String(item.competition_id || "").toLowerCase() === targetCompetition).slice(-5);
-            const others = all.filter(item => String(item.competition_id || "").toLowerCase() !== targetCompetition)
-              .sort((a,b) => String(b.date || "").localeCompare(String(a.date || ""))).slice(0,2).reverse();
+            const league = all.filter(item => String(item?.competition_id || "").trim().toLowerCase() === targetCompetition).slice(-5);
+            const firstLeagueMatchDate = league[0]?.date ? String(league[0].date) : "";
+            const others = firstLeagueMatchDate
+              ? all.filter(item => {
+                  const competition = String(item?.competition_id || "").trim().toLowerCase();
+                  const date = String(item?.date || "");
+                  return competition && competition !== targetCompetition && date && date >= firstLeagueMatchDate;
+                })
+              : [];
             return {
               matches:league.concat(others).sort((a,b) => String(a.date || "").localeCompare(String(b.date || ""))),
               statsMatches:league,
-              note:"5 derniers matchs du championnat · jusqu’à 2 autres compétitions"
+              note:"5 derniers matchs du championnat en cours ; autres compétitions depuis le premier de ces matchs"
             };
           };
           const formChartStats = [];
@@ -551,6 +557,7 @@
             return '<section class="history-team-form"><div class="history-team-heading"><strong>'+escapeHtml(name)+'</strong><span class="history-form-count">'+escapeHtml(periodLabel)+'</span></div>'+
               '<div class="history-form-results">'+(chips||'<span class="history-empty-inline">Aucun résultat terminé disponible.</span>')+'</div>'+
               '<div class="history-form-stats"><span><small>Buts marqués</small><b>'+stats.gf+'</b></span><span><small>Buts encaissés</small><b>'+stats.ga+'</b></span></div>'+
+              '<small class="history-form-stats-note">Buts calculés uniquement sur les 5 derniers matchs du championnat en cours.</small>'+
               '</section>';
           };
           const homeKey=normalizeHistoryTeam(match.home_team);
