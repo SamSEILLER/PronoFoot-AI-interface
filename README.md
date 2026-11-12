@@ -1,36 +1,37 @@
-# PronoFoot AI — Football Prediction Lab
+# PronoFoot AI — interface
 
-Interface web publique du projet **PronoFoot AI**. Ce dépôt contient la partie front-end destinée à présenter les matchs, l'historique et les classements.
+Interface web publique du projet Football Prediction Lab. Elle présente les matchs à venir, les détails d'une rencontre, l'historique et les classements.
 
 ## Pages
 
-- **Matchs à venir** — page d'accueil de l'interface.
-- **Historique** — accès à l'historique des rencontres.
-- **Classement** — accès aux classements.
+- `index.html` — matchs à venir et fiche détaillée.
+- `history.html` — historique des rencontres.
+- `classements.html` — classements.
 
-## État des sources de données
+## Données consommées
 
-La page d'accueil affiche un indicateur compact de l'état des sources :
+Les fichiers JSON sont publiés dans `data/` par le moteur V2 ou synchronisés depuis celui-ci :
 
-- **Sources : OK** — les données sont signalées comme opérationnelles.
-- **Sources : Vigilance** — une couverture partielle, une anomalie ou des données à contrôler sont signalées.
-- **Sources : Erreur** — le statut global est en erreur ou le fichier de statut est inaccessible.
+- `matches_future.json` — calendrier futur.
+- `standings.json` — classements.
+- `season-goals.json` — statistiques descriptives par équipe, compétition et saison.
+- `goal-predictions.json` — estimations pré-match des buts attendus (λ).
+- `recent-form.json`, `head-to-head.json` — forme et confrontations historiques.
+- `odds_latest.json` — dernier relevé des cotes Unibet ; peut légitimement contenir zéro événement.
+- `site-status.json` — fraîcheur, couverture et état des collectes.
 
-Cliquer sur l'indicateur ouvre le détail des collectes PitchAPI (historique des matchs) et Odds-API.io (cotes).
+## Fiche match
 
-Le front-end lit le fichier `data/site-status.json`. Celui-ci est publié depuis le dépôt moteur privé **PronoFoot-AI-V2** par le workflow de publication dédié. La génération du statut à partir des données locales ne déclenche pas une nouvelle collecte auprès des fournisseurs.
+La fiche est rendue par `scripts/display/matches.js`. Elle présente les buts attendus disponibles et trois panneaux repliables : Vue d'ensemble, Analyse & IA et Cotes. Les statistiques de saison sont descriptives et ne doivent pas être présentées comme des probabilités prédictives. Les cotes ne sont affichées que lorsqu'elles sont réellement présentes dans le JSON.
 
-> L'indicateur décrit l'état technique et la couverture des sources. Il ne constitue pas une garantie d'exhaustivité des données ni une recommandation de pari.
+## État des sources
 
-## Structure principale
+L'indicateur de statut résume l'état technique et la fraîcheur des collectes. Un statut global « OK » ne garantit ni la présence de cotes pour chaque match ni l'exhaustivité des données. Consulter le détail du statut pour distinguer collecte réussie, absence de fixtures et couverture partielle.
 
-- `index.html` — accueil et indicateur d'état des sources.
-- `history.html` — page historique.
-- `classements.html` — page des classements.
-- `assets/` — logos et icônes de navigation.
-- `data/site-status.json` — dernier état publié des sources de données.
-- `data/goal-predictions.json` — estimations pré-match des buts attendus (λ domicile/extérieur), lorsqu'elles sont disponibles.
+## Développement
 
-## Mise à jour
+- Les changements de l'interface sont publiés sur `main`.
+- Les données sont générées par le dépôt moteur privé `SamSEILLER/PronoFoot-AI-V2`.
+- Le workflow du moteur publie `site-status.json` vers ce dépôt.
+- Les tests du moteur ne remplacent pas un contrôle navigateur de l'interface.
 
-Les modifications de l'interface sont publiées sur la branche `main`. Le fichier `data/site-status.json` est mis à jour automatiquement par le workflow de publication du dépôt moteur lorsqu'il s'exécute avec succès.
