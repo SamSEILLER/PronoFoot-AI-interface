@@ -907,11 +907,11 @@
                     return '<li><span class="match-goal-minute">'+escapeHtml(minute)+'\'</span><strong>'+escapeHtml(shot.player?.name || "Buteur non identifié")+'</strong></li>';
                   }).join("")+'</ul>'
                 : '<p>Aucun but enregistré pour cette équipe dans cette rencontre.</p>';
-              return '<div class="match-analytics-recent">'+summary+
+              return '<article class="match-analytics-recent match-shots-match">'+summary+
                 '<div class="match-analytics-metrics">'+(summaryMetrics || '<small>Statistiques de tirs indisponibles.</small>')+'</div>'+
-                '<div class="match-goals"><h5>Buteurs</h5>'+goalsHtml+'</div></div>';
+                '<div class="match-goals"><h5>Buteurs</h5>'+goalsHtml+'</div></article>';
             }).join("");
-            return '<section class="match-analytics-team"><h4>'+escapeHtml(team.name)+'</h4>'+matchesHtml+'</section>';
+            return '<section class="match-analytics-team match-shots-team"><header class="match-analytics-team-heading match-analytics-team-heading-clean"><h4>'+escapeHtml(team.name)+'</h4><span>'+recent.length+' matchs analysés</span></header>'+matchesHtml+'</section>';
           }).join("");
           return '<div class="match-analytics-grid">'+teamSections+'</div><p class="match-analytics-note">Buteurs et minutes issus des événements de buts disponibles. Les tentatives de tirs individuelles ne sont plus affichées. *PitchAPI peut classer comme cadré un tir finalement bloqué ; ce compteur suit sa définition.</p>';
         };
@@ -997,7 +997,7 @@
                 <div class="match-detail-accordion-body" data-detail-panel="team-stats">Chargement des statistiques…</div>
               </details>
               <details class="match-detail-accordion" name="match-detail">
-                <summary><span class="match-detail-accordion-icon">🎯</span><span>Tirs</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
+                <summary class="match-detail-accordion-summary-shots"><span class="match-detail-accordion-icon">🎯</span><span>Tirs</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
                 <div class="match-detail-accordion-body" data-detail-panel="shots">Chargement des tirs…</div>
               </details>
               <details class="match-detail-accordion" name="match-detail">
