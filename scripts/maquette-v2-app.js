@@ -124,7 +124,9 @@ function renderOdds(m){
  const d=state.data.odds;const event=(d.events||[]).find(x=>String(x.pitchapi_match_id)===String(m.match_id));
  const body=$("#odds");
  if(!event||!Array.isArray(event.markets)||!event.markets.length){body.innerHTML='<div class="empty-state"><strong>Cotes indisponibles</strong><p>'+esc(d.status||"Aucun événement associé")+' · '+esc(d.bookmaker||"Bookmaker")+'. Aucune cote n’est affichée car aucune donnée exploitable n’est présente pour ce match.</p><small>Mise à jour : '+esc(stamp(d.generated_at_utc))+'</small></div>';return}
- body.innerHTML='<div class="odds-meta">'+esc(event.bookmaker||d.bookmaker||"Bookmaker")+' · Odds-API.io · '+esc(stamp(d.generated_at_utc))+'</div>'+event.markets.map(mk=>'<section class="odds-market"><h4>'+esc(mk.name)+'</h4>'+((mk.outcomes||[]).map(o=>'<div class="odds-line"><span>'+esc(o.name||o.label)+'</span><b>'+(Number.isFinite(Number(o.price))?num(o.price):"—")+'</b></div>').join("")||"Aucune cote exploitable")+'</section>').join("");
+ const rows=event.markets.map(mk=>{const lines=(Array.isArray(mk.odds)?mk.odds:[]).map(line=>{const parts=Object.entries(line||{}).filter(([,v])=>v!==null&&v!=="");return parts.length?'<div class="odds-line">'+parts.map(([k,v])=>'<span><small>'+esc(k)+'</small> <b>'+esc(v)+'</b></span>').join("")+'</div>':""}).filter(Boolean).join("");return '<section class="odds-market"><h4>'+esc(mk.name)+'</h4>'+(lines||'<p>Marché sans cote exploitable.</p>')+'</section>'}).join("");
+ const updated=event.markets.map(x=>x.updatedAt).filter(Boolean).sort().pop();
+ body.innerHTML='<div class="odds-meta"><strong>'+esc(event.bookmaker||d.bookmaker||"Bookmaker")+'</strong> · Odds-API.io · mise à jour : '+esc(stamp(updated||d.generated_at_utc))+'</div>'+rows;
 }
 function renderStats(m,home,away){
  const body=$("#stats");
