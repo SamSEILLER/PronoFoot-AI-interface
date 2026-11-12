@@ -757,6 +757,25 @@
             const recent = (entry?.recent_match_ids || []).map((id) => analytics.matchesById.get(String(id))).filter(Boolean)
               .sort((a,b) => String(b.kickoff_utc || "").localeCompare(String(a.kickoff_utc || "")));
             if (!recent.length) return '<section class="match-analytics-team"><h4>'+escapeHtml(team.name)+'</h4><p>Aucun ancien match exploitable dans cette compétition et cette saison.</p></section>';
+            const scorerTotals = new Map();
+            recent.forEach((match) => {
+              const goals = (match.shots?.periods || []).flatMap((period) => period.shots || [])
+                .filter((shot) => String(shot.team_id || "") === team.id && shot.event_type === "Goal" && String(shot.player?.name || "").trim());
+              goals.forEach((shot) => {
+                const name = String(shot.player.name).trim();
+                if (!scorerTotals.has(name)) scorerTotals.set(name, { name, goals: 0, matchIds: new Set() });
+                const scorer = scorerTotals.get(name);
+                scorer.goals += 1;
+                scorer.matchIds.add(String(match.match_id));
+              });
+            });
+            const topScorers = [...scorerTotals.values()]
+              .sort((a, b) => b.goals - a.goals || a.name.localeCompare(b.name, "fr"))
+              .slice(0, 3);
+            const topScorersHtml = '<div class="match-analytics-scorers"><h5>Top 3 buteurs · 5 derniers matchs</h5>'+
+              (topScorers.length
+                ? '<ol>'+topScorers.map((scorer) => '<li><strong>'+escapeHtml(scorer.name)+'</strong><span>'+scorer.goals+' but'+(scorer.goals > 1 ? 's' : '')+' · '+scorer.matchIds.size+' match'+(scorer.matchIds.size > 1 ? 's' : '')+'</span></li>').join("")+'</ol>'
+                : '<p>Aucun buteur identifiable dans les tirs disponibles.</p>')+'</div>';
             const matchesHtml = recent.map((match) => {
               const shots = (match.shots?.periods || []).flatMap((period) => period.shots || [])
                 .filter((shot) => String(shot.team_id || "") === team.id)
@@ -795,7 +814,7 @@
                   return '<tr><td>'+escapeHtml(minute)+'</td><td>'+escapeHtml(shot.player?.name || "Inconnu")+'</td><td>'+escapeHtml(shot.x ?? "—")+', '+escapeHtml(shot.y ?? "—")+'</td><td>'+escapeHtml(shot.expected_goals == null ? "—" : Number(shot.expected_goals).toFixed(2))+'</td><td>'+escapeHtml(result)+'</td><td>'+escapeHtml(situation)+'</td></tr>';
                 }).join("")+'</tbody></table></div></div>';
             }).join("");
-            return '<section class="match-analytics-team"><h4>'+escapeHtml(team.name)+'</h4>'+matchesHtml+'</section>';
+            return '<section class="match-analytics-team"><h4>'+escapeHtml(team.name)+'</h4>'+topScorersHtml+matchesHtml+'</section>';
           }).join("");
           return '<div class="match-analytics-grid">'+teamSections+'</div><p class="match-analytics-note">Cinq derniers matchs joués dans la même compétition et la même saison. *PitchAPI peut classer comme cadré un tir finalement bloqué ; ce compteur suit sa définition. Coordonnées x/y en mètres sur un terrain de 105 × 68 m.</p>';
         };
