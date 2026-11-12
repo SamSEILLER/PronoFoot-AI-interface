@@ -853,8 +853,8 @@
                 new ChartConstructor(canvas,{
                   type:"line",
                   data:{labels:payload.labels,datasets:[
-                    {label:"  xG",data:payload.xg,borderColor:"#35A7FF",backgroundColor:"#35A7FF",borderWidth:2.8,tension:.3,spanGaps:false,pointRadius:4},
-                    {label:"  xG Adverse",data:payload.xga,borderColor:"#20D6A2",backgroundColor:"#20D6A2",borderWidth:2.8,tension:.3,spanGaps:false,pointRadius:4}
+                    {label:"  xG",data:payload.xg,borderColor:"#F97316",backgroundColor:"#F97316",borderWidth:2.8,tension:.3,spanGaps:false,pointRadius:4},
+                    {label:"  xG Adverse",data:payload.xga,borderColor:"#7C3AED",backgroundColor:"#7C3AED",borderWidth:2.8,tension:.3,spanGaps:false,pointRadius:4}
                   ]},
                   options:{responsive:true,maintainAspectRatio:false,animation:false,interaction:{mode:"index",intersect:false},
                     plugins:{legend:{position:"bottom",labels:{usePointStyle:true,boxWidth:7,font:{size:10}}}},
