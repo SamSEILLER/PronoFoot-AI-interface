@@ -812,19 +812,18 @@
               rows.unshift('<div class="match-analytics-recent"><strong>'+escapeHtml(item.home_team)+' '+escapeHtml(score)+' '+escapeHtml(item.away_team)+(result ? '<span class="match-analytics-result '+(result==="V"?"is-win":result==="N"?"is-draw":"is-loss")+'">'+result+'</span>' : '')+'</strong><div class="match-analytics-metrics">'+(selected.length ? selected.map((stat) => '<span><small>'+escapeHtml(stat.label)+'</small><b>'+escapeHtml(stat.value)+'</b></span>').join("") : '<small>Indicateurs xG indisponibles.</small>')+'</div></div>');
             });
             const avg = (values) => values.length ? (values.reduce((a,b)=>a+b,0)/values.length).toLocaleString("fr-FR",{minimumFractionDigits:2,maximumFractionDigits:2}) : "—";
-            const avgCards = '<div class="match-analytics-kpis"><div><strong>'+avg(goalsFor)+'</strong><span>Buts marqués / match</span></div><div><strong>'+avg(goalsAgainst)+'</strong><span>Buts encaissés / match</span></div></div>';
             const chartId = "match-team-chart-"+teamIndex;
             chartPayloads.push({id:chartId,labels,xg:xgValues,xga:xgaValues});
             const statDefinitions = [
-              ["Tirs", "⚽", "par match"],
-              ["Tirs cadrés", "◎", "par match"],
-              ["Possession (%)", "◷", "du temps"],
-              ["Corners", "⚑", "par match"]
+              ["Buts marqués", "⚽", "par match", avg(goalsFor), "green"],
+              ["Buts encaissés", "🛡", "par match", avg(goalsAgainst), "red"],
+              ["Tirs", "⚽", "par match", avg(aggregate.get("Tirs") || []), "blue"],
+              ["Tirs cadrés", "◎", "par match", avg(aggregate.get("Tirs cadrés") || []), "blue"],
+              ["Possession", "◷", "du temps", aggregate.has("Possession (%)") ? avg(aggregate.get("Possession (%)"))+" %" : "—", "purple"],
+              ["Corners", "⚑", "par match", avg(aggregate.get("Corners") || []), "yellow"]
             ];
-            const statTiles = statDefinitions.filter(([label]) => aggregate.has(label)).map(([label,icon,unit]) => {
-              const value = avg(aggregate.get(label));
-              const displayValue = label === "Possession (%)" ? value+" %" : value;
-              return '<div class="match-analytics-stat-tile"><span class="match-analytics-stat-icon" aria-hidden="true">'+icon+'</span><strong>'+escapeHtml(displayValue)+'</strong><span class="match-analytics-stat-label">'+escapeHtml(label)+'</span><small>'+escapeHtml(unit)+'</small></div>';
+            const statTiles = statDefinitions.map(([label,icon,unit,value,tone]) => {
+              return '<div class="match-analytics-stat-tile tone-'+tone+'"><div class="match-analytics-stat-tile-heading"><span class="match-analytics-stat-icon" aria-hidden="true">'+icon+'</span><span class="match-analytics-stat-label">'+escapeHtml(label)+'</span></div><strong>'+escapeHtml(value)+'</strong><small>'+escapeHtml(unit)+'</small></div>';
             }).join("");
             const getStatValue = (label) => aggregate.has(label) ? avg(aggregate.get(label)) : null;
             const shotsValue = getStatValue("Tirs");
@@ -836,9 +835,9 @@
             if (possessionValue !== null) takeaways.push('<strong>'+escapeHtml(possessionValue)+' %</strong> de possession');
             if (cornersValue !== null) takeaways.push('<strong>'+escapeHtml(cornersValue)+' corners</strong> par match');
             const statsNote = statTiles
-              ? '<div class="match-analytics-stats-box"><div class="match-analytics-stats-box-heading"><span class="match-analytics-info-icon">i</span><span><strong>Stats moyennes</strong> (5 derniers matchs)</span></div><div class="match-analytics-stat-grid">'+statTiles+'</div>'+(takeaways.length ? '<div class="match-analytics-takeaway"><strong>À retenir :</strong> '+takeaways.join(' · ')+'.</div>' : '')+'</div>'
+              ? '<div class="match-analytics-stats-box"><div class="match-analytics-stats-box-heading"><span><strong>Stats moyennes</strong> <small>5 derniers matchs</small></span></div><div class="match-analytics-stat-grid">'+statTiles+'</div>'+(takeaways.length ? '<div class="match-analytics-takeaway"><strong>À retenir :</strong> '+takeaways.join(' · ')+'.</div>' : '')+'</div>'
               : "";
-            return '<section class="match-analytics-team"><header class="match-analytics-team-heading"><h4>'+escapeHtml(team.name)+'</h4><span>'+recent.length+' matchs</span></header>'+avgCards+statsNote+'<div class="match-analytics-chart-title">Évolution xG / xG Adverse</div><div class="match-analytics-chart"><canvas id="'+chartId+'" aria-label="Évolution xG et xG Adverse de '+escapeHtml(team.name)+'"></canvas></div>'+''+'</section>';
+            return '<section class="match-analytics-team"><header class="match-analytics-team-heading match-analytics-team-heading-clean"><h4>'+escapeHtml(team.name)+'</h4><span>'+recent.length+' derniers matchs</span></header>'+statsNote+'<div class="match-analytics-chart-title">Évolution xG / xG Adverse</div><div class="match-analytics-chart"><canvas id="'+chartId+'" aria-label="Évolution xG et xG Adverse de '+escapeHtml(team.name)+'"></canvas></div>'+''+'</section>';
           });
           const html = '<div class="match-analytics-grid">'+cards.join("")+'</div><p class="match-analytics-note">Cinq derniers matchs dans la même compétition et la même saison. Les moyennes utilisent uniquement les valeurs disponibles. Les occasions concédées sont calculées à partir des tirs adverses disponibles et peuvent être partielles ; les données absentes ne sont jamais remplacées par zéro.</p>';
           if (teamStats) {
