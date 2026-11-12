@@ -2576,7 +2576,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }, true);
   const observer = new MutationObserver(syncAccordion);
-  observer.observe(panel, {subtree:true,attributes:true,attributeFilter:["class"]});
+  observer.observe(panel, {subtree:true,childList:true,attributes:true,attributeFilter:["class"]});
   syncAccordion();
 });
 </script>
