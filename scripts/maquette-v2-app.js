@@ -9,7 +9,8 @@ const shift = (key,n)=>{const [y,m,d]=key.split("-").map(Number);return new Date
 const timeFmt = new Intl.DateTimeFormat("fr-FR",{hour:"2-digit",minute:"2-digit",timeZone:"Europe/Paris"});
 const dateFmt = new Intl.DateTimeFormat("fr-FR",{weekday:"short",day:"2-digit",month:"short",timeZone:"Europe/Paris"});
 const fullDateFmt = new Intl.DateTimeFormat("fr-FR",{dateStyle:"long",timeZone:"Europe/Paris"});
-const num = (v,d=2)=>Number.isFinite(Number(v))?Number(v).toLocaleString("fr-FR",{minimumFractionDigits:d,maximumFractionDigits:d}):"—";\nconst avg = (t,k)=>t&&Number(t.played)>0?Number(t[k])/Number(t.played):null;
+const num = (v,d=2)=>Number.isFinite(Number(v))?Number(v).toLocaleString("fr-FR",{minimumFractionDigits:d,maximumFractionDigits:d}):"—";
+const avg = (t,k)=>t&&Number(t.played)>0?Number(t[k])/Number(t.played):null;
 const stamp = v => v ? new Date(v).toLocaleString("fr-FR",{dateStyle:"short",timeStyle:"short",timeZone:"Europe/Paris"}) : "Non précisée";
 const ranges = {"today-tomorrow":[0,1],"days-2-3":[2,3],"days-4-6":[4,6],"days-7-13":[7,13]};
 const state = {data:{},matches:[],selected:null,range:"days-7-13",competition:"all",query:""};
