@@ -233,15 +233,26 @@
       .catch((error) => { console.warn("Statistiques de buts par saison indisponibles.", error); return null; }),
     fetch(GOAL_PREDICTIONS_URL + "?v=" + Date.now(), { cache: "no-store" })
       .then((response) => { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); })
-      .catch((error) => { console.warn("Estimations de buts attendus indisponibles.", error); return null; })
+      .catch((error) => { console.warn("Estimations de buts attendus indisponibles.", error); return null; }),
+    fetch("./data/match-analytics.json?v=" + Date.now(), { cache: "no-store" })
+      .then((response) => { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); })
+      .catch((error) => { console.warn("Statistiques détaillées et tirs récents indisponibles.", error); return null; })
   ])
-    .then(([matches, standings, seasonGoals, goalPredictions]) => {
+    .then(([matches, standings, seasonGoals, goalPredictions, matchAnalytics]) => {
       const matchRecords = matches;
       if (!Array.isArray(matchRecords)) throw new Error("Format de données inattendu");
 
       const standingsIndex = buildStandingsIndex(standings);
       const seasonGoalsIndex = buildSeasonGoalsIndex(seasonGoals);
       const goalPredictionsIndex = buildGoalPredictionsIndex(goalPredictions);
+      const matchAnalyticsIndex = new Map();
+      (Array.isArray(matchAnalytics?.competitions) ? matchAnalytics.competitions : []).forEach((competition) => {
+        const matchesById = new Map((Array.isArray(competition.matches) ? competition.matches : [])
+          .map((item) => [String(item.match_id), item]));
+        const teams = new Map((Array.isArray(competition.teams) ? competition.teams : [])
+          .map((team) => [String(team.team_id), team]));
+        matchAnalyticsIndex.set(String(competition.id), { matchesById, teams, generatedAt: matchAnalytics.generated_at_utc });
+      });
       const now = NOW;
       const upcoming = matchRecords
         .filter((match) => match && match.match_category === "future" && match.status !== "cancelled")
@@ -703,10 +714,59 @@
         if (overview) renderHistoryOverview(overview, selectedDetailMatch);
         if (analysis) renderSeasonGoalAnalysis(analysis, selectedDetailMatch);
         if (odds) renderOdds(odds, selectedDetailMatch);
-        // Les snapshots PitchAPI actuellement publiés ne contiennent que les
-        // identifiants, équipes, date, statut et score : ne pas inventer de stats.
-        if (teamStats) teamStats.innerHTML = '<p class="match-detail-empty">Statistiques non disponibles dans les données actuellement collectées.</p><p>Champs prévus : possession, tirs, passes, corners, fautes et xG.</p>';
-        if (shots) shots.innerHTML = '<p class="match-detail-empty">Détail des tirs non disponible dans les données actuellement collectées.</p><p>Champs prévus : position, joueur, xG, résultat et situation (jeu ouvert, coup de pied arrêté, penalty…).</p>';
+        const analytics = matchAnalyticsIndex.get(String(selectedDetailMatch.competition_slug || ""));
+        const renderRecentTeamStats = () => {
+          if (!analytics) return '<p class="match-detail-empty">Aucune collecte de statistiques détaillées disponible pour cette compétition.</p>';
+          const sides = [
+            { id: String(selectedDetailMatch.home_team_id || ""), name: selectedDetailMatch.home_team, side: "home" },
+            { id: String(selectedDetailMatch.away_team_id || ""), name: selectedDetailMatch.away_team, side: "away" }
+          ];
+          return '<div class="match-analytics-grid">' + sides.map((team) => {
+            const entry = analytics.teams.get(team.id);
+            const recent = (entry?.recent_match_ids || []).map((id) => analytics.matchesById.get(String(id))).filter(Boolean)
+              .sort((a,b) => String(b.kickoff_utc || "").localeCompare(String(a.kickoff_utc || "")));
+            if (!recent.length) return '<section class="match-analytics-team"><h4>'+escapeHtml(team.name)+'</h4><p>Aucun match récent exploitable dans cette compétition et cette saison.</p></section>';
+            const rows = recent.map((item) => {
+              const side = String(item.home_team_id) === team.id ? "home" : "away";
+              const all = (item.team_stats?.periods || []).find((period) => period.period === "All") || item.team_stats?.periods?.[0];
+              const metrics = (all?.groups || []).flatMap((group) => (group.items || []).map((stat) => ({
+                label: stat.title || stat.key || group.group_name,
+                value: stat[side]
+              }))).filter((stat) => stat.value !== undefined && stat.value !== null && stat.value !== "");
+              const selected = metrics.filter((stat) => /possession|shots|tir|passes|corner|fouls|fautes|expected goals|xg/i.test(stat.label));
+              const score = item.home_score == null || item.away_score == null ? "—" : item.home_score+" – "+item.away_score;
+              return '<div class="match-analytics-recent"><strong>'+escapeHtml(item.home_team)+' '+escapeHtml(score)+' '+escapeHtml(item.away_team)+'</strong><div class="match-analytics-metrics">'+(selected.length ? selected.map((stat) => '<span><small>'+escapeHtml(stat.label)+'</small><b>'+escapeHtml(stat.value)+'</b></span>').join("") : '<small>Statistiques détaillées indisponibles pour ce match.</small>')+'</div></div>';
+            }).join("");
+            return '<section class="match-analytics-team"><h4>'+escapeHtml(team.name)+'</h4>'+rows+'</section>';
+          }).join("")+'</div><p class="match-analytics-note">Derniers matchs joués dans la même compétition et la même saison. Valeurs issues de PitchAPI ; les champs absents ne sont pas remplacés par zéro.</p>';
+        };
+        const renderRecentShots = () => {
+          if (!analytics) return '<p class="match-detail-empty">Aucune collecte de tirs détaillés disponible pour cette compétition.</p>';
+          const sides = [
+            { id: String(selectedDetailMatch.home_team_id || ""), name: selectedDetailMatch.home_team },
+            { id: String(selectedDetailMatch.away_team_id || ""), name: selectedDetailMatch.away_team }
+          ];
+          const allShots = [];
+          sides.forEach((team) => {
+            const entry = analytics.teams.get(team.id);
+            (entry?.recent_match_ids || []).forEach((id) => {
+              const match = analytics.matchesById.get(String(id));
+              if (!match || match.shots_status !== "available") return;
+              (match.shots?.periods || []).forEach((period) => (period.shots || []).forEach((shot) => {
+                if (String(shot.team_id || "") === team.id) allShots.push({ ...shot, teamName: team.name, match });
+              }));
+            });
+          });
+          allShots.sort((a,b) => String(b.match.kickoff_utc || "").localeCompare(String(a.match.kickoff_utc || "")) || Number(a.minute || 0)-Number(b.minute || 0));
+          if (!allShots.length) return '<p class="match-detail-empty">Aucun détail de tir disponible pour les derniers matchs collectés.</p>';
+          return '<div class="match-shots-table-wrap"><table class="match-shots-table"><thead><tr><th>Équipe / match</th><th>Min.</th><th>Joueur</th><th>Position (x, y)</th><th>xG</th><th>Résultat</th><th>Situation</th></tr></thead><tbody>'+allShots.map((shot) => {
+            const score = shot.match.home_score == null || shot.match.away_score == null ? "—" : shot.match.home_score+" – "+shot.match.away_score;
+            const situation = String(shot.situation || "").replace(/([A-Z])/g," $1").trim();
+            return '<tr><td>'+escapeHtml(shot.teamName)+'<small>'+escapeHtml(shot.match.home_team)+' '+escapeHtml(score)+' '+escapeHtml(shot.match.away_team)+'</small></td><td>'+escapeHtml(shot.minute ?? "—")+'</td><td>'+escapeHtml(shot.player?.name || "Inconnu")+'</td><td>'+escapeHtml(shot.x ?? "—")+', '+escapeHtml(shot.y ?? "—")+'</td><td>'+escapeHtml(shot.expected_goals == null ? "—" : Number(shot.expected_goals).toFixed(2))+'</td><td>'+escapeHtml(shot.event_type || (shot.is_on_target ? "Cadré" : shot.is_blocked ? "Contré" : "Non cadré"))+'</td><td>'+escapeHtml(situation || "—")+'</td></tr>';
+          }).join("")+'</tbody></table></div><p class="match-analytics-note">Tirs des derniers matchs des deux équipes. Coordonnées PitchAPI : x de 0 à 105 m, y de 0 à 68 m ; elles ne représentent pas une position GPS.</p>';
+        };
+        if (teamStats) teamStats.innerHTML = renderRecentTeamStats();
+        if (shots) shots.innerHTML = renderRecentShots();
       };
       const selectMatch = (card, match) => {
         selectedMatchKey = card.dataset.matchKey || "";
