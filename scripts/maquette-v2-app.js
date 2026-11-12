@@ -108,7 +108,7 @@ function renderStandings(m,competition){
  const rows=competition.standings.map(t=>'<tr class="'+([String(m.home_team_id),String(m.away_team_id)].includes(String(t.team_id))?'highlight':'')+'"><td>'+esc(t.position)+'</td><td>'+esc(t.team_name)+'</td><td>'+esc(t.played)+'</td><td>'+esc(t.wins)+'</td><td>'+esc(t.draws)+'</td><td>'+esc(t.losses)+'</td><td>'+esc(t.goals_for)+':'+esc(t.goals_against)+'</td><td>'+esc(t.goal_difference)+'</td><td><b>'+esc(t.points)+'</b></td></tr>').join("");
  body.innerHTML='<div class="standings-meta">'+esc(competition.name)+' · '+esc(competition.season)+' · '+competition.standings.length+' équipes</div><div class="table-scroll"><table class="standings-table"><thead><tr><th>#</th><th>Équipe</th><th>J</th><th>V</th><th>N</th><th>D</th><th>BP:BC</th><th>Diff.</th><th>Pts</th></tr></thead><tbody>'+rows+'</tbody></table></div><p class="muted">Source : standings.json · mis à jour le '+esc(stamp(state.data.standings.updated_at||state.data.standings.generated_at))+'</p>';
 }
-\nfunction renderAnalysis(m,competition,home,away){
+function renderAnalysis(m,competition,home,away){
  const body=$("#analysis");
  if(!competition||competition.season!==m.season){body.innerHTML='<p>Statistiques indisponibles : aucune donnée pour cette compétition et cette saison. Aucun remplacement par une autre saison ou compétition.</p>';return}
  const renderTeam=(name,t)=>{
