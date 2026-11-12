@@ -2796,45 +2796,47 @@ p.history-data-meta{margin:8px 2px 0!important;color:#555555!important;font-weig
 }
 
 
-/* Forme récente : deux lignes lisibles avec valeurs mises en évidence */
+/* Forme récente : buts marqués et encaissés côte à côte, sans cadres */
 .history-form-stats{
   display:grid!important;
-  grid-template-columns:minmax(0,1fr)!important;
-  gap:5px!important;
-  padding:7px 8px!important;
-  border:1px solid #e3eaf2!important;
-  border-radius:7px!important;
-  background:#f8fafc!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:0!important;
+  padding:7px 0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
 }
 .history-form-stats span{
   display:flex!important;
-  flex-direction:row!important;
+  flex-direction:column!important;
   align-items:center!important;
-  justify-content:space-between!important;
-  gap:12px!important;
-  min-height:30px!important;
-  padding:4px 7px!important;
+  justify-content:center!important;
+  gap:3px!important;
+  min-height:38px!important;
+  padding:3px 8px!important;
   border:0!important;
-  border-radius:5px!important;
-  background:#fff!important;
+  border-radius:0!important;
+  background:transparent!important;
+}
+.history-form-stats span+span{
+  border-left:1px solid #d7e0e9!important;
 }
 .history-form-stats small{
-  font-size:11px!important;
+  font-size:10px!important;
   line-height:1.3!important;
-  color:#526b83!important;
+  color:#65798e!important;
   font-weight:650!important;
 }
 .history-form-stats b{
-  display:inline-flex!important;
-  align-items:center!important;
-  justify-content:center!important;
-  min-width:30px!important;
-  padding:2px 8px!important;
-  border-radius:5px!important;
-  background:#e5edf6!important;
+  display:block!important;
+  min-width:0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
   color:#173f68!important;
-  font-size:13px!important;
-  line-height:1.4!important;
+  font-size:15px!important;
+  line-height:1.25!important;
   font-weight:850!important;
 }
 
