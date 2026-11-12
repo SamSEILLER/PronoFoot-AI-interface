@@ -2883,3 +2883,16 @@ p.history-data-meta{margin:8px 2px 0!important;color:#555555!important;font-weig
 
 </body>
 </html>
+
+
+/* Info-bulle Forme récente : portail hors des conteneurs overflow:hidden */
+.history-form-chip::after{content:none!important;display:none!important}
+.history-tooltip-portal{
+  position:fixed;z-index:999999;display:block;box-sizing:border-box;
+  width:max-content;max-width:min(280px,calc(100vw - 24px));
+  padding:9px 11px;border:1px solid #dbe5f1;border-radius:8px;
+  background:#102746;color:#fff;font-size:12px;font-weight:650;line-height:1.45;
+  text-align:left;white-space:pre-line;overflow-wrap:anywhere;
+  box-shadow:0 7px 22px rgba(16,39,70,.28);pointer-events:none;
+}
+.history-tooltip-portal[hidden]{display:none!important}
