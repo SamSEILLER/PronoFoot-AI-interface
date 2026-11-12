@@ -746,24 +746,33 @@
             { id: String(selectedDetailMatch.home_team_id || ""), name: selectedDetailMatch.home_team },
             { id: String(selectedDetailMatch.away_team_id || ""), name: selectedDetailMatch.away_team }
           ];
-          const allShots = [];
-          sides.forEach((team) => {
+          const teamSections = sides.map((team) => {
             const entry = analytics.teams.get(team.id);
-            (entry?.recent_match_ids || []).forEach((id) => {
-              const match = analytics.matchesById.get(String(id));
-              if (!match || match.shots_status !== "available") return;
-              (match.shots?.periods || []).forEach((period) => (period.shots || []).forEach((shot) => {
-                if (String(shot.team_id || "") === team.id) allShots.push({ ...shot, teamName: team.name, match });
-              }));
-            });
-          });
-          allShots.sort((a,b) => String(b.match.kickoff_utc || "").localeCompare(String(a.match.kickoff_utc || "")) || Number(a.minute || 0)-Number(b.minute || 0));
-          if (!allShots.length) return '<p class="match-detail-empty">Aucun détail de tir disponible pour les derniers matchs collectés.</p>';
-          return '<div class="match-shots-table-wrap"><table class="match-shots-table"><thead><tr><th>Équipe / match</th><th>Min.</th><th>Joueur</th><th>Position (x, y)</th><th>xG</th><th>Résultat</th><th>Situation</th></tr></thead><tbody>'+allShots.map((shot) => {
-            const score = shot.match.home_score == null || shot.match.away_score == null ? "—" : shot.match.home_score+" – "+shot.match.away_score;
-            const situation = String(shot.situation || "").replace(/([A-Z])/g," $1").trim();
-            return '<tr><td>'+escapeHtml(shot.teamName)+'<small>'+escapeHtml(shot.match.home_team)+' '+escapeHtml(score)+' '+escapeHtml(shot.match.away_team)+'</small></td><td>'+escapeHtml(shot.minute ?? "—")+'</td><td>'+escapeHtml(shot.player?.name || "Inconnu")+'</td><td>'+escapeHtml(shot.x ?? "—")+', '+escapeHtml(shot.y ?? "—")+'</td><td>'+escapeHtml(shot.expected_goals == null ? "—" : Number(shot.expected_goals).toFixed(2))+'</td><td>'+escapeHtml(shot.event_type || (shot.is_on_target ? "Cadré" : shot.is_blocked ? "Contré" : "Non cadré"))+'</td><td>'+escapeHtml(situation || "—")+'</td></tr>';
-          }).join("")+'</tbody></table></div><p class="match-analytics-note">Tirs des derniers matchs des deux équipes. Coordonnées PitchAPI : x de 0 à 105 m, y de 0 à 68 m ; elles ne représentent pas une position GPS.</p>';
+            const recent = (entry?.recent_match_ids || []).map((id) => analytics.matchesById.get(String(id))).filter(Boolean)
+              .sort((a,b) => String(b.kickoff_utc || "").localeCompare(String(a.kickoff_utc || "")));
+            if (!recent.length) return '<section class="match-analytics-team"><h4>'+escapeHtml(team.name)+'</h4><p>Aucun ancien match exploitable dans cette compétition et cette saison.</p></section>';
+            const matchesHtml = recent.map((match) => {
+              const shots = (match.shots?.periods || []).flatMap((period) => period.shots || [])
+                .filter((shot) => String(shot.team_id || "") === team.id)
+                .sort((a,b) => Number(a.minute || 0)-Number(b.minute || 0));
+              const score = match.home_score == null || match.away_score == null ? "—" : match.home_score+" – "+match.away_score;
+              const summary = '<strong>'+escapeHtml(match.home_team)+' '+escapeHtml(score)+' '+escapeHtml(match.away_team)+'</strong>';
+              if (match.shots_status !== "available") return '<div class="match-analytics-recent">'+summary+'<p>Données de tirs indisponibles pour cette rencontre.</p></div>';
+              if (!shots.length) return '<div class="match-analytics-recent">'+summary+'<p>Aucun tir enregistré pour cette équipe dans cette rencontre.</p></div>';
+              const totalXg = shots.reduce((sum, shot) => sum + (Number.isFinite(Number(shot.expected_goals)) ? Number(shot.expected_goals) : 0), 0);
+              const onTarget = shots.filter((shot) => shot.is_on_target === true).length;
+              const goals = shots.filter((shot) => shot.event_type === "Goal").length;
+              return '<div class="match-analytics-recent">'+summary+
+                '<div class="match-analytics-metrics"><span><small>Tirs</small><b>'+shots.length+'</b></span><span><small>Cadrés*</small><b>'+onTarget+'</b></span><span><small>Buts</small><b>'+goals+'</b></span><span><small>xG tirs</small><b>'+totalXg.toFixed(2)+'</b></span></div>'+
+                '<div class="match-shots-table-wrap"><table class="match-shots-table"><thead><tr><th>Min.</th><th>Joueur</th><th>Position (m)</th><th>xG</th><th>Résultat</th><th>Situation</th></tr></thead><tbody>'+
+                shots.map((shot) => {
+                  const minute = shot.minute_added ? shot.minute+'+'+shot.minute_added : (shot.minute ?? "—");
+                  return '<tr><td>'+escapeHtml(minute)+'</td><td>'+escapeHtml(shot.player?.name || "Inconnu")+'</td><td>'+escapeHtml(shot.x ?? "—")+', '+escapeHtml(shot.y ?? "—")+'</td><td>'+escapeHtml(shot.expected_goals == null ? "—" : Number(shot.expected_goals).toFixed(2))+'</td><td>'+escapeHtml(shot.event_type || "—")+'</td><td>'+escapeHtml(shot.situation || "—")+'</td></tr>';
+                }).join("")+'</tbody></table></div></div>';
+            }).join("");
+            return '<section class="match-analytics-team"><h4>'+escapeHtml(team.name)+'</h4>'+matchesHtml+'</section>';
+          }).join("");
+          return '<div class="match-analytics-grid">'+teamSections+'</div><p class="match-analytics-note">Cinq derniers matchs joués dans la même compétition et la même saison. xG additionné sur les tirs listés. *PitchAPI peut classer comme cadré un tir finalement bloqué ; ce compteur suit sa définition. Coordonnées x/y en mètres sur un terrain de 105 × 68 m.</p>';
         };
         if (teamStats) teamStats.innerHTML = renderRecentTeamStats();
         if (shots) shots.innerHTML = renderRecentShots();
