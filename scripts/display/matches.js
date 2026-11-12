@@ -502,7 +502,7 @@
             }).join("");
             return '<section class="history-team-form"><div class="history-team-heading"><strong>'+escapeHtml(name)+'</strong><span class="history-form-count">'+results.length+' match'+(results.length>1?"s":"")+'</span></div>'+
               '<div class="history-form-results">'+(chips||'<span class="history-empty-inline">Aucun résultat terminé disponible.</span>')+'</div>'+
-              '<div class="history-form-stats"><span><small>Buts +</small><b>'+stats.gf+'</b></span><span><small>Buts −</small><b>'+stats.ga+'</b></span></div>'+
+              '<div class="history-form-stats"><span><small>Buts marqués</small><b>'+stats.gf+'</b></span><span><small>Buts encaissés</small><b>'+stats.ga+'</b></span></div>'+
               '</section>';
           };
           const homeKey=normalizeHistoryTeam(match.home_team);
