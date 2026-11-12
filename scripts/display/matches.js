@@ -790,6 +790,15 @@
               </details>
             </div>
           </div>`;
+        const detailAccordions = detailPanel.querySelectorAll(".match-detail-accordion");
+        detailAccordions.forEach((accordion) => {
+          accordion.addEventListener("toggle", () => {
+            if (!accordion.open) return;
+            detailAccordions.forEach((otherAccordion) => {
+              if (otherAccordion !== accordion) otherAccordion.open = false;
+            });
+          });
+        });
         renderDetailAccordions();
       };
       const renderFilteredMatches = () => {
