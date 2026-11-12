@@ -693,32 +693,14 @@
         else drawSeasonGoalCharts(window.Chart);
       };
 
-      const renderDetailTab = (activeTab) => {
-        if (!detailPanel) return;
-        detailPanel.querySelectorAll("[data-detail-tab]").forEach((button) => {
-          const active = button.dataset.detailTab === activeTab;
-          button.classList.toggle("is-active", active);
-          button.setAttribute("aria-selected", String(active));
-        });
-        const body = detailPanel.querySelector(".match-detail-body");
-        if (!body) return;
-        if (activeTab === "odds" && selectedDetailMatch) {
-          renderOdds(body, selectedDetailMatch);
-          return;
-        }
-        if (activeTab === "analysis" && selectedDetailMatch) {
-          renderSeasonGoalAnalysis(body, selectedDetailMatch);
-          return;
-        }
-        if (activeTab === "overview" && selectedDetailMatch) {
-          renderHistoryOverview(body, selectedDetailMatch);
-          return;
-        }
-        const messages = {
-          overview:"Les données complémentaires de cette rencontre ne sont pas encore disponibles.",
-          analysis:"Analyse & IA : données indisponibles pour le moment."
-        };
-        body.textContent = messages[activeTab] || messages.overview;
+      const renderDetailAccordions = () => {
+        if (!detailPanel || !selectedDetailMatch) return;
+        const overview = detailPanel.querySelector('[data-detail-panel="overview"]');
+        const analysis = detailPanel.querySelector('[data-detail-panel="analysis"]');
+        const odds = detailPanel.querySelector('[data-detail-panel="odds"]');
+        if (overview) renderHistoryOverview(overview, selectedDetailMatch);
+        if (analysis) renderSeasonGoalAnalysis(analysis, selectedDetailMatch);
+        if (odds) renderOdds(odds, selectedDetailMatch);
       };
       const selectMatch = (card, match) => {
         selectedMatchKey = card.dataset.matchKey || "";
@@ -793,18 +775,23 @@
               <span class="match-detail-xg-value">Total <strong>${xgTotal}</strong></span>
               <small class="match-detail-xg-note">${escape(xgNote)}</small>
             </div>
-            <div class="match-detail-tabs" role="tablist" aria-label="Données du match">
-              ${detailTabs.map(tab=>'<button type="button" class="match-detail-tab'+(tab.id==="overview"?" is-active":"")+'" role="tab" aria-selected="'+(tab.id==="overview"?"true":"false")+'" data-detail-tab="'+tab.id+'"><span aria-hidden="true">'+tab.icon+'</span><span>'+tab.label+'</span></button>').join("")}
+            <div class="match-detail-accordions" aria-label="Données détaillées du match">
+              <details class="match-detail-accordion" open>
+                <summary><span class="match-detail-accordion-icon">${detailTabs[0].icon}</span><span>Vue d'ensemble</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
+                <div class="match-detail-accordion-body" data-detail-panel="overview">Chargement des données…</div>
+              </details>
+              <details class="match-detail-accordion">
+                <summary><span class="match-detail-accordion-icon">${detailTabs[1].icon}</span><span>Analyse &amp; IA</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
+                <div class="match-detail-accordion-body" data-detail-panel="analysis">Chargement des données…</div>
+              </details>
+              <details class="match-detail-accordion">
+                <summary><span class="match-detail-accordion-icon">${detailTabs[2].icon}</span><span>Cotes</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
+                <div class="match-detail-accordion-body" data-detail-panel="odds">Chargement des données…</div>
+              </details>
             </div>
-            <div class="match-detail-body" role="tabpanel">Les données complémentaires de cette rencontre ne sont pas encore disponibles.</div>
           </div>`;
-        renderDetailTab("overview");
+        renderDetailAccordions();
       };
-      detailPanel?.addEventListener("click", (event) => {
-        const button = event.target.closest("[data-detail-tab]");
-        if (button) renderDetailTab(button.dataset.detailTab);
-      });
-
       const renderFilteredMatches = () => {
         const today = parisDateKey(NOW);
         const [startOffset, endOffset] = dateFilterRanges[activeDateFilter] || [0, 1];
