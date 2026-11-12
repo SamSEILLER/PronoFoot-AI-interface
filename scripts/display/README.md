@@ -1,37 +1,31 @@
 # Modules d'affichage
 
-Modules JavaScript du site public. Ils consomment les données préparées par le moteur V2 et ne réalisent aucun calcul de pronostic ni appel fournisseur.
+Les modules JavaScript consomment les JSON préparés par le moteur V2. Ils assurent le rendu côté navigateur ; ils ne réalisent aucune collecte auprès des fournisseurs.
 
-## Modules
-- `matches.js` : liste et regroupement des matchs par date.
-- `standings.js` : affichage des classements.
-- `sidebar.js` : navigation et panneaux latéraux.
-- `team-form.js` : série récente V/N/D d'une équipe.
-- `team-history.js` : anciens résultats et scores.
-- `match-details.js` : présentation détaillée d'une rencontre.
-- `display-utils.js` : helpers DOM et formatage partagés.
+| Fichier | Rôle |
+|---|---|
+| `matches.js` | Liste des matchs, filtres et fiche détaillée |
+| `standings.js` | Affichage des classements |
+| `sidebar.js` | Navigation et panneaux latéraux |
+| `team-form.js` | Forme récente |
+| `team-history.js` | Historique d'une équipe |
+| `match-details.js` | Module de détail séparé (à vérifier avant extension) |
+| `display-utils.js` | Fonctions utilitaires partagées |
 
-Les contrats de données seront définis à partir des JSON réellement produits par le moteur avant toute implémentation fonctionnelle.
+## Fiche match — état actuel
 
-## Analyse — en-têtes des statistiques de buts
+La fiche principale est construite dans `matches.js` et comporte trois accordéons :
+- **Vue d'ensemble** : historique récent et confrontations.
+- **Analyse & IA** : statistiques descriptives de saison et indicateurs de buts ; les λ sont affichés séparément lorsqu'ils sont disponibles.
+- **Cotes** : données du dernier snapshot Unibet ; aucune cote n'est fabriquée en cas d'absence.
 
-- Les en-têtes des cartes des deux équipes reprennent le fond bleu foncé, la typographie blanche et le contraste des en-têtes de l'onglet « Vue d'ensemble ».
-- Le compteur d'équipe est libellé « matchs joués » afin de le distinguer du nombre total de matchs de la compétition.
-- Les dénominateurs des marchés restent affichés sous la forme « nombre de matchs concernés / matchs joués ».
-- Aucun JSON historique ni résultat n'est modifié par cette présentation.
+Les accordéons sont fermés par défaut. Leur en-tête utilise le thème bleu et le chevron est centré verticalement.
 
-## Moyennes de buts par équipe
+## Règles de présentation des statistiques
 
-- Dans chaque carte équipe de l'onglet « Analyse & IA », deux indicateurs affichent les buts marqués par match et les buts encaissés par match.
-- Les moyennes sont calculées à la volée à partir de `goals_for`, `goals_against` et `played` du fichier `data/season-goals.json`.
-- Le périmètre reste strictement celui de la compétition et de la saison du match sélectionné.
-- Si un total de buts est absent ou non numérique, la moyenne correspondante est affichée comme indisponible ; aucune valeur n'est remplacée par zéro.
-- Cette évolution est uniquement de présentation et ne modifie aucun résultat historique ni fichier de données.
+- Toujours afficher le nombre de matchs utilisés avec une fréquence.
+- Les marchés Over/Under portent sur le total de buts du match, pas sur les buts marqués par une seule équipe.
+- Les moyennes de buts marqués/encaissés et les répartitions domicile/extérieur sont des statistiques historiques.
+- Un champ manquant ou incohérent est affiché comme indisponible, jamais remplacé arbitrairement par zéro.
+- Une fréquence historique n'est pas une probabilité prédictive.
 
-## Répartition des buts totaux par match — graphiques en anneau
-
-- L'onglet « Analyse & IA » affiche un graphique Chart.js en anneau pour chacune des deux équipes.
-- Les catégories sont calculées à partir des fréquences historiques cumulées : 0 but = joués − Over 0.5 ; 1 but = Over 0.5 − Over 1.5 ; 2 buts = Over 1.5 − Over 2.5 ; 3 buts et plus = Over 2.5.
-- Les compteurs doivent être entiers, cohérents, monotones et partager le même dénominateur que les matchs joués. Sinon, le graphique est déclaré indisponible.
-- Les nombres affichés dans la légende sont des comptes de matchs, pas des probabilités prédictives.
-- Les données restent strictement limitées à la compétition et à la saison du match sélectionné.
