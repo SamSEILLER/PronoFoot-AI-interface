@@ -816,7 +816,7 @@
             const chartId = "match-team-chart-"+teamIndex;
             chartPayloads.push({id:chartId,labels,xg:xgValues,xga:xgaValues});
             const averages = [...aggregate.entries()].map(([label,values]) => '<div><span>'+escapeHtml(label)+'</span><strong>'+avg(values)+'</strong></div>').join("");
-            return '<section class="match-analytics-team"><header class="match-analytics-team-heading"><h4>'+escapeHtml(team.name)+'</h4><span>'+recent.length+' matchs</span></header>'+avgCards+'<div class="match-analytics-chart-title">Évolution xG / xG Adverse</div><div class="match-analytics-chart"><canvas id="'+chartId+'" aria-label="Évolution xG et xG Adverse de '+escapeHtml(team.name)+'"></canvas></div>'+(averages ? '<div class="match-analytics-average-grid">'+averages+'</div>' : '')+'<div class="match-analytics-recent-heading">Détail des rencontres</div>'+rows.join("")+'</section>';
+            return '<section class="match-analytics-team"><header class="match-analytics-team-heading"><h4>'+escapeHtml(team.name)+'</h4><span>'+recent.length+' matchs</span></header>'+avgCards+'<div class="match-analytics-chart-title">Évolution xG / xG Adverse</div><div class="match-analytics-chart"><canvas id="'+chartId+'" aria-label="Évolution xG et xG Adverse de '+escapeHtml(team.name)+'"></canvas></div>'+(averages ? '<div class="match-analytics-average-grid">'+averages+'</div><div class="match-analytics-note match-analytics-stats-explanation"><strong>Lecture des statistiques</strong><ul><li>Environ 7 tirs tentés par match.</li><li>Parmi eux, environ 4 tirs cadrés par match.</li><li>En moyenne, 53 % de possession du ballon.</li><li>Environ 5 corners obtenus par rencontre.</li></ul></div>' : '')+'<div class="match-analytics-recent-heading">Détail des rencontres</div>'+rows.join("")+'</section>';
           });
           const html = '<div class="match-analytics-grid">'+cards.join("")+'</div><p class="match-analytics-note">Cinq derniers matchs dans la même compétition et la même saison. Les moyennes utilisent uniquement les valeurs disponibles. Les occasions concédées sont calculées à partir des tirs adverses disponibles et peuvent être partielles ; les données absentes ne sont jamais remplacées par zéro.</p>';
           if (teamStats) {
@@ -831,8 +831,8 @@
                 new ChartConstructor(canvas,{
                   type:"line",
                   data:{labels:payload.labels,datasets:[
-                    {label:"xG",data:payload.xg,borderColor:"#2878b8",backgroundColor:"#2878b8",borderWidth:2,tension:.3,spanGaps:false,pointRadius:3},
-                    {label:"xG Adverse",data:payload.xga,borderColor:"#15966b",backgroundColor:"#15966b",borderWidth:2,tension:.3,spanGaps:false,pointRadius:3}
+                    {label:"  xG",data:payload.xg,borderColor:"#2878b8",backgroundColor:"#2878b8",borderWidth:2,tension:.3,spanGaps:false,pointRadius:3},
+                    {label:"  xG Adverse",data:payload.xga,borderColor:"#15966b",backgroundColor:"#15966b",borderWidth:2,tension:.3,spanGaps:false,pointRadius:3}
                   ]},
                   options:{responsive:true,maintainAspectRatio:false,animation:false,interaction:{mode:"index",intersect:false},
                     plugins:{legend:{position:"bottom",labels:{usePointStyle:true,boxWidth:7,font:{size:10}}}},
