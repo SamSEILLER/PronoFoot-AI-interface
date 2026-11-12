@@ -834,9 +834,9 @@
             const takeaways = [];
             if (shotsValue !== null) takeaways.push('<strong>'+escapeHtml(shotsValue)+' tirs</strong>'+(onTargetValue !== null ? ' dont <strong>'+escapeHtml(onTargetValue)+' cadrés</strong>' : ''));
             if (possessionValue !== null) takeaways.push('<strong>'+escapeHtml(possessionValue)+' %</strong> de possession');
-            if (cornersValue !== null) takeaways.push('<strong>'+escapeHtml(cornersValue)+' corners</strong>');
+            if (cornersValue !== null) takeaways.push('<strong>'+escapeHtml(cornersValue)+' corners</strong> par match');
             const statsNote = statTiles
-              ? '<div class="match-analytics-stats-box"><div class="match-analytics-stats-box-heading"><span class="match-analytics-info-icon">i</span><span><strong>Stats moyennes</strong> (5 derniers matchs)</span></div><div class="match-analytics-stat-grid">'+statTiles+'</div>'+(takeaways.length ? '<div class="match-analytics-takeaway"><strong>À retenir :</strong> '+takeaways.join(' · ')+' par match.</div>' : '')+'</div>'
+              ? '<div class="match-analytics-stats-box"><div class="match-analytics-stats-box-heading"><span class="match-analytics-info-icon">i</span><span><strong>Stats moyennes</strong> (5 derniers matchs)</span></div><div class="match-analytics-stat-grid">'+statTiles+'</div>'+(takeaways.length ? '<div class="match-analytics-takeaway"><strong>À retenir :</strong> '+takeaways.join(' · ')+'.</div>' : '')+'</div>'
               : "";
             return '<section class="match-analytics-team"><header class="match-analytics-team-heading"><h4>'+escapeHtml(team.name)+'</h4><span>'+recent.length+' matchs</span></header>'+avgCards+statsNote+'<div class="match-analytics-chart-title">Évolution xG / xG Adverse</div><div class="match-analytics-chart"><canvas id="'+chartId+'" aria-label="Évolution xG et xG Adverse de '+escapeHtml(team.name)+'"></canvas></div>'+''+'<div class="match-analytics-recent-heading">Détail des rencontres</div>'+rows.join("")+'</section>';
           });
