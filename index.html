@@ -2772,6 +2772,27 @@ p.history-data-meta{margin:8px 2px 0!important;color:#555555!important;font-weig
     border: 1px solid #d7e2ee !important;
     border-left: 3px solid #54799e !important;
     border-radius: 5px !important;
+    background: #e5edf6 !important;
+}
+
+
+/* Accordéons : + pour ouvrir, − pour fermer */
+.match-detail-accordion-chevron{
+  align-items:center!important;
+  justify-content:center!important;
+  font-size:0!important;
+  line-height:1!important;
+  transform:none!important;
+}
+.match-detail-accordion-chevron::before{
+  content:"+"!important;
+  display:block;
+  font-size:23px;
+  line-height:1;
+  font-weight:500;
+}
+.match-detail-accordion[open] .match-detail-accordion-chevron::before{
+  content:"−"!important;
 }
 </style>
 
