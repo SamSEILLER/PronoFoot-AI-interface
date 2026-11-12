@@ -2445,22 +2445,23 @@ p.history-data-meta{margin:8px 2px 0!important;color:#555555!important;font-weig
 <script src="./scripts/display/sidebar.js" defer></script>
 <script src="./assets/chartjs-loader.js" defer></script>
 <script src="./scripts/display/matches.js?v=20261110-xg-v1" defer></script>
-</body>
-</html>
 
 <style>
-/* Accordéons de la fiche match */
+/* Accordéons de la fiche match : en-têtes bleus et chevrons centrés */
 .match-detail-accordions{display:flex;flex-direction:column;gap:9px;padding:0 12px 14px}
-.match-detail-accordion{min-width:0;border:1px solid #dce7f2;border-radius:7px;background:#fff;overflow:hidden}
-.match-detail-accordion>summary{display:flex;align-items:center;gap:10px;min-height:48px;padding:10px 13px;list-style:none;cursor:pointer;color:#173f68;font-size:13px;font-weight:850;background:linear-gradient(100deg,#f8fbff,#eef5fb);user-select:none}
+.match-detail-accordion{min-width:0;border:1px solid #cbd9e9;border-radius:7px;background:#fff;overflow:hidden}
+.match-detail-accordion>summary{display:flex;align-items:center;gap:10px;min-height:48px;padding:9px 13px;list-style:none;cursor:pointer;color:#fff;font-size:13px;font-weight:850;background:linear-gradient(105deg,#173f68 0%,#245b91 100%);user-select:none}
 .match-detail-accordion>summary::-webkit-details-marker{display:none}
-.match-detail-accordion>summary:focus-visible{outline:2px solid #159b8e;outline-offset:-3px}
-.match-detail-accordion-icon{display:inline-flex;align-items:center;justify-content:center;width:19px;height:19px;flex:0 0 19px;color:#087b55}
-.match-detail-accordion-icon svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.match-detail-accordion-chevron{margin-left:auto;font-size:19px;line-height:1;color:#55718f;transition:transform .18s ease}
-.match-detail-accordion[open]>summary{background:linear-gradient(100deg,#e9f8f0,#edf6fa);color:#075b43}
+.match-detail-accordion>summary:focus-visible{outline:2px solid #20c985;outline-offset:-3px}
+.match-detail-accordion-icon{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;flex:0 0 20px;color:#fff}
+.match-detail-accordion-icon svg{display:block;width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.match-detail-accordion-chevron{display:flex;align-items:center;justify-content:center;align-self:stretch;margin-left:auto;width:24px;min-width:24px;font-size:20px;line-height:1;color:#fff;transform-origin:center;transition:transform .18s ease}
+.match-detail-accordion[open]>summary{background:linear-gradient(105deg,#102f52 0%,#1d4d7d 100%);color:#fff}
 .match-detail-accordion[open] .match-detail-accordion-chevron{transform:rotate(180deg)}
 .match-detail-accordion-body{padding:13px 12px;border-top:1px solid #e5edf6;color:#526b89;font-size:13px;line-height:1.5;min-width:0}
-@media(max-width:760px){.match-detail-accordions{padding:0 8px 11px;gap:7px}.match-detail-accordion>summary{min-height:45px;padding:9px 10px;font-size:12px}.match-detail-accordion-body{padding:11px 9px}}
+@media(max-width:760px){.match-detail-accordions{padding:0 8px 11px;gap:7px}.match-detail-accordion>summary{min-height:45px;padding:8px 10px;font-size:12px}.match-detail-accordion-body{padding:11px 9px}}
 @media(prefers-reduced-motion:reduce){.match-detail-accordion-chevron{transition:none}}
 </style>
+
+</body>
+</html>
