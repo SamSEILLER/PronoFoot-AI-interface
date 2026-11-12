@@ -585,8 +585,8 @@
           body.innerHTML='<div class="history-overview-grid">'+
             '<section class="history-card history-form-card"><div class="history-card-heading"><span class="history-heading-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h17"/><path d="m7 15 4-4 3 2 6-7"/><path d="M16 6h4v4"/></svg></span><div><h3>Forme récente</h3><p>Résultats récents des deux équipes</p></div></div>'+
             '<div class="history-form-teams">'+formRow(match.home_team)+formRow(match.away_team)+'</div></section>'+
-            '<section class="history-card history-h2h-card"><div class="history-card-heading"><span class="history-heading-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="7" cy="7" r="3"/><circle cx="17" cy="7" r="3"/><path d="M2.5 19c.5-3 2-4.5 4.5-4.5s4 1.5 4.5 4.5M12.5 19c.5-3 2-4.5 4.5-4.5s4 1.5 4.5 4.5"/><path d="M10 10h4"/></svg></span><div><h3>Confrontations directes (H2H)</h3><p>Toutes compétitions · archives disponibles</p></div></div>'+
-            (total?'<div class="history-h2h-layout"><div class="history-h2h-summary"><div class="history-h2h-chart"><canvas id="historyH2HChart" role="img" aria-label="Répartition des victoires, nuls et défaites en confrontations directes"></canvas><div class="history-h2h-chart-center"><strong>'+total+'</strong><small>matchs</small></div></div>'+
+            '<section class="history-card history-h2h-card"><div class="history-card-heading"><span class="history-heading-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="7" cy="7" r="3"/><circle cx="17" cy="7" r="3"/><path d="M2.5 19c.5-3 2-4.5 4.5-4.5s4 1.5 4.5 4.5M12.5 19c.5-3 2-4.5 4.5-4.5s4 1.5 4.5 4.5"/><path d="M10 10h4"/></svg></span><div><h3>Confrontations directes (H2H)</h3><p>Toutes compétitions · '+total+' matchs archivés</p></div></div>'+
+            (total?'<div class="history-h2h-layout"><div class="history-h2h-summary"><div class="history-h2h-chart"><canvas id="historyH2HChart" role="img" aria-label="Diagramme polaire des victoires, nuls et défaites en confrontations directes"></canvas></div>'+
               '<div class="history-h2h-legend"><span><i class="home"></i><span><b>'+h2hStats.home+' Vict.</b><small>('+Math.round(homePct)+' %)</small></span></span><span><i class="draw"></i><span><b>'+h2hStats.draw+' Nul'+(h2hStats.draw>1?'s':'')+'</b><small>('+Math.round(drawPct)+' %)</small></span></span><span><i class="away"></i><span><b>'+h2hStats.away+' Déf.</b><small>('+Math.round(awayPct)+' %)</small></span></span></div></div>'+
               '<div class="history-h2h-list">'+h2hRows+'</div></div>':'<p class="history-empty">Aucune confrontation directe terminée trouvée dans les archives disponibles.</p>')+
             '</section></div><p class="history-data-meta">'+freshness+' · Historique issu des matchs PitchAPI archivés.</p>';
@@ -596,13 +596,13 @@
             if(!h2hCanvas||!h2hCanvas.isConnected||!ChartConstructor)return;
             if(h2hChartInstance)h2hChartInstance.destroy();
             h2hChartInstance=new ChartConstructor(h2hCanvas,{
-              type:"doughnut",
+              type:"polarArea",
               data:{labels:[match.home_team+" · Victoires","Nuls",match.away_team+" · Victoires"],datasets:[{
                 data:[h2hStats.home,h2hStats.draw,h2hStats.away],
                 backgroundColor:["#159947","#9aa8b8","#dc3545"],
                 borderColor:"#ffffff",borderWidth:3,spacing:2,hoverOffset:3
               }]},
-              options:{responsive:true,maintainAspectRatio:false,cutout:"63%",rotation:-90,animation:false,events:[],
+              options:{responsive:true,maintainAspectRatio:false,animation:false,events:[],
                 plugins:{legend:{display:false},tooltip:{enabled:false}}}
             });
           };
