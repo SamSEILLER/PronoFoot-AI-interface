@@ -2794,6 +2794,29 @@ p.history-data-meta{margin:8px 2px 0!important;color:#555555!important;font-weig
 .match-detail-accordion[open] .match-detail-accordion-chevron::before{
   content:"−"!important;
 }
+
+
+/* Forme récente : conserver uniquement les buts marqués et encaissés sur deux lignes */
+.history-form-stats{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr)!important;
+  gap:0!important;
+  padding:6px 10px!important;
+}
+.history-form-stats span{
+  display:flex!important;
+  flex-direction:row!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  gap:10px!important;
+  padding:5px 2px!important;
+  border-right:0!important;
+  border-bottom:1px solid #e7edf3!important;
+}
+.history-form-stats span:last-child{border-bottom:0!important}
+.history-form-stats small{font-size:10px!important;color:#65798e!important}
+.history-form-stats b{font-size:13px!important;color:#173f68!important}
+
 </style>
 
 </body>
