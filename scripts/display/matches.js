@@ -543,8 +543,7 @@
               const otherCompetition=Boolean(targetCompetition && matchCompetition && targetCompetition!==matchCompetition);
               const compLabel=competitionLabel(item?.competition_id);
               const tooltip=compactHistoryDate(item?.date)+" · "+compLabel+"\n"+name+" "+String(item?.score || "Score indisponible")+" "+String(item?.opponent || "Adversaire inconnu");
-              return '<span class="history-form-item"><span class="history-form-chip '+cls+(otherCompetition?" is-other-competition":"")+'" data-tooltip="'+escapeHtml(tooltip)+'" tabindex="0" aria-label="'+escapeHtml((result||"Résultat inconnu")+" — "+tooltip)+'">'+escapeHtml(result||"—")+'</span>'+
-                (otherCompetition?'<small class="history-form-comp-badge" title="Autre compétition : '+escapeHtml(compLabel)+'">'+escapeHtml(shortCompetition(item?.competition_id))+'</small>':'')+'</span>';
+              return '<span class="history-form-item"><span class="history-form-chip '+cls+(otherCompetition?" is-other-competition":"")+'" data-tooltip="'+escapeHtml(tooltip)+'" tabindex="0" aria-label="'+escapeHtml((result||"Résultat inconnu")+" — "+tooltip)+'">'+escapeHtml(result||"—")+'</span></span>';
             }).join("");
             return '<section class="history-team-form"><div class="history-team-heading"><strong>'+escapeHtml(name)+'</strong><span class="history-form-count">'+results.length+' match'+(results.length>1?"s":"")+'</span></div>'+
               '<div class="history-form-results">'+(chips||'<span class="history-empty-inline">Aucun résultat terminé disponible.</span>')+'</div>'+
