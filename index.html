@@ -2911,14 +2911,9 @@ p.history-data-meta{margin:8px 2px 0!important;color:#555555!important;font-weig
 
 /* H2H et forme récente : couleurs et badges affinés */
 .history-h2h-dot.draw,.history-h2h-track span.draw{background:#b7791f!important}
-.history-form-comp-badge{
-  width:auto!important;max-width:24px!important;min-width:0!important;
-  height:auto!important;padding:2px 3px!important;border:0!important;
-  border-radius:3px!important;background:#eef2f6!important;
-  color:#111111!important;font-size:7px!important;font-weight:750!important;
-  letter-spacing:.2px!important;line-height:1!important;opacity:.85;
-}
-.history-form-item:has(.history-form-chip.is-other-competition){gap:2px!important}
+/* Autre championnat : même alignement, repère par contour pointillé */
+.history-form-item{flex-direction:row!important;align-items:center!important;gap:0!important;min-width:30px!important}
+.history-form-chip.is-other-competition{border:2px dashed #102746!important;box-shadow:0 0 0 1px rgba(255,255,255,.9)!important}
 @media(max-width:600px){
   .history-h2h-bars{gap:13px;padding:6px 2px 12px}
   .history-h2h-bar-label b{font-size:12px}
