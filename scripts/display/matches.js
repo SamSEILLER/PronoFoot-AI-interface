@@ -469,7 +469,7 @@
             },
             options:{
               indexAxis:"y",responsive:true,maintainAspectRatio:false,animation:false,
-              plugins:{legend:{position:"bottom",labels:{boxWidth:9,boxHeight:9,font:{size:9},padding:10}}},
+              plugins:{legend:{position:"bottom",labels:{usePointStyle:true,pointStyle:"circle",boxWidth:13,boxHeight:9,font:{size:9},padding:14}}},
               scales:{
                 x:{stacked:true,beginAtZero:true,ticks:{precision:0,font:{size:9}},grid:{display:false}},
                 y:{stacked:true,ticks:{font:{size:10}},grid:{display:false}}
@@ -805,18 +805,18 @@
                 goalsFor.push(Number(gf)); goalsAgainst.push(Number(ga));
               }
               const score = gf == null || ga == null ? "—" : gf+" – "+ga;
-              const selected = metrics.filter((stat) => /expected goals|\bxg\b/i.test(stat.label)).slice(0,1).map((stat) => ({...stat,label:"Occasions de but créées"}));
-              if (opponentShots.length && opponentKnown.length) selected.push({label: opponentKnown.length < opponentShots.length ? "Occasions concédées (partiel)" : "Occasions de but concédées", value: opponentKnown.reduce((sum,shot)=>sum+Number(shot.expected_goals),0).toFixed(2)});
+              const selected = metrics.filter((stat) => /expected goals|\bxg\b/i.test(stat.label)).slice(0,1).map((stat) => ({...stat,label:"xG"}));
+              if (opponentShots.length && opponentKnown.length) selected.push({label: opponentKnown.length < opponentShots.length ? "xG Adverse (partiel)" : "xG Adverse", value: opponentKnown.reduce((sum,shot)=>sum+Number(shot.expected_goals),0).toFixed(2)});
               const result = gf == null || ga == null ? "" : Number(gf)>Number(ga) ? "V" : Number(gf)===Number(ga) ? "N" : "D";
               labels.push("M"+(index+1));
-              rows.unshift('<div class="match-analytics-recent"><strong>'+escapeHtml(item.home_team)+' '+escapeHtml(score)+' '+escapeHtml(item.away_team)+(result ? '<span class="match-analytics-result '+(result==="V"?"is-win":result==="N"?"is-draw":"is-loss")+'">'+result+'</span>' : '')+'</strong><div class="match-analytics-metrics">'+(selected.length ? selected.map((stat) => '<span><small>'+escapeHtml(stat.label)+'</small><b>'+escapeHtml(stat.value)+'</b></span>').join("") : '<small>Indicateurs d’occasions indisponibles.</small>')+'</div></div>');
+              rows.unshift('<div class="match-analytics-recent"><strong>'+escapeHtml(item.home_team)+' '+escapeHtml(score)+' '+escapeHtml(item.away_team)+(result ? '<span class="match-analytics-result '+(result==="V"?"is-win":result==="N"?"is-draw":"is-loss")+'">'+result+'</span>' : '')+'</strong><div class="match-analytics-metrics">'+(selected.length ? selected.map((stat) => '<span><small>'+escapeHtml(stat.label)+'</small><b>'+escapeHtml(stat.value)+'</b></span>').join("") : '<small>Indicateurs xG indisponibles.</small>')+'</div></div>');
             });
             const avg = (values) => values.length ? (values.reduce((a,b)=>a+b,0)/values.length).toLocaleString("fr-FR",{minimumFractionDigits:2,maximumFractionDigits:2}) : "—";
             const avgCards = '<div class="match-analytics-kpis"><div><strong>'+avg(goalsFor)+'</strong><span>Buts marqués / match</span></div><div><strong>'+avg(goalsAgainst)+'</strong><span>Buts encaissés / match</span></div></div>';
             const chartId = "match-team-chart-"+teamIndex;
             chartPayloads.push({id:chartId,labels,xg:xgValues,xga:xgaValues});
             const averages = [...aggregate.entries()].map(([label,values]) => '<div><span>'+escapeHtml(label)+'</span><strong>'+avg(values)+'</strong></div>').join("");
-            return '<section class="match-analytics-team"><header class="match-analytics-team-heading"><h4>'+escapeHtml(team.name)+'</h4><span>'+recent.length+' matchs</span></header>'+avgCards+'<div class="match-analytics-chart-title">Évolution des occasions créées et concédées</div><div class="match-analytics-chart"><canvas id="'+chartId+'" aria-label="Évolution des occasions de but créées et concédées par '+escapeHtml(team.name)+'"></canvas></div>'+(averages ? '<div class="match-analytics-average-grid">'+averages+'</div>' : '')+'<div class="match-analytics-recent-heading">Détail des rencontres</div>'+rows.join("")+'</section>';
+            return '<section class="match-analytics-team"><header class="match-analytics-team-heading"><h4>'+escapeHtml(team.name)+'</h4><span>'+recent.length+' matchs</span></header>'+avgCards+'<div class="match-analytics-chart-title">Évolution xG / xG Adverse</div><div class="match-analytics-chart"><canvas id="'+chartId+'" aria-label="Évolution xG et xG Adverse de '+escapeHtml(team.name)+'"></canvas></div>'+(averages ? '<div class="match-analytics-average-grid">'+averages+'</div>' : '')+'<div class="match-analytics-recent-heading">Détail des rencontres</div>'+rows.join("")+'</section>';
           });
           const html = '<div class="match-analytics-grid">'+cards.join("")+'</div><p class="match-analytics-note">Cinq derniers matchs dans la même compétition et la même saison. Les moyennes utilisent uniquement les valeurs disponibles. Les occasions concédées sont calculées à partir des tirs adverses disponibles et peuvent être partielles ; les données absentes ne sont jamais remplacées par zéro.</p>';
           if (teamStats) {
@@ -831,8 +831,8 @@
                 new ChartConstructor(canvas,{
                   type:"line",
                   data:{labels:payload.labels,datasets:[
-                    {label:"Occasions créées",data:payload.xg,borderColor:"#2878b8",backgroundColor:"#2878b8",borderWidth:2,tension:.3,spanGaps:false,pointRadius:3},
-                    {label:"Occasions concédées",data:payload.xga,borderColor:"#15966b",backgroundColor:"#15966b",borderWidth:2,tension:.3,spanGaps:false,pointRadius:3}
+                    {label:"xG",data:payload.xg,borderColor:"#2878b8",backgroundColor:"#2878b8",borderWidth:2,tension:.3,spanGaps:false,pointRadius:3},
+                    {label:"xG Adverse",data:payload.xga,borderColor:"#15966b",backgroundColor:"#15966b",borderWidth:2,tension:.3,spanGaps:false,pointRadius:3}
                   ]},
                   options:{responsive:true,maintainAspectRatio:false,animation:false,interaction:{mode:"index",intersect:false},
                     plugins:{legend:{position:"bottom",labels:{usePointStyle:true,boxWidth:7,font:{size:10}}}},
