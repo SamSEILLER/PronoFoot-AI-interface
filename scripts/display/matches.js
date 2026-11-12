@@ -838,7 +838,7 @@
             const statsNote = statTiles
               ? '<div class="match-analytics-stats-box"><div class="match-analytics-stats-box-heading"><span class="match-analytics-info-icon">i</span><span><strong>Stats moyennes</strong> (5 derniers matchs)</span></div><div class="match-analytics-stat-grid">'+statTiles+'</div>'+(takeaways.length ? '<div class="match-analytics-takeaway"><strong>À retenir :</strong> '+takeaways.join(' · ')+'.</div>' : '')+'</div>'
               : "";
-            return '<section class="match-analytics-team"><header class="match-analytics-team-heading"><h4>'+escapeHtml(team.name)+'</h4><span>'+recent.length+' matchs</span></header>'+avgCards+statsNote+'<div class="match-analytics-chart-title">Évolution xG / xG Adverse</div><div class="match-analytics-chart"><canvas id="'+chartId+'" aria-label="Évolution xG et xG Adverse de '+escapeHtml(team.name)+'"></canvas></div>'+''+'<div class="match-analytics-recent-heading">Détail des rencontres</div>'+rows.join("")+'</section>';
+            return '<section class="match-analytics-team"><header class="match-analytics-team-heading"><h4>'+escapeHtml(team.name)+'</h4><span>'+recent.length+' matchs</span></header>'+avgCards+statsNote+'<div class="match-analytics-chart-title">Évolution xG / xG Adverse</div><div class="match-analytics-chart"><canvas id="'+chartId+'" aria-label="Évolution xG et xG Adverse de '+escapeHtml(team.name)+'"></canvas></div>'+''+'</section>';
           });
           const html = '<div class="match-analytics-grid">'+cards.join("")+'</div><p class="match-analytics-note">Cinq derniers matchs dans la même compétition et la même saison. Les moyennes utilisent uniquement les valeurs disponibles. Les occasions concédées sont calculées à partir des tirs adverses disponibles et peuvent être partielles ; les données absentes ne sont jamais remplacées par zéro.</p>';
           if (teamStats) {
@@ -853,8 +853,8 @@
                 new ChartConstructor(canvas,{
                   type:"line",
                   data:{labels:payload.labels,datasets:[
-                    {label:"  xG",data:payload.xg,borderColor:"#2878b8",backgroundColor:"#2878b8",borderWidth:2,tension:.3,spanGaps:false,pointRadius:3},
-                    {label:"  xG Adverse",data:payload.xga,borderColor:"#15966b",backgroundColor:"#15966b",borderWidth:2,tension:.3,spanGaps:false,pointRadius:3}
+                    {label:"  xG",data:payload.xg,borderColor:"#35A7FF",backgroundColor:"#35A7FF",borderWidth:2.8,tension:.3,spanGaps:false,pointRadius:4},
+                    {label:"  xG Adverse",data:payload.xga,borderColor:"#20D6A2",backgroundColor:"#20D6A2",borderWidth:2.8,tension:.3,spanGaps:false,pointRadius:4}
                   ]},
                   options:{responsive:true,maintainAspectRatio:false,animation:false,interaction:{mode:"index",intersect:false},
                     plugins:{legend:{position:"bottom",labels:{usePointStyle:true,boxWidth:7,font:{size:10}}}},
