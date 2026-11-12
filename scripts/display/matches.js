@@ -580,8 +580,6 @@
             return '<div class="history-h2h-row"><span class="history-h2h-date">'+escapeHtml(compactHistoryDate(item.date))+'</span><span class="history-h2h-competition">'+escapeHtml(getCompetitionDisplayCode(item.competition_id, item.competition_name) || item.competition_name || competitionLabel(item.competition_id))+'</span>'+
               '<span class="history-h2h-home">'+escapeHtml(item.home||"—")+'</span><strong class="history-h2h-score '+outcomeClass+'">'+escapeHtml(scoreHome)+' – '+escapeHtml(scoreAway)+'</strong><span class="history-h2h-away">'+escapeHtml(item.away||"—")+'</span></div>';
           }).join("");
-          const generated=recentForm?.generated_at_utc||headToHead?.generated_at_utc;
-          const freshness=generated?'Données mises à jour le '+escapeHtml(new Date(generated).toLocaleString("fr-FR",{dateStyle:"short",timeStyle:"short",timeZone:"Europe/Paris"})):"Date de mise à jour indisponible";
           body.innerHTML='<div class="history-overview-grid">'+
             '<section class="history-card history-form-card"><div class="history-card-heading"><span class="history-heading-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h17"/><path d="m7 15 4-4 3 2 6-7"/><path d="M16 6h4v4"/></svg></span><div><h3>Forme récente</h3><p>Résultats récents des deux équipes</p></div></div>'+
             '<div class="history-form-teams">'+formRow(match.home_team)+formRow(match.away_team)+'</div></section>'+
@@ -589,14 +587,14 @@
             (total?'<div class="history-h2h-layout"><div class="history-h2h-summary"><div class="history-h2h-chart"><canvas id="historyH2HChart" role="img" aria-label="Diagramme polaire des victoires, nuls et défaites en confrontations directes"></canvas></div>'+
               '<div class="history-h2h-legend"><span><i class="home"></i><span><b>'+h2hStats.home+' Vict.</b><small>('+Math.round(homePct)+' %)</small></span></span><span><i class="draw"></i><span><b>'+h2hStats.draw+' Nul'+(h2hStats.draw>1?'s':'')+'</b><small>('+Math.round(drawPct)+' %)</small></span></span><span><i class="away"></i><span><b>'+h2hStats.away+' Déf.</b><small>('+Math.round(awayPct)+' %)</small></span></span></div></div>'+
               '<div class="history-h2h-list">'+h2hRows+'</div></div>':'<p class="history-empty">Aucune confrontation directe terminée trouvée dans les archives disponibles.</p>')+
-            '</section></div><p class="history-data-meta">'+freshness+' · Historique issu des matchs PitchAPI archivés.</p>';
+            '</section></div>';
           renderFormChart(formChartStats);
           const h2hCanvas=document.getElementById("historyH2HChart");
           const drawH2H=(ChartConstructor)=>{
             if(!h2hCanvas||!h2hCanvas.isConnected||!ChartConstructor)return;
             if(h2hChartInstance)h2hChartInstance.destroy();
             h2hChartInstance=new ChartConstructor(h2hCanvas,{
-              type:"polarArea",
+              type:"doughnut",
               data:{labels:[match.home_team+" · Victoires","Nuls",match.away_team+" · Victoires"],datasets:[{
                 data:[h2hStats.home,h2hStats.draw,h2hStats.away],
                 backgroundColor:["#159947","#9aa8b8","#dc3545"],
