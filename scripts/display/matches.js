@@ -547,7 +547,7 @@
             }).join("");
             const validDates=results.map(item=>new Date(item?.date)).filter(date=>!Number.isNaN(date.getTime())).sort((a,b)=>a-b);
             const dateLabel=(date)=>new Intl.DateTimeFormat("fr-FR",{day:"2-digit",month:"short",year:"numeric",timeZone:"UTC"}).format(date);
-            const periodLabel=validDates.length ? (dateLabel(validDates[0])===dateLabel(validDates[validDates.length-1]) ? dateLabel(validDates[0]) : "Du "+dateLabel(validDates[0])+" au "+dateLabel(validDates[validDates.length-1])) : "Période indisponible";
+            const periodLabel=validDates.length ? "Du "+dateLabel(validDates[0]) : "Période indisponible";
             return '<section class="history-team-form"><div class="history-team-heading"><strong>'+escapeHtml(name)+'</strong><span class="history-form-count">'+escapeHtml(periodLabel)+'</span></div>'+
               '<div class="history-form-results">'+(chips||'<span class="history-empty-inline">Aucun résultat terminé disponible.</span>')+'</div>'+
               '<div class="history-form-stats"><span><small>Buts marqués</small><b>'+stats.gf+'</b></span><span><small>Buts encaissés</small><b>'+stats.ga+'</b></span></div>'+
