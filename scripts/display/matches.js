@@ -757,33 +757,16 @@
             const recent = (entry?.recent_match_ids || []).map((id) => analytics.matchesById.get(String(id))).filter(Boolean)
               .sort((a,b) => String(b.kickoff_utc || "").localeCompare(String(a.kickoff_utc || "")));
             if (!recent.length) return '<section class="match-analytics-team"><h4>'+escapeHtml(team.name)+'</h4><p>Aucun ancien match exploitable dans cette compétition et cette saison.</p></section>';
-            const scorerTotals = new Map();
-            recent.forEach((match) => {
-              const goals = (match.shots?.periods || []).flatMap((period) => period.shots || [])
-                .filter((shot) => String(shot.team_id || "") === team.id && shot.event_type === "Goal" && String(shot.player?.name || "").trim());
-              goals.forEach((shot) => {
-                const name = String(shot.player.name).trim();
-                if (!scorerTotals.has(name)) scorerTotals.set(name, { name, goals: 0, matchIds: new Set() });
-                const scorer = scorerTotals.get(name);
-                scorer.goals += 1;
-                scorer.matchIds.add(String(match.match_id));
-              });
-            });
-            const topScorers = [...scorerTotals.values()]
-              .sort((a, b) => b.goals - a.goals || a.name.localeCompare(b.name, "fr"))
-              .slice(0, 3);
-            const topScorersHtml = '<div class="match-analytics-scorers"><h5>Top 3 buteurs · 5 derniers matchs</h5>'+
-              (topScorers.length
-                ? '<ol>'+topScorers.map((scorer) => '<li><strong>'+escapeHtml(scorer.name)+'</strong><span>'+scorer.goals+' but'+(scorer.goals > 1 ? 's' : '')+' · '+scorer.matchIds.size+' match'+(scorer.matchIds.size > 1 ? 's' : '')+'</span></li>').join("")+'</ol>'
-                : '<p>Aucun buteur identifiable dans les tirs disponibles.</p>')+'</div>';
             const matchesHtml = recent.map((match) => {
-              const shots = (match.shots?.periods || []).flatMap((period) => period.shots || [])
-                .filter((shot) => String(shot.team_id || "") === team.id)
-                .sort((a,b) => Number(a.minute || 0)-Number(b.minute || 0));
+              const allShots = (match.shots?.periods || []).flatMap((period) => period.shots || []);
+              const goals = allShots
+                .filter((shot) => String(shot.team_id || "") === team.id && shot.event_type === "Goal")
+                .sort((a,b) => Number(a.minute || 0)-Number(b.minute || 0) || Number(a.minute_added || 0)-Number(b.minute_added || 0));
               const score = match.home_score == null || match.away_score == null ? "—" : match.home_score+" – "+match.away_score;
               const summary = '<strong>'+escapeHtml(match.home_team)+' '+escapeHtml(score)+' '+escapeHtml(match.away_team)+'</strong>';
-              if (match.shots_status !== "available") return '<div class="match-analytics-recent">'+summary+'<p>Données de tirs indisponibles pour cette rencontre.</p></div>';
-              if (!shots.length) return '<div class="match-analytics-recent">'+summary+'<p>Aucun tir enregistré pour cette équipe dans cette rencontre.</p></div>';
+              if (match.shots_status !== "available") {
+                return '<div class="match-analytics-recent">'+summary+'<p>Données de buts détaillés indisponibles pour cette rencontre.</p></div>';
+              }
               const allStats = (match.team_stats?.periods || []).find((period) => period.period === "All") || match.team_stats?.periods?.[0];
               const side = String(match.home_team_id) === team.id ? "home" : "away";
               const shotMetrics = (allStats?.groups || []).flatMap((group) => (group.items || []).map((stat) => ({
@@ -798,27 +781,21 @@
                 const key = stat.label.toLowerCase().replace(/[^a-z ]/g, "").trim();
                 return '<span><small>'+escapeHtml(metricLabels[key] || stat.label)+'</small><b>'+escapeHtml(stat.value)+'</b></span>';
               }).join("");
-              const resultLabels = { Goal:"But", AttemptSaved:"Arrêt du gardien", Miss:"Tir manqué", Post:"Poteau ou barre" };
-              const situationLabels = {
-                RegularPlay:"Jeu ouvert", FromCorner:"Corner", SetPiece:"Coup de pied arrêté",
-                FastBreak:"Contre-attaque", FreeKick:"Coup franc", ThrowInSetPiece:"Phase arrêtée après une touche",
-                Penalty:"Penalty", IndividualPlay:"Action individuelle"
-              };
+              const goalsHtml = goals.length
+                ? '<ul class="match-goals-list">'+goals.map((shot) => {
+                    const minute = shot.minute_added ? shot.minute+'+'+shot.minute_added : (shot.minute ?? "—");
+                    return '<li><span class="match-goal-minute">'+escapeHtml(minute)+'\'</span><strong>'+escapeHtml(shot.player?.name || "Buteur non identifié")+'</strong></li>';
+                  }).join("")+'</ul>'
+                : '<p>Aucun but enregistré pour cette équipe dans cette rencontre.</p>';
               return '<div class="match-analytics-recent">'+summary+
                 '<div class="match-analytics-metrics">'+(summaryMetrics || '<small>Statistiques de tirs indisponibles.</small>')+'</div>'+
-                '<div class="match-shots-table-wrap"><table class="match-shots-table"><thead><tr><th>Min.</th><th>Joueur</th><th>Position (m)</th><th>xG</th><th>Résultat</th><th>Situation</th></tr></thead><tbody>'+
-                shots.map((shot) => {
-                  const minute = shot.minute_added ? shot.minute+'+'+shot.minute_added : (shot.minute ?? "—");
-                  const result = resultLabels[shot.event_type] || shot.event_type || "—";
-                  const situation = situationLabels[shot.situation] || shot.situation || "—";
-                  return '<tr><td>'+escapeHtml(minute)+'</td><td>'+escapeHtml(shot.player?.name || "Inconnu")+'</td><td>'+escapeHtml(shot.x ?? "—")+', '+escapeHtml(shot.y ?? "—")+'</td><td>'+escapeHtml(shot.expected_goals == null ? "—" : Number(shot.expected_goals).toFixed(2))+'</td><td>'+escapeHtml(result)+'</td><td>'+escapeHtml(situation)+'</td></tr>';
-                }).join("")+'</tbody></table></div></div>';
+                '<div class="match-goals"><h5>Buteurs</h5>'+goalsHtml+'</div></div>';
             }).join("");
-            return '<section class="match-analytics-team"><h4>'+escapeHtml(team.name)+'</h4>'+topScorersHtml+matchesHtml+'</section>';
+            return '<section class="match-analytics-team"><h4>'+escapeHtml(team.name)+'</h4>'+matchesHtml+'</section>';
           }).join("");
-          return '<div class="match-analytics-grid">'+teamSections+'</div><p class="match-analytics-note">Cinq derniers matchs joués dans la même compétition et la même saison. *PitchAPI peut classer comme cadré un tir finalement bloqué ; ce compteur suit sa définition. Coordonnées x/y en mètres sur un terrain de 105 × 68 m.</p>';
+          return '<div class="match-analytics-grid">'+teamSections+'</div><p class="match-analytics-note">Buteurs et minutes issus des événements de buts disponibles. Les tentatives de tirs individuelles ne sont plus affichées. *PitchAPI peut classer comme cadré un tir finalement bloqué ; ce compteur suit sa définition.</p>';
         };
-        if (teamStats) teamStats.innerHTML = renderRecentTeamStats();
+                if (teamStats) teamStats.innerHTML = renderRecentTeamStats();
         if (shots) shots.innerHTML = renderRecentShots();
       };
       const selectMatch = (card, match) => {
