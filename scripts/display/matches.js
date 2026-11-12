@@ -962,11 +962,7 @@
             </div>
             <div class="match-detail-xg">
               <span class="match-detail-xg-label">Buts attendus estimés (λ)</span>
-              <span class="match-detail-xg-value">${escape(match.home_team)} <strong>${xgHome}</strong></span>
-              <span aria-hidden="true">–</span>
-              <span class="match-detail-xg-value">${escape(match.away_team)} <strong>${xgAway}</strong></span>
-              <span class="match-detail-xg-value">Total <strong>${xgTotal}</strong></span>
-              <small class="match-detail-xg-note">${escape(xgNote)}</small>
+              <span class="match-detail-xg-note">Indisponible pour le moment</span>
             </div>
             <div class="match-detail-accordions" aria-label="Données détaillées du match">
               <details class="match-detail-accordion" name="match-detail">
