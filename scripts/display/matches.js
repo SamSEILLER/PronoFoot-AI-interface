@@ -38,6 +38,52 @@
   const template = document.getElementById("upcomingMatchTemplate");
   if (!list || !template) return;
 
+  // Les infobulles sont montées directement dans body pour échapper aux overflow:hidden.
+  const historyTooltip = document.createElement("div");
+  historyTooltip.className = "history-tooltip-portal";
+  historyTooltip.setAttribute("role", "tooltip");
+  historyTooltip.hidden = true;
+  document.body.appendChild(historyTooltip);
+  let activeHistoryTooltip = null;
+  const hideHistoryTooltip = () => {
+    historyTooltip.hidden = true;
+    activeHistoryTooltip = null;
+  };
+  const showHistoryTooltip = (chip) => {
+    const content = chip?.getAttribute("data-tooltip");
+    if (!content) return hideHistoryTooltip();
+    activeHistoryTooltip = chip;
+    historyTooltip.textContent = content;
+    historyTooltip.hidden = false;
+    const rect = chip.getBoundingClientRect();
+    const tip = historyTooltip.getBoundingClientRect();
+    const margin = 8;
+    let left = rect.left + rect.width / 2 - tip.width / 2;
+    left = Math.max(margin, Math.min(left, window.innerWidth - tip.width - margin));
+    let top = rect.top - tip.height - 9;
+    if (top < margin) top = rect.bottom + 9;
+    if (top + tip.height > window.innerHeight - margin) top = Math.max(margin, window.innerHeight - tip.height - margin);
+    historyTooltip.style.left = left + "px";
+    historyTooltip.style.top = top + "px";
+  };
+  document.addEventListener("pointerover", (event) => {
+    const chip = event.target.closest?.(".history-form-chip[data-tooltip]");
+    if (chip) showHistoryTooltip(chip);
+  });
+  document.addEventListener("pointerout", (event) => {
+    const chip = event.target.closest?.(".history-form-chip[data-tooltip]");
+    if (chip && !chip.contains(event.relatedTarget)) hideHistoryTooltip();
+  });
+  document.addEventListener("focusin", (event) => {
+    const chip = event.target.closest?.(".history-form-chip[data-tooltip]");
+    if (chip) showHistoryTooltip(chip);
+  });
+  document.addEventListener("focusout", (event) => {
+    if (event.target.closest?.(".history-form-chip[data-tooltip]")) hideHistoryTooltip();
+  });
+  window.addEventListener("scroll", hideHistoryTooltip, true);
+  window.addEventListener("resize", hideHistoryTooltip);
+
   const dateFormatter = new Intl.DateTimeFormat("fr-FR", {
     weekday: "short", day: "2-digit", month: "short", year: "numeric", timeZone: "Europe/Paris"
   });
