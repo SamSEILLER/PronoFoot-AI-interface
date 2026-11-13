@@ -931,15 +931,36 @@
                 options:{responsive:true,maintainAspectRatio:false,animation:false,
                   plugins:{legend:{display:false},tooltip:{callbacks:{label:(context)=>" "+context.raw+" but(s)"}}},
                   scales:{y:{beginAtZero:true,ticks:{precision:0,stepSize:1},grid:{color:"#edf2f7"}},x:{grid:{display:false},ticks:{font:{size:10}}}}},
-                plugins:[{id:"halftime-marker",afterDraw(chart){
-                  const x=chart.scales.x, area=chart.chartArea, ctx=chart.ctx;
-                  if(!x || !area) return;
-                  const marker=(x.getPixelForValue(3)+x.getPixelForValue(4))/2;
-                  ctx.save();ctx.strokeStyle="#d97706";ctx.lineWidth=1.5;ctx.setLineDash([4,4]);
-                  ctx.beginPath();ctx.moveTo(marker,area.top);ctx.lineTo(marker,area.bottom);ctx.stroke();
-                  ctx.setLineDash([]);ctx.fillStyle="#b45309";ctx.font="bold 9px sans-serif";
-                  ctx.textAlign="center";ctx.fillText("MI-TEMPS",marker,area.top+10);ctx.restore();
-                }}]
+                plugins:[{id:"match-time-markers",
+                  beforeDatasetsDraw(chart){
+                    const x=chart.scales.x, area=chart.chartArea, ctx=chart.ctx;
+                    if(!x || !area) return;
+                    const step=Math.abs(x.getPixelForValue(1)-x.getPixelForValue(0));
+                    if(!step) return;
+                    const bands=[3,7];
+                    ctx.save();
+                    bands.forEach((index)=>{
+                      const center=x.getPixelForValue(index);
+                      const left=center-step/2;
+                      ctx.fillStyle="rgba(217,119,6,.13)";
+                      ctx.fillRect(left,area.top,step,area.bottom-area.top);
+                      ctx.strokeStyle="rgba(180,83,9,.55)";
+                      ctx.lineWidth=1;
+                      ctx.setLineDash([3,3]);
+                      ctx.strokeRect(left,area.top,step,area.bottom-area.top);
+                    });
+                    ctx.restore();
+                  },
+                  afterDraw(chart){
+                    const x=chart.scales.x, area=chart.chartArea, ctx=chart.ctx;
+                    if(!x || !area) return;
+                    const marker=(x.getPixelForValue(3)+x.getPixelForValue(4))/2;
+                    ctx.save();ctx.strokeStyle="#d97706";ctx.lineWidth=1.5;ctx.setLineDash([4,4]);
+                    ctx.beginPath();ctx.moveTo(marker,area.top);ctx.lineTo(marker,area.bottom);ctx.stroke();
+                    ctx.setLineDash([]);ctx.fillStyle="#b45309";ctx.font="bold 9px sans-serif";
+                    ctx.textAlign="center";ctx.fillText("MI-TEMPS",marker,area.top+10);ctx.restore();
+                  }
+                }]
               });
             };
             if (window.chartJsReady && typeof window.chartJsReady.then==="function") window.chartJsReady.then(drawGoalTimeChart);
