@@ -812,9 +812,7 @@
               const awayPosition = Number.isInteger(Number(item.away_position_before)) && Number(item.away_position_before)>0 ? Number(item.away_position_before) : null;
               const teamPosition = side === "home" ? homePosition : awayPosition;
               const opponentPosition = side === "home" ? awayPosition : homePosition;
-              const positionLabel = teamPosition && opponentPosition
-                ? 'Classement avant match : <b>#'+teamPosition+'</b> vs <b>#'+opponentPosition+'</b>'
-                : 'Classement avant match indisponible';
+              const positionLabel = 'Classement avant match : <b>'+escapeHtml(team.name)+' #'+(teamPosition || "—")+'</b> · <b>'+escapeHtml(item.home_team_id === team.id ? item.away_team : item.home_team)+' #'+(opponentPosition || "—")+'</b>';
               const matchDate = item.kickoff_utc ? new Date(item.kickoff_utc).toLocaleDateString("fr-FR",{day:"2-digit",month:"2-digit",year:"numeric",timeZone:"Europe/Paris"}) : "Date indisponible";
               labels.push("M"+(index+1));
               rows.unshift('<article class="match-analytics-recent"><div class="match-analytics-recent-topline"><small>'+escapeHtml(matchDate)+'</small><strong>'+escapeHtml(item.home_team)+' '+escapeHtml(score)+' '+escapeHtml(item.away_team)+(result ? '<span class="match-analytics-result '+(result==="V"?"is-win":result==="N"?"is-draw":"is-loss")+'">'+result+'</span>' : '')+'</strong></div><div class="match-analytics-position">'+positionLabel+'</div><div class="match-analytics-metrics">'+(selected.length ? selected.map((stat) => '<span><small>'+escapeHtml(stat.label)+'</small><b>'+escapeHtml(stat.value)+'</b></span>').join("") : '<small>Indicateurs xG indisponibles.</small>')+'</div></article>');
