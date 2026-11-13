@@ -822,10 +822,10 @@
             const chartId = "match-team-chart-"+teamIndex;
             chartPayloads.push({id:chartId,labels,xg:xgValues,xga:xgaValues});
             const statDefinitions = [
-              ["Tirs", "⚽", "par match"],
-              ["Tirs cadrés", "◎", "par match"],
-              ["Possession (%)", "◷", "du temps"],
-              ["Corners", "⚑", "par match"]
+              ["Tirs", '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m12 7 3 2-1 4h-4L9 9l3-2ZM3.5 9.5l5.5-.5m6 0 5.5.5M6 18l4-5m8 5-4-5"/></svg>', "par match"],
+              ["Tirs cadrés", '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 1v3m0 16v3M1 12h3m16 0h3"/></svg>', "par match"],
+              ["Possession (%)", '<svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9"/><path d="M12 3v9l6 3M16 3h5v5"/></svg>', "du temps"],
+              ["Corners", '<svg viewBox="0 0 24 24"><path d="M5 21V3m0 1 13 3-5 4 5 4-13-3"/></svg>', "par match"]
             ];
             const statTiles = statDefinitions.filter(([label]) => aggregate.has(label)).map(([label,icon,unit]) => {
               const value = avg(aggregate.get(label));
@@ -841,7 +841,7 @@
             if (shotsValue !== null) takeaways.push('<strong>'+escapeHtml(shotsValue)+' tirs</strong>'+(onTargetValue !== null ? ' dont <strong>'+escapeHtml(onTargetValue)+' cadrés</strong>' : ''));
             if (possessionValue !== null) takeaways.push('<strong>'+escapeHtml(possessionValue)+' %</strong> de possession');
             if (cornersValue !== null) takeaways.push('<strong>'+escapeHtml(cornersValue)+' corners</strong> par match');
-            const statsNote = '<div class="match-analytics-stats-heading"><span class="match-analytics-info-icon" aria-hidden="true">▮</span><span><strong>Stats moyennes</strong> (5 derniers matchs)</span></div>'+(takeaways.length ? '<div class="match-analytics-stats-box"><div class="match-analytics-takeaway"><strong>À retenir :</strong> '+takeaways.join(' · ')+'.</div></div>' : '');
+            const statsNote = '<div class="match-analytics-stats-heading"><span class="match-analytics-info-icon" aria-hidden="true">▮</span><span><strong>Stats moyennes</strong> (5 derniers matchs)</span></div>'+(takeaways.length ? '<div class="match-analytics-stats-box"><div class="match-analytics-takeaway"><span class="match-analytics-takeaway-copy"><strong>À retenir :</strong> '+takeaways.join(' · ')+'.</span></div></div>' : '');
             const statsOutside = statTiles ? '<div class="match-analytics-stat-grid match-analytics-stat-grid-outside">'+statTiles+'</div>' : '';
             return '<section class="match-analytics-team"><header class="match-analytics-team-heading"><h4>'+escapeHtml(team.name)+'</h4><span>'+recent.length+' matchs</span></header>'+avgCards+statsNote+statsOutside+'<div class="match-analytics-chart-title">Évolution xG / xG Adverse</div><div class="match-analytics-chart"><canvas id="'+chartId+'" aria-label="Évolution xG et xG Adverse de '+escapeHtml(team.name)+'"></canvas></div><div class="match-analytics-recent-list-title">5 derniers matchs</div><div class="match-analytics-recent-list">'+rows.join("")+'</div></section>';
           });
