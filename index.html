@@ -2896,6 +2896,33 @@ p.history-data-meta{margin:8px 2px 0!important;color:#555555!important;font-weig
 }
 .match-analytics-kpis strong{color:#176b3a!important}
 .match-analytics-kpis span{color:#285b3c!important}
+
+
+/* Onglet Tirs : cartes de rencontres et statistiques lisibles */
+.match-shots-team{display:flex;flex-direction:column;gap:12px;min-width:0}
+.match-shots-team .match-analytics-team-heading{margin:0;padding:10px 12px;border-radius:9px;background:#eaf2fb;border:1px solid #d6e4f3}
+.match-shots-team .match-analytics-team-heading h4{font-size:14px;color:#173f68}
+.match-shots-team .match-analytics-team-heading span{font-size:10px;color:#607b98}
+.match-shots-match{display:flex;flex-direction:column;gap:10px;min-width:0;padding:12px!important;border:1px solid #dce6f1!important;border-radius:10px!important;background:#fff!important;box-shadow:0 2px 7px rgba(23,63,104,.06)}
+.match-shots-match>strong{display:block;padding:0 0 9px;border-bottom:1px solid #e8eef5;color:#173f68;font-size:12px;line-height:1.5}
+.match-shots-match .match-analytics-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+.match-shots-match .match-analytics-metrics>span{display:flex;align-items:center;justify-content:space-between;gap:8px;min-width:0;padding:7px 9px;border-radius:7px;background:#edf4fb}
+.match-shots-match .match-analytics-metrics small{color:#627b94;font-size:10px;line-height:1.3}
+.match-shots-match .match-analytics-metrics b{color:#173f68;font-size:12px;font-weight:850}
+.match-shots-match .match-analytics-metrics>small{grid-column:1/-1;color:#71839a;font-size:10px}
+.match-shots-match .match-goals{padding-top:8px;border-top:1px solid #e8eef5}
+.match-shots-match .match-goals h5{margin:0 0 7px;color:#173f68;font-size:11px;font-weight:850}
+.match-shots-match .match-goals-list{display:flex;flex-direction:column;gap:5px;margin:0;padding:0;list-style:none}
+.match-shots-match .match-goals-list li{display:flex;align-items:center;gap:9px;padding:6px 8px;border-radius:6px;background:#f7f9fc;color:#304b66;font-size:11px}
+.match-shots-match .match-goal-minute{display:inline-flex;align-items:center;justify-content:center;min-width:34px;padding:3px 5px;border-radius:5px;background:#e3f5eb;color:#168253;font-size:10px;font-weight:850}
+.match-shots-match .match-goals-list strong{font-size:11px;font-weight:750}
+.match-shots-match .match-goals>p{margin:0;color:#71839a;font-size:10px}
+.match-shots-team>p{margin:0;padding:12px;border:1px dashed #d7e2ed;border-radius:8px;color:#71839a;font-size:11px}
+@media(max-width:760px){
+  .match-shots-match{padding:10px!important}
+  .match-shots-match .match-analytics-metrics{grid-template-columns:1fr 1fr}
+}
+
 </style>
 
 </body>
