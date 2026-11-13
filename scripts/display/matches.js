@@ -808,8 +808,16 @@
               const selected = metrics.filter((stat) => /expected goals|\bxg\b/i.test(stat.label)).slice(0,1).map((stat) => ({...stat,label:"xG"}));
               if (opponentShots.length && opponentKnown.length) selected.push({label: opponentKnown.length < opponentShots.length ? "xG Adverse (partiel)" : "xG Adverse", value: opponentKnown.reduce((sum,shot)=>sum+Number(shot.expected_goals),0).toFixed(2)});
               const result = gf == null || ga == null ? "" : Number(gf)>Number(ga) ? "V" : Number(gf)===Number(ga) ? "N" : "D";
+              const homePosition = Number.isInteger(Number(item.home_position_before)) && Number(item.home_position_before)>0 ? Number(item.home_position_before) : null;
+              const awayPosition = Number.isInteger(Number(item.away_position_before)) && Number(item.away_position_before)>0 ? Number(item.away_position_before) : null;
+              const teamPosition = side === "home" ? homePosition : awayPosition;
+              const opponentPosition = side === "home" ? awayPosition : homePosition;
+              const positionLabel = teamPosition && opponentPosition
+                ? 'Classement avant match : <b>#'+teamPosition+'</b> vs <b>#'+opponentPosition+'</b>'
+                : 'Classement avant match indisponible';
+              const matchDate = item.kickoff_utc ? new Date(item.kickoff_utc).toLocaleDateString("fr-FR",{day:"2-digit",month:"2-digit",year:"numeric",timeZone:"Europe/Paris"}) : "Date indisponible";
               labels.push("M"+(index+1));
-              rows.unshift('<div class="match-analytics-recent"><strong>'+escapeHtml(item.home_team)+' '+escapeHtml(score)+' '+escapeHtml(item.away_team)+(result ? '<span class="match-analytics-result '+(result==="V"?"is-win":result==="N"?"is-draw":"is-loss")+'">'+result+'</span>' : '')+'</strong><div class="match-analytics-metrics">'+(selected.length ? selected.map((stat) => '<span><small>'+escapeHtml(stat.label)+'</small><b>'+escapeHtml(stat.value)+'</b></span>').join("") : '<small>Indicateurs xG indisponibles.</small>')+'</div></div>');
+              rows.unshift('<article class="match-analytics-recent"><div class="match-analytics-recent-heading"><small>'+escapeHtml(matchDate)+'</small><strong>'+escapeHtml(item.home_team)+' '+escapeHtml(score)+' '+escapeHtml(item.away_team)+(result ? '<span class="match-analytics-result '+(result==="V"?"is-win":result==="N"?"is-draw":"is-loss")+'">'+result+'</span>' : '')+'</strong></div><div class="match-analytics-position">'+positionLabel+'</div><div class="match-analytics-metrics">'+(selected.length ? selected.map((stat) => '<span><small>'+escapeHtml(stat.label)+'</small><b>'+escapeHtml(stat.value)+'</b></span>').join("") : '<small>Indicateurs xG indisponibles.</small>')+'</div></article>');
             });
             const avg = (values) => values.length ? (values.reduce((a,b)=>a+b,0)/values.length).toLocaleString("fr-FR",{minimumFractionDigits:2,maximumFractionDigits:2}) : "—";
             const avgCards = '<div class="match-analytics-kpis"><div><strong>'+avg(goalsFor)+'</strong><span>Buts marqués / match</span></div><div><strong>'+avg(goalsAgainst)+'</strong><span>Buts encaissés / match</span></div></div>';
@@ -837,7 +845,7 @@
             if (cornersValue !== null) takeaways.push('<strong>'+escapeHtml(cornersValue)+' corners</strong> par match');
             const statsNote = '<div class="match-analytics-stats-heading"><span class="match-analytics-info-icon">i</span><span><strong>Stats moyennes</strong> (5 derniers matchs)</span></div><div class="match-analytics-stats-box">'+(takeaways.length ? '<div class="match-analytics-takeaway"><strong>À retenir :</strong> '+takeaways.join(' · ')+'.</div>' : '')+'</div>';
             const statsOutside = statTiles ? '<div class="match-analytics-stat-grid match-analytics-stat-grid-outside">'+statTiles+'</div>' : '';
-            return '<section class="match-analytics-team"><header class="match-analytics-team-heading"><h4>'+escapeHtml(team.name)+'</h4><span>'+recent.length+' matchs</span></header>'+avgCards+statsNote+statsOutside+'<div class="match-analytics-chart-title">Évolution xG / xG Adverse</div><div class="match-analytics-chart"><canvas id="'+chartId+'" aria-label="Évolution xG et xG Adverse de '+escapeHtml(team.name)+'"></canvas></div></section>';
+            return '<section class="match-analytics-team"><header class="match-analytics-team-heading"><h4>'+escapeHtml(team.name)+'</h4><span>'+recent.length+' matchs</span></header>'+avgCards+statsNote+statsOutside+'<div class="match-analytics-chart-title">Évolution xG / xG Adverse</div><div class="match-analytics-chart"><canvas id="'+chartId+'" aria-label="Évolution xG et xG Adverse de '+escapeHtml(team.name)+'"></canvas></div><div class="match-analytics-recent-list-title">5 derniers matchs</div><div class="match-analytics-recent-list">'+rows.join("")+'</div></section>';
           });
           const html = '<div class="match-analytics-grid">'+cards.join("")+'</div><p class="match-analytics-note">Cinq derniers matchs dans la même compétition et la même saison. Les moyennes utilisent uniquement les valeurs disponibles. Les occasions concédées sont calculées à partir des tirs adverses disponibles et peuvent être partielles ; les données absentes ne sont jamais remplacées par zéro.</p>';
           if (teamStats) {
