@@ -933,7 +933,7 @@
               });
             };
             if (window.chartJsReady && typeof window.chartJsReady.then==="function") window.chartJsReady.then(drawGoalTimeChart);
-            else drawGoalTimeChart(window.Chart);
+            else Promise.resolve().then(() => drawGoalTimeChart(window.Chart));
             return '<section class="match-analytics-team match-shots-team"><header class="match-analytics-team-heading match-analytics-team-heading-clean"><h4>'+escapeHtml(team.name)+'</h4><span>'+recentFive.length+' matchs analysés</span></header>'+chartHtml+matchesHtml+'</section>';
           }).join("");
           return '<div class="match-analytics-grid">'+teamSections+'</div><p class="match-analytics-note">Buteurs et minutes issus des événements de buts disponibles. Les tentatives de tirs individuelles ne sont plus affichées. *PitchAPI peut classer comme cadré un tir finalement bloqué ; ce compteur suit sa définition.</p>';
