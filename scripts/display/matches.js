@@ -873,11 +873,21 @@
             const recent = (entry?.recent_match_ids || []).map((id) => analytics.matchesById.get(String(id))).filter(Boolean)
               .sort((a,b) => String(b.kickoff_utc || "").localeCompare(String(a.kickoff_utc || "")));
             if (!recent.length) return '<section class="match-analytics-team"><h4>'+escapeHtml(team.name)+'</h4><p>Aucun ancien match exploitable dans cette compétition et cette saison.</p></section>';
-            const matchesHtml = recent.map((match) => {
+            const recentFive = recent.slice(0, 5);
+            const goalTimeLabels = ["0–15 min", "16–30 min", "31–45+", "46–60 min", "61–75 min", "76–90+"];
+            const goalTimeCounts = Array(goalTimeLabels.length).fill(0);
+            let matchesWithGoalEvents = 0;
+            const matchesHtml = recentFive.map((match) => {
               const allShots = (match.shots?.periods || []).flatMap((period) => period.shots || []);
+              if (match.shots_status === "available") matchesWithGoalEvents++;
               const goals = allShots
                 .filter((shot) => String(shot.team_id || "") === team.id && shot.event_type === "Goal")
                 .sort((a,b) => Number(a.minute || 0)-Number(b.minute || 0) || Number(a.minute_added || 0)-Number(b.minute_added || 0));
+              goals.forEach((shot) => {
+                const minute = Number(shot.minute || 0);
+                const bucket = minute <= 15 ? 0 : minute <= 30 ? 1 : minute <= 45 ? 2 : minute <= 60 ? 3 : minute <= 75 ? 4 : 5;
+                if (Number.isFinite(minute) && minute > 0) goalTimeCounts[bucket]++;
+              });
               const score = match.home_score == null || match.away_score == null ? "—" : match.home_score+" – "+match.away_score;
               const summary = '<strong>'+escapeHtml(match.home_team)+' '+escapeHtml(score)+' '+escapeHtml(match.away_team)+'</strong>';
               if (match.shots_status !== "available") {
@@ -907,7 +917,24 @@
                 '<div class="match-analytics-metrics">'+(summaryMetrics || '<small>Statistiques de tirs indisponibles.</small>')+'</div>'+
                 '<div class="match-goals"><h5>Buteurs</h5>'+goalsHtml+'</div></article>';
             }).join("");
-            return '<section class="match-analytics-team match-shots-team"><header class="match-analytics-team-heading match-analytics-team-heading-clean"><h4>'+escapeHtml(team.name)+'</h4><span>'+recent.length+' matchs analysés</span></header>'+matchesHtml+'</section>';
+            const chartId = "match-shots-goal-time-"+(team.id || "team");
+            const chartHtml = '<div class="match-shots-goal-time"><h5>Buts marqués selon le temps de jeu</h5><div class="match-shots-goal-time-chart"><canvas id="'+chartId+'" aria-label="Répartition des buts de '+escapeHtml(team.name)+' selon la minute"></canvas></div><small>'+matchesWithGoalEvents+' matchs avec événements de buts disponibles · maximum 5 derniers matchs</small></div>';
+            const drawGoalTimeChart = (ChartConstructor) => {
+              const canvas = shots?.querySelector("#"+chartId);
+              if (!ChartConstructor || !canvas || !canvas.isConnected) return;
+              const existing = ChartConstructor.getChart?.(canvas);
+              if (existing) existing.destroy();
+              new ChartConstructor(canvas, {
+                type:"bar",
+                data:{labels:goalTimeLabels,datasets:[{label:"Buts marqués",data:goalTimeCounts,backgroundColor:"#2585ed",borderRadius:5,maxBarThickness:34}]},
+                options:{responsive:true,maintainAspectRatio:false,animation:false,
+                  plugins:{legend:{display:false},tooltip:{callbacks:{label:(context)=>" "+context.raw+" but(s)"}}},
+                  scales:{y:{beginAtZero:true,ticks:{precision:0,stepSize:1},grid:{color:"#edf2f7"}},x:{grid:{display:false},ticks:{font:{size:10}}}}}
+              });
+            };
+            if (window.chartJsReady && typeof window.chartJsReady.then==="function") window.chartJsReady.then(drawGoalTimeChart);
+            else drawGoalTimeChart(window.Chart);
+            return '<section class="match-analytics-team match-shots-team"><header class="match-analytics-team-heading match-analytics-team-heading-clean"><h4>'+escapeHtml(team.name)+'</h4><span>'+recentFive.length+' matchs analysés</span></header>'+chartHtml+matchesHtml+'</section>';
           }).join("");
           return '<div class="match-analytics-grid">'+teamSections+'</div><p class="match-analytics-note">Buteurs et minutes issus des événements de buts disponibles. Les tentatives de tirs individuelles ne sont plus affichées. *PitchAPI peut classer comme cadré un tir finalement bloqué ; ce compteur suit sa définition.</p>';
         };
