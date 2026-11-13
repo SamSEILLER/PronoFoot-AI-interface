@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-11-13T04:13:15.702822Z",
+  "generated_at_utc": "2026-11-13T07:57:29.080749Z",
   "status": "ok",
   "label": "Opérationnel",
   "threshold_hours": 24,
   "history": {
     "status": "ok",
-    "last_success_at_utc": "2026-11-13T04:13:15.316429Z",
+    "last_success_at_utc": "2026-11-13T07:57:28.739192Z",
     "age_hours": 0.0,
     "fresh_within_24h": true,
     "threshold_hours": 24,
@@ -18,12 +18,12 @@
     "records": 9533,
     "failed_seasons": 0,
     "errors": 0,
-    "last_attempt_at_utc": "2026-11-13T04:13:15.316429+00:00"
+    "last_attempt_at_utc": "2026-11-13T07:57:28.739192+00:00"
   },
   "odds": {
     "status": "ok",
     "last_success_at_utc": "2026-11-12T08:39:34.203613Z",
-    "age_hours": 19.56,
+    "age_hours": 23.3,
     "fresh_within_24h": true,
     "threshold_hours": 24,
     "provider": "Odds-API.io / Unibet",
