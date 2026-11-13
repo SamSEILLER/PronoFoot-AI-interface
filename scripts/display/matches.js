@@ -874,7 +874,7 @@
               .sort((a,b) => String(b.kickoff_utc || "").localeCompare(String(a.kickoff_utc || "")));
             if (!recent.length) return '<section class="match-analytics-team"><h4>'+escapeHtml(team.name)+'</h4><p>Aucun ancien match exploitable dans cette compétition et cette saison.</p></section>';
             const recentFive = recent.slice(0, 5);
-            const goalTimeLabels = ["0–15 min", "16–30 min", "31–45+", "46–60 min", "61–75 min", "76–90+"];
+            const goalTimeLabels = ["0–15", "16–30", "31–45", "45+ arrêts", "46–60", "61–75", "76–90", "90+ arrêts"];
             const goalTimeCounts = Array(goalTimeLabels.length).fill(0);
             let matchesWithGoalEvents = 0;
             const matchesHtml = recentFive.map((match) => {
@@ -885,7 +885,8 @@
                 .sort((a,b) => Number(a.minute || 0)-Number(b.minute || 0) || Number(a.minute_added || 0)-Number(b.minute_added || 0));
               goals.forEach((shot) => {
                 const minute = Number(shot.minute || 0);
-                const bucket = minute <= 15 ? 0 : minute <= 30 ? 1 : minute <= 45 ? 2 : minute <= 60 ? 3 : minute <= 75 ? 4 : 5;
+                const added = Number(shot.minute_added || 0);
+                const bucket = minute <= 15 ? 0 : minute <= 30 ? 1 : minute <= 45 ? (added > 0 ? 3 : 2) : minute <= 60 ? 4 : minute <= 75 ? 5 : minute < 90 ? 6 : (added > 0 ? 7 : 6);
                 if (Number.isFinite(minute) && minute > 0) goalTimeCounts[bucket]++;
               });
               const score = match.home_score == null || match.away_score == null ? "—" : match.home_score+" – "+match.away_score;
@@ -929,7 +930,16 @@
                 data:{labels:goalTimeLabels,datasets:[{label:"Buts marqués",data:goalTimeCounts,backgroundColor:"#2585ed",borderRadius:5,maxBarThickness:34}]},
                 options:{responsive:true,maintainAspectRatio:false,animation:false,
                   plugins:{legend:{display:false},tooltip:{callbacks:{label:(context)=>" "+context.raw+" but(s)"}}},
-                  scales:{y:{beginAtZero:true,ticks:{precision:0,stepSize:1},grid:{color:"#edf2f7"}},x:{grid:{display:false},ticks:{font:{size:10}}}}}
+                  scales:{y:{beginAtZero:true,ticks:{precision:0,stepSize:1},grid:{color:"#edf2f7"}},x:{grid:{display:false},ticks:{font:{size:10}}}}},
+                plugins:[{id:"halftime-marker",afterDraw(chart){
+                  const x=chart.scales.x, area=chart.chartArea, ctx=chart.ctx;
+                  if(!x || !area) return;
+                  const marker=(x.getPixelForValue(3)+x.getPixelForValue(4))/2;
+                  ctx.save();ctx.strokeStyle="#d97706";ctx.lineWidth=1.5;ctx.setLineDash([4,4]);
+                  ctx.beginPath();ctx.moveTo(marker,area.top);ctx.lineTo(marker,area.bottom);ctx.stroke();
+                  ctx.setLineDash([]);ctx.fillStyle="#b45309";ctx.font="bold 9px sans-serif";
+                  ctx.textAlign="center";ctx.fillText("MI-TEMPS",marker,area.top+10);ctx.restore();
+                }}]
               });
             };
             if (window.chartJsReady && typeof window.chartJsReady.then==="function") window.chartJsReady.then(drawGoalTimeChart);
