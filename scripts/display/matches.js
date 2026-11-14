@@ -749,6 +749,8 @@
         const odds = detailPanel.querySelector('[data-detail-panel="odds"]');
         const teamStats = detailPanel.querySelector('[data-detail-panel="team-stats"]');
         const shots = detailPanel.querySelector('[data-detail-panel="shots"]');
+        const matchContext = detailPanel.querySelector('[data-detail-panel="match-context"]');
+        if (matchContext && window.PronoFootMatchContext) window.PronoFootMatchContext.renderInto(matchContext, selectedDetailMatch);
         if (overview) renderHistoryOverview(overview, selectedDetailMatch);
         if (analysis) renderSeasonGoalAnalysis(analysis, selectedDetailMatch);
         if (odds) renderOdds(odds, selectedDetailMatch);
@@ -1057,6 +1059,10 @@
               <details class="match-detail-accordion" name="match-detail">
                 <summary><span class="match-detail-accordion-icon">${detailTabs[1].icon}</span><span>Analyse &amp; IA</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
                 <div class="match-detail-accordion-body" data-detail-panel="analysis">Chargement des données…</div>
+              </details>
+              <details class="match-detail-accordion" name="match-detail">
+                <summary><span class="match-detail-accordion-icon">🩺</span><span>Effectifs &amp; absences</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
+                <div class="match-detail-accordion-body" data-detail-panel="match-context">Chargement du contexte…</div>
               </details>
               <details class="match-detail-accordion" name="match-detail">
                 <summary><span class="match-detail-accordion-icon">${detailTabs[2].icon}</span><span>Cotes</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
