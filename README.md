@@ -1,11 +1,10 @@
 # PronoFoot AI — interface
 
-Interface web publique du projet Football Prediction Lab. Elle présente les matchs à venir, les détails d'une rencontre, l'historique et les classements.
+Interface web publique du projet Football Prediction Lab. Elle présente les matchs à venir, les détails d'une rencontre et les classements.
 
 ## Pages
 
 - `index.html` — matchs à venir et fiche détaillée.
-- `history.html` — historique des rencontres.
 - `classements.html` — classements.
 
 ## Données consommées
@@ -22,7 +21,7 @@ Les fichiers JSON sont publiés dans `data/` par le moteur V2 ou synchronisés d
 
 ## Fiche match
 
-La fiche est rendue par `scripts/display/matches.js`. Elle présente les buts attendus disponibles et trois panneaux repliables : Vue d'ensemble, Analyse & IA et Cotes. Les statistiques de saison sont descriptives et ne doivent pas être présentées comme des probabilités prédictives. Les cotes ne sont affichées que lorsqu'elles sont réellement présentes dans le JSON.
+La fiche est rendue par `scripts/display/matches.js`. Elle présente les buts attendus disponibles et quatre panneaux repliables : Vue d'ensemble, Analyse & IA, Cotes et Météo. Les statistiques de saison sont descriptives et ne doivent pas être présentées comme des probabilités prédictives. Les cotes ne sont affichées que lorsqu'elles sont réellement présentes dans le JSON.
 
 ## État des sources
 
@@ -32,6 +31,6 @@ L'indicateur de statut résume l'état technique et la fraîcheur des collectes.
 
 - Les changements de l'interface sont publiés sur `main`.
 - Les données sont générées par le dépôt moteur privé `SamSEILLER/PronoFoot-AI-V2`.
-- Le workflow du moteur publie `site-status.json` vers ce dépôt.
+- Le workflow central du moteur publie les JSON nécessaires à l'interface (calendrier, classements, forme, confrontations, analyses, cotes, météo et statut) vers ce dépôt.
 - Les tests du moteur ne remplacent pas un contrôle navigateur de l'interface.
 
