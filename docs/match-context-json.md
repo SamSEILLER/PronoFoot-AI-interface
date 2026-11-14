@@ -17,8 +17,8 @@ Ce fichier est importé manuellement dans l'interface PronoFoot-AI. Il complète
       "source": "ChatGPT",
       "generated_at_utc": "2026-11-14T14:00:00Z",
       "period": {
-        "from_utc": "2026-11-14T00:00:00Z",
-        "to_utc": "2026-11-20T23:59:59Z",
+        "from_utc": "2026-11-13T23:00:00Z",
+        "to_utc": "2026-11-20T22:59:59Z",
         "timezone": "Europe/Paris",
         "days_included": 7
       },
