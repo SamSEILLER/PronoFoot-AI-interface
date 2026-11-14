@@ -974,6 +974,12 @@
                 if (teamStats) renderRecentTeamStats();
         if (shots) shots.innerHTML = renderRecentShots();
       };
+      document.addEventListener("pronofoot:match-context-updated", () => {
+        const contextBody = detailPanel?.querySelector('[data-detail-panel="match-context"]');
+        if (contextBody && selectedDetailMatch && window.PronoFootMatchContext) {
+          window.PronoFootMatchContext.renderInto(contextBody, selectedDetailMatch);
+        }
+      });
       const selectMatch = (card, match) => {
         selectedMatchKey = card.dataset.matchKey || "";
         selectedDetailMatch = match;
