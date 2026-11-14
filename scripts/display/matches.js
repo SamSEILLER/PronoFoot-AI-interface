@@ -402,6 +402,13 @@
         .then(response => { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); })
         .then(payload => { oddsEvents = Array.isArray(payload?.events) ? payload.events : []; return oddsEvents; })
         .catch(error => { console.warn("Cotes OddsAPI indisponibles :", error); oddsEvents = []; return oddsEvents; });
+      const weatherDataPromise = fetch("./data/weather.json?v=" + Date.now(), { cache:"no-store" })
+        .then(response => { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); })
+        .then(payload => payload?.matches && typeof payload.matches === "object" ? payload.matches : {})
+        .catch(error => {
+          console.warn("Prévisions météo indisponibles :", error);
+          return {};
+        });
       let historyDataPromise = null;
       const loadHistoryData = () => {
         if (!historyDataPromise) {
@@ -419,6 +426,50 @@
         return historyDataPromise;
       };
       const escapeHtml = (value) => String(value ?? "").replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
+      const renderWeather = (body, match) => {
+        body.innerHTML = "<p class=\"match-detail-empty\">Chargement de la prévision météo…</p>";
+        weatherDataPromise.then(records => {
+          if (selectedDetailMatch !== match || !body.isConnected) return;
+          const matchId = String(match.id || match.match_id || "");
+          const weather = records[matchId];
+          if (!weather || typeof weather !== "object") {
+            body.innerHTML = "<p class=\"match-detail-empty\">Aucune prévision météo disponible pour cette rencontre. Elle apparaîtra après une collecte réussie à J-7 ou J-2.</p>";
+            return;
+          }
+          const hour = weather.forecast_hour || {};
+          const number = (value, suffix = "", decimals = 0) => value === null || value === undefined || value === "" || !Number.isFinite(Number(value))
+            ? "Indisponible" : Number(value).toFixed(decimals) + suffix;
+          const weatherCode = Number(hour.weather_code);
+          const weatherLabels = {0:"Ciel dégagé",1:"Principalement dégagé",2:"Partiellement nuageux",3:"Couvert",45:"Brouillard",48:"Brouillard givrant",51:"Bruine légère",53:"Bruine modérée",55:"Bruine dense",56:"Bruine verglaçante",57:"Bruine verglaçante dense",61:"Pluie faible",63:"Pluie modérée",65:"Pluie forte",66:"Pluie verglaçante faible",67:"Pluie verglaçante forte",71:"Neige faible",73:"Neige modérée",75:"Neige forte",77:"Grains de neige",80:"Averses faibles",81:"Averses modérées",82:"Averses violentes",85:"Averses de neige faibles",86:"Averses de neige fortes",95:"Orage",96:"Orage avec grêle faible",99:"Orage avec forte grêle"};
+          const condition = weatherLabels[weatherCode] || "Conditions non renseignées";
+          const collected = weather.retrieved_at_utc ? new Date(weather.retrieved_at_utc) : null;
+          const collectedLabel = collected && Number.isFinite(collected.getTime())
+            ? new Intl.DateTimeFormat("fr-FR", {dateStyle:"short",timeStyle:"short",timeZone:"Europe/Paris"}).format(collected)
+            : "Date de collecte inconnue";
+          const location = [weather.stadium?.stadium_name, weather.stadium?.city].filter(Boolean).join(" · ") || "Lieu non précisé";
+          const stage = weather.collection_stage ? "Prévision " + weather.collection_stage : "Prévision";
+          const tiles = [
+            ["Température", number(hour.temperature_2m, " °C", 1)],
+            ["Ressenti", number(hour.apparent_temperature, " °C", 1)],
+            ["Probabilité de pluie", number(hour.precipitation_probability, " %")],
+            ["Précipitations", number(hour.precipitation ?? hour.rain, " mm", 1)],
+            ["Vent moyen", number(hour.wind_speed_10m, " km/h", 1)],
+            ["Rafales", number(hour.wind_gusts_10m, " km/h", 1)],
+            ["Humidité", number(hour.relative_humidity_2m, " %")],
+            ["Nébulosité", number(hour.cloud_cover, " %")]
+          ];
+          const localKickoff = hour.time_local ? new Date(hour.time_local) : null;
+          const kickoffLabel = localKickoff && Number.isFinite(localKickoff.getTime())
+            ? new Intl.DateTimeFormat("fr-FR", {dateStyle:"short",timeStyle:"short",timeZone:"Europe/Paris"}).format(localKickoff)
+            : "Horaire local indisponible";
+          body.innerHTML = "<div class=\"match-weather-card\">" +
+            "<div class=\"match-weather-heading\"><strong>" + escapeHtml(condition) + "</strong><span>" + escapeHtml(stage) + "</span></div>" +
+            "<p class=\"match-weather-location\">" + escapeHtml(location) + "</p>" +
+            "<div class=\"match-weather-grid\">" + tiles.map(([label,value]) => "<div class=\"match-weather-tile\"><small>" + escapeHtml(label) + "</small><strong>" + escapeHtml(value) + "</strong></div>").join("") + "</div>" +
+            "<div class=\"match-weather-meta\"><span>Coup d’envoi : " + escapeHtml(kickoffLabel) + "</span><span>Collectée le " + escapeHtml(collectedLabel) + "</span></div>" +
+            "<small class=\"match-weather-source\">Source : Open-Meteo · prévision indicative, susceptible d’évoluer</small></div>";
+        });
+      };
       const renderOdds = (body, match) => {
         body.innerHTML = '<p>Chargement des cotes Odds-API.io…</p>';
         oddsDataPromise.then(events => {
@@ -747,11 +798,13 @@
         const overview = detailPanel.querySelector('[data-detail-panel="overview"]');
         const analysis = detailPanel.querySelector('[data-detail-panel="analysis"]');
         const odds = detailPanel.querySelector('[data-detail-panel="odds"]');
+        const weather = detailPanel.querySelector('[data-detail-panel="weather"]');
         const teamStats = detailPanel.querySelector('[data-detail-panel="team-stats"]');
         const shots = detailPanel.querySelector('[data-detail-panel="shots"]');
         if (overview) renderHistoryOverview(overview, selectedDetailMatch);
         if (analysis) renderSeasonGoalAnalysis(analysis, selectedDetailMatch);
         if (odds) renderOdds(odds, selectedDetailMatch);
+        if (weather) renderWeather(weather, selectedDetailMatch);
         const analytics = matchAnalyticsIndex.get(String(selectedDetailMatch.competition_slug || ""));
         const renderRecentTeamStats = () => {
           if (!analytics) return '<p class="match-detail-empty">Aucune collecte de statistiques détaillées disponible pour cette compétition.</p>';
@@ -1057,6 +1110,10 @@
               <details class="match-detail-accordion" name="match-detail">
                 <summary><span class="match-detail-accordion-icon">${detailTabs[1].icon}</span><span>Analyse &amp; IA</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
                 <div class="match-detail-accordion-body" data-detail-panel="analysis">Chargement des données…</div>
+              </details>
+              <details class="match-detail-accordion" name="match-detail">
+                <summary><span class="match-detail-accordion-icon">🌤️</span><span>Météo</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
+                <div class="match-detail-accordion-body" data-detail-panel="weather">Chargement de la météo…</div>
               </details>
               <details class="match-detail-accordion" name="match-detail">
                 <summary><span class="match-detail-accordion-icon">${detailTabs[2].icon}</span><span>Cotes</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
