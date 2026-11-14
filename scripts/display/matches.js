@@ -972,37 +972,6 @@
                 if (teamStats) renderRecentTeamStats();
         if (shots) shots.innerHTML = renderRecentShots();
       };
-      const renderGeminiContext = async (match) => {
-        const body = detailPanel?.querySelector('[data-detail-panel="gemini"]');
-        if (!body) return;
-        const key = String(match.match_id || match.provider_match_id || match.id || "");
-        body.innerHTML = "<p>Chargement du contexte Gemini…</p>";
-        try {
-          const response = await fetch("./data/match-context.json?v=" + Date.now(), { cache: "no-store" });
-          if (!response.ok) throw new Error("Fichier de contexte indisponible");
-          const payload = await response.json();
-          const record = payload.matches?.[key] || payload[key];
-          if (!record) {
-            body.innerHTML = "<p>Aucune donnée Gemini enregistrée pour cette rencontre.</p><small>Le test Strasbourg – Brest sera affiché ici dès que la collecte aura produit son résultat.</small>";
-            return;
-          }
-          const facts = Array.isArray(record.facts) ? record.facts : [];
-          const labels = { weather: "Météo", absences: "Joueurs absents", stakes: "Enjeu du match", other: "Autres informations" };
-          const statusLabels = { confirmed: "Confirmé", probable: "Probable", uncertain: "Incertain", not_available: "Non disponible" };
-          const factHtml = facts.map((fact) => {
-            const status = statusLabels[fact.status] || "À vérifier";
-            const source = fact.source_url
-              ? '<a href="' + escape(fact.source_url) + '" target="_blank" rel="noopener noreferrer">' + escape(fact.source_title || "Consulter la source") + '</a>'
-              : escape(fact.source_title || "Source non fournie");
-            return '<article class="gemini-context-fact"><strong>' + escape(labels[fact.category] || fact.label || "Information") + '</strong><span>' + escape(fact.value || "Information indisponible") + '</span><small>' + status + ' · ' + source + (fact.published_at ? ' · ' + escape(fact.published_at) : '') + '</small></article>';
-          }).join("");
-          const meta = '<p class="muted">Collecte ' + escape(record.phase || "—") + ' · vérifiée le ' + escape(record.requested_at_utc || "date inconnue") + ' · modèle ' + escape(record.model || "Gemini") + '</p>';
-          body.innerHTML = meta + (factHtml || "<p>Aucun fait vérifié retourné.</p>");
-        } catch (error) {
-          body.innerHTML = "<p>Les données Gemini ne sont pas encore publiées.</p><small>Le panneau sera alimenté automatiquement après la première collecte.</small>";
-        }
-      };
-
       const selectMatch = (card, match) => {
         selectedMatchKey = card.dataset.matchKey || "";
         selectedDetailMatch = match;
@@ -1093,10 +1062,6 @@
                 <summary><span class="match-detail-accordion-icon">${detailTabs[2].icon}</span><span>Cotes</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
                 <div class="match-detail-accordion-body" data-detail-panel="odds">Chargement des données…</div>
               </details>
-              <details class="match-detail-accordion" name="match-detail">
-                <summary><span class="match-detail-accordion-icon">✦</span><span>Gemini IA</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
-                <div class="match-detail-accordion-body" data-detail-panel="gemini"><p>Recherche contextuelle Gemini non encore exécutée pour cette rencontre.</p><small>Les informations seront affichées ici avec leur source et leur date de vérification.</small></div>
-              </details>
             </div>
           </div>`;
         const detailAccordions = detailPanel.querySelectorAll(".match-detail-accordion");
@@ -1109,7 +1074,6 @@
           });
         });
         renderDetailAccordions();
-        renderGeminiContext(match);
       };
       const renderFilteredMatches = () => {
         const today = parisDateKey(NOW);
