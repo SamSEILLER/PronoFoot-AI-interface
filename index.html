@@ -330,6 +330,26 @@ main{
 .match-day-label{color:#142f53;font-size:19px;font-weight:800;letter-spacing:-.35px;line-height:1.15}
 .match-day-count{display:inline-flex;align-items:center;justify-content:center;gap:6px;margin-left:auto;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;color:#079653;font-size:16px;font-weight:750;line-height:1;white-space:nowrap}
 .match-day-count svg{width:23px;height:23px;flex:0 0 23px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.match-context-import{display:flex;align-items:center;gap:8px;margin-left:14px;min-width:0}
+.match-context-import button{border:1px solid #cbd9e9;background:#f6f9fc;color:#173f68;padding:8px 11px;border-radius:5px;font-size:11px;font-weight:750;white-space:nowrap}
+.match-context-import button:hover{background:#eaf2f9}
+.match-context-import small{font-size:10px;color:#526b89;max-width:190px}
+.match-context-import small[data-state="error"]{color:#b42318}
+.match-context-import small[data-state="success"]{color:#087747}
+.mc-context{display:grid;gap:12px}
+.mc-meta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px;color:#526b89;font-size:11px}
+.mc-team{border:1px solid #dce6f1;border-radius:6px;padding:10px}
+.mc-team h3{margin:0 0 8px;color:#173f68;font-size:14px}
+.mc-team-block{margin-top:9px}
+.mc-team-block h4,.mc-sources h4{margin:0 0 5px;color:#34516f;font-size:12px}
+.mc-team-block ul,.mc-sources ul{margin:0;padding-left:18px}
+.mc-team-block li,.mc-sources li{margin:4px 0;font-size:12px}
+.mc-team-block li small{display:block;color:#667b91;margin-top:2px}
+.mc-team-block p,.mc-sources p,.mc-empty{margin:4px 0;color:#71839a;font-size:12px}
+.mc-status{display:inline-block;margin-left:5px;padding:2px 5px;border-radius:3px;background:#edf2f7;color:#526b89;font-size:10px;font-weight:700}
+.mc-confirmed{background:#e4f6ec;color:#087747}.mc-probable{background:#fff4d6;color:#8a5a00}.mc-uncertain{background:#f1f3f5;color:#5f6b76}.mc-unavailable{background:#fde8e7;color:#a52822}
+.mc-disclaimer{margin:0;color:#71839a;font-size:10px;line-height:1.5}
+@media(max-width:650px){.match-day-heading{flex-wrap:wrap}.match-context-import{order:3;width:100%;margin:0}.match-context-import small{max-width:none}}
 @media(max-width:650px){.match-day-heading{gap:7px;min-height:40px;margin-bottom:9px;padding:2px 0}.match-day-icon{flex-basis:24px;width:24px;height:24px}.match-day-icon svg{width:23px;height:23px}.match-day-divider{height:27px;width:2px;flex-basis:2px}.match-day-label{font-size:16px;letter-spacing:-.3px}.match-day-count{gap:4px;font-size:13px}.match-day-count svg{width:19px;height:19px;flex-basis:19px}}
 .match-period-summary{display:inline-flex;align-items:center;gap:12px;margin:0 0 16px;padding:9px 22px;border-radius:28px;background:#e5efff;color:#09275f}
 .match-count-icon{font-size:25px;line-height:1}
@@ -2487,7 +2507,7 @@ p.history-data-meta{margin:8px 2px 0!important;color:#555555!important;font-weig
 </section>
 <div class="workspace" aria-label="Espace de travail principal">
 <section class="left-panel matches-list-section" aria-label="Liste des matchs de la période">
-<div class="match-day-heading" id="matchDayHeading"><span class="match-day-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="7" y="10" width="34" height="31" rx="5"/><path d="M15 6v9M33 6v9M7 19h34M16 27h.01M24 27h.01M32 27h.01M16 34h.01M24 34h.01M32 34h.01"/></svg></span><span class="match-day-divider" aria-hidden="true"></span><span class="match-day-label">Calendrier des matchs</span><span class="match-day-count"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="20"/><path d="m24 14 7 5-3 9h-8l-3-9 7-5ZM8 18l9 1M31 19l9-1M12 35l8-7M36 35l-8-7M20 28l-4 11M28 28l4 11"/></svg><span>0 matchs</span></span></div>
+<div class="match-day-heading" id="matchDayHeading"><span class="match-day-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="7" y="10" width="34" height="31" rx="5"/><path d="M15 6v9M33 6v9M7 19h34M16 27h.01M24 27h.01M32 27h.01M16 34h.01M24 34h.01M32 34h.01"/></svg></span><span class="match-day-divider" aria-hidden="true"></span><span class="match-day-label">Calendrier des matchs</span><span class="match-day-count"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="20"/><path d="m24 14 7 5-3 9h-8l-3-9 7-5ZM8 18l9 1M31 19l9-1M12 35l8-7M36 35l-8-7M20 28l-4 11M28 28l4 11"/></svg><span>0 matchs</span></span><span class="match-context-import"><button type="button" id="matchContextImportButton">Importer Match Context JSON</button><input id="matchContextFileInput" type="file" accept=".json,application/json" hidden><small id="matchContextImportStatus" hidden></small></span></div>
 <div class="upcoming-matches-list" id="upcomingMatchesList" aria-live="polite"></div>
 </section>
 <aside class="panel right-panel match-detail-panel" id="matchDetailPanel" aria-label="Détails du match">
@@ -2543,6 +2563,7 @@ p.history-data-meta{margin:8px 2px 0!important;color:#555555!important;font-weig
 
 <script src="./scripts/display/sidebar.js" defer></script>
 <script src="./assets/chartjs-loader.js" defer></script>
+<script src="./scripts/display/match-context.js?v=20261114-v1" defer></script>
 <script src="./scripts/display/matches.js?v=20261110-xg-v1" defer></script>
 
 <style>
