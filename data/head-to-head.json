@@ -1,6 +1,6 @@
 {
   "provider": "pitchapi_processed_history",
-  "generated_at_utc": "2026-11-13T10:36:21.029287+00:00",
+  "generated_at_utc": "2026-11-14T04:09:43.349882+00:00",
   "matches_considered": 9402,
   "pairs": {
     "cerezo osaka|fc tokyo": {
@@ -1467,6 +1467,30 @@
         }
       ]
     },
+    "kortrijk|oh leuven": {
+      "team_a": "Kortrijk",
+      "team_b": "OH Leuven",
+      "matches": [
+        {
+          "date": "2025-03-08T15:00:00Z",
+          "home": "Kortrijk",
+          "away": "OH Leuven",
+          "score_home": 2,
+          "score_away": 0,
+          "competition_id": "be-first-division-a",
+          "competition_name": "Belgian Pro League"
+        },
+        {
+          "date": "2024-09-22T17:15:00Z",
+          "home": "OH Leuven",
+          "away": "Kortrijk",
+          "score_home": 1,
+          "score_away": 1,
+          "competition_id": "be-first-division-a",
+          "competition_name": "Belgian Pro League"
+        }
+      ]
+    },
     "kortrijk|union st gilloise": {
       "team_a": "Kortrijk",
       "team_b": "Union St.Gilloise",
@@ -1528,6 +1552,48 @@
           "away": "Fulham",
           "score_home": 3,
           "score_away": 2,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        }
+      ]
+    },
+    "chelsea|nottingham forest": {
+      "team_a": "Chelsea",
+      "team_b": "Nottingham Forest",
+      "matches": [
+        {
+          "date": "2026-05-04T14:00:00Z",
+          "home": "Chelsea",
+          "away": "Nottingham Forest",
+          "score_home": 1,
+          "score_away": 3,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        },
+        {
+          "date": "2025-10-18T11:30:00Z",
+          "home": "Nottingham Forest",
+          "away": "Chelsea",
+          "score_home": 0,
+          "score_away": 3,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        },
+        {
+          "date": "2025-05-25T15:00:00Z",
+          "home": "Nottingham Forest",
+          "away": "Chelsea",
+          "score_home": 0,
+          "score_away": 1,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        },
+        {
+          "date": "2024-10-06T13:00:00Z",
+          "home": "Chelsea",
+          "away": "Nottingham Forest",
+          "score_home": 1,
+          "score_away": 1,
           "competition_id": "gb-premier-league",
           "competition_name": "Premier League"
         }
@@ -1785,6 +1851,48 @@
         }
       ]
     },
+    "borussia monchengladbach|werder bremen": {
+      "team_a": "Borussia Mönchengladbach",
+      "team_b": "Werder Bremen",
+      "matches": [
+        {
+          "date": "2026-01-31T14:30:00Z",
+          "home": "Werder Bremen",
+          "away": "Borussia Mönchengladbach",
+          "score_home": 1,
+          "score_away": 1,
+          "competition_id": "de-bundesliga",
+          "competition_name": "Bundesliga"
+        },
+        {
+          "date": "2025-09-14T15:30:00Z",
+          "home": "Borussia Mönchengladbach",
+          "away": "Werder Bremen",
+          "score_home": 0,
+          "score_away": 4,
+          "competition_id": "de-bundesliga",
+          "competition_name": "Bundesliga"
+        },
+        {
+          "date": "2025-03-15T14:30:00Z",
+          "home": "Werder Bremen",
+          "away": "Borussia Mönchengladbach",
+          "score_home": 2,
+          "score_away": 4,
+          "competition_id": "de-bundesliga",
+          "competition_name": "Bundesliga"
+        },
+        {
+          "date": "2024-11-03T16:30:00Z",
+          "home": "Borussia Mönchengladbach",
+          "away": "Werder Bremen",
+          "score_home": 4,
+          "score_away": 1,
+          "competition_id": "de-bundesliga",
+          "competition_name": "Bundesliga"
+        }
+      ]
+    },
     "ipswich town|tottenham hotspur": {
       "team_a": "Ipswich Town",
       "team_b": "Tottenham Hotspur",
@@ -1890,6 +1998,30 @@
           "score_away": 1,
           "competition_id": "fr-ligue-1",
           "competition_name": "Ligue 1"
+        }
+      ]
+    },
+    "bologna|venezia": {
+      "team_a": "Bologna",
+      "team_b": "Venezia",
+      "matches": [
+        {
+          "date": "2025-03-29T14:00:00Z",
+          "home": "Venezia",
+          "away": "Bologna",
+          "score_home": 0,
+          "score_away": 1,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        },
+        {
+          "date": "2024-11-30T19:45:00Z",
+          "home": "Bologna",
+          "away": "Venezia",
+          "score_home": 3,
+          "score_away": 0,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
         }
       ]
     },
@@ -2454,6 +2586,30 @@
           "score_away": 3,
           "competition_id": "fr-ligue-2",
           "competition_name": "Ligue 2"
+        }
+      ]
+    },
+    "brest|paris fc": {
+      "team_a": "Brest",
+      "team_b": "Paris FC",
+      "matches": [
+        {
+          "date": "2026-05-03T15:15:00Z",
+          "home": "Paris FC",
+          "away": "Brest",
+          "score_home": 4,
+          "score_away": 0,
+          "competition_id": "fr-ligue-1",
+          "competition_name": "Ligue 1"
+        },
+        {
+          "date": "2025-09-14T15:15:00Z",
+          "home": "Brest",
+          "away": "Paris FC",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "fr-ligue-1",
+          "competition_name": "Ligue 1"
         }
       ]
     },
