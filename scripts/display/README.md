@@ -1,31 +1,25 @@
 # Modules d'affichage
 
-Les modules JavaScript consomment les JSON préparés par le moteur V2. Ils assurent le rendu côté navigateur ; ils ne réalisent aucune collecte auprès des fournisseurs.
+Les modules JavaScript consomment les JSON publiés par le moteur V2. Ils assurent le rendu navigateur et ne réalisent aucune collecte fournisseur.
 
-| Fichier | Rôle |
-|---|---|
-| `matches.js` | Liste des matchs, filtres et fiche détaillée |
-| `standings.js` | Affichage des classements |
-| `sidebar.js` | Navigation et panneaux latéraux |
-| `team-form.js` | Forme récente |
-| `team-history.js` | Historique d'une équipe |
-| `match-details.js` | Module de détail séparé (à vérifier avant extension) |
-| `display-utils.js` | Fonctions utilitaires partagées |
+| Fichier | Rôle | État |
+|---|---|---|
+| `matches.js` | Calendrier, filtres, fiche match, analyses, cotes et météo | Actif sur `index.html` |
+| `sidebar.js` | Navigation et panneau d'état des sources | Actif sur les pages HTML |
+| `chartjs-loader.js` | Chargement différé de Chart.js | Actif sur `index.html` |
+
+Les anciens fichiers de maquette et les modules d'affichage vides/non référencés ont été supprimés. Toute nouvelle fonctionnalité doit être intégrée à un module réellement chargé par une page, ou faire l'objet d'un point d'entrée explicitement référencé.
 
 ## Fiche match — état actuel
 
-La fiche principale est construite dans `matches.js` et comporte trois accordéons :
-- **Vue d'ensemble** : historique récent et confrontations.
-- **Analyse & IA** : statistiques descriptives de saison et indicateurs de buts ; les λ sont affichés séparément lorsqu'ils sont disponibles.
-- **Cotes** : données du dernier snapshot Unibet ; aucune cote n'est fabriquée en cas d'absence.
+La fiche principale est construite dans `matches.js`. Elle présente les panneaux repliables Vue d'ensemble, Analyse & IA, Cotes et Météo lorsque les données correspondantes sont disponibles.
 
-Les accordéons sont fermés par défaut. Leur en-tête utilise le thème bleu et le chevron est centré verticalement.
+## Règles de présentation
 
-## Règles de présentation des statistiques
-
-- Toujours afficher le nombre de matchs utilisés avec une fréquence.
-- Les marchés Over/Under portent sur le total de buts du match, pas sur les buts marqués par une seule équipe.
-- Les moyennes de buts marqués/encaissés et les répartitions domicile/extérieur sont des statistiques historiques.
-- Un champ manquant ou incohérent est affiché comme indisponible, jamais remplacé arbitrairement par zéro.
-- Une fréquence historique n'est pas une probabilité prédictive.
-
+- Afficher le nombre de matchs utilisés avec chaque fréquence.
+- Les marchés Over/Under portent sur le total de buts du match.
+- Les moyennes et fréquences de saison sont des statistiques historiques, pas des probabilités prédictives.
+- Les λ sont des estimations du modèle et doivent rester identifiés comme tels.
+- Une cote n'est affichée que si elle existe réellement dans le JSON.
+- Un champ manquant ou incohérent reste indisponible ; ne jamais le remplacer arbitrairement par zéro.
+- L'état de la météo doit distinguer prévision disponible, absence de prévision et erreur de collecte.
