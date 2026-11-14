@@ -34,6 +34,7 @@
     if (payload.schema_version !== "1.0") throw new Error("Version de format non prise en charge. Version attendue : 1.0.");
     if (!validDate(payload.generated_at_utc)) throw new Error("generated_at_utc est absent ou invalide.");
     if (!payload.period || !validDate(payload.period.from_utc) || !validDate(payload.period.to_utc) || Date.parse(payload.period.to_utc) < Date.parse(payload.period.from_utc)) throw new Error("La période from_utc / to_utc est absente ou invalide.");
+    if (payload.period.days_included !== 7 || payload.period.timezone !== "Europe/Paris") throw new Error("La période doit couvrir 7 jours calendaires en Europe/Paris.");
     if (!Array.isArray(payload.matches)) throw new Error("Le champ matches doit être une liste.");
     const seen = new Set();
     payload.matches.forEach((match, index) => {
@@ -41,6 +42,8 @@
       if (!match || typeof match !== "object" || Array.isArray(match)) throw new Error(path + " est invalide.");
       if (!safeText(match.provider_match_id) && !(safeText(match.competition_slug) && validDate(match.kickoff_utc) && safeText(match.home_team) && safeText(match.away_team))) throw new Error(path + " doit avoir provider_match_id ou compétition, date et équipes.");
       if (!validDate(match.kickoff_utc)) throw new Error(path + ".kickoff_utc est invalide.");
+      const kickoffMs = Date.parse(match.kickoff_utc);
+      if (kickoffMs < Date.parse(payload.period.from_utc) || kickoffMs > Date.parse(payload.period.to_utc)) throw new Error(path + " est en dehors de la période déclarée.");
       if (!validDate(match.verified_at_utc)) throw new Error(path + ".verified_at_utc est invalide.");
       if (!Array.isArray(match.sources)) throw new Error(path + ".sources doit être une liste.");
       match.sources.forEach((source, sourceIndex) => {
