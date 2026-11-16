@@ -14,9 +14,9 @@
     return Number.isNaN(d.getTime()) ? "Date invalide" :
       d.toLocaleString("fr-FR", {dateStyle:"medium",timeStyle:"short",timeZone:"Europe/Paris"}) + " (Paris)";
   };
-  const labelStatus = status => ({
+  const labelStatus = (status, provider) => ({
     provided:"Données reçues",
-    not_provided:"Non communiqué par PitchAPI",
+    not_provided: provider === "API-Football" ? "Aucune absence retournée (couverture à vérifier)" : "Non communiqué par PitchAPI",
     not_available:"Indisponible",
     collection_error:"Erreur de collecte",
     not_supported_by_provider:"Non pris en charge par le fournisseur",
@@ -35,7 +35,7 @@
     title.textContent = (record.snapshot || "Instantané") + " · " + (record.provider || "Source inconnue");
     const pill = document.createElement("span");
     pill.className = "pill " + pillClass(record.status);
-    pill.textContent = labelStatus(record.status);
+    pill.textContent = labelStatus(record.status, record.provider);
     head.append(title, pill);
     box.append(head);
 
@@ -46,8 +46,8 @@
 
     if (record.provider === "API-Football") {
       info.textContent = "Rapprochement : " + (record.mapping_status || "inconnu")
-        + " · Compositions : " + labelStatus(record.lineups_status)
-        + " · Blessures/suspensions : " + labelStatus(record.injuries_status)
+        + " · Compositions : " + labelStatus(record.lineups_status, record.provider)
+        + " · Blessures/suspensions : " + labelStatus(record.injuries_status, record.provider)
         + " · Collecté : " + dateText(record.collected_at_utc);
       for (const [titleText, value] of [
         ["Compositions API-Football", record.lineups],
