@@ -419,6 +419,12 @@
           console.warn("Prévisions météo indisponibles :", error);
           return {};
         });
+      const espnHistoricalDataPromise = fetch("./data/espn-pitchapi-historical.json?v=" + Date.now(), { cache:"no-store" })
+        .then(response => { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); })
+        .catch(error => {
+          console.warn("Rapprochement historique ESPN indisponible :", error);
+          return null;
+        });
       let historyDataPromise = null;
       const loadHistoryData = () => {
         if (!historyDataPromise) {
@@ -907,6 +913,103 @@
         });
       };
 
+      const renderEspnHistorical = (target, match) => {
+        if (!target) return;
+        espnHistoricalDataPromise.then(report => {
+          if (selectedDetailMatch !== match || !target.isConnected) return;
+          const competition = (Array.isArray(report?.competitions) ? report.competitions : [])
+            .find(item => String(item.slug || "") === String(match.competition_slug || ""));
+          const teamKeys = new Set([match.home_team, match.away_team].map(normalizeHistoryTeam));
+          const rows = (Array.isArray(competition?.matches) ? competition.matches : [])
+            .filter(item => teamKeys.has(normalizeHistoryTeam(item.home_team))
+              || teamKeys.has(normalizeHistoryTeam(item.away_team)))
+            .sort((a,b) => String(b.kickoff_utc || b.date || "").localeCompare(String(a.kickoff_utc || a.date || "")))
+            .slice(0, 10);
+
+          const section = document.createElement("section");
+          section.className = "match-espn-history";
+          const heading = document.createElement("div");
+          heading.className = "match-espn-history-heading";
+          const title = document.createElement("h4");
+          title.textContent = "Données historiques ESPN";
+          const generated = report?.generated_at_utc ? new Date(report.generated_at_utc) : null;
+          const generatedLabel = generated && Number.isFinite(generated.getTime())
+            ? new Intl.DateTimeFormat("fr-FR", {dateStyle:"short",timeStyle:"short",timeZone:"Europe/Paris"}).format(generated) + " (Paris)"
+            : "Date de collecte inconnue";
+          const stamp = document.createElement("small");
+          stamp.textContent = "Actualisé : " + generatedLabel;
+          heading.append(title, stamp);
+          section.append(heading);
+
+          if (!rows.length) {
+            const empty = document.createElement("p");
+            empty.className = "match-espn-history-empty";
+            empty.textContent = "Aucune rencontre ESPN rapprochée parmi les cinq derniers matchs contrôlés pour cette compétition.";
+            section.append(empty);
+          } else {
+            rows.forEach(item => {
+              const article = document.createElement("article");
+              article.className = "match-espn-history-match";
+              const date = item.kickoff_utc || item.date;
+              const dateLabel = date && Number.isFinite(new Date(date).getTime())
+                ? new Intl.DateTimeFormat("fr-FR", {day:"2-digit",month:"short",year:"numeric",timeZone:"Europe/Paris"}).format(new Date(date))
+                : "Date inconnue";
+              const score = Array.isArray(item.espn_score) ? item.espn_score.join(" – ") : "Score ESPN indisponible";
+              const matchTitle = document.createElement("strong");
+              matchTitle.textContent = dateLabel + " · " + (item.espn_home_team || item.home_team || "Domicile")
+                + " " + score + " " + (item.espn_away_team || item.away_team || "Extérieur");
+              article.append(matchTitle);
+
+              const consistency = document.createElement("small");
+              consistency.className = "match-espn-history-consistency";
+              consistency.textContent = item.score_consistent === true ? "Score concordant avec PitchAPI"
+                : item.score_consistent === false ? "Écart de score détecté avec PitchAPI"
+                : "Concordance du score non vérifiable";
+              article.append(consistency);
+
+              const stats = Array.isArray(item.details?.team_statistics) ? item.details.team_statistics : [];
+              if (stats.length) {
+                stats.forEach(team => {
+                  const teamBlock = document.createElement("div");
+                  teamBlock.className = "match-espn-history-team";
+                  const teamTitle = document.createElement("h5");
+                  teamTitle.textContent = team.team || "Équipe ESPN";
+                  teamBlock.append(teamTitle);
+                  const values = Object.entries(team.statistics || {}).slice(0, 12);
+                  if (values.length) {
+                    const list = document.createElement("dl");
+                    list.className = "match-espn-history-values";
+                    values.forEach(([label, value]) => {
+                      const term = document.createElement("dt");
+                      term.textContent = label;
+                      const definition = document.createElement("dd");
+                      definition.textContent = value == null || value === "" ? "—" : String(value);
+                      list.append(term, definition);
+                    });
+                    teamBlock.append(list);
+                  } else {
+                    const emptyStats = document.createElement("small");
+                    emptyStats.textContent = "Aucune statistique chiffrée fournie.";
+                    teamBlock.append(emptyStats);
+                  }
+                  article.append(teamBlock);
+                });
+              } else {
+                const unavailable = document.createElement("p");
+                unavailable.textContent = "Statistiques d'équipe ESPN indisponibles pour cette rencontre.";
+                article.append(unavailable);
+              }
+              section.append(article);
+            });
+          }
+          const note = document.createElement("p");
+          note.className = "match-espn-history-note";
+          note.textContent = "Source : ESPN public site API (non officielle). Ces valeurs sont publiées à titre de diagnostic ; les métriques ne sont pas encore harmonisées avec PitchAPI et ne sont pas utilisées par le modèle de prédiction.";
+          section.append(note);
+          target.append(section);
+        });
+      };
+
       const renderDetailAccordions = () => {
         if (!detailPanel || !selectedDetailMatch) return;
         const overview = detailPanel.querySelector('[data-detail-panel="overview"]');
@@ -1137,7 +1240,10 @@
           }).join("");
           return '<div class="match-analytics-grid">'+teamSections+'</div><p class="match-analytics-note">Buteurs et minutes issus des événements de buts disponibles. Les tentatives de tirs individuelles ne sont plus affichées. *PitchAPI peut classer comme cadré un tir finalement bloqué ; ce compteur suit sa définition.</p>';
         };
-                if (teamStats) renderRecentTeamStats();
+                if (teamStats) {
+          renderRecentTeamStats();
+          renderEspnHistorical(teamStats, selectedDetailMatch);
+        }
         if (shots) shots.innerHTML = renderRecentShots();
       };
       const selectMatch = (card, match) => {
