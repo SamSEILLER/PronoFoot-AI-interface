@@ -6,7 +6,7 @@ Interface web publique du projet Football Prediction Lab. Elle présente les mat
 
 - `index.html` — matchs à venir et fiche détaillée.
 - `classements.html` — classements.
-- `composition.html` — compositions d’équipe, instantanés PitchAPI J-7/J-2/J-1, effectifs courants et absences API-Football.
+- `composition.html` — historique des instantanés de compositions PitchAPI J-7/J-2/J-1.
 
 ## Données consommées
 
@@ -19,11 +19,11 @@ Les fichiers JSON sont publiés dans `data/` par le moteur V2 ou synchronisés d
 - `recent-form.json`, `head-to-head.json` — forme et confrontations historiques.
 - `odds_latest.json` — dernier relevé des cotes Unibet ; peut légitimement contenir zéro événement.
 - `site-status.json` — fraîcheur, couverture et état des collectes.
-- `compositions.json` — instantanés de compositions et absences par fournisseur, avec statut explicite des données indisponibles.
+- `compositions.json` — instantanés PitchAPI, listes de titulaires/remplaçants lorsqu'elles sont fournies et statuts explicites des données indisponibles.
 
 ## Fiche match
 
-La fiche est rendue par `scripts/display/matches.js`. Elle présente les buts attendus disponibles et quatre panneaux repliables : Vue d'ensemble, Analyse & IA, Cotes et Météo. Les statistiques de saison sont descriptives et ne doivent pas être présentées comme des probabilités prédictives. Les cotes ne sont affichées que lorsqu'elles sont réellement présentes dans le JSON.
+La fiche est rendue par `scripts/display/matches.js`. Elle présente les buts attendus disponibles et des panneaux repliables, dont Composition d'équipe avec les instantanés PitchAPI J-7/J-2/J-1 associés au match. Les statistiques de saison sont descriptives et ne doivent pas être présentées comme des probabilités prédictives. Les cotes ne sont affichées que lorsqu'elles sont réellement présentes dans le JSON.
 
 ## État des sources
 
