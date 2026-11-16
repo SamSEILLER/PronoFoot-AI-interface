@@ -16,6 +16,7 @@
   };
   const labelStatus = (status, provider) => ({
     provided:"Données joueurs reçues",
+    partial:"Effectif partiel — une équipe seulement",
     metadata_only:"Métadonnées uniquement — aucun joueur listé",
     not_provided: provider === "API-Football" ? "Aucune absence retournée (couverture à vérifier)" : "Non communiqué par PitchAPI",
     not_available:"Indisponible",
@@ -56,10 +57,13 @@
       }[record.mapping_status] || "Rapprochement : " + (record.mapping_status || "inconnu"));
       info.textContent = (record.message || mappingLabel)
         + " · " + mappingLabel
+        + " · Effectifs : " + labelStatus(record.squads_status, record.provider)
         + " · Compositions : " + labelStatus(record.lineups_status, record.provider)
         + " · Blessures/suspensions : " + labelStatus(record.injuries_status, record.provider)
         + " · Collecté : " + dateText(record.collected_at_utc);
       for (const [titleText, value] of [
+        ["Effectif domicile · API-Football", record.home_squad],
+        ["Effectif extérieur · API-Football", record.away_squad],
         ["Compositions API-Football", record.lineups],
         ["Blessures et suspensions API-Football", record.injuries]
       ]) {
