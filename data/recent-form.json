@@ -1,6 +1,6 @@
 {
   "provider": "pitchapi_processed_history",
-  "generated_at_utc": "2026-11-15T08:10:26.166324+00:00",
+  "generated_at_utc": "2026-11-16T03:55:40.183877+00:00",
   "recent_limit_per_competition": 5,
   "matches_considered": 9402,
   "teams": {
@@ -2054,6 +2054,46 @@
         }
       ]
     },
+    "rio ave": {
+      "name": "Rio Ave",
+      "matches": [
+        {
+          "date": "2026-09-19T17:00:00Z",
+          "result": "D",
+          "score": "0-1",
+          "opponent": "Alverca",
+          "competition_id": "pt-primeira-liga"
+        },
+        {
+          "date": "2026-10-11T14:30:00Z",
+          "result": "V",
+          "score": "3-2",
+          "opponent": "Nacional",
+          "competition_id": "pt-primeira-liga"
+        },
+        {
+          "date": "2026-10-25T18:00:00Z",
+          "result": "D",
+          "score": "0-4",
+          "opponent": "Famalicão",
+          "competition_id": "pt-primeira-liga"
+        },
+        {
+          "date": "2026-11-01T18:00:00Z",
+          "result": "D",
+          "score": "1-2",
+          "opponent": "Académico Viseu",
+          "competition_id": "pt-primeira-liga"
+        },
+        {
+          "date": "2026-11-08T20:30:00Z",
+          "result": "D",
+          "score": "0-1",
+          "opponent": "Braga",
+          "competition_id": "pt-primeira-liga"
+        }
+      ]
+    },
     "nacional": {
       "name": "Nacional",
       "matches": [
@@ -2197,6 +2237,126 @@
         }
       ]
     },
+    "gil vicente": {
+      "name": "Gil Vicente",
+      "matches": [
+        {
+          "date": "2026-10-09T17:45:00Z",
+          "result": "V",
+          "score": "1-0",
+          "opponent": "Moreirense",
+          "competition_id": "pt-primeira-liga"
+        },
+        {
+          "date": "2026-10-19T19:15:00Z",
+          "result": "V",
+          "score": "2-1",
+          "opponent": "Braga",
+          "competition_id": "pt-primeira-liga"
+        },
+        {
+          "date": "2026-10-24T19:30:00Z",
+          "result": "D",
+          "score": "0-1",
+          "opponent": "FC Porto",
+          "competition_id": "pt-primeira-liga"
+        },
+        {
+          "date": "2026-11-02T20:15:00Z",
+          "result": "N",
+          "score": "0-0",
+          "opponent": "Vitória de Guimarães",
+          "competition_id": "pt-primeira-liga"
+        },
+        {
+          "date": "2026-11-08T15:30:00Z",
+          "result": "V",
+          "score": "2-1",
+          "opponent": "Santa Clara",
+          "competition_id": "pt-primeira-liga"
+        }
+      ]
+    },
+    "estoril": {
+      "name": "Estoril",
+      "matches": [
+        {
+          "date": "2026-09-14T19:45:00Z",
+          "result": "D",
+          "score": "0-1",
+          "opponent": "Braga",
+          "competition_id": "pt-primeira-liga"
+        },
+        {
+          "date": "2026-09-20T17:00:00Z",
+          "result": "D",
+          "score": "1-2",
+          "opponent": "Casa Pia AC",
+          "competition_id": "pt-primeira-liga"
+        },
+        {
+          "date": "2026-10-10T19:30:00Z",
+          "result": "D",
+          "score": "1-2",
+          "opponent": "Académico Viseu",
+          "competition_id": "pt-primeira-liga"
+        },
+        {
+          "date": "2026-10-25T15:30:00Z",
+          "result": "D",
+          "score": "1-3",
+          "opponent": "Moreirense",
+          "competition_id": "pt-primeira-liga"
+        },
+        {
+          "date": "2026-10-31T20:30:00Z",
+          "result": "D",
+          "score": "0-4",
+          "opponent": "FC Porto",
+          "competition_id": "pt-primeira-liga"
+        }
+      ]
+    },
+    "santa clara": {
+      "name": "Santa Clara",
+      "matches": [
+        {
+          "date": "2026-09-20T17:00:00Z",
+          "result": "N",
+          "score": "0-0",
+          "opponent": "Braga",
+          "competition_id": "pt-primeira-liga"
+        },
+        {
+          "date": "2026-10-10T19:30:00Z",
+          "result": "V",
+          "score": "1-0",
+          "opponent": "Casa Pia AC",
+          "competition_id": "pt-primeira-liga"
+        },
+        {
+          "date": "2026-10-26T18:45:00Z",
+          "result": "D",
+          "score": "1-2",
+          "opponent": "Benfica",
+          "competition_id": "pt-primeira-liga"
+        },
+        {
+          "date": "2026-11-01T18:00:00Z",
+          "result": "V",
+          "score": "2-0",
+          "opponent": "Marítimo",
+          "competition_id": "pt-primeira-liga"
+        },
+        {
+          "date": "2026-11-08T15:30:00Z",
+          "result": "D",
+          "score": "1-2",
+          "opponent": "Gil Vicente",
+          "competition_id": "pt-primeira-liga"
+        }
+      ]
+    },
     "benfica": {
       "name": "Benfica",
       "matches": [
@@ -2296,6 +2456,166 @@
           "result": "V",
           "score": "3-2",
           "opponent": "Estrela da Amadora",
+          "competition_id": "pt-primeira-liga"
+        }
+      ]
+    },
+    "moreirense": {
+      "name": "Moreirense",
+      "matches": [
+        {
+          "date": "2026-09-20T14:30:00Z",
+          "result": "N",
+          "score": "1-1",
+          "opponent": "Vitória de Guimarães",
+          "competition_id": "pt-primeira-liga"
+        },
+        {
+          "date": "2026-10-09T17:45:00Z",
+          "result": "D",
+          "score": "0-1",
+          "opponent": "Gil Vicente",
+          "competition_id": "pt-primeira-liga"
+        },
+        {
+          "date": "2026-10-25T15:30:00Z",
+          "result": "V",
+          "score": "3-1",
+          "opponent": "Estoril",
+          "competition_id": "pt-primeira-liga"
+        },
+        {
+          "date": "2026-10-31T15:30:00Z",
+          "result": "V",
+          "score": "2-1",
+          "opponent": "Estrela da Amadora",
+          "competition_id": "pt-primeira-liga"
+        },
+        {
+          "date": "2026-11-07T20:30:00Z",
+          "result": "D",
+          "score": "0-1",
+          "opponent": "Sporting CP",
+          "competition_id": "pt-primeira-liga"
+        }
+      ]
+    },
+    "estrela da amadora": {
+      "name": "Estrela da Amadora",
+      "matches": [
+        {
+          "date": "2026-09-20T14:30:00Z",
+          "result": "D",
+          "score": "0-2",
+          "opponent": "Académico Viseu",
+          "competition_id": "pt-primeira-liga"
+        },
+        {
+          "date": "2026-10-11T19:30:00Z",
+          "result": "D",
+          "score": "0-1",
+          "opponent": "Arouca",
+          "competition_id": "pt-primeira-liga"
+        },
+        {
+          "date": "2026-10-24T14:30:00Z",
+          "result": "D",
+          "score": "0-2",
+          "opponent": "Casa Pia AC",
+          "competition_id": "pt-primeira-liga"
+        },
+        {
+          "date": "2026-10-31T15:30:00Z",
+          "result": "D",
+          "score": "1-2",
+          "opponent": "Moreirense",
+          "competition_id": "pt-primeira-liga"
+        },
+        {
+          "date": "2026-11-08T20:30:00Z",
+          "result": "D",
+          "score": "2-3",
+          "opponent": "Benfica",
+          "competition_id": "pt-primeira-liga"
+        }
+      ]
+    },
+    "arouca": {
+      "name": "Arouca",
+      "matches": [
+        {
+          "date": "2026-09-19T19:30:00Z",
+          "result": "N",
+          "score": "2-2",
+          "opponent": "Sporting CP",
+          "competition_id": "pt-primeira-liga"
+        },
+        {
+          "date": "2026-10-11T19:30:00Z",
+          "result": "V",
+          "score": "1-0",
+          "opponent": "Estrela da Amadora",
+          "competition_id": "pt-primeira-liga"
+        },
+        {
+          "date": "2026-10-24T17:00:00Z",
+          "result": "V",
+          "score": "1-0",
+          "opponent": "Alverca",
+          "competition_id": "pt-primeira-liga"
+        },
+        {
+          "date": "2026-11-01T15:30:00Z",
+          "result": "V",
+          "score": "1-0",
+          "opponent": "Nacional",
+          "competition_id": "pt-primeira-liga"
+        },
+        {
+          "date": "2026-11-06T20:45:00Z",
+          "result": "D",
+          "score": "0-1",
+          "opponent": "Famalicão",
+          "competition_id": "pt-primeira-liga"
+        }
+      ]
+    },
+    "vitoria de guimaraes": {
+      "name": "Vitória de Guimarães",
+      "matches": [
+        {
+          "date": "2026-09-20T14:30:00Z",
+          "result": "N",
+          "score": "1-1",
+          "opponent": "Moreirense",
+          "competition_id": "pt-primeira-liga"
+        },
+        {
+          "date": "2026-10-11T17:00:00Z",
+          "result": "D",
+          "score": "0-2",
+          "opponent": "Benfica",
+          "competition_id": "pt-primeira-liga"
+        },
+        {
+          "date": "2026-10-23T19:45:00Z",
+          "result": "V",
+          "score": "5-0",
+          "opponent": "Marítimo",
+          "competition_id": "pt-primeira-liga"
+        },
+        {
+          "date": "2026-11-02T20:15:00Z",
+          "result": "N",
+          "score": "0-0",
+          "opponent": "Gil Vicente",
+          "competition_id": "pt-primeira-liga"
+        },
+        {
+          "date": "2026-11-08T18:00:00Z",
+          "result": "D",
+          "score": "1-2",
+          "opponent": "FC Porto",
           "competition_id": "pt-primeira-liga"
         }
       ]
@@ -9422,6 +9742,46 @@
         }
       ]
     },
+    "alverca": {
+      "name": "Alverca",
+      "matches": [
+        {
+          "date": "2026-09-19T17:00:00Z",
+          "result": "V",
+          "score": "1-0",
+          "opponent": "Rio Ave",
+          "competition_id": "pt-primeira-liga"
+        },
+        {
+          "date": "2026-10-12T19:15:00Z",
+          "result": "V",
+          "score": "4-1",
+          "opponent": "Famalicão",
+          "competition_id": "pt-primeira-liga"
+        },
+        {
+          "date": "2026-10-24T17:00:00Z",
+          "result": "D",
+          "score": "0-1",
+          "opponent": "Arouca",
+          "competition_id": "pt-primeira-liga"
+        },
+        {
+          "date": "2026-11-02T20:15:00Z",
+          "result": "D",
+          "score": "0-1",
+          "opponent": "Benfica",
+          "competition_id": "pt-primeira-liga"
+        },
+        {
+          "date": "2026-11-07T18:00:00Z",
+          "result": "N",
+          "score": "1-1",
+          "opponent": "Casa Pia AC",
+          "competition_id": "pt-primeira-liga"
+        }
+      ]
+    },
     "boulogne": {
       "name": "Boulogne",
       "matches": [
@@ -10202,6 +10562,46 @@
           "score": "1-0",
           "opponent": "Red Star",
           "competition_id": "fr-ligue-2"
+        }
+      ]
+    },
+    "academico viseu": {
+      "name": "Académico Viseu",
+      "matches": [
+        {
+          "date": "2026-09-20T14:30:00Z",
+          "result": "V",
+          "score": "2-0",
+          "opponent": "Estrela da Amadora",
+          "competition_id": "pt-primeira-liga"
+        },
+        {
+          "date": "2026-10-10T19:30:00Z",
+          "result": "V",
+          "score": "2-1",
+          "opponent": "Estoril",
+          "competition_id": "pt-primeira-liga"
+        },
+        {
+          "date": "2026-10-25T20:30:00Z",
+          "result": "V",
+          "score": "2-1",
+          "opponent": "Sporting CP",
+          "competition_id": "pt-primeira-liga"
+        },
+        {
+          "date": "2026-11-01T18:00:00Z",
+          "result": "V",
+          "score": "2-1",
+          "opponent": "Rio Ave",
+          "competition_id": "pt-primeira-liga"
+        },
+        {
+          "date": "2026-11-08T15:30:00Z",
+          "result": "D",
+          "score": "0-1",
+          "opponent": "Nacional",
+          "competition_id": "pt-primeira-liga"
         }
       ]
     },

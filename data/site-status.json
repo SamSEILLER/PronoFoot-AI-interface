@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-11-15T08:10:25.895020Z",
+  "generated_at_utc": "2026-11-16T03:55:39.875822Z",
   "status": "ok",
   "label": "Opérationnel",
   "threshold_hours": 24,
   "history": {
     "status": "ok",
-    "last_success_at_utc": "2026-11-14T23:44:31.649224Z",
-    "age_hours": 8.43,
+    "last_success_at_utc": "2026-11-16T03:55:11.094369Z",
+    "age_hours": 0.01,
     "fresh_within_24h": true,
     "threshold_hours": 24,
     "provider": "PitchAPI",
@@ -15,15 +15,15 @@
     "competitions_total": 12,
     "competitions_collected": 12,
     "competitions_failed": 0,
-    "records": 9540,
+    "records": 9610,
     "failed_seasons": 0,
     "errors": 0,
-    "last_attempt_at_utc": "2026-11-14T23:44:31.649224+00:00"
+    "last_attempt_at_utc": "2026-11-16T03:55:11.094369+00:00"
   },
   "odds": {
     "status": "ok",
     "last_success_at_utc": "2026-11-15T08:09:37.783810Z",
-    "age_hours": 0.01,
+    "age_hours": 19.77,
     "fresh_within_24h": true,
     "threshold_hours": 24,
     "provider": "Odds-API.io / Unibet",
