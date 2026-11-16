@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-11-16T08:13:29.002333+00:00",
+  "generated_at_utc": "2026-11-16T08:14:31.081856+00:00",
   "sources": {
     "pitchapi": {
       "status": "PARTIAL",
@@ -343,18 +343,18 @@
       "match_id": "m_08lkfg",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-23T19:45:00+00:00",
-      "collected_at_utc": "2026-11-16T08:13:28.619440+00:00",
+      "collected_at_utc": "2026-11-16T08:14:31.079302+00:00",
       "competition": "Serie A",
       "home_team": "Monza",
       "away_team": "Fiorentina",
       "fixture_id": null,
-      "mapping_status": "not_found",
-      "status": "mapping_not_found",
+      "mapping_status": "outside_plan_window",
+      "status": "plan_limited",
       "lineups_status": "not_collected_until_official_lineup_window",
       "injuries_status": "not_available",
       "lineups": null,
       "injuries": null,
-      "message": "Match API-Football non rapproché : identifiants laissés séparés."
+      "message": "Plan API-Football actuel : fixtures accessibles uniquement autour de la date courante (J-1 à J+1). Une nouvelle collecte sera possible à J-1."
     },
     {
       "schema_version": 1,
@@ -362,18 +362,18 @@
       "match_id": "m_2DFzlK",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-23T19:45:00+00:00",
-      "collected_at_utc": "2026-11-16T08:13:28.619440+00:00",
+      "collected_at_utc": "2026-11-16T08:14:31.079302+00:00",
       "competition": "Ligue 2",
       "home_team": "Sochaux",
       "away_team": "Dunkerque",
       "fixture_id": null,
-      "mapping_status": "not_found",
-      "status": "mapping_not_found",
+      "mapping_status": "outside_plan_window",
+      "status": "plan_limited",
       "lineups_status": "not_collected_until_official_lineup_window",
       "injuries_status": "not_available",
       "lineups": null,
       "injuries": null,
-      "message": "Match API-Football non rapproché : identifiants laissés séparés."
+      "message": "Plan API-Football actuel : fixtures accessibles uniquement autour de la date courante (J-1 à J+1). Une nouvelle collecte sera possible à J-1."
     },
     {
       "schema_version": 1,
@@ -381,18 +381,18 @@
       "match_id": "m_2FVfvL",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-23T20:00:00+00:00",
-      "collected_at_utc": "2026-11-16T08:13:28.619440+00:00",
+      "collected_at_utc": "2026-11-16T08:14:31.079302+00:00",
       "competition": "Premier League",
       "home_team": "Brentford",
       "away_team": "Everton",
       "fixture_id": null,
-      "mapping_status": "not_found",
-      "status": "mapping_not_found",
+      "mapping_status": "outside_plan_window",
+      "status": "plan_limited",
       "lineups_status": "not_collected_until_official_lineup_window",
       "injuries_status": "not_available",
       "lineups": null,
       "injuries": null,
-      "message": "Match API-Football non rapproché : identifiants laissés séparés."
+      "message": "Plan API-Football actuel : fixtures accessibles uniquement autour de la date courante (J-1 à J+1). Une nouvelle collecte sera possible à J-1."
     },
     {
       "schema_version": 1,
@@ -400,18 +400,18 @@
       "match_id": "m_3jVoFq",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-23T20:00:00+00:00",
-      "collected_at_utc": "2026-11-16T08:13:28.619440+00:00",
+      "collected_at_utc": "2026-11-16T08:14:31.079302+00:00",
       "competition": "La Liga",
       "home_team": "Levante",
       "away_team": "Elche",
       "fixture_id": null,
-      "mapping_status": "not_found",
-      "status": "mapping_not_found",
+      "mapping_status": "outside_plan_window",
+      "status": "plan_limited",
       "lineups_status": "not_collected_until_official_lineup_window",
       "injuries_status": "not_available",
       "lineups": null,
       "injuries": null,
-      "message": "Match API-Football non rapproché : identifiants laissés séparés."
+      "message": "Plan API-Football actuel : fixtures accessibles uniquement autour de la date courante (J-1 à J+1). Une nouvelle collecte sera possible à J-1."
     },
     {
       "schema_version": 1,
@@ -419,18 +419,18 @@
       "match_id": "m_3uRPBe",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-22T23:30:00+00:00",
-      "collected_at_utc": "2026-11-16T08:13:28.619440+00:00",
+      "collected_at_utc": "2026-11-16T08:14:31.079302+00:00",
       "competition": "MLS",
       "home_team": "Chicago Fire FC",
       "away_team": "Charlotte FC",
       "fixture_id": null,
-      "mapping_status": "not_found",
-      "status": "mapping_not_found",
+      "mapping_status": "outside_plan_window",
+      "status": "plan_limited",
       "lineups_status": "not_collected_until_official_lineup_window",
       "injuries_status": "not_available",
       "lineups": null,
       "injuries": null,
-      "message": "Match API-Football non rapproché : identifiants laissés séparés."
+      "message": "Plan API-Football actuel : fixtures accessibles uniquement autour de la date courante (J-1 à J+1). Une nouvelle collecte sera possible à J-1."
     }
   ]
 }
