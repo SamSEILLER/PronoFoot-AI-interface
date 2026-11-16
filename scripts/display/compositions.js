@@ -70,10 +70,25 @@
         if (value === null || value === undefined) continue;
         const details = document.createElement("details");
         const summary = document.createElement("summary");
-        summary.textContent = titleText;
+        const players = Array.isArray(value.players) ? value.players : null;
+        summary.textContent = titleText + (players ? " (" + players.length + " joueurs)" : "");
+        details.append(summary);
+        if (players && players.length) {
+          const roster = document.createElement("ul");
+          roster.className = "roster-list";
+          players.forEach(player => {
+            const item = document.createElement("li");
+            const name = player.name || player.player?.name || "Joueur sans nom";
+            const number = player.number ? " · #" + player.number : "";
+            const position = player.position ? " · " + player.position : "";
+            item.textContent = name + number + position;
+            roster.append(item);
+          });
+          details.append(roster);
+        }
         const pre = document.createElement("pre");
         pre.textContent = JSON.stringify(value, null, 2);
-        details.append(summary, pre);
+        details.append(pre);
         box.append(details);
       }
     } else if (record.status === "provided" && record.lineups !== null && record.lineups !== undefined) {
