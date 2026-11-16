@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-11-16T08:19:52.490723+00:00",
+  "generated_at_utc": "2026-11-16T08:20:51.779392+00:00",
   "sources": {
     "pitchapi": {
       "status": "PARTIAL",
@@ -3406,7 +3406,7 @@
       "match_id": "m_3jVoFq",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-23T20:00:00+00:00",
-      "collected_at_utc": "2026-11-16T08:18:13.125048+00:00",
+      "collected_at_utc": "2026-11-16T08:20:39.214939+00:00",
       "competition": "La Liga",
       "home_team": "Levante",
       "away_team": "Elche",
@@ -3419,7 +3419,7 @@
         "team_id": null,
         "status": "team_mapping_ambiguous",
         "players": null,
-        "collected_at_utc": "2026-11-16T08:18:13.125048+00:00",
+        "collected_at_utc": "2026-11-16T08:20:39.214939+00:00",
         "message": "Correspondance d'équipe API-Football non univoque."
       },
       "away_squad": {
@@ -4062,7 +4062,7 @@
       "match_id": "m_3uRPBe",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-22T23:30:00+00:00",
-      "collected_at_utc": "2026-11-16T08:18:13.125048+00:00",
+      "collected_at_utc": "2026-11-16T08:20:39.214939+00:00",
       "competition": "MLS",
       "home_team": "Chicago Fire FC",
       "away_team": "Charlotte FC",
@@ -4075,7 +4075,7 @@
         "team_id": null,
         "status": "team_mapping_not_found",
         "players": null,
-        "collected_at_utc": "2026-11-16T08:18:13.125048+00:00",
+        "collected_at_utc": "2026-11-16T08:20:39.214939+00:00",
         "message": "Correspondance d'équipe API-Football non univoque."
       },
       "away_squad": {
@@ -4083,7 +4083,7 @@
         "team_id": null,
         "status": "team_mapping_not_found",
         "players": null,
-        "collected_at_utc": "2026-11-16T08:18:13.125048+00:00",
+        "collected_at_utc": "2026-11-16T08:20:39.214939+00:00",
         "message": "Correspondance d'équipe API-Football non univoque."
       },
       "lineups_status": "not_collected_until_official_lineup_window",
