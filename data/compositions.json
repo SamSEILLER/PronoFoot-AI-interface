@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-11-16T10:14:53.565187+00:00",
+  "generated_at_utc": "2026-11-16T13:02:56.818538+00:00",
   "sources": {
     "pitchapi": {
       "status": "PARTIAL",
@@ -317,6 +317,71 @@
             "id": "t_3NDbTT",
             "name": "Charlotte FC",
             "image_url": "https://cdn.pitchapi.dev/images/teams/351d9bbbcf87efe605157514bf3b52105d6fe5c8438a994e5b4870f3f890a206.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_4V1CFy",
+      "snapshot": "J-7",
+      "kickoff_utc": "2026-11-24T01:00:00+00:00",
+      "collected_at_utc": "2026-11-16T13:02:56.399594+00:00",
+      "competition": "MLS",
+      "home_team": "St. Louis City",
+      "away_team": "Los Angeles FC",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_4V1CFy",
+        "home_team": {
+          "id": "t_3B5RBi",
+          "name": "St. Louis City",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/dc20628def55772f66bc2436598a7bf65448eb38be1de453ae6133934650eca8.webp"
+        },
+        "away_team": {
+          "id": "t_4ac71F",
+          "name": "Los Angeles FC",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/8dc1e0f49bbc549d861b36669ac8d2463d88554a59d3c4e84d298c4fe1e94f67.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_4V1CFy",
+          "home_team": {
+            "id": "t_3B5RBi",
+            "name": "St. Louis City",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/dc20628def55772f66bc2436598a7bf65448eb38be1de453ae6133934650eca8.webp"
+          },
+          "away_team": {
+            "id": "t_4ac71F",
+            "name": "Los Angeles FC",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/8dc1e0f49bbc549d861b36669ac8d2463d88554a59d3c4e84d298c4fe1e94f67.webp"
           },
           "home": {
             "formation": "",
