@@ -149,7 +149,6 @@
   $("validateCompleted").addEventListener("click", () => {
     completed = null;
     completedText = "";
-    $("publishCompleted").disabled = true;
     const raw = $("completedJsonInput").value.trim();
     if (!raw) {
       setStatus("completedStatus", "Colle d’abord la réponse JSON de ChatGPT dans la zone ci-dessus.", "error");
@@ -162,11 +161,10 @@
       const result = validateCompleted(data);
       if (result.errors.length) throw new Error(result.errors.slice(0, 12).join("\n") + (result.errors.length > 12 ? "\n… et " + (result.errors.length - 12) + " autre(s) erreur(s)." : ""));
       completed = data;
-      completedText = JSON.stringify(data, null, 2) + "\n";
       $("completedMeta").textContent = data.matches.length + " matchs · JSON contrôlé";
       const message = "JSON valide : " + data.matches.length + " match(s)." + (result.warnings.length ? "\nÀ vérifier :\n• " + result.warnings.join("\n• ") : "");
       setStatus("completedStatus", message, result.warnings.length ? "warn" : "ok");
-      $("publishCompleted").disabled = false;
+      setStatus("completedStatus", message + "\n\nÉtape suivante : copie le JSON de cette zone et colle-le dans data/player-availability/completed.json dans le dépôt public.", result.warnings.length ? "warn" : "ok");
     } catch (error) {
       $("completedMeta").textContent = "JSON non validé";
       setStatus("completedStatus", error.message || "JSON invalide.", "error");
@@ -175,27 +173,7 @@
   $("completedJsonInput").addEventListener("input", () => {
     completed = null;
     completedText = "";
-    $("publishCompleted").disabled = true;
     $("completedMeta").textContent = "JSON à vérifier.";
   });
-  $("publishCompleted").addEventListener("click", () => {
-    if (!completedText) return;
-    const uploadUrl = "https://github.com/SamSEILLER/PronoFoot-AI-interface/upload/main/data/player-availability";
-    // Ouvre l'écran d'ajout public pendant le clic utilisateur pour éviter le blocage des pop-ups.
-    window.open(uploadUrl, "_blank", "noopener,noreferrer");
-    const blob = new Blob([completedText], {type: "application/json;charset=utf-8"});
-    const downloadUrl = URL.createObjectURL(blob);
-    const link = document.createElement("a");
-    link.href = downloadUrl;
-    link.download = "completed.json";
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
-    window.setTimeout(() => URL.revokeObjectURL(downloadUrl), 1000);
-    setStatus(
-      "completedStatus",
-      "Fichier completed.json téléchargé et dépôt public ouvert. Dans GitHub, ajoute ce fichier au dossier data/player-availability, puis clique sur « Commit changes ». Ensuite, dans le dépôt moteur privé, lance le workflow « Importer disponibilités depuis dépôt public ».",
-      "ok"
-    );
-  });
+
 })();
