@@ -2467,6 +2467,18 @@ p.history-data-meta{margin:8px 2px 0!important;color:#555555!important;font-weig
   color:#173f68!important;
 }
 
+
+/* Compositions PitchAPI dans la fiche détaillée du match */
+.match-composition-snapshot{display:flex;flex-direction:column;gap:9px;margin:0 0 12px;padding:12px;border:1px solid #dce6f1;border-radius:9px;background:#f8fbff}
+.match-composition-snapshot>h4{margin:0;color:#173f68;font-size:13px;font-weight:850}
+.match-composition-status{margin:0;color:#526b83;font-size:11px;line-height:1.45}
+.match-composition-message,.match-composition-empty{margin:0;padding:10px 11px;border:1px dashed #d5e0eb;border-radius:8px;background:#fff;color:#607890;font-size:12px;line-height:1.5}
+.match-composition-team{min-width:0;padding:10px;border:1px solid #e0e9f2;border-radius:8px;background:#fff}
+.match-composition-team h4{margin:0 0 8px;color:#214d73;font-size:12px;font-weight:850}
+.match-composition-team p{margin:0;color:#71839a;font-size:11px}
+.match-composition-player-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px 12px;margin:0;padding:0;list-style:none}
+.match-composition-player-list li{min-width:0;padding:6px 8px;border-radius:6px;background:#f1f6fb;color:#294965;font-size:11px;line-height:1.35;overflow-wrap:anywhere}
+@media(max-width:600px){.match-composition-snapshot{padding:9px}.match-composition-team{padding:8px}.match-composition-player-list{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
