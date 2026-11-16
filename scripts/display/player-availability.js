@@ -29,6 +29,14 @@
     node.textContent = message;
   };
   const readJson = async file => JSON.parse(await file.text());
+  const acceptPending = data => {
+    const errors = validatePending(data);
+    if (errors.length) throw new Error(errors.join("\\n"));
+    pending = data;
+    $("pendingMeta").textContent = "GitHub · " + data.matches.length + " matchs · période " + (data.window && data.window.days ? data.window.days + " jours" : "non précisée");
+    setStatus("pendingStatus", "pending.json chargé automatiquement. Tu peux passer à l’étape 2.", "ok");
+    $("copyPackage").disabled = false;
+  };
   const validDate = value => typeof value === "string" && !Number.isNaN(Date.parse(value));
   const validatePending = data => {
     const errors = [];
@@ -81,6 +89,22 @@
     }
     return {errors, warnings};
   };
+  $("loadPendingOnline").addEventListener("click", async () => {
+    const button = $("loadPendingOnline");
+    button.disabled = true;
+    button.textContent = "Chargement…";
+    setStatus("pendingStatus", "Récupération de la dernière version depuis GitHub…");
+    try {
+      const response = await fetch("https://raw.githubusercontent.com/SamSEILLER/PronoFoot-AI-V2/main/data/processed/player-availability/pending.json", {cache:"no-store"});
+      if (!response.ok) throw new Error("GitHub a répondu HTTP " + response.status + ".");
+      acceptPending(await response.json());
+    } catch (error) {
+      setStatus("pendingStatus", "Chargement automatique impossible : " + (error.message || "erreur réseau") + "\\nTu peux utiliser « choisir un fichier manuellement » ou ouvrir pending.json sur GitHub.", "error");
+    } finally {
+      button.disabled = false;
+      button.textContent = "Charger automatiquement";
+    }
+  });
   $("pendingFile").addEventListener("change", async event => {
     const file = event.target.files && event.target.files[0];
     pending = null;
@@ -88,12 +112,9 @@
     if (!file) return;
     try {
       const data = await readJson(file);
-      const errors = validatePending(data);
-      if (errors.length) throw new Error(errors.join("\n"));
-      pending = data;
+      acceptPending(data);
       $("pendingMeta").textContent = file.name + " · " + data.matches.length + " matchs · période " + (data.window && data.window.days ? data.window.days + " jours" : "non précisée");
-      setStatus("pendingStatus", "Fichier pending.json reconnu. Tu peux maintenant copier le paquet à transmettre à ChatGPT.", "ok");
-      $("copyPackage").disabled = false;
+      setStatus("pendingStatus", "Fichier pending.json reconnu. Tu peux maintenant passer à l’étape 2.", "ok");
     } catch (error) {
       $("pendingMeta").textContent = file.name + " · lecture impossible";
       setStatus("pendingStatus", error.message || "JSON invalide.", "error");
