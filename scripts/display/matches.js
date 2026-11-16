@@ -979,6 +979,119 @@
         target.append(chatSection);
       };
 
+      const renderOver15Experiment = (body, match) => {
+        if (!body) return;
+        body.innerHTML = '<p class="match-detail-empty">Chargement de l’expérimentation +1,5 but…</p>';
+        Promise.all([
+          fetch("./data/experimentation-over15.json?v=" + Date.now(), {cache:"no-store"})
+            .then(response => { if (!response.ok) throw new Error("Méthode +1,5 HTTP " + response.status); return response.json(); }),
+          loadHistoryData(),
+          weatherDataPromise
+        ]).then(([method, history, weatherRecords]) => {
+          if (selectedDetailMatch !== match || !body.isConnected) return;
+          const matchId = String(match.match_id || match.provider_match_id || match.id || "");
+          const prediction = goalPredictionsIndex.get(matchId);
+          const expected = prediction?.expected_goals;
+          const lambdaHome = Number(expected?.lambda_home);
+          const lambdaAway = Number(expected?.lambda_away);
+          const lambdaTotal = lambdaHome + lambdaAway;
+          const poissonProbability = expected?.status === "estimated" && Number.isFinite(lambdaTotal) && lambdaTotal >= 0
+            ? 1 - Math.exp(-lambdaTotal) * (1 + lambdaTotal) : null;
+          const pct = value => Number.isFinite(value) ? (value * 100).toLocaleString("fr-FR",{maximumFractionDigits:1}) + " %" : "Indisponible";
+          const number = value => Number.isFinite(Number(value)) ? Number(value).toLocaleString("fr-FR",{minimumFractionDigits:2,maximumFractionDigits:2}) : "Indisponible";
+          const normalize = value => normalizeHistoryTeam(value);
+          const teams = history.recentForm?.teams || {};
+          const findTeam = name => teams[normalize(name)] || Object.values(teams).find(item => normalize(item?.name) === normalize(name)) || null;
+          const teamRecent = name => {
+            const matches = Array.isArray(findTeam(name)?.matches) ? findTeam(name).matches.slice() : [];
+            return matches.filter(item => item?.date && Date.parse(item.date) < Date.parse(match.kickoff_utc))
+              .sort((a,b)=>String(b.date).localeCompare(String(a.date)));
+          };
+          const formStats = rows => {
+            const valid = rows.filter(item => /^\d+\s*[-–:]\s*\d+$/.test(String(item.score || "")));
+            const totals = valid.map(item => {
+              const score = String(item.score).match(/^(\d+)\s*[-–:]\s*(\d+)$/);
+              return Number(score[1]) + Number(score[2]);
+            });
+            return {count:valid.length, over15:totals.filter(total=>total>=2).length, goals:totals.reduce((sum,total)=>sum+total,0)};
+          };
+          const homeRecent = teamRecent(match.home_team);
+          const awayRecent = teamRecent(match.away_team);
+          const formBlock = (name, rows) => {
+            const last5 = formStats(rows.slice(0,5));
+            const last10 = formStats(rows.slice(0,10));
+            const compare = last10.count >= 10 && last5.count >= 5
+              ? '<p>+1,5 buts : 5 derniers <strong>'+last5.over15+'/5</strong> ('+pct(last5.over15/5)+') · 10 derniers <strong>'+last10.over15+'/10</strong> ('+pct(last10.over15/10)+')</p>'
+              : '<p>Comparaison 10 vs 5 : <strong>incomplète</strong> — '+last10.count+'/10 matchs documentés. Aucun match manquant n’est extrapolé.</p>';
+            const trend = last10.count >= 10 && last5.count >= 5
+              ? (last5.over15/5 > last10.over15/10 ? "Amélioration récente" : last5.over15/5 < last10.over15/10 ? "Recul récent" : "Tendance stable")
+              : "Tendance non concluante";
+            return '<section class="match-analytics-team"><h4>'+escapeHtml(name)+'</h4>'+compare+'<small>'+escapeHtml(trend)+' · '+last5.count+'/5 matchs disponibles dans la fenêtre courte.</small></section>';
+          };
+          const targetPair = Object.values(history.headToHead?.pairs || {}).find(item => {
+            const a=normalize(item?.team_a),b=normalize(item?.team_b);
+            return (a===normalize(match.home_team)&&b===normalize(match.away_team)) || (a===normalize(match.away_team)&&b===normalize(match.home_team));
+          });
+          const h2h = (Array.isArray(targetPair?.matches)?targetPair.matches:[]).filter(item=>Date.parse(item.date)<Date.parse(match.kickoff_utc));
+          const h2hOver = h2h.filter(item=>Number(item.score_home)+Number(item.score_away)>=2).length;
+          const venue = prediction?.features || {};
+          const venueLine = (side,label) => {
+            const stats = venue[side]?.venue;
+            if (!stats || Number(stats.played)<1) return '<li>'+label+' : données domicile/extérieur indisponibles.</li>';
+            return '<li>'+label+' : '+stats.played+' matchs · '+number(stats.goals_for_per_match)+' but(s) marqué(s)/match · '+number(stats.goals_against_per_match)+' encaissé(s)/match.</li>';
+          };
+          const weather = weatherRecords?.[matchId];
+          const hour = weather?.forecast_hour || {};
+          const weatherText = weather
+            ? (hour.temperature_2m == null ? "Température indisponible" : Number(hour.temperature_2m).toLocaleString("fr-FR",{maximumFractionDigits:1})+" °C")
+              +" · pluie "+(hour.precipitation_probability == null ? "indisponible" : hour.precipitation_probability+" %")
+              +" · neige "+(hour.snowfall == null ? "indisponible" : hour.snowfall+" mm")
+              +" · "+(weather.updated_at_utc ? new Date(weather.updated_at_utc).toLocaleString("fr-FR",{dateStyle:"short",timeStyle:"short",timeZone:"Europe/Paris"})+" (Paris)" : "mise à jour inconnue")
+            : "Prévision météo non disponible pour ce match.";
+          const availability = Array.isArray(chatgptAvailabilityRecords)
+            ? chatgptAvailabilityRecords.find(item=>String(item.match_id||"")===matchId) : null;
+          const coverage = availability?.coverage || {};
+          const absences = (Array.isArray(availability?.facts)?availability.facts:[])
+            .filter(fact=>fact.status==="unavailable" || fact.status==="doubtful")
+            .map(fact=>(fact.player_name||"Joueur non identifié")+" ("+(fact.status==="unavailable"?"indisponible":"incertain")+")");
+          const analytics = matchAnalyticsIndex.get(String(match.competition_slug || ""));
+          const shotInfo = sideId => {
+            const team=analytics?.teams.get(String(sideId));
+            const games=(team?.recent_match_ids||[]).map(id=>analytics.matchesById.get(String(id))).filter(Boolean)
+              .filter(item=>Date.parse(item.kickoff_utc)<Date.parse(match.kickoff_utc))
+              .sort((a,b)=>String(b.kickoff_utc).localeCompare(String(a.kickoff_utc))).slice(0,5);
+            const values=[];
+            games.forEach(item=>{
+              const side=String(item.home_team_id)===String(sideId)?"home":"away";
+              const all=(item.team_stats?.periods||[]).find(period=>period.period==="All")||item.team_stats?.periods?.[0];
+              (all?.groups||[]).flatMap(group=>group.items||[]).forEach(stat=>{
+                if (/shots inside box/i.test(String(stat.title||stat.key||"")) && stat[side]!=null && Number.isFinite(Number(stat[side]))) values.push(Number(stat[side]));
+              });
+            });
+            return values.length ? number(values.reduce((a,b)=>a+b,0)/values.length)+" tirs dans la surface/match ("+values.length+" valeurs)" : "Non disponible";
+          };
+          const daysSinceLast = rows => rows[0]?.date ? Math.max(0,(Date.parse(match.kickoff_utc)-Date.parse(rows[0].date))/86400000) : null;
+          const restHome=daysSinceLast(homeRecent), restAway=daysSinceLast(awayRecent);
+          const status = value => '<span class="match-composition-status">'+value+'</span>';
+          body.innerHTML =
+            '<div class="match-analytics-grid"><section class="match-analytics-team"><h4>Probabilité expérimentale +1,5 but</h4>'+
+            '<div class="match-analytics-kpis"><div><strong>'+pct(poissonProbability)+'</strong><span>Probabilité centrale (Poisson)</span></div><div><strong>'+number(lambdaTotal)+'</strong><span>Buts attendus λ total</span></div></div>'+
+            '<p>'+(expected?.calibration_status==="not_calibrated"?"Estimation non calibrée : indicateur exploratoire, pas une probabilité validée historiquement.":"Calibration : "+escapeHtml(expected?.calibration_status||"non renseignée"))+'</p></section></div>'+
+            '<h4>1. Forme récente · 5 vs 10 matchs</h4><div class="match-analytics-grid">'+formBlock(match.home_team,homeRecent)+formBlock(match.away_team,awayRecent)+'</div>'+
+            '<h4>2. Confrontations directes</h4><p>'+h2h.length+' rencontre(s) antérieure(s) documentée(s) · +1,5 but : '+(h2h.length?pct(h2hOver/h2h.length)+" ("+h2hOver+"/"+h2h.length+")":"données indisponibles")+'. Contexte historique seulement, échantillon potentiellement ancien.</p>'+
+            '<h4>3. Rendement domicile / extérieur</h4><ul>'+venueLine("home",match.home_team+" à domicile")+venueLine("away",match.away_team+" à l’extérieur")+'</ul>'+
+            '<h4>4. Météo</h4><p>'+escapeHtml(weatherText)+'</p>'+
+            '<h4>5. Absences et blessures</h4><p>'+(availability ? escapeHtml(absences.length?absences.join(" · "):"Aucune absence signalée dans les faits importés.")+" · couverture domicile : "+escapeHtml(coverage.home||"non vérifiée")+" · extérieur : "+escapeHtml(coverage.away||"non vérifiée") : "Aucune recherche d’indisponibilité importée pour ce match.")+'</p>'+
+            '<h4>6. Fatigue / calendrier</h4><p>'+ (restHome==null?"Repos domicile indisponible":Math.round(restHome*10)/10+" jour(s) depuis le dernier match connu à domicile")+' · '+(restAway==null?"Repos extérieur indisponible":Math.round(restAway*10)/10+" jour(s) depuis le dernier match connu à l’extérieur")+'. Densité complète des matchs non disponible : critère non évalué.</p>'+
+            '<h4>7. xG sans penalty</h4><p>Non disponible de façon vérifiable dans le flux actuel : aucune séparation fiable xG penalty / hors penalty. Pas de conclusion sur la surperformance ou la sous-performance.</p>'+
+            '<h4>8. Tirs dans la surface</h4><ul><li>'+escapeHtml(match.home_team)+' : '+escapeHtml(shotInfo(match.home_team_id))+'</li><li>'+escapeHtml(match.away_team)+' : '+escapeHtml(shotInfo(match.away_team_id))+'</li></ul>'+
+            '<p class="match-analytics-note">Méthode '+escapeHtml(method.method_id||"OVER15-EXPERIMENT-V1")+' · '+escapeHtml(method.version||"version non précisée")+'. Les critères contextuels servent à contrôler et nuancer le signal ; ils ne sont pas additionnés en points arbitraires. Les critères indisponibles restent explicitement non évalués.</p>';
+        }).catch(error=>{
+          console.warn("Expérimentation +1,5 but indisponible :",error);
+          if (body.isConnected) body.innerHTML='<p class="match-detail-empty">Impossible de charger la méthode expérimentale +1,5 but.</p>';
+        });
+      };
+
       const renderDetailAccordions = () => {
         if (!detailPanel || !selectedDetailMatch) return;
         const overview = detailPanel.querySelector('[data-detail-panel="overview"]');
