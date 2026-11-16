@@ -48,10 +48,8 @@ main{max-width:1120px;margin:0 auto;padding:28px 18px 42px}.page-heading{margin:
       </div>
       <div class="file-meta" id="completedMeta">Aucun JSON collé.</div>
       <div class="status" id="completedStatus" role="status" aria-live="polite">En attente de la réponse JSON de ChatGPT.</div>
-      <div class="actions" style="margin-top:12px">
-        <button class="btn primary" id="publishCompleted" type="button" disabled>Télécharger et déposer dans le dépôt public</button>
-      </div>
-      <p class="small">Après vérification, le bouton télécharge automatiquement <strong>completed.json</strong> et ouvre le dépôt public pour que tu ajoutes ce fichier. Tu lanceras ensuite le workflow manuel dans le dépôt moteur privé.</p>
+      <p class="small">Quand le JSON est validé, copie son contenu depuis la zone ci-dessus et colle-le dans le fichier <strong>data/player-availability/completed.json</strong> du dépôt public. S’il n’existe pas encore, crée ce fichier à cet emplacement. Ensuite, valide le commit et lance le workflow manuel dans le dépôt moteur privé.</p>
+      <p class="small"><a href="https://github.com/SamSEILLER/PronoFoot-AI-interface/tree/main/data/player-availability" target="_blank" rel="noopener">Ouvrir le dossier public data/player-availability</a></p>
     </article>
   </section>
   <p class="footer-note">Le fichier est contrôlé dans ton navigateur. Tu le déposes dans le dépôt public, puis le moteur privé le récupère à ta demande.</p>
