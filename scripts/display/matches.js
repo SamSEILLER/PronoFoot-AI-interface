@@ -808,26 +808,40 @@
         const target = detailPanel.querySelector('[data-detail-panel="compositions"]');
         if (!target) return;
         target.replaceChildren();
+
+        const showMessage = (message) => {
+          const node = document.createElement("p");
+          node.className = "match-composition-empty";
+          node.textContent = message;
+          target.append(node);
+        };
         if (compositionRecords === null) {
-          const message = document.createElement("p");
-          message.textContent = "Données de composition temporairement indisponibles.";
-          target.append(message);
+          showMessage("Les données de composition PitchAPI sont temporairement indisponibles.");
           return;
         }
+
         const matchId = String(match.match_id || match.provider_match_id || match.id || "");
-        const records = compositionRecords.filter(record => String(record.match_id || "") === matchId)
+        const records = compositionRecords
+          .filter(record => String(record.match_id || "") === matchId && record.provider === "PitchAPI")
           .sort((a,b) => ["J-7","J-2","J-1"].indexOf(a.snapshot) - ["J-7","J-2","J-1"].indexOf(b.snapshot));
+
         if (!records.length) {
-          const message = document.createElement("p");
-          message.textContent = "Aucun instantané publié pour ce match à ce stade. Les compositions officielles sont généralement communiquées peu avant le coup d'envoi ; une absence de données ne signifie pas qu'un joueur est absent.";
-          target.append(message);
+          showMessage("Aucun instantané PitchAPI publié pour ce match à ce stade. Les compositions officielles peuvent n'être communiquées que peu avant le coup d'envoi. L'absence de données ne signifie pas qu'un joueur est absent.");
           return;
         }
+
         const makeText = (tag, value, className) => {
           const node = document.createElement(tag);
           if (className) node.className = className;
           node.textContent = value;
           return node;
+        };
+        const formatCollectedAt = value => {
+          if (!value) return "Date de collecte inconnue";
+          const date = new Date(value);
+          return Number.isFinite(date.getTime())
+            ? new Intl.DateTimeFormat("fr-FR", {dateStyle:"short",timeStyle:"short",timeZone:"Europe/Paris"}).format(date) + " (Paris)"
+            : "Date de collecte inconnue";
         };
         const addPlayers = (parent, title, players) => {
           if (!Array.isArray(players)) return;
@@ -835,54 +849,59 @@
           section.className = "match-composition-team";
           section.append(makeText("h4", title));
           if (!players.length) {
-            section.append(makeText("p", "Aucun joueur communiqué par cette source."));
+            section.append(makeText("p", "Aucun joueur communiqué par PitchAPI."));
           } else {
             const list = document.createElement("ul");
             list.className = "match-composition-player-list";
             players.forEach(player => {
-              const person = player && player.player && typeof player.player === "object" ? player.player : (player || {});
+              const person = player && player.player && typeof player.player === "object"
+                ? player.player : (player || {});
               const name = person.name || person.player_name || "Joueur sans nom";
               const number = person.number ? " · #" + person.number : "";
               const position = person.position ? " · " + person.position : "";
-              const reason = person.reason || person.type;
-              list.append(makeText("li", name + number + position + (reason ? " · " + reason : "")));
+              const role = person.role || person.type || "";
+              list.append(makeText("li", name + number + position + (role ? " · " + role : "")));
             });
             section.append(list);
           }
           parent.append(section);
         };
+
         records.forEach(record => {
           const snapshot = document.createElement("section");
           snapshot.className = "match-composition-snapshot";
-          const provider = record.provider || "Source inconnue";
-          const statusLabel = record.status === "provided" ? "Données joueurs reçues"
-            : record.status === "metadata_only" ? "Métadonnées uniquement — aucun joueur communiqué"
-            : record.status === "plan_limited" ? "Forfait fournisseur limité"
-            : record.status === "not_collected_until_official_lineup_window" ? "Composition officielle pas encore collectée"
-            : record.status === "partial" ? "Données partielles" : (record.message || "Statut non déterminé");
-          snapshot.append(makeText("h4", (record.snapshot || "Instantané") + " · " + provider));
-          snapshot.append(makeText("p", statusLabel + " · Collecté le " + (record.collected_at_utc ? new Date(record.collected_at_utc).toLocaleString("fr-FR", {dateStyle:"short",timeStyle:"short",timeZone:"Europe/Paris"}) + " (Paris)" : "date inconnue")));
-          if (provider === "PitchAPI") {
-            const lineups = record.lineups || {};
-            const sides = [["home", match.home_team], ["away", match.away_team]];
-            sides.forEach(([side, teamName]) => {
-              const team = lineups[side] || {};
-              const starters = Array.isArray(team.starters) ? team.starters : null;
-              const subs = Array.isArray(team.subs) ? team.subs : null;
-              if (starters || subs) {
-                addPlayers(snapshot, (teamName || side) + " · titulaires", starters || []);
-                addPlayers(snapshot, (teamName || side) + " · remplaçants", subs || []);
-              }
+          const lineups = record.lineups && typeof record.lineups === "object" ? record.lineups : {};
+          const home = lineups.home && typeof lineups.home === "object" ? lineups.home : {};
+          const away = lineups.away && typeof lineups.away === "object" ? lineups.away : {};
+          const homeHasPlayers = ["starters","subs"].some(key => Array.isArray(home[key]) && home[key].length);
+          const awayHasPlayers = ["starters","subs"].some(key => Array.isArray(away[key]) && away[key].length);
+          const hasPlayers = homeHasPlayers || awayHasPlayers;
+
+          let statusLabel;
+          if (record.status === "provided" && homeHasPlayers && awayHasPlayers) statusLabel = "Joueurs reçus pour les deux équipes";
+          else if (record.status === "provided" || hasPlayers) statusLabel = "Composition partielle — joueurs reçus pour une équipe ou une partie de l'effectif";
+          else if (record.status === "metadata_only") statusLabel = "Métadonnées uniquement — aucun joueur communiqué";
+          else if (record.status === "not_provided" || record.status === "not_available") statusLabel = "Composition non communiquée par PitchAPI";
+          else if (record.status === "collection_error") statusLabel = "Erreur lors de la collecte PitchAPI";
+          else statusLabel = record.message || "Statut non déterminé";
+
+          snapshot.append(makeText("h4", (record.snapshot || "Instantané") + " · PitchAPI"));
+          snapshot.append(makeText("p", statusLabel + " · Collecté le " + formatCollectedAt(record.collected_at_utc), "match-composition-status"));
+
+          if (hasPlayers) {
+            const sides = [
+              {data:home,name:match.home_team || "Équipe domicile"},
+              {data:away,name:match.away_team || "Équipe extérieure"}
+            ];
+            sides.forEach(({data, name}) => {
+              const formation = data.formation ? " · " + data.formation : "";
+              const confirmation = data.confirmed === true ? " · Confirmée par la source"
+                : data.confirmed === false ? " · Non confirmée" : "";
+              if (Array.isArray(data.starters)) addPlayers(snapshot, name + " · titulaires" + formation + confirmation, data.starters);
+              if (Array.isArray(data.subs)) addPlayers(snapshot, name + " · remplaçants", data.subs);
             });
-            if (!lineups.home?.starters && !lineups.away?.starters && record.message) snapshot.append(makeText("p", record.message));
-          } else {
-            addPlayers(snapshot, (match.home_team || "Domicile") + " · effectif actuel (pas une composition officielle)", record.home_squad?.players);
-            addPlayers(snapshot, (match.away_team || "Extérieur") + " · effectif actuel (pas une composition officielle)", record.away_squad?.players);
-            const absence = record.message || record.injuries?.message;
-            if (absence) snapshot.append(makeText("p", absence));
-            if (record.team_injuries_status === "plan_limited" || record.injuries_status === "plan_limited") {
-              snapshot.append(makeText("p", "Les absences/blessures ne sont pas vérifiables avec le forfait API-Football actuel."));
-            }
+          } else if (record.message) {
+            snapshot.append(makeText("p", record.message, "match-composition-message"));
           }
           target.append(snapshot);
         });
