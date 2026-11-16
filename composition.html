@@ -11,7 +11,7 @@
 main{max-width:1500px;margin:0 auto;padding:22px 20px 40px}
 .page-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;margin:8px 0 18px}
 h1{margin:0;font-size:25px;letter-spacing:-.5px}.lead{margin:5px 0 0;color:var(--muted)}
-.source-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:18px}
+.source-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:18px}
 .source-card,.match-card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:15px;box-shadow:0 2px 8px #1a3b5908}
 .source-card h2{font-size:14px;margin:0 0 7px}.source-state{font-size:12px;color:var(--muted)}.source-state strong{color:var(--ink)}
 .toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}
@@ -33,11 +33,10 @@ ul.roster-list{margin:8px 0 12px;padding-left:20px;columns:2;column-gap:24px}ul.
 <div id="sidebarMount"></div>
 <main>
   <header class="page-heading">
-    <div><h1>Composition d'équipe</h1><p class="lead">Compositions, joueurs indisponibles et comparaison des fournisseurs. Les données manquantes restent explicitement signalées.</p></div>
+    <div><h1>Compositions d’équipe</h1><p class="lead">Instantanés PitchAPI J-7, J-2 et J-1. Les compositions non communiquées sont distinguées des listes de joueurs reçues.</p></div>
   </header>
   <section class="source-grid" aria-label="État des fournisseurs">
     <article class="source-card"><h2>PitchAPI · compositions</h2><div class="source-state" id="pitchapi-state">Chargement du statut…</div></article>
-    <article class="source-card"><h2>API-Football · blessures et suspensions</h2><div class="source-state" id="apifootball-state">Source complémentaire nécessaire — non intégrée actuellement.</div></article>
   </section>
   <div class="toolbar">
     <label><span class="visually-hidden">Compétition</span><select id="competition"><option value="">Toutes les compétitions</option></select></label>
