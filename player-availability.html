@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#243744">
+<link rel="icon" type="image/svg+xml" href="./assets/football-ai-circuit.svg">
+<title>Disponibilités joueurs — PronoFoot AI</title>
+<style>
+:root{color-scheme:light;--ink:#0a1b46;--muted:#58708f;--line:#dce6f1;--bg:#f3f8fc;--green:#08b968}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#f5f9fd,#eef5fa);color:var(--ink);font:14px/1.5 Inter,"Segoe UI",Roboto,Arial,sans-serif}
+main{max-width:1120px;margin:0 auto;padding:28px 18px 42px}.page-heading{margin:0 0 20px}.eyebrow{color:#078b55;font-size:11px;font-weight:850;letter-spacing:1.1px;text-transform:uppercase}.page-heading h1{margin:5px 0 6px;font-size:clamp(25px,4vw,34px);line-height:1.15;letter-spacing:-.7px}.page-heading p{margin:0;color:var(--muted);max-width:760px}
+.steps{display:grid;gap:14px}.step{background:#fff;border:1px solid var(--line);border-radius:9px;box-shadow:0 3px 12px #173b6010;padding:18px 20px}.step-head{display:flex;align-items:center;gap:11px;margin-bottom:8px}.step-number{display:flex;align-items:center;justify-content:center;width:30px;height:30px;flex:0 0 30px;border-radius:50%;background:#e7f6ee;color:#087747;font-weight:900}.step h2{margin:0;font-size:17px}.step p{margin:5px 0 12px;color:var(--muted)}
+.actions{display:flex;flex-wrap:wrap;gap:9px;align-items:center}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:9px 14px;border:1px solid #cbd9e8;border-radius:6px;background:#f7faff;color:#163b67;text-decoration:none;font:700 13px inherit;cursor:pointer}.btn.primary{background:#078b55;border-color:#078b55;color:#fff}.btn:disabled{opacity:.45;cursor:not-allowed}.file-input{display:block;max-width:100%;padding:10px;border:1px dashed #9fb5cc;border-radius:6px;background:#f8fbff;color:#254769}.file-meta{margin-top:10px;color:#49627e;font-size:12px}.status{margin-top:12px;padding:10px 12px;border-radius:6px;background:#f1f5f9;color:#40566f;font-size:12px;white-space:pre-wrap}.status.ok{background:#eaf7ef;color:#17643d}.status.error{background:#fff0f0;color:#9e2929}.status.warn{background:#fff7e8;color:#855b0c}.note{margin:12px 0 0;padding:10px 12px;border-left:3px solid #d5a23b;background:#fff9ed;color:#72551c;font-size:12px}.help-links{display:flex;flex-wrap:wrap;gap:14px;margin-top:12px;font-size:12px}.help-links a{color:#245b91;text-decoration:underline;text-underline-offset:2px}.small{font-size:11px;color:#72849a}.footer-note{margin-top:18px;color:#71839a;font-size:11px;text-align:center}
+@media(max-width:650px){main{padding:18px 10px 30px}.step{padding:15px 13px}.actions .btn{width:100%}.file-input{width:100%}}
+</style>
+</head>
+<body>
+<div id="sidebarMount"></div>
+<main>
+  <header class="page-heading">
+    <div class="eyebrow">Outil manuel · ChatGPT</div>
+    <h1>Disponibilités des joueurs</h1>
+    <p>Un parcours simple pour transmettre les matchs à vérifier à ChatGPT, récupérer son fichier complété, puis le contrôler avant de l’ajouter au dépôt.</p>
+  </header>
+  <section class="steps" aria-label="Étapes de mise à jour">
+    <article class="step">
+      <div class="step-head"><span class="step-number">1</span><h2>Charger le fichier des matchs à vérifier</h2></div>
+      <p>Récupère le fichier <strong>pending.json</strong> depuis le dépôt moteur, puis sélectionne-le ici.</p>
+      <input class="file-input" id="pendingFile" type="file" accept=".json,application/json">
+      <div class="file-meta" id="pendingMeta">Aucun fichier chargé.</div>
+      <div class="status" id="pendingStatus" role="status" aria-live="polite">En attente du fichier pending.json.</div>
+      <div class="help-links">
+        <a href="https://github.com/SamSEILLER/PronoFoot-AI-V2/blob/main/data/processed/player-availability/pending.json" target="_blank" rel="noopener">Ouvrir pending.json sur GitHub</a>
+        <a href="https://github.com/SamSEILLER/PronoFoot-AI-V2/actions/workflows/player-availability-manual.yml" target="_blank" rel="noopener">Régénérer les matchs (GitHub Actions)</a>
+      </div>
+    </article>
+    <article class="step">
+      <div class="step-head"><span class="step-number">2</span><h2>Copier le JSON avec le prompt intégré</h2></div>
+      <p>Le presse-papiers contiendra le prompt de recherche et le fichier pending. Tu peux coller ce JSON dans ChatGPT. Le prompt demande de rendre uniquement le fichier complété, sans enveloppe supplémentaire.</p>
+      <div class="actions"><button class="btn primary" id="copyPackage" type="button" disabled>Copier prompt + JSON</button></div>
+      <div class="status" id="copyStatus" role="status" aria-live="polite">Charge d’abord pending.json.</div>
+      <p class="note">Le JSON copié est un paquet de travail pour ChatGPT. Ce n’est pas le fichier à déposer dans le dépôt. Le fichier final doit rester un completed.json au format attendu par le moteur.</p>
+    </article>
+    <article class="step">
+      <div class="step-head"><span class="step-number">3</span><h2>Importer et contrôler completed.json</h2></div>
+      <p>Après la réponse de ChatGPT, enregistre son JSON sous <strong>completed.json</strong> et charge-le ici. Le contrôle vérifie la structure, les statuts, les sources et les identifiants des matchs.</p>
+      <input class="file-input" id="completedFile" type="file" accept=".json,application/json">
+      <div class="file-meta" id="completedMeta">Aucun fichier chargé.</div>
+      <div class="status" id="completedStatus" role="status" aria-live="polite">En attente du fichier completed.json.</div>
+      <div class="actions" style="margin-top:12px">
+        <button class="btn primary" id="downloadCompleted" type="button" disabled>Télécharger completed.json validé</button>
+        <a class="btn" href="https://github.com/SamSEILLER/PronoFoot-AI-V2/blob/main/data/processed/player-availability/completed.json" target="_blank" rel="noopener">Ouvrir completed.json sur GitHub</a>
+      </div>
+      <p class="small">Après validation, remplace le contenu du fichier completed.json dans le dépôt moteur et valide le commit. Le workflow GitHub Actions effectuera ensuite l’import et l’historisation.</p>
+    </article>
+  </section>
+  <p class="footer-note">Les fichiers sont lus et contrôlés dans ton navigateur. Cette page ne les envoie pas à un serveur et ne modifie pas directement le dépôt GitHub.</p>
+</main>
+<script src="./scripts/display/sidebar.js" defer></script>
+<script src="./scripts/display/player-availability.js" defer></script>
+</body>
+</html>
