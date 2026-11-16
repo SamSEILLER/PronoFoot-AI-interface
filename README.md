@@ -6,6 +6,7 @@ Interface web publique du projet Football Prediction Lab. Elle présente les mat
 
 - `index.html` — matchs à venir et fiche détaillée.
 - `classements.html` — classements.
+- `composition.html` — compositions d’équipe, instantanés PitchAPI J-7/J-2/J-1 et comparaison des absences API-Football.
 
 ## Données consommées
 
@@ -18,6 +19,7 @@ Les fichiers JSON sont publiés dans `data/` par le moteur V2 ou synchronisés d
 - `recent-form.json`, `head-to-head.json` — forme et confrontations historiques.
 - `odds_latest.json` — dernier relevé des cotes Unibet ; peut légitimement contenir zéro événement.
 - `site-status.json` — fraîcheur, couverture et état des collectes.
+- `compositions.json` — instantanés de compositions et absences par fournisseur, avec statut explicite des données indisponibles.
 
 ## Fiche match
 
