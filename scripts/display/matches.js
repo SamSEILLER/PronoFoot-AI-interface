@@ -407,6 +407,16 @@
           if (selectedDetailMatch) renderMatchCompositions(selectedDetailMatch);
           return records;
         });
+      let chatgptAvailabilityRecords = null;
+      const chatgptAvailabilityPromise = fetch("./data/player-availability.json?v=" + Date.now(), { cache:"no-store" })
+        .then(response => { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); })
+        .then(payload => Array.isArray(payload.records) ? payload.records : [])
+        .catch(error => { console.warn("Données de disponibilité ChatGPT indisponibles :", error); return null; })
+        .then(records => {
+          chatgptAvailabilityRecords = records;
+          if (selectedDetailMatch) renderMatchCompositions(selectedDetailMatch);
+          return records;
+        });
       let oddsEvents = null;
       const oddsDataPromise = fetch("./data/odds_latest.json?v=" + Date.now(), { cache:"no-store" })
         .then(response => { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); })
@@ -809,102 +819,149 @@
         if (!target) return;
         target.replaceChildren();
 
-        const showMessage = (message) => {
-          const node = document.createElement("p");
-          node.className = "match-composition-empty";
-          node.textContent = message;
-          target.append(node);
-        };
-        if (compositionRecords === null) {
-          showMessage("Les données de composition PitchAPI sont temporairement indisponibles.");
-          return;
-        }
-
-        const matchId = String(match.match_id || match.provider_match_id || match.id || "");
-        const records = compositionRecords
-          .filter(record => String(record.match_id || "") === matchId && record.provider === "PitchAPI")
-          .sort((a,b) => ["J-7","J-2","J-1"].indexOf(a.snapshot) - ["J-7","J-2","J-1"].indexOf(b.snapshot));
-
-        if (!records.length) {
-          showMessage("Aucun instantané PitchAPI publié pour ce match à ce stade. Les compositions officielles peuvent n'être communiquées que peu avant le coup d'envoi. L'absence de données ne signifie pas qu'un joueur est absent.");
-          return;
-        }
-
         const makeText = (tag, value, className) => {
           const node = document.createElement(tag);
           if (className) node.className = className;
-          node.textContent = value;
+          node.textContent = value == null ? "" : String(value);
           return node;
         };
-        const formatCollectedAt = value => {
-          if (!value) return "Date de collecte inconnue";
+        const formatDate = value => {
+          if (!value) return "Date inconnue";
           const date = new Date(value);
           return Number.isFinite(date.getTime())
             ? new Intl.DateTimeFormat("fr-FR", {dateStyle:"short",timeStyle:"short",timeZone:"Europe/Paris"}).format(date) + " (Paris)"
-            : "Date de collecte inconnue";
+            : "Date inconnue";
         };
-        const addPlayers = (parent, title, players) => {
-          if (!Array.isArray(players)) return;
-          const section = document.createElement("section");
-          section.className = "match-composition-team";
-          section.append(makeText("h4", title));
-          if (!players.length) {
-            section.append(makeText("p", "Aucun joueur communiqué par PitchAPI."));
+        const matchId = String(match.match_id || match.provider_match_id || match.id || "");
+        const showMessage = (message) => target.append(makeText("p", message, "match-composition-empty"));
+
+        // Section PitchAPI — les observations restent affichées séparément de ChatGPT.
+        if (compositionRecords === null) {
+          showMessage("Les données PitchAPI sont temporairement indisponibles.");
+        } else {
+          const records = compositionRecords
+            .filter(record => String(record.match_id || "") === matchId && record.provider === "PitchAPI")
+            .sort((a,b) => ["J-7","J-2","J-1"].indexOf(a.snapshot) - ["J-7","J-2","J-1"].indexOf(b.snapshot));
+          if (!records.length) {
+            showMessage("PitchAPI : aucun instantané publié pour ce match. L'absence de données ne signifie pas qu'un joueur est absent.");
+          }
+          const addPlayers = (parent, title, players) => {
+            if (!Array.isArray(players)) return;
+            const section = document.createElement("section");
+            section.className = "match-composition-team";
+            section.append(makeText("h4", title));
+            if (!players.length) {
+              section.append(makeText("p", "Aucun joueur communiqué par PitchAPI."));
+            } else {
+              const list = document.createElement("ul");
+              list.className = "match-composition-player-list";
+              players.forEach(player => {
+                const person = player && player.player && typeof player.player === "object" ? player.player : (player || {});
+                const name = person.name || person.player_name || "Joueur sans nom";
+                const number = person.number ? " · #" + person.number : "";
+                const position = person.position ? " · " + person.position : "";
+                const role = person.role || person.type || "";
+                list.append(makeText("li", name + number + position + (role ? " · " + role : "")));
+              });
+              section.append(list);
+            }
+            parent.append(section);
+          };
+          records.forEach(record => {
+            const snapshot = document.createElement("section");
+            snapshot.className = "match-composition-snapshot";
+            const lineups = record.lineups && typeof record.lineups === "object" ? record.lineups : {};
+            const home = lineups.home && typeof lineups.home === "object" ? lineups.home : {};
+            const away = lineups.away && typeof lineups.away === "object" ? lineups.away : {};
+            const homeHasPlayers = ["starters","subs"].some(key => Array.isArray(home[key]) && home[key].length);
+            const awayHasPlayers = ["starters","subs"].some(key => Array.isArray(away[key]) && away[key].length);
+            const hasPlayers = homeHasPlayers || awayHasPlayers;
+            let statusLabel;
+            if (record.status === "provided" && homeHasPlayers && awayHasPlayers) statusLabel = "Joueurs reçus pour les deux équipes";
+            else if (record.status === "provided" || hasPlayers) statusLabel = "Composition partielle — joueurs reçus pour une équipe ou une partie de l'effectif";
+            else if (record.status === "metadata_only") statusLabel = "Métadonnées uniquement — aucun joueur communiqué";
+            else if (record.status === "not_provided" || record.status === "not_available") statusLabel = "Composition non communiquée par PitchAPI";
+            else if (record.status === "collection_error") statusLabel = "Erreur lors de la collecte PitchAPI";
+            else statusLabel = record.message || "Statut non déterminé";
+            snapshot.append(makeText("h4", (record.snapshot || "Instantané") + " · PitchAPI"));
+            snapshot.append(makeText("p", statusLabel + " · Collecté le " + formatDate(record.collected_at_utc), "match-composition-status"));
+            if (hasPlayers) {
+              [{data:home,name:match.home_team || "Équipe domicile"},{data:away,name:match.away_team || "Équipe extérieure"}].forEach(({data,name}) => {
+                const formation = data.formation ? " · " + data.formation : "";
+                const confirmation = data.confirmed === true ? " · Confirmée par la source" : data.confirmed === false ? " · Non confirmée" : "";
+                if (Array.isArray(data.starters)) addPlayers(snapshot, name + " · titulaires" + formation + confirmation, data.starters);
+                if (Array.isArray(data.subs)) addPlayers(snapshot, name + " · remplaçants", data.subs);
+              });
+            } else if (record.message) snapshot.append(makeText("p", record.message, "match-composition-message"));
+            target.append(snapshot);
+          });
+        }
+
+        // Section ChatGPT — données sourcées, historisées et indépendantes de PitchAPI.
+        const chatSection = document.createElement("section");
+        chatSection.className = "match-composition-snapshot match-chatgpt-availability";
+        chatSection.append(makeText("h4", "Recherche de disponibilité · ChatGPT"));
+        if (chatgptAvailabilityRecords === null) {
+          chatSection.append(makeText("p", "Données ChatGPT temporairement indisponibles.", "match-composition-empty"));
+        } else {
+          const observation = chatgptAvailabilityRecords.find(record => String(record.match_id || "") === matchId);
+          if (!observation) {
+            chatSection.append(makeText("p", "Aucune recherche ChatGPT importée pour ce match. Les données ne sont pas considérées comme vérifiées.", "match-composition-empty"));
           } else {
-            const list = document.createElement("ul");
-            list.className = "match-composition-player-list";
-            players.forEach(player => {
-              const person = player && player.player && typeof player.player === "object"
-                ? player.player : (player || {});
-              const name = person.name || person.player_name || "Joueur sans nom";
-              const number = person.number ? " · #" + person.number : "";
-              const position = person.position ? " · " + person.position : "";
-              const role = person.role || person.type || "";
-              list.append(makeText("li", name + number + position + (role ? " · " + role : "")));
+            chatSection.append(makeText("p", "Vérifié le " + formatDate(observation.checked_at_utc) + " · " + (observation.research_status || "statut inconnu"), "match-composition-status"));
+            const coverage = observation.coverage || {};
+            const coverageLabel = value => ({
+              checked_no_issue:"Recherche effectuée — aucun problème signalé",
+              issues_found:"Informations trouvées",
+              partial:"Recherche partielle",
+              not_checked:"Non vérifié"
+            })[value] || "Non vérifié";
+            [{side:"home",name:match.home_team || "Équipe domicile"},{side:"away",name:match.away_team || "Équipe extérieure"}].forEach(team => {
+              const teamSection = document.createElement("section");
+              teamSection.className = "match-composition-team";
+              teamSection.append(makeText("h4", team.name));
+              teamSection.append(makeText("p", coverageLabel(coverage[team.side]), "match-composition-status"));
+              const facts = (Array.isArray(observation.facts) ? observation.facts : []).filter(fact => fact.team_side === team.side);
+              if (!facts.length) {
+                teamSection.append(makeText("p", "Aucun joueur signalé dans les informations importées. Cela ne prouve pas l'absence d'indisponibilité.", "match-composition-empty"));
+              } else {
+                const list = document.createElement("ul");
+                list.className = "match-composition-player-list";
+                facts.forEach(fact => {
+                  const item = document.createElement("li");
+                  const category = ({injury:"Blessure",suspension:"Suspension",coach_decision:"Décision de l'entraîneur",doubtful:"Incertain",return:"Retour",other:"Autre"})[fact.category] || fact.category || "Information";
+                  const status = ({unavailable:"Indisponible",doubtful:"Incertain",available:"Disponible",unknown:"Statut inconnu"})[fact.status] || fact.status || "Statut inconnu";
+                  const confidence = ({confirmed:"Confirmé",probable:"Probable",uncertain:"Incertain"})[fact.confidence] || fact.confidence || "";
+                  item.append(makeText("strong", fact.player_name || "Joueur non identifié"));
+                  item.append(document.createTextNode(" · " + category + " · " + status + (confidence ? " · " + confidence : "")));
+                  if (fact.details) item.append(makeText("p", fact.details));
+                  if (typeof fact.source_url === "string" && /^https?:\/\//i.test(fact.source_url)) {
+                    const link = document.createElement("a");
+                    link.href = fact.source_url;
+                    link.target = "_blank";
+                    link.rel = "noopener noreferrer";
+                    link.textContent = fact.source_title || "Consulter la source";
+                    item.append(link);
+                  }
+                  list.append(item);
+                });
+                teamSection.append(list);
+              }
+              chatSection.append(teamSection);
             });
-            section.append(list);
-          }
-          parent.append(section);
-        };
-
-        records.forEach(record => {
-          const snapshot = document.createElement("section");
-          snapshot.className = "match-composition-snapshot";
-          const lineups = record.lineups && typeof record.lineups === "object" ? record.lineups : {};
-          const home = lineups.home && typeof lineups.home === "object" ? lineups.home : {};
-          const away = lineups.away && typeof lineups.away === "object" ? lineups.away : {};
-          const homeHasPlayers = ["starters","subs"].some(key => Array.isArray(home[key]) && home[key].length);
-          const awayHasPlayers = ["starters","subs"].some(key => Array.isArray(away[key]) && away[key].length);
-          const hasPlayers = homeHasPlayers || awayHasPlayers;
-
-          let statusLabel;
-          if (record.status === "provided" && homeHasPlayers && awayHasPlayers) statusLabel = "Joueurs reçus pour les deux équipes";
-          else if (record.status === "provided" || hasPlayers) statusLabel = "Composition partielle — joueurs reçus pour une équipe ou une partie de l'effectif";
-          else if (record.status === "metadata_only") statusLabel = "Métadonnées uniquement — aucun joueur communiqué";
-          else if (record.status === "not_provided" || record.status === "not_available") statusLabel = "Composition non communiquée par PitchAPI";
-          else if (record.status === "collection_error") statusLabel = "Erreur lors de la collecte PitchAPI";
-          else statusLabel = record.message || "Statut non déterminé";
-
-          snapshot.append(makeText("h4", (record.snapshot || "Instantané") + " · PitchAPI"));
-          snapshot.append(makeText("p", statusLabel + " · Collecté le " + formatCollectedAt(record.collected_at_utc), "match-composition-status"));
-
-          if (hasPlayers) {
-            const sides = [
-              {data:home,name:match.home_team || "Équipe domicile"},
-              {data:away,name:match.away_team || "Équipe extérieure"}
-            ];
-            sides.forEach(({data, name}) => {
-              const formation = data.formation ? " · " + data.formation : "";
-              const confirmation = data.confirmed === true ? " · Confirmée par la source"
-                : data.confirmed === false ? " · Non confirmée" : "";
-              if (Array.isArray(data.starters)) addPlayers(snapshot, name + " · titulaires" + formation + confirmation, data.starters);
-              if (Array.isArray(data.subs)) addPlayers(snapshot, name + " · remplaçants", data.subs);
+            (Array.isArray(observation.sources) ? observation.sources : []).forEach(source => {
+              if (typeof source?.url !== "string" || !/^https?:\/\//i.test(source.url)) return;
+              const link = document.createElement("a");
+              link.href = source.url;
+              link.target = "_blank";
+              link.rel = "noopener noreferrer";
+              link.textContent = source.title || source.url;
+              link.className = "match-composition-source";
+              chatSection.append(link);
             });
-          } else if (record.message) {
-            snapshot.append(makeText("p", record.message, "match-composition-message"));
           }
-          target.append(snapshot);
-        });
+        }
+        target.append(chatSection);
       };
 
       const renderDetailAccordions = () => {
