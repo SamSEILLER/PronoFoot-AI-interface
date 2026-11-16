@@ -39,6 +39,6 @@ L'indicateur de statut résume l'état technique et la fraîcheur des collectes.
 
 ## Disponibilités joueurs — parcours ChatGPT
 
-- `player-availability.html` — page manuelle pour charger `pending.json`, copier le paquet de recherche, coller directement la réponse JSON de ChatGPT dans une zone de texte, la contrôler, puis télécharger `completed.json` et ouvrir l'écran d'ajout du dépôt public.
-- `scripts/display/player-availability.js` — validation navigateur du JSON collé, téléchargement du fichier et ouverture du dépôt public.
-- La page ne stocke aucun jeton GitHub et ne pousse pas directement vers un dépôt. Après validation, elle télécharge `completed.json` et ouvre l'écran d'ajout dans `data/player-availability/` du dépôt public. Après le commit, le workflow manuel `player-availability-import-public.yml` du moteur privé récupère le fichier, le valide, l'importe et historise les observations.
+- `player-availability.html` — page manuelle pour charger `pending.json`, copier le paquet de recherche, coller directement la réponse JSON de ChatGPT dans une zone de texte, la contrôler, puis copier le JSON validé dans `data/player-availability/completed.json` du dépôt public.
+- `scripts/display/player-availability.js` — validation navigateur du JSON collé.
+- La page ne stocke aucun jeton GitHub et ne pousse pas directement vers un dépôt. Après validation, le JSON est collé manuellement dans `data/player-availability/completed.json` du dépôt public. Après le commit, le workflow manuel `player-availability-import-public.yml` du moteur privé récupère le fichier, le valide, l'importe et historise les observations.
