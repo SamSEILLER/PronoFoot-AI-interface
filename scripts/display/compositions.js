@@ -98,10 +98,16 @@
         details.append(pre);
         box.append(details);
       }
-    } else if (record.status === "provided" && record.lineups !== null && record.lineups !== undefined) {
+    } else if (record.lineups !== null && record.lineups !== undefined) {
       const details = document.createElement("details");
       const summary = document.createElement("summary");
-      summary.textContent = "Voir la réponse détaillée du fournisseur";
+      const hasPlayers = ["home", "away"].some(side => {
+        const team = record.lineups && record.lineups[side];
+        return team && ["starters", "subs"].some(key => Array.isArray(team[key]) && team[key].length > 0);
+      });
+      summary.textContent = hasPlayers
+        ? "Détail des compositions PitchAPI — joueurs reçus"
+        : "Détail PitchAPI — métadonnées uniquement, aucun joueur communiqué";
       const pre = document.createElement("pre");
       pre.textContent = JSON.stringify(record.lineups, null, 2);
       details.append(summary, pre);
