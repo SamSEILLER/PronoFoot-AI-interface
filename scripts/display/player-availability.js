@@ -168,33 +168,24 @@
       setStatus("completedStatus", error.message || "JSON invalide.", "error");
     }
   });
-  $("publishCompleted").addEventListener("click", async () => {
+  $("publishCompleted").addEventListener("click", () => {
     if (!completedText) return;
-    const editUrl = "https://github.com/SamSEILLER/PronoFoot-AI-V2/edit/main/data/processed/player-availability/completed.json";
-    // Ouvre l'éditeur pendant le clic utilisateur pour éviter le blocage des pop-ups.
-    window.open(editUrl, "_blank", "noopener,noreferrer");
-    const button = $("publishCompleted");
-    button.disabled = true;
-    setStatus("completedStatus", "Copie du JSON validé et ouverture de GitHub…");
-    try {
-      if (navigator.clipboard && window.isSecureContext && navigator.clipboard.writeText) {
-        await navigator.clipboard.writeText(completedText);
-      } else if (!copyTextFallback(completedText)) {
-        throw new Error("Le navigateur a bloqué la copie automatique.");
-      }
-      setStatus(
-        "completedStatus",
-        "JSON validé et copié. Dans l’onglet GitHub, colle le contenu dans completed.json, puis clique sur « Commit changes ». L’import démarrera automatiquement après le commit.",
-        "ok"
-      );
-    } catch (error) {
-      setStatus(
-        "completedStatus",
-        "GitHub a été ouvert, mais la copie automatique a échoué. Réessaie ou autorise l’accès au presse-papiers. Détail : " + (error.message || "copie indisponible"),
-        "error"
-      );
-    } finally {
-      button.disabled = false;
-    }
+    const uploadUrl = "https://github.com/SamSEILLER/PronoFoot-AI-interface/upload/main/data/player-availability";
+    // Ouvre l'écran d'ajout public pendant le clic utilisateur pour éviter le blocage des pop-ups.
+    window.open(uploadUrl, "_blank", "noopener,noreferrer");
+    const blob = new Blob([completedText], {type: "application/json;charset=utf-8"});
+    const downloadUrl = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = downloadUrl;
+    link.download = "completed.json";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    window.setTimeout(() => URL.revokeObjectURL(downloadUrl), 1000);
+    setStatus(
+      "completedStatus",
+      "Fichier completed.json téléchargé et dépôt public ouvert. Dans GitHub, ajoute ce fichier au dossier data/player-availability, puis clique sur « Commit changes ». Ensuite, dans le dépôt moteur privé, lance le workflow « Importer disponibilités depuis dépôt public ».",
+      "ok"
+    );
   });
 })();
