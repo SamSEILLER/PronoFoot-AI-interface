@@ -35,3 +35,10 @@ L'indicateur de statut résume l'état technique et la fraîcheur des collectes.
 - Les données sont générées par le dépôt moteur privé `SamSEILLER/PronoFoot-AI-V2`.
 - Le workflow central du moteur publie les JSON nécessaires à l'interface (calendrier, classements, forme, confrontations, analyses, cotes, météo, compositions et statut) vers ce dépôt.
 - Les tests du moteur ne remplacent pas un contrôle navigateur de l'interface.
+
+
+## Disponibilités joueurs — parcours ChatGPT
+
+- `player-availability.html` — page manuelle pour charger `pending.json`, copier un paquet JSON contenant le prompt et les matchs, puis contrôler et télécharger `completed.json`.
+- `scripts/display/player-availability.js` — validation navigateur du document complété avant dépôt dans le moteur.
+- La page ne transmet pas les fichiers à un serveur et ne pousse pas directement vers GitHub. Après validation, le fichier `completed.json` est déposé manuellement dans `SamSEILLER/PronoFoot-AI-V2`; le workflow `player-availability-manual.yml` réalise l'import et l'historisation.
