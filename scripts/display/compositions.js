@@ -42,7 +42,25 @@
       " · Collecté : " + dateText(record.collected_at_utc);
     box.append(info);
 
-    if (record.status === "provided" && record.lineups !== null && record.lineups !== undefined) {
+    if (record.provider === "API-Football") {
+      info.textContent = "Rapprochement : " + (record.mapping_status || "inconnu")
+        + " · Compositions : " + labelStatus(record.lineups_status)
+        + " · Blessures/suspensions : " + labelStatus(record.injuries_status)
+        + " · Collecté : " + dateText(record.collected_at_utc);
+      for (const [titleText, value] of [
+        ["Compositions API-Football", record.lineups],
+        ["Blessures et suspensions API-Football", record.injuries]
+      ]) {
+        if (value === null || value === undefined) continue;
+        const details = document.createElement("details");
+        const summary = document.createElement("summary");
+        summary.textContent = titleText;
+        const pre = document.createElement("pre");
+        pre.textContent = JSON.stringify(value, null, 2);
+        details.append(summary, pre);
+        box.append(details);
+      }
+    } else if (record.status === "provided" && record.lineups !== null && record.lineups !== undefined) {
       const details = document.createElement("details");
       const summary = document.createElement("summary");
       summary.textContent = "Voir la réponse détaillée du fournisseur";
