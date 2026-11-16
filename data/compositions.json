@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-11-16T08:11:30.862615+00:00",
+  "generated_at_utc": "2026-11-16T08:13:04.056589+00:00",
   "sources": {
     "pitchapi": {
-      "status": "COMPLETE",
-      "message": "Compositions collectées par instantanés J-7/J-2/J-1. Couverture fournisseur à vérifier."
+      "status": "PARTIAL",
+      "message": "Endpoint PitchAPI testé ; les instantanés J-7/J-2/J-1 distinguent les listes de joueurs des réponses ne contenant que des métadonnées."
     },
     "api_football": {
       "status": "PARTIAL",
-      "message": "Blessures, suspensions et compositions API-Football. Les absences ne sont pas déduites des compositions."
+      "message": "Endpoint injuries API-Football : absences Missing Fixture / Questionable et motifs éventuels. Couverture par compétition à vérifier ; les compositions officielles API-Football ne sont disponibles que peu avant le coup d’envoi."
     }
   },
   "records": [
@@ -22,7 +22,7 @@
       "competition": "Serie A",
       "home_team": "Monza",
       "away_team": "Fiorentina",
-      "status": "provided",
+      "status": "metadata_only",
       "lineups": {
         "match_id": "m_08lkfg",
         "home_team": {
@@ -48,7 +48,7 @@
           "subs": null
         }
       },
-      "message": null,
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
       "raw_response": {
         "data": {
           "match_id": "m_08lkfg",
@@ -87,7 +87,7 @@
       "competition": "Ligue 2",
       "home_team": "Sochaux",
       "away_team": "Dunkerque",
-      "status": "provided",
+      "status": "metadata_only",
       "lineups": {
         "match_id": "m_2DFzlK",
         "home_team": {
@@ -113,7 +113,7 @@
           "subs": null
         }
       },
-      "message": null,
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
       "raw_response": {
         "data": {
           "match_id": "m_2DFzlK",
@@ -152,7 +152,7 @@
       "competition": "Premier League",
       "home_team": "Brentford",
       "away_team": "Everton",
-      "status": "provided",
+      "status": "metadata_only",
       "lineups": {
         "match_id": "m_2FVfvL",
         "home_team": {
@@ -178,7 +178,7 @@
           "subs": null
         }
       },
-      "message": null,
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
       "raw_response": {
         "data": {
           "match_id": "m_2FVfvL",
@@ -217,7 +217,7 @@
       "competition": "La Liga",
       "home_team": "Levante",
       "away_team": "Elche",
-      "status": "provided",
+      "status": "metadata_only",
       "lineups": {
         "match_id": "m_3jVoFq",
         "home_team": {
@@ -243,7 +243,7 @@
           "subs": null
         }
       },
-      "message": null,
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
       "raw_response": {
         "data": {
           "match_id": "m_3jVoFq",
@@ -282,7 +282,7 @@
       "competition": "MLS",
       "home_team": "Chicago Fire FC",
       "away_team": "Charlotte FC",
-      "status": "provided",
+      "status": "metadata_only",
       "lineups": {
         "match_id": "m_3uRPBe",
         "home_team": {
@@ -308,7 +308,7 @@
           "subs": null
         }
       },
-      "message": null,
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
       "raw_response": {
         "data": {
           "match_id": "m_3uRPBe",
@@ -343,7 +343,7 @@
       "match_id": "m_08lkfg",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-23T19:45:00+00:00",
-      "collected_at_utc": "2026-11-16T08:11:30.470490+00:00",
+      "collected_at_utc": "2026-11-16T08:13:03.706843+00:00",
       "competition": "Serie A",
       "home_team": "Monza",
       "away_team": "Fiorentina",
@@ -362,7 +362,7 @@
       "match_id": "m_2DFzlK",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-23T19:45:00+00:00",
-      "collected_at_utc": "2026-11-16T08:11:30.470490+00:00",
+      "collected_at_utc": "2026-11-16T08:13:03.706843+00:00",
       "competition": "Ligue 2",
       "home_team": "Sochaux",
       "away_team": "Dunkerque",
@@ -381,7 +381,7 @@
       "match_id": "m_2FVfvL",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-23T20:00:00+00:00",
-      "collected_at_utc": "2026-11-16T08:11:30.470490+00:00",
+      "collected_at_utc": "2026-11-16T08:13:03.706843+00:00",
       "competition": "Premier League",
       "home_team": "Brentford",
       "away_team": "Everton",
@@ -400,7 +400,7 @@
       "match_id": "m_3jVoFq",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-23T20:00:00+00:00",
-      "collected_at_utc": "2026-11-16T08:11:30.470490+00:00",
+      "collected_at_utc": "2026-11-16T08:13:03.706843+00:00",
       "competition": "La Liga",
       "home_team": "Levante",
       "away_team": "Elche",
@@ -419,7 +419,7 @@
       "match_id": "m_3uRPBe",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-22T23:30:00+00:00",
-      "collected_at_utc": "2026-11-16T08:11:30.470490+00:00",
+      "collected_at_utc": "2026-11-16T08:13:03.706843+00:00",
       "competition": "MLS",
       "home_team": "Chicago Fire FC",
       "away_team": "Charlotte FC",
