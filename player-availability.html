@@ -26,8 +26,9 @@ main{max-width:1120px;margin:0 auto;padding:28px 18px 42px}.page-heading{margin:
   <section class="steps" aria-label="Étapes de mise à jour">
     <article class="step">
       <div class="step-head"><span class="step-number">1</span><h2>Charger le fichier des matchs à vérifier</h2></div>
-      <p>Récupère le fichier <strong>pending.json</strong> depuis le dépôt moteur, puis sélectionne-le ici.</p>
-      <input class="file-input" id="pendingFile" type="file" accept=".json,application/json">
+      <p>Le plus simple : charge directement le fichier depuis le dépôt. Tu peux aussi importer un fichier manuellement si nécessaire.</p>
+      <div class="actions"><button class="btn primary" id="loadPendingOnline" type="button">Charger automatiquement</button><span class="small">Lit la dernière version de pending.json sur GitHub.</span></div>
+      <details style="margin-top:12px"><summary style="cursor:pointer;color:#49627e;font-size:12px">Ou choisir un fichier manuellement</summary><input class="file-input" id="pendingFile" type="file" accept=".json,application/json" style="margin-top:10px"></details>
       <div class="file-meta" id="pendingMeta">Aucun fichier chargé.</div>
       <div class="status" id="pendingStatus" role="status" aria-live="polite">En attente du fichier pending.json.</div>
       <div class="help-links">
