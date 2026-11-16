@@ -15,7 +15,8 @@
       d.toLocaleString("fr-FR", {dateStyle:"medium",timeStyle:"short",timeZone:"Europe/Paris"}) + " (Paris)";
   };
   const labelStatus = (status, provider) => ({
-    provided:"Données reçues",
+    provided:"Données joueurs reçues",
+    metadata_only:"Métadonnées uniquement — aucun joueur listé",
     not_provided: provider === "API-Football" ? "Aucune absence retournée (couverture à vérifier)" : "Non communiqué par PitchAPI",
     not_available:"Indisponible",
     collection_error:"Erreur de collecte",
