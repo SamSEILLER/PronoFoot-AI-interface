@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-11-16T08:14:53.836125+00:00",
+  "generated_at_utc": "2026-11-16T08:17:36.303104+00:00",
   "sources": {
     "pitchapi": {
       "status": "PARTIAL",
@@ -8,7 +8,7 @@
     },
     "api_football": {
       "status": "PARTIAL",
-      "message": "Blessures et suspensions via API-Football (Missing Fixture / Questionable). Le forfait actuel limite les fixtures aux dates proches ; collecte des absences à J-1, couverture à vérifier. Les compositions officielles sont disponibles 20 à 40 minutes avant le match selon la compétition."
+      "message": "Effectifs courants via teams/players-squads ; blessures et suspensions via injuries à J-1 (Missing Fixture / Questionable). Le forfait actuel limite les fixtures aux dates proches. Les compositions officielles sont disponibles 20 à 40 minutes avant le match selon la compétition."
     }
   },
   "records": [
@@ -343,18 +343,36 @@
       "match_id": "m_08lkfg",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-23T19:45:00+00:00",
-      "collected_at_utc": "2026-11-16T08:14:31.079302+00:00",
+      "collected_at_utc": "2026-11-16T08:17:34.212819+00:00",
       "competition": "Serie A",
       "home_team": "Monza",
       "away_team": "Fiorentina",
+      "status": "plan_limited",
       "fixture_id": null,
       "mapping_status": "outside_plan_window",
-      "status": "plan_limited",
+      "squads_status": "not_provided",
+      "home_squad": {
+        "team_name": "Monza",
+        "team_id": null,
+        "status": "collection_error",
+        "players": null,
+        "collected_at_utc": "2026-11-16T08:17:34.212819+00:00",
+        "message": "Erreur effectif API-Football : RuntimeError",
+        "error_detail": "API-Football a retourné une erreur fournisseur : {'rateLimit': 'Too many requests. Your rate limit is 10 requests per minute.'}"
+      },
+      "away_squad": {
+        "team_name": "Fiorentina",
+        "team_id": null,
+        "status": "collection_error",
+        "players": null,
+        "collected_at_utc": "2026-11-16T08:17:34.212819+00:00",
+        "message": "Erreur effectif API-Football : RuntimeError",
+        "error_detail": "API-Football a retourné une erreur fournisseur : {'rateLimit': 'Too many requests. Your rate limit is 10 requests per minute.'}"
+      },
       "lineups_status": "not_collected_until_official_lineup_window",
-      "injuries_status": "not_available",
-      "lineups": null,
+      "injuries_status": "plan_limited",
       "injuries": null,
-      "message": "Plan API-Football actuel : fixtures accessibles uniquement autour de la date courante (J-1 à J+1). Une nouvelle collecte sera possible à J-1."
+      "message": "Plan API-Football actuel : les fixtures sont accessibles uniquement autour de la date courante (J-1 à J+1). Les effectifs sont collectés séparément ; les absences seront vérifiées à J-1."
     },
     {
       "schema_version": 1,
@@ -362,18 +380,36 @@
       "match_id": "m_2DFzlK",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-23T19:45:00+00:00",
-      "collected_at_utc": "2026-11-16T08:14:31.079302+00:00",
+      "collected_at_utc": "2026-11-16T08:17:34.212819+00:00",
       "competition": "Ligue 2",
       "home_team": "Sochaux",
       "away_team": "Dunkerque",
+      "status": "plan_limited",
       "fixture_id": null,
       "mapping_status": "outside_plan_window",
-      "status": "plan_limited",
+      "squads_status": "not_provided",
+      "home_squad": {
+        "team_name": "Sochaux",
+        "team_id": null,
+        "status": "collection_error",
+        "players": null,
+        "collected_at_utc": "2026-11-16T08:17:34.212819+00:00",
+        "message": "Erreur effectif API-Football : RuntimeError",
+        "error_detail": "API-Football a retourné une erreur fournisseur : {'rateLimit': 'Too many requests. Your rate limit is 10 requests per minute.'}"
+      },
+      "away_squad": {
+        "team_name": "Dunkerque",
+        "team_id": null,
+        "status": "collection_error",
+        "players": null,
+        "collected_at_utc": "2026-11-16T08:17:34.212819+00:00",
+        "message": "Erreur effectif API-Football : RuntimeError",
+        "error_detail": "API-Football a retourné une erreur fournisseur : {'rateLimit': 'Too many requests. Your rate limit is 10 requests per minute.'}"
+      },
       "lineups_status": "not_collected_until_official_lineup_window",
-      "injuries_status": "not_available",
-      "lineups": null,
+      "injuries_status": "plan_limited",
       "injuries": null,
-      "message": "Plan API-Football actuel : fixtures accessibles uniquement autour de la date courante (J-1 à J+1). Une nouvelle collecte sera possible à J-1."
+      "message": "Plan API-Football actuel : les fixtures sont accessibles uniquement autour de la date courante (J-1 à J+1). Les effectifs sont collectés séparément ; les absences seront vérifiées à J-1."
     },
     {
       "schema_version": 1,
@@ -381,18 +417,36 @@
       "match_id": "m_2FVfvL",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-23T20:00:00+00:00",
-      "collected_at_utc": "2026-11-16T08:14:31.079302+00:00",
+      "collected_at_utc": "2026-11-16T08:17:34.212819+00:00",
       "competition": "Premier League",
       "home_team": "Brentford",
       "away_team": "Everton",
+      "status": "plan_limited",
       "fixture_id": null,
       "mapping_status": "outside_plan_window",
-      "status": "plan_limited",
+      "squads_status": "not_provided",
+      "home_squad": {
+        "team_name": "Brentford",
+        "team_id": null,
+        "status": "collection_error",
+        "players": null,
+        "collected_at_utc": "2026-11-16T08:17:34.212819+00:00",
+        "message": "Erreur effectif API-Football : RuntimeError",
+        "error_detail": "API-Football a retourné une erreur fournisseur : {'rateLimit': 'Too many requests. Your rate limit is 10 requests per minute.'}"
+      },
+      "away_squad": {
+        "team_name": "Everton",
+        "team_id": null,
+        "status": "collection_error",
+        "players": null,
+        "collected_at_utc": "2026-11-16T08:17:34.212819+00:00",
+        "message": "Erreur effectif API-Football : RuntimeError",
+        "error_detail": "API-Football a retourné une erreur fournisseur : {'rateLimit': 'Too many requests. Your rate limit is 10 requests per minute.'}"
+      },
       "lineups_status": "not_collected_until_official_lineup_window",
-      "injuries_status": "not_available",
-      "lineups": null,
+      "injuries_status": "plan_limited",
       "injuries": null,
-      "message": "Plan API-Football actuel : fixtures accessibles uniquement autour de la date courante (J-1 à J+1). Une nouvelle collecte sera possible à J-1."
+      "message": "Plan API-Football actuel : les fixtures sont accessibles uniquement autour de la date courante (J-1 à J+1). Les effectifs sont collectés séparément ; les absences seront vérifiées à J-1."
     },
     {
       "schema_version": 1,
@@ -400,18 +454,36 @@
       "match_id": "m_3jVoFq",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-23T20:00:00+00:00",
-      "collected_at_utc": "2026-11-16T08:14:31.079302+00:00",
+      "collected_at_utc": "2026-11-16T08:17:34.212819+00:00",
       "competition": "La Liga",
       "home_team": "Levante",
       "away_team": "Elche",
+      "status": "plan_limited",
       "fixture_id": null,
       "mapping_status": "outside_plan_window",
-      "status": "plan_limited",
+      "squads_status": "not_provided",
+      "home_squad": {
+        "team_name": "Levante",
+        "team_id": null,
+        "status": "collection_error",
+        "players": null,
+        "collected_at_utc": "2026-11-16T08:17:34.212819+00:00",
+        "message": "Erreur effectif API-Football : RuntimeError",
+        "error_detail": "API-Football a retourné une erreur fournisseur : {'rateLimit': 'Too many requests. Your rate limit is 10 requests per minute.'}"
+      },
+      "away_squad": {
+        "team_name": "Elche",
+        "team_id": null,
+        "status": "collection_error",
+        "players": null,
+        "collected_at_utc": "2026-11-16T08:17:34.212819+00:00",
+        "message": "Erreur effectif API-Football : RuntimeError",
+        "error_detail": "API-Football a retourné une erreur fournisseur : {'rateLimit': 'Too many requests. Your rate limit is 10 requests per minute.'}"
+      },
       "lineups_status": "not_collected_until_official_lineup_window",
-      "injuries_status": "not_available",
-      "lineups": null,
+      "injuries_status": "plan_limited",
       "injuries": null,
-      "message": "Plan API-Football actuel : fixtures accessibles uniquement autour de la date courante (J-1 à J+1). Une nouvelle collecte sera possible à J-1."
+      "message": "Plan API-Football actuel : les fixtures sont accessibles uniquement autour de la date courante (J-1 à J+1). Les effectifs sont collectés séparément ; les absences seront vérifiées à J-1."
     },
     {
       "schema_version": 1,
@@ -419,18 +491,36 @@
       "match_id": "m_3uRPBe",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-22T23:30:00+00:00",
-      "collected_at_utc": "2026-11-16T08:14:31.079302+00:00",
+      "collected_at_utc": "2026-11-16T08:17:34.212819+00:00",
       "competition": "MLS",
       "home_team": "Chicago Fire FC",
       "away_team": "Charlotte FC",
+      "status": "plan_limited",
       "fixture_id": null,
       "mapping_status": "outside_plan_window",
-      "status": "plan_limited",
+      "squads_status": "not_provided",
+      "home_squad": {
+        "team_name": "Chicago Fire FC",
+        "team_id": null,
+        "status": "collection_error",
+        "players": null,
+        "collected_at_utc": "2026-11-16T08:17:34.212819+00:00",
+        "message": "Erreur effectif API-Football : RuntimeError",
+        "error_detail": "API-Football a retourné une erreur fournisseur : {'rateLimit': 'Too many requests. Your rate limit is 10 requests per minute.'}"
+      },
+      "away_squad": {
+        "team_name": "Charlotte FC",
+        "team_id": null,
+        "status": "collection_error",
+        "players": null,
+        "collected_at_utc": "2026-11-16T08:17:34.212819+00:00",
+        "message": "Erreur effectif API-Football : RuntimeError",
+        "error_detail": "API-Football a retourné une erreur fournisseur : {'rateLimit': 'Too many requests. Your rate limit is 10 requests per minute.'}"
+      },
       "lineups_status": "not_collected_until_official_lineup_window",
-      "injuries_status": "not_available",
-      "lineups": null,
+      "injuries_status": "plan_limited",
       "injuries": null,
-      "message": "Plan API-Football actuel : fixtures accessibles uniquement autour de la date courante (J-1 à J+1). Une nouvelle collecte sera possible à J-1."
+      "message": "Plan API-Football actuel : les fixtures sont accessibles uniquement autour de la date courante (J-1 à J+1). Les effectifs sont collectés séparément ; les absences seront vérifiées à J-1."
     }
   ]
 }
