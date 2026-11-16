@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-11-16T08:27:10.087017+00:00",
+  "generated_at_utc": "2026-11-16T08:28:27.055484+00:00",
   "sources": {
     "pitchapi": {
       "status": "PARTIAL",
@@ -343,7 +343,7 @@
       "match_id": "m_08lkfg",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-23T19:45:00+00:00",
-      "collected_at_utc": "2026-11-16T08:26:14.112342+00:00",
+      "collected_at_utc": "2026-11-16T08:27:31.141367+00:00",
       "competition": "Serie A",
       "home_team": "Monza",
       "away_team": "Fiorentina",
@@ -1433,7 +1433,7 @@
       "lineups_status": "not_collected_until_official_lineup_window",
       "injuries_status": "plan_limited",
       "injuries": null,
-      "message": "Plan API-Football actuel : les fixtures sont accessibles uniquement autour de la date courante (J-1 à J+1). Les effectifs sont collectés séparément ; les absences seront vérifiées à J-1."
+      "message": "Plan API-Football actuel : les fixtures sont accessibles uniquement autour de la date courante (J-1 à J+1). Les signalements d'indisponibilité sont aussi recherchés par équipe et saison ; la confirmation match-spécifique reste attendue à J-1."
     },
     {
       "schema_version": 1,
@@ -1441,7 +1441,7 @@
       "match_id": "m_2DFzlK",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-23T19:45:00+00:00",
-      "collected_at_utc": "2026-11-16T08:26:14.112342+00:00",
+      "collected_at_utc": "2026-11-16T08:27:31.141367+00:00",
       "competition": "Ligue 2",
       "home_team": "Sochaux",
       "away_team": "Dunkerque",
@@ -2483,7 +2483,7 @@
       "lineups_status": "not_collected_until_official_lineup_window",
       "injuries_status": "plan_limited",
       "injuries": null,
-      "message": "Plan API-Football actuel : les fixtures sont accessibles uniquement autour de la date courante (J-1 à J+1). Les effectifs sont collectés séparément ; les absences seront vérifiées à J-1."
+      "message": "Plan API-Football actuel : les fixtures sont accessibles uniquement autour de la date courante (J-1 à J+1). Les signalements d'indisponibilité sont aussi recherchés par équipe et saison ; la confirmation match-spécifique reste attendue à J-1."
     },
     {
       "schema_version": 1,
@@ -2491,7 +2491,7 @@
       "match_id": "m_2FVfvL",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-23T20:00:00+00:00",
-      "collected_at_utc": "2026-11-16T08:26:14.112342+00:00",
+      "collected_at_utc": "2026-11-16T08:27:31.141367+00:00",
       "competition": "Premier League",
       "home_team": "Brentford",
       "away_team": "Everton",
@@ -3437,7 +3437,7 @@
       "lineups_status": "not_collected_until_official_lineup_window",
       "injuries_status": "plan_limited",
       "injuries": null,
-      "message": "Plan API-Football actuel : les fixtures sont accessibles uniquement autour de la date courante (J-1 à J+1). Les effectifs sont collectés séparément ; les absences seront vérifiées à J-1."
+      "message": "Plan API-Football actuel : les fixtures sont accessibles uniquement autour de la date courante (J-1 à J+1). Les signalements d'indisponibilité sont aussi recherchés par équipe et saison ; la confirmation match-spécifique reste attendue à J-1."
     },
     {
       "schema_version": 1,
@@ -3445,7 +3445,7 @@
       "match_id": "m_3jVoFq",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-23T20:00:00+00:00",
-      "collected_at_utc": "2026-11-16T08:26:14.112342+00:00",
+      "collected_at_utc": "2026-11-16T08:27:31.141367+00:00",
       "competition": "La Liga",
       "home_team": "Levante",
       "away_team": "Elche",
@@ -4631,7 +4631,7 @@
       "lineups_status": "not_collected_until_official_lineup_window",
       "injuries_status": "plan_limited",
       "injuries": null,
-      "message": "Plan API-Football actuel : les fixtures sont accessibles uniquement autour de la date courante (J-1 à J+1). Les effectifs sont collectés séparément ; les absences seront vérifiées à J-1."
+      "message": "Plan API-Football actuel : les fixtures sont accessibles uniquement autour de la date courante (J-1 à J+1). Les signalements d'indisponibilité sont aussi recherchés par équipe et saison ; la confirmation match-spécifique reste attendue à J-1."
     },
     {
       "schema_version": 1,
@@ -4639,7 +4639,7 @@
       "match_id": "m_3uRPBe",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-22T23:30:00+00:00",
-      "collected_at_utc": "2026-11-16T08:26:14.112342+00:00",
+      "collected_at_utc": "2026-11-16T08:27:31.141367+00:00",
       "competition": "MLS",
       "home_team": "Chicago Fire FC",
       "away_team": "Charlotte FC",
@@ -5681,7 +5681,7 @@
       "lineups_status": "not_collected_until_official_lineup_window",
       "injuries_status": "plan_limited",
       "injuries": null,
-      "message": "Plan API-Football actuel : les fixtures sont accessibles uniquement autour de la date courante (J-1 à J+1). Les effectifs sont collectés séparément ; les absences seront vérifiées à J-1."
+      "message": "Plan API-Football actuel : les fixtures sont accessibles uniquement autour de la date courante (J-1 à J+1). Les signalements d'indisponibilité sont aussi recherchés par équipe et saison ; la confirmation match-spécifique reste attendue à J-1."
     }
   ]
 }
