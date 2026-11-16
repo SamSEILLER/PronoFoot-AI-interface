@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-11-16T22:31:49.300298Z",
+  "generated_at_utc": "2026-11-16T22:36:44.833535Z",
   "status": "ok",
   "label": "Opérationnel",
   "threshold_hours": 24,
   "history": {
     "status": "ok",
     "last_success_at_utc": "2026-11-16T13:52:52.482616Z",
-    "age_hours": 8.65,
+    "age_hours": 8.73,
     "fresh_within_24h": true,
     "threshold_hours": 24,
     "provider": "PitchAPI",
@@ -23,7 +23,7 @@
   "odds": {
     "status": "ok",
     "last_success_at_utc": "2026-11-16T13:53:23.749053Z",
-    "age_hours": 8.64,
+    "age_hours": 8.72,
     "fresh_within_24h": true,
     "threshold_hours": 24,
     "provider": "Odds-API.io / Unibet",
