@@ -48,7 +48,14 @@
     box.append(info);
 
     if (record.provider === "API-Football") {
-      info.textContent = "Rapprochement : " + (record.mapping_status || "inconnu")
+      const mappingLabel = ({
+        matched:"Match rapproché entre fournisseurs",
+        outside_plan_window:"Hors fenêtre de dates du forfait",
+        not_found:"Match non retrouvé dans API-Football",
+        invalid_fixture_id:"Identifiant de match API-Football invalide"
+      }[record.mapping_status] || "Rapprochement : " + (record.mapping_status || "inconnu"));
+      info.textContent = (record.message || mappingLabel)
+        + " · " + mappingLabel
         + " · Compositions : " + labelStatus(record.lineups_status, record.provider)
         + " · Blessures/suspensions : " + labelStatus(record.injuries_status, record.provider)
         + " · Collecté : " + dateText(record.collected_at_utc);
