@@ -2555,7 +2555,7 @@ p.history-data-meta{margin:8px 2px 0!important;color:#555555!important;font-weig
 
 <script src="./scripts/display/sidebar.js" defer></script>
 <script src="./assets/chartjs-loader.js" defer></script>
-<script src="./scripts/display/matches.js?v=20261116-compositions-v2" defer></script>
+<script src="./scripts/display/matches.js?v=20261116-espn-v1" defer></script>
 
 <style>
 /* Accordéons de la fiche match : en-têtes bleus et chevrons centrés */
@@ -2958,6 +2958,21 @@ p.history-data-meta{margin:8px 2px 0!important;color:#555555!important;font-weig
 .match-weather-meta{display:flex;flex-direction:column;gap:4px;padding-top:8px;border-top:1px solid #e2eaf2;color:#526b83;font-size:10px}
 .match-weather-source{color:#71839a;font-size:10px;line-height:1.4}
 @media(max-width:420px){.match-weather-card{padding:9px}.match-weather-grid{gap:6px}.match-weather-tile{padding:8px}.match-weather-tile strong{font-size:14px}}
+
+/* Statistiques historiques ESPN publiées dans la fiche de match */
+.match-espn-history{display:flex;flex-direction:column;gap:10px;margin-top:14px;padding:12px;border:1px solid #d7e4f1;border-radius:10px;background:#f7faff}
+.match-espn-history-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.match-espn-history-heading h4{margin:0;color:#173f68;font-size:13px;font-weight:850}
+.match-espn-history-heading small,.match-espn-history-consistency{color:#71839a;font-size:10px}
+.match-espn-history-match{display:flex;flex-direction:column;gap:8px;padding:10px;border:1px solid #e0e9f2;border-radius:8px;background:#fff}
+.match-espn-history-match>strong{color:#173f68;font-size:11px;line-height:1.4}
+.match-espn-history-team h5{margin:0 0 6px;color:#315d86;font-size:11px}
+.match-espn-history-values{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 10px;margin:0}
+.match-espn-history-values dt{color:#657b91;font-size:10px;overflow-wrap:anywhere}
+.match-espn-history-values dd{margin:0;color:#173f68;font-size:10px;font-weight:800;text-align:right;font-variant-numeric:tabular-nums}
+.match-espn-history-empty,.match-espn-history-match>p{margin:0;color:#71839a;font-size:10px}
+.match-espn-history-note{margin:0;padding-top:8px;border-top:1px solid #dce6f0;color:#71839a;font-size:10px;line-height:1.45}
+@media(max-width:420px){.match-espn-history{padding:9px}.match-espn-history-match{padding:8px}}
 </style>
 
 </body>
