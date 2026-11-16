@@ -19,7 +19,9 @@
     not_provided:"Non communiqué par PitchAPI",
     not_available:"Indisponible",
     collection_error:"Erreur de collecte",
-    not_supported_by_provider:"Non pris en charge par le fournisseur"
+    not_supported_by_provider:"Non pris en charge par le fournisseur",
+    not_collected_until_official_lineup_window:"Composition officielle non collectée à cette échéance",
+    mapping_not_found:"Match non rapproché entre fournisseurs"
   }[status] || "Statut non déterminé");
   const pillClass = status => status === "provided" ? "ok" :
     status === "collection_error" ? "err" : "warn";
@@ -30,7 +32,7 @@
     const head = document.createElement("div");
     head.className = "snapshot-head";
     const title = document.createElement("span");
-    title.textContent = record.snapshot || "Instantané";
+    title.textContent = (record.snapshot || "Instantané") + " · " + (record.provider || "Source inconnue");
     const pill = document.createElement("span");
     pill.className = "pill " + pillClass(record.status);
     pill.textContent = labelStatus(record.status);
