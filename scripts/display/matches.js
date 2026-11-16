@@ -397,6 +397,16 @@
         { id:"odds", label:"Cotes", icon:"<svg viewBox='0 0 24 24' aria-hidden='true'><path d='M3.5 6.5h17v13h-17z'/><path d='M3.5 10h17M7 3.5v3M17 3.5v3M7.5 14h3M13.5 14h3M7.5 17h3'/></svg>" }
       ];
       let selectedDetailMatch = null;
+      let compositionRecords = null;
+      const compositionDataPromise = fetch("./data/compositions.json?v=" + Date.now(), { cache:"no-store" })
+        .then(response => { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); })
+        .then(payload => Array.isArray(payload.records) ? payload.records : [])
+        .catch(error => { console.warn("Données de composition indisponibles :", error); return null; })
+        .then(records => {
+          compositionRecords = records;
+          if (selectedDetailMatch) renderMatchCompositions(selectedDetailMatch);
+          return records;
+        });
       let oddsEvents = null;
       const oddsDataPromise = fetch("./data/odds_latest.json?v=" + Date.now(), { cache:"no-store" })
         .then(response => { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); })
@@ -793,6 +803,91 @@
         else drawSeasonGoalCharts(window.Chart);
       };
 
+      const renderMatchCompositions = (match) => {
+        if (!detailPanel || !match) return;
+        const target = detailPanel.querySelector('[data-detail-panel="compositions"]');
+        if (!target) return;
+        target.replaceChildren();
+        if (compositionRecords === null) {
+          const message = document.createElement("p");
+          message.textContent = "Données de composition temporairement indisponibles.";
+          target.append(message);
+          return;
+        }
+        const matchId = String(match.match_id || match.provider_match_id || match.id || "");
+        const records = compositionRecords.filter(record => String(record.match_id || "") === matchId)
+          .sort((a,b) => ["J-7","J-2","J-1"].indexOf(a.snapshot) - ["J-7","J-2","J-1"].indexOf(b.snapshot));
+        if (!records.length) {
+          const message = document.createElement("p");
+          message.textContent = "Aucun instantané publié pour ce match à ce stade. Les compositions officielles sont généralement communiquées peu avant le coup d'envoi ; une absence de données ne signifie pas qu'un joueur est absent.";
+          target.append(message);
+          return;
+        }
+        const makeText = (tag, value, className) => {
+          const node = document.createElement(tag);
+          if (className) node.className = className;
+          node.textContent = value;
+          return node;
+        };
+        const addPlayers = (parent, title, players) => {
+          if (!Array.isArray(players)) return;
+          const section = document.createElement("section");
+          section.className = "match-composition-team";
+          section.append(makeText("h4", title));
+          if (!players.length) {
+            section.append(makeText("p", "Aucun joueur communiqué par cette source."));
+          } else {
+            const list = document.createElement("ul");
+            list.className = "match-composition-player-list";
+            players.forEach(player => {
+              const person = player && player.player && typeof player.player === "object" ? player.player : (player || {});
+              const name = person.name || person.player_name || "Joueur sans nom";
+              const number = person.number ? " · #" + person.number : "";
+              const position = person.position ? " · " + person.position : "";
+              const reason = person.reason || person.type;
+              list.append(makeText("li", name + number + position + (reason ? " · " + reason : "")));
+            });
+            section.append(list);
+          }
+          parent.append(section);
+        };
+        records.forEach(record => {
+          const snapshot = document.createElement("section");
+          snapshot.className = "match-composition-snapshot";
+          const provider = record.provider || "Source inconnue";
+          const statusLabel = record.status === "provided" ? "Données joueurs reçues"
+            : record.status === "metadata_only" ? "Métadonnées uniquement — aucun joueur communiqué"
+            : record.status === "plan_limited" ? "Forfait fournisseur limité"
+            : record.status === "not_collected_until_official_lineup_window" ? "Composition officielle pas encore collectée"
+            : record.status === "partial" ? "Données partielles" : (record.message || "Statut non déterminé");
+          snapshot.append(makeText("h4", (record.snapshot || "Instantané") + " · " + provider));
+          snapshot.append(makeText("p", statusLabel + " · Collecté le " + (record.collected_at_utc ? new Date(record.collected_at_utc).toLocaleString("fr-FR", {dateStyle:"short",timeStyle:"short",timeZone:"Europe/Paris"}) + " (Paris)" : "date inconnue")));
+          if (provider === "PitchAPI") {
+            const lineups = record.lineups || {};
+            const sides = [["home", match.home_team], ["away", match.away_team]];
+            sides.forEach(([side, teamName]) => {
+              const team = lineups[side] || {};
+              const starters = Array.isArray(team.starters) ? team.starters : null;
+              const subs = Array.isArray(team.subs) ? team.subs : null;
+              if (starters || subs) {
+                addPlayers(snapshot, (teamName || side) + " · titulaires", starters || []);
+                addPlayers(snapshot, (teamName || side) + " · remplaçants", subs || []);
+              }
+            });
+            if (!lineups.home?.starters && !lineups.away?.starters && record.message) snapshot.append(makeText("p", record.message));
+          } else {
+            addPlayers(snapshot, (match.home_team || "Domicile") + " · effectif actuel (pas une composition officielle)", record.home_squad?.players);
+            addPlayers(snapshot, (match.away_team || "Extérieur") + " · effectif actuel (pas une composition officielle)", record.away_squad?.players);
+            const absence = record.message || record.injuries?.message;
+            if (absence) snapshot.append(makeText("p", absence));
+            if (record.team_injuries_status === "plan_limited" || record.injuries_status === "plan_limited") {
+              snapshot.append(makeText("p", "Les absences/blessures ne sont pas vérifiables avec le forfait API-Football actuel."));
+            }
+          }
+          target.append(snapshot);
+        });
+      };
+
       const renderDetailAccordions = () => {
         if (!detailPanel || !selectedDetailMatch) return;
         const overview = detailPanel.querySelector('[data-detail-panel="overview"]');
@@ -801,6 +896,7 @@
         const weather = detailPanel.querySelector('[data-detail-panel="weather"]');
         const teamStats = detailPanel.querySelector('[data-detail-panel="team-stats"]');
         const shots = detailPanel.querySelector('[data-detail-panel="shots"]');
+        renderMatchCompositions(selectedDetailMatch);
         if (overview) renderHistoryOverview(overview, selectedDetailMatch);
         if (analysis) renderSeasonGoalAnalysis(analysis, selectedDetailMatch);
         if (odds) renderOdds(odds, selectedDetailMatch);
@@ -1114,6 +1210,10 @@
               <details class="match-detail-accordion" name="match-detail">
                 <summary><span class="match-detail-accordion-icon">🌤️</span><span>Météo</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
                 <div class="match-detail-accordion-body" data-detail-panel="weather">Chargement de la météo…</div>
+              </details>
+              <details class="match-detail-accordion" name="match-detail">
+                <summary><span class="match-detail-accordion-icon">👥</span><span>Composition d'équipe</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
+                <div class="match-detail-accordion-body" data-detail-panel="compositions">Chargement des données de composition…</div>
               </details>
               <details class="match-detail-accordion" name="match-detail">
                 <summary><span class="match-detail-accordion-icon">${detailTabs[2].icon}</span><span>Cotes</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
