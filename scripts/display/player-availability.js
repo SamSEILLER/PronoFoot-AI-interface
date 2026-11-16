@@ -150,7 +150,7 @@
     const file = event.target.files && event.target.files[0];
     completed = null;
     completedText = "";
-    $("downloadCompleted").disabled = true;
+    $("publishCompleted").disabled = true;
     if (!file) return;
     try {
       const raw = await file.text();
@@ -162,22 +162,39 @@
       $("completedMeta").textContent = file.name + " · " + data.matches.length + " matchs";
       const message = "Structure valide : " + data.matches.length + " match(s)." + (result.warnings.length ? "\nÀ vérifier :\n• " + result.warnings.join("\n• ") : "");
       setStatus("completedStatus", message, result.warnings.length ? "warn" : "ok");
-      $("downloadCompleted").disabled = false;
+      $("publishCompleted").disabled = false;
     } catch (error) {
       $("completedMeta").textContent = file.name + " · non validé";
       setStatus("completedStatus", error.message || "JSON invalide.", "error");
     }
   });
-  $("downloadCompleted").addEventListener("click", () => {
+  $("publishCompleted").addEventListener("click", async () => {
     if (!completedText) return;
-    const blob = new Blob([completedText], {type:"application/json;charset=utf-8"});
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "completed.json";
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    URL.revokeObjectURL(url);
+    const editUrl = "https://github.com/SamSEILLER/PronoFoot-AI-V2/edit/main/data/processed/player-availability/completed.json";
+    // Ouvre l'éditeur pendant le clic utilisateur pour éviter le blocage des pop-ups.
+    window.open(editUrl, "_blank", "noopener,noreferrer");
+    const button = $("publishCompleted");
+    button.disabled = true;
+    setStatus("completedStatus", "Copie du JSON validé et ouverture de GitHub…");
+    try {
+      if (navigator.clipboard && window.isSecureContext && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(completedText);
+      } else if (!copyTextFallback(completedText)) {
+        throw new Error("Le navigateur a bloqué la copie automatique.");
+      }
+      setStatus(
+        "completedStatus",
+        "JSON validé et copié. Dans l’onglet GitHub, colle le contenu dans completed.json, puis clique sur « Commit changes ». L’import démarrera automatiquement après le commit.",
+        "ok"
+      );
+    } catch (error) {
+      setStatus(
+        "completedStatus",
+        "GitHub a été ouvert, mais la copie automatique a échoué. Réessaie ou autorise l’accès au presse-papiers. Détail : " + (error.message || "copie indisponible"),
+        "error"
+      );
+    } finally {
+      button.disabled = false;
+    }
   });
 })();
