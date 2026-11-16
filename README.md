@@ -39,6 +39,6 @@ L'indicateur de statut résume l'état technique et la fraîcheur des collectes.
 
 ## Disponibilités joueurs — parcours ChatGPT
 
-- `player-availability.html` — page manuelle pour charger `pending.json`, copier un paquet JSON contenant le prompt et les matchs, puis contrôler et télécharger `completed.json`.
-- `scripts/display/player-availability.js` — validation navigateur du document complété avant dépôt dans le moteur.
-- La page ne transmet pas les fichiers à un serveur et ne pousse pas directement vers GitHub. Après validation, le fichier `completed.json` est déposé manuellement dans `SamSEILLER/PronoFoot-AI-V2`; le workflow `player-availability-manual.yml` réalise l'import et l'historisation.
+- `player-availability.html` — page manuelle pour charger `pending.json`, copier le paquet de recherche, contrôler `completed.json`, puis copier le JSON validé et ouvrir directement son éditeur GitHub.
+- `scripts/display/player-availability.js` — validation navigateur du document complété, copie presse-papiers et ouverture de l'éditeur GitHub du fichier moteur.
+- La page ne stocke aucun jeton GitHub et ne pousse pas directement vers le dépôt privé. Après validation, elle copie le JSON et ouvre l'éditeur du fichier `data/processed/player-availability/completed.json` dans `SamSEILLER/PronoFoot-AI-V2`. Il reste à coller le contenu et valider le commit ; le workflow `player-availability-manual.yml` réalise alors automatiquement l'import et l'historisation.
