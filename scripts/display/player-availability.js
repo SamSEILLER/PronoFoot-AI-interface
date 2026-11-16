@@ -93,41 +93,18 @@
     const button = $("loadPendingOnline");
     button.disabled = true;
     button.textContent = "Chargement…";
-    setStatus("pendingStatus", "Récupération de la dernière version depuis GitHub…");
-    try {
-      const response = await fetch("https://raw.githubusercontent.com/SamSEILLER/PronoFoot-AI-V2/main/data/processed/player-availability/pending.json", {cache:"no-store"});
-      if (!response.ok) throw new Error("GitHub a répondu HTTP " + response.status + ".");
-      acceptPending(await response.json());
-    } catch (error) {
-      setStatus("pendingStatus", "Chargement automatique impossible : " + (error.message || "erreur réseau") + "\\nTu peux utiliser « choisir un fichier manuellement » ou ouvrir pending.json sur GitHub.", "error");
-    } finally {
-      button.disabled = false;
-      button.textContent = "Charger automatiquement";
-    }
-  });
-  $("pendingFile").addEventListener("change", async event => {
-    const file = event.target.files && event.target.files[0];
     pending = null;
     $("copyPackage").disabled = true;
-    if (!file) return;
+    setStatus("pendingStatus", "Récupération de la liste des matchs…");
     try {
-      const data = await readJson(file);
-      acceptPending(data);
-      $("pendingMeta").textContent = file.name + " · " + data.matches.length + " matchs · période " + (data.window && data.window.days ? data.window.days + " jours" : "non précisée");
-      setStatus("pendingStatus", "Fichier pending.json reconnu. Tu peux maintenant passer à l’étape 2.", "ok");
+      const response = await fetch("./data/player-availability/pending.json? v=1".replace("? ","?"), {cache:"no-store"});
+      if (!response.ok) throw new Error("Le fichier des matchs n’est pas disponible (HTTP " + response.status + ").");
+      acceptPending(await response.json());
     } catch (error) {
-      $("pendingMeta").textContent = file.name + " · lecture impossible";
-      setStatus("pendingStatus", error.message || "JSON invalide.", "error");
-    }
-  });
-  $("copyPackage").addEventListener("click", async () => {
-    if (!pending) return;
-    const packageText = JSON.stringify({prompt, input: pending}, null, 2);
-    try {
-      await navigator.clipboard.writeText(packageText);
-      setStatus("copyStatus", "Paquet copié. Colle-le dans ChatGPT. La réponse attendue est uniquement le JSON completed.json.", "ok");
-    } catch {
-      setStatus("copyStatus", "Copie automatique indisponible dans ce navigateur. Autorise l'accès au presse-papiers ou ouvre la page en HTTPS.", "error");
+      setStatus("pendingStatus", "Impossible de récupérer la liste des matchs. Réessaie plus tard ou contacte l’administrateur du site.", "error");
+    } finally {
+      button.disabled = false;
+      button.textContent = "Charger les matchs";
     }
   });
   $("completedFile").addEventListener("change", async event => {
