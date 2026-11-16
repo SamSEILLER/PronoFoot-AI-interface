@@ -6,7 +6,7 @@ Interface web publique du projet Football Prediction Lab. Elle présente les mat
 
 - `index.html` — matchs à venir et fiche détaillée.
 - `classements.html` — classements.
-- `composition.html` — compositions d’équipe, instantanés PitchAPI J-7/J-2/J-1 et comparaison des absences API-Football.
+- `composition.html` — compositions d’équipe, instantanés PitchAPI J-7/J-2/J-1, effectifs courants et absences API-Football.
 
 ## Données consommées
 
