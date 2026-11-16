@@ -487,7 +487,10 @@
             ? new Intl.DateTimeFormat("fr-FR", {dateStyle:"short",timeStyle:"short",timeZone:"Europe/Paris"}).format(localKickoff)
             : "Horaire local indisponible";
           const weatherUpdated = weather.updated_at_utc || weather.retrieved_at_utc || null;
-          const weatherUpdatedLabel = weatherUpdated ? formatDate(weatherUpdated) : "Date de mise à jour inconnue";
+          const weatherUpdatedDate = weatherUpdated ? new Date(weatherUpdated) : null;
+          const weatherUpdatedLabel = weatherUpdatedDate && Number.isFinite(weatherUpdatedDate.getTime())
+            ? new Intl.DateTimeFormat("fr-FR", {dateStyle:"short",timeStyle:"short",timeZone:"Europe/Paris"}).format(weatherUpdatedDate) + " (Paris)"
+            : "Date de mise à jour inconnue";
           body.innerHTML = "<div class=\"match-weather-card\">" +
             "<div class=\"match-weather-heading\"><strong>" + escapeHtml(condition) + "</strong><span>" + escapeHtml(stage) + "</span></div>" +
             "<p class=\"match-weather-location\">" + escapeHtml(location) + "</p>" +
