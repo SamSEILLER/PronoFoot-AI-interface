@@ -398,9 +398,13 @@
       ];
       let selectedDetailMatch = null;
       let compositionRecords = null;
+      let compositionGeneratedAt = null;
       const compositionDataPromise = fetch("./data/compositions.json?v=" + Date.now(), { cache:"no-store" })
         .then(response => { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); })
-        .then(payload => Array.isArray(payload.records) ? payload.records : [])
+        .then(payload => {
+          compositionGeneratedAt = payload?.generated_at_utc || null;
+          return Array.isArray(payload.records) ? payload.records : [];
+        })
         .catch(error => { console.warn("Données de composition indisponibles :", error); return null; })
         .then(records => {
           compositionRecords = records;
@@ -482,12 +486,14 @@
           const kickoffLabel = localKickoff && Number.isFinite(localKickoff.getTime())
             ? new Intl.DateTimeFormat("fr-FR", {dateStyle:"short",timeStyle:"short",timeZone:"Europe/Paris"}).format(localKickoff)
             : "Horaire local indisponible";
+          const weatherUpdated = weather.updated_at_utc || weather.retrieved_at_utc || null;
+          const weatherUpdatedLabel = weatherUpdated ? formatDate(weatherUpdated) : "Date de mise à jour inconnue";
           body.innerHTML = "<div class=\"match-weather-card\">" +
             "<div class=\"match-weather-heading\"><strong>" + escapeHtml(condition) + "</strong><span>" + escapeHtml(stage) + "</span></div>" +
             "<p class=\"match-weather-location\">" + escapeHtml(location) + "</p>" +
             "<div class=\"match-weather-grid\">" + tiles.map(([label,value]) => "<div class=\"match-weather-tile\"><small>" + escapeHtml(label) + "</small><strong>" + escapeHtml(value) + "</strong></div>").join("") + "</div>" +
             "<div class=\"match-weather-meta\"><span>Coup d’envoi : " + escapeHtml(kickoffLabel) + "</span><span>Collectée le " + escapeHtml(collectedLabel) + "</span></div>" +
-            "<small class=\"match-weather-source\">Source : Open-Meteo · prévision indicative, susceptible d’évoluer</small></div>";
+            "<small class=\"match-weather-source\" title=\"Mise à jour : " + escapeHtml(weatherUpdatedLabel) + "\">Source : Open-Meteo · prévision indicative, susceptible d’évoluer · mise à jour : " + escapeHtml(weatherUpdatedLabel) + "</small></div>";
         });
       };
       const renderOdds = (body, match) => {
@@ -883,7 +889,11 @@
             else if (record.status === "not_provided" || record.status === "not_available") statusLabel = "Composition non communiquée par PitchAPI";
             else if (record.status === "collection_error") statusLabel = "Erreur lors de la collecte PitchAPI";
             else statusLabel = record.message || "Statut non déterminé";
-            snapshot.append(makeText("h4", (record.snapshot || "Instantané") + " · PitchAPI"));
+            const snapshotHeading = makeText("h4", (record.snapshot || "Instantané") + " · PitchAPI");
+            const compositionUpdatedAt = record.collected_at_utc || compositionGeneratedAt;
+            const compositionUpdatedLabel = compositionUpdatedAt ? formatDate(compositionUpdatedAt) : "Date de mise à jour inconnue";
+            snapshotHeading.title = "Mise à jour des compositions : " + compositionUpdatedLabel;
+            snapshot.append(snapshotHeading);
             snapshot.append(makeText("p", statusLabel + " · Collecté le " + formatDate(record.collected_at_utc), "match-composition-status"));
             if (hasPlayers) {
               [{data:home,name:match.home_team || "Équipe domicile"},{data:away,name:match.away_team || "Équipe extérieure"}].forEach(({data,name}) => {
