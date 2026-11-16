@@ -23,6 +23,10 @@
     link.classList.remove("active");
     link.removeAttribute("aria-current");
   });
+  header.querySelectorAll(".nav a").forEach(link => {
+    link.classList.remove("active");
+    link.removeAttribute("aria-current");
+  });
   if (activeLink) {
     activeLink.classList.add("active");
     activeLink.setAttribute("aria-current", "page");
