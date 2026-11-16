@@ -46,13 +46,12 @@ main{max-width:1120px;margin:0 auto;padding:28px 18px 42px}.page-heading{margin:
       <div class="file-meta" id="completedMeta">Aucun fichier chargé.</div>
       <div class="status" id="completedStatus" role="status" aria-live="polite">En attente du fichier completed.json.</div>
       <div class="actions" style="margin-top:12px">
-        <button class="btn primary" id="publishCompleted" type="button" disabled>Copier le JSON et ouvrir GitHub</button>
-        <a class="btn" id="githubEditLink" href="https://github.com/SamSEILLER/PronoFoot-AI-V2/edit/main/data/processed/player-availability/completed.json" target="_blank" rel="noopener">Ouvrir l’éditeur GitHub</a>
+        <button class="btn primary" id="publishCompleted" type="button" disabled>Télécharger et déposer dans le dépôt public</button>
       </div>
-      <p class="small">Après le clic, le JSON validé est copié et l’éditeur GitHub s’ouvre. Colle le contenu dans le fichier, puis clique sur <strong>Commit changes</strong>. Le workflow du moteur lancera automatiquement l’import et l’historisation. Tu dois être connecté à GitHub et avoir accès au dépôt privé.</p>
+      <p class="small">Le fichier validé est téléchargé et l’écran d’ajout du dépôt public s’ouvre. Ajoute le fichier téléchargé dans <strong>data/player-availability</strong>, puis valide le commit. Enfin, lance le workflow manuel dans le dépôt moteur privé.</p>
     </article>
   </section>
-  <p class="footer-note">Les fichiers sont lus et contrôlés dans ton navigateur. Le dépôt final est effectué dans GitHub après ton collage et ta validation du commit.</p>
+  <p class="footer-note">Le fichier est contrôlé dans ton navigateur. Tu le déposes dans le dépôt public, puis le moteur privé le récupère à ta demande.</p>
 </main>
 <script src="./scripts/display/sidebar.js" defer></script>
 <script src="./scripts/display/player-availability.js" defer></script>
