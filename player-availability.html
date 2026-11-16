@@ -41,18 +41,18 @@ main{max-width:1120px;margin:0 auto;padding:28px 18px 42px}.page-heading{margin:
     </article>
     <article class="step">
       <div class="step-head"><span class="step-number">3</span><h2>Importer et contrôler completed.json</h2></div>
-      <p>Après la réponse de ChatGPT, enregistre son JSON sous <strong>completed.json</strong> et charge-le ici. Le contrôle vérifie la structure, les statuts, les sources et les identifiants des matchs.</p>
+      <p>Après la réponse de ChatGPT, charge son fichier JSON ici. Le contrôle vérifie la structure, les statuts, les sources et les identifiants des matchs avant de préparer son dépôt.</p>
       <input class="file-input" id="completedFile" type="file" accept=".json,application/json">
       <div class="file-meta" id="completedMeta">Aucun fichier chargé.</div>
       <div class="status" id="completedStatus" role="status" aria-live="polite">En attente du fichier completed.json.</div>
       <div class="actions" style="margin-top:12px">
-        <button class="btn primary" id="downloadCompleted" type="button" disabled>Télécharger completed.json validé</button>
-        <a class="btn" href="https://github.com/SamSEILLER/PronoFoot-AI-V2/blob/main/data/processed/player-availability/completed.json" target="_blank" rel="noopener">Ouvrir completed.json sur GitHub</a>
+        <button class="btn primary" id="publishCompleted" type="button" disabled>Copier le JSON et ouvrir GitHub</button>
+        <a class="btn" id="githubEditLink" href="https://github.com/SamSEILLER/PronoFoot-AI-V2/edit/main/data/processed/player-availability/completed.json" target="_blank" rel="noopener">Ouvrir l’éditeur GitHub</a>
       </div>
-      <p class="small">Après validation, remplace le contenu du fichier completed.json dans le dépôt moteur et valide le commit. Le workflow GitHub Actions effectuera ensuite l’import et l’historisation.</p>
+      <p class="small">Après le clic, le JSON validé est copié et l’éditeur GitHub s’ouvre. Colle le contenu dans le fichier, puis clique sur <strong>Commit changes</strong>. Le workflow du moteur lancera automatiquement l’import et l’historisation. Tu dois être connecté à GitHub et avoir accès au dépôt privé.</p>
     </article>
   </section>
-  <p class="footer-note">Les fichiers sont lus et contrôlés dans ton navigateur. Cette page ne les envoie pas à un serveur et ne modifie pas directement le dépôt GitHub.</p>
+  <p class="footer-note">Les fichiers sont lus et contrôlés dans ton navigateur. Le dépôt final est effectué dans GitHub après ton collage et ta validation du commit.</p>
 </main>
 <script src="./scripts/display/sidebar.js" defer></script>
 <script src="./scripts/display/player-availability.js" defer></script>
