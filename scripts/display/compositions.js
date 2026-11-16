@@ -57,7 +57,7 @@
       }[record.mapping_status] || "Rapprochement : " + (record.mapping_status || "inconnu"));
       info.textContent = (record.message || mappingLabel)
         + " · " + mappingLabel
-        + " · Effectifs : " + labelStatus(record.squads_status, record.provider)
+        + " · Effectifs : " + ({provided:"Deux effectifs reçus",partial:"Effectif partiel",not_provided:"Effectifs non fournis"}[record.squads_status] || "Effectifs : " + (record.squads_status || "non vérifié"))
         + " · Compositions : " + labelStatus(record.lineups_status, record.provider)
         + " · Blessures/suspensions : " + labelStatus(record.injuries_status, record.provider)
         + " · Collecté : " + dateText(record.collected_at_utc);
