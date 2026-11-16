@@ -1096,6 +1096,7 @@
         if (!detailPanel || !selectedDetailMatch) return;
         const overview = detailPanel.querySelector('[data-detail-panel="overview"]');
         const analysis = detailPanel.querySelector('[data-detail-panel="analysis"]');
+        const experiment = detailPanel.querySelector('[data-detail-panel="experimentation"]');
         const odds = detailPanel.querySelector('[data-detail-panel="odds"]');
         const weather = detailPanel.querySelector('[data-detail-panel="weather"]');
         const teamStats = detailPanel.querySelector('[data-detail-panel="team-stats"]');
@@ -1103,6 +1104,7 @@
         renderMatchCompositions(selectedDetailMatch);
         if (overview) renderHistoryOverview(overview, selectedDetailMatch);
         if (analysis) renderSeasonGoalAnalysis(analysis, selectedDetailMatch);
+        if (experiment) renderOver15Experiment(experiment, selectedDetailMatch);
         if (odds) renderOdds(odds, selectedDetailMatch);
         if (weather) renderWeather(weather, selectedDetailMatch);
         const analytics = matchAnalyticsIndex.get(String(selectedDetailMatch.competition_slug || ""));
@@ -1415,6 +1417,10 @@
               <details class="match-detail-accordion" name="match-detail">
                 <summary><span class="match-detail-accordion-icon">${detailTabs[1].icon}</span><span>Analyse &amp; IA</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
                 <div class="match-detail-accordion-body" data-detail-panel="analysis">Chargement des données…</div>
+              </details>
+              <details class="match-detail-accordion" name="match-detail">
+                <summary><span class="match-detail-accordion-icon">🧪</span><span>Expérimentation · +1,5 but</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
+                <div class="match-detail-accordion-body" data-detail-panel="experimentation">Chargement de l’expérimentation…</div>
               </details>
               <details class="match-detail-accordion" name="match-detail">
                 <summary><span class="match-detail-accordion-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="8" cy="8" r="3"/><path d="M8 1.8v1.4M8 12.8v1.4M1.8 8h1.4M12.8 8h1.4M3.6 3.6l1 1M11.4 11.4l1 1M13.5 17.5h6a3 3 0 0 0 .2-6 4.5 4.5 0 0 0-8.6-1.1"/></svg></span><span>Météo</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
