@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "document_type": "pronofoot_chatgpt_player_availability",
-  "generated_at_utc": "2026-11-16T20:12:06.309317+00:00",
+  "generated_at_utc": "2026-11-16T21:32:18.102305+00:00",
   "window": {
-    "start_utc": "2026-11-16T20:12:06.309317+00:00",
-    "end_utc": "2026-11-23T20:12:06.309317+00:00",
+    "start_utc": "2026-11-16T21:32:18.102305+00:00",
+    "end_utc": "2026-11-23T21:32:18.102305+00:00",
     "days": 7
   },
   "instructions": {
@@ -45,8 +45,8 @@
         "name": "FC Cincinnati",
         "team_id": "t_0T0wL5"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
         "home": "not_checked",
         "away": "not_checked"
@@ -70,8 +70,8 @@
         "name": "Real Salt Lake",
         "team_id": "t_2o7nsk"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
         "home": "not_checked",
         "away": "not_checked"
@@ -95,14 +95,31 @@
         "name": "JEF United Chiba",
         "team_id": "t_25A1QK"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
+        "home": "issues_found",
+        "away": "partial"
       },
-      "facts": [],
-      "sources": [],
+      "facts": [
+        {
+          "player_name": "Masaki Watai",
+          "team_side": "home",
+          "category": "return",
+          "status": "available",
+          "confidence": "confirmed",
+          "details": "A disputé 25 minutes en sortie de banc le 15 novembre; retour à la compétition signalé.",
+          "source_url": "https://jleaguescout.soraretactics.com/football/injuries",
+          "source_title": "J League Scout — J1 injuries and team news",
+          "published_at_utc": "2026-11-15"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://jleaguescout.soraretactics.com/football/injuries",
+          "title": "J League Scout — J1 injuries and team news (consulté le 16 novembre 2026)"
+        }
+      ],
       "previous_observations": []
     },
     {
@@ -120,14 +137,19 @@
         "name": "Mito Hollyhock",
         "team_id": "t_01uUy2"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
+        "home": "partial",
+        "away": "partial"
       },
       "facts": [],
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://jleaguescout.soraretactics.com/football/injuries",
+          "title": "J League Scout — J1 injuries and team news (consulté le 16 novembre 2026)"
+        }
+      ],
       "previous_observations": []
     },
     {
@@ -145,14 +167,42 @@
         "name": "Shimizu S-Pulse",
         "team_id": "t_1E6Pbm"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
+        "home": "issues_found",
+        "away": "issues_found"
       },
-      "facts": [],
-      "sources": [],
+      "facts": [
+        {
+          "player_name": "Ryuta Koike",
+          "team_side": "home",
+          "category": "doubtful",
+          "status": "doubtful",
+          "confidence": "probable",
+          "details": "Signalé comme sorti sur blessure après 34 minutes le 15 novembre; disponibilité pour le match du 20 novembre incertaine.",
+          "source_url": "https://jleaguescout.soraretactics.com/football/injuries",
+          "source_title": "J League Scout — J1 injuries and team news",
+          "published_at_utc": "2026-11-15"
+        },
+        {
+          "player_name": "Sodai Hasukawa",
+          "team_side": "away",
+          "category": "injury",
+          "status": "unavailable",
+          "confidence": "confirmed",
+          "details": "Déchirure de l'ischio-jambier gauche signalée le 15 novembre.",
+          "source_url": "https://jleaguescout.soraretactics.com/football/injuries",
+          "source_title": "J League Scout — J1 injuries and team news",
+          "published_at_utc": "2026-11-15"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://jleaguescout.soraretactics.com/football/injuries",
+          "title": "J League Scout — J1 injuries and team news (consulté le 16 novembre 2026)"
+        }
+      ],
       "previous_observations": []
     },
     {
@@ -171,9 +221,9 @@
         "team_id": "t_46kxcK"
       },
       "research_status": "partial",
-      "checked_at_utc": "2026-11-16T20:15:12+00:00",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
-        "home": "partial",
+        "home": "issues_found",
         "away": "partial"
       },
       "facts": [
@@ -181,22 +231,18 @@
           "player_name": "Pierre Lemonnier",
           "team_side": "home",
           "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Déchirure partielle du ligament croisé; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
+          "status": "unavailable",
+          "confidence": "probable",
+          "details": "Déchirure partielle du ligament croisé; retour non communiqué Information recensée dans le relevé Ligue 2 du 13 novembre 2026; confirmation de l'absence au coup d'envoi non disponible.",
           "source_url": "https://wmrtips.com/fr/blesses/ligue-2/",
-          "source_title": "Ligue 2 : blessés & suspendus actuels (au 13 novembre 2026)",
+          "source_title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)",
           "published_at_utc": "2026-11-13"
         }
       ],
       "sources": [
         {
-          "url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "title": "WmR — Ligue 1, relevé au 13/11/2026"
-        },
-        {
           "url": "https://wmrtips.com/fr/blesses/ligue-2/",
-          "title": "WmR — Ligue 2, relevé au 13/11/2026"
+          "title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)"
         }
       ],
       "previous_observations": []
@@ -217,32 +263,39 @@
         "team_id": "t_0VSvmD"
       },
       "research_status": "partial",
-      "checked_at_utc": "2026-11-16T20:15:12+00:00",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
-        "home": "partial",
-        "away": "partial"
+        "home": "issues_found",
+        "away": "issues_found"
       },
       "facts": [
+        {
+          "player_name": "François Lajugie",
+          "team_side": "home",
+          "category": "injury",
+          "status": "unavailable",
+          "confidence": "probable",
+          "details": "Rupture du ligament croisé; retour non communiqué Information recensée dans le relevé Ligue 2 du 13 novembre 2026; confirmation de l'absence au coup d'envoi non disponible.",
+          "source_url": "https://wmrtips.com/fr/blesses/ligue-2/",
+          "source_title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)",
+          "published_at_utc": "2026-11-13"
+        },
         {
           "player_name": "Abdellah Baallal",
           "team_side": "away",
           "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Pépin physique; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
+          "status": "unavailable",
+          "confidence": "probable",
+          "details": "Pépin physique; retour non communiqué Information recensée dans le relevé Ligue 2 du 13 novembre 2026; confirmation de l'absence au coup d'envoi non disponible.",
           "source_url": "https://wmrtips.com/fr/blesses/ligue-2/",
-          "source_title": "Ligue 2 : blessés & suspendus actuels (au 13 novembre 2026)",
+          "source_title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)",
           "published_at_utc": "2026-11-13"
         }
       ],
       "sources": [
         {
-          "url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "title": "WmR — Ligue 1, relevé au 13/11/2026"
-        },
-        {
           "url": "https://wmrtips.com/fr/blesses/ligue-2/",
-          "title": "WmR — Ligue 2, relevé au 13/11/2026"
+          "title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)"
         }
       ],
       "previous_observations": []
@@ -263,43 +316,39 @@
         "team_id": "t_26EC4s"
       },
       "research_status": "partial",
-      "checked_at_utc": "2026-11-16T20:15:12+00:00",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
-        "home": "partial",
-        "away": "partial"
+        "home": "issues_found",
+        "away": "issues_found"
       },
       "facts": [
         {
           "player_name": "Darly N'Landu",
           "team_side": "home",
           "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Déchirure partielle du ligament croisé; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
+          "status": "unavailable",
+          "confidence": "probable",
+          "details": "Déchirure partielle du ligament croisé; retour non communiqué Information recensée dans le relevé Ligue 2 du 13 novembre 2026; confirmation de l'absence au coup d'envoi non disponible.",
           "source_url": "https://wmrtips.com/fr/blesses/ligue-2/",
-          "source_title": "Ligue 2 : blessés & suspendus actuels (au 13 novembre 2026)",
+          "source_title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)",
           "published_at_utc": "2026-11-13"
         },
         {
           "player_name": "Hermann Tebily",
           "team_side": "away",
           "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Déchirure partielle du ligament croisé; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
+          "status": "unavailable",
+          "confidence": "probable",
+          "details": "Déchirure partielle du ligament croisé; retour non communiqué Information recensée dans le relevé Ligue 2 du 13 novembre 2026; confirmation de l'absence au coup d'envoi non disponible.",
           "source_url": "https://wmrtips.com/fr/blesses/ligue-2/",
-          "source_title": "Ligue 2 : blessés & suspendus actuels (au 13 novembre 2026)",
+          "source_title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)",
           "published_at_utc": "2026-11-13"
         }
       ],
       "sources": [
         {
-          "url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "title": "WmR — Ligue 1, relevé au 13/11/2026"
-        },
-        {
           "url": "https://wmrtips.com/fr/blesses/ligue-2/",
-          "title": "WmR — Ligue 2, relevé au 13/11/2026"
+          "title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)"
         }
       ],
       "previous_observations": []
@@ -320,9 +369,9 @@
         "team_id": "t_1D4Jo3"
       },
       "research_status": "partial",
-      "checked_at_utc": "2026-11-16T20:15:12+00:00",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
-        "home": "partial",
+        "home": "issues_found",
         "away": "partial"
       },
       "facts": [
@@ -330,44 +379,40 @@
           "player_name": "Giorgi Abuashvili",
           "team_side": "home",
           "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Blessure au mollet; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
+          "status": "unavailable",
+          "confidence": "probable",
+          "details": "Blessure au mollet; retour non communiqué Information recensée dans le relevé Ligue 2 du 13 novembre 2026; confirmation de l'absence au coup d'envoi non disponible.",
           "source_url": "https://wmrtips.com/fr/blesses/ligue-2/",
-          "source_title": "Ligue 2 : blessés & suspendus actuels (au 13 novembre 2026)",
+          "source_title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)",
           "published_at_utc": "2026-11-13"
         },
         {
           "player_name": "Nampalys Mendy",
           "team_side": "home",
           "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Rupture tendineuse; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
+          "status": "unavailable",
+          "confidence": "probable",
+          "details": "Rupture tendineuse; retour non communiqué Information recensée dans le relevé Ligue 2 du 13 novembre 2026; confirmation de l'absence au coup d'envoi non disponible.",
           "source_url": "https://wmrtips.com/fr/blesses/ligue-2/",
-          "source_title": "Ligue 2 : blessés & suspendus actuels (au 13 novembre 2026)",
+          "source_title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)",
           "published_at_utc": "2026-11-13"
         },
         {
           "player_name": "Joseph Mangondo",
           "team_side": "home",
           "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Problèmes au genou; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
+          "status": "unavailable",
+          "confidence": "probable",
+          "details": "Problèmes au genou; retour non communiqué Information recensée dans le relevé Ligue 2 du 13 novembre 2026; confirmation de l'absence au coup d'envoi non disponible.",
           "source_url": "https://wmrtips.com/fr/blesses/ligue-2/",
-          "source_title": "Ligue 2 : blessés & suspendus actuels (au 13 novembre 2026)",
+          "source_title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)",
           "published_at_utc": "2026-11-13"
         }
       ],
       "sources": [
         {
-          "url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "title": "WmR — Ligue 1, relevé au 13/11/2026"
-        },
-        {
           "url": "https://wmrtips.com/fr/blesses/ligue-2/",
-          "title": "WmR — Ligue 2, relevé au 13/11/2026"
+          "title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)"
         }
       ],
       "previous_observations": []
@@ -388,43 +433,39 @@
         "team_id": "t_2rAdp6"
       },
       "research_status": "partial",
-      "checked_at_utc": "2026-11-16T20:15:12+00:00",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
         "home": "partial",
-        "away": "partial"
+        "away": "issues_found"
       },
       "facts": [
         {
           "player_name": "Tom Meynadier",
           "team_side": "away",
           "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Blessure au genou; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
+          "status": "unavailable",
+          "confidence": "probable",
+          "details": "Blessure au genou; retour non communiqué Information recensée dans le relevé Ligue 2 du 13 novembre 2026; confirmation de l'absence au coup d'envoi non disponible.",
           "source_url": "https://wmrtips.com/fr/blesses/ligue-2/",
-          "source_title": "Ligue 2 : blessés & suspendus actuels (au 13 novembre 2026)",
+          "source_title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)",
           "published_at_utc": "2026-11-13"
         },
         {
           "player_name": "César Obongo",
           "team_side": "away",
           "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Opération de la cheville; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
+          "status": "unavailable",
+          "confidence": "probable",
+          "details": "Opération de la cheville; retour non communiqué Information recensée dans le relevé Ligue 2 du 13 novembre 2026; confirmation de l'absence au coup d'envoi non disponible.",
           "source_url": "https://wmrtips.com/fr/blesses/ligue-2/",
-          "source_title": "Ligue 2 : blessés & suspendus actuels (au 13 novembre 2026)",
+          "source_title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)",
           "published_at_utc": "2026-11-13"
         }
       ],
       "sources": [
         {
-          "url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "title": "WmR — Ligue 1, relevé au 13/11/2026"
-        },
-        {
           "url": "https://wmrtips.com/fr/blesses/ligue-2/",
-          "title": "WmR — Ligue 2, relevé au 13/11/2026"
+          "title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)"
         }
       ],
       "previous_observations": []
@@ -444,8 +485,8 @@
         "name": "1. FC Köln",
         "team_id": "t_0x6Gji"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
         "home": "not_checked",
         "away": "not_checked"
@@ -469,8 +510,8 @@
         "name": "Westerlo",
         "team_id": "t_0wF6Y2"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
         "home": "not_checked",
         "away": "not_checked"
@@ -495,155 +536,13 @@
         "team_id": "t_4BCeSu"
       },
       "research_status": "partial",
-      "checked_at_utc": "2026-11-16T20:15:12+00:00",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
-        "home": "partial",
-        "away": "partial"
+        "home": "not_checked",
+        "away": "not_checked"
       },
-      "facts": [
-        {
-          "player_name": "Junior Diaz",
-          "team_side": "home",
-          "category": "suspension",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Suspension pour cumul de cartons jaunes; retour annoncé le 21/11/2026 (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Anis Ouzenadji",
-          "team_side": "home",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Blessure à la cheville; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Yacouba Koné",
-          "team_side": "home",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Blessure au genou; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Rassoul Ndiaye",
-          "team_side": "away",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Béquille; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Junior Mwanga",
-          "team_side": "away",
-          "category": "doubtful",
-          "status": "uncertain",
-          "confidence": "medium",
-          "details": "Blessure non précisée; statut incertain (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Ayumu Seko",
-          "team_side": "away",
-          "category": "suspension",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Suspension pour cumul de cartons jaunes; retour annoncé le 20/11/2026 (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Elias Jelert",
-          "team_side": "away",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Béquille; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Stephan Zagadou",
-          "team_side": "away",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Déchirure partielle du ligament croisé; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Timothée Pembélé",
-          "team_side": "away",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Gêne aux adducteurs; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Lionel Mpasi-Nzau",
-          "team_side": "away",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Rupture du tendon d'Achille; retour annoncé le 20/11/2026 (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Felix Mambimbi",
-          "team_side": "away",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Rupture du tendon d'Achille; retour annoncé le 20/11/2026 (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Sota Nakamura",
-          "team_side": "away",
-          "category": "doubtful",
-          "status": "uncertain",
-          "confidence": "medium",
-          "details": "Blessure non précisée; statut incertain (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        }
-      ],
-      "sources": [
-        {
-          "url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "title": "WmR — Ligue 1, relevé au 13/11/2026"
-        },
-        {
-          "url": "https://wmrtips.com/fr/blesses/ligue-2/",
-          "title": "WmR — Ligue 2, relevé au 13/11/2026"
-        }
-      ],
+      "facts": [],
+      "sources": [],
       "previous_observations": []
     },
     {
@@ -661,8 +560,8 @@
         "name": "Espanyol",
         "team_id": "t_3WlXqr"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
         "home": "not_checked",
         "away": "not_checked"
@@ -686,14 +585,31 @@
         "name": "Urawa Red Diamonds",
         "team_id": "t_2SxYow"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
+        "home": "partial",
+        "away": "issues_found"
       },
-      "facts": [],
-      "sources": [],
+      "facts": [
+        {
+          "player_name": "Kaito Yasui",
+          "team_side": "away",
+          "category": "doubtful",
+          "status": "doubtful",
+          "confidence": "probable",
+          "details": "Sorti à la mi-temps avec des douleurs dorsales le 15 novembre.",
+          "source_url": "https://jleaguescout.soraretactics.com/football/injuries",
+          "source_title": "J League Scout — J1 injuries and team news",
+          "published_at_utc": "2026-11-15"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://jleaguescout.soraretactics.com/football/injuries",
+          "title": "J League Scout — J1 injuries and team news (consulté le 16 novembre 2026)"
+        }
+      ],
       "previous_observations": []
     },
     {
@@ -711,14 +627,19 @@
         "name": "V-Varen Nagasaki",
         "team_id": "t_1W837G"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
+        "home": "partial",
+        "away": "partial"
       },
       "facts": [],
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://jleaguescout.soraretactics.com/football/injuries",
+          "title": "J League Scout — J1 injuries and team news (consulté le 16 novembre 2026)"
+        }
+      ],
       "previous_observations": []
     },
     {
@@ -736,14 +657,31 @@
         "name": "Yokohama F.Marinos",
         "team_id": "t_1mTqNS"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
+        "home": "partial",
+        "away": "issues_found"
       },
-      "facts": [],
-      "sources": [],
+      "facts": [
+        {
+          "player_name": "Riku Yamane",
+          "team_side": "away",
+          "category": "doubtful",
+          "status": "doubtful",
+          "confidence": "probable",
+          "details": "Sorti sur blessure après 19 minutes le 15 novembre.",
+          "source_url": "https://jleaguescout.soraretactics.com/football/injuries",
+          "source_title": "J League Scout — J1 injuries and team news",
+          "published_at_utc": "2026-11-15"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://jleaguescout.soraretactics.com/football/injuries",
+          "title": "J League Scout — J1 injuries and team news (consulté le 16 novembre 2026)"
+        }
+      ],
       "previous_observations": []
     },
     {
@@ -761,14 +699,19 @@
         "name": "Nagoya Grampus",
         "team_id": "t_1mrdfo"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
+        "home": "partial",
+        "away": "partial"
       },
       "facts": [],
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://jleaguescout.soraretactics.com/football/injuries",
+          "title": "J League Scout — J1 injuries and team news (consulté le 16 novembre 2026)"
+        }
+      ],
       "previous_observations": []
     },
     {
@@ -786,14 +729,31 @@
         "name": "FC Tokyo",
         "team_id": "t_17gQhK"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
+        "home": "issues_found",
+        "away": "partial"
       },
-      "facts": [],
-      "sources": [],
+      "facts": [
+        {
+          "player_name": "Lucas Fernandes",
+          "team_side": "home",
+          "category": "doubtful",
+          "status": "doubtful",
+          "confidence": "probable",
+          "details": "Sorti blessé après 13 minutes le 15 novembre.",
+          "source_url": "https://jleaguescout.soraretactics.com/football/injuries",
+          "source_title": "J League Scout — J1 injuries and team news",
+          "published_at_utc": "2026-11-15"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://jleaguescout.soraretactics.com/football/injuries",
+          "title": "J League Scout — J1 injuries and team news (consulté le 16 novembre 2026)"
+        }
+      ],
       "previous_observations": []
     },
     {
@@ -811,14 +771,19 @@
         "name": "Avispa Fukuoka",
         "team_id": "t_2u1BXQ"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
+        "home": "partial",
+        "away": "partial"
       },
       "facts": [],
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://jleaguescout.soraretactics.com/football/injuries",
+          "title": "J League Scout — J1 injuries and team news (consulté le 16 novembre 2026)"
+        }
+      ],
       "previous_observations": []
     },
     {
@@ -836,14 +801,19 @@
         "name": "Fagiano Okayama FC",
         "team_id": "t_2fx2NT"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
+        "home": "partial",
+        "away": "partial"
       },
       "facts": [],
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://jleaguescout.soraretactics.com/football/injuries",
+          "title": "J League Scout — J1 injuries and team news (consulté le 16 novembre 2026)"
+        }
+      ],
       "previous_observations": []
     },
     {
@@ -861,14 +831,64 @@
         "name": "Fulham",
         "team_id": "t_1c1ZPD"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
+        "home": "issues_found",
+        "away": "issues_found"
       },
-      "facts": [],
-      "sources": [],
+      "facts": [
+        {
+          "player_name": "Antoine Semenyo",
+          "team_side": "home",
+          "category": "injury",
+          "status": "unavailable",
+          "confidence": "confirmed",
+          "details": "Blessure au genou; retour estimé au 19 décembre 2026.",
+          "source_url": "https://www.squawka.com/us/epl-premier-league/premier-league-injuries-and-suspensions/",
+          "source_title": "Premier League Injuries and Suspensions: Daily Tracker",
+          "published_at_utc": "2026-11-16"
+        },
+        {
+          "player_name": "Marc Guehi",
+          "team_side": "home",
+          "category": "doubtful",
+          "status": "doubtful",
+          "confidence": "probable",
+          "details": "Blessure à l'aine/hanche/bassin; probabilité affichée de 25 %.",
+          "source_url": "https://www.squawka.com/us/epl-premier-league/premier-league-injuries-and-suspensions/",
+          "source_title": "Premier League Injuries and Suspensions: Daily Tracker",
+          "published_at_utc": "2026-11-16"
+        },
+        {
+          "player_name": "Abdukodir Khusanov",
+          "team_side": "home",
+          "category": "doubtful",
+          "status": "doubtful",
+          "confidence": "probable",
+          "details": "Autre indisponibilité; probabilité affichée de 50 %.",
+          "source_url": "https://www.squawka.com/us/epl-premier-league/premier-league-injuries-and-suspensions/",
+          "source_title": "Premier League Injuries and Suspensions: Daily Tracker",
+          "published_at_utc": "2026-11-16"
+        },
+        {
+          "player_name": "Tom Cairney",
+          "team_side": "away",
+          "category": "injury",
+          "status": "unavailable",
+          "confidence": "probable",
+          "details": "Blessure au genou; retour estimé au 21 novembre 2026.",
+          "source_url": "https://www.squawka.com/us/epl-premier-league/premier-league-injuries-and-suspensions/",
+          "source_title": "Premier League Injuries and Suspensions: Daily Tracker",
+          "published_at_utc": "2026-11-16"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.squawka.com/us/epl-premier-league/premier-league-injuries-and-suspensions/",
+          "title": "Premier League Injuries and Suspensions: Daily Tracker (Squawka, 16 novembre 2026)"
+        }
+      ],
       "previous_observations": []
     },
     {
@@ -886,8 +906,8 @@
         "name": "Deportivo A Coruña",
         "team_id": "t_2xafLl"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
         "home": "not_checked",
         "away": "not_checked"
@@ -912,9 +932,9 @@
         "team_id": "t_0M7O86"
       },
       "research_status": "partial",
-      "checked_at_utc": "2026-11-16T20:15:12+00:00",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
-        "home": "partial",
+        "home": "issues_found",
         "away": "partial"
       },
       "facts": [
@@ -922,55 +942,51 @@
           "player_name": "Tylel Tati",
           "team_side": "home",
           "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Blessure au ménisque; retour annoncé le 31/12/2026 (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
+          "status": "unavailable",
+          "confidence": "probable",
+          "details": "Blessure au ménisque; retour annoncé le 31 décembre 2026 Information recensée dans le relevé Ligue 2 du 13 novembre 2026; confirmation de l'absence au coup d'envoi non disponible.",
           "source_url": "https://wmrtips.com/fr/blesses/ligue-2/",
-          "source_title": "Ligue 2 : blessés & suspendus actuels (au 13 novembre 2026)",
+          "source_title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)",
           "published_at_utc": "2026-11-13"
         },
         {
           "player_name": "Saïdou Sow",
           "team_side": "home",
           "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Blessure au ménisque; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
+          "status": "unavailable",
+          "confidence": "probable",
+          "details": "Blessure au ménisque; retour non communiqué Information recensée dans le relevé Ligue 2 du 13 novembre 2026; confirmation de l'absence au coup d'envoi non disponible.",
           "source_url": "https://wmrtips.com/fr/blesses/ligue-2/",
-          "source_title": "Ligue 2 : blessés & suspendus actuels (au 13 novembre 2026)",
+          "source_title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)",
           "published_at_utc": "2026-11-13"
         },
         {
           "player_name": "Ryad Hachem",
           "team_side": "home",
           "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Gêne aux adducteurs; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
+          "status": "unavailable",
+          "confidence": "probable",
+          "details": "Gêne aux adducteurs; retour non communiqué Information recensée dans le relevé Ligue 2 du 13 novembre 2026; confirmation de l'absence au coup d'envoi non disponible.",
           "source_url": "https://wmrtips.com/fr/blesses/ligue-2/",
-          "source_title": "Ligue 2 : blessés & suspendus actuels (au 13 novembre 2026)",
+          "source_title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)",
           "published_at_utc": "2026-11-13"
         },
         {
           "player_name": "Alexis Mirbach",
           "team_side": "home",
           "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Blessure au ménisque; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
+          "status": "unavailable",
+          "confidence": "probable",
+          "details": "Blessure au ménisque; retour non communiqué Information recensée dans le relevé Ligue 2 du 13 novembre 2026; confirmation de l'absence au coup d'envoi non disponible.",
           "source_url": "https://wmrtips.com/fr/blesses/ligue-2/",
-          "source_title": "Ligue 2 : blessés & suspendus actuels (au 13 novembre 2026)",
+          "source_title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)",
           "published_at_utc": "2026-11-13"
         }
       ],
       "sources": [
         {
-          "url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "title": "WmR — Ligue 1, relevé au 13/11/2026"
-        },
-        {
           "url": "https://wmrtips.com/fr/blesses/ligue-2/",
-          "title": "WmR — Ligue 2, relevé au 13/11/2026"
+          "title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)"
         }
       ],
       "previous_observations": []
@@ -991,65 +1007,61 @@
         "team_id": "t_1ZWgCw"
       },
       "research_status": "partial",
-      "checked_at_utc": "2026-11-16T20:15:12+00:00",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
-        "home": "partial",
-        "away": "partial"
+        "home": "issues_found",
+        "away": "issues_found"
       },
       "facts": [
         {
           "player_name": "Corentin Fatou",
           "team_side": "home",
           "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Blessure au bassin; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
+          "status": "unavailable",
+          "confidence": "probable",
+          "details": "Blessure au bassin; retour non communiqué Information recensée dans le relevé Ligue 2 du 13 novembre 2026; confirmation de l'absence au coup d'envoi non disponible.",
           "source_url": "https://wmrtips.com/fr/blesses/ligue-2/",
-          "source_title": "Ligue 2 : blessés & suspendus actuels (au 13 novembre 2026)",
+          "source_title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)",
           "published_at_utc": "2026-11-13"
         },
         {
           "player_name": "Hermann Esmel",
           "team_side": "home",
           "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Blessure au genou; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
+          "status": "unavailable",
+          "confidence": "probable",
+          "details": "Blessure au genou; retour non communiqué Information recensée dans le relevé Ligue 2 du 13 novembre 2026; confirmation de l'absence au coup d'envoi non disponible.",
           "source_url": "https://wmrtips.com/fr/blesses/ligue-2/",
-          "source_title": "Ligue 2 : blessés & suspendus actuels (au 13 novembre 2026)",
+          "source_title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)",
           "published_at_utc": "2026-11-13"
         },
         {
           "player_name": "Yanis Court",
           "team_side": "home",
           "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Blessure au ménisque; retour annoncé le 31/01/2027 (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
+          "status": "unavailable",
+          "confidence": "probable",
+          "details": "Blessure au ménisque; retour annoncé le 31 janvier 2027 Information recensée dans le relevé Ligue 2 du 13 novembre 2026; confirmation de l'absence au coup d'envoi non disponible.",
           "source_url": "https://wmrtips.com/fr/blesses/ligue-2/",
-          "source_title": "Ligue 2 : blessés & suspendus actuels (au 13 novembre 2026)",
+          "source_title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)",
           "published_at_utc": "2026-11-13"
         },
         {
           "player_name": "Axel Guéguin",
           "team_side": "away",
           "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Rupture du ligament croisé; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
+          "status": "unavailable",
+          "confidence": "probable",
+          "details": "Rupture du ligament croisé; retour non communiqué Information recensée dans le relevé Ligue 2 du 13 novembre 2026; confirmation de l'absence au coup d'envoi non disponible.",
           "source_url": "https://wmrtips.com/fr/blesses/ligue-2/",
-          "source_title": "Ligue 2 : blessés & suspendus actuels (au 13 novembre 2026)",
+          "source_title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)",
           "published_at_utc": "2026-11-13"
         }
       ],
       "sources": [
         {
-          "url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "title": "WmR — Ligue 1, relevé au 13/11/2026"
-        },
-        {
           "url": "https://wmrtips.com/fr/blesses/ligue-2/",
-          "title": "WmR — Ligue 2, relevé au 13/11/2026"
+          "title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)"
         }
       ],
       "previous_observations": []
@@ -1069,8 +1081,8 @@
         "name": "Lecce",
         "team_id": "t_35suku"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
         "home": "not_checked",
         "away": "not_checked"
@@ -1094,8 +1106,8 @@
         "name": "Cagliari",
         "team_id": "t_3V0mmv"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
         "home": "not_checked",
         "away": "not_checked"
@@ -1119,8 +1131,8 @@
         "name": "Freiburg",
         "team_id": "t_40kQKX"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
         "home": "not_checked",
         "away": "not_checked"
@@ -1144,8 +1156,8 @@
         "name": "Hoffenheim",
         "team_id": "t_3xyER9"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
         "home": "not_checked",
         "away": "not_checked"
@@ -1169,8 +1181,8 @@
         "name": "RB Leipzig",
         "team_id": "t_0oqUbb"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
         "home": "not_checked",
         "away": "not_checked"
@@ -1194,8 +1206,8 @@
         "name": "Paderborn",
         "team_id": "t_3j2hQL"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
         "home": "not_checked",
         "away": "not_checked"
@@ -1219,8 +1231,8 @@
         "name": "Borussia Dortmund",
         "team_id": "t_386iz1"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
         "home": "not_checked",
         "away": "not_checked"
@@ -1244,8 +1256,8 @@
         "name": "St.Truiden",
         "team_id": "t_11R95l"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
         "home": "not_checked",
         "away": "not_checked"
@@ -1269,14 +1281,19 @@
         "name": "Ipswich Town",
         "team_id": "t_2C9laO"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
+        "home": "partial",
+        "away": "partial"
       },
       "facts": [],
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://www.squawka.com/us/epl-premier-league/premier-league-injuries-and-suspensions/",
+          "title": "Premier League Injuries and Suspensions: Daily Tracker (Squawka, 16 novembre 2026)"
+        }
+      ],
       "previous_observations": []
     },
     {
@@ -1294,14 +1311,64 @@
         "name": "Nottingham Forest",
         "team_id": "t_0msSwp"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
+        "home": "issues_found",
+        "away": "partial"
       },
-      "facts": [],
-      "sources": [],
+      "facts": [
+        {
+          "player_name": "Alex Toth",
+          "team_side": "home",
+          "category": "injury",
+          "status": "unavailable",
+          "confidence": "confirmed",
+          "details": "Blessure à la cuisse; retour estimé au 6 février 2027.",
+          "source_url": "https://www.squawka.com/us/epl-premier-league/premier-league-injuries-and-suspensions/",
+          "source_title": "Premier League Injuries and Suspensions: Daily Tracker",
+          "published_at_utc": "2026-11-16"
+        },
+        {
+          "player_name": "Julian Araujo",
+          "team_side": "home",
+          "category": "injury",
+          "status": "unavailable",
+          "confidence": "probable",
+          "details": "Blessure à la cuisse; retour estimé au 21 novembre 2026.",
+          "source_url": "https://www.squawka.com/us/epl-premier-league/premier-league-injuries-and-suspensions/",
+          "source_title": "Premier League Injuries and Suspensions: Daily Tracker",
+          "published_at_utc": "2026-11-16"
+        },
+        {
+          "player_name": "Juanlu Sanchez",
+          "team_side": "home",
+          "category": "injury",
+          "status": "unavailable",
+          "confidence": "confirmed",
+          "details": "Blessure à la cheville/pied; date de retour non communiquée.",
+          "source_url": "https://www.squawka.com/us/epl-premier-league/premier-league-injuries-and-suspensions/",
+          "source_title": "Premier League Injuries and Suspensions: Daily Tracker",
+          "published_at_utc": "2026-11-16"
+        },
+        {
+          "player_name": "Rayan Simplicio Rocha",
+          "team_side": "home",
+          "category": "doubtful",
+          "status": "doubtful",
+          "confidence": "probable",
+          "details": "Blessure à la cheville/pied; probabilité affichée de 50 %.",
+          "source_url": "https://www.squawka.com/us/epl-premier-league/premier-league-injuries-and-suspensions/",
+          "source_title": "Premier League Injuries and Suspensions: Daily Tracker",
+          "published_at_utc": "2026-11-16"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.squawka.com/us/epl-premier-league/premier-league-injuries-and-suspensions/",
+          "title": "Premier League Injuries and Suspensions: Daily Tracker (Squawka, 16 novembre 2026)"
+        }
+      ],
       "previous_observations": []
     },
     {
@@ -1319,14 +1386,42 @@
         "name": "Sunderland",
         "team_id": "t_2xPV6y"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
+        "home": "issues_found",
+        "away": "partial"
       },
-      "facts": [],
-      "sources": [],
+      "facts": [
+        {
+          "player_name": "Matty Cash",
+          "team_side": "home",
+          "category": "suspension",
+          "status": "unavailable",
+          "confidence": "confirmed",
+          "details": "Suspendu; retour estimé au 21 novembre 2026.",
+          "source_url": "https://www.squawka.com/us/epl-premier-league/premier-league-injuries-and-suspensions/",
+          "source_title": "Premier League Injuries and Suspensions: Daily Tracker",
+          "published_at_utc": "2026-11-16"
+        },
+        {
+          "player_name": "Johan Manzambi",
+          "team_side": "home",
+          "category": "doubtful",
+          "status": "doubtful",
+          "confidence": "probable",
+          "details": "Blessure au mollet/tibia/talon; retour estimé au 21 novembre 2026, probabilité affichée de 50 %.",
+          "source_url": "https://www.squawka.com/us/epl-premier-league/premier-league-injuries-and-suspensions/",
+          "source_title": "Premier League Injuries and Suspensions: Daily Tracker",
+          "published_at_utc": "2026-11-16"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.squawka.com/us/epl-premier-league/premier-league-injuries-and-suspensions/",
+          "title": "Premier League Injuries and Suspensions: Daily Tracker (Squawka, 16 novembre 2026)"
+        }
+      ],
       "previous_observations": []
     },
     {
@@ -1344,14 +1439,141 @@
         "name": "Crystal Palace",
         "team_id": "t_4bz4EP"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
+        "home": "issues_found",
+        "away": "issues_found"
       },
-      "facts": [],
-      "sources": [],
+      "facts": [
+        {
+          "player_name": "Aurele Amenda",
+          "team_side": "home",
+          "category": "injury",
+          "status": "unavailable",
+          "confidence": "confirmed",
+          "details": "Blessure au mollet/tibia/talon; retour estimé au 19 décembre 2026.",
+          "source_url": "https://www.squawka.com/us/epl-premier-league/premier-league-injuries-and-suspensions/",
+          "source_title": "Premier League Injuries and Suspensions: Daily Tracker",
+          "published_at_utc": "2026-11-16"
+        },
+        {
+          "player_name": "Haji Wright",
+          "team_side": "home",
+          "category": "injury",
+          "status": "unavailable",
+          "confidence": "confirmed",
+          "details": "Blessure à la cuisse; retour estimé au 2 décembre 2026.",
+          "source_url": "https://www.squawka.com/us/epl-premier-league/premier-league-injuries-and-suspensions/",
+          "source_title": "Premier League Injuries and Suspensions: Daily Tracker",
+          "published_at_utc": "2026-11-16"
+        },
+        {
+          "player_name": "Josh Eccles",
+          "team_side": "home",
+          "category": "doubtful",
+          "status": "doubtful",
+          "confidence": "probable",
+          "details": "Blessure à la cheville/pied; probabilité affichée de 50 %.",
+          "source_url": "https://www.squawka.com/us/epl-premier-league/premier-league-injuries-and-suspensions/",
+          "source_title": "Premier League Injuries and Suspensions: Daily Tracker",
+          "published_at_utc": "2026-11-16"
+        },
+        {
+          "player_name": "Bobby Thomas",
+          "team_side": "home",
+          "category": "doubtful",
+          "status": "doubtful",
+          "confidence": "probable",
+          "details": "Blessure au mollet/tibia/talon; probabilité affichée de 50 %.",
+          "source_url": "https://www.squawka.com/us/epl-premier-league/premier-league-injuries-and-suspensions/",
+          "source_title": "Premier League Injuries and Suspensions: Daily Tracker",
+          "published_at_utc": "2026-11-16"
+        },
+        {
+          "player_name": "Frank Onyeka",
+          "team_side": "home",
+          "category": "doubtful",
+          "status": "doubtful",
+          "confidence": "probable",
+          "details": "Autre indisponibilité; probabilité affichée de 50 %.",
+          "source_url": "https://www.squawka.com/us/epl-premier-league/premier-league-injuries-and-suspensions/",
+          "source_title": "Premier League Injuries and Suspensions: Daily Tracker",
+          "published_at_utc": "2026-11-16"
+        },
+        {
+          "player_name": "Luke Woolfenden",
+          "team_side": "home",
+          "category": "doubtful",
+          "status": "doubtful",
+          "confidence": "probable",
+          "details": "Blessure au genou; probabilité affichée de 50 %.",
+          "source_url": "https://www.squawka.com/us/epl-premier-league/premier-league-injuries-and-suspensions/",
+          "source_title": "Premier League Injuries and Suspensions: Daily Tracker",
+          "published_at_utc": "2026-11-16"
+        },
+        {
+          "player_name": "Chadi Riad Dnanou",
+          "team_side": "away",
+          "category": "injury",
+          "status": "unavailable",
+          "confidence": "confirmed",
+          "details": "Blessure au genou; retour estimé au 7 juin 2027.",
+          "source_url": "https://www.squawka.com/us/epl-premier-league/premier-league-injuries-and-suspensions/",
+          "source_title": "Premier League Injuries and Suspensions: Daily Tracker",
+          "published_at_utc": "2026-11-16"
+        },
+        {
+          "player_name": "Jean-Philippe Mateta",
+          "team_side": "away",
+          "category": "suspension",
+          "status": "unavailable",
+          "confidence": "confirmed",
+          "details": "Suspendu; retour estimé au 2 décembre 2026.",
+          "source_url": "https://www.squawka.com/us/epl-premier-league/premier-league-injuries-and-suspensions/",
+          "source_title": "Premier League Injuries and Suspensions: Daily Tracker",
+          "published_at_utc": "2026-11-16"
+        },
+        {
+          "player_name": "Ismaila Sarr",
+          "team_side": "away",
+          "category": "injury",
+          "status": "unavailable",
+          "confidence": "probable",
+          "details": "Blessure à l'aine/hanche/bassin; retour estimé au 21 novembre 2026.",
+          "source_url": "https://www.squawka.com/us/epl-premier-league/premier-league-injuries-and-suspensions/",
+          "source_title": "Premier League Injuries and Suspensions: Daily Tracker",
+          "published_at_utc": "2026-11-16"
+        },
+        {
+          "player_name": "Takehiro Tomiyasu",
+          "team_side": "away",
+          "category": "injury",
+          "status": "unavailable",
+          "confidence": "probable",
+          "details": "Blessure au mollet/tibia/talon; retour estimé au 21 novembre 2026.",
+          "source_url": "https://www.squawka.com/us/epl-premier-league/premier-league-injuries-and-suspensions/",
+          "source_title": "Premier League Injuries and Suspensions: Daily Tracker",
+          "published_at_utc": "2026-11-16"
+        },
+        {
+          "player_name": "Jorgen Strand Larsen",
+          "team_side": "away",
+          "category": "doubtful",
+          "status": "doubtful",
+          "confidence": "probable",
+          "details": "Blessure à la cheville/pied; probabilité affichée de 50 %.",
+          "source_url": "https://www.squawka.com/us/epl-premier-league/premier-league-injuries-and-suspensions/",
+          "source_title": "Premier League Injuries and Suspensions: Daily Tracker",
+          "published_at_utc": "2026-11-16"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.squawka.com/us/epl-premier-league/premier-league-injuries-and-suspensions/",
+          "title": "Premier League Injuries and Suspensions: Daily Tracker (Squawka, 16 novembre 2026)"
+        }
+      ],
       "previous_observations": []
     },
     {
@@ -1369,14 +1591,97 @@
         "name": "Leeds United",
         "team_id": "t_19Nr9K"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
+        "home": "issues_found",
+        "away": "issues_found"
       },
-      "facts": [],
-      "sources": [],
+      "facts": [
+        {
+          "player_name": "Reece James",
+          "team_side": "home",
+          "category": "injury",
+          "status": "unavailable",
+          "confidence": "confirmed",
+          "details": "Blessure au genou; retour estimé au 3 janvier 2027.",
+          "source_url": "https://www.squawka.com/us/epl-premier-league/premier-league-injuries-and-suspensions/",
+          "source_title": "Premier League Injuries and Suspensions: Daily Tracker",
+          "published_at_utc": "2026-11-16"
+        },
+        {
+          "player_name": "Joao Pedro Junqueira de Jesus",
+          "team_side": "home",
+          "category": "injury",
+          "status": "unavailable",
+          "confidence": "probable",
+          "details": "Blessure à la cuisse; retour estimé au 21 novembre 2026.",
+          "source_url": "https://www.squawka.com/us/epl-premier-league/premier-league-injuries-and-suspensions/",
+          "source_title": "Premier League Injuries and Suspensions: Daily Tracker",
+          "published_at_utc": "2026-11-16"
+        },
+        {
+          "player_name": "Maxence Lacroix",
+          "team_side": "home",
+          "category": "injury",
+          "status": "unavailable",
+          "confidence": "probable",
+          "details": "Blessure à la cuisse; retour estimé au 21 novembre 2026.",
+          "source_url": "https://www.squawka.com/us/epl-premier-league/premier-league-injuries-and-suspensions/",
+          "source_title": "Premier League Injuries and Suspensions: Daily Tracker",
+          "published_at_utc": "2026-11-16"
+        },
+        {
+          "player_name": "Jorrel Hato",
+          "team_side": "home",
+          "category": "other",
+          "status": "unavailable",
+          "confidence": "probable",
+          "details": "Indisponibilité signalée; retour estimé au 21 novembre 2026.",
+          "source_url": "https://www.squawka.com/us/epl-premier-league/premier-league-injuries-and-suspensions/",
+          "source_title": "Premier League Injuries and Suspensions: Daily Tracker",
+          "published_at_utc": "2026-11-16"
+        },
+        {
+          "player_name": "Jamie Gittens",
+          "team_side": "home",
+          "category": "injury",
+          "status": "unavailable",
+          "confidence": "probable",
+          "details": "Blessure à la cheville/pied; retour estimé au 21 novembre 2026.",
+          "source_url": "https://www.squawka.com/us/epl-premier-league/premier-league-injuries-and-suspensions/",
+          "source_title": "Premier League Injuries and Suspensions: Daily Tracker",
+          "published_at_utc": "2026-11-16"
+        },
+        {
+          "player_name": "Mateo Joseph",
+          "team_side": "away",
+          "category": "injury",
+          "status": "unavailable",
+          "confidence": "confirmed",
+          "details": "Blessure au genou; retour estimé au 30 janvier 2027.",
+          "source_url": "https://www.squawka.com/us/epl-premier-league/premier-league-injuries-and-suspensions/",
+          "source_title": "Premier League Injuries and Suspensions: Daily Tracker",
+          "published_at_utc": "2026-11-16"
+        },
+        {
+          "player_name": "Anton Stach",
+          "team_side": "away",
+          "category": "doubtful",
+          "status": "doubtful",
+          "confidence": "probable",
+          "details": "Blessure à la cheville/pied; probabilité affichée de 50 %.",
+          "source_url": "https://www.squawka.com/us/epl-premier-league/premier-league-injuries-and-suspensions/",
+          "source_title": "Premier League Injuries and Suspensions: Daily Tracker",
+          "published_at_utc": "2026-11-16"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.squawka.com/us/epl-premier-league/premier-league-injuries-and-suspensions/",
+          "title": "Premier League Injuries and Suspensions: Daily Tracker (Squawka, 16 novembre 2026)"
+        }
+      ],
       "previous_observations": []
     },
     {
@@ -1394,8 +1699,8 @@
         "name": "Valencia",
         "team_id": "t_3TftmE"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
         "home": "not_checked",
         "away": "not_checked"
@@ -1420,144 +1725,13 @@
         "team_id": "t_41iFW3"
       },
       "research_status": "partial",
-      "checked_at_utc": "2026-11-16T20:15:12+00:00",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
-        "home": "partial",
-        "away": "partial"
+        "home": "not_checked",
+        "away": "not_checked"
       },
-      "facts": [
-        {
-          "player_name": "Antoine Mendy",
-          "team_side": "home",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Rupture du ligament croisé; retour annoncé le 29/05/2027 (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Moïse Bombito",
-          "team_side": "home",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Fracture de la jambe; retour annoncé le 21/11/2026 (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Salis Abdul Samed",
-          "team_side": "home",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Blessure non précisée; retour annoncé le 21/11/2026 (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Mohamed Abdelmonem",
-          "team_side": "home",
-          "category": "doubtful",
-          "status": "uncertain",
-          "confidence": "medium",
-          "details": "Blessure aux ischio-jambiers; statut incertain (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Ali Abdi",
-          "team_side": "home",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Béquille; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Laurent Abergel",
-          "team_side": "home",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Rupture du ligament croisé; retour annoncé le 24/04/2027 (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Khvicha Kvaratskhelia",
-          "team_side": "away",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Rupture du ligament croisé; retour annoncé le 31/05/2027 (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Ousmane Dembélé",
-          "team_side": "away",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Blessure à la cuisse; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Nuno Mendes",
-          "team_side": "away",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Béquille; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Maghnes Akliouche",
-          "team_side": "away",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Blessure au mollet; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Marquinhos",
-          "team_side": "away",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Blessure à la cuisse; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        }
-      ],
-      "sources": [
-        {
-          "url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "title": "WmR — Ligue 1, relevé au 13/11/2026"
-        },
-        {
-          "url": "https://wmrtips.com/fr/blesses/ligue-2/",
-          "title": "WmR — Ligue 2, relevé au 13/11/2026"
-        }
-      ],
+      "facts": [],
+      "sources": [],
       "previous_observations": []
     },
     {
@@ -1575,8 +1749,8 @@
         "name": "Roma",
         "team_id": "t_0RhqmW"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
         "home": "not_checked",
         "away": "not_checked"
@@ -1600,8 +1774,8 @@
         "name": "RAAL La Louvière",
         "team_id": "t_1vesUg"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
         "home": "not_checked",
         "away": "not_checked"
@@ -1625,8 +1799,8 @@
         "name": "VfB Stuttgart",
         "team_id": "t_0iJNOA"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
         "home": "not_checked",
         "away": "not_checked"
@@ -1650,8 +1824,8 @@
         "name": "Real Betis",
         "team_id": "t_0HSzvM"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
         "home": "not_checked",
         "away": "not_checked"
@@ -1675,14 +1849,64 @@
         "name": "Arsenal",
         "team_id": "t_1gkhxH"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
+        "home": "issues_found",
+        "away": "issues_found"
       },
-      "facts": [],
-      "sources": [],
+      "facts": [
+        {
+          "player_name": "Ewen Jaouen",
+          "team_side": "home",
+          "category": "injury",
+          "status": "unavailable",
+          "confidence": "confirmed",
+          "details": "Blessure à la cuisse; retour estimé au 12 décembre 2026.",
+          "source_url": "https://www.squawka.com/us/epl-premier-league/premier-league-injuries-and-suspensions/",
+          "source_title": "Premier League Injuries and Suspensions: Daily Tracker",
+          "published_at_utc": "2026-11-16"
+        },
+        {
+          "player_name": "Jacob Ramsey",
+          "team_side": "home",
+          "category": "suspension",
+          "status": "unavailable",
+          "confidence": "confirmed",
+          "details": "Suspendu; retour estimé au 21 novembre 2026.",
+          "source_url": "https://www.squawka.com/us/epl-premier-league/premier-league-injuries-and-suspensions/",
+          "source_title": "Premier League Injuries and Suspensions: Daily Tracker",
+          "published_at_utc": "2026-11-16"
+        },
+        {
+          "player_name": "Bukayo Saka",
+          "team_side": "away",
+          "category": "injury",
+          "status": "unavailable",
+          "confidence": "confirmed",
+          "details": "Blessure à la cuisse; retour estimé au 2 décembre 2026.",
+          "source_url": "https://www.squawka.com/us/epl-premier-league/premier-league-injuries-and-suspensions/",
+          "source_title": "Premier League Injuries and Suspensions: Daily Tracker",
+          "published_at_utc": "2026-11-16"
+        },
+        {
+          "player_name": "Max Dowman",
+          "team_side": "away",
+          "category": "suspension",
+          "status": "unavailable",
+          "confidence": "confirmed",
+          "details": "Suspendu; retour estimé au 29 novembre 2026.",
+          "source_url": "https://www.squawka.com/us/epl-premier-league/premier-league-injuries-and-suspensions/",
+          "source_title": "Premier League Injuries and Suspensions: Daily Tracker",
+          "published_at_utc": "2026-11-16"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.squawka.com/us/epl-premier-league/premier-league-injuries-and-suspensions/",
+          "title": "Premier League Injuries and Suspensions: Daily Tracker (Squawka, 16 novembre 2026)"
+        }
+      ],
       "previous_observations": []
     },
     {
@@ -1701,109 +1925,105 @@
         "team_id": "t_4EnJ8g"
       },
       "research_status": "partial",
-      "checked_at_utc": "2026-11-16T20:15:12+00:00",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
-        "home": "partial",
-        "away": "partial"
+        "home": "issues_found",
+        "away": "issues_found"
       },
       "facts": [
         {
           "player_name": "Martial Tia",
           "team_side": "home",
           "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Blessure à la cheville; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
+          "status": "unavailable",
+          "confidence": "probable",
+          "details": "Blessure à la cheville; retour non communiqué Information recensée dans le relevé Ligue 2 du 13 novembre 2026; confirmation de l'absence au coup d'envoi non disponible.",
           "source_url": "https://wmrtips.com/fr/blesses/ligue-2/",
-          "source_title": "Ligue 2 : blessés & suspendus actuels (au 13 novembre 2026)",
+          "source_title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)",
           "published_at_utc": "2026-11-13"
         },
         {
           "player_name": "Mory Gbane",
           "team_side": "home",
           "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Blessure au genou; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
+          "status": "unavailable",
+          "confidence": "probable",
+          "details": "Blessure au genou; retour non communiqué Information recensée dans le relevé Ligue 2 du 13 novembre 2026; confirmation de l'absence au coup d'envoi non disponible.",
           "source_url": "https://wmrtips.com/fr/blesses/ligue-2/",
-          "source_title": "Ligue 2 : blessés & suspendus actuels (au 13 novembre 2026)",
+          "source_title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)",
           "published_at_utc": "2026-11-13"
         },
         {
           "player_name": "Hafiz Umar Ibrahim",
           "team_side": "home",
           "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Blessure au ligament croisé; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
+          "status": "unavailable",
+          "confidence": "probable",
+          "details": "Blessure au ligament croisé; retour non communiqué Information recensée dans le relevé Ligue 2 du 13 novembre 2026; confirmation de l'absence au coup d'envoi non disponible.",
           "source_url": "https://wmrtips.com/fr/blesses/ligue-2/",
-          "source_title": "Ligue 2 : blessés & suspendus actuels (au 13 novembre 2026)",
+          "source_title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)",
           "published_at_utc": "2026-11-13"
         },
         {
           "player_name": "Joseph Okumu",
           "team_side": "home",
           "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Déchirure ligamentaire partielle du genou; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
+          "status": "unavailable",
+          "confidence": "probable",
+          "details": "Déchirure ligamentaire partielle du genou; retour non communiqué Information recensée dans le relevé Ligue 2 du 13 novembre 2026; confirmation de l'absence au coup d'envoi non disponible.",
           "source_url": "https://wmrtips.com/fr/blesses/ligue-2/",
-          "source_title": "Ligue 2 : blessés & suspendus actuels (au 13 novembre 2026)",
+          "source_title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)",
           "published_at_utc": "2026-11-13"
         },
         {
           "player_name": "Lenny Sylla",
           "team_side": "home",
           "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Blessure au genou; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
+          "status": "unavailable",
+          "confidence": "probable",
+          "details": "Blessure au genou; retour non communiqué Information recensée dans le relevé Ligue 2 du 13 novembre 2026; confirmation de l'absence au coup d'envoi non disponible.",
           "source_url": "https://wmrtips.com/fr/blesses/ligue-2/",
-          "source_title": "Ligue 2 : blessés & suspendus actuels (au 13 novembre 2026)",
+          "source_title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)",
           "published_at_utc": "2026-11-13"
         },
         {
           "player_name": "Gautier Larsonneur",
           "team_side": "away",
           "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Blessure au genou; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
+          "status": "unavailable",
+          "confidence": "probable",
+          "details": "Blessure au genou; retour non communiqué Information recensée dans le relevé Ligue 2 du 13 novembre 2026; confirmation de l'absence au coup d'envoi non disponible.",
           "source_url": "https://wmrtips.com/fr/blesses/ligue-2/",
-          "source_title": "Ligue 2 : blessés & suspendus actuels (au 13 novembre 2026)",
+          "source_title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)",
           "published_at_utc": "2026-11-13"
         },
         {
           "player_name": "Tamar Svetlin",
           "team_side": "away",
           "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Contusion du tendon d'Achille; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
+          "status": "unavailable",
+          "confidence": "probable",
+          "details": "Contusion du tendon d'Achille; retour non communiqué Information recensée dans le relevé Ligue 2 du 13 novembre 2026; confirmation de l'absence au coup d'envoi non disponible.",
           "source_url": "https://wmrtips.com/fr/blesses/ligue-2/",
-          "source_title": "Ligue 2 : blessés & suspendus actuels (au 13 novembre 2026)",
+          "source_title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)",
           "published_at_utc": "2026-11-13"
         },
         {
           "player_name": "Paul Eymard",
           "team_side": "away",
           "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Fracture du pied; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
+          "status": "unavailable",
+          "confidence": "probable",
+          "details": "Fracture du pied; retour non communiqué Information recensée dans le relevé Ligue 2 du 13 novembre 2026; confirmation de l'absence au coup d'envoi non disponible.",
           "source_url": "https://wmrtips.com/fr/blesses/ligue-2/",
-          "source_title": "Ligue 2 : blessés & suspendus actuels (au 13 novembre 2026)",
+          "source_title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)",
           "published_at_utc": "2026-11-13"
         }
       ],
       "sources": [
         {
-          "url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "title": "WmR — Ligue 1, relevé au 13/11/2026"
-        },
-        {
           "url": "https://wmrtips.com/fr/blesses/ligue-2/",
-          "title": "WmR — Ligue 2, relevé au 13/11/2026"
+          "title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)"
         }
       ],
       "previous_observations": []
@@ -1823,8 +2043,8 @@
         "name": "Philadelphia Union",
         "team_id": "t_0uw6NW"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
         "home": "not_checked",
         "away": "not_checked"
@@ -1848,8 +2068,8 @@
         "name": "Royal Antwerp",
         "team_id": "t_0E5vxj"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
         "home": "not_checked",
         "away": "not_checked"
@@ -1873,8 +2093,8 @@
         "name": "Club Brugge",
         "team_id": "t_1mTmMO"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
         "home": "not_checked",
         "away": "not_checked"
@@ -1899,122 +2119,13 @@
         "team_id": "t_0EMLtg"
       },
       "research_status": "partial",
-      "checked_at_utc": "2026-11-16T20:15:12+00:00",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
-        "home": "partial",
-        "away": "partial"
+        "home": "not_checked",
+        "away": "not_checked"
       },
-      "facts": [
-        {
-          "player_name": "Joaquín Panichelli",
-          "team_side": "home",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Rupture du ligament croisé; retour annoncé le 31/12/2026 (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Karim Coulibaly",
-          "team_side": "home",
-          "category": "illness",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Malade; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Jeyland Mitchell",
-          "team_side": "home",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Blessure non précisée; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Giovanni Reyna",
-          "team_side": "home",
-          "category": "doubtful",
-          "status": "uncertain",
-          "confidence": "medium",
-          "details": "Blessure à la cuisse; statut incertain (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Deivid Washington",
-          "team_side": "home",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Blessure non précisée; retour annoncé le 21/11/2026 (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Fábio Baldé",
-          "team_side": "home",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Blessure musculaire; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Maxi Oyedele",
-          "team_side": "home",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Blessure non précisée; retour annoncé le 21/11/2026 (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Raphaël Le Guen",
-          "team_side": "away",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Fracture du péroné; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Brendan Chardonnet",
-          "team_side": "away",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Blessure au mollet; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        }
-      ],
-      "sources": [
-        {
-          "url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "title": "WmR — Ligue 1, relevé au 13/11/2026"
-        },
-        {
-          "url": "https://wmrtips.com/fr/blesses/ligue-2/",
-          "title": "WmR — Ligue 2, relevé au 13/11/2026"
-        }
-      ],
+      "facts": [],
+      "sources": [],
       "previous_observations": []
     },
     {
@@ -2033,67 +2144,13 @@
         "team_id": "t_2Vc7mg"
       },
       "research_status": "partial",
-      "checked_at_utc": "2026-11-16T20:15:12+00:00",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
-        "home": "partial",
-        "away": "partial"
+        "home": "not_checked",
+        "away": "not_checked"
       },
-      "facts": [
-        {
-          "player_name": "Aleksandr Golovin",
-          "team_side": "home",
-          "category": "doubtful",
-          "status": "uncertain",
-          "confidence": "medium",
-          "details": "Blessure au mollet; statut incertain (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Ansu Fati",
-          "team_side": "home",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Blessure à la cuisse; retour annoncé le 07/12/2026 (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Stanis Idumbo",
-          "team_side": "home",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Blessure à la cuisse; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Eric Dier",
-          "team_side": "home",
-          "category": "doubtful",
-          "status": "uncertain",
-          "confidence": "medium",
-          "details": "Blessure à la tête; statut incertain (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        }
-      ],
-      "sources": [
-        {
-          "url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "title": "WmR — Ligue 1, relevé au 13/11/2026"
-        },
-        {
-          "url": "https://wmrtips.com/fr/blesses/ligue-2/",
-          "title": "WmR — Ligue 2, relevé au 13/11/2026"
-        }
-      ],
+      "facts": [],
+      "sources": [],
       "previous_observations": []
     },
     {
@@ -2112,122 +2169,13 @@
         "team_id": "t_3t6spd"
       },
       "research_status": "partial",
-      "checked_at_utc": "2026-11-16T20:15:12+00:00",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
-        "home": "partial",
-        "away": "partial"
+        "home": "not_checked",
+        "away": "not_checked"
       },
-      "facts": [
-        {
-          "player_name": "Ismaëlo Ganiou",
-          "team_side": "home",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Opération du genou; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Franjo Ivanović",
-          "team_side": "home",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Commotion cérébrale; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Odsonne Édouard",
-          "team_side": "home",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Gêne aux adducteurs; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Abdallah Sima",
-          "team_side": "home",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Béquille; retour annoncé le 30/11/2026 (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Maik Nawrocki",
-          "team_side": "home",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Rupture du ligament croisé; retour annoncé le 15/05/2027 (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Jhoanner Chavez",
-          "team_side": "home",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Blessure à la cuisse; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Aron Doennum",
-          "team_side": "away",
-          "category": "suspension",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Suspension pour cumul de cartons jaunes; retour annoncé le 21/11/2026 (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Abu Francis",
-          "team_side": "away",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Blessure aux ischio-jambiers; retour annoncé le 21/11/2026 (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Rafik Messali",
-          "team_side": "away",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Béquille; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        }
-      ],
-      "sources": [
-        {
-          "url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "title": "WmR — Ligue 1, relevé au 13/11/2026"
-        },
-        {
-          "url": "https://wmrtips.com/fr/blesses/ligue-2/",
-          "title": "WmR — Ligue 2, relevé au 13/11/2026"
-        }
-      ],
+      "facts": [],
+      "sources": [],
       "previous_observations": []
     },
     {
@@ -2246,122 +2194,13 @@
         "team_id": "t_0xMlRV"
       },
       "research_status": "partial",
-      "checked_at_utc": "2026-11-16T20:15:12+00:00",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
-        "home": "partial",
-        "away": "partial"
+        "home": "not_checked",
+        "away": "not_checked"
       },
-      "facts": [
-        {
-          "player_name": "Ayase Ueda",
-          "team_side": "home",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Blessure au pied; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Hamza Igamane",
-          "team_side": "home",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Déchirure partielle du ligament croisé; retour annoncé le 21/11/2026 (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Tiago Santos",
-          "team_side": "home",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Rupture du ligament croisé; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Tyler Morton",
-          "team_side": "away",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Pubalgie; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Loïs Openda",
-          "team_side": "away",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Fracture du péroné; retour annoncé le 21/11/2026 (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Pavel Sulc",
-          "team_side": "away",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Blessure au ménisque; retour annoncé le 21/02/2027 (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Keito Nakamura",
-          "team_side": "away",
-          "category": "suspension",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Suspension pour cumul de cartons jaunes; date de retour non précisée (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Mohamed Ouédraogo",
-          "team_side": "away",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Rupture du ligament croisé; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Steeve Kango",
-          "team_side": "away",
-          "category": "doubtful",
-          "status": "uncertain",
-          "confidence": "medium",
-          "details": "Problèmes de dos; statut incertain (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        }
-      ],
-      "sources": [
-        {
-          "url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "title": "WmR — Ligue 1, relevé au 13/11/2026"
-        },
-        {
-          "url": "https://wmrtips.com/fr/blesses/ligue-2/",
-          "title": "WmR — Ligue 2, relevé au 13/11/2026"
-        }
-      ],
+      "facts": [],
+      "sources": [],
       "previous_observations": []
     },
     {
@@ -2379,8 +2218,8 @@
         "name": "Torino",
         "team_id": "t_1fXtzU"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
         "home": "not_checked",
         "away": "not_checked"
@@ -2404,8 +2243,8 @@
         "name": "Celta Vigo",
         "team_id": "t_4aQcO7"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
         "home": "not_checked",
         "away": "not_checked"
@@ -2429,8 +2268,8 @@
         "name": "Portland Timbers",
         "team_id": "t_0ptYTE"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
         "home": "not_checked",
         "away": "not_checked"
@@ -2454,8 +2293,8 @@
         "name": "Columbus Crew",
         "team_id": "t_1avIKi"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
         "home": "not_checked",
         "away": "not_checked"
@@ -2479,8 +2318,8 @@
         "name": "Venezia",
         "team_id": "t_3TALFY"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
         "home": "not_checked",
         "away": "not_checked"
@@ -2504,8 +2343,8 @@
         "name": "Gent",
         "team_id": "t_3CeUfH"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
         "home": "not_checked",
         "away": "not_checked"
@@ -2529,8 +2368,8 @@
         "name": "Villarreal",
         "team_id": "t_4SV4jg"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
         "home": "not_checked",
         "away": "not_checked"
@@ -2555,100 +2394,13 @@
         "team_id": "t_0ZkdUF"
       },
       "research_status": "partial",
-      "checked_at_utc": "2026-11-16T20:15:12+00:00",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
-        "home": "partial",
-        "away": "partial"
+        "home": "not_checked",
+        "away": "not_checked"
       },
-      "facts": [
-        {
-          "player_name": "Mamadou Mbow",
-          "team_side": "home",
-          "category": "suspension",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Suspension pour cumul de cartons jaunes; date de retour non précisée (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Nhoa Sangui",
-          "team_side": "home",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Blessure musculaire; retour annoncé le 22/11/2026 (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Jonathan Ikoné",
-          "team_side": "home",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Béquille; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Adama Camara",
-          "team_side": "home",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Blessure à la cuisse; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Yassin Belkhdim",
-          "team_side": "away",
-          "category": "suspension",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Suspension pour cumul de cartons jaunes; date de retour non précisée (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Amine El Ouazzani",
-          "team_side": "away",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Gêne aux adducteurs; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Jordan Lefort",
-          "team_side": "away",
-          "category": "suspension",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Suspension pour cumul de cartons jaunes; retour annoncé le 23/11/2026 (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        }
-      ],
-      "sources": [
-        {
-          "url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "title": "WmR — Ligue 1, relevé au 13/11/2026"
-        },
-        {
-          "url": "https://wmrtips.com/fr/blesses/ligue-2/",
-          "title": "WmR — Ligue 2, relevé au 13/11/2026"
-        }
-      ],
+      "facts": [],
+      "sources": [],
       "previous_observations": []
     },
     {
@@ -2666,14 +2418,19 @@
         "name": "Brighton & Hove Albion",
         "team_id": "t_3eV7Ev"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
+        "home": "partial",
+        "away": "partial"
       },
       "facts": [],
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://www.squawka.com/us/epl-premier-league/premier-league-injuries-and-suspensions/",
+          "title": "Premier League Injuries and Suspensions: Daily Tracker (Squawka, 16 novembre 2026)"
+        }
+      ],
       "previous_observations": []
     },
     {
@@ -2691,8 +2448,8 @@
         "name": "Genoa",
         "team_id": "t_24sV8w"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
         "home": "not_checked",
         "away": "not_checked"
@@ -2716,8 +2473,8 @@
         "name": "Udinese",
         "team_id": "t_2ur07g"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
         "home": "not_checked",
         "away": "not_checked"
@@ -2741,8 +2498,8 @@
         "name": "Mainz 05",
         "team_id": "t_3pp390"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
         "home": "not_checked",
         "away": "not_checked"
@@ -2766,8 +2523,8 @@
         "name": "Union St.Gilloise",
         "team_id": "t_3pK6v1"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
         "home": "not_checked",
         "away": "not_checked"
@@ -2791,8 +2548,8 @@
         "name": "Real Sociedad",
         "team_id": "t_1hKtUw"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
         "home": "not_checked",
         "away": "not_checked"
@@ -2817,78 +2574,13 @@
         "team_id": "t_3Ng6PH"
       },
       "research_status": "partial",
-      "checked_at_utc": "2026-11-16T20:15:12+00:00",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
-        "home": "partial",
-        "away": "partial"
+        "home": "not_checked",
+        "away": "not_checked"
       },
-      "facts": [
-        {
-          "player_name": "Ibrahima Baldé",
-          "team_side": "home",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Blessure au talon; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Panos Katseris",
-          "team_side": "home",
-          "category": "doubtful",
-          "status": "uncertain",
-          "confidence": "medium",
-          "details": "Blessure musculaire; statut incertain (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Mohamed Bamba",
-          "team_side": "home",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Gêne physique; retour annoncé le 22/11/2026 (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Estéban Lepaul",
-          "team_side": "away",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Entorse de la cheville; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Brice Samba",
-          "team_side": "away",
-          "category": "suspension",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Suspension pour cumul de cartons jaunes; date de retour non précisée (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        }
-      ],
-      "sources": [
-        {
-          "url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "title": "WmR — Ligue 1, relevé au 13/11/2026"
-        },
-        {
-          "url": "https://wmrtips.com/fr/blesses/ligue-2/",
-          "title": "WmR — Ligue 2, relevé au 13/11/2026"
-        }
-      ],
+      "facts": [],
+      "sources": [],
       "previous_observations": []
     },
     {
@@ -2906,8 +2598,8 @@
         "name": "Hamburger SV",
         "team_id": "t_1pQZDX"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
         "home": "not_checked",
         "away": "not_checked"
@@ -2931,14 +2623,19 @@
         "name": "Manchester United",
         "team_id": "t_2I313i"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
+        "home": "partial",
+        "away": "partial"
       },
       "facts": [],
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://www.squawka.com/us/epl-premier-league/premier-league-injuries-and-suspensions/",
+          "title": "Premier League Injuries and Suspensions: Daily Tracker (Squawka, 16 novembre 2026)"
+        }
+      ],
       "previous_observations": []
     },
     {
@@ -2956,8 +2653,8 @@
         "name": "Frosinone",
         "team_id": "t_1YXpHZ"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
         "home": "not_checked",
         "away": "not_checked"
@@ -2981,8 +2678,8 @@
         "name": "OH Leuven",
         "team_id": "t_3rAYPk"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
         "home": "not_checked",
         "away": "not_checked"
@@ -3006,8 +2703,8 @@
         "name": "Málaga",
         "team_id": "t_2DcXQn"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
         "home": "not_checked",
         "away": "not_checked"
@@ -3031,8 +2728,8 @@
         "name": "Standard Liège",
         "team_id": "t_0xsWjs"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
         "home": "not_checked",
         "away": "not_checked"
@@ -3057,78 +2754,13 @@
         "team_id": "t_0GDAiO"
       },
       "research_status": "partial",
-      "checked_at_utc": "2026-11-16T20:15:12+00:00",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
-        "home": "partial",
-        "away": "partial"
+        "home": "not_checked",
+        "away": "not_checked"
       },
-      "facts": [
-        {
-          "player_name": "Emerson",
-          "team_side": "home",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Blessure au genou; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Derek Cornelius",
-          "team_side": "home",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Blessure à la hanche; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Adil Bourabaa",
-          "team_side": "away",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Opération de la cheville; retour annoncé le 14/01/2027 (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Djibril Sidibé",
-          "team_side": "away",
-          "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Fracture du métatarse; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        },
-        {
-          "player_name": "Samuel Yohou",
-          "team_side": "away",
-          "category": "doubtful",
-          "status": "uncertain",
-          "confidence": "medium",
-          "details": "Blessure à la tête; statut incertain (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
-          "source_url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "source_title": "Ligue 1 : blessés & suspendus actuels (au 13 novembre 2026)",
-          "published_at_utc": "2026-11-13"
-        }
-      ],
-      "sources": [
-        {
-          "url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "title": "WmR — Ligue 1, relevé au 13/11/2026"
-        },
-        {
-          "url": "https://wmrtips.com/fr/blesses/ligue-2/",
-          "title": "WmR — Ligue 2, relevé au 13/11/2026"
-        }
-      ],
+      "facts": [],
+      "sources": [],
       "previous_observations": []
     },
     {
@@ -3146,8 +2778,8 @@
         "name": "Inter",
         "team_id": "t_3CPHHF"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
         "home": "not_checked",
         "away": "not_checked"
@@ -3171,8 +2803,8 @@
         "name": "Atlético Madrid",
         "team_id": "t_3NIiXl"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
         "home": "not_checked",
         "away": "not_checked"
@@ -3196,8 +2828,8 @@
         "name": "Charlotte FC",
         "team_id": "t_3NDbTT"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
         "home": "not_checked",
         "away": "not_checked"
@@ -3222,9 +2854,9 @@
         "team_id": "t_3CPWDJ"
       },
       "research_status": "partial",
-      "checked_at_utc": "2026-11-16T20:15:12+00:00",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
-        "home": "partial",
+        "home": "issues_found",
         "away": "partial"
       },
       "facts": [
@@ -3232,22 +2864,18 @@
           "player_name": "Bendjaloud Youssouf",
           "team_side": "home",
           "category": "injury",
-          "status": "reported_absence",
-          "confidence": "medium",
-          "details": "Béquille; retour inconnu (relevé de compétition daté du 13/11/2026; à reconfirmer avant le match).",
+          "status": "unavailable",
+          "confidence": "probable",
+          "details": "Béquille; retour non communiqué Information recensée dans le relevé Ligue 2 du 13 novembre 2026; confirmation de l'absence au coup d'envoi non disponible.",
           "source_url": "https://wmrtips.com/fr/blesses/ligue-2/",
-          "source_title": "Ligue 2 : blessés & suspendus actuels (au 13 novembre 2026)",
+          "source_title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)",
           "published_at_utc": "2026-11-13"
         }
       ],
       "sources": [
         {
-          "url": "https://wmrtips.com/fr/blesses/ligue-1/",
-          "title": "WmR — Ligue 1, relevé au 13/11/2026"
-        },
-        {
           "url": "https://wmrtips.com/fr/blesses/ligue-2/",
-          "title": "WmR — Ligue 2, relevé au 13/11/2026"
+          "title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)"
         }
       ],
       "previous_observations": []
@@ -3267,8 +2895,8 @@
         "name": "Fiorentina",
         "team_id": "t_3QzSiW"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
         "home": "not_checked",
         "away": "not_checked"
@@ -3292,8 +2920,8 @@
         "name": "Elche",
         "team_id": "t_2PLTQW"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
         "home": "not_checked",
         "away": "not_checked"
@@ -3317,15 +2945,22 @@
         "name": "Everton",
         "team_id": "t_21IR9d"
       },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
+      "research_status": "partial",
+      "checked_at_utc": "2026-11-16T21:38:00+00:00",
       "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
+        "home": "partial",
+        "away": "partial"
       },
       "facts": [],
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://www.squawka.com/us/epl-premier-league/premier-league-injuries-and-suspensions/",
+          "title": "Premier League Injuries and Suspensions: Daily Tracker (Squawka, 16 novembre 2026)"
+        }
+      ],
       "previous_observations": []
     }
-  ]
+  ],
+  "research_status": "partial",
+  "checked_at_utc": "2026-11-16T21:38:00+00:00"
 }
