@@ -17,14 +17,11 @@
     provided:"Données joueurs reçues",
     partial:"Effectif partiel — une équipe seulement",
     metadata_only:"Métadonnées uniquement — aucun joueur listé",
-    not_provided: provider === "API-Football" ? "Aucune absence retournée (couverture à vérifier)" : "Non communiqué par PitchAPI",
+    not_provided: "Non communiqué par PitchAPI",
     not_available:"Indisponible",
     collection_error:"Erreur de collecte",
     not_supported_by_provider:"Non pris en charge par le fournisseur",
     not_collected_until_official_lineup_window:"Composition officielle non collectée à cette échéance",
-    mapping_not_found:"Match non rapproché entre fournisseurs",
-    plan_limited:"Limitation du forfait API-Football",
-    outside_plan_window:"Hors fenêtre de dates du forfait"
   }[status] || "Statut non déterminé");
   const pillClass = status => status === "provided" ? "ok" :
     status === "collection_error" ? "err" : "warn";
