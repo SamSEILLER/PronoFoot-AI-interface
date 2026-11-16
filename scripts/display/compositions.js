@@ -58,30 +58,37 @@
       info.textContent = (record.message || mappingLabel)
         + " · " + mappingLabel
         + " · Effectifs : " + ({provided:"Deux effectifs reçus",partial:"Effectif partiel",not_provided:"Effectifs non fournis"}[record.squads_status] || "Effectifs : " + (record.squads_status || "non vérifié"))
+        + " · Signalements équipe/date : " + labelStatus(record.team_injuries_status, record.provider)
         + " · Compositions : " + labelStatus(record.lineups_status, record.provider)
         + " · Blessures/suspensions : " + labelStatus(record.injuries_status, record.provider)
         + " · Collecté : " + dateText(record.collected_at_utc);
       for (const [titleText, value] of [
         ["Effectif domicile · API-Football", record.home_squad],
         ["Effectif extérieur · API-Football", record.away_squad],
+        ["Signalements d'absence · domicile", record.home_team_injuries],
+        ["Signalements d'absence · extérieur", record.away_team_injuries],
         ["Compositions API-Football", record.lineups],
         ["Blessures et suspensions API-Football", record.injuries]
       ]) {
         if (value === null || value === undefined) continue;
         const details = document.createElement("details");
         const summary = document.createElement("summary");
-        const players = Array.isArray(value.players) ? value.players : null;
-        summary.textContent = titleText + (players ? " (" + players.length + " joueurs)" : "");
+        const players = Array.isArray(value.players) ? value.players : Array.isArray(value.records) ? value.records : null;
+        const countLabel = titleText.includes("Signalements") ? " signalements" : " joueurs";
+        summary.textContent = titleText + (players ? " (" + players.length + countLabel + ")" : "");
         details.append(summary);
         if (players && players.length) {
           const roster = document.createElement("ul");
           roster.className = "roster-list";
           players.forEach(player => {
             const item = document.createElement("li");
-            const name = player.name || player.player?.name || "Joueur sans nom";
-            const number = player.number ? " · #" + player.number : "";
-            const position = player.position ? " · " + player.position : "";
-            item.textContent = name + number + position;
+            const person = player.player && typeof player.player === "object" ? player.player : player;
+            const name = person.name || "Joueur sans nom";
+            const number = person.number ? " · #" + person.number : "";
+            const position = person.position ? " · " + person.position : "";
+            const reason = person.reason || person.type;
+            const date = player.fixture?.date ? " · " + dateText(player.fixture.date) : "";
+            item.textContent = name + number + position + (reason ? " · " + reason : "") + date;
             roster.append(item);
           });
           details.append(roster);
