@@ -97,7 +97,7 @@
     $("copyPackage").disabled = true;
     setStatus("pendingStatus", "Récupération de la liste des matchs…");
     try {
-      const response = await fetch("./data/player-availability/pending.json? v=1".replace("? ","?"), {cache:"no-store"});
+      const response = await fetch("./data/player-availability/pending.json?v=" + Date.now(), {cache:"no-store"});
       if (!response.ok) throw new Error("Le fichier des matchs n’est pas disponible (HTTP " + response.status + ").");
       acceptPending(await response.json());
     } catch (error) {
@@ -105,6 +105,45 @@
     } finally {
       button.disabled = false;
       button.textContent = "Charger les matchs";
+    }
+  });
+  const copyTextFallback = text => {
+    const area = document.createElement("textarea");
+    area.value = text;
+    area.setAttribute("readonly", "");
+    area.style.position = "fixed";
+    area.style.left = "-9999px";
+    document.body.appendChild(area);
+    area.focus();
+    area.select();
+    area.setSelectionRange(0, area.value.length);
+    let copied = false;
+    try { copied = document.execCommand("copy"); } catch (_) { copied = false; }
+    area.remove();
+    return copied;
+  };
+  $("copyPackage").addEventListener("click", async () => {
+    if (!pending) {
+      setStatus("copyStatus", "Charge d’abord les matchs à l’étape 1.", "error");
+      return;
+    }
+    const packageText = JSON.stringify({prompt, input: pending}, null, 2);
+    const button = $("copyPackage");
+    button.disabled = true;
+    setStatus("copyStatus", "Préparation du paquet JSON…");
+    try {
+      if (navigator.clipboard && window.isSecureContext && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(packageText);
+        setStatus("copyStatus", "Copié ! Tu peux maintenant coller le contenu dans ChatGPT.", "ok");
+      } else if (copyTextFallback(packageText)) {
+        setStatus("copyStatus", "Copié ! Tu peux maintenant coller le contenu dans ChatGPT.", "ok");
+      } else {
+        throw new Error("Le navigateur bloque la copie automatique.");
+      }
+    } catch (error) {
+      setStatus("copyStatus", "La copie automatique a été refusée par le navigateur. Autorise l’accès au presse-papiers pour ce site, puis réessaie. Détail : " + (error.message || "copie indisponible"), "error");
+    } finally {
+      button.disabled = false;
     }
   });
   $("completedFile").addEventListener("change", async event => {
