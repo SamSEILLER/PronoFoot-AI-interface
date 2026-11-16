@@ -496,7 +496,8 @@
             "<p class=\"match-weather-location\">" + escapeHtml(location) + "</p>" +
             "<div class=\"match-weather-grid\">" + tiles.map(([label,value]) => "<div class=\"match-weather-tile\"><small>" + escapeHtml(label) + "</small><strong>" + escapeHtml(value) + "</strong></div>").join("") + "</div>" +
             "<div class=\"match-weather-meta\"><span>Coup d’envoi : " + escapeHtml(kickoffLabel) + "</span><span>Collectée le " + escapeHtml(collectedLabel) + "</span></div>" +
-            "<small class=\"match-weather-source\" title=\"Mise à jour : " + escapeHtml(weatherUpdatedLabel) + "\">Source : Open-Meteo · prévision indicative, susceptible d’évoluer · mise à jour : " + escapeHtml(weatherUpdatedLabel) + "</small></div>";
+            "<small class=\"match-weather-source\" title=\"Mise à jour : " + escapeHtml(weatherUpdatedLabel) + "\">Source : Open-Meteo · prévision indicative, susceptible d’évoluer</small>" +
+            "<p class=\"match-weather-meta\"><strong>Dernière mise à jour météo :</strong> " + escapeHtml(weatherUpdatedLabel) + "</p></div>";
         });
       };
       const renderOdds = (body, match) => {
@@ -897,7 +898,8 @@
             const compositionUpdatedLabel = compositionUpdatedAt ? formatDate(compositionUpdatedAt) : "Date de mise à jour inconnue";
             snapshotHeading.title = "Mise à jour des compositions : " + compositionUpdatedLabel;
             snapshot.append(snapshotHeading);
-            snapshot.append(makeText("p", statusLabel + " · Collecté le " + formatDate(record.collected_at_utc), "match-composition-status"));
+            snapshot.append(makeText("p", statusLabel, "match-composition-status"));
+            snapshot.append(makeText("p", "Dernière mise à jour des compositions : " + compositionUpdatedLabel, "match-composition-status"));
             if (hasPlayers) {
               [{data:home,name:match.home_team || "Équipe domicile"},{data:away,name:match.away_team || "Équipe extérieure"}].forEach(({data,name}) => {
                 const formation = data.formation ? " · " + data.formation : "";
