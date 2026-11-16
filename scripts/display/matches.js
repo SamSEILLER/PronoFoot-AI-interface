@@ -917,12 +917,21 @@
         if (!target) return;
         espnHistoricalDataPromise.then(report => {
           if (selectedDetailMatch !== match || !target.isConnected) return;
+          target.replaceChildren();
+          if (!report || typeof report !== "object") {
+            const unavailable = document.createElement("p");
+            unavailable.className = "match-espn-history-empty";
+            unavailable.textContent = "Rapport ESPN indisponible. Vérifiez la publication de data/espn-pitchapi-historical.json.";
+            target.append(unavailable);
+            return;
+          }
           const competition = (Array.isArray(report?.competitions) ? report.competitions : [])
-            .find(item => String(item.slug || "") === String(match.competition_slug || ""));
-          const teamKeys = new Set([match.home_team, match.away_team].map(normalizeHistoryTeam));
+            .find(item => String(item.slug || "").trim().toLowerCase() === String(match.competition_slug || "").trim().toLowerCase());
+          // ESPN contrôle cinq matchs par compétition, pas cinq matchs par équipe.
+          // Afficher tout l'échantillon évite de masquer les données lorsque les équipes
+          // du match à venir ne figurent pas dans ces cinq rencontres.
           const rows = (Array.isArray(competition?.matches) ? competition.matches : [])
-            .filter(item => teamKeys.has(normalizeHistoryTeam(item.home_team))
-              || teamKeys.has(normalizeHistoryTeam(item.away_team)))
+            .slice()
             .sort((a,b) => String(b.kickoff_utc || b.date || "").localeCompare(String(a.kickoff_utc || a.date || "")))
             .slice(0, 10);
 
@@ -940,6 +949,19 @@
           stamp.textContent = "Actualisé : " + generatedLabel;
           heading.append(title, stamp);
           section.append(heading);
+          const summary = report.summary || {};
+          const coverage = document.createElement("p");
+          coverage.className = "match-espn-history-consistency";
+          coverage.textContent = "Contrôle ESPN : " + (summary.matches_matched ?? "—") + " matchs rapprochés sur "
+            + (summary.pitchapi_matches_checked ?? "—") + " vérifiés · " + (summary.matches_with_team_statistics ?? "—")
+            + " avec statistiques d'équipe. Échantillon affiché : matchs récents de cette compétition.";
+          section.append(coverage);
+          if (!competition) {
+            const missing = document.createElement("p");
+            missing.className = "match-espn-history-empty";
+            missing.textContent = "Aucune entrée ESPN ne correspond à la compétition " + (match.competition_slug || "sélectionnée") + ".";
+            section.append(missing);
+          }
 
           if (!rows.length) {
             const empty = document.createElement("p");
@@ -1016,6 +1038,7 @@
         const analysis = detailPanel.querySelector('[data-detail-panel="analysis"]');
         const odds = detailPanel.querySelector('[data-detail-panel="odds"]');
         const weather = detailPanel.querySelector('[data-detail-panel="weather"]');
+        const espn = detailPanel.querySelector('[data-detail-panel="espn"]');
         const teamStats = detailPanel.querySelector('[data-detail-panel="team-stats"]');
         const shots = detailPanel.querySelector('[data-detail-panel="shots"]');
         renderMatchCompositions(selectedDetailMatch);
@@ -1023,6 +1046,7 @@
         if (analysis) renderSeasonGoalAnalysis(analysis, selectedDetailMatch);
         if (odds) renderOdds(odds, selectedDetailMatch);
         if (weather) renderWeather(weather, selectedDetailMatch);
+        if (espn) renderEspnHistorical(espn, selectedDetailMatch);
         const analytics = matchAnalyticsIndex.get(String(selectedDetailMatch.competition_slug || ""));
         const renderRecentTeamStats = () => {
           if (!analytics) {
@@ -1245,7 +1269,6 @@
         };
                 if (teamStats) {
           renderRecentTeamStats();
-          renderEspnHistorical(teamStats, selectedDetailMatch);
         }
         if (shots) shots.innerHTML = renderRecentShots();
       };
@@ -1336,12 +1359,16 @@
                 <div class="match-detail-accordion-body" data-detail-panel="analysis">Chargement des données…</div>
               </details>
               <details class="match-detail-accordion" name="match-detail">
-                <summary><span class="match-detail-accordion-icon">🌤️</span><span>Météo</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
+                <summary><span class="match-detail-accordion-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="8" cy="8" r="3"/><path d="M8 1.8v1.4M8 12.8v1.4M1.8 8h1.4M12.8 8h1.4M3.6 3.6l1 1M11.4 11.4l1 1M13.5 17.5h6a3 3 0 0 0 .2-6 4.5 4.5 0 0 0-8.6-1.1"/></svg></span><span>Météo</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
                 <div class="match-detail-accordion-body" data-detail-panel="weather">Chargement de la météo…</div>
               </details>
               <details class="match-detail-accordion" name="match-detail">
-                <summary><span class="match-detail-accordion-icon">👥</span><span>Composition d'équipe</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
+                <summary><span class="match-detail-accordion-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="3" y="3" width="18" height="18" rx="1.5"/><path d="M12 3v18M3 12h18M12 9a3 3 0 0 0 0 6 3 3 0 0 0 0-6Z"/><circle cx="6.5" cy="7" r=".8"/><circle cx="17.5" cy="17" r=".8"/></svg></span><span>Composition d'équipe</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
                 <div class="match-detail-accordion-body" data-detail-panel="compositions">Chargement des données de composition…</div>
+              </details>
+              <details class="match-detail-accordion" name="match-detail">
+                <summary><span class="match-detail-accordion-icon"><strong>ESPN</strong></span><span>Historique ESPN</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
+                <div class="match-detail-accordion-body" data-detail-panel="espn">Chargement des données ESPN…</div>
               </details>
               <details class="match-detail-accordion" name="match-detail">
                 <summary><span class="match-detail-accordion-icon">${detailTabs[2].icon}</span><span>Cotes</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
