@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-11-16T08:28:27.055484+00:00",
+  "generated_at_utc": "2026-11-16T08:28:45.867919+00:00",
   "sources": {
     "pitchapi": {
       "status": "PARTIAL",
@@ -8,7 +8,7 @@
     },
     "api_football": {
       "status": "PARTIAL",
-      "message": "Effectifs courants via teams/players-squads ; blessures et suspensions via injuries à J-1 (Missing Fixture / Questionable). Le forfait actuel limite les fixtures aux dates proches. Les compositions officielles sont disponibles 20 à 40 minutes avant le match selon la compétition."
+      "message": "Effectifs courants via teams/players-squads. Le forfait actuel bloque les blessures de saison 2026 et limite les fixtures aux dates proches ; les absences match-spécifiques seront donc vérifiées à J-1. Les compositions officielles sont disponibles 20 à 40 minutes avant le match selon la compétition."
     }
   },
   "records": [
@@ -343,7 +343,7 @@
       "match_id": "m_08lkfg",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-23T19:45:00+00:00",
-      "collected_at_utc": "2026-11-16T08:27:31.141367+00:00",
+      "collected_at_utc": "2026-11-16T08:28:45.858649+00:00",
       "competition": "Serie A",
       "home_team": "Monza",
       "away_team": "Fiorentina",
@@ -351,18 +351,16 @@
       "fixture_id": null,
       "mapping_status": "outside_plan_window",
       "squads_status": "provided",
-      "team_injuries_status": "collection_error",
+      "team_injuries_status": "plan_limited",
       "home_team_injuries": {
-        "status": "collection_error",
+        "status": "plan_limited",
         "records": [],
-        "message": "Erreur API-Football injuries équipe : RuntimeError",
-        "error_detail": "API-Football a retourné une erreur fournisseur : {'plan': 'Free plans do not have access to this season, try from 2022 to 2024.'}"
+        "message": "Le forfait API-Football actuel ne donne pas accès aux blessures de la saison 2026 (saisons autorisées annoncées par l'API : 2022 à 2024)."
       },
       "away_team_injuries": {
-        "status": "collection_error",
+        "status": "plan_limited",
         "records": [],
-        "message": "Erreur API-Football injuries équipe : RuntimeError",
-        "error_detail": "API-Football a retourné une erreur fournisseur : {'plan': 'Free plans do not have access to this season, try from 2022 to 2024.'}"
+        "message": "Le forfait API-Football actuel ne donne pas accès aux blessures de la saison 2026 (saisons autorisées annoncées par l'API : 2022 à 2024)."
       },
       "home_squad": {
         "team_name": "Monza",
@@ -1433,7 +1431,7 @@
       "lineups_status": "not_collected_until_official_lineup_window",
       "injuries_status": "plan_limited",
       "injuries": null,
-      "message": "Plan API-Football actuel : les fixtures sont accessibles uniquement autour de la date courante (J-1 à J+1). Les signalements d'indisponibilité sont aussi recherchés par équipe et saison ; la confirmation match-spécifique reste attendue à J-1."
+      "message": "Plan API-Football actuel : les fixtures sont accessibles uniquement autour de la date courante (J-1 à J+1). Le forfait actuel limite aussi les blessures de saison aux saisons 2022–2024 ; les absences match-spécifiques seront retestées à J-1."
     },
     {
       "schema_version": 1,
@@ -1441,7 +1439,7 @@
       "match_id": "m_2DFzlK",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-23T19:45:00+00:00",
-      "collected_at_utc": "2026-11-16T08:27:31.141367+00:00",
+      "collected_at_utc": "2026-11-16T08:28:45.858649+00:00",
       "competition": "Ligue 2",
       "home_team": "Sochaux",
       "away_team": "Dunkerque",
@@ -1449,18 +1447,16 @@
       "fixture_id": null,
       "mapping_status": "outside_plan_window",
       "squads_status": "provided",
-      "team_injuries_status": "collection_error",
+      "team_injuries_status": "plan_limited",
       "home_team_injuries": {
-        "status": "collection_error",
+        "status": "plan_limited",
         "records": [],
-        "message": "Erreur API-Football injuries équipe : RuntimeError",
-        "error_detail": "API-Football a retourné une erreur fournisseur : {'plan': 'Free plans do not have access to this season, try from 2022 to 2024.'}"
+        "message": "Le forfait API-Football actuel ne donne pas accès aux blessures de la saison 2026 (saisons autorisées annoncées par l'API : 2022 à 2024)."
       },
       "away_team_injuries": {
-        "status": "collection_error",
+        "status": "plan_limited",
         "records": [],
-        "message": "Erreur API-Football injuries équipe : RuntimeError",
-        "error_detail": "API-Football a retourné une erreur fournisseur : {'plan': 'Free plans do not have access to this season, try from 2022 to 2024.'}"
+        "message": "Le forfait API-Football actuel ne donne pas accès aux blessures de la saison 2026 (saisons autorisées annoncées par l'API : 2022 à 2024)."
       },
       "home_squad": {
         "team_name": "Sochaux",
@@ -2483,7 +2479,7 @@
       "lineups_status": "not_collected_until_official_lineup_window",
       "injuries_status": "plan_limited",
       "injuries": null,
-      "message": "Plan API-Football actuel : les fixtures sont accessibles uniquement autour de la date courante (J-1 à J+1). Les signalements d'indisponibilité sont aussi recherchés par équipe et saison ; la confirmation match-spécifique reste attendue à J-1."
+      "message": "Plan API-Football actuel : les fixtures sont accessibles uniquement autour de la date courante (J-1 à J+1). Le forfait actuel limite aussi les blessures de saison aux saisons 2022–2024 ; les absences match-spécifiques seront retestées à J-1."
     },
     {
       "schema_version": 1,
@@ -2491,7 +2487,7 @@
       "match_id": "m_2FVfvL",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-23T20:00:00+00:00",
-      "collected_at_utc": "2026-11-16T08:27:31.141367+00:00",
+      "collected_at_utc": "2026-11-16T08:28:45.858649+00:00",
       "competition": "Premier League",
       "home_team": "Brentford",
       "away_team": "Everton",
@@ -2499,18 +2495,16 @@
       "fixture_id": null,
       "mapping_status": "outside_plan_window",
       "squads_status": "provided",
-      "team_injuries_status": "collection_error",
+      "team_injuries_status": "plan_limited",
       "home_team_injuries": {
-        "status": "collection_error",
+        "status": "plan_limited",
         "records": [],
-        "message": "Erreur API-Football injuries équipe : RuntimeError",
-        "error_detail": "API-Football a retourné une erreur fournisseur : {'plan': 'Free plans do not have access to this season, try from 2022 to 2024.'}"
+        "message": "Le forfait API-Football actuel ne donne pas accès aux blessures de la saison 2026 (saisons autorisées annoncées par l'API : 2022 à 2024)."
       },
       "away_team_injuries": {
-        "status": "collection_error",
+        "status": "plan_limited",
         "records": [],
-        "message": "Erreur API-Football injuries équipe : RuntimeError",
-        "error_detail": "API-Football a retourné une erreur fournisseur : {'plan': 'Free plans do not have access to this season, try from 2022 to 2024.'}"
+        "message": "Le forfait API-Football actuel ne donne pas accès aux blessures de la saison 2026 (saisons autorisées annoncées par l'API : 2022 à 2024)."
       },
       "home_squad": {
         "team_name": "Brentford",
@@ -3437,7 +3431,7 @@
       "lineups_status": "not_collected_until_official_lineup_window",
       "injuries_status": "plan_limited",
       "injuries": null,
-      "message": "Plan API-Football actuel : les fixtures sont accessibles uniquement autour de la date courante (J-1 à J+1). Les signalements d'indisponibilité sont aussi recherchés par équipe et saison ; la confirmation match-spécifique reste attendue à J-1."
+      "message": "Plan API-Football actuel : les fixtures sont accessibles uniquement autour de la date courante (J-1 à J+1). Le forfait actuel limite aussi les blessures de saison aux saisons 2022–2024 ; les absences match-spécifiques seront retestées à J-1."
     },
     {
       "schema_version": 1,
@@ -3445,7 +3439,7 @@
       "match_id": "m_3jVoFq",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-23T20:00:00+00:00",
-      "collected_at_utc": "2026-11-16T08:27:31.141367+00:00",
+      "collected_at_utc": "2026-11-16T08:28:45.858649+00:00",
       "competition": "La Liga",
       "home_team": "Levante",
       "away_team": "Elche",
@@ -3453,18 +3447,16 @@
       "fixture_id": null,
       "mapping_status": "outside_plan_window",
       "squads_status": "provided",
-      "team_injuries_status": "collection_error",
+      "team_injuries_status": "plan_limited",
       "home_team_injuries": {
-        "status": "collection_error",
+        "status": "plan_limited",
         "records": [],
-        "message": "Erreur API-Football injuries équipe : RuntimeError",
-        "error_detail": "API-Football a retourné une erreur fournisseur : {'plan': 'Free plans do not have access to this season, try from 2022 to 2024.'}"
+        "message": "Le forfait API-Football actuel ne donne pas accès aux blessures de la saison 2026 (saisons autorisées annoncées par l'API : 2022 à 2024)."
       },
       "away_team_injuries": {
-        "status": "collection_error",
+        "status": "plan_limited",
         "records": [],
-        "message": "Erreur API-Football injuries équipe : RuntimeError",
-        "error_detail": "API-Football a retourné une erreur fournisseur : {'plan': 'Free plans do not have access to this season, try from 2022 to 2024.'}"
+        "message": "Le forfait API-Football actuel ne donne pas accès aux blessures de la saison 2026 (saisons autorisées annoncées par l'API : 2022 à 2024)."
       },
       "home_squad": {
         "team_name": "Levante",
@@ -4631,7 +4623,7 @@
       "lineups_status": "not_collected_until_official_lineup_window",
       "injuries_status": "plan_limited",
       "injuries": null,
-      "message": "Plan API-Football actuel : les fixtures sont accessibles uniquement autour de la date courante (J-1 à J+1). Les signalements d'indisponibilité sont aussi recherchés par équipe et saison ; la confirmation match-spécifique reste attendue à J-1."
+      "message": "Plan API-Football actuel : les fixtures sont accessibles uniquement autour de la date courante (J-1 à J+1). Le forfait actuel limite aussi les blessures de saison aux saisons 2022–2024 ; les absences match-spécifiques seront retestées à J-1."
     },
     {
       "schema_version": 1,
@@ -4639,7 +4631,7 @@
       "match_id": "m_3uRPBe",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-22T23:30:00+00:00",
-      "collected_at_utc": "2026-11-16T08:27:31.141367+00:00",
+      "collected_at_utc": "2026-11-16T08:28:45.858649+00:00",
       "competition": "MLS",
       "home_team": "Chicago Fire FC",
       "away_team": "Charlotte FC",
@@ -4647,18 +4639,16 @@
       "fixture_id": null,
       "mapping_status": "outside_plan_window",
       "squads_status": "provided",
-      "team_injuries_status": "collection_error",
+      "team_injuries_status": "plan_limited",
       "home_team_injuries": {
-        "status": "collection_error",
+        "status": "plan_limited",
         "records": [],
-        "message": "Erreur API-Football injuries équipe : RuntimeError",
-        "error_detail": "API-Football a retourné une erreur fournisseur : {'plan': 'Free plans do not have access to this season, try from 2022 to 2024.'}"
+        "message": "Le forfait API-Football actuel ne donne pas accès aux blessures de la saison 2026 (saisons autorisées annoncées par l'API : 2022 à 2024)."
       },
       "away_team_injuries": {
-        "status": "collection_error",
+        "status": "plan_limited",
         "records": [],
-        "message": "Erreur API-Football injuries équipe : RuntimeError",
-        "error_detail": "API-Football a retourné une erreur fournisseur : {'plan': 'Free plans do not have access to this season, try from 2022 to 2024.'}"
+        "message": "Le forfait API-Football actuel ne donne pas accès aux blessures de la saison 2026 (saisons autorisées annoncées par l'API : 2022 à 2024)."
       },
       "home_squad": {
         "team_name": "Chicago Fire FC",
@@ -5681,7 +5671,7 @@
       "lineups_status": "not_collected_until_official_lineup_window",
       "injuries_status": "plan_limited",
       "injuries": null,
-      "message": "Plan API-Football actuel : les fixtures sont accessibles uniquement autour de la date courante (J-1 à J+1). Les signalements d'indisponibilité sont aussi recherchés par équipe et saison ; la confirmation match-spécifique reste attendue à J-1."
+      "message": "Plan API-Football actuel : les fixtures sont accessibles uniquement autour de la date courante (J-1 à J+1). Le forfait actuel limite aussi les blessures de saison aux saisons 2022–2024 ; les absences match-spécifiques seront retestées à J-1."
     }
   ]
 }
