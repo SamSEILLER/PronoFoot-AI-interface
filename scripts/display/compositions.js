@@ -5,7 +5,6 @@
   const competitionFilter = document.getElementById("competition");
   const search = document.getElementById("search");
   const pitchState = document.getElementById("pitchapi-state");
-  const apiState = document.getElementById("apifootball-state");
   let records = [];
 
   const dateText = value => {
@@ -31,12 +30,13 @@
     status === "collection_error" ? "err" : "warn";
 
   function addSnapshot(parent, record) {
+    if (record.provider !== "PitchAPI") return;
     const box = document.createElement("article");
     box.className = "snapshot";
     const head = document.createElement("div");
     head.className = "snapshot-head";
     const title = document.createElement("span");
-    title.textContent = (record.snapshot || "Instantané") + " · " + (record.provider || "Source inconnue");
+    title.textContent = (record.snapshot || "Instantané") + " · PitchAPI";
     const pill = document.createElement("span");
     pill.className = "pill " + pillClass(record.status);
     pill.textContent = labelStatus(record.status, record.provider);
@@ -48,70 +48,35 @@
       " · Collecté : " + dateText(record.collected_at_utc);
     box.append(info);
 
-    if (record.provider === "API-Football") {
-      const mappingLabel = ({
-        matched:"Match rapproché entre fournisseurs",
-        outside_plan_window:"Hors fenêtre de dates du forfait",
-        not_found:"Match non retrouvé dans API-Football",
-        invalid_fixture_id:"Identifiant de match API-Football invalide"
-      }[record.mapping_status] || "Rapprochement : " + (record.mapping_status || "inconnu"));
-      info.textContent = (record.message || mappingLabel)
-        + " · " + mappingLabel
-        + " · Effectifs : " + ({provided:"Deux effectifs reçus",partial:"Effectif partiel",not_provided:"Effectifs non fournis"}[record.squads_status] || "Effectifs : " + (record.squads_status || "non vérifié"))
-        + " · Signalements équipe/date : " + labelStatus(record.team_injuries_status, record.provider)
-        + " · Compositions : " + labelStatus(record.lineups_status, record.provider)
-        + " · Blessures/suspensions : " + labelStatus(record.injuries_status, record.provider)
-        + " · Collecté : " + dateText(record.collected_at_utc);
-      for (const [titleText, value] of [
-        ["Effectif domicile · API-Football", record.home_squad],
-        ["Effectif extérieur · API-Football", record.away_squad],
-        ["Signalements d'absence · domicile", record.home_team_injuries],
-        ["Signalements d'absence · extérieur", record.away_team_injuries],
-        ["Compositions API-Football", record.lineups],
-        ["Blessures et suspensions API-Football", record.injuries]
-      ]) {
-        if (value === null || value === undefined) continue;
-        const details = document.createElement("details");
-        const summary = document.createElement("summary");
-        const players = Array.isArray(value.players) ? value.players : Array.isArray(value.records) ? value.records : null;
-        const countLabel = titleText.includes("Signalements") ? " signalements" : " joueurs";
-        summary.textContent = titleText + (players ? " (" + players.length + countLabel + ")" : "");
-        details.append(summary);
-        if (players && players.length) {
+    const lineups = record.lineups && typeof record.lineups === "object" ? record.lineups : {};
+    for (const [side, teamName] of [["home", record.home_team || "Domicile"], ["away", record.away_team || "Extérieur"]]) {
+      const team = lineups[side] && typeof lineups[side] === "object" ? lineups[side] : {};
+      for (const [field, label] of [["starters", "Titulaires"], ["subs", "Remplaçants"]]) {
+        const players = team[field];
+        if (!Array.isArray(players)) continue;
+        const section = document.createElement("section");
+        const heading = document.createElement("strong");
+        heading.textContent = teamName + " · " + label + (field === "starters" && team.formation ? " · " + team.formation : "");
+        section.append(heading);
+        if (!players.length) {
+          const empty = document.createElement("p");
+          empty.textContent = "Aucun joueur communiqué.";
+          section.append(empty);
+        } else {
           const roster = document.createElement("ul");
           roster.className = "roster-list";
           players.forEach(player => {
+            const person = player && player.player && typeof player.player === "object" ? player.player : (player || {});
             const item = document.createElement("li");
-            const person = player.player && typeof player.player === "object" ? player.player : player;
-            const name = person.name || "Joueur sans nom";
-            const number = person.number ? " · #" + person.number : "";
-            const position = person.position ? " · " + person.position : "";
-            const reason = person.reason || person.type;
-            const date = player.fixture?.date ? " · " + dateText(player.fixture.date) : "";
-            item.textContent = name + number + position + (reason ? " · " + reason : "") + date;
+            item.textContent = (person.name || person.player_name || "Joueur sans nom")
+              + (person.number ? " · #" + person.number : "")
+              + (person.position ? " · " + person.position : "");
             roster.append(item);
           });
-          details.append(roster);
+          section.append(roster);
         }
-        const pre = document.createElement("pre");
-        pre.textContent = JSON.stringify(value, null, 2);
-        details.append(pre);
-        box.append(details);
+        box.append(section);
       }
-    } else if (record.lineups !== null && record.lineups !== undefined) {
-      const details = document.createElement("details");
-      const summary = document.createElement("summary");
-      const hasPlayers = ["home", "away"].some(side => {
-        const team = record.lineups && record.lineups[side];
-        return team && ["starters", "subs"].some(key => Array.isArray(team[key]) && team[key].length > 0);
-      });
-      summary.textContent = hasPlayers
-        ? "Détail des compositions PitchAPI — joueurs reçus"
-        : "Détail PitchAPI — métadonnées uniquement, aucun joueur communiqué";
-      const pre = document.createElement("pre");
-      pre.textContent = JSON.stringify(record.lineups, null, 2);
-      details.append(summary, pre);
-      box.append(details);
     }
     parent.append(box);
   }
@@ -164,9 +129,7 @@
       records = Array.isArray(payload.records) ? payload.records : [];
       const sources = payload.sources || {};
       const pitch = sources.pitchapi || {};
-      const api = sources.api_football || {};
       pitchState.textContent = pitch.message || ("Statut : " + (pitch.status || "inconnu"));
-      apiState.textContent = api.message || "Source complémentaire nécessaire — non intégrée actuellement.";
       const competitions = [...new Set(records.map(r => r.competition).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"fr"));
       competitions.forEach(name => {
         const option = document.createElement("option");
