@@ -1025,7 +1025,10 @@
         if (weather) renderWeather(weather, selectedDetailMatch);
         const analytics = matchAnalyticsIndex.get(String(selectedDetailMatch.competition_slug || ""));
         const renderRecentTeamStats = () => {
-          if (!analytics) return '<p class="match-detail-empty">Aucune collecte de statistiques détaillées disponible pour cette compétition.</p>';
+          if (!analytics) {
+            if (teamStats) teamStats.innerHTML = '<p class="match-detail-empty">Aucune collecte de statistiques détaillées disponible pour cette compétition.</p>';
+            return "";
+          }
           const sides = [
             { id: String(selectedDetailMatch.home_team_id || ""), name: selectedDetailMatch.home_team, side: "home" },
             { id: String(selectedDetailMatch.away_team_id || ""), name: selectedDetailMatch.away_team, side: "away" }
