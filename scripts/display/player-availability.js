@@ -146,27 +146,37 @@
       button.disabled = false;
     }
   });
-  $("completedFile").addEventListener("change", async event => {
-    const file = event.target.files && event.target.files[0];
+  $("validateCompleted").addEventListener("click", () => {
     completed = null;
     completedText = "";
     $("publishCompleted").disabled = true;
-    if (!file) return;
+    const raw = $("completedJsonInput").value.trim();
+    if (!raw) {
+      setStatus("completedStatus", "Colle d’abord la réponse JSON de ChatGPT dans la zone ci-dessus.", "error");
+      return;
+    }
     try {
-      const raw = await file.text();
-      const data = JSON.parse(raw);
+      // Tolère un bloc Markdown ```json ... ``` si ChatGPT en ajoute un.
+      const cleaned = raw.replace(/^\x60{3}(?:json)?\s*/i, "").replace(/\s*\x60{3}\s*$/, "");
+      const data = JSON.parse(cleaned);
       const result = validateCompleted(data);
       if (result.errors.length) throw new Error(result.errors.slice(0, 12).join("\n") + (result.errors.length > 12 ? "\n… et " + (result.errors.length - 12) + " autre(s) erreur(s)." : ""));
       completed = data;
       completedText = JSON.stringify(data, null, 2) + "\n";
-      $("completedMeta").textContent = file.name + " · " + data.matches.length + " matchs";
-      const message = "Structure valide : " + data.matches.length + " match(s)." + (result.warnings.length ? "\nÀ vérifier :\n• " + result.warnings.join("\n• ") : "");
+      $("completedMeta").textContent = data.matches.length + " matchs · JSON contrôlé";
+      const message = "JSON valide : " + data.matches.length + " match(s)." + (result.warnings.length ? "\nÀ vérifier :\n• " + result.warnings.join("\n• ") : "");
       setStatus("completedStatus", message, result.warnings.length ? "warn" : "ok");
       $("publishCompleted").disabled = false;
     } catch (error) {
-      $("completedMeta").textContent = file.name + " · non validé";
+      $("completedMeta").textContent = "JSON non validé";
       setStatus("completedStatus", error.message || "JSON invalide.", "error");
     }
+  });
+  $("completedJsonInput").addEventListener("input", () => {
+    completed = null;
+    completedText = "";
+    $("publishCompleted").disabled = true;
+    $("completedMeta").textContent = "JSON à vérifier.";
   });
   $("publishCompleted").addEventListener("click", () => {
     if (!completedText) return;
