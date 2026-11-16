@@ -47,6 +47,7 @@
   const validateCompleted = data => {
     const errors = [];
     const warnings = [];
+    if (!pending) errors.push("Charge d'abord le fichier pending.json pour contrôler les identifiants des matchs.");
     if (!data || data.schema_version !== 1 || data.document_type !== "pronofoot_chatgpt_player_availability") errors.push("schema_version=1 et document_type pronofoot_chatgpt_player_availability sont obligatoires.");
     if (!Array.isArray(data.matches) || !data.matches.length) errors.push("Le fichier doit contenir au moins un match.");
     const pendingIds = new Set((pending && Array.isArray(pending.matches) ? pending.matches : []).map(m => m.match_id));
