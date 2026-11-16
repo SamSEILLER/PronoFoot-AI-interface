@@ -1,0 +1,436 @@
+{
+  "schema_version": 1,
+  "generated_at_utc": "2026-11-16T08:11:30.862615+00:00",
+  "sources": {
+    "pitchapi": {
+      "status": "COMPLETE",
+      "message": "Compositions collectées par instantanés J-7/J-2/J-1. Couverture fournisseur à vérifier."
+    },
+    "api_football": {
+      "status": "PARTIAL",
+      "message": "Blessures, suspensions et compositions API-Football. Les absences ne sont pas déduites des compositions."
+    }
+  },
+  "records": [
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_08lkfg",
+      "snapshot": "J-7",
+      "kickoff_utc": "2026-11-23T19:45:00+00:00",
+      "collected_at_utc": "2026-11-16T08:11:29.348902+00:00",
+      "competition": "Serie A",
+      "home_team": "Monza",
+      "away_team": "Fiorentina",
+      "status": "provided",
+      "lineups": {
+        "match_id": "m_08lkfg",
+        "home_team": {
+          "id": "t_1pp2Qa",
+          "name": "Monza",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/a5a467d0b57c46c33fa2b4b156dcadebe20de96e848a4a09fad642ad6d6bb7de.webp"
+        },
+        "away_team": {
+          "id": "t_3QzSiW",
+          "name": "Fiorentina",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/52f92c4c2ae57c14bc3d2ead58a2f899ab2fa12bebb91e6f627af2b99608dfce.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": null,
+      "raw_response": {
+        "data": {
+          "match_id": "m_08lkfg",
+          "home_team": {
+            "id": "t_1pp2Qa",
+            "name": "Monza",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/a5a467d0b57c46c33fa2b4b156dcadebe20de96e848a4a09fad642ad6d6bb7de.webp"
+          },
+          "away_team": {
+            "id": "t_3QzSiW",
+            "name": "Fiorentina",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/52f92c4c2ae57c14bc3d2ead58a2f899ab2fa12bebb91e6f627af2b99608dfce.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_2DFzlK",
+      "snapshot": "J-7",
+      "kickoff_utc": "2026-11-23T19:45:00+00:00",
+      "collected_at_utc": "2026-11-16T08:11:29.348902+00:00",
+      "competition": "Ligue 2",
+      "home_team": "Sochaux",
+      "away_team": "Dunkerque",
+      "status": "provided",
+      "lineups": {
+        "match_id": "m_2DFzlK",
+        "home_team": {
+          "id": "t_4VDrtD",
+          "name": "Sochaux",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/bb5c6f469f5ad68d0c5abbcc48cf9dd390d4ab640c6b31edc740e2b0a30f2ad5.webp"
+        },
+        "away_team": {
+          "id": "t_3CPWDJ",
+          "name": "Dunkerque",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/a3a4118ca0c4a7d635f52e97423f807fd2e277127f6bbd2dfc43364fdc0ae0dd.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": null,
+      "raw_response": {
+        "data": {
+          "match_id": "m_2DFzlK",
+          "home_team": {
+            "id": "t_4VDrtD",
+            "name": "Sochaux",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/bb5c6f469f5ad68d0c5abbcc48cf9dd390d4ab640c6b31edc740e2b0a30f2ad5.webp"
+          },
+          "away_team": {
+            "id": "t_3CPWDJ",
+            "name": "Dunkerque",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/a3a4118ca0c4a7d635f52e97423f807fd2e277127f6bbd2dfc43364fdc0ae0dd.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_2FVfvL",
+      "snapshot": "J-7",
+      "kickoff_utc": "2026-11-23T20:00:00+00:00",
+      "collected_at_utc": "2026-11-16T08:11:29.348902+00:00",
+      "competition": "Premier League",
+      "home_team": "Brentford",
+      "away_team": "Everton",
+      "status": "provided",
+      "lineups": {
+        "match_id": "m_2FVfvL",
+        "home_team": {
+          "id": "t_2ihyjC",
+          "name": "Brentford",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/b914ebfd30484229c1ef50cb5af2d029a2d17cab7a76b3761c02125657b2a40a.webp"
+        },
+        "away_team": {
+          "id": "t_21IR9d",
+          "name": "Everton",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/a755328b0286a79ef4e19406b2c63417922769a93ca17365b7333d4173cb9a2b.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": null,
+      "raw_response": {
+        "data": {
+          "match_id": "m_2FVfvL",
+          "home_team": {
+            "id": "t_2ihyjC",
+            "name": "Brentford",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/b914ebfd30484229c1ef50cb5af2d029a2d17cab7a76b3761c02125657b2a40a.webp"
+          },
+          "away_team": {
+            "id": "t_21IR9d",
+            "name": "Everton",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/a755328b0286a79ef4e19406b2c63417922769a93ca17365b7333d4173cb9a2b.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_3jVoFq",
+      "snapshot": "J-7",
+      "kickoff_utc": "2026-11-23T20:00:00+00:00",
+      "collected_at_utc": "2026-11-16T08:11:29.348902+00:00",
+      "competition": "La Liga",
+      "home_team": "Levante",
+      "away_team": "Elche",
+      "status": "provided",
+      "lineups": {
+        "match_id": "m_3jVoFq",
+        "home_team": {
+          "id": "t_0NnBSa",
+          "name": "Levante",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/3d4e34694800c927780cbd51435b2cf84ceb631683ce1e7c62549259396fbd04.webp"
+        },
+        "away_team": {
+          "id": "t_2PLTQW",
+          "name": "Elche",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/1cc190e198bb61e1cb6616fdc68811525ede3438e3ad58b8c857ac82cfdc0b40.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": null,
+      "raw_response": {
+        "data": {
+          "match_id": "m_3jVoFq",
+          "home_team": {
+            "id": "t_0NnBSa",
+            "name": "Levante",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/3d4e34694800c927780cbd51435b2cf84ceb631683ce1e7c62549259396fbd04.webp"
+          },
+          "away_team": {
+            "id": "t_2PLTQW",
+            "name": "Elche",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/1cc190e198bb61e1cb6616fdc68811525ede3438e3ad58b8c857ac82cfdc0b40.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_3uRPBe",
+      "snapshot": "J-7",
+      "kickoff_utc": "2026-11-22T23:30:00+00:00",
+      "collected_at_utc": "2026-11-16T08:11:29.348902+00:00",
+      "competition": "MLS",
+      "home_team": "Chicago Fire FC",
+      "away_team": "Charlotte FC",
+      "status": "provided",
+      "lineups": {
+        "match_id": "m_3uRPBe",
+        "home_team": {
+          "id": "t_09gmAn",
+          "name": "Chicago Fire FC",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/aad56df5be7925a6010c80d01bf4b332ba4368526d2ce47bf053b088724b7755.webp"
+        },
+        "away_team": {
+          "id": "t_3NDbTT",
+          "name": "Charlotte FC",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/351d9bbbcf87efe605157514bf3b52105d6fe5c8438a994e5b4870f3f890a206.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": null,
+      "raw_response": {
+        "data": {
+          "match_id": "m_3uRPBe",
+          "home_team": {
+            "id": "t_09gmAn",
+            "name": "Chicago Fire FC",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/aad56df5be7925a6010c80d01bf4b332ba4368526d2ce47bf053b088724b7755.webp"
+          },
+          "away_team": {
+            "id": "t_3NDbTT",
+            "name": "Charlotte FC",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/351d9bbbcf87efe605157514bf3b52105d6fe5c8438a994e5b4870f3f890a206.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "API-Football",
+      "match_id": "m_08lkfg",
+      "snapshot": "J-7",
+      "kickoff_utc": "2026-11-23T19:45:00+00:00",
+      "collected_at_utc": "2026-11-16T08:11:30.470490+00:00",
+      "competition": "Serie A",
+      "home_team": "Monza",
+      "away_team": "Fiorentina",
+      "fixture_id": null,
+      "mapping_status": "not_found",
+      "status": "mapping_not_found",
+      "lineups_status": "not_collected_until_official_lineup_window",
+      "injuries_status": "not_available",
+      "lineups": null,
+      "injuries": null,
+      "message": "Match API-Football non rapproché : identifiants laissés séparés."
+    },
+    {
+      "schema_version": 1,
+      "provider": "API-Football",
+      "match_id": "m_2DFzlK",
+      "snapshot": "J-7",
+      "kickoff_utc": "2026-11-23T19:45:00+00:00",
+      "collected_at_utc": "2026-11-16T08:11:30.470490+00:00",
+      "competition": "Ligue 2",
+      "home_team": "Sochaux",
+      "away_team": "Dunkerque",
+      "fixture_id": null,
+      "mapping_status": "not_found",
+      "status": "mapping_not_found",
+      "lineups_status": "not_collected_until_official_lineup_window",
+      "injuries_status": "not_available",
+      "lineups": null,
+      "injuries": null,
+      "message": "Match API-Football non rapproché : identifiants laissés séparés."
+    },
+    {
+      "schema_version": 1,
+      "provider": "API-Football",
+      "match_id": "m_2FVfvL",
+      "snapshot": "J-7",
+      "kickoff_utc": "2026-11-23T20:00:00+00:00",
+      "collected_at_utc": "2026-11-16T08:11:30.470490+00:00",
+      "competition": "Premier League",
+      "home_team": "Brentford",
+      "away_team": "Everton",
+      "fixture_id": null,
+      "mapping_status": "not_found",
+      "status": "mapping_not_found",
+      "lineups_status": "not_collected_until_official_lineup_window",
+      "injuries_status": "not_available",
+      "lineups": null,
+      "injuries": null,
+      "message": "Match API-Football non rapproché : identifiants laissés séparés."
+    },
+    {
+      "schema_version": 1,
+      "provider": "API-Football",
+      "match_id": "m_3jVoFq",
+      "snapshot": "J-7",
+      "kickoff_utc": "2026-11-23T20:00:00+00:00",
+      "collected_at_utc": "2026-11-16T08:11:30.470490+00:00",
+      "competition": "La Liga",
+      "home_team": "Levante",
+      "away_team": "Elche",
+      "fixture_id": null,
+      "mapping_status": "not_found",
+      "status": "mapping_not_found",
+      "lineups_status": "not_collected_until_official_lineup_window",
+      "injuries_status": "not_available",
+      "lineups": null,
+      "injuries": null,
+      "message": "Match API-Football non rapproché : identifiants laissés séparés."
+    },
+    {
+      "schema_version": 1,
+      "provider": "API-Football",
+      "match_id": "m_3uRPBe",
+      "snapshot": "J-7",
+      "kickoff_utc": "2026-11-22T23:30:00+00:00",
+      "collected_at_utc": "2026-11-16T08:11:30.470490+00:00",
+      "competition": "MLS",
+      "home_team": "Chicago Fire FC",
+      "away_team": "Charlotte FC",
+      "fixture_id": null,
+      "mapping_status": "not_found",
+      "status": "mapping_not_found",
+      "lineups_status": "not_collected_until_official_lineup_window",
+      "injuries_status": "not_available",
+      "lineups": null,
+      "injuries": null,
+      "message": "Match API-Football non rapproché : identifiants laissés séparés."
+    }
+  ]
+}
