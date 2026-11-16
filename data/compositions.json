@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-11-16T08:14:31.081856+00:00",
+  "generated_at_utc": "2026-11-16T08:14:53.836125+00:00",
   "sources": {
     "pitchapi": {
       "status": "PARTIAL",
@@ -8,7 +8,7 @@
     },
     "api_football": {
       "status": "PARTIAL",
-      "message": "Endpoint injuries API-Football : absences Missing Fixture / Questionable et motifs éventuels. Couverture par compétition à vérifier ; les compositions officielles API-Football ne sont disponibles que peu avant le coup d’envoi."
+      "message": "Blessures et suspensions via API-Football (Missing Fixture / Questionable). Le forfait actuel limite les fixtures aux dates proches ; collecte des absences à J-1, couverture à vérifier. Les compositions officielles sont disponibles 20 à 40 minutes avant le match selon la compétition."
     }
   },
   "records": [
