@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "method_id": "OVER15-EXPERIMENT-V1",
+  "name": "Expérimentation +1,5 but",
+  "version": "1.0.0",
+  "objective": "Estimer et contrôler expérimentalement la probabilité qu'un match comporte au moins deux buts au total.",
+  "probability_model": {
+    "name": "Poisson indépendant sur les buts attendus domicile et extérieur",
+    "source": "data/goal-predictions.json",
+    "formula": "P(total_goals >= 2) = 1 - exp(-(lambda_home + lambda_away)) * (1 + lambda_home + lambda_away)",
+    "status": "experimental_not_calibrated",
+    "rule": "Afficher uniquement si les deux paramètres lambda sont présents, numériques et issus d'une estimation pré-match. Ne pas présenter cette estimation comme calibrée ni comme une value."
+  },
+  "criteria": [
+    {
+      "id": "recent_form_5_vs_10",
+      "label": "Forme récente : comparaison des 5 et 10 derniers matchs",
+      "purpose": "Détecter une amélioration ou une dégradation récente et vérifier la cohérence des résultats.",
+      "required_data": [
+        "recent-form.json"
+      ],
+      "metrics": [
+        "over_1_5_frequency_5",
+        "over_1_5_frequency_10",
+        "goals_for",
+        "goals_against"
+      ],
+      "missing_rule": "Si moins de 10 matchs documentés, afficher l'échantillon réel et ne pas extrapoler."
+    },
+    {
+      "id": "head_to_head",
+      "label": "Confrontations directes",
+      "purpose": "Contrôler les anciens résultats entre les deux équipes.",
+      "required_data": [
+        "head-to-head.json"
+      ],
+      "metrics": [
+        "matches_count",
+        "over_1_5_frequency"
+      ],
+      "missing_rule": "Ne pas surpondérer un historique ancien ou réduit."
+    },
+    {
+      "id": "venue_scoring",
+      "label": "Buts à domicile et à l'extérieur",
+      "purpose": "Identifier une attaque peu productive ou une défense particulièrement solide selon le lieu.",
+      "required_data": [
+        "goal-predictions.json"
+      ],
+      "metrics": [
+        "home_goals_for_per_match",
+        "home_goals_against_per_match",
+        "away_goals_for_per_match",
+        "away_goals_against_per_match"
+      ],
+      "missing_rule": "Afficher le nombre de matchs et la source de l'échantillon."
+    },
+    {
+      "id": "weather",
+      "label": "Conditions météorologiques",
+      "purpose": "Repérer chaleur, froid, pluie, neige, vent ou conditions potentiellement défavorables au jeu.",
+      "required_data": [
+        "weather.json"
+      ],
+      "metrics": [
+        "temperature_2m",
+        "precipitation_probability",
+        "precipitation",
+        "snowfall",
+        "wind_speed_10m",
+        "weather_code"
+      ],
+      "missing_rule": "Météo absente ou trop éloignée du coup d'envoi = non évaluée."
+    },
+    {
+      "id": "key_absences",
+      "label": "Absences et blessures des joueurs principaux",
+      "purpose": "Évaluer l'impact potentiel des indisponibilités offensives et défensives.",
+      "required_data": [
+        "player-availability.json",
+        "compositions.json"
+      ],
+      "metrics": [
+        "player_status",
+        "role",
+        "confidence",
+        "coverage"
+      ],
+      "missing_rule": "Absence de signalement ne signifie pas absence de blessure ; afficher la couverture de recherche."
+    },
+    {
+      "id": "fixture_fatigue",
+      "label": "Fatigue et densité du calendrier",
+      "purpose": "Comparer le repos et la charge récente des deux équipes.",
+      "required_data": [
+        "recent-form.json",
+        "fixture-history"
+      ],
+      "metrics": [
+        "days_since_last_match",
+        "matches_last_7_days",
+        "matches_last_14_days"
+      ],
+      "missing_rule": "Ne pas conclure à une fatigue sans calendrier complet des deux équipes."
+    },
+    {
+      "id": "non_penalty_xg",
+      "label": "xG sans penalty",
+      "purpose": "Détecter une attaque qui crée des occasions sans marquer ou une surperformance potentiellement liée à la réussite.",
+      "required_data": [
+        "match-analytics.json"
+      ],
+      "metrics": [
+        "non_penalty_xg_for",
+        "non_penalty_xg_against",
+        "goals_minus_non_penalty_xg"
+      ],
+      "missing_rule": "Ne pas assimiler xG total à xG hors penalty si les penalties ne sont pas identifiés."
+    },
+    {
+      "id": "shots_inside_box",
+      "label": "Tirs dans la surface",
+      "purpose": "Distinguer les occasions proches du but des tirs lointains moins dangereux.",
+      "required_data": [
+        "match-analytics.json"
+      ],
+      "metrics": [
+        "shots_inside_box_per_match",
+        "shots_outside_box_per_match"
+      ],
+      "missing_rule": "Ne pas assimiler tirs hors surface à des tentatives désespérées ; ce n'est qu'un indicateur de qualité moyenne des tentatives."
+    }
+  ],
+  "decision_policy": {
+    "rule": "Les critères contextuels sont des contrôles qualitatifs et des facteurs d'incertitude ; aucun poids arbitraire n'est appliqué dans cette première version.",
+    "output": [
+      "probability_central",
+      "data_coverage",
+      "criteria_status",
+      "invalidation_factors",
+      "robustness_score_future"
+    ],
+    "betting_policy": "Aucune recommandation de pari ni value sans cote réelle vérifiable, calibration et validation hors échantillon."
+  },
+  "created_at_utc": "2026-11-17T00:00:00Z"
+}
