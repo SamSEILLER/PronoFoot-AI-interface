@@ -6,7 +6,7 @@ Interface web publique du projet Football Prediction Lab. Elle présente les mat
 
 - `index.html` — matchs à venir et fiche détaillée.
 - `classements.html` — classements.
-- `composition.html` — historique des instantanés de compositions PitchAPI J-7/J-2/J-1.
+- `composition.html` — historique des instantanés de compositions PitchAPI J-7/J-2/J-1.\n- `history.html` — historique des pronostics archivés et mesure de leur résultat.
 
 ## Données consommées
 
@@ -42,3 +42,4 @@ L'indicateur de statut résume l'état technique et la fraîcheur des collectes.
 - `player-availability.html` — page manuelle pour charger `pending.json`, copier le paquet de recherche, coller directement la réponse JSON de ChatGPT dans une zone de texte, la contrôler, puis copier le JSON validé dans `data/player-availability/completed.json` du dépôt public.
 - `scripts/display/player-availability.js` — validation navigateur du JSON collé.
 - La page ne stocke aucun jeton GitHub et ne pousse pas directement vers un dépôt. Après validation, le JSON est collé manuellement dans `data/player-availability/completed.json` du dépôt public. Après le commit, le workflow manuel `player-availability-import-public.yml` du moteur privé récupère le fichier, le valide, l'importe et historise les observations.
+\n\n## Historique des pronostics\n\n- `history.html` et `scripts/display/history.js` affichent les pronostics archivés, les résultats finaux et le taux de réussite, avec filtres par compétition, période et statut.\n- `data/prediction-history.json` initialise le schéma public de l'archive. Il est volontairement vide tant que le moteur n'enregistre pas de snapshots pré-match immuables.\n- Un pronostic ne doit être évalué que si sa prévision horodatée avant le coup d'envoi et le score final sont tous deux disponibles. Les anciennes prévisions ne seront pas reconstituées à partir des données actuelles.\n
