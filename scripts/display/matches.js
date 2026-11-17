@@ -151,6 +151,7 @@
       index.set(String(competition.id), {
         season: String(competition.season || ""),
         matchesCounted: Number(competition.matches_counted || 0),
+        baseline: competition.baseline || null,
         teams
       });
     });
