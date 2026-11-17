@@ -1121,11 +1121,14 @@
           const cards = sides.map((team, teamIndex) => {
             const entry = analytics.teams.get(team.id);
             const recent = (entry?.recent_match_ids || []).map((id) => analytics.matchesById.get(String(id))).filter(Boolean)
-              .sort((a,b) => String(a.kickoff_utc || "").localeCompare(String(b.kickoff_utc || ""))).slice(-5);
+              .filter(item => String(item.season || "") === String(selectedDetailMatch.season || ""))
+              .filter(item => Date.parse(item.kickoff_utc || "") < Date.parse(selectedDetailMatch.kickoff_utc || ""))
+              .sort((a,b) => String(a.kickoff_utc || "").localeCompare(String(b.kickoff_utc || ""))).slice(-10);
             if (!recent.length) return '<section class="match-analytics-team"><h4>'+escapeHtml(team.name)+'</h4><p>Aucun match récent exploitable dans cette compétition et cette saison.</p></section>';
             const rows = [];
-            const labels = [], xgValues = [], xgaValues = [], goalsFor = [], goalsAgainst = [];
-            const aggregate = new Map();
+            const labels = [], xgValues = [], xgaValues = [];
+            const metricByMatch = [];
+            const goalForByMatch = [], goalAgainstByMatch = [];
             recent.forEach((item, index) => {
               const side = String(item.home_team_id) === team.id ? "home" : "away";
               const opponentSide = side === "home" ? "away" : "home";
@@ -1133,6 +1136,7 @@
               const metrics = (all?.groups || []).flatMap((group) => (group.items || []).map((stat) => ({
                 label: stat.title || stat.key || group.group_name, key: stat.key || "", value: stat[side]
               }))).filter((stat) => stat.value !== undefined && stat.value !== null && stat.value !== "");
+              const currentMetrics = new Map();
               metrics.forEach((stat) => {
                 const key = String(stat.key+" "+stat.label).toLowerCase();
                 if (/expected goals|\bxg\b/.test(key)) {
@@ -1141,27 +1145,23 @@
                 }
                 const normalized = key.replace(/[^a-z]/g,"");
                 const aliases = [
-                  ["shotsontarget", "Tirs cadrés"], ["shots on target", "Tirs cadrés"],
-                  ["totalshots", "Tirs"], ["shots", "Tirs"], ["corners", "Corners"],
-                  ["possession", "Possession (%)"]
+                  ["shotsontarget", "Tirs cadrés"], ["totalshots", "Tirs"],
+                  ["shots", "Tirs"], ["corners", "Corners"], ["possession", "Possession (%)"]
                 ];
-                const match = aliases.find(([needle]) => normalized.includes(needle.replace(/[^a-z]/g,"")));
-                if (match && Number.isFinite(Number(stat.value))) {
-                  const label = match[1];
-                  if (!aggregate.has(label)) aggregate.set(label, []);
-                  aggregate.get(label).push(Number(stat.value));
-                }
+                const match = aliases.find(([needle]) => normalized.includes(needle));
+                if (match && Number.isFinite(Number(stat.value))) currentMetrics.set(match[1], Number(stat.value));
               });
+              metricByMatch.push(currentMetrics);
               const shots = (item.shots?.periods || []).flatMap((period) => period.shots || []);
               const ownShots = shots.filter((shot) => String(shot.team_id || "") === team.id);
               const opponentShots = shots.filter((shot) => String(shot.team_id || "") !== team.id);
-              const ownKnown = ownShots.filter((shot) => shot.expected_goals != null && Number.isFinite(Number(shot.expected_goals)));
               const opponentKnown = opponentShots.filter((shot) => shot.expected_goals != null && Number.isFinite(Number(shot.expected_goals)));
-              if (opponentShots.length && opponentKnown.length) xgaValues[index] = opponentKnown.reduce((sum, shot) => sum + Number(shot.expected_goals), 0);
-              const gf = item[side+"_score"], ga = item[opponentSide+"_score"];
-              if (gf != null && ga != null && Number.isFinite(Number(gf)) && Number.isFinite(Number(ga))) {
-                goalsFor.push(Number(gf)); goalsAgainst.push(Number(ga));
+              if (opponentShots.length && opponentKnown.length) {
+                xgaValues[index] = opponentKnown.reduce((sum, shot) => sum + Number(shot.expected_goals), 0);
               }
+              const gf = item[side+"_score"], ga = item[opponentSide+"_score"];
+              goalForByMatch.push(gf != null && Number.isFinite(Number(gf)) ? Number(gf) : null);
+              goalAgainstByMatch.push(ga != null && Number.isFinite(Number(ga)) ? Number(ga) : null);
               const score = gf == null || ga == null ? "—" : gf+" – "+ga;
               const selected = metrics.filter((stat) => /expected goals|\bxg\b/i.test(stat.label)).slice(0,1).map((stat) => ({...stat,label:"xG"}));
               if (opponentShots.length && opponentKnown.length) selected.push({label: opponentKnown.length < opponentShots.length ? "xG Adverse (partiel)" : "xG Adverse", value: opponentKnown.reduce((sum,shot)=>sum+Number(shot.expected_goals),0).toFixed(2)});
@@ -1175,25 +1175,36 @@
               labels.push("M"+(index+1));
               rows.unshift('<article class="match-analytics-recent"><div class="match-analytics-recent-topline"><small>'+escapeHtml(matchDate)+'</small><strong>'+escapeHtml(item.home_team)+' '+escapeHtml(score)+' '+escapeHtml(item.away_team)+(result ? '<span class="match-analytics-result '+(result==="V"?"is-win":result==="N"?"is-draw":"is-loss")+'">'+result+'</span>' : '')+'</strong></div><div class="match-analytics-position">'+positionLabel+'</div><div class="match-analytics-metrics">'+(selected.length ? selected.map((stat) => '<span><small>'+escapeHtml(stat.label)+'</small><b>'+escapeHtml(stat.value)+'</b></span>').join("") : '<small>Indicateurs xG indisponibles.</small>')+'</div></article>');
             });
-            const avg = (values) => values.length ? (values.reduce((a,b)=>a+b,0)/values.length).toLocaleString("fr-FR",{minimumFractionDigits:2,maximumFractionDigits:2}) : "—";
-            const avgCards = '<div class="match-analytics-kpis"><div><strong>'+avg(goalsFor)+'</strong><span>Buts marqués / match</span></div><div><strong>'+avg(goalsAgainst)+'</strong><span>Buts encaissés / match</span></div></div>';
+            const average = (values, limit) => {
+              const selected = values.slice(-limit).filter(value => value !== null && value !== undefined && Number.isFinite(Number(value)));
+              return { value: selected.length ? selected.reduce((sum,value)=>sum+Number(value),0)/selected.length : null, count:selected.length };
+            };
+            const formatAverage = (result, digits=2, suffix="") => result.value === null ? "—" : result.value.toLocaleString("fr-FR",{minimumFractionDigits:digits,maximumFractionDigits:digits})+suffix;
+            const metricDefinitions = [
+              ["Buts marqués / match", goalForByMatch, "goals"],
+              ["Buts encaissés / match", goalAgainstByMatch, "goals"],
+              ["Tirs / match", metricByMatch.map(item=>item.get("Tirs") ?? null), "stats"],
+              ["Tirs cadrés / match", metricByMatch.map(item=>item.get("Tirs cadrés") ?? null), "stats"],
+              ["Possession (%)", metricByMatch.map(item=>item.get("Possession (%)") ?? null), "possession"],
+              ["Corners / match", metricByMatch.map(item=>item.get("Corners") ?? null), "stats"]
+            ];
+            const periodCell = (values, limit, kind) => {
+              const result = average(values,limit);
+              const actualMatches = Math.min(limit,recent.length);
+              const suffix = kind === "possession" ? " %" : "";
+              return '<td><strong>'+formatAverage(result,kind==="possession"?1:2,suffix)+'</strong><small>'+result.count+'/'+actualMatches+' dispo.</small></td>';
+            };
+            const periodRows = metricDefinitions.map(([label,values,kind]) =>
+              '<tr><th scope="row">'+label+'</th>'+periodCell(values,10,kind)+periodCell(values,5,kind)+'</tr>'
+            ).join("");
+            const periodTable = '<div class="match-analytics-period-wrap"><table class="match-analytics-period-table"><thead><tr><th>Indicateur</th><th>10 matchs</th><th>5 matchs</th></tr></thead><tbody>'+periodRows+'</tbody></table></div>';
             const chartId = "match-team-chart-"+teamIndex;
             chartPayloads.push({id:chartId,labels,xg:xgValues,xga:xgaValues});
-            const statDefinitions = [
-              ["Tirs", '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m12 7 3 2-1 4h-4L9 9l3-2ZM3.5 9.5l5.5-.5m6 0 5.5.5M6 18l4-5m8 5-4-5"/></svg>', "par match"],
-              ["Tirs cadrés", '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 1v3m0 16v3M1 12h3m16 0h3"/></svg>', "par match"],
-              ["Possession (%)", '<svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9"/><path d="M12 3v9l6 3M16 3h5v5"/></svg>', "du temps"],
-              ["Corners", '<svg viewBox="0 0 24 24"><path d="M5 21V3m0 1 13 3-5 4 5 4-13-3"/></svg>', "par match"]
-            ];
-            const statTiles = statDefinitions.filter(([label]) => aggregate.has(label)).map(([label,icon,unit]) => {
-              const value = avg(aggregate.get(label));
-              const displayValue = label === "Possession (%)" ? value+" %" : value;
-              return '<div class="match-analytics-stat-tile"><span class="match-analytics-stat-icon" aria-hidden="true">'+icon+'</span><strong>'+escapeHtml(displayValue)+'</strong><span class="match-analytics-stat-label">'+escapeHtml(label)+'</span><small>'+escapeHtml(unit)+'</small></div>';
-            }).join("");
-            const statsOutside = statTiles ? '<div class="match-analytics-stat-grid match-analytics-stat-grid-outside">'+statTiles+'</div>' : '';
-            return '<section class="match-analytics-team"><header class="match-analytics-team-heading"><h4>'+escapeHtml(team.name)+'</h4><span>'+recent.length+' matchs</span></header>'+avgCards+statsOutside+'<div class="match-analytics-chart-title">Évolution xG / xG Adverse</div><div class="match-analytics-chart"><canvas id="'+chartId+'" aria-label="Évolution xG et xG Adverse de '+escapeHtml(team.name)+'"></canvas></div><details class="match-analytics-recent-accordion"><summary class="match-analytics-recent-list-title">5 derniers matchs</summary><div class="match-analytics-recent-list">'+rows.join("")+'</div></details></section>';
+            const statsAvailable = recent.filter(item=>item.stats_status==="available").length;
+            const shotsAvailable = recent.filter(item=>item.shots_status==="available").length;
+            return '<section class="match-analytics-team"><header class="match-analytics-team-heading"><h4>'+escapeHtml(team.name)+'</h4><span>'+recent.length+' / 10 matchs</span></header>'+periodTable+'<div class="match-analytics-chart-title">Évolution xG / xG Adverse · '+recent.length+' derniers matchs</div><div class="match-analytics-chart"><canvas id="'+chartId+'" aria-label="Évolution xG et xG Adverse de '+escapeHtml(team.name)+' sur '+recent.length+' matchs"></canvas></div><details class="match-analytics-recent-accordion"><summary class="match-analytics-recent-list-title">'+recent.length+' derniers matchs</summary><div class="match-analytics-recent-list">'+rows.join("")+'</div></details><p class="match-analytics-team-coverage">Stats disponibles : '+statsAvailable+'/'+recent.length+' · tirs/xG adverse disponibles : '+shotsAvailable+'/'+recent.length+'</p></section>';
           });
-          const html = '<div class="match-analytics-grid">'+cards.join("")+'</div><p class="match-analytics-note">Cinq derniers matchs dans la même compétition et la même saison. Les moyennes utilisent uniquement les valeurs disponibles. Les occasions concédées sont calculées à partir des tirs adverses disponibles et peuvent être partielles ; les données absentes ne sont jamais remplacées par zéro.</p>';
+          const html = '<div class="match-analytics-grid">'+cards.join("")+'</div><p class="match-analytics-note">Matchs terminés de la saison en cours et de la même compétition, antérieurs au coup d’envoi. Les périodes 5 et 10 utilisent uniquement les matchs réellement disponibles ; les indicateurs manquants restent indisponibles et ne sont jamais remplacés par zéro. xG adverse est calculé à partir des tirs adverses documentés et peut être partiel.</p>';
           if (teamStats) {
             teamStats.innerHTML = html;
             const drawCharts = (ChartConstructor) => {
@@ -1206,12 +1217,12 @@
                 new ChartConstructor(canvas,{
                   type:"line",
                   data:{labels:payload.labels,datasets:[
-                    {label:"  xG",data:payload.xg,borderColor:"#F97316",backgroundColor:"#F97316",borderWidth:2.8,tension:.3,spanGaps:false,pointRadius:4},
-                    {label:"  xG Adverse",data:payload.xga,borderColor:"#7C3AED",backgroundColor:"#7C3AED",borderWidth:2.8,tension:.3,spanGaps:false,pointRadius:4}
+                    {label:"xG",data:payload.xg,borderColor:"#F97316",backgroundColor:"#F97316",borderWidth:2.4,tension:.3,spanGaps:false,pointRadius:3},
+                    {label:"xG Adverse",data:payload.xga,borderColor:"#7C3AED",backgroundColor:"#7C3AED",borderWidth:2.4,tension:.3,spanGaps:false,pointRadius:3}
                   ]},
                   options:{responsive:true,maintainAspectRatio:false,animation:false,interaction:{mode:"index",intersect:false},
-                    plugins:{legend:{position:"bottom",labels:{usePointStyle:true,boxWidth:7,font:{size:10}}}},
-                    scales:{y:{beginAtZero:true,ticks:{font:{size:9}},grid:{color:"#edf2f7"}},x:{ticks:{font:{size:9}},grid:{display:false}}}}
+                    plugins:{legend:{position:"bottom",labels:{usePointStyle:true,boxWidth:7,font:{size:9}}}},
+                    scales:{y:{beginAtZero:true,ticks:{font:{size:8}},grid:{color:"#edf2f7"}},x:{ticks:{font:{size:8}},grid:{display:false}}}}
                 });
               });
             };
