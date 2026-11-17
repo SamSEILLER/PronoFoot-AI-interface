@@ -1082,6 +1082,13 @@
           '<p><strong>Référence compétition :</strong> '+fmt(leagueTotal)+' buts par match · '+pct(leagueOver15)+' de matchs avec +1,5</p>'+
           '<p><strong>Fiabilité :</strong> '+(reliable?"Historique récent suffisamment fourni (8 à 10 matchs)":"Limitée ou provisoire — historique inférieur à 8 matchs pour au moins une équipe")+'</p>'+
           '<p class="match-analytics-note">Le niveau est comparé à la référence de la compétition ; la dynamique compare les 5 derniers matchs aux 10 derniers. Les deux fenêtres se chevauchent. Un signal de forme ne constitue pas une probabilité de pari.</p></section>'+
+          '<section class="match-analytics-summary"><h4>Légende des pourcentages +1,5</h4>'+
+          '<p><strong>0 à 49 % :</strong> moins d’un match sur deux dans l’échantillon.</p>'+
+          '<p><strong>50 à 59 % :</strong> fréquence proche de la moitié ; signal encore limité.</p>'+
+          '<p><strong>60 à 69 % :</strong> environ 6 à 7 matchs sur 10.</p>'+
+          '<p><strong>70 à 79 % :</strong> environ 7 à 8 matchs sur 10.</p>'+
+          '<p><strong>80 à 100 % :</strong> fréquence historique très élevée dans l’échantillon.</p>'+
+          '<p class="match-analytics-note">Ces pourcentages sont des fréquences observées sur les matchs passés, pas la probabilité que le prochain match dépasse 1,5 but. Toujours tenir compte du nombre de matchs disponibles.</p></section>'+
           '<h4>Critère 1 — Forme récente</h4><div class="match-analytics-grid">'+cards+'</div>';
       };
 
