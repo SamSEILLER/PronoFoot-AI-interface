@@ -497,7 +497,7 @@
             "<div class=\"match-weather-grid\">" + tiles.map(([label,value]) => "<div class=\"match-weather-tile\"><small>" + escapeHtml(label) + "</small><strong>" + escapeHtml(value) + "</strong></div>").join("") + "</div>" +
             "<div class=\"match-weather-meta\"><span>Coup d’envoi : " + escapeHtml(kickoffLabel) + "</span><span>Collectée le " + escapeHtml(collectedLabel) + "</span></div>" +
             "<small class=\"match-weather-source\" title=\"Mise à jour : " + escapeHtml(weatherUpdatedLabel) + "\">Source : Open-Meteo · prévision indicative, susceptible d’évoluer</small>" +
-            "<p class=\"match-weather-meta\"><strong>Dernière mise à jour météo :</strong> " + escapeHtml(weatherUpdatedLabel) + "</p></div>";
+            "</div>";
         });
       };
       const renderOdds = (body, match) => {
