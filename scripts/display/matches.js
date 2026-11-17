@@ -997,7 +997,8 @@
         }
         const fmt = value => Number.isFinite(value) ? value.toLocaleString("fr-FR",{minimumFractionDigits:2,maximumFractionDigits:2}) : "Indisponible";
         const pct = value => Number.isFinite(value) ? Math.round(value) + " %" : "Indisponible";
-        const compareLevel = (value, reference, margin) => {
+        const compareLevel = (value, reference, margin, sample = 5) => {
+          if (sample < 5) return "Échantillon saison insuffisant";
           if (!Number.isFinite(value) || !Number.isFinite(reference)) return "Non évaluable";
           if (value >= reference + margin) return "Supérieur à la référence";
           if (value <= reference - margin) return "Inférieur à la référence";
@@ -1044,10 +1045,10 @@
             && (()=>{const max=Math.max(...valid.map(row=>row.total));return Math.abs(current.total-(valid.reduce((sum,row)=>sum+row.total,0)-max)/(valid.length-1))>=0.35;})();
           return {
             name:team.name,available:true,count:valid.length,
-            level:compareLevel(teamSeasonTotal,leagueTotal,0.35),
-            overLevel:compareLevel(teamSeasonOver,leagueOver15,10),
-            attack:compareLevel(teamSeasonAttack,leagueTeamGoals,0.20),
-            defence:compareLevel(teamSeasonDefence,leagueTeamGoals,0.20),
+            level:compareLevel(teamSeasonTotal,leagueTotal,0.35,teamSeasonPlayed),
+            overLevel:compareLevel(teamSeasonOver,leagueOver15,10,teamSeasonPlayed),
+            attack:compareLevel(teamSeasonAttack,leagueTeamGoals,0.20,teamSeasonPlayed),
+            defence:compareLevel(teamSeasonDefence,leagueTeamGoals,0.20,teamSeasonPlayed),
             trendTotal:trend("total",0.25),trendAttack:trend("gf",0.20),
             trendDefence:trend("ga",0.20),trendOver:trend("over",10),
             outlier,seasonPlayed:teamSeasonPlayed
