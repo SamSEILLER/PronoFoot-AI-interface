@@ -1419,6 +1419,18 @@
                 <div class="match-detail-accordion-body" data-detail-panel="overview">Chargement des données…</div>
               </details>
               <details class="match-detail-accordion" name="match-detail">
+                <summary><span class="match-detail-accordion-icon">🧪</span><span>Expérimentation · +1,5 but</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
+                <div class="match-detail-accordion-body" data-detail-panel="experimentation">Chargement de l’expérimentation…</div>
+              </details>
+              <details class="match-detail-accordion" name="match-detail">
+                <summary><span class="match-detail-accordion-icon">🧪</span><span>Expérimentation · +2,5 buts</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
+                <div class="match-detail-accordion-body" data-detail-panel="experimentation-over25"></div>
+              </details>
+              <details class="match-detail-accordion" name="match-detail">
+                <summary><span class="match-detail-accordion-icon">🧪</span><span>Expérimentation · BTTS</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
+                <div class="match-detail-accordion-body" data-detail-panel="experimentation-btts"></div>
+              </details>
+              <details class="match-detail-accordion" name="match-detail">
                 <summary><span class="match-detail-accordion-icon">📊</span><span>Statistiques équipes</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
                 <div class="match-detail-accordion-body" data-detail-panel="team-stats">Chargement des statistiques…</div>
               </details>
@@ -1429,10 +1441,6 @@
               <details class="match-detail-accordion" name="match-detail">
                 <summary><span class="match-detail-accordion-icon">${detailTabs[1].icon}</span><span>Analyse &amp; IA</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
                 <div class="match-detail-accordion-body" data-detail-panel="analysis">Chargement des données…</div>
-              </details>
-              <details class="match-detail-accordion" name="match-detail">
-                <summary><span class="match-detail-accordion-icon">🧪</span><span>Expérimentation · +1,5 but</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
-                <div class="match-detail-accordion-body" data-detail-panel="experimentation">Chargement de l’expérimentation…</div>
               </details>
               <details class="match-detail-accordion" name="match-detail">
                 <summary><span class="match-detail-accordion-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="8" cy="8" r="3"/><path d="M8 1.8v1.4M8 12.8v1.4M1.8 8h1.4M12.8 8h1.4M3.6 3.6l1 1M11.4 11.4l1 1M13.5 17.5h6a3 3 0 0 0 .2-6 4.5 4.5 0 0 0-8.6-1.1"/></svg></span><span>Météo</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
