@@ -981,66 +981,106 @@
 
       const renderOver15Experiment = (body, match) => {
         if (!body) return;
-        const analytics = matchAnalyticsIndex.get(String(match.competition_slug || ""));
-        if (!analytics) {
-          body.innerHTML = '<p class="match-detail-empty">Analyse indisponible : statistiques d’équipe absentes pour cette compétition.</p>';
+        const competition = seasonGoalsIndex.get(String(match.competition_slug || ""));
+        if (!competition || String(competition.season || "") !== String(match.season || "")) {
+          body.innerHTML = '<p class="match-detail-empty">Analyse indisponible : référence de compétition ou saison absente.</p>';
           return;
         }
+        const baseline = competition.baseline || {};
+        const leagueTotal = Number(baseline.average_total_goals);
+        const leagueTeamGoals = Number.isFinite(leagueTotal) ? leagueTotal / 2 : null;
+        const leagueOver15 = Number(baseline.over_1_5_percentage);
+        if (!Number.isFinite(leagueTotal) || !Number.isFinite(leagueOver15)) {
+          body.innerHTML = '<p class="match-detail-empty">Analyse indisponible : référence de buts de la compétition incomplète.</p>';
+          return;
+        }
+        const fmt = value => Number.isFinite(value) ? value.toLocaleString("fr-FR",{minimumFractionDigits:2,maximumFractionDigits:2}) : "Indisponible";
+        const pct = value => Number.isFinite(value) ? Math.round(value) + " %" : "Indisponible";
+        const compareLevel = (value, reference, margin) => {
+          if (!Number.isFinite(value) || !Number.isFinite(reference)) return "Non évaluable";
+          if (value >= reference + margin) return "Supérieur à la référence";
+          if (value <= reference - margin) return "Inférieur à la référence";
+          return "Proche de la référence";
+        };
         const sides = [
           {id:String(match.home_team_id || ""),name:match.home_team},
           {id:String(match.away_team_id || ""),name:match.away_team}
         ];
         const analyses = sides.map(team => {
-          const entry = analytics.teams.get(team.id);
-          const rows = (entry?.recent_match_ids || [])
-            .map(id => analytics.matchesById.get(String(id))).filter(Boolean)
-            .filter(item => String(item.season || "") === String(match.season || ""))
-            .filter(item => Date.parse(item.kickoff_utc || "") < Date.parse(match.kickoff_utc || ""));
-          const unique = [...new Map(rows.map(item => [String(item.match_id || item.id || item.provider_match_id),item])).values()]
-            .sort((a,b)=>Date.parse(b.kickoff_utc || 0)-Date.parse(a.kickoff_utc || 0)).slice(0,10);
-          const values = unique.map(item => {
-            const side = String(item.home_team_id) === team.id ? "home" : "away";
-            const other = side === "home" ? "away" : "home";
-            const gf = item[side+"_score"], ga = item[other+"_score"];
-            if (gf == null || ga == null || gf === "" || ga === "") return null;
-            const total = Number(gf)+Number(ga);
-            return Number.isFinite(total) ? {total,over15:total>=2} : null;
-          }).filter(Boolean);
-          const last5 = values.slice(0,5);
-          const rate = list => list.length ? list.filter(row=>row.over15).length/list.length : null;
-          const avg = list => list.length ? list.reduce((sum,row)=>sum+row.total,0)/list.length : null;
-          const r5=rate(last5), r10=rate(values), a5=avg(last5), a10=avg(values);
-          let trend="Données insuffisantes", coherence="Non évaluable", signal="Non évaluable";
-          if (r5!==null && r10!==null && a5!==null && a10!==null) {
-            const overDelta=r5-r10, goalsDelta=a5-a10;
-            coherence=overDelta===0 || goalsDelta===0 || Math.sign(overDelta)===Math.sign(goalsDelta) ? "Cohérente" : "Contradictoire";
-            if (overDelta>0 && goalsDelta>=0) trend="Amélioration";
-            else if (overDelta<0 && goalsDelta<=0) trend="Dégradation";
-            else if (overDelta===0 && goalsDelta===0) trend="Stabilité";
-            else trend="Évolution contrastée";
-            signal=trend==="Amélioration" ? "Favorable" : trend==="Dégradation" ? "Défavorable" : "Neutre";
-          }
-          return {name:team.name,count:values.length,shortCount:last5.length,trend,coherence,signal,complete:values.length===10};
+          const seasonTeam = competition.teams.get(team.id);
+          if (!seasonTeam) return {name:team.name,available:false};
+          const rows = (Array.isArray(seasonTeam.recent_matches) ? seasonTeam.recent_matches : [])
+            .filter(row => row && Date.parse(row.kickoff_utc || "") < Date.parse(match.kickoff_utc || ""))
+            .sort((x,y)=>Date.parse(y.kickoff_utc || "")-Date.parse(x.kickoff_utc || ""));
+          const valid = rows.filter(row =>
+            Number.isFinite(Number(row.goals_for)) && Number.isFinite(Number(row.goals_against))
+            && Number(row.goals_for)>=0 && Number(row.goals_against)>=0
+          ).slice(0,10).map(row => ({
+            gf:Number(row.goals_for), ga:Number(row.goals_against),
+            total:Number(row.goals_for)+Number(row.goals_against),
+            over:Number(row.goals_for)+Number(row.goals_against)>=2
+          }));
+          const last5=valid.slice(0,5);
+          const avg=(arr,key)=>arr.length ? arr.reduce((sum,row)=>sum+row[key],0)/arr.length : null;
+          const rate=arr=>arr.length ? arr.filter(row=>row.over).length/arr.length*100 : null;
+          const current={
+            total:avg(valid,"total"), gf:avg(valid,"gf"), ga:avg(valid,"ga"), over:rate(valid)
+          };
+          const recent={
+            total:avg(last5,"total"), gf:avg(last5,"gf"), ga:avg(last5,"ga"), over:rate(last5)
+          };
+          const trend=(key,threshold)=>{
+            if(last5.length<5 || valid.length<5 || recent[key]===null || current[key]===null) return "Échantillon insuffisant";
+            const delta=recent[key]-current[key];
+            return delta>threshold ? "En hausse" : delta< -threshold ? "En baisse" : "Stable";
+          };
+          const teamSeasonPlayed=Number(seasonTeam.played)||0;
+          const teamSeasonTotal=Number(seasonTeam.average_total_goals);
+          const teamSeasonOver=Number(seasonTeam.markets?.over_1_5?.percentage);
+          const teamSeasonAttack=teamSeasonPlayed ? Number(seasonTeam.goals_for)/teamSeasonPlayed : null;
+          const teamSeasonDefence=teamSeasonPlayed ? Number(seasonTeam.goals_against)/teamSeasonPlayed : null;
+          const outlier=valid.length>=5 && valid.some(row=>row.total>=5)
+            && (()=>{const max=Math.max(...valid.map(row=>row.total));return Math.abs(current.total-(valid.reduce((sum,row)=>sum+row.total,0)-max)/(valid.length-1))>=0.35;})();
+          return {
+            name:team.name,available:true,count:valid.length,
+            level:compareLevel(teamSeasonTotal,leagueTotal,0.35),
+            overLevel:compareLevel(teamSeasonOver,leagueOver15,10),
+            attack:compareLevel(teamSeasonAttack,leagueTeamGoals,0.20),
+            defence:compareLevel(teamSeasonDefence,leagueTeamGoals,0.20),
+            trendTotal:trend("total",0.25),trendAttack:trend("gf",0.20),
+            trendDefence:trend("ga",0.20),trendOver:trend("over",10),
+            outlier,seasonPlayed:teamSeasonPlayed
+          };
         });
-        const valid=analyses.filter(item=>item.signal!=="Non évaluable");
-        const favorable=valid.filter(item=>item.signal==="Favorable").length;
-        const unfavorable=valid.filter(item=>item.signal==="Défavorable").length;
-        const globalSignal=valid.length<2 ? "Données insuffisantes" : favorable===2 ? "Favorable" : unfavorable===2 ? "Défavorable" : "Mitigé";
-        const reliability=analyses.every(item=>item.complete) ? "Moyenne — 10 matchs exploitables par équipe" : "Limitée — historique incomplet";
-        const cards=analyses.map(item =>
-          '<section class="match-analytics-team"><h4>'+escapeHtml(item.name)+'</h4>'+
-          '<p><strong>Tendance :</strong> '+escapeHtml(item.trend)+'</p>'+
-          '<p><strong>Cohérence :</strong> '+escapeHtml(item.coherence)+'</p>'+
-          '<p><strong>Signal +1,5 :</strong> '+escapeHtml(item.signal)+'</p>'+
-          '<small>'+item.shortCount+'/5 matchs récents · '+item.count+'/10 exploitables</small></section>'
-        ).join("");
+        const insufficient=analyses.some(item=>!item.available);
+        const reliable=analyses.every(item=>item.available && item.count>=8);
+        const cards=analyses.map(item => {
+          if(!item.available) return '<section class="match-analytics-team"><h4>'+escapeHtml(item.name)+'</h4><p>Données de saison indisponibles pour cette équipe.</p></section>';
+          const reliability=item.count>=8 ? "Historique récent exploitable" : item.count>=5 ? "Tendance provisoire — échantillon court" : "Échantillon insuffisant pour conclure";
+          return '<section class="match-analytics-team"><h4>'+escapeHtml(item.name)+'</h4>'+
+            '<p><strong>Niveau total de buts :</strong> '+escapeHtml(item.level)+'</p>'+
+            '<p><strong>Fréquence +1,5 :</strong> '+escapeHtml(item.overLevel)+'</p>'+
+            '<p><strong>Attaque :</strong> '+escapeHtml(item.attack)+'</p>'+
+            '<p><strong>Défense :</strong> '+escapeHtml(item.defence)+'</p>'+
+            '<p><strong>Dynamique des buts totaux :</strong> '+escapeHtml(item.trendTotal)+'</p>'+
+            '<p><strong>Dynamique offensive :</strong> '+escapeHtml(item.trendAttack)+'</p>'+
+            '<p><strong>Dynamique défensive :</strong> '+escapeHtml(item.trendDefence)+'</p>'+
+            '<p><strong>Dynamique du +1,5 :</strong> '+escapeHtml(item.trendOver)+'</p>'+
+            (item.outlier?'<p><strong>Vigilance :</strong> un match atypique influence sensiblement la moyenne récente.</p>':'')+
+            '<small>'+item.count+'/10 matchs récents · '+item.seasonPlayed+' matchs sur la saison · '+reliability+'</small></section>';
+        }).join("");
+        const globalSignal=insufficient ? "Données incomplètes"
+          : analyses.every(item=>item.count<5) ? "Données insuffisantes"
+          : analyses.every(item=>item.level==="Supérieur à la référence" && item.overLevel==="Supérieur à la référence") ? "Niveaux favorables"
+          : analyses.every(item=>item.level==="Inférieur à la référence" && item.overLevel==="Inférieur à la référence") ? "Niveaux défavorables"
+          : "Signal à nuancer";
         body.innerHTML =
           '<section class="match-analytics-summary"><h4>Résultat de l’analyse +1,5 buts</h4>'+
-          '<p><strong>Signal global :</strong> '+escapeHtml(globalSignal)+'</p>'+
-          '<p><strong>Fiabilité :</strong> '+escapeHtml(reliability)+'</p>'+
-          '<p class="match-analytics-note">Ce résultat porte uniquement sur la forme récente. Aucune probabilité de pari ni recommandation de mise n’est déduite de ce seul critère.</p></section>'+
-          '<h4>Critère 1 — Forme récente</h4><div class="match-analytics-grid">'+cards+'</div>'+
-          '<p class="match-analytics-note">Comparaison des 5 derniers matchs aux 10 derniers (les cinq sont inclus dans les dix). Les calculs détaillés et les scores individuels restent masqués. Aucun match manquant n’est extrapolé.</p>';
+          '<p><strong>Lecture globale :</strong> '+escapeHtml(globalSignal)+'</p>'+
+          '<p><strong>Référence compétition :</strong> '+fmt(leagueTotal)+' buts par match · '+pct(leagueOver15)+' de matchs avec +1,5</p>'+
+          '<p><strong>Fiabilité :</strong> '+(reliable?"Historique récent suffisamment fourni (8 à 10 matchs)":"Limitée ou provisoire — historique inférieur à 8 matchs pour au moins une équipe")+'</p>'+
+          '<p class="match-analytics-note">Le niveau est comparé à la référence de la compétition ; la dynamique compare les 5 derniers matchs aux 10 derniers. Les deux fenêtres se chevauchent. Un signal de forme ne constitue pas une probabilité de pari.</p></section>'+
+          '<h4>Critère 1 — Forme récente</h4><div class="match-analytics-grid">'+cards+'</div>';
       };
 
       const renderDetailAccordions = () => {
