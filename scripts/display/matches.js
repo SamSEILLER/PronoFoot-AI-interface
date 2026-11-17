@@ -1419,15 +1419,15 @@
                 <div class="match-detail-accordion-body" data-detail-panel="overview">Chargement des données…</div>
               </details>
               <details class="match-detail-accordion" name="match-detail">
-                <summary><span class="match-detail-accordion-icon">🧪</span><span>Expérimentation · +1,5 but</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
+                <summary><span class="match-detail-accordion-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M9 3h6M10 3v6l-5.2 9a2 2 0 0 0 1.7 3h11a2 2 0 0 0 1.7-3L14 9V3"/><path d="M7.2 15h9.6M9 12h6"/></svg></span><span>Expérimentation · +1,5 but</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
                 <div class="match-detail-accordion-body" data-detail-panel="experimentation">Chargement de l’expérimentation…</div>
               </details>
               <details class="match-detail-accordion" name="match-detail">
-                <summary><span class="match-detail-accordion-icon">🧪</span><span>Expérimentation · +2,5 buts</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
+                <summary><span class="match-detail-accordion-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M9 3h6M10 3v6l-5.2 9a2 2 0 0 0 1.7 3h11a2 2 0 0 0 1.7-3L14 9V3"/><path d="M7.2 15h9.6M9 12h6"/></svg></span><span>Expérimentation · +2,5 buts</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
                 <div class="match-detail-accordion-body" data-detail-panel="experimentation-over25"></div>
               </details>
               <details class="match-detail-accordion" name="match-detail">
-                <summary><span class="match-detail-accordion-icon">🧪</span><span>Expérimentation · BTTS</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
+                <summary><span class="match-detail-accordion-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M9 3h6M10 3v6l-5.2 9a2 2 0 0 0 1.7 3h11a2 2 0 0 0 1.7-3L14 9V3"/><path d="M7.2 15h9.6M9 12h6"/></svg></span><span>Expérimentation · BTTS</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
                 <div class="match-detail-accordion-body" data-detail-panel="experimentation-btts"></div>
               </details>
               <details class="match-detail-accordion" name="match-detail">
