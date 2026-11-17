@@ -980,118 +980,6 @@
         target.append(chatSection);
       };
 
-      const renderOver15Experiment = (body, match) => {
-        if (!body) return;
-        const competition = seasonGoalsIndex.get(String(match.competition_slug || ""));
-        if (!competition || String(competition.season || "") !== String(match.season || "")) {
-          body.innerHTML = '<p class="match-detail-empty">Analyse indisponible : référence de compétition ou saison absente.</p>';
-          return;
-        }
-        const baseline = competition.baseline || {};
-        const leagueTotal = Number(baseline.average_total_goals);
-        const leagueTeamGoals = Number.isFinite(leagueTotal) ? leagueTotal / 2 : null;
-        const leagueOver15 = Number(baseline.over_1_5_percentage);
-        if (!Number.isFinite(leagueTotal) || !Number.isFinite(leagueOver15)) {
-          body.innerHTML = '<p class="match-detail-empty">Analyse indisponible : référence de buts de la compétition incomplète.</p>';
-          return;
-        }
-        const fmt = value => Number.isFinite(value) ? value.toLocaleString("fr-FR",{minimumFractionDigits:2,maximumFractionDigits:2}) : "Indisponible";
-        const pct = value => Number.isFinite(value) ? Math.round(value) + " %" : "Indisponible";
-        const compareLevel = (value, reference, margin, sample = 5) => {
-          if (sample < 5) return "Échantillon saison insuffisant";
-          if (!Number.isFinite(value) || !Number.isFinite(reference)) return "Non évaluable";
-          if (value >= reference + margin) return "Supérieur à la référence";
-          if (value <= reference - margin) return "Inférieur à la référence";
-          return "Proche de la référence";
-        };
-        const sides = [
-          {id:String(match.home_team_id || ""),name:match.home_team},
-          {id:String(match.away_team_id || ""),name:match.away_team}
-        ];
-        const analyses = sides.map(team => {
-          const seasonTeam = competition.teams.get(team.id);
-          if (!seasonTeam) return {name:team.name,available:false};
-          const rows = (Array.isArray(seasonTeam.recent_matches) ? seasonTeam.recent_matches : [])
-            .filter(row => row && Date.parse(row.kickoff_utc || "") < Date.parse(match.kickoff_utc || ""))
-            .sort((x,y)=>Date.parse(y.kickoff_utc || "")-Date.parse(x.kickoff_utc || ""));
-          const valid = rows.filter(row =>
-            Number.isFinite(Number(row.goals_for)) && Number.isFinite(Number(row.goals_against))
-            && Number(row.goals_for)>=0 && Number(row.goals_against)>=0
-          ).slice(0,10).map(row => ({
-            gf:Number(row.goals_for), ga:Number(row.goals_against),
-            total:Number(row.goals_for)+Number(row.goals_against),
-            over:Number(row.goals_for)+Number(row.goals_against)>=2
-          }));
-          const last5=valid.slice(0,5);
-          const avg=(arr,key)=>arr.length ? arr.reduce((sum,row)=>sum+row[key],0)/arr.length : null;
-          const rate=arr=>arr.length ? arr.filter(row=>row.over).length/arr.length*100 : null;
-          const current={
-            total:avg(valid,"total"), gf:avg(valid,"gf"), ga:avg(valid,"ga"), over:rate(valid)
-          };
-          const recent={
-            total:avg(last5,"total"), gf:avg(last5,"gf"), ga:avg(last5,"ga"), over:rate(last5)
-          };
-          const trend=(key,threshold)=>{
-            if(last5.length<5 || valid.length<5 || recent[key]===null || current[key]===null) return "Échantillon insuffisant";
-            const delta=recent[key]-current[key];
-            return delta>threshold ? "En hausse" : delta< -threshold ? "En baisse" : "Stable";
-          };
-          const teamSeasonPlayed=Number(seasonTeam.played)||0;
-          const teamSeasonTotal=Number(seasonTeam.average_total_goals);
-          const teamSeasonOver=Number(seasonTeam.markets?.over_1_5?.percentage);
-          const teamSeasonAttack=teamSeasonPlayed ? Number(seasonTeam.goals_for)/teamSeasonPlayed : null;
-          const teamSeasonDefence=teamSeasonPlayed ? Number(seasonTeam.goals_against)/teamSeasonPlayed : null;
-          const outlier=valid.length>=5 && valid.some(row=>row.total>=5)
-            && (()=>{const max=Math.max(...valid.map(row=>row.total));return Math.abs(current.total-(valid.reduce((sum,row)=>sum+row.total,0)-max)/(valid.length-1))>=0.35;})();
-          return {
-            name:team.name,available:true,count:valid.length,
-            level:compareLevel(teamSeasonTotal,leagueTotal,0.35,teamSeasonPlayed),
-            overLevel:compareLevel(teamSeasonOver,leagueOver15,10,teamSeasonPlayed),
-            attack:compareLevel(teamSeasonAttack,leagueTeamGoals,0.20,teamSeasonPlayed),
-            defence:compareLevel(teamSeasonDefence,leagueTeamGoals,0.20,teamSeasonPlayed),
-            trendTotal:trend("total",0.25),trendAttack:trend("gf",0.20),
-            trendDefence:trend("ga",0.20),trendOver:trend("over",10),
-            outlier,seasonPlayed:teamSeasonPlayed
-          };
-        });
-        const insufficient=analyses.some(item=>!item.available);
-        const reliable=analyses.every(item=>item.available && item.count>=8);
-        const cards=analyses.map(item => {
-          if(!item.available) return '<section class="match-analytics-team"><h4>'+escapeHtml(item.name)+'</h4><p>Données de saison indisponibles pour cette équipe.</p></section>';
-          const reliability=item.count>=8 ? "Historique récent exploitable" : item.count>=5 ? "Tendance provisoire — échantillon court" : "Échantillon insuffisant pour conclure";
-          return '<section class="match-analytics-team"><h4>'+escapeHtml(item.name)+'</h4>'+
-            '<p><strong>Niveau total de buts :</strong> '+escapeHtml(item.level)+'</p>'+
-            '<p><strong>Fréquence +1,5 :</strong> '+escapeHtml(item.overLevel)+'</p>'+
-            '<p><strong>Attaque :</strong> '+escapeHtml(item.attack)+'</p>'+
-            '<p><strong>Défense :</strong> '+escapeHtml(item.defence)+'</p>'+
-            '<p><strong>Dynamique des buts totaux :</strong> '+escapeHtml(item.trendTotal)+'</p>'+
-            '<p><strong>Dynamique offensive :</strong> '+escapeHtml(item.trendAttack)+'</p>'+
-            '<p><strong>Dynamique défensive :</strong> '+escapeHtml(item.trendDefence)+'</p>'+
-            '<p><strong>Dynamique du +1,5 :</strong> '+escapeHtml(item.trendOver)+'</p>'+
-            (item.outlier?'<p><strong>Vigilance :</strong> un match atypique influence sensiblement la moyenne récente.</p>':'')+
-            '<small>'+item.count+'/10 matchs récents · '+item.seasonPlayed+' matchs sur la saison · '+reliability+'</small></section>';
-        }).join("");
-        const globalSignal=insufficient ? "Données incomplètes"
-          : analyses.every(item=>item.count<5) ? "Données insuffisantes"
-          : analyses.every(item=>item.level==="Supérieur à la référence" && item.overLevel==="Supérieur à la référence") ? "Niveaux favorables"
-          : analyses.every(item=>item.level==="Inférieur à la référence" && item.overLevel==="Inférieur à la référence") ? "Niveaux défavorables"
-          : "Signal à nuancer";
-        body.innerHTML =
-          '<section class="match-analytics-summary"><h4>Résultat de l’analyse +1,5 buts</h4>'+
-          '<p><strong>Lecture globale :</strong> '+escapeHtml(globalSignal)+'</p>'+
-          '<p><strong>Référence compétition :</strong> '+fmt(leagueTotal)+' buts par match · '+pct(leagueOver15)+' de matchs avec +1,5</p>'+
-          '<p><strong>Fiabilité :</strong> '+(reliable?"Historique récent suffisamment fourni (8 à 10 matchs)":"Limitée ou provisoire — historique inférieur à 8 matchs pour au moins une équipe")+'</p>'+
-          '<p class="match-analytics-note">Le niveau est comparé à la référence de la compétition ; la dynamique compare les 5 derniers matchs aux 10 derniers. Les deux fenêtres se chevauchent. Un signal de forme ne constitue pas une probabilité de pari.</p></section>'+
-          '<section class="match-analytics-summary"><h4>Légende des pourcentages +1,5</h4>'+
-          '<p><strong>0 à 49 % :</strong> moins d’un match sur deux dans l’échantillon.</p>'+
-          '<p><strong>50 à 59 % :</strong> fréquence proche de la moitié ; signal encore limité.</p>'+
-          '<p><strong>60 à 69 % :</strong> environ 6 à 7 matchs sur 10.</p>'+
-          '<p><strong>70 à 79 % :</strong> environ 7 à 8 matchs sur 10.</p>'+
-          '<p><strong>80 à 100 % :</strong> fréquence historique très élevée dans l’échantillon.</p>'+
-          '<p class="match-analytics-note">Ces pourcentages sont des fréquences observées sur les matchs passés, pas la probabilité que le prochain match dépasse 1,5 but. Toujours tenir compte du nombre de matchs disponibles.</p></section>'+
-          '<h4>Critère 1 — Forme récente</h4><div class="match-analytics-grid">'+cards+'</div>';
-      };
-
       const renderDetailAccordions = () => {
         if (!detailPanel || !selectedDetailMatch) return;
         const overview = detailPanel.querySelector('[data-detail-panel="overview"]');
@@ -1104,7 +992,7 @@
         renderMatchCompositions(selectedDetailMatch);
         if (overview) renderHistoryOverview(overview, selectedDetailMatch);
         if (analysis) renderSeasonGoalAnalysis(analysis, selectedDetailMatch);
-        if (experiment) renderOver15Experiment(experiment, selectedDetailMatch);
+        if (experiment) experiment.replaceChildren();
         if (odds) renderOdds(odds, selectedDetailMatch);
         if (weather) renderWeather(weather, selectedDetailMatch);
         const analytics = matchAnalyticsIndex.get(String(selectedDetailMatch.competition_slug || ""));
@@ -1420,7 +1308,7 @@
               </details>
               <details class="match-detail-accordion" name="match-detail">
                 <summary><span class="match-detail-accordion-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M9 3h6M10 3v6l-5.2 9a2 2 0 0 0 1.7 3h11a2 2 0 0 0 1.7-3L14 9V3"/><path d="M7.2 15h9.6M9 12h6"/></svg></span><span>Expérimentation · +1,5 buts</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
-                <div class="match-detail-accordion-body" data-detail-panel="experimentation">Chargement de l’expérimentation…</div>
+                <div class="match-detail-accordion-body" data-detail-panel="experimentation"></div>
               </details>
               <details class="match-detail-accordion" name="match-detail">
                 <summary><span class="match-detail-accordion-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M9 3h6M10 3v6l-5.2 9a2 2 0 0 0 1.7 3h11a2 2 0 0 0 1.7-3L14 9V3"/><path d="M7.2 15h9.6M9 12h6"/></svg></span><span>Expérimentation · +2,5 buts</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
