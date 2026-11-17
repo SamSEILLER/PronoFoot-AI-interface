@@ -130,7 +130,7 @@
       symbol.textContent = state === "ok" ? "✓" : state === "error" ? "×" : "!";
       label.textContent = words;
       button.setAttribute("aria-label", "État des sources : " + words + ". Ouvrir le détail");
-      updated.textContent = "Contrôle : " + formatDate(data.generated_at_utc);
+      updated.textContent = "Dernière synchro PitchAPI : " + formatDate(data.history?.last_success_at_utc);
       setSource("history", data.history);
       setSource("odds", data.odds);
     })
