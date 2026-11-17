@@ -1006,7 +1006,9 @@
           const values = unique.map(item => {
             const side = String(item.home_team_id) === team.id ? "home" : "away";
             const opponent = side === "home" ? "away" : "home";
-            const gf = Number(item[side+"_score"]), ga = Number(item[opponent+"_score"]);
+            const rawGf = item[side+"_score"], rawGa = item[opponent+"_score"];
+            if (rawGf == null || rawGa == null || rawGf === "" || rawGa === "") return null;
+            const gf = Number(rawGf), ga = Number(rawGa);
             if (!Number.isFinite(gf) || !Number.isFinite(ga)) return null;
             return {gf,ga,total:gf+ga,over15:gf+ga>=2,score:gf+"–"+ga,date:item.kickoff_utc};
           }).filter(Boolean);
