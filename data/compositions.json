@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-11-16T13:02:56.818538+00:00",
+  "generated_at_utc": "2026-11-17T08:41:11.689036+00:00",
   "sources": {
     "pitchapi": {
       "status": "PARTIAL",
@@ -57,6 +57,201 @@
             "id": "t_3QzSiW",
             "name": "Fiorentina",
             "image_url": "https://cdn.pitchapi.dev/images/teams/52f92c4c2ae57c14bc3d2ead58a2f899ab2fa12bebb91e6f627af2b99608dfce.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_0c78zD",
+      "snapshot": "J-7",
+      "kickoff_utc": "2026-11-24T20:00:00+00:00",
+      "collected_at_utc": "2026-11-17T08:41:10.599439+00:00",
+      "competition": "Ligue des champions UEFA",
+      "home_team": "Manchester City",
+      "away_team": "Napoli",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_0c78zD",
+        "home_team": {
+          "id": "t_0UCNPX",
+          "name": "Manchester City",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/a9cf2c0ab02055725d2a2a279706c44e1d375a2d3ec3cd0f67625ba883f0257d.webp"
+        },
+        "away_team": {
+          "id": "t_2toJRF",
+          "name": "Napoli",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/0755206cdb935eb37cd5bd42b54afc629d486c010c12029c096def4f5227db6f.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_0c78zD",
+          "home_team": {
+            "id": "t_0UCNPX",
+            "name": "Manchester City",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/a9cf2c0ab02055725d2a2a279706c44e1d375a2d3ec3cd0f67625ba883f0257d.webp"
+          },
+          "away_team": {
+            "id": "t_2toJRF",
+            "name": "Napoli",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/0755206cdb935eb37cd5bd42b54afc629d486c010c12029c096def4f5227db6f.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_0yKeRt",
+      "snapshot": "J-7",
+      "kickoff_utc": "2026-11-24T17:45:00+00:00",
+      "collected_at_utc": "2026-11-17T08:41:10.599439+00:00",
+      "competition": "Ligue des champions UEFA",
+      "home_team": "Bodø/Glimt",
+      "away_team": "LASK",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_0yKeRt",
+        "home_team": {
+          "id": "t_0SGPHB",
+          "name": "Bodø/Glimt",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/8e8bca727ae90fc0fba027bf099bdaf083ba1031aeacb0a8441f7f19039c8364.webp"
+        },
+        "away_team": {
+          "id": "t_1ta56l",
+          "name": "LASK",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/7e1cc9adf796345eed652d70b6425c8add7abc494151cb677e6f60c63eb518ea.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_0yKeRt",
+          "home_team": {
+            "id": "t_0SGPHB",
+            "name": "Bodø/Glimt",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/8e8bca727ae90fc0fba027bf099bdaf083ba1031aeacb0a8441f7f19039c8364.webp"
+          },
+          "away_team": {
+            "id": "t_1ta56l",
+            "name": "LASK",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/7e1cc9adf796345eed652d70b6425c8add7abc494151cb677e6f60c63eb518ea.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_13c8QW",
+      "snapshot": "J-7",
+      "kickoff_utc": "2026-11-24T20:00:00+00:00",
+      "collected_at_utc": "2026-11-17T08:41:10.599439+00:00",
+      "competition": "Ligue des champions UEFA",
+      "home_team": "RB Leipzig",
+      "away_team": "Lens",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_13c8QW",
+        "home_team": {
+          "id": "t_0oqUbb",
+          "name": "RB Leipzig",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/d0ea8dba830e1ec387985c6fa33f8f4c101f61c955c46054bb406a32e57b4e6d.webp"
+        },
+        "away_team": {
+          "id": "t_38NVJO",
+          "name": "Lens",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/d7424c5e0e5cb6adc67ed5a1119d16f497a63f31ca406127d9563afc29e59d11.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_13c8QW",
+          "home_team": {
+            "id": "t_0oqUbb",
+            "name": "RB Leipzig",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/d0ea8dba830e1ec387985c6fa33f8f4c101f61c955c46054bb406a32e57b4e6d.webp"
+          },
+          "away_team": {
+            "id": "t_38NVJO",
+            "name": "Lens",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/d7424c5e0e5cb6adc67ed5a1119d16f497a63f31ca406127d9563afc29e59d11.webp"
           },
           "home": {
             "formation": "",
@@ -206,6 +401,201 @@
     {
       "schema_version": 1,
       "provider": "PitchAPI",
+      "match_id": "m_2cwDyu",
+      "snapshot": "J-7",
+      "kickoff_utc": "2026-11-24T20:00:00+00:00",
+      "collected_at_utc": "2026-11-17T08:41:10.599439+00:00",
+      "competition": "Ligue des champions UEFA",
+      "home_team": "Arsenal",
+      "away_team": "Borussia Dortmund",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_2cwDyu",
+        "home_team": {
+          "id": "t_1gkhxH",
+          "name": "Arsenal",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/cc89aa6a111b43694223ca0506940e05f825369c259a6c8bf4ab8cf8b080a05b.webp"
+        },
+        "away_team": {
+          "id": "t_386iz1",
+          "name": "Borussia Dortmund",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/9a049cf470f5e8a1b096c1ac46c7a742944c23a6c82be592fd7f2889aa476de5.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_2cwDyu",
+          "home_team": {
+            "id": "t_1gkhxH",
+            "name": "Arsenal",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/cc89aa6a111b43694223ca0506940e05f825369c259a6c8bf4ab8cf8b080a05b.webp"
+          },
+          "away_team": {
+            "id": "t_386iz1",
+            "name": "Borussia Dortmund",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/9a049cf470f5e8a1b096c1ac46c7a742944c23a6c82be592fd7f2889aa476de5.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_38M4aC",
+      "snapshot": "J-7",
+      "kickoff_utc": "2026-11-24T20:00:00+00:00",
+      "collected_at_utc": "2026-11-17T08:41:10.599439+00:00",
+      "competition": "Ligue des champions UEFA",
+      "home_team": "Slovan Bratislava",
+      "away_team": "Real Betis",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_38M4aC",
+        "home_team": {
+          "id": "t_2yHOns",
+          "name": "Slovan Bratislava",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/19a562f7f6053ae9daba69ad68f5a9be26220b39c30e9f0081ab0ab089b441d8.webp"
+        },
+        "away_team": {
+          "id": "t_0HSzvM",
+          "name": "Real Betis",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/3032d6554f9f217984830cb35b054bd116c0546d5f31686fe446efafe48e79e1.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_38M4aC",
+          "home_team": {
+            "id": "t_2yHOns",
+            "name": "Slovan Bratislava",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/19a562f7f6053ae9daba69ad68f5a9be26220b39c30e9f0081ab0ab089b441d8.webp"
+          },
+          "away_team": {
+            "id": "t_0HSzvM",
+            "name": "Real Betis",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/3032d6554f9f217984830cb35b054bd116c0546d5f31686fe446efafe48e79e1.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_3H4WRT",
+      "snapshot": "J-7",
+      "kickoff_utc": "2026-11-24T20:00:00+00:00",
+      "collected_at_utc": "2026-11-17T08:41:10.599439+00:00",
+      "competition": "Ligue des champions UEFA",
+      "home_team": "Real Madrid",
+      "away_team": "PSV Eindhoven",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_3H4WRT",
+        "home_team": {
+          "id": "t_4NZcri",
+          "name": "Real Madrid",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/9e7141c583abe50554615387c99815ee3663d1a4f888549679523d2acd7f716c.webp"
+        },
+        "away_team": {
+          "id": "t_1jOgDP",
+          "name": "PSV Eindhoven",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/e89b7540c69dc8b8a7b32bc58f807d304e60d8223890a76a60beaef26980e882.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_3H4WRT",
+          "home_team": {
+            "id": "t_4NZcri",
+            "name": "Real Madrid",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/9e7141c583abe50554615387c99815ee3663d1a4f888549679523d2acd7f716c.webp"
+          },
+          "away_team": {
+            "id": "t_1jOgDP",
+            "name": "PSV Eindhoven",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/e89b7540c69dc8b8a7b32bc58f807d304e60d8223890a76a60beaef26980e882.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
       "match_id": "m_3jVoFq",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-23T20:00:00+00:00",
@@ -271,6 +661,71 @@
     {
       "schema_version": 1,
       "provider": "PitchAPI",
+      "match_id": "m_3llrZc",
+      "snapshot": "J-7",
+      "kickoff_utc": "2026-11-24T20:00:00+00:00",
+      "collected_at_utc": "2026-11-17T08:41:10.599439+00:00",
+      "competition": "Ligue des champions UEFA",
+      "home_team": "Como",
+      "away_team": "AEK Athens",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_3llrZc",
+        "home_team": {
+          "id": "t_0oXTvZ",
+          "name": "Como",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/35f069058222c070820cbf97102be4379a619b2c9892b41f0ee6c4d1920bdec9.webp"
+        },
+        "away_team": {
+          "id": "t_2jeqmO",
+          "name": "AEK Athens",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/7a5e1ea3a61aa9dad0ed73f67c8617b24633f76185bc91c8fab87cf6a69f46fe.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_3llrZc",
+          "home_team": {
+            "id": "t_0oXTvZ",
+            "name": "Como",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/35f069058222c070820cbf97102be4379a619b2c9892b41f0ee6c4d1920bdec9.webp"
+          },
+          "away_team": {
+            "id": "t_2jeqmO",
+            "name": "AEK Athens",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/7a5e1ea3a61aa9dad0ed73f67c8617b24633f76185bc91c8fab87cf6a69f46fe.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
       "match_id": "m_3uRPBe",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-22T23:30:00+00:00",
@@ -317,6 +772,136 @@
             "id": "t_3NDbTT",
             "name": "Charlotte FC",
             "image_url": "https://cdn.pitchapi.dev/images/teams/351d9bbbcf87efe605157514bf3b52105d6fe5c8438a994e5b4870f3f890a206.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_4J6bPl",
+      "snapshot": "J-7",
+      "kickoff_utc": "2026-11-24T20:00:00+00:00",
+      "collected_at_utc": "2026-11-17T08:41:10.599439+00:00",
+      "competition": "Ligue des champions UEFA",
+      "home_team": "Feyenoord",
+      "away_team": "FC Porto",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_4J6bPl",
+        "home_team": {
+          "id": "t_4KvHFN",
+          "name": "Feyenoord",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/dcf2421ca736dcdb1b71522260d467a0681d0b4bad3308c2e912f58f37a3511d.webp"
+        },
+        "away_team": {
+          "id": "t_0dVrhE",
+          "name": "FC Porto",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/32b58b1949ae598ee4f05086017e0bf309cbc15846c63a60955beccf41726790.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_4J6bPl",
+          "home_team": {
+            "id": "t_4KvHFN",
+            "name": "Feyenoord",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/dcf2421ca736dcdb1b71522260d467a0681d0b4bad3308c2e912f58f37a3511d.webp"
+          },
+          "away_team": {
+            "id": "t_0dVrhE",
+            "name": "FC Porto",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/32b58b1949ae598ee4f05086017e0bf309cbc15846c63a60955beccf41726790.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_4SYMzr",
+      "snapshot": "J-7",
+      "kickoff_utc": "2026-11-24T17:45:00+00:00",
+      "collected_at_utc": "2026-11-17T08:41:10.599439+00:00",
+      "competition": "Ligue des champions UEFA",
+      "home_team": "Galatasaray",
+      "away_team": "Aston Villa",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_4SYMzr",
+        "home_team": {
+          "id": "t_15TWxO",
+          "name": "Galatasaray",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/b2f762b5bacdd581c3d182ca109615814151ee90e37749cb276d5a9bda88b13a.webp"
+        },
+        "away_team": {
+          "id": "t_4RqKpo",
+          "name": "Aston Villa",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/fba3bf0754a20dffd4acc44c3d5f6b12f7d8ab9c79ae6000a745d30385cd631c.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_4SYMzr",
+          "home_team": {
+            "id": "t_15TWxO",
+            "name": "Galatasaray",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/b2f762b5bacdd581c3d182ca109615814151ee90e37749cb276d5a9bda88b13a.webp"
+          },
+          "away_team": {
+            "id": "t_4RqKpo",
+            "name": "Aston Villa",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/fba3bf0754a20dffd4acc44c3d5f6b12f7d8ab9c79ae6000a745d30385cd631c.webp"
           },
           "home": {
             "formation": "",

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-11-16T22:53:11.608218Z",
+  "generated_at_utc": "2026-11-17T08:58:35.967235Z",
   "provider": "pitchapi_processed_history",
   "scope": "same_competition_same_season_strictly_prior_matches",
   "model": "venue_attack_defence_poisson_baseline_v1",
@@ -5534,6 +5534,103 @@
         "calibration_status": "not_calibrated"
       }
     },
+    "m_3iTvoj": {
+      "match_id": "m_3iTvoj",
+      "competition_slug": "es-la-liga",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-30T20:00:00Z",
+      "home_team": "Espanyol",
+      "home_team_id": "t_3WlXqr",
+      "away_team": "Getafe",
+      "away_team_id": "t_3i7zAH",
+      "history_cutoff_exclusive_utc": "2026-11-30T20:00:00Z",
+      "features": {
+        "match_id": "m_3iTvoj",
+        "competition_slug": "es-la-liga",
+        "season": "2026/2027",
+        "kickoff_utc": "2026-11-30T20:00:00Z",
+        "home_team_id": "t_3WlXqr",
+        "away_team_id": "t_3i7zAH",
+        "home": {
+          "venue": {
+            "played": 6,
+            "goals_for_per_match": 1.0,
+            "goals_against_per_match": 1.1667
+          },
+          "overall": {
+            "played": 12,
+            "goals_for_per_match": 1.0833,
+            "goals_against_per_match": 1.1667
+          },
+          "competition_venue": {
+            "played": 119,
+            "goals_for_per_match": 1.6134,
+            "goals_against_per_match": 1.2773
+          },
+          "selected": {
+            "played": 6,
+            "goals_for_per_match": 1.0,
+            "goals_against_per_match": 1.1667
+          },
+          "selected_source": "venue"
+        },
+        "away": {
+          "venue": {
+            "played": 6,
+            "goals_for_per_match": 0.0,
+            "goals_against_per_match": 2.3333
+          },
+          "overall": {
+            "played": 12,
+            "goals_for_per_match": 0.6667,
+            "goals_against_per_match": 1.5
+          },
+          "competition_venue": {
+            "played": 119,
+            "goals_for_per_match": 1.2773,
+            "goals_against_per_match": 1.6134
+          },
+          "selected": {
+            "played": 6,
+            "goals_for_per_match": 0.0,
+            "goals_against_per_match": 2.3333
+          },
+          "selected_source": "venue"
+        },
+        "competition": {
+          "home": {
+            "played": 119,
+            "goals_for_per_match": 1.6134,
+            "goals_against_per_match": 1.2773
+          },
+          "away": {
+            "played": 119,
+            "goals_for_per_match": 1.2773,
+            "goals_against_per_match": 1.6134
+          }
+        },
+        "history_cutoff_exclusive_utc": "2026-11-30T20:00:00Z"
+      },
+      "expected_goals": {
+        "status": "estimated",
+        "model": "venue_attack_defence_poisson_baseline_v1",
+        "lambda_home": 1.5901,
+        "lambda_away": 0.5532,
+        "total_expected_goals": 2.1433,
+        "prior_matches": 5.0,
+        "samples": {
+          "home": 6,
+          "away": 6
+        },
+        "sample_level": "medium",
+        "sources": {
+          "home": "venue",
+          "away": "venue"
+        },
+        "formula": "competition_venue_average × shrunk_attack_ratio × shrunk_opponent_defence_ratio",
+        "calibration_status": "not_calibrated"
+      }
+    },
     "m_4MACO8": {
       "match_id": "m_4MACO8",
       "competition_slug": "it-serie-a",
@@ -7272,6 +7369,200 @@
           "away": 6
         },
         "sample_level": "low",
+        "sources": {
+          "home": "venue",
+          "away": "venue"
+        },
+        "formula": "competition_venue_average × shrunk_attack_ratio × shrunk_opponent_defence_ratio",
+        "calibration_status": "not_calibrated"
+      }
+    },
+    "m_0fP1BP": {
+      "match_id": "m_0fP1BP",
+      "competition_slug": "it-serie-a",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-30T17:30:00Z",
+      "home_team": "Lecce",
+      "home_team_id": "t_35suku",
+      "away_team": "Atalanta",
+      "away_team_id": "t_0r0zEG",
+      "history_cutoff_exclusive_utc": "2026-11-30T17:30:00Z",
+      "features": {
+        "match_id": "m_0fP1BP",
+        "competition_slug": "it-serie-a",
+        "season": "2026/2027",
+        "kickoff_utc": "2026-11-30T17:30:00Z",
+        "home_team_id": "t_35suku",
+        "away_team_id": "t_0r0zEG",
+        "home": {
+          "venue": {
+            "played": 5,
+            "goals_for_per_match": 1.0,
+            "goals_against_per_match": 2.4
+          },
+          "overall": {
+            "played": 11,
+            "goals_for_per_match": 1.0909,
+            "goals_against_per_match": 2.0
+          },
+          "competition_venue": {
+            "played": 110,
+            "goals_for_per_match": 1.6,
+            "goals_against_per_match": 1.5091
+          },
+          "selected": {
+            "played": 5,
+            "goals_for_per_match": 1.0,
+            "goals_against_per_match": 2.4
+          },
+          "selected_source": "venue"
+        },
+        "away": {
+          "venue": {
+            "played": 5,
+            "goals_for_per_match": 1.2,
+            "goals_against_per_match": 1.8
+          },
+          "overall": {
+            "played": 11,
+            "goals_for_per_match": 1.5455,
+            "goals_against_per_match": 1.8182
+          },
+          "competition_venue": {
+            "played": 110,
+            "goals_for_per_match": 1.5091,
+            "goals_against_per_match": 1.6
+          },
+          "selected": {
+            "played": 5,
+            "goals_for_per_match": 1.2,
+            "goals_against_per_match": 1.8
+          },
+          "selected_source": "venue"
+        },
+        "competition": {
+          "home": {
+            "played": 110,
+            "goals_for_per_match": 1.6,
+            "goals_against_per_match": 1.5091
+          },
+          "away": {
+            "played": 110,
+            "goals_for_per_match": 1.5091,
+            "goals_against_per_match": 1.6
+          }
+        },
+        "history_cutoff_exclusive_utc": "2026-11-30T17:30:00Z"
+      },
+      "expected_goals": {
+        "status": "estimated",
+        "model": "venue_attack_defence_poisson_baseline_v1",
+        "lambda_home": 1.3813,
+        "lambda_away": 1.7544,
+        "total_expected_goals": 3.1357,
+        "prior_matches": 5.0,
+        "samples": {
+          "home": 5,
+          "away": 5
+        },
+        "sample_level": "medium",
+        "sources": {
+          "home": "venue",
+          "away": "venue"
+        },
+        "formula": "competition_venue_average × shrunk_attack_ratio × shrunk_opponent_defence_ratio",
+        "calibration_status": "not_calibrated"
+      }
+    },
+    "m_2TYAqN": {
+      "match_id": "m_2TYAqN",
+      "competition_slug": "it-serie-a",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-30T19:45:00Z",
+      "home_team": "Cagliari",
+      "home_team_id": "t_3V0mmv",
+      "away_team": "Milan",
+      "away_team_id": "t_1DYf1D",
+      "history_cutoff_exclusive_utc": "2026-11-30T19:45:00Z",
+      "features": {
+        "match_id": "m_2TYAqN",
+        "competition_slug": "it-serie-a",
+        "season": "2026/2027",
+        "kickoff_utc": "2026-11-30T19:45:00Z",
+        "home_team_id": "t_3V0mmv",
+        "away_team_id": "t_1DYf1D",
+        "home": {
+          "venue": {
+            "played": 5,
+            "goals_for_per_match": 0.6,
+            "goals_against_per_match": 0.8
+          },
+          "overall": {
+            "played": 11,
+            "goals_for_per_match": 0.9091,
+            "goals_against_per_match": 1.3636
+          },
+          "competition_venue": {
+            "played": 110,
+            "goals_for_per_match": 1.6,
+            "goals_against_per_match": 1.5091
+          },
+          "selected": {
+            "played": 5,
+            "goals_for_per_match": 0.6,
+            "goals_against_per_match": 0.8
+          },
+          "selected_source": "venue"
+        },
+        "away": {
+          "venue": {
+            "played": 6,
+            "goals_for_per_match": 1.6667,
+            "goals_against_per_match": 1.0
+          },
+          "overall": {
+            "played": 11,
+            "goals_for_per_match": 2.0909,
+            "goals_against_per_match": 1.1818
+          },
+          "competition_venue": {
+            "played": 110,
+            "goals_for_per_match": 1.5091,
+            "goals_against_per_match": 1.6
+          },
+          "selected": {
+            "played": 6,
+            "goals_for_per_match": 1.6667,
+            "goals_against_per_match": 1.0
+          },
+          "selected_source": "venue"
+        },
+        "competition": {
+          "home": {
+            "played": 110,
+            "goals_for_per_match": 1.6,
+            "goals_against_per_match": 1.5091
+          },
+          "away": {
+            "played": 110,
+            "goals_for_per_match": 1.5091,
+            "goals_against_per_match": 1.6
+          }
+        },
+        "history_cutoff_exclusive_utc": "2026-11-30T19:45:00Z"
+      },
+      "expected_goals": {
+        "status": "estimated",
+        "model": "venue_attack_defence_poisson_baseline_v1",
+        "lambda_home": 0.875,
+        "lambda_away": 1.2203,
+        "total_expected_goals": 2.0953,
+        "prior_matches": 5.0,
+        "samples": {
+          "home": 5,
+          "away": 6
+        },
+        "sample_level": "medium",
         "sources": {
           "home": "venue",
           "away": "venue"
@@ -9515,17 +9806,17 @@
       "match_id": "m_1WA9Tt",
       "competition_slug": "fr-ligue-2",
       "season": "2026/2027",
-      "kickoff_utc": "2026-11-21T13:00:00Z",
+      "kickoff_utc": "2026-11-23T19:45:00Z",
       "home_team": "Nantes",
       "home_team_id": "t_0JtwBe",
       "away_team": "Grenoble",
       "away_team_id": "t_0M7O86",
-      "history_cutoff_exclusive_utc": "2026-11-21T13:00:00Z",
+      "history_cutoff_exclusive_utc": "2026-11-23T19:45:00Z",
       "features": {
         "match_id": "m_1WA9Tt",
         "competition_slug": "fr-ligue-2",
         "season": "2026/2027",
-        "kickoff_utc": "2026-11-21T13:00:00Z",
+        "kickoff_utc": "2026-11-23T19:45:00Z",
         "home_team_id": "t_0JtwBe",
         "away_team_id": "t_0M7O86",
         "home": {
@@ -9586,7 +9877,7 @@
             "goals_against_per_match": 1.398
           }
         },
-        "history_cutoff_exclusive_utc": "2026-11-21T13:00:00Z"
+        "history_cutoff_exclusive_utc": "2026-11-23T19:45:00Z"
       },
       "expected_goals": {
         "status": "estimated",
@@ -12324,6 +12615,200 @@
         "calibration_status": "not_calibrated"
       }
     },
+    "m_0WxH2f": {
+      "match_id": "m_0WxH2f",
+      "competition_slug": "pt-primeira-liga",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-30T20:15:00Z",
+      "home_team": "Benfica",
+      "home_team_id": "t_0Mzm1V",
+      "away_team": "Famalicão",
+      "away_team_id": "t_3cfbYN",
+      "history_cutoff_exclusive_utc": "2026-11-30T20:15:00Z",
+      "features": {
+        "match_id": "m_0WxH2f",
+        "competition_slug": "pt-primeira-liga",
+        "season": "2026/2027",
+        "kickoff_utc": "2026-11-30T20:15:00Z",
+        "home_team_id": "t_0Mzm1V",
+        "away_team_id": "t_3cfbYN",
+        "home": {
+          "venue": {
+            "played": 4,
+            "goals_for_per_match": 2.0,
+            "goals_against_per_match": 0.5
+          },
+          "overall": {
+            "played": 10,
+            "goals_for_per_match": 2.8,
+            "goals_against_per_match": 0.8
+          },
+          "competition_venue": {
+            "played": 90,
+            "goals_for_per_match": 1.2556,
+            "goals_against_per_match": 1.4
+          },
+          "selected": {
+            "played": 4,
+            "goals_for_per_match": 2.0,
+            "goals_against_per_match": 0.5
+          },
+          "selected_source": "venue"
+        },
+        "away": {
+          "venue": {
+            "played": 5,
+            "goals_for_per_match": 2.0,
+            "goals_against_per_match": 1.2
+          },
+          "overall": {
+            "played": 10,
+            "goals_for_per_match": 1.4,
+            "goals_against_per_match": 1.3
+          },
+          "competition_venue": {
+            "played": 90,
+            "goals_for_per_match": 1.4,
+            "goals_against_per_match": 1.2556
+          },
+          "selected": {
+            "played": 5,
+            "goals_for_per_match": 2.0,
+            "goals_against_per_match": 1.2
+          },
+          "selected_source": "venue"
+        },
+        "competition": {
+          "home": {
+            "played": 90,
+            "goals_for_per_match": 1.2556,
+            "goals_against_per_match": 1.4
+          },
+          "away": {
+            "played": 90,
+            "goals_for_per_match": 1.4,
+            "goals_against_per_match": 1.2556
+          }
+        },
+        "history_cutoff_exclusive_utc": "2026-11-30T20:15:00Z"
+      },
+      "expected_goals": {
+        "status": "estimated",
+        "model": "venue_attack_defence_poisson_baseline_v1",
+        "lambda_home": 1.5513,
+        "lambda_away": 1.2143,
+        "total_expected_goals": 2.7656,
+        "prior_matches": 5.0,
+        "samples": {
+          "home": 4,
+          "away": 5
+        },
+        "sample_level": "low",
+        "sources": {
+          "home": "venue",
+          "away": "venue"
+        },
+        "formula": "competition_venue_average × shrunk_attack_ratio × shrunk_opponent_defence_ratio",
+        "calibration_status": "not_calibrated"
+      }
+    },
+    "m_3QYAxM": {
+      "match_id": "m_3QYAxM",
+      "competition_slug": "pt-primeira-liga",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-30T20:15:00Z",
+      "home_team": "Casa Pia AC",
+      "home_team_id": "t_4M4lCK",
+      "away_team": "Braga",
+      "away_team_id": "t_2kXart",
+      "history_cutoff_exclusive_utc": "2026-11-30T20:15:00Z",
+      "features": {
+        "match_id": "m_3QYAxM",
+        "competition_slug": "pt-primeira-liga",
+        "season": "2026/2027",
+        "kickoff_utc": "2026-11-30T20:15:00Z",
+        "home_team_id": "t_4M4lCK",
+        "away_team_id": "t_2kXart",
+        "home": {
+          "venue": {
+            "played": 5,
+            "goals_for_per_match": 0.2,
+            "goals_against_per_match": 3.0
+          },
+          "overall": {
+            "played": 10,
+            "goals_for_per_match": 0.6,
+            "goals_against_per_match": 1.9
+          },
+          "competition_venue": {
+            "played": 90,
+            "goals_for_per_match": 1.2556,
+            "goals_against_per_match": 1.4
+          },
+          "selected": {
+            "played": 5,
+            "goals_for_per_match": 0.2,
+            "goals_against_per_match": 3.0
+          },
+          "selected_source": "venue"
+        },
+        "away": {
+          "venue": {
+            "played": 5,
+            "goals_for_per_match": 0.8,
+            "goals_against_per_match": 0.8
+          },
+          "overall": {
+            "played": 10,
+            "goals_for_per_match": 1.1,
+            "goals_against_per_match": 0.9
+          },
+          "competition_venue": {
+            "played": 90,
+            "goals_for_per_match": 1.4,
+            "goals_against_per_match": 1.2556
+          },
+          "selected": {
+            "played": 5,
+            "goals_for_per_match": 0.8,
+            "goals_against_per_match": 0.8
+          },
+          "selected_source": "venue"
+        },
+        "competition": {
+          "home": {
+            "played": 90,
+            "goals_for_per_match": 1.2556,
+            "goals_against_per_match": 1.4
+          },
+          "away": {
+            "played": 90,
+            "goals_for_per_match": 1.4,
+            "goals_against_per_match": 1.2556
+          }
+        },
+        "history_cutoff_exclusive_utc": "2026-11-30T20:15:00Z"
+      },
+      "expected_goals": {
+        "status": "estimated",
+        "model": "venue_attack_defence_poisson_baseline_v1",
+        "lambda_home": 0.5958,
+        "lambda_away": 1.7286,
+        "total_expected_goals": 2.3244,
+        "prior_matches": 5.0,
+        "samples": {
+          "home": 5,
+          "away": 5
+        },
+        "sample_level": "medium",
+        "sources": {
+          "home": "venue",
+          "away": "venue"
+        },
+        "formula": "competition_venue_average × shrunk_attack_ratio × shrunk_opponent_defence_ratio",
+        "calibration_status": "not_calibrated"
+      }
+    },
     "m_0ojMZu": {
       "match_id": "m_0ojMZu",
       "competition_slug": "us-mls",
@@ -13676,6 +14161,394 @@
         "sample_level": "high",
         "sources": {
           "home": "venue",
+          "away": "venue"
+        },
+        "formula": "competition_venue_average × shrunk_attack_ratio × shrunk_opponent_defence_ratio",
+        "calibration_status": "not_calibrated"
+      }
+    },
+    "m_3hlI0a": {
+      "match_id": "m_3hlI0a",
+      "competition_slug": "us-mls",
+      "season": "2026",
+      "kickoff_utc": "2026-11-22T21:00:00Z",
+      "home_team": "Nashville SC",
+      "home_team_id": "t_0DpITA",
+      "away_team": "Orlando City/FC Cincinnati",
+      "away_team_id": "t_3ikEOP",
+      "history_cutoff_exclusive_utc": "2026-11-22T21:00:00Z",
+      "features": {
+        "match_id": "m_3hlI0a",
+        "competition_slug": "us-mls",
+        "season": "2026",
+        "kickoff_utc": "2026-11-22T21:00:00Z",
+        "home_team_id": "t_0DpITA",
+        "away_team_id": "t_3ikEOP",
+        "home": {
+          "venue": {
+            "played": 17,
+            "goals_for_per_match": 2.8235,
+            "goals_against_per_match": 0.8235
+          },
+          "overall": {
+            "played": 34,
+            "goals_for_per_match": 2.0882,
+            "goals_against_per_match": 0.7353
+          },
+          "competition_venue": {
+            "played": 510,
+            "goals_for_per_match": 1.8431,
+            "goals_against_per_match": 1.4059
+          },
+          "selected": {
+            "played": 17,
+            "goals_for_per_match": 2.8235,
+            "goals_against_per_match": 0.8235
+          },
+          "selected_source": "venue"
+        },
+        "away": {
+          "venue": {
+            "played": 0,
+            "goals_for_per_match": null,
+            "goals_against_per_match": null
+          },
+          "overall": {
+            "played": 0,
+            "goals_for_per_match": null,
+            "goals_against_per_match": null
+          },
+          "competition_venue": {
+            "played": 510,
+            "goals_for_per_match": 1.4059,
+            "goals_against_per_match": 1.8431
+          },
+          "selected": {
+            "played": 510,
+            "goals_for_per_match": 1.4059,
+            "goals_against_per_match": 1.8431
+          },
+          "selected_source": "competition_fallback"
+        },
+        "competition": {
+          "home": {
+            "played": 510,
+            "goals_for_per_match": 1.8431,
+            "goals_against_per_match": 1.4059
+          },
+          "away": {
+            "played": 510,
+            "goals_for_per_match": 1.4059,
+            "goals_against_per_match": 1.8431
+          }
+        },
+        "history_cutoff_exclusive_utc": "2026-11-22T21:00:00Z"
+      },
+      "expected_goals": {
+        "status": "estimated",
+        "model": "venue_attack_defence_poisson_baseline_v1",
+        "lambda_home": 2.6007,
+        "lambda_away": 0.9559,
+        "total_expected_goals": 3.5566,
+        "prior_matches": 5.0,
+        "samples": {
+          "home": 17,
+          "away": 510
+        },
+        "sample_level": "high",
+        "sources": {
+          "home": "venue",
+          "away": "competition_fallback"
+        },
+        "formula": "competition_venue_average × shrunk_attack_ratio × shrunk_opponent_defence_ratio",
+        "calibration_status": "not_calibrated"
+      }
+    },
+    "m_18axex": {
+      "match_id": "m_18axex",
+      "competition_slug": "us-mls",
+      "season": "2026",
+      "kickoff_utc": "2026-11-23T01:30:00Z",
+      "home_team": "Vancouver Whitecaps",
+      "home_team_id": "t_2CuHdk",
+      "away_team": "Seattle Sounders FC/Real Salt Lake",
+      "away_team_id": "t_2MTtP7",
+      "history_cutoff_exclusive_utc": "2026-11-23T01:30:00Z",
+      "features": {
+        "match_id": "m_18axex",
+        "competition_slug": "us-mls",
+        "season": "2026",
+        "kickoff_utc": "2026-11-23T01:30:00Z",
+        "home_team_id": "t_2CuHdk",
+        "away_team_id": "t_2MTtP7",
+        "home": {
+          "venue": {
+            "played": 17,
+            "goals_for_per_match": 2.5882,
+            "goals_against_per_match": 0.9412
+          },
+          "overall": {
+            "played": 34,
+            "goals_for_per_match": 2.1765,
+            "goals_against_per_match": 1.0
+          },
+          "competition_venue": {
+            "played": 510,
+            "goals_for_per_match": 1.8431,
+            "goals_against_per_match": 1.4059
+          },
+          "selected": {
+            "played": 17,
+            "goals_for_per_match": 2.5882,
+            "goals_against_per_match": 0.9412
+          },
+          "selected_source": "venue"
+        },
+        "away": {
+          "venue": {
+            "played": 0,
+            "goals_for_per_match": null,
+            "goals_against_per_match": null
+          },
+          "overall": {
+            "played": 0,
+            "goals_for_per_match": null,
+            "goals_against_per_match": null
+          },
+          "competition_venue": {
+            "played": 510,
+            "goals_for_per_match": 1.4059,
+            "goals_against_per_match": 1.8431
+          },
+          "selected": {
+            "played": 510,
+            "goals_for_per_match": 1.4059,
+            "goals_against_per_match": 1.8431
+          },
+          "selected_source": "competition_fallback"
+        },
+        "competition": {
+          "home": {
+            "played": 510,
+            "goals_for_per_match": 1.8431,
+            "goals_against_per_match": 1.4059
+          },
+          "away": {
+            "played": 510,
+            "goals_for_per_match": 1.4059,
+            "goals_against_per_match": 1.8431
+          }
+        },
+        "history_cutoff_exclusive_utc": "2026-11-23T01:30:00Z"
+      },
+      "expected_goals": {
+        "status": "estimated",
+        "model": "venue_attack_defence_poisson_baseline_v1",
+        "lambda_home": 2.4189,
+        "lambda_away": 1.0468,
+        "total_expected_goals": 3.4657,
+        "prior_matches": 5.0,
+        "samples": {
+          "home": 17,
+          "away": 510
+        },
+        "sample_level": "high",
+        "sources": {
+          "home": "venue",
+          "away": "competition_fallback"
+        },
+        "formula": "competition_venue_average × shrunk_attack_ratio × shrunk_opponent_defence_ratio",
+        "calibration_status": "not_calibrated"
+      }
+    },
+    "m_36k6uj": {
+      "match_id": "m_36k6uj",
+      "competition_slug": "us-mls",
+      "season": "2026",
+      "kickoff_utc": "2026-11-28T03:00:00Z",
+      "home_team": "Seattle Sounders FC/Real Salt Lake",
+      "home_team_id": "t_2MTtP7",
+      "away_team": "Vancouver Whitecaps",
+      "away_team_id": "t_2CuHdk",
+      "history_cutoff_exclusive_utc": "2026-11-28T03:00:00Z",
+      "features": {
+        "match_id": "m_36k6uj",
+        "competition_slug": "us-mls",
+        "season": "2026",
+        "kickoff_utc": "2026-11-28T03:00:00Z",
+        "home_team_id": "t_2MTtP7",
+        "away_team_id": "t_2CuHdk",
+        "home": {
+          "venue": {
+            "played": 0,
+            "goals_for_per_match": null,
+            "goals_against_per_match": null
+          },
+          "overall": {
+            "played": 0,
+            "goals_for_per_match": null,
+            "goals_against_per_match": null
+          },
+          "competition_venue": {
+            "played": 510,
+            "goals_for_per_match": 1.8431,
+            "goals_against_per_match": 1.4059
+          },
+          "selected": {
+            "played": 510,
+            "goals_for_per_match": 1.8431,
+            "goals_against_per_match": 1.4059
+          },
+          "selected_source": "competition_fallback"
+        },
+        "away": {
+          "venue": {
+            "played": 17,
+            "goals_for_per_match": 1.7647,
+            "goals_against_per_match": 1.0588
+          },
+          "overall": {
+            "played": 34,
+            "goals_for_per_match": 2.1765,
+            "goals_against_per_match": 1.0
+          },
+          "competition_venue": {
+            "played": 510,
+            "goals_for_per_match": 1.4059,
+            "goals_against_per_match": 1.8431
+          },
+          "selected": {
+            "played": 17,
+            "goals_for_per_match": 1.7647,
+            "goals_against_per_match": 1.0588
+          },
+          "selected_source": "venue"
+        },
+        "competition": {
+          "home": {
+            "played": 510,
+            "goals_for_per_match": 1.8431,
+            "goals_against_per_match": 1.4059
+          },
+          "away": {
+            "played": 510,
+            "goals_for_per_match": 1.4059,
+            "goals_against_per_match": 1.8431
+          }
+        },
+        "history_cutoff_exclusive_utc": "2026-11-28T03:00:00Z"
+      },
+      "expected_goals": {
+        "status": "estimated",
+        "model": "venue_attack_defence_poisson_baseline_v1",
+        "lambda_home": 1.237,
+        "lambda_away": 1.6832,
+        "total_expected_goals": 2.9202,
+        "prior_matches": 5.0,
+        "samples": {
+          "home": 510,
+          "away": 17
+        },
+        "sample_level": "high",
+        "sources": {
+          "home": "competition_fallback",
+          "away": "venue"
+        },
+        "formula": "competition_venue_average × shrunk_attack_ratio × shrunk_opponent_defence_ratio",
+        "calibration_status": "not_calibrated"
+      }
+    },
+    "m_3oXBmV": {
+      "match_id": "m_3oXBmV",
+      "competition_slug": "us-mls",
+      "season": "2026",
+      "kickoff_utc": "2026-11-28T23:30:00Z",
+      "home_team": "Orlando City/FC Cincinnati",
+      "home_team_id": "t_3ikEOP",
+      "away_team": "Nashville SC",
+      "away_team_id": "t_0DpITA",
+      "history_cutoff_exclusive_utc": "2026-11-28T23:30:00Z",
+      "features": {
+        "match_id": "m_3oXBmV",
+        "competition_slug": "us-mls",
+        "season": "2026",
+        "kickoff_utc": "2026-11-28T23:30:00Z",
+        "home_team_id": "t_3ikEOP",
+        "away_team_id": "t_0DpITA",
+        "home": {
+          "venue": {
+            "played": 0,
+            "goals_for_per_match": null,
+            "goals_against_per_match": null
+          },
+          "overall": {
+            "played": 0,
+            "goals_for_per_match": null,
+            "goals_against_per_match": null
+          },
+          "competition_venue": {
+            "played": 510,
+            "goals_for_per_match": 1.8431,
+            "goals_against_per_match": 1.4059
+          },
+          "selected": {
+            "played": 510,
+            "goals_for_per_match": 1.8431,
+            "goals_against_per_match": 1.4059
+          },
+          "selected_source": "competition_fallback"
+        },
+        "away": {
+          "venue": {
+            "played": 17,
+            "goals_for_per_match": 1.3529,
+            "goals_against_per_match": 0.6471
+          },
+          "overall": {
+            "played": 34,
+            "goals_for_per_match": 2.0882,
+            "goals_against_per_match": 0.7353
+          },
+          "competition_venue": {
+            "played": 510,
+            "goals_for_per_match": 1.4059,
+            "goals_against_per_match": 1.8431
+          },
+          "selected": {
+            "played": 17,
+            "goals_for_per_match": 1.3529,
+            "goals_against_per_match": 0.6471
+          },
+          "selected_source": "venue"
+        },
+        "competition": {
+          "home": {
+            "played": 510,
+            "goals_for_per_match": 1.8431,
+            "goals_against_per_match": 1.4059
+          },
+          "away": {
+            "played": 510,
+            "goals_for_per_match": 1.4059,
+            "goals_against_per_match": 1.8431
+          }
+        },
+        "history_cutoff_exclusive_utc": "2026-11-28T23:30:00Z"
+      },
+      "expected_goals": {
+        "status": "estimated",
+        "model": "venue_attack_defence_poisson_baseline_v1",
+        "lambda_home": 0.9189,
+        "lambda_away": 1.3649,
+        "total_expected_goals": 2.2838,
+        "prior_matches": 5.0,
+        "samples": {
+          "home": 510,
+          "away": 17
+        },
+        "sample_level": "high",
+        "sources": {
+          "home": "competition_fallback",
           "away": "venue"
         },
         "formula": "competition_venue_average × shrunk_attack_ratio × shrunk_opponent_defence_ratio",
@@ -19796,11 +20669,11 @@
   },
   "quality": {
     "history_matches_loaded": 1780,
-    "fixtures_loaded": 204,
-    "fixtures_with_predictions": 204,
+    "fixtures_loaded": 213,
+    "fixtures_with_predictions": 213,
     "fixtures_without_features": 0,
     "feature_builder": {
-      "matches_with_features": 1984,
+      "matches_with_features": 1993,
       "matches_skipped": 0,
       "competition_seasons": 12,
       "same_kickoff_batching": true

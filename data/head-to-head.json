@@ -1,6 +1,6 @@
 {
   "provider": "pitchapi_processed_history",
-  "generated_at_utc": "2026-11-16T22:53:11.331918+00:00",
+  "generated_at_utc": "2026-11-17T08:58:35.679650+00:00",
   "matches_considered": 9402,
   "pairs": {
     "cerezo osaka|fc tokyo": {
@@ -1449,6 +1449,48 @@
         }
       ]
     },
+    "benfica|famalicao": {
+      "team_a": "Benfica",
+      "team_b": "Famalicão",
+      "matches": [
+        {
+          "date": "2026-05-02T17:00:00Z",
+          "home": "Famalicão",
+          "away": "Benfica",
+          "score_home": 2,
+          "score_away": 2,
+          "competition_id": "pt-primeira-liga",
+          "competition_name": "Primeira Liga"
+        },
+        {
+          "date": "2025-12-22T20:45:00Z",
+          "home": "Benfica",
+          "away": "Famalicão",
+          "score_home": 1,
+          "score_away": 0,
+          "competition_id": "pt-primeira-liga",
+          "competition_name": "Primeira Liga"
+        },
+        {
+          "date": "2025-01-17T20:15:00Z",
+          "home": "Benfica",
+          "away": "Famalicão",
+          "score_home": 4,
+          "score_away": 0,
+          "competition_id": "pt-primeira-liga",
+          "competition_name": "Primeira Liga"
+        },
+        {
+          "date": "2024-08-11T17:00:00Z",
+          "home": "Famalicão",
+          "away": "Benfica",
+          "score_home": 2,
+          "score_away": 0,
+          "competition_id": "pt-primeira-liga",
+          "competition_name": "Primeira Liga"
+        }
+      ]
+    },
     "afc bournemouth|nottingham forest": {
       "team_a": "AFC Bournemouth",
       "team_b": "Nottingham Forest",
@@ -1612,6 +1654,48 @@
           "away": "Udinese",
           "score_home": 1,
           "score_away": 1,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        }
+      ]
+    },
+    "atalanta|lecce": {
+      "team_a": "Atalanta",
+      "team_b": "Lecce",
+      "matches": [
+        {
+          "date": "2026-04-06T13:00:00Z",
+          "home": "Lecce",
+          "away": "Atalanta",
+          "score_home": 0,
+          "score_away": 3,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        },
+        {
+          "date": "2025-09-14T13:00:00Z",
+          "home": "Atalanta",
+          "away": "Lecce",
+          "score_home": 4,
+          "score_away": 1,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        },
+        {
+          "date": "2025-04-27T18:45:00Z",
+          "home": "Atalanta",
+          "away": "Lecce",
+          "score_home": 1,
+          "score_away": 1,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        },
+        {
+          "date": "2024-08-19T16:30:00Z",
+          "home": "Lecce",
+          "away": "Atalanta",
+          "score_home": 0,
+          "score_away": 4,
           "competition_id": "it-serie-a",
           "competition_name": "Serie A"
         }
@@ -3369,6 +3453,48 @@
         }
       ]
     },
+    "cagliari|milan": {
+      "team_a": "Cagliari",
+      "team_b": "Milan",
+      "matches": [
+        {
+          "date": "2026-05-24T18:45:00Z",
+          "home": "Milan",
+          "away": "Cagliari",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        },
+        {
+          "date": "2026-01-02T19:45:00Z",
+          "home": "Cagliari",
+          "away": "Milan",
+          "score_home": 0,
+          "score_away": 1,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        },
+        {
+          "date": "2025-01-11T19:45:00Z",
+          "home": "Milan",
+          "away": "Cagliari",
+          "score_home": 1,
+          "score_away": 1,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        },
+        {
+          "date": "2024-11-09T17:00:00Z",
+          "home": "Cagliari",
+          "away": "Milan",
+          "score_home": 3,
+          "score_away": 3,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        }
+      ]
+    },
     "ipswich town|tottenham hotspur": {
       "team_a": "Ipswich Town",
       "team_b": "Tottenham Hotspur",
@@ -3753,6 +3879,48 @@
         }
       ]
     },
+    "espanyol|getafe": {
+      "team_a": "Espanyol",
+      "team_b": "Getafe",
+      "matches": [
+        {
+          "date": "2026-03-21T15:15:00Z",
+          "home": "Espanyol",
+          "away": "Getafe",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "es-la-liga",
+          "competition_name": "La Liga"
+        },
+        {
+          "date": "2025-12-13T20:00:00Z",
+          "home": "Getafe",
+          "away": "Espanyol",
+          "score_home": 0,
+          "score_away": 1,
+          "competition_id": "es-la-liga",
+          "competition_name": "La Liga"
+        },
+        {
+          "date": "2025-04-18T19:00:00Z",
+          "home": "Espanyol",
+          "away": "Getafe",
+          "score_home": 1,
+          "score_away": 0,
+          "competition_id": "es-la-liga",
+          "competition_name": "La Liga"
+        },
+        {
+          "date": "2024-12-09T20:00:00Z",
+          "home": "Getafe",
+          "away": "Espanyol",
+          "score_home": 1,
+          "score_away": 0,
+          "competition_id": "es-la-liga",
+          "competition_name": "La Liga"
+        }
+      ]
+    },
     "juventus|venezia": {
       "team_a": "Juventus",
       "team_b": "Venezia",
@@ -4068,6 +4236,48 @@
           "score_away": 2,
           "competition_id": "gb-premier-league",
           "competition_name": "Premier League"
+        }
+      ]
+    },
+    "braga|casa pia ac": {
+      "team_a": "Braga",
+      "team_b": "Casa Pia AC",
+      "matches": [
+        {
+          "date": "2026-04-23T18:00:00Z",
+          "home": "Casa Pia AC",
+          "away": "Braga",
+          "score_home": 0,
+          "score_away": 1,
+          "competition_id": "pt-primeira-liga",
+          "competition_name": "Primeira Liga"
+        },
+        {
+          "date": "2025-10-26T20:30:00Z",
+          "home": "Braga",
+          "away": "Casa Pia AC",
+          "score_home": 4,
+          "score_away": 0,
+          "competition_id": "pt-primeira-liga",
+          "competition_name": "Primeira Liga"
+        },
+        {
+          "date": "2025-05-10T19:30:00Z",
+          "home": "Casa Pia AC",
+          "away": "Braga",
+          "score_home": 2,
+          "score_away": 1,
+          "competition_id": "pt-primeira-liga",
+          "competition_name": "Primeira Liga"
+        },
+        {
+          "date": "2024-12-29T18:00:00Z",
+          "home": "Braga",
+          "away": "Casa Pia AC",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "pt-primeira-liga",
+          "competition_name": "Primeira Liga"
         }
       ]
     },
