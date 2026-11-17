@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#243744">
+<link rel="icon" type="image/svg+xml" href="./assets/football-ai-circuit.svg">
+<title>Historique des pronostics — PronoFoot AI</title>
+<style>
+:root{color-scheme:light;--ink:#0a1b46;--muted:#607796;--line:#e5edf7;--bg:#f3f8fc;--green:#08b968;--red:#dc5555;--amber:#d99a20}
+*{box-sizing:border-box}body{margin:0;color:var(--ink);font-family:Inter,"Segoe UI",Roboto,Arial,sans-serif;background:linear-gradient(180deg,#f5f9fd 0,#eef5fa 100%);font-size:14px}
+main{max-width:1600px;margin:auto;padding:20px}.page-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin:4px 0 18px}.eyebrow{font-size:11px;font-weight:800;letter-spacing:1.4px;color:#08a966;text-transform:uppercase}.page-heading h1{font-size:27px;margin:5px 0 4px}.page-heading p{margin:0;color:var(--muted)}
+.notice{padding:13px 15px;border:1px solid #ead9a9;background:#fffaf0;border-radius:9px;color:#70551a;margin-bottom:16px;line-height:1.5}
+.toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px;margin-bottom:14px}
+.toolbar label{font-size:12px;color:var(--muted);font-weight:700}.toolbar select{display:block;min-width:170px;margin-top:4px;padding:9px 11px;border:1px solid var(--line);border-radius:6px;background:white;color:var(--ink)}
+.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:14px}.metric{background:#fff;border:1px solid var(--line);border-radius:10px;padding:15px}.metric span{display:block;color:var(--muted);font-size:12px}.metric strong{display:block;font-size:25px;margin-top:5px}.metric small{color:var(--muted)}
+.panel{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}.panel-head{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:14px 16px;border-bottom:1px solid var(--line)}.panel-head h2{font-size:16px;margin:0}.panel-head span{font-size:12px;color:var(--muted)}
+.table-wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;min-width:850px}th,td{text-align:left;padding:12px 14px;border-bottom:1px solid #edf1f6;white-space:nowrap}th{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);background:#f8fbfe}td{font-size:13px}.teams{font-weight:700}.score{font-weight:800;font-variant-numeric:tabular-nums}.pill{display:inline-block;padding:4px 8px;border-radius:20px;font-size:11px;font-weight:800}.pill.win{background:#e7f8ef;color:#087b49}.pill.loss{background:#fff0f0;color:#b23b3b}.pill.pending{background:#f0f4f8;color:#66788b}.empty{padding:42px 20px;text-align:center;color:var(--muted)}.empty strong{display:block;color:var(--ink);font-size:16px;margin-bottom:7px}.footnote{margin:12px 2px 0;color:var(--muted);font-size:11px;line-height:1.5}
+@media(max-width:800px){main{padding:13px}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.page-heading{display:block}.page-heading h1{font-size:23px}}
+@media(max-width:420px){.metrics{gap:8px}.metric{padding:11px}.metric strong{font-size:21px}.toolbar label{width:100%}.toolbar select{width:100%}}
+</style>
+</head>
+<body>
+<main>
+<section class="page-heading"><div><div class="eyebrow">Football Prediction Lab</div><h1>Historique des pronostics</h1><p>Mesurer les prévisions du +1,5 but et suivre leur fiabilité dans le temps.</p></div></section>
+<div class="notice" id="archiveNotice" role="status">Chargement de l'archive des pronostics…</div>
+<section class="toolbar" aria-label="Filtres de l'historique">
+<label>Compétition<select id="competitionFilter"><option value="">Toutes les compétitions</option></select></label>
+<label>Résultat du pronostic<select id="resultFilter"><option value="">Tous</option><option value="correct">Pronostic juste</option><option value="incorrect">Pronostic faux</option><option value="pending">En attente</option></select></label>
+<label>Période<select id="periodFilter"><option value="all">Toute l'archive</option><option value="30">30 derniers jours</option><option value="90">90 derniers jours</option></select></label>
+</section>
+<section class="metrics" aria-label="Indicateurs de performance">
+<div class="metric"><span>Pronostics évaluables</span><strong id="metricCount">—</strong><small>Résultat final connu</small></div>
+<div class="metric"><span>Taux de réussite</span><strong id="metricAccuracy">—</strong><small>Sur les pronostics évaluables</small></div>
+<div class="metric"><span>Pronostics justes</span><strong id="metricCorrect">—</strong><small>+1,5 validé</small></div>
+<div class="metric"><span>Pronostics faux</span><strong id="metricIncorrect">—</strong><small>0 ou 1 but au total</small></div>
+</section>
+<section class="panel">
+<div class="panel-head"><h2>Détail des matchs</h2><span id="rowCount">0 match</span></div>
+<div class="table-wrap"><table><thead><tr><th>Date</th><th>Compétition</th><th>Match</th><th>Score</th><th>Pronostic</th><th>Probabilité annoncée</th><th>Évaluation</th></tr></thead><tbody id="historyRows"></tbody></table></div>
+<div class="empty" id="emptyState" hidden><strong>Aucun pronostic archivé pour le moment</strong>L'archive doit conserver la prévision disponible avant le coup d'envoi, puis la rapprocher du score final. Les matchs historiques seuls ne suffisent pas à mesurer la qualité de nos pronostics.</div>
+</section>
+<p class="footnote">Méthode : un pronostic est évalué uniquement si une prévision horodatée avant le coup d'envoi et un score final valide sont disponibles. Le taux de réussite ne mesure pas la rentabilité et ne remplace pas l'analyse des cotes.</p>
+</main>
+<script src="./scripts/display/sidebar.js" defer></script>
+<script src="./scripts/display/history.js" defer></script>
+</body>
+</html>
