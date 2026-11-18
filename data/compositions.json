@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-11-17T08:41:11.689036+00:00",
+  "generated_at_utc": "2026-11-18T08:34:30.961413+00:00",
   "sources": {
     "pitchapi": {
       "status": "PARTIAL",
@@ -8,6 +8,136 @@
     }
   },
   "records": [
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_01XpUc",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-20T19:00:00+00:00",
+      "collected_at_utc": "2026-11-18T08:34:27.733365+00:00",
+      "competition": "Ligue 2",
+      "home_team": "Red Star",
+      "away_team": "Pau",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_01XpUc",
+        "home_team": {
+          "id": "t_3c2oAw",
+          "name": "Red Star",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/9113975ee344eefb091a06589fe8da6bad24c4b6e18ddabe196f8aab34907760.webp"
+        },
+        "away_team": {
+          "id": "t_46kxcK",
+          "name": "Pau",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/4952c5378853a4adca1186a8ef2230eb8e421c0646fa9c7c291e9bf98b87d060.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_01XpUc",
+          "home_team": {
+            "id": "t_3c2oAw",
+            "name": "Red Star",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/9113975ee344eefb091a06589fe8da6bad24c4b6e18ddabe196f8aab34907760.webp"
+          },
+          "away_team": {
+            "id": "t_46kxcK",
+            "name": "Pau",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/4952c5378853a4adca1186a8ef2230eb8e421c0646fa9c7c291e9bf98b87d060.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_080aBE",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-20T10:00:00+00:00",
+      "collected_at_utc": "2026-11-18T08:34:27.733365+00:00",
+      "competition": "J1 League",
+      "home_team": "Kashiwa Reysol",
+      "away_team": "JEF United Chiba",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_080aBE",
+        "home_team": {
+          "id": "t_49j3Z1",
+          "name": "Kashiwa Reysol",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/e63f20e3288c9199c5c3f8c0b53ab41fdbebbca6e1f9d3c292aead3119ea63cf.webp"
+        },
+        "away_team": {
+          "id": "t_25A1QK",
+          "name": "JEF United Chiba",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/b335ff892f763c6306c346fa015678bc966436ffdd49db0bcd5aa6a5304d1268.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_080aBE",
+          "home_team": {
+            "id": "t_49j3Z1",
+            "name": "Kashiwa Reysol",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/e63f20e3288c9199c5c3f8c0b53ab41fdbebbca6e1f9d3c292aead3119ea63cf.webp"
+          },
+          "away_team": {
+            "id": "t_25A1QK",
+            "name": "JEF United Chiba",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/b335ff892f763c6306c346fa015678bc966436ffdd49db0bcd5aa6a5304d1268.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
     {
       "schema_version": 1,
       "provider": "PitchAPI",
@@ -122,6 +252,1140 @@
             "id": "t_2toJRF",
             "name": "Napoli",
             "image_url": "https://cdn.pitchapi.dev/images/teams/0755206cdb935eb37cd5bd42b54afc629d486c010c12029c096def4f5227db6f.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_0h4svj",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-20T19:45:00+00:00",
+      "collected_at_utc": "2026-11-18T08:34:27.733365+00:00",
+      "competition": "Belgian Pro League",
+      "home_team": "Cercle Brugge",
+      "away_team": "Westerlo",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_0h4svj",
+        "home_team": {
+          "id": "t_4GqgXb",
+          "name": "Cercle Brugge",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/aef5bc74faad03c2c156e599aa6bad28885caf2b41ab1a1f70554ea7936a39af.webp"
+        },
+        "away_team": {
+          "id": "t_0wF6Y2",
+          "name": "Westerlo",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/4d888268adcbd3da47135174ef4f6f80e1c9e9d0b54f4b2d0c2cc65ba1d36c48.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_0h4svj",
+          "home_team": {
+            "id": "t_4GqgXb",
+            "name": "Cercle Brugge",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/aef5bc74faad03c2c156e599aa6bad28885caf2b41ab1a1f70554ea7936a39af.webp"
+          },
+          "away_team": {
+            "id": "t_0wF6Y2",
+            "name": "Westerlo",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/4d888268adcbd3da47135174ef4f6f80e1c9e9d0b54f4b2d0c2cc65ba1d36c48.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_0iaTdE",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-20T20:00:00+00:00",
+      "collected_at_utc": "2026-11-18T08:34:27.733365+00:00",
+      "competition": "La Liga",
+      "home_team": "Athletic Club",
+      "away_team": "Espanyol",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_0iaTdE",
+        "home_team": {
+          "id": "t_3kZPrE",
+          "name": "Athletic Club",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/3df8987ea318edccd9c2d8887b27324fa47c275eea7604e9e9c8539f5a69cda3.webp"
+        },
+        "away_team": {
+          "id": "t_3WlXqr",
+          "name": "Espanyol",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/f8174b3077c6d721131a0171d6e57bfbe7d65bd7583f1d0a63befc59ce9b6da0.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_0iaTdE",
+          "home_team": {
+            "id": "t_3kZPrE",
+            "name": "Athletic Club",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/3df8987ea318edccd9c2d8887b27324fa47c275eea7604e9e9c8539f5a69cda3.webp"
+          },
+          "away_team": {
+            "id": "t_3WlXqr",
+            "name": "Espanyol",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/f8174b3077c6d721131a0171d6e57bfbe7d65bd7583f1d0a63befc59ce9b6da0.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_0n69Si",
+      "snapshot": "J-7",
+      "kickoff_utc": "2026-11-25T17:45:00+00:00",
+      "collected_at_utc": "2026-11-18T08:34:27.733365+00:00",
+      "competition": "Ligue des champions UEFA",
+      "home_team": "Slavia Prague",
+      "away_team": "Villarreal",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_0n69Si",
+        "home_team": {
+          "id": "t_41GCDg",
+          "name": "Slavia Prague",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/53729e84362ce320d7bf5e5473466d4fdfd8032c4c0e8725d64563d53935da00.webp"
+        },
+        "away_team": {
+          "id": "t_4SV4jg",
+          "name": "Villarreal",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/9cd74c38ef6d75a878041878ed6f18da3fb9e6cf81baae23d266a64821a63a71.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_0n69Si",
+          "home_team": {
+            "id": "t_41GCDg",
+            "name": "Slavia Prague",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/53729e84362ce320d7bf5e5473466d4fdfd8032c4c0e8725d64563d53935da00.webp"
+          },
+          "away_team": {
+            "id": "t_4SV4jg",
+            "name": "Villarreal",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/9cd74c38ef6d75a878041878ed6f18da3fb9e6cf81baae23d266a64821a63a71.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_0nnJoD",
+      "snapshot": "J-7",
+      "kickoff_utc": "2026-11-25T20:00:00+00:00",
+      "collected_at_utc": "2026-11-18T08:34:27.733365+00:00",
+      "competition": "Ligue des champions UEFA",
+      "home_team": "Lille",
+      "away_team": "Bayern München",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_0nnJoD",
+        "home_team": {
+          "id": "t_0tnX1I",
+          "name": "Lille",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/1e97c1ce973c99ad73ddfbeee79d47efeb8946124983ddb3282074045bd3ea7a.webp"
+        },
+        "away_team": {
+          "id": "t_1cpjqO",
+          "name": "Bayern München",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/1e2afd379a7d354c930f790c1f9ab0c2b50654cf4d47f20ffb269b8cfe309bca.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_0nnJoD",
+          "home_team": {
+            "id": "t_0tnX1I",
+            "name": "Lille",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/1e97c1ce973c99ad73ddfbeee79d47efeb8946124983ddb3282074045bd3ea7a.webp"
+          },
+          "away_team": {
+            "id": "t_1cpjqO",
+            "name": "Bayern München",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/1e2afd379a7d354c930f790c1f9ab0c2b50654cf4d47f20ffb269b8cfe309bca.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_0ojMZu",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-20T00:30:00+00:00",
+      "collected_at_utc": "2026-11-18T08:34:27.733365+00:00",
+      "competition": "MLS",
+      "home_team": "Orlando City",
+      "away_team": "FC Cincinnati",
+      "status": "provided",
+      "lineups": {
+        "match_id": "m_0ojMZu",
+        "home_team": {
+          "id": "t_3N3Xe0",
+          "name": "Orlando City",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/a20b444b717dc94ddf1ffad850dbff6fed12cbdb16e00dcb64b4dd7bc8032d4a.webp"
+        },
+        "away_team": {
+          "id": "t_0T0wL5",
+          "name": "FC Cincinnati",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/7d36f564934ff81a9843d76df80814e1bfff56bfcbde2f9e8ecc3b1d524a823d.webp"
+        },
+        "home": {
+          "formation": "4-4-2",
+          "confirmed": false,
+          "lineup_type": "lastStarting11",
+          "coach": {
+            "name": "Martin Perelman"
+          },
+          "starters": [
+            {
+              "player_id": "p_2nh457",
+              "name": "Maxime Crépeau",
+              "shirt_number": "71",
+              "position_id": 11,
+              "is_captain": false,
+              "pitch_x": 0.1,
+              "pitch_y": 0.5
+            },
+            {
+              "player_id": "p_1Vabln",
+              "name": "Zakaria Taifi",
+              "shirt_number": "19",
+              "position_id": 32,
+              "is_captain": false,
+              "pitch_x": 0.36,
+              "pitch_y": 0.88
+            },
+            {
+              "player_id": "p_48gBt5",
+              "name": "David Brekalo",
+              "shirt_number": "4",
+              "position_id": 34,
+              "is_captain": false,
+              "pitch_x": 0.36,
+              "pitch_y": 0.63
+            },
+            {
+              "player_id": "p_2ah3vS",
+              "name": "Wilder Cartagena",
+              "shirt_number": "16",
+              "position_id": 36,
+              "is_captain": false,
+              "pitch_x": 0.36,
+              "pitch_y": 0.38
+            },
+            {
+              "player_id": "p_1UsGL7",
+              "name": "Vinícius Nogueira",
+              "shirt_number": "27",
+              "position_id": 38,
+              "is_captain": false,
+              "pitch_x": 0.36,
+              "pitch_y": 0.13
+            },
+            {
+              "player_id": "p_2Fz9Ua",
+              "name": "Marco Pašalić",
+              "shirt_number": "87",
+              "position_id": 72,
+              "is_captain": false,
+              "pitch_x": 0.61,
+              "pitch_y": 0.88
+            },
+            {
+              "player_id": "p_01yk7U",
+              "name": "Braian Ojeda",
+              "shirt_number": "8",
+              "position_id": 74,
+              "is_captain": false,
+              "pitch_x": 0.61,
+              "pitch_y": 0.63
+            },
+            {
+              "player_id": "p_3Mt2pE",
+              "name": "Eduard Atuesta",
+              "shirt_number": "20",
+              "position_id": 76,
+              "is_captain": false,
+              "pitch_x": 0.61,
+              "pitch_y": 0.38
+            },
+            {
+              "player_id": "p_0GLbyg",
+              "name": "Iván Angulo",
+              "shirt_number": "77",
+              "position_id": 78,
+              "is_captain": false,
+              "pitch_x": 0.61,
+              "pitch_y": 0.13
+            },
+            {
+              "player_id": "p_3xU990",
+              "name": "Antoine Griezmann",
+              "shirt_number": "7",
+              "position_id": 104,
+              "is_captain": false,
+              "pitch_x": 0.87,
+              "pitch_y": 0.7
+            },
+            {
+              "player_id": "p_19DC3m",
+              "name": "Martín Ojeda",
+              "shirt_number": "10",
+              "position_id": 106,
+              "is_captain": false,
+              "pitch_x": 0.87,
+              "pitch_y": 0.3
+            }
+          ],
+          "subs": [
+            {
+              "player_id": "p_3HXwZg",
+              "name": "Javier Otero",
+              "shirt_number": "12",
+              "position_id": 0,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_1D7gnu",
+              "name": "Adrián Marín",
+              "shirt_number": "3",
+              "position_id": 1,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_0gVZ25",
+              "name": "Griffin Dorsey",
+              "shirt_number": "24",
+              "position_id": 1,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_2Dgh0Y",
+              "name": "Joran Gerbet",
+              "shirt_number": "35",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_3b2S8a",
+              "name": "Luis Otávio",
+              "shirt_number": "5",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_2DrneG",
+              "name": "Tiago Carvalho",
+              "shirt_number": "11",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_0n6x4T",
+              "name": "Daryl Dike",
+              "shirt_number": "9",
+              "position_id": 3,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_2irhNZ",
+              "name": "Harvey Sarajian",
+              "shirt_number": "23",
+              "position_id": 3,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_2l7dSO",
+              "name": "Justin Ellis",
+              "shirt_number": "22",
+              "position_id": 3,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            }
+          ]
+        },
+        "away": {
+          "formation": "3-5-2",
+          "confirmed": false,
+          "lineup_type": "lastStarting11",
+          "coach": {
+            "name": "Pat Noonan"
+          },
+          "starters": [
+            {
+              "player_id": "p_0Ou04U",
+              "name": "Roman Celentano",
+              "shirt_number": "18",
+              "position_id": 11,
+              "is_captain": false,
+              "pitch_x": 0.1,
+              "pitch_y": 0.5
+            },
+            {
+              "player_id": "p_3bXjOW",
+              "name": "Kyle Smith",
+              "shirt_number": "24",
+              "position_id": 33,
+              "is_captain": false,
+              "pitch_x": 0.36,
+              "pitch_y": 0.79
+            },
+            {
+              "player_id": "p_11Zd6c",
+              "name": "Teenage Lingani Hadebe",
+              "shirt_number": "15",
+              "position_id": 35,
+              "is_captain": false,
+              "pitch_x": 0.36,
+              "pitch_y": 0.5
+            },
+            {
+              "player_id": "p_2GA8P7",
+              "name": "Samuel Gidi",
+              "shirt_number": "11",
+              "position_id": 37,
+              "is_captain": false,
+              "pitch_x": 0.36,
+              "pitch_y": 0.21
+            },
+            {
+              "player_id": "p_2IcpTB",
+              "name": "David Douděra",
+              "shirt_number": "23",
+              "position_id": 71,
+              "is_captain": false,
+              "pitch_x": 0.61,
+              "pitch_y": 0.89
+            },
+            {
+              "player_id": "p_3HI7kz",
+              "name": "Pavel Bucha",
+              "shirt_number": "20",
+              "position_id": 73,
+              "is_captain": false,
+              "pitch_x": 0.61,
+              "pitch_y": 0.7
+            },
+            {
+              "player_id": "p_4EGsU9",
+              "name": "Evander Ferreira",
+              "shirt_number": "10",
+              "position_id": 75,
+              "is_captain": false,
+              "pitch_x": 0.61,
+              "pitch_y": 0.5
+            },
+            {
+              "player_id": "p_2q2os8",
+              "name": "Obinna Nwobodo",
+              "shirt_number": "5",
+              "position_id": 77,
+              "is_captain": false,
+              "pitch_x": 0.61,
+              "pitch_y": 0.31
+            },
+            {
+              "player_id": "p_1y17GC",
+              "name": "Bryan Ramírez",
+              "shirt_number": "29",
+              "position_id": 79,
+              "is_captain": false,
+              "pitch_x": 0.61,
+              "pitch_y": 0.11
+            },
+            {
+              "player_id": "p_2e4y1E",
+              "name": "Kévin Denkey",
+              "shirt_number": "9",
+              "position_id": 104,
+              "is_captain": false,
+              "pitch_x": 0.87,
+              "pitch_y": 0.7
+            },
+            {
+              "player_id": "p_2ka5rp",
+              "name": "Tom Barlow",
+              "shirt_number": "16",
+              "position_id": 106,
+              "is_captain": false,
+              "pitch_x": 0.87,
+              "pitch_y": 0.3
+            }
+          ],
+          "subs": [
+            {
+              "player_id": "p_1xmUon",
+              "name": "Evan Louro",
+              "shirt_number": "13",
+              "position_id": 0,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_29Dmrh",
+              "name": "Miles Robinson",
+              "shirt_number": "12",
+              "position_id": 1,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_2S7YcP",
+              "name": "Alvas Elvis Powell",
+              "shirt_number": "2",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_1kmRmp",
+              "name": "Brian Anunga",
+              "shirt_number": "27",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_2gnvAj",
+              "name": "Ender Echenique",
+              "shirt_number": "66",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_3nERGU",
+              "name": "Gerardo Valenzuela",
+              "shirt_number": "22",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_1gJl1K",
+              "name": "José Martínez",
+              "shirt_number": "70",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_1LZ4Ak",
+              "name": "Kenji Mboma Dem",
+              "shirt_number": "17",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_3yBwIP",
+              "name": "Ayoub Jabbari",
+              "shirt_number": "99",
+              "position_id": 3,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            }
+          ]
+        }
+      },
+      "message": null,
+      "raw_response": {
+        "data": {
+          "match_id": "m_0ojMZu",
+          "home_team": {
+            "id": "t_3N3Xe0",
+            "name": "Orlando City",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/a20b444b717dc94ddf1ffad850dbff6fed12cbdb16e00dcb64b4dd7bc8032d4a.webp"
+          },
+          "away_team": {
+            "id": "t_0T0wL5",
+            "name": "FC Cincinnati",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/7d36f564934ff81a9843d76df80814e1bfff56bfcbde2f9e8ecc3b1d524a823d.webp"
+          },
+          "home": {
+            "formation": "4-4-2",
+            "confirmed": false,
+            "lineup_type": "lastStarting11",
+            "coach": {
+              "name": "Martin Perelman"
+            },
+            "starters": [
+              {
+                "player_id": "p_2nh457",
+                "name": "Maxime Crépeau",
+                "shirt_number": "71",
+                "position_id": 11,
+                "is_captain": false,
+                "pitch_x": 0.1,
+                "pitch_y": 0.5
+              },
+              {
+                "player_id": "p_1Vabln",
+                "name": "Zakaria Taifi",
+                "shirt_number": "19",
+                "position_id": 32,
+                "is_captain": false,
+                "pitch_x": 0.36,
+                "pitch_y": 0.88
+              },
+              {
+                "player_id": "p_48gBt5",
+                "name": "David Brekalo",
+                "shirt_number": "4",
+                "position_id": 34,
+                "is_captain": false,
+                "pitch_x": 0.36,
+                "pitch_y": 0.63
+              },
+              {
+                "player_id": "p_2ah3vS",
+                "name": "Wilder Cartagena",
+                "shirt_number": "16",
+                "position_id": 36,
+                "is_captain": false,
+                "pitch_x": 0.36,
+                "pitch_y": 0.38
+              },
+              {
+                "player_id": "p_1UsGL7",
+                "name": "Vinícius Nogueira",
+                "shirt_number": "27",
+                "position_id": 38,
+                "is_captain": false,
+                "pitch_x": 0.36,
+                "pitch_y": 0.13
+              },
+              {
+                "player_id": "p_2Fz9Ua",
+                "name": "Marco Pašalić",
+                "shirt_number": "87",
+                "position_id": 72,
+                "is_captain": false,
+                "pitch_x": 0.61,
+                "pitch_y": 0.88
+              },
+              {
+                "player_id": "p_01yk7U",
+                "name": "Braian Ojeda",
+                "shirt_number": "8",
+                "position_id": 74,
+                "is_captain": false,
+                "pitch_x": 0.61,
+                "pitch_y": 0.63
+              },
+              {
+                "player_id": "p_3Mt2pE",
+                "name": "Eduard Atuesta",
+                "shirt_number": "20",
+                "position_id": 76,
+                "is_captain": false,
+                "pitch_x": 0.61,
+                "pitch_y": 0.38
+              },
+              {
+                "player_id": "p_0GLbyg",
+                "name": "Iván Angulo",
+                "shirt_number": "77",
+                "position_id": 78,
+                "is_captain": false,
+                "pitch_x": 0.61,
+                "pitch_y": 0.13
+              },
+              {
+                "player_id": "p_3xU990",
+                "name": "Antoine Griezmann",
+                "shirt_number": "7",
+                "position_id": 104,
+                "is_captain": false,
+                "pitch_x": 0.87,
+                "pitch_y": 0.7
+              },
+              {
+                "player_id": "p_19DC3m",
+                "name": "Martín Ojeda",
+                "shirt_number": "10",
+                "position_id": 106,
+                "is_captain": false,
+                "pitch_x": 0.87,
+                "pitch_y": 0.3
+              }
+            ],
+            "subs": [
+              {
+                "player_id": "p_3HXwZg",
+                "name": "Javier Otero",
+                "shirt_number": "12",
+                "position_id": 0,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_1D7gnu",
+                "name": "Adrián Marín",
+                "shirt_number": "3",
+                "position_id": 1,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_0gVZ25",
+                "name": "Griffin Dorsey",
+                "shirt_number": "24",
+                "position_id": 1,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_2Dgh0Y",
+                "name": "Joran Gerbet",
+                "shirt_number": "35",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_3b2S8a",
+                "name": "Luis Otávio",
+                "shirt_number": "5",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_2DrneG",
+                "name": "Tiago Carvalho",
+                "shirt_number": "11",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_0n6x4T",
+                "name": "Daryl Dike",
+                "shirt_number": "9",
+                "position_id": 3,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_2irhNZ",
+                "name": "Harvey Sarajian",
+                "shirt_number": "23",
+                "position_id": 3,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_2l7dSO",
+                "name": "Justin Ellis",
+                "shirt_number": "22",
+                "position_id": 3,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              }
+            ]
+          },
+          "away": {
+            "formation": "3-5-2",
+            "confirmed": false,
+            "lineup_type": "lastStarting11",
+            "coach": {
+              "name": "Pat Noonan"
+            },
+            "starters": [
+              {
+                "player_id": "p_0Ou04U",
+                "name": "Roman Celentano",
+                "shirt_number": "18",
+                "position_id": 11,
+                "is_captain": false,
+                "pitch_x": 0.1,
+                "pitch_y": 0.5
+              },
+              {
+                "player_id": "p_3bXjOW",
+                "name": "Kyle Smith",
+                "shirt_number": "24",
+                "position_id": 33,
+                "is_captain": false,
+                "pitch_x": 0.36,
+                "pitch_y": 0.79
+              },
+              {
+                "player_id": "p_11Zd6c",
+                "name": "Teenage Lingani Hadebe",
+                "shirt_number": "15",
+                "position_id": 35,
+                "is_captain": false,
+                "pitch_x": 0.36,
+                "pitch_y": 0.5
+              },
+              {
+                "player_id": "p_2GA8P7",
+                "name": "Samuel Gidi",
+                "shirt_number": "11",
+                "position_id": 37,
+                "is_captain": false,
+                "pitch_x": 0.36,
+                "pitch_y": 0.21
+              },
+              {
+                "player_id": "p_2IcpTB",
+                "name": "David Douděra",
+                "shirt_number": "23",
+                "position_id": 71,
+                "is_captain": false,
+                "pitch_x": 0.61,
+                "pitch_y": 0.89
+              },
+              {
+                "player_id": "p_3HI7kz",
+                "name": "Pavel Bucha",
+                "shirt_number": "20",
+                "position_id": 73,
+                "is_captain": false,
+                "pitch_x": 0.61,
+                "pitch_y": 0.7
+              },
+              {
+                "player_id": "p_4EGsU9",
+                "name": "Evander Ferreira",
+                "shirt_number": "10",
+                "position_id": 75,
+                "is_captain": false,
+                "pitch_x": 0.61,
+                "pitch_y": 0.5
+              },
+              {
+                "player_id": "p_2q2os8",
+                "name": "Obinna Nwobodo",
+                "shirt_number": "5",
+                "position_id": 77,
+                "is_captain": false,
+                "pitch_x": 0.61,
+                "pitch_y": 0.31
+              },
+              {
+                "player_id": "p_1y17GC",
+                "name": "Bryan Ramírez",
+                "shirt_number": "29",
+                "position_id": 79,
+                "is_captain": false,
+                "pitch_x": 0.61,
+                "pitch_y": 0.11
+              },
+              {
+                "player_id": "p_2e4y1E",
+                "name": "Kévin Denkey",
+                "shirt_number": "9",
+                "position_id": 104,
+                "is_captain": false,
+                "pitch_x": 0.87,
+                "pitch_y": 0.7
+              },
+              {
+                "player_id": "p_2ka5rp",
+                "name": "Tom Barlow",
+                "shirt_number": "16",
+                "position_id": 106,
+                "is_captain": false,
+                "pitch_x": 0.87,
+                "pitch_y": 0.3
+              }
+            ],
+            "subs": [
+              {
+                "player_id": "p_1xmUon",
+                "name": "Evan Louro",
+                "shirt_number": "13",
+                "position_id": 0,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_29Dmrh",
+                "name": "Miles Robinson",
+                "shirt_number": "12",
+                "position_id": 1,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_2S7YcP",
+                "name": "Alvas Elvis Powell",
+                "shirt_number": "2",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_1kmRmp",
+                "name": "Brian Anunga",
+                "shirt_number": "27",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_2gnvAj",
+                "name": "Ender Echenique",
+                "shirt_number": "66",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_3nERGU",
+                "name": "Gerardo Valenzuela",
+                "shirt_number": "22",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_1gJl1K",
+                "name": "José Martínez",
+                "shirt_number": "70",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_1LZ4Ak",
+                "name": "Kenji Mboma Dem",
+                "shirt_number": "17",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_3yBwIP",
+                "name": "Ayoub Jabbari",
+                "shirt_number": "99",
+                "position_id": 3,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_0vHscK",
+      "snapshot": "J-7",
+      "kickoff_utc": "2026-11-25T20:00:00+00:00",
+      "collected_at_utc": "2026-11-18T08:34:27.733365+00:00",
+      "competition": "Ligue des champions UEFA",
+      "home_team": "Sporting CP",
+      "away_team": "Manchester United",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_0vHscK",
+        "home_team": {
+          "id": "t_1TAfIz",
+          "name": "Sporting CP",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/5817bbd34cd3f72b924b6fe60740c7176bc383aa030a4d10832bffab27318dd9.webp"
+        },
+        "away_team": {
+          "id": "t_2I313i",
+          "name": "Manchester United",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/d64e82187ecc985ae095feba4db1dd6607f7009424f39a745102713bb0e1e6bb.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_0vHscK",
+          "home_team": {
+            "id": "t_1TAfIz",
+            "name": "Sporting CP",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/5817bbd34cd3f72b924b6fe60740c7176bc383aa030a4d10832bffab27318dd9.webp"
+          },
+          "away_team": {
+            "id": "t_2I313i",
+            "name": "Manchester United",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/d64e82187ecc985ae095feba4db1dd6607f7009424f39a745102713bb0e1e6bb.webp"
           },
           "home": {
             "formation": "",
@@ -271,6 +1535,461 @@
     {
       "schema_version": 1,
       "provider": "PitchAPI",
+      "match_id": "m_18IfVI",
+      "snapshot": "J-7",
+      "kickoff_utc": "2026-11-25T17:45:00+00:00",
+      "collected_at_utc": "2026-11-18T08:34:27.733365+00:00",
+      "competition": "Ligue des champions UEFA",
+      "home_team": "Sabah FK",
+      "away_team": "Barcelona",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_18IfVI",
+        "home_team": {
+          "id": "t_30ZV5A",
+          "name": "Sabah FK",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/81bf98d426f1a8efd9993fcfca036a9efa2ab03aa5d2590b33d902ef9490f678.webp"
+        },
+        "away_team": {
+          "id": "t_32jSEF",
+          "name": "Barcelona",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/71881ba9f1d678143d4d2b88feab251ce8a840eca4c46768e756e73e5170687c.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_18IfVI",
+          "home_team": {
+            "id": "t_30ZV5A",
+            "name": "Sabah FK",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/81bf98d426f1a8efd9993fcfca036a9efa2ab03aa5d2590b33d902ef9490f678.webp"
+          },
+          "away_team": {
+            "id": "t_32jSEF",
+            "name": "Barcelona",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/71881ba9f1d678143d4d2b88feab251ce8a840eca4c46768e756e73e5170687c.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_1HL1DQ",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-20T19:00:00+00:00",
+      "collected_at_utc": "2026-11-18T08:34:27.733365+00:00",
+      "competition": "Ligue 2",
+      "home_team": "Guingamp",
+      "away_team": "Rodez",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_1HL1DQ",
+        "home_team": {
+          "id": "t_3pELAG",
+          "name": "Guingamp",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/6a8b19f34d844045db007d9de29e40fd55fb08df52dc918a260bcf61e0767d60.webp"
+        },
+        "away_team": {
+          "id": "t_26EC4s",
+          "name": "Rodez",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/d913625d83bb5041792386116c1df56a47bdda4abfe9dbdb263ef32a7cfa0456.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_1HL1DQ",
+          "home_team": {
+            "id": "t_3pELAG",
+            "name": "Guingamp",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/6a8b19f34d844045db007d9de29e40fd55fb08df52dc918a260bcf61e0767d60.webp"
+          },
+          "away_team": {
+            "id": "t_26EC4s",
+            "name": "Rodez",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/d913625d83bb5041792386116c1df56a47bdda4abfe9dbdb263ef32a7cfa0456.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_1HfmPU",
+      "snapshot": "J-7",
+      "kickoff_utc": "2026-11-25T03:00:00+00:00",
+      "collected_at_utc": "2026-11-18T08:34:27.733365+00:00",
+      "competition": "MLS",
+      "home_team": "San Jose Earthquakes",
+      "away_team": "Houston Dynamo FC",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_1HfmPU",
+        "home_team": {
+          "id": "t_1ngZfb",
+          "name": "San Jose Earthquakes",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/05ae77d53490f69f82e6d06859411e7124ce07ec45d97b5b3001b374e63a7cae.webp"
+        },
+        "away_team": {
+          "id": "t_2L8yh8",
+          "name": "Houston Dynamo FC",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/558a5d6a87450486dd99116e79aa8ebddea076387c37be1b1c3b6adec065fdac.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_1HfmPU",
+          "home_team": {
+            "id": "t_1ngZfb",
+            "name": "San Jose Earthquakes",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/05ae77d53490f69f82e6d06859411e7124ce07ec45d97b5b3001b374e63a7cae.webp"
+          },
+          "away_team": {
+            "id": "t_2L8yh8",
+            "name": "Houston Dynamo FC",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/558a5d6a87450486dd99116e79aa8ebddea076387c37be1b1c3b6adec065fdac.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_1WLVGt",
+      "snapshot": "J-7",
+      "kickoff_utc": "2026-11-25T20:00:00+00:00",
+      "collected_at_utc": "2026-11-18T08:34:27.733365+00:00",
+      "competition": "Ligue des champions UEFA",
+      "home_team": "Atlético Madrid",
+      "away_team": "Viking",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_1WLVGt",
+        "home_team": {
+          "id": "t_3NIiXl",
+          "name": "Atlético Madrid",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/e7ed0850dc75498dd5989ac217e4c9345476f9967d89385e5ece1ef5bcd8a330.webp"
+        },
+        "away_team": {
+          "id": "t_0jjyWh",
+          "name": "Viking",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/451feb97f5b2d5f6f3a7a294ea3b95b7b1ed40eca67ef15729cd78071318f4f2.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_1WLVGt",
+          "home_team": {
+            "id": "t_3NIiXl",
+            "name": "Atlético Madrid",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/e7ed0850dc75498dd5989ac217e4c9345476f9967d89385e5ece1ef5bcd8a330.webp"
+          },
+          "away_team": {
+            "id": "t_0jjyWh",
+            "name": "Viking",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/451feb97f5b2d5f6f3a7a294ea3b95b7b1ed40eca67ef15729cd78071318f4f2.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_1d29Gk",
+      "snapshot": "J-7",
+      "kickoff_utc": "2026-11-25T10:00:00+00:00",
+      "collected_at_utc": "2026-11-18T08:34:27.733365+00:00",
+      "competition": "J1 League",
+      "home_team": "FC Tokyo",
+      "away_team": "Sanfrecce Hiroshima",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_1d29Gk",
+        "home_team": {
+          "id": "t_17gQhK",
+          "name": "FC Tokyo",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/f615b6c25401d6c580656741b7b4673c69c51b6cd7b9b81de36c2eb33a109b86.webp"
+        },
+        "away_team": {
+          "id": "t_4Oonn6",
+          "name": "Sanfrecce Hiroshima",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/e5b0ecf98a46b261aa6de1108102a858ac32c651babce189e62598cde2268338.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_1d29Gk",
+          "home_team": {
+            "id": "t_17gQhK",
+            "name": "FC Tokyo",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/f615b6c25401d6c580656741b7b4673c69c51b6cd7b9b81de36c2eb33a109b86.webp"
+          },
+          "away_team": {
+            "id": "t_4Oonn6",
+            "name": "Sanfrecce Hiroshima",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/e5b0ecf98a46b261aa6de1108102a858ac32c651babce189e62598cde2268338.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_1lENxU",
+      "snapshot": "J-7",
+      "kickoff_utc": "2026-11-25T10:00:00+00:00",
+      "collected_at_utc": "2026-11-18T08:34:27.733365+00:00",
+      "competition": "J1 League",
+      "home_team": "JEF United Chiba",
+      "away_team": "Nagoya Grampus",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_1lENxU",
+        "home_team": {
+          "id": "t_25A1QK",
+          "name": "JEF United Chiba",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/b335ff892f763c6306c346fa015678bc966436ffdd49db0bcd5aa6a5304d1268.webp"
+        },
+        "away_team": {
+          "id": "t_1mrdfo",
+          "name": "Nagoya Grampus",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/9a5b30c93d657b9b52bd57fde9efbd98b6008e8be22026ab5608794d24fdb317.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_1lENxU",
+          "home_team": {
+            "id": "t_25A1QK",
+            "name": "JEF United Chiba",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/b335ff892f763c6306c346fa015678bc966436ffdd49db0bcd5aa6a5304d1268.webp"
+          },
+          "away_team": {
+            "id": "t_1mrdfo",
+            "name": "Nagoya Grampus",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/9a5b30c93d657b9b52bd57fde9efbd98b6008e8be22026ab5608794d24fdb317.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_29gc42",
+      "snapshot": "J-7",
+      "kickoff_utc": "2026-11-25T20:00:00+00:00",
+      "collected_at_utc": "2026-11-18T08:34:27.733365+00:00",
+      "competition": "Ligue des champions UEFA",
+      "home_team": "Inter",
+      "away_team": "VfB Stuttgart",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_29gc42",
+        "home_team": {
+          "id": "t_3CPHHF",
+          "name": "Inter",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/66c6a85491df0b8111e1c35695ef712af120a2bf0aa9b03a877377889516611e.webp"
+        },
+        "away_team": {
+          "id": "t_0iJNOA",
+          "name": "VfB Stuttgart",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/3e4064e2cf85702db11b273fb3d69d3bad241733eba932255961f48a2a08b452.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_29gc42",
+          "home_team": {
+            "id": "t_3CPHHF",
+            "name": "Inter",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/66c6a85491df0b8111e1c35695ef712af120a2bf0aa9b03a877377889516611e.webp"
+          },
+          "away_team": {
+            "id": "t_0iJNOA",
+            "name": "VfB Stuttgart",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/3e4064e2cf85702db11b273fb3d69d3bad241733eba932255961f48a2a08b452.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
       "match_id": "m_2DFzlK",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-23T19:45:00+00:00",
@@ -401,6 +2120,136 @@
     {
       "schema_version": 1,
       "provider": "PitchAPI",
+      "match_id": "m_2J8kY5",
+      "snapshot": "J-7",
+      "kickoff_utc": "2026-11-25T10:00:00+00:00",
+      "collected_at_utc": "2026-11-18T08:34:27.733365+00:00",
+      "competition": "J1 League",
+      "home_team": "Fagiano Okayama FC",
+      "away_team": "Shimizu S-Pulse",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_2J8kY5",
+        "home_team": {
+          "id": "t_2fx2NT",
+          "name": "Fagiano Okayama FC",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/593bad4c81f93182a2721fab888521ef3ff9357a015eb1b582735ceae4569b64.webp"
+        },
+        "away_team": {
+          "id": "t_1E6Pbm",
+          "name": "Shimizu S-Pulse",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/22adf2897224b16a5258aaf5a8bad6008e2d56497a6d100c14728f3931f2dc6c.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_2J8kY5",
+          "home_team": {
+            "id": "t_2fx2NT",
+            "name": "Fagiano Okayama FC",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/593bad4c81f93182a2721fab888521ef3ff9357a015eb1b582735ceae4569b64.webp"
+          },
+          "away_team": {
+            "id": "t_1E6Pbm",
+            "name": "Shimizu S-Pulse",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/22adf2897224b16a5258aaf5a8bad6008e2d56497a6d100c14728f3931f2dc6c.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_2bTWR8",
+      "snapshot": "J-7",
+      "kickoff_utc": "2026-11-25T20:00:00+00:00",
+      "collected_at_utc": "2026-11-18T08:34:27.733365+00:00",
+      "competition": "Ligue des champions UEFA",
+      "home_team": "Club Brugge",
+      "away_team": "Liverpool",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_2bTWR8",
+        "home_team": {
+          "id": "t_1mTmMO",
+          "name": "Club Brugge",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/27ed7332a13ab1db112824396edb58f2636ca7955b5cf2fd46e64b37afadbee0.webp"
+        },
+        "away_team": {
+          "id": "t_0BrMnM",
+          "name": "Liverpool",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/5538ce3ddde32fc5d72918ee128c4b04a49443a3586aec8e7e99d911d3d36c99.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_2bTWR8",
+          "home_team": {
+            "id": "t_1mTmMO",
+            "name": "Club Brugge",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/27ed7332a13ab1db112824396edb58f2636ca7955b5cf2fd46e64b37afadbee0.webp"
+          },
+          "away_team": {
+            "id": "t_0BrMnM",
+            "name": "Liverpool",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/5538ce3ddde32fc5d72918ee128c4b04a49443a3586aec8e7e99d911d3d36c99.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
       "match_id": "m_2cwDyu",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-24T20:00:00+00:00",
@@ -447,6 +2296,1010 @@
             "id": "t_386iz1",
             "name": "Borussia Dortmund",
             "image_url": "https://cdn.pitchapi.dev/images/teams/9a049cf470f5e8a1b096c1ac46c7a742944c23a6c82be592fd7f2889aa476de5.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_2i2gIX",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-20T03:00:00+00:00",
+      "collected_at_utc": "2026-11-18T08:34:27.733365+00:00",
+      "competition": "MLS",
+      "home_team": "Seattle Sounders FC",
+      "away_team": "Real Salt Lake",
+      "status": "provided",
+      "lineups": {
+        "match_id": "m_2i2gIX",
+        "home_team": {
+          "id": "t_0DiXbX",
+          "name": "Seattle Sounders FC",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/c17c2794b619248bcb07e847aad7ebf69d1ed423c66857b5790e1488c6f8be30.webp"
+        },
+        "away_team": {
+          "id": "t_2o7nsk",
+          "name": "Real Salt Lake",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/9150053efa5637124416ca40fc49f1f1b4655dcf99bf3a7f5f4fad0715cfaa61.webp"
+        },
+        "home": {
+          "formation": "4-2-3-1",
+          "confirmed": false,
+          "lineup_type": "lastStarting11",
+          "coach": {
+            "name": "Brian Schmetzer"
+          },
+          "starters": [
+            {
+              "player_id": "p_4bzOwO",
+              "name": "Andrew Thomas",
+              "shirt_number": "26",
+              "position_id": 11,
+              "is_captain": false,
+              "pitch_x": 0.1,
+              "pitch_y": 0.5
+            },
+            {
+              "player_id": "p_2MzBhl",
+              "name": "Kalani Rienzi",
+              "shirt_number": "85",
+              "position_id": 32,
+              "is_captain": false,
+              "pitch_x": 0.29,
+              "pitch_y": 0.88
+            },
+            {
+              "player_id": "p_39zXBv",
+              "name": "Kee-Hee Kim",
+              "shirt_number": "20",
+              "position_id": 34,
+              "is_captain": false,
+              "pitch_x": 0.29,
+              "pitch_y": 0.63
+            },
+            {
+              "player_id": "p_4UMdu6",
+              "name": "Jackson Ragen",
+              "shirt_number": "25",
+              "position_id": 36,
+              "is_captain": false,
+              "pitch_x": 0.29,
+              "pitch_y": 0.38
+            },
+            {
+              "player_id": "p_3qPtkI",
+              "name": "Nouhou Tolo",
+              "shirt_number": "5",
+              "position_id": 38,
+              "is_captain": false,
+              "pitch_x": 0.29,
+              "pitch_y": 0.13
+            },
+            {
+              "player_id": "p_1zHDy2",
+              "name": "Hassani Dotson",
+              "shirt_number": "31",
+              "position_id": 64,
+              "is_captain": false,
+              "pitch_x": 0.49,
+              "pitch_y": 0.7
+            },
+            {
+              "player_id": "p_2La92L",
+              "name": "Cristian Roldan",
+              "shirt_number": "7",
+              "position_id": 66,
+              "is_captain": false,
+              "pitch_x": 0.49,
+              "pitch_y": 0.3
+            },
+            {
+              "player_id": "p_3HtBp0",
+              "name": "Jordan Morris",
+              "shirt_number": "13",
+              "position_id": 83,
+              "is_captain": false,
+              "pitch_x": 0.68,
+              "pitch_y": 0.84
+            },
+            {
+              "player_id": "p_0exauO",
+              "name": "Albert Rusnák",
+              "shirt_number": "11",
+              "position_id": 85,
+              "is_captain": false,
+              "pitch_x": 0.68,
+              "pitch_y": 0.5
+            },
+            {
+              "player_id": "p_0uUXd4",
+              "name": "Sebastian Gomez",
+              "shirt_number": "90",
+              "position_id": 87,
+              "is_captain": false,
+              "pitch_x": 0.68,
+              "pitch_y": 0.16
+            },
+            {
+              "player_id": "p_1ctpEJ",
+              "name": "Dejan Joveljić",
+              "shirt_number": "9",
+              "position_id": 115,
+              "is_captain": false,
+              "pitch_x": 0.87,
+              "pitch_y": 0.5
+            }
+          ],
+          "subs": [
+            {
+              "player_id": "p_3ZlZ59",
+              "name": "Stefan Frei",
+              "shirt_number": "24",
+              "position_id": 0,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_3a4QYp",
+              "name": "Ryan Sailor",
+              "shirt_number": "4",
+              "position_id": 1,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_3860Wo",
+              "name": "Stuart Russell Hawkins",
+              "shirt_number": "39",
+              "position_id": 1,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_3NDY9u",
+              "name": "Peter Kingston",
+              "shirt_number": "45",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_49wyPM",
+              "name": "Snyder Brunell",
+              "shirt_number": "37",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_2ZLnMy",
+              "name": "Caden Clark",
+              "shirt_number": "8",
+              "position_id": 3,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_1PJltm",
+              "name": "Jesús Ferreira",
+              "shirt_number": "27",
+              "position_id": 3,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_2x3V5e",
+              "name": "Paul Arriola",
+              "shirt_number": "17",
+              "position_id": 3,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_333lkc",
+              "name": "Paul Rothrock",
+              "shirt_number": "14",
+              "position_id": 3,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            }
+          ]
+        },
+        "away": {
+          "formation": "5-4-1",
+          "confirmed": false,
+          "lineup_type": "lastStarting11",
+          "coach": {
+            "name": "Pablo Mastroeni"
+          },
+          "starters": [
+            {
+              "player_id": "p_1hXNbq",
+              "name": "Rafael Cabral",
+              "shirt_number": "1",
+              "position_id": 11,
+              "is_captain": false,
+              "pitch_x": 0.1,
+              "pitch_y": 0.5
+            },
+            {
+              "player_id": "p_19c6S8",
+              "name": "Philip Quinton",
+              "shirt_number": "26",
+              "position_id": 33,
+              "is_captain": false,
+              "pitch_x": 0.36,
+              "pitch_y": 0.7
+            },
+            {
+              "player_id": "p_0Qsh79",
+              "name": "Luc De Fougerolles",
+              "shirt_number": "44",
+              "position_id": 35,
+              "is_captain": false,
+              "pitch_x": 0.36,
+              "pitch_y": 0.5
+            },
+            {
+              "player_id": "p_3xlOuN",
+              "name": "Kobi Henry",
+              "shirt_number": "3",
+              "position_id": 37,
+              "is_captain": false,
+              "pitch_x": 0.36,
+              "pitch_y": 0.31
+            },
+            {
+              "player_id": "p_0IPSMh",
+              "name": "Zach Booth",
+              "shirt_number": "23",
+              "position_id": 51,
+              "is_captain": false,
+              "pitch_x": 0.37,
+              "pitch_y": 0.89
+            },
+            {
+              "player_id": "p_0hsWjg",
+              "name": "Juan Sanabria",
+              "shirt_number": "8",
+              "position_id": 59,
+              "is_captain": false,
+              "pitch_x": 0.37,
+              "pitch_y": 0.11
+            },
+            {
+              "player_id": "p_1z9izk",
+              "name": "Saba Lobjanidze",
+              "shirt_number": "12",
+              "position_id": 72,
+              "is_captain": false,
+              "pitch_x": 0.61,
+              "pitch_y": 0.88
+            },
+            {
+              "player_id": "p_22qnqJ",
+              "name": "Stijn Spierings",
+              "shirt_number": "6",
+              "position_id": 74,
+              "is_captain": false,
+              "pitch_x": 0.61,
+              "pitch_y": 0.63
+            },
+            {
+              "player_id": "p_27bayy",
+              "name": "Noel Çalışkan",
+              "shirt_number": "92",
+              "position_id": 76,
+              "is_captain": false,
+              "pitch_x": 0.61,
+              "pitch_y": 0.38
+            },
+            {
+              "player_id": "p_0ZXO02",
+              "name": "Morgan Guilavogui",
+              "shirt_number": "9",
+              "position_id": 78,
+              "is_captain": false,
+              "pitch_x": 0.61,
+              "pitch_y": 0.13
+            },
+            {
+              "player_id": "p_1vGf4G",
+              "name": "Sergi Solans",
+              "shirt_number": "22",
+              "position_id": 115,
+              "is_captain": false,
+              "pitch_x": 0.87,
+              "pitch_y": 0.5
+            }
+          ],
+          "subs": [
+            {
+              "player_id": "p_0sWRfJ",
+              "name": "Mason Stajduhar",
+              "shirt_number": "31",
+              "position_id": 0,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_3YgPDZ",
+              "name": "DeAndre Yedlin",
+              "shirt_number": "2",
+              "position_id": 1,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_0QcOsr",
+              "name": "Justen Glad",
+              "shirt_number": "15",
+              "position_id": 1,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_2YvyFw",
+              "name": "Lukas Engel",
+              "shirt_number": "4",
+              "position_id": 1,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_3MVHd8",
+              "name": "Alexandros Katranis",
+              "shirt_number": "98",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_0ZcBbX",
+              "name": "Colin Guske",
+              "shirt_number": "25",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_2YotcB",
+              "name": "Luca Moisa",
+              "shirt_number": "34",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_09T2qP",
+              "name": "Aiden Hezarkhani",
+              "shirt_number": "39",
+              "position_id": 3,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_25NSim",
+              "name": "Ariath Piol",
+              "shirt_number": "19",
+              "position_id": 3,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            }
+          ]
+        }
+      },
+      "message": null,
+      "raw_response": {
+        "data": {
+          "match_id": "m_2i2gIX",
+          "home_team": {
+            "id": "t_0DiXbX",
+            "name": "Seattle Sounders FC",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/c17c2794b619248bcb07e847aad7ebf69d1ed423c66857b5790e1488c6f8be30.webp"
+          },
+          "away_team": {
+            "id": "t_2o7nsk",
+            "name": "Real Salt Lake",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/9150053efa5637124416ca40fc49f1f1b4655dcf99bf3a7f5f4fad0715cfaa61.webp"
+          },
+          "home": {
+            "formation": "4-2-3-1",
+            "confirmed": false,
+            "lineup_type": "lastStarting11",
+            "coach": {
+              "name": "Brian Schmetzer"
+            },
+            "starters": [
+              {
+                "player_id": "p_4bzOwO",
+                "name": "Andrew Thomas",
+                "shirt_number": "26",
+                "position_id": 11,
+                "is_captain": false,
+                "pitch_x": 0.1,
+                "pitch_y": 0.5
+              },
+              {
+                "player_id": "p_2MzBhl",
+                "name": "Kalani Rienzi",
+                "shirt_number": "85",
+                "position_id": 32,
+                "is_captain": false,
+                "pitch_x": 0.29,
+                "pitch_y": 0.88
+              },
+              {
+                "player_id": "p_39zXBv",
+                "name": "Kee-Hee Kim",
+                "shirt_number": "20",
+                "position_id": 34,
+                "is_captain": false,
+                "pitch_x": 0.29,
+                "pitch_y": 0.63
+              },
+              {
+                "player_id": "p_4UMdu6",
+                "name": "Jackson Ragen",
+                "shirt_number": "25",
+                "position_id": 36,
+                "is_captain": false,
+                "pitch_x": 0.29,
+                "pitch_y": 0.38
+              },
+              {
+                "player_id": "p_3qPtkI",
+                "name": "Nouhou Tolo",
+                "shirt_number": "5",
+                "position_id": 38,
+                "is_captain": false,
+                "pitch_x": 0.29,
+                "pitch_y": 0.13
+              },
+              {
+                "player_id": "p_1zHDy2",
+                "name": "Hassani Dotson",
+                "shirt_number": "31",
+                "position_id": 64,
+                "is_captain": false,
+                "pitch_x": 0.49,
+                "pitch_y": 0.7
+              },
+              {
+                "player_id": "p_2La92L",
+                "name": "Cristian Roldan",
+                "shirt_number": "7",
+                "position_id": 66,
+                "is_captain": false,
+                "pitch_x": 0.49,
+                "pitch_y": 0.3
+              },
+              {
+                "player_id": "p_3HtBp0",
+                "name": "Jordan Morris",
+                "shirt_number": "13",
+                "position_id": 83,
+                "is_captain": false,
+                "pitch_x": 0.68,
+                "pitch_y": 0.84
+              },
+              {
+                "player_id": "p_0exauO",
+                "name": "Albert Rusnák",
+                "shirt_number": "11",
+                "position_id": 85,
+                "is_captain": false,
+                "pitch_x": 0.68,
+                "pitch_y": 0.5
+              },
+              {
+                "player_id": "p_0uUXd4",
+                "name": "Sebastian Gomez",
+                "shirt_number": "90",
+                "position_id": 87,
+                "is_captain": false,
+                "pitch_x": 0.68,
+                "pitch_y": 0.16
+              },
+              {
+                "player_id": "p_1ctpEJ",
+                "name": "Dejan Joveljić",
+                "shirt_number": "9",
+                "position_id": 115,
+                "is_captain": false,
+                "pitch_x": 0.87,
+                "pitch_y": 0.5
+              }
+            ],
+            "subs": [
+              {
+                "player_id": "p_3ZlZ59",
+                "name": "Stefan Frei",
+                "shirt_number": "24",
+                "position_id": 0,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_3a4QYp",
+                "name": "Ryan Sailor",
+                "shirt_number": "4",
+                "position_id": 1,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_3860Wo",
+                "name": "Stuart Russell Hawkins",
+                "shirt_number": "39",
+                "position_id": 1,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_3NDY9u",
+                "name": "Peter Kingston",
+                "shirt_number": "45",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_49wyPM",
+                "name": "Snyder Brunell",
+                "shirt_number": "37",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_2ZLnMy",
+                "name": "Caden Clark",
+                "shirt_number": "8",
+                "position_id": 3,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_1PJltm",
+                "name": "Jesús Ferreira",
+                "shirt_number": "27",
+                "position_id": 3,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_2x3V5e",
+                "name": "Paul Arriola",
+                "shirt_number": "17",
+                "position_id": 3,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_333lkc",
+                "name": "Paul Rothrock",
+                "shirt_number": "14",
+                "position_id": 3,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              }
+            ]
+          },
+          "away": {
+            "formation": "5-4-1",
+            "confirmed": false,
+            "lineup_type": "lastStarting11",
+            "coach": {
+              "name": "Pablo Mastroeni"
+            },
+            "starters": [
+              {
+                "player_id": "p_1hXNbq",
+                "name": "Rafael Cabral",
+                "shirt_number": "1",
+                "position_id": 11,
+                "is_captain": false,
+                "pitch_x": 0.1,
+                "pitch_y": 0.5
+              },
+              {
+                "player_id": "p_19c6S8",
+                "name": "Philip Quinton",
+                "shirt_number": "26",
+                "position_id": 33,
+                "is_captain": false,
+                "pitch_x": 0.36,
+                "pitch_y": 0.7
+              },
+              {
+                "player_id": "p_0Qsh79",
+                "name": "Luc De Fougerolles",
+                "shirt_number": "44",
+                "position_id": 35,
+                "is_captain": false,
+                "pitch_x": 0.36,
+                "pitch_y": 0.5
+              },
+              {
+                "player_id": "p_3xlOuN",
+                "name": "Kobi Henry",
+                "shirt_number": "3",
+                "position_id": 37,
+                "is_captain": false,
+                "pitch_x": 0.36,
+                "pitch_y": 0.31
+              },
+              {
+                "player_id": "p_0IPSMh",
+                "name": "Zach Booth",
+                "shirt_number": "23",
+                "position_id": 51,
+                "is_captain": false,
+                "pitch_x": 0.37,
+                "pitch_y": 0.89
+              },
+              {
+                "player_id": "p_0hsWjg",
+                "name": "Juan Sanabria",
+                "shirt_number": "8",
+                "position_id": 59,
+                "is_captain": false,
+                "pitch_x": 0.37,
+                "pitch_y": 0.11
+              },
+              {
+                "player_id": "p_1z9izk",
+                "name": "Saba Lobjanidze",
+                "shirt_number": "12",
+                "position_id": 72,
+                "is_captain": false,
+                "pitch_x": 0.61,
+                "pitch_y": 0.88
+              },
+              {
+                "player_id": "p_22qnqJ",
+                "name": "Stijn Spierings",
+                "shirt_number": "6",
+                "position_id": 74,
+                "is_captain": false,
+                "pitch_x": 0.61,
+                "pitch_y": 0.63
+              },
+              {
+                "player_id": "p_27bayy",
+                "name": "Noel Çalışkan",
+                "shirt_number": "92",
+                "position_id": 76,
+                "is_captain": false,
+                "pitch_x": 0.61,
+                "pitch_y": 0.38
+              },
+              {
+                "player_id": "p_0ZXO02",
+                "name": "Morgan Guilavogui",
+                "shirt_number": "9",
+                "position_id": 78,
+                "is_captain": false,
+                "pitch_x": 0.61,
+                "pitch_y": 0.13
+              },
+              {
+                "player_id": "p_1vGf4G",
+                "name": "Sergi Solans",
+                "shirt_number": "22",
+                "position_id": 115,
+                "is_captain": false,
+                "pitch_x": 0.87,
+                "pitch_y": 0.5
+              }
+            ],
+            "subs": [
+              {
+                "player_id": "p_0sWRfJ",
+                "name": "Mason Stajduhar",
+                "shirt_number": "31",
+                "position_id": 0,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_3YgPDZ",
+                "name": "DeAndre Yedlin",
+                "shirt_number": "2",
+                "position_id": 1,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_0QcOsr",
+                "name": "Justen Glad",
+                "shirt_number": "15",
+                "position_id": 1,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_2YvyFw",
+                "name": "Lukas Engel",
+                "shirt_number": "4",
+                "position_id": 1,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_3MVHd8",
+                "name": "Alexandros Katranis",
+                "shirt_number": "98",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_0ZcBbX",
+                "name": "Colin Guske",
+                "shirt_number": "25",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_2YotcB",
+                "name": "Luca Moisa",
+                "shirt_number": "34",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_09T2qP",
+                "name": "Aiden Hezarkhani",
+                "shirt_number": "39",
+                "position_id": 3,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_25NSim",
+                "name": "Ariath Piol",
+                "shirt_number": "19",
+                "position_id": 3,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_2m6zPx",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-20T10:00:00+00:00",
+      "collected_at_utc": "2026-11-18T08:34:27.733365+00:00",
+      "competition": "J1 League",
+      "home_team": "Vissel Kobe",
+      "away_team": "Mito Hollyhock",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_2m6zPx",
+        "home_team": {
+          "id": "t_0LfLJ4",
+          "name": "Vissel Kobe",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/c03df521134bbe5dcd0b3e9c5d03241c7dc44aa95106de32e4e876262773e605.webp"
+        },
+        "away_team": {
+          "id": "t_01uUy2",
+          "name": "Mito Hollyhock",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/477958a4b5247f08dc01efdfaeb2dcf6a9bc83fefa19e6d587cd55495d94035f.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_2m6zPx",
+          "home_team": {
+            "id": "t_0LfLJ4",
+            "name": "Vissel Kobe",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/c03df521134bbe5dcd0b3e9c5d03241c7dc44aa95106de32e4e876262773e605.webp"
+          },
+          "away_team": {
+            "id": "t_01uUy2",
+            "name": "Mito Hollyhock",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/477958a4b5247f08dc01efdfaeb2dcf6a9bc83fefa19e6d587cd55495d94035f.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_34w395",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-20T19:00:00+00:00",
+      "collected_at_utc": "2026-11-18T08:34:27.733365+00:00",
+      "competition": "Ligue 2",
+      "home_team": "Metz",
+      "away_team": "Boulogne",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_34w395",
+        "home_team": {
+          "id": "t_0YXPxP",
+          "name": "Metz",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/6b990012a3896829312cf45b5b8c473ba71f0b93e615d98d6eb4c71d7cc4acf4.webp"
+        },
+        "away_team": {
+          "id": "t_1D4Jo3",
+          "name": "Boulogne",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/4d07dc0c92edf64229cc5bb4602e7c9c07b2d53c2ffa3fc23728314deff2d2a5.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_34w395",
+          "home_team": {
+            "id": "t_0YXPxP",
+            "name": "Metz",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/6b990012a3896829312cf45b5b8c473ba71f0b93e615d98d6eb4c71d7cc4acf4.webp"
+          },
+          "away_team": {
+            "id": "t_1D4Jo3",
+            "name": "Boulogne",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/4d07dc0c92edf64229cc5bb4602e7c9c07b2d53c2ffa3fc23728314deff2d2a5.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_36394c",
+      "snapshot": "J-7",
+      "kickoff_utc": "2026-11-25T20:00:00+00:00",
+      "collected_at_utc": "2026-11-18T08:34:27.733365+00:00",
+      "competition": "Ligue des champions UEFA",
+      "home_team": "Paris Saint-Germain",
+      "away_team": "Roma",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_36394c",
+        "home_team": {
+          "id": "t_41iFW3",
+          "name": "Paris Saint-Germain",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/79197b8594269f02679ffd055d230e2095d99bde56994d5bc4d6b6a01a1ada13.webp"
+        },
+        "away_team": {
+          "id": "t_0RhqmW",
+          "name": "Roma",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/ad80e0ea1049979b20dd51e024dc82d40e9b665e8081ab02534310f38427b4ef.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_36394c",
+          "home_team": {
+            "id": "t_41iFW3",
+            "name": "Paris Saint-Germain",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/79197b8594269f02679ffd055d230e2095d99bde56994d5bc4d6b6a01a1ada13.webp"
+          },
+          "away_team": {
+            "id": "t_0RhqmW",
+            "name": "Roma",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/ad80e0ea1049979b20dd51e024dc82d40e9b665e8081ab02534310f38427b4ef.webp"
           },
           "home": {
             "formation": "",
@@ -531,6 +3384,136 @@
     {
       "schema_version": 1,
       "provider": "PitchAPI",
+      "match_id": "m_3FjwuH",
+      "snapshot": "J-7",
+      "kickoff_utc": "2026-11-25T20:00:00+00:00",
+      "collected_at_utc": "2026-11-18T08:34:27.733365+00:00",
+      "competition": "Ligue des champions UEFA",
+      "home_team": "Shakhtar Donetsk",
+      "away_team": "Fenerbahçe",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_3FjwuH",
+        "home_team": {
+          "id": "t_4Wrrym",
+          "name": "Shakhtar Donetsk",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/457b04795e1905f9d7ca7e967d13a8c19883a168ff968db24b9023334b4254d2.webp"
+        },
+        "away_team": {
+          "id": "t_2wJJY2",
+          "name": "Fenerbahçe",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/c3f91e2fb35d5962a65d5ee8e24dccba47d82e950e152a39e28c1a3e733b8397.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_3FjwuH",
+          "home_team": {
+            "id": "t_4Wrrym",
+            "name": "Shakhtar Donetsk",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/457b04795e1905f9d7ca7e967d13a8c19883a168ff968db24b9023334b4254d2.webp"
+          },
+          "away_team": {
+            "id": "t_2wJJY2",
+            "name": "Fenerbahçe",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/c3f91e2fb35d5962a65d5ee8e24dccba47d82e950e152a39e28c1a3e733b8397.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_3GEDIo",
+      "snapshot": "J-7",
+      "kickoff_utc": "2026-11-25T10:30:00+00:00",
+      "collected_at_utc": "2026-11-18T08:34:27.733365+00:00",
+      "competition": "J1 League",
+      "home_team": "Urawa Red Diamonds",
+      "away_team": "Cerezo Osaka",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_3GEDIo",
+        "home_team": {
+          "id": "t_2SxYow",
+          "name": "Urawa Red Diamonds",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/7b189717adf187d6429ba053c0e99d5e8b24af65d78fe99137512f9142b3d879.webp"
+        },
+        "away_team": {
+          "id": "t_4gLxod",
+          "name": "Cerezo Osaka",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/692e6c878909c25c9805ba10f5856295bccc448cdbf6c3df5dfd42db58d345fe.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_3GEDIo",
+          "home_team": {
+            "id": "t_2SxYow",
+            "name": "Urawa Red Diamonds",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/7b189717adf187d6429ba053c0e99d5e8b24af65d78fe99137512f9142b3d879.webp"
+          },
+          "away_team": {
+            "id": "t_4gLxod",
+            "name": "Cerezo Osaka",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/692e6c878909c25c9805ba10f5856295bccc448cdbf6c3df5dfd42db58d345fe.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
       "match_id": "m_3H4WRT",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-24T20:00:00+00:00",
@@ -577,6 +3560,71 @@
             "id": "t_1jOgDP",
             "name": "PSV Eindhoven",
             "image_url": "https://cdn.pitchapi.dev/images/teams/e89b7540c69dc8b8a7b32bc58f807d304e60d8223890a76a60beaef26980e882.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_3bUb0Q",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-20T10:00:00+00:00",
+      "collected_at_utc": "2026-11-18T08:34:27.733365+00:00",
+      "competition": "J1 League",
+      "home_team": "Kashima Antlers",
+      "away_team": "Shimizu S-Pulse",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_3bUb0Q",
+        "home_team": {
+          "id": "t_3RSWKx",
+          "name": "Kashima Antlers",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/d933c712bc9fcd3c920f090c2fb009be1e8e2dbaa6cae7716676bd59823d70a1.webp"
+        },
+        "away_team": {
+          "id": "t_1E6Pbm",
+          "name": "Shimizu S-Pulse",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/22adf2897224b16a5258aaf5a8bad6008e2d56497a6d100c14728f3931f2dc6c.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_3bUb0Q",
+          "home_team": {
+            "id": "t_3RSWKx",
+            "name": "Kashima Antlers",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/d933c712bc9fcd3c920f090c2fb009be1e8e2dbaa6cae7716676bd59823d70a1.webp"
+          },
+          "away_team": {
+            "id": "t_1E6Pbm",
+            "name": "Shimizu S-Pulse",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/22adf2897224b16a5258aaf5a8bad6008e2d56497a6d100c14728f3931f2dc6c.webp"
           },
           "home": {
             "formation": "",
@@ -726,6 +3774,136 @@
     {
       "schema_version": 1,
       "provider": "PitchAPI",
+      "match_id": "m_3rtQqb",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-20T19:45:00+00:00",
+      "collected_at_utc": "2026-11-18T08:34:27.733365+00:00",
+      "competition": "Ligue 1",
+      "home_team": "Troyes",
+      "away_team": "Le Havre",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_3rtQqb",
+        "home_team": {
+          "id": "t_0zVhE4",
+          "name": "Troyes",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/a805183b27f376ca106faf014559528f32f291be0a93b621357697efc173aeeb.webp"
+        },
+        "away_team": {
+          "id": "t_4BCeSu",
+          "name": "Le Havre",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/c9c565fda39bde124db002c75a5b6a34a1a464a961dccf8ae7d256c8eac59ed6.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_3rtQqb",
+          "home_team": {
+            "id": "t_0zVhE4",
+            "name": "Troyes",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/a805183b27f376ca106faf014559528f32f291be0a93b621357697efc173aeeb.webp"
+          },
+          "away_team": {
+            "id": "t_4BCeSu",
+            "name": "Le Havre",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/c9c565fda39bde124db002c75a5b6a34a1a464a961dccf8ae7d256c8eac59ed6.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_3u8MAM",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-20T19:00:00+00:00",
+      "collected_at_utc": "2026-11-18T08:34:27.733365+00:00",
+      "competition": "Ligue 2",
+      "home_team": "Nancy",
+      "away_team": "Dijon",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_3u8MAM",
+        "home_team": {
+          "id": "t_3eq3Zz",
+          "name": "Nancy",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/507e49a295a0e9546ff2a5bf71bf77d8b52078a87c4e1a59ef67aaaf8f5e3eb5.webp"
+        },
+        "away_team": {
+          "id": "t_2rAdp6",
+          "name": "Dijon",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/fe099debf6f964d5f33e70ce7bc96d9034433dffd5a603612c2a30cd7eac89c8.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_3u8MAM",
+          "home_team": {
+            "id": "t_3eq3Zz",
+            "name": "Nancy",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/507e49a295a0e9546ff2a5bf71bf77d8b52078a87c4e1a59ef67aaaf8f5e3eb5.webp"
+          },
+          "away_team": {
+            "id": "t_2rAdp6",
+            "name": "Dijon",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/fe099debf6f964d5f33e70ce7bc96d9034433dffd5a603612c2a30cd7eac89c8.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
       "match_id": "m_3uRPBe",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-22T23:30:00+00:00",
@@ -791,6 +3969,136 @@
     {
       "schema_version": 1,
       "provider": "PitchAPI",
+      "match_id": "m_3vziZg",
+      "snapshot": "J-7",
+      "kickoff_utc": "2026-11-25T10:00:00+00:00",
+      "collected_at_utc": "2026-11-18T08:34:27.733365+00:00",
+      "competition": "J1 League",
+      "home_team": "Mito Hollyhock",
+      "away_team": "Tokyo Verdy",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_3vziZg",
+        "home_team": {
+          "id": "t_01uUy2",
+          "name": "Mito Hollyhock",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/477958a4b5247f08dc01efdfaeb2dcf6a9bc83fefa19e6d587cd55495d94035f.webp"
+        },
+        "away_team": {
+          "id": "t_2HK8gL",
+          "name": "Tokyo Verdy",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/f29595d5e2325b3b5bd49f953fd29b00c963db63c88898d75634c97686e127a8.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_3vziZg",
+          "home_team": {
+            "id": "t_01uUy2",
+            "name": "Mito Hollyhock",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/477958a4b5247f08dc01efdfaeb2dcf6a9bc83fefa19e6d587cd55495d94035f.webp"
+          },
+          "away_team": {
+            "id": "t_2HK8gL",
+            "name": "Tokyo Verdy",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/f29595d5e2325b3b5bd49f953fd29b00c963db63c88898d75634c97686e127a8.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_458FVy",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-20T19:00:00+00:00",
+      "collected_at_utc": "2026-11-18T08:34:27.733365+00:00",
+      "competition": "Ligue 2",
+      "home_team": "Annecy FC",
+      "away_team": "Clermont Foot",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_458FVy",
+        "home_team": {
+          "id": "t_3wk0nN",
+          "name": "Annecy FC",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/d2266e3f9eb02efe1fdc4ce442ed6ae5e45a0ae016bf8036b9c0097c7eef9144.webp"
+        },
+        "away_team": {
+          "id": "t_0VSvmD",
+          "name": "Clermont Foot",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/275391277ba5e621be5c3a61fd8f73feaf5b7123a5e1f4f2b85132ebb2abadd8.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_458FVy",
+          "home_team": {
+            "id": "t_3wk0nN",
+            "name": "Annecy FC",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/d2266e3f9eb02efe1fdc4ce442ed6ae5e45a0ae016bf8036b9c0097c7eef9144.webp"
+          },
+          "away_team": {
+            "id": "t_0VSvmD",
+            "name": "Clermont Foot",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/275391277ba5e621be5c3a61fd8f73feaf5b7123a5e1f4f2b85132ebb2abadd8.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
       "match_id": "m_4J6bPl",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-24T20:00:00+00:00",
@@ -837,6 +4145,201 @@
             "id": "t_0dVrhE",
             "name": "FC Porto",
             "image_url": "https://cdn.pitchapi.dev/images/teams/32b58b1949ae598ee4f05086017e0bf309cbc15846c63a60955beccf41726790.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_4McNx8",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-20T19:30:00+00:00",
+      "collected_at_utc": "2026-11-18T08:34:27.733365+00:00",
+      "competition": "Bundesliga",
+      "home_team": "Bayern München",
+      "away_team": "1. FC Köln",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_4McNx8",
+        "home_team": {
+          "id": "t_1cpjqO",
+          "name": "Bayern München",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/1e2afd379a7d354c930f790c1f9ab0c2b50654cf4d47f20ffb269b8cfe309bca.webp"
+        },
+        "away_team": {
+          "id": "t_0x6Gji",
+          "name": "1. FC Köln",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/b586b79d51436583827db4053e71f243046c61dd2523b5a50d7cc05a921900ec.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_4McNx8",
+          "home_team": {
+            "id": "t_1cpjqO",
+            "name": "Bayern München",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/1e2afd379a7d354c930f790c1f9ab0c2b50654cf4d47f20ffb269b8cfe309bca.webp"
+          },
+          "away_team": {
+            "id": "t_0x6Gji",
+            "name": "1. FC Köln",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/b586b79d51436583827db4053e71f243046c61dd2523b5a50d7cc05a921900ec.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_4ReOc3",
+      "snapshot": "J-7",
+      "kickoff_utc": "2026-11-25T10:00:00+00:00",
+      "collected_at_utc": "2026-11-18T08:34:27.733365+00:00",
+      "competition": "J1 League",
+      "home_team": "V-Varen Nagasaki",
+      "away_team": "Kawasaki Frontale",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_4ReOc3",
+        "home_team": {
+          "id": "t_1W837G",
+          "name": "V-Varen Nagasaki",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/3d89356de46f5a186983072ad4b65f55b45815a687bb764dc22d2a7716fda5d8.webp"
+        },
+        "away_team": {
+          "id": "t_37dBko",
+          "name": "Kawasaki Frontale",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/4a1738813ff2f7c13b04962a4db57c4982ba9ac1762b28e35e8357d2d729deb4.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_4ReOc3",
+          "home_team": {
+            "id": "t_1W837G",
+            "name": "V-Varen Nagasaki",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/3d89356de46f5a186983072ad4b65f55b45815a687bb764dc22d2a7716fda5d8.webp"
+          },
+          "away_team": {
+            "id": "t_37dBko",
+            "name": "Kawasaki Frontale",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/4a1738813ff2f7c13b04962a4db57c4982ba9ac1762b28e35e8357d2d729deb4.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_4Rx6JG",
+      "snapshot": "J-7",
+      "kickoff_utc": "2026-11-25T10:00:00+00:00",
+      "collected_at_utc": "2026-11-18T08:34:27.733365+00:00",
+      "competition": "J1 League",
+      "home_team": "Avispa Fukuoka",
+      "away_team": "Yokohama F.Marinos",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_4Rx6JG",
+        "home_team": {
+          "id": "t_2u1BXQ",
+          "name": "Avispa Fukuoka",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/99cf3b497f10d87e37f6c2b64598310dc5d8a189d6fe2c1fecf06a13f68c3a63.webp"
+        },
+        "away_team": {
+          "id": "t_1mTqNS",
+          "name": "Yokohama F.Marinos",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/75e1e0a290d0d8d4fa2e1c286ed90c0dd77c2b6d2f855b05141fc06c35329f47.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_4Rx6JG",
+          "home_team": {
+            "id": "t_2u1BXQ",
+            "name": "Avispa Fukuoka",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/99cf3b497f10d87e37f6c2b64598310dc5d8a189d6fe2c1fecf06a13f68c3a63.webp"
+          },
+          "away_team": {
+            "id": "t_1mTqNS",
+            "name": "Yokohama F.Marinos",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/75e1e0a290d0d8d4fa2e1c286ed90c0dd77c2b6d2f855b05141fc06c35329f47.webp"
           },
           "home": {
             "formation": "",
