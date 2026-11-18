@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "document_type": "pronofoot_chatgpt_player_availability",
-  "generated_at_utc": "2026-11-17T15:55:49.316668+00:00",
+  "generated_at_utc": "2026-11-18T15:34:43.447447+00:00",
   "window": {
-    "start_utc": "2026-11-17T15:55:49.316668+00:00",
-    "end_utc": "2026-11-24T15:55:49.316668+00:00",
+    "start_utc": "2026-11-18T15:34:43.447447+00:00",
+    "end_utc": "2026-11-25T15:34:43.447447+00:00",
     "days": 7
   },
   "instructions": {
@@ -5402,6 +5402,431 @@
       "away_team": {
         "name": "Los Angeles FC",
         "team_id": "t_4ac71F"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_0yKeRt",
+      "provider_match_id": "m_0yKeRt",
+      "competition": "Ligue des champions UEFA",
+      "competition_slug": "uefa-champions-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-24T17:45:00+00:00",
+      "home_team": {
+        "name": "Bodø/Glimt",
+        "team_id": "t_0SGPHB"
+      },
+      "away_team": {
+        "name": "LASK",
+        "team_id": "t_1ta56l"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_4SYMzr",
+      "provider_match_id": "m_4SYMzr",
+      "competition": "Ligue des champions UEFA",
+      "competition_slug": "uefa-champions-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-24T17:45:00+00:00",
+      "home_team": {
+        "name": "Galatasaray",
+        "team_id": "t_15TWxO"
+      },
+      "away_team": {
+        "name": "Aston Villa",
+        "team_id": "t_4RqKpo"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_2cwDyu",
+      "provider_match_id": "m_2cwDyu",
+      "competition": "Ligue des champions UEFA",
+      "competition_slug": "uefa-champions-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-24T20:00:00+00:00",
+      "home_team": {
+        "name": "Arsenal",
+        "team_id": "t_1gkhxH"
+      },
+      "away_team": {
+        "name": "Borussia Dortmund",
+        "team_id": "t_386iz1"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_38M4aC",
+      "provider_match_id": "m_38M4aC",
+      "competition": "Ligue des champions UEFA",
+      "competition_slug": "uefa-champions-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-24T20:00:00+00:00",
+      "home_team": {
+        "name": "Slovan Bratislava",
+        "team_id": "t_2yHOns"
+      },
+      "away_team": {
+        "name": "Real Betis",
+        "team_id": "t_0HSzvM"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_3H4WRT",
+      "provider_match_id": "m_3H4WRT",
+      "competition": "Ligue des champions UEFA",
+      "competition_slug": "uefa-champions-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-24T20:00:00+00:00",
+      "home_team": {
+        "name": "Real Madrid",
+        "team_id": "t_4NZcri"
+      },
+      "away_team": {
+        "name": "PSV Eindhoven",
+        "team_id": "t_1jOgDP"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_13c8QW",
+      "provider_match_id": "m_13c8QW",
+      "competition": "Ligue des champions UEFA",
+      "competition_slug": "uefa-champions-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-24T20:00:00+00:00",
+      "home_team": {
+        "name": "RB Leipzig",
+        "team_id": "t_0oqUbb"
+      },
+      "away_team": {
+        "name": "Lens",
+        "team_id": "t_38NVJO"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_0c78zD",
+      "provider_match_id": "m_0c78zD",
+      "competition": "Ligue des champions UEFA",
+      "competition_slug": "uefa-champions-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-24T20:00:00+00:00",
+      "home_team": {
+        "name": "Manchester City",
+        "team_id": "t_0UCNPX"
+      },
+      "away_team": {
+        "name": "Napoli",
+        "team_id": "t_2toJRF"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_4J6bPl",
+      "provider_match_id": "m_4J6bPl",
+      "competition": "Ligue des champions UEFA",
+      "competition_slug": "uefa-champions-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-24T20:00:00+00:00",
+      "home_team": {
+        "name": "Feyenoord",
+        "team_id": "t_4KvHFN"
+      },
+      "away_team": {
+        "name": "FC Porto",
+        "team_id": "t_0dVrhE"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_3llrZc",
+      "provider_match_id": "m_3llrZc",
+      "competition": "Ligue des champions UEFA",
+      "competition_slug": "uefa-champions-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-24T20:00:00+00:00",
+      "home_team": {
+        "name": "Como",
+        "team_id": "t_0oXTvZ"
+      },
+      "away_team": {
+        "name": "AEK Athens",
+        "team_id": "t_2jeqmO"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_1HfmPU",
+      "provider_match_id": "m_1HfmPU",
+      "competition": "MLS",
+      "competition_slug": "us-mls",
+      "season": "2026",
+      "kickoff_utc": "2026-11-25T03:00:00+00:00",
+      "home_team": {
+        "name": "San Jose Earthquakes",
+        "team_id": "t_1ngZfb"
+      },
+      "away_team": {
+        "name": "Houston Dynamo FC",
+        "team_id": "t_2L8yh8"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_4Rx6JG",
+      "provider_match_id": "m_4Rx6JG",
+      "competition": "J1 League",
+      "competition_slug": "jp-j1-league",
+      "season": "2026",
+      "kickoff_utc": "2026-11-25T10:00:00+00:00",
+      "home_team": {
+        "name": "Avispa Fukuoka",
+        "team_id": "t_2u1BXQ"
+      },
+      "away_team": {
+        "name": "Yokohama F.Marinos",
+        "team_id": "t_1mTqNS"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_2J8kY5",
+      "provider_match_id": "m_2J8kY5",
+      "competition": "J1 League",
+      "competition_slug": "jp-j1-league",
+      "season": "2026",
+      "kickoff_utc": "2026-11-25T10:00:00+00:00",
+      "home_team": {
+        "name": "Fagiano Okayama FC",
+        "team_id": "t_2fx2NT"
+      },
+      "away_team": {
+        "name": "Shimizu S-Pulse",
+        "team_id": "t_1E6Pbm"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_1d29Gk",
+      "provider_match_id": "m_1d29Gk",
+      "competition": "J1 League",
+      "competition_slug": "jp-j1-league",
+      "season": "2026",
+      "kickoff_utc": "2026-11-25T10:00:00+00:00",
+      "home_team": {
+        "name": "FC Tokyo",
+        "team_id": "t_17gQhK"
+      },
+      "away_team": {
+        "name": "Sanfrecce Hiroshima",
+        "team_id": "t_4Oonn6"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_3vziZg",
+      "provider_match_id": "m_3vziZg",
+      "competition": "J1 League",
+      "competition_slug": "jp-j1-league",
+      "season": "2026",
+      "kickoff_utc": "2026-11-25T10:00:00+00:00",
+      "home_team": {
+        "name": "Mito Hollyhock",
+        "team_id": "t_01uUy2"
+      },
+      "away_team": {
+        "name": "Tokyo Verdy",
+        "team_id": "t_2HK8gL"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_1lENxU",
+      "provider_match_id": "m_1lENxU",
+      "competition": "J1 League",
+      "competition_slug": "jp-j1-league",
+      "season": "2026",
+      "kickoff_utc": "2026-11-25T10:00:00+00:00",
+      "home_team": {
+        "name": "JEF United Chiba",
+        "team_id": "t_25A1QK"
+      },
+      "away_team": {
+        "name": "Nagoya Grampus",
+        "team_id": "t_1mrdfo"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_4ReOc3",
+      "provider_match_id": "m_4ReOc3",
+      "competition": "J1 League",
+      "competition_slug": "jp-j1-league",
+      "season": "2026",
+      "kickoff_utc": "2026-11-25T10:00:00+00:00",
+      "home_team": {
+        "name": "V-Varen Nagasaki",
+        "team_id": "t_1W837G"
+      },
+      "away_team": {
+        "name": "Kawasaki Frontale",
+        "team_id": "t_37dBko"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_3GEDIo",
+      "provider_match_id": "m_3GEDIo",
+      "competition": "J1 League",
+      "competition_slug": "jp-j1-league",
+      "season": "2026",
+      "kickoff_utc": "2026-11-25T10:30:00+00:00",
+      "home_team": {
+        "name": "Urawa Red Diamonds",
+        "team_id": "t_2SxYow"
+      },
+      "away_team": {
+        "name": "Cerezo Osaka",
+        "team_id": "t_4gLxod"
       },
       "research_status": "not_researched",
       "checked_at_utc": null,
