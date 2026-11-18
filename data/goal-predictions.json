@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-11-17T15:56:23.388119Z",
+  "generated_at_utc": "2026-11-18T08:28:31.367483Z",
   "provider": "pitchapi_processed_history",
   "scope": "same_competition_same_season_strictly_prior_matches",
   "model": "venue_attack_defence_poisson_baseline_v1",
@@ -1931,6 +1931,103 @@
         "lambda_home": 1.5747,
         "lambda_away": 1.0667,
         "total_expected_goals": 2.6414,
+        "prior_matches": 5.0,
+        "samples": {
+          "home": 5,
+          "away": 5
+        },
+        "sample_level": "medium",
+        "sources": {
+          "home": "venue",
+          "away": "venue"
+        },
+        "formula": "competition_venue_average × shrunk_attack_ratio × shrunk_opponent_defence_ratio",
+        "calibration_status": "not_calibrated"
+      }
+    },
+    "m_2auuWk": {
+      "match_id": "m_2auuWk",
+      "competition_slug": "gb-premier-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-12-01T20:00:00Z",
+      "home_team": "Coventry City",
+      "home_team_id": "t_0C4xyR",
+      "away_team": "Ipswich Town",
+      "away_team_id": "t_2C9laO",
+      "history_cutoff_exclusive_utc": "2026-12-01T20:00:00Z",
+      "features": {
+        "match_id": "m_2auuWk",
+        "competition_slug": "gb-premier-league",
+        "season": "2026/2027",
+        "kickoff_utc": "2026-12-01T20:00:00Z",
+        "home_team_id": "t_0C4xyR",
+        "away_team_id": "t_2C9laO",
+        "home": {
+          "venue": {
+            "played": 5,
+            "goals_for_per_match": 1.4,
+            "goals_against_per_match": 1.8
+          },
+          "overall": {
+            "played": 10,
+            "goals_for_per_match": 1.0,
+            "goals_against_per_match": 1.9
+          },
+          "competition_venue": {
+            "played": 100,
+            "goals_for_per_match": 1.53,
+            "goals_against_per_match": 1.2
+          },
+          "selected": {
+            "played": 5,
+            "goals_for_per_match": 1.4,
+            "goals_against_per_match": 1.8
+          },
+          "selected_source": "venue"
+        },
+        "away": {
+          "venue": {
+            "played": 5,
+            "goals_for_per_match": 1.8,
+            "goals_against_per_match": 2.6
+          },
+          "overall": {
+            "played": 10,
+            "goals_for_per_match": 1.5,
+            "goals_against_per_match": 2.0
+          },
+          "competition_venue": {
+            "played": 100,
+            "goals_for_per_match": 1.2,
+            "goals_against_per_match": 1.53
+          },
+          "selected": {
+            "played": 5,
+            "goals_for_per_match": 1.8,
+            "goals_against_per_match": 2.6
+          },
+          "selected_source": "venue"
+        },
+        "competition": {
+          "home": {
+            "played": 100,
+            "goals_for_per_match": 1.53,
+            "goals_against_per_match": 1.2
+          },
+          "away": {
+            "played": 100,
+            "goals_for_per_match": 1.2,
+            "goals_against_per_match": 1.53
+          }
+        },
+        "history_cutoff_exclusive_utc": "2026-12-01T20:00:00Z"
+      },
+      "expected_goals": {
+        "status": "estimated",
+        "model": "venue_attack_defence_poisson_baseline_v1",
+        "lambda_home": 1.9773,
+        "lambda_away": 1.875,
+        "total_expected_goals": 3.8523,
         "prior_matches": 5.0,
         "samples": {
           "home": 5,
@@ -20669,11 +20766,11 @@
   },
   "quality": {
     "history_matches_loaded": 1780,
-    "fixtures_loaded": 213,
-    "fixtures_with_predictions": 213,
+    "fixtures_loaded": 214,
+    "fixtures_with_predictions": 214,
     "fixtures_without_features": 0,
     "feature_builder": {
-      "matches_with_features": 1993,
+      "matches_with_features": 1994,
       "matches_skipped": 0,
       "competition_seasons": 12,
       "same_kickoff_batching": true
