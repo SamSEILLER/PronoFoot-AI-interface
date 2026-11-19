@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-11-19T08:17:59.918073Z",
-  "status": "ok",
-  "label": "Opérationnel",
+  "generated_at_utc": "2026-11-19T08:33:07.287752Z",
+  "status": "warning",
+  "label": "Vigilance",
   "threshold_hours": 24,
   "history": {
-    "status": "ok",
+    "status": "warning",
     "last_success_at_utc": "2026-11-18T08:27:52.295068Z",
-    "age_hours": 23.84,
-    "fresh_within_24h": true,
+    "age_hours": 24.09,
+    "fresh_within_24h": false,
     "threshold_hours": 24,
     "provider": "PitchAPI",
     "collection_status": "COMPLETE",
@@ -21,10 +21,10 @@
     "last_attempt_at_utc": "2026-11-18T08:27:52.295068+00:00"
   },
   "odds": {
-    "status": "ok",
+    "status": "warning",
     "last_success_at_utc": "2026-11-18T08:28:25.247469Z",
-    "age_hours": 23.83,
-    "fresh_within_24h": true,
+    "age_hours": 24.08,
+    "fresh_within_24h": false,
     "threshold_hours": 24,
     "provider": "Odds-API.io / Unibet",
     "collection_status": "COMPLETE",
@@ -82,7 +82,7 @@
   "weather": {
     "status": "warning",
     "last_success_at_utc": "2026-11-19T08:16:53.869757Z",
-    "age_hours": 0.02,
+    "age_hours": 0.27,
     "fresh_within_24h": true,
     "threshold_hours": 24,
     "provider": "Open-Meteo",
