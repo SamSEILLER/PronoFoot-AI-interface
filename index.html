@@ -3006,6 +3006,54 @@ p.history-data-meta{margin:8px 2px 0!important;color:#555555!important;font-weig
 @media(max-width:420px){.match-weather-card{padding:9px}.match-weather-grid{gap:6px}.match-weather-tile{padding:8px}.match-weather-tile strong{font-size:14px}}
 
 
+
+/* Composition équipe — présentation synthétique et responsive */
+.composition-overview{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:12px 14px;margin:0 0 12px;background:#f3f7fc;border:1px solid #e4ebf5;border-radius:12px}
+.composition-summary-item{display:flex;align-items:center;justify-content:center;gap:8px;min-width:0}
+.composition-summary-item+.composition-summary-item{border-left:1px solid #d8e2ef}
+.composition-summary-label{font-size:12px;color:#587092;font-weight:650}
+.composition-summary-value{font-size:12px;color:#10254d}
+.composition-pill{display:inline-flex;align-items:center;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:750;white-space:nowrap}
+.composition-pill.is-partial{background:#fff0ce;color:#975300}
+.composition-pill.is-info{background:#dcecff;color:#1555ae}
+.composition-pill.is-muted{background:#e9eef5;color:#53657c}
+.composition-tabs{display:flex;gap:6px;border-bottom:2px solid #dce7f5;margin-bottom:14px}
+.composition-tab{border:0;border-radius:9px 9px 0 0;padding:10px 18px;background:#f0f4fa;color:#233b61;font-weight:750}
+.composition-tab.is-active{background:#174b98;color:#fff}
+.composition-tab:focus-visible,.composition-player-group summary:focus-visible,.composition-history summary:focus-visible{outline:2px solid #1683ef;outline-offset:2px}
+.composition-tab-panel[hidden]{display:none}
+.composition-team-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.composition-team-card{min-width:0;padding:13px;border:1px solid #dce6f2;border-radius:12px;background:#fff;box-shadow:0 2px 8px #173a5c08}
+.composition-team-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px}
+.composition-team-heading h4,.composition-team-heading-title{margin:0;font-size:15px;font-weight:800;color:#10254d}
+.composition-formation{margin:0 0 10px;color:#557092;font-size:12px;font-weight:650}
+.composition-player-group{margin-top:8px;border-radius:8px;background:#f5f8fc;overflow:hidden}
+.composition-player-group-heading{padding:9px 11px;cursor:pointer;font-size:13px;font-weight:750;color:#14294e;list-style-position:inside}
+.composition-player-list,.composition-availability-list{list-style:none;padding:0;margin:0}
+.composition-player{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:7px 11px;border-top:1px solid #e8eef5;font-size:12px}
+.composition-player-meta{color:#607895;font-size:11px;text-align:right}
+.composition-source-note{margin:10px 0 0;color:#6b7e97;font-size:10px}
+.composition-history{margin-top:12px;padding:10px 12px;border:1px solid #e1e9f3;border-radius:9px;background:#fbfcfe}
+.composition-history summary{cursor:pointer;font-size:12px;font-weight:750}
+.composition-history-row{display:grid;grid-template-columns:55px 1fr auto;gap:10px;padding:7px 0;border-top:1px solid #edf1f6;font-size:11px}
+.composition-history-row:first-of-type{margin-top:8px}
+.composition-history-row small{color:#71839a}
+.composition-empty{padding:12px;margin:8px 0;color:#61748d;background:#f5f8fc;border-radius:8px;font-size:12px}
+.composition-availability-date{margin:0 0 12px;color:#5c7190;font-size:12px}
+.composition-team-heading-title{margin:0 0 8px}
+.composition-coverage{margin:0 0 9px;color:#607895;font-size:11px}
+.composition-availability-item{padding:10px 0;border-top:1px solid #e9eef5}
+.composition-availability-top{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:12px}
+.composition-status-chip{padding:3px 8px;border-radius:20px;font-size:10px;font-weight:750;background:#e9eef5;color:#53657c;white-space:nowrap}
+.composition-status-chip.status-confirmed,.composition-status-chip.status-available{background:#dff6e9;color:#17643a}
+.composition-status-chip.status-probable{background:#e0edff;color:#1c55a2}
+.composition-status-chip.status-uncertain,.composition-status-chip.status-doubtful{background:#fff0ce;color:#965500}
+.composition-status-chip.status-unavailable{background:#ffe2e2;color:#a52b2b}
+.composition-availability-meta{margin:4px 0;color:#607895;font-size:10px}
+.composition-availability-details{margin:5px 0;color:#314765;font-size:11px;line-height:1.5}
+.composition-source-link{display:inline-block;margin:4px 10px 0 0;color:#155bb5;font-size:11px;font-weight:650;text-decoration:underline}
+@media(max-width:760px){.composition-overview{grid-template-columns:1fr;gap:7px}.composition-summary-item{justify-content:space-between;padding:3px 0}.composition-summary-item+.composition-summary-item{border-left:0;border-top:1px solid #d8e2ef;padding-top:8px}.composition-team-grid{grid-template-columns:1fr}.composition-tabs{display:grid;grid-template-columns:1fr 1fr}.composition-tab{padding:10px 7px}.composition-player{align-items:flex-start}.composition-history-row{grid-template-columns:45px 1fr}.composition-history-row small{grid-column:2}}
+
 </style>
 
 </body>
