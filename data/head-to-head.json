@@ -1,6 +1,6 @@
 {
   "provider": "pitchapi_processed_history",
-  "generated_at_utc": "2026-11-19T08:34:27.780474+00:00",
+  "generated_at_utc": "2026-11-19T08:38:53.995066+00:00",
   "matches_considered": 9402,
   "pairs": {
     "cerezo osaka|fc tokyo": {
@@ -2079,6 +2079,48 @@
         }
       ]
     },
+    "chelsea|crystal palace": {
+      "team_a": "Chelsea",
+      "team_b": "Crystal Palace",
+      "matches": [
+        {
+          "date": "2026-01-25T14:00:00Z",
+          "home": "Crystal Palace",
+          "away": "Chelsea",
+          "score_home": 1,
+          "score_away": 3,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        },
+        {
+          "date": "2025-08-17T13:00:00Z",
+          "home": "Chelsea",
+          "away": "Crystal Palace",
+          "score_home": 0,
+          "score_away": 0,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        },
+        {
+          "date": "2025-01-04T15:00:00Z",
+          "home": "Crystal Palace",
+          "away": "Chelsea",
+          "score_home": 1,
+          "score_away": 1,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        },
+        {
+          "date": "2024-09-01T12:30:00Z",
+          "home": "Chelsea",
+          "away": "Crystal Palace",
+          "score_home": 1,
+          "score_away": 1,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        }
+      ]
+    },
     "liverpool|manchester united": {
       "team_a": "Liverpool",
       "team_b": "Manchester United",
@@ -2229,6 +2271,48 @@
         }
       ]
     },
+    "aston villa|everton": {
+      "team_a": "Aston Villa",
+      "team_b": "Everton",
+      "matches": [
+        {
+          "date": "2026-01-18T16:30:00Z",
+          "home": "Aston Villa",
+          "away": "Everton",
+          "score_home": 0,
+          "score_away": 1,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        },
+        {
+          "date": "2025-09-13T14:00:00Z",
+          "home": "Everton",
+          "away": "Aston Villa",
+          "score_home": 0,
+          "score_away": 0,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        },
+        {
+          "date": "2025-01-15T19:30:00Z",
+          "home": "Everton",
+          "away": "Aston Villa",
+          "score_home": 0,
+          "score_away": 1,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        },
+        {
+          "date": "2024-09-14T16:30:00Z",
+          "home": "Aston Villa",
+          "away": "Everton",
+          "score_home": 3,
+          "score_away": 2,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        }
+      ]
+    },
     "auxerre|monaco": {
       "team_a": "Auxerre",
       "team_b": "Monaco",
@@ -2268,6 +2352,57 @@
           "score_away": 3,
           "competition_id": "fr-ligue-1",
           "competition_name": "Ligue 1"
+        }
+      ]
+    },
+    "real madrid|real sociedad": {
+      "team_a": "Real Madrid",
+      "team_b": "Real Sociedad",
+      "matches": [
+        {
+          "date": "2026-08-26T19:00:00Z",
+          "home": "Real Madrid",
+          "away": "Real Sociedad",
+          "score_home": 4,
+          "score_away": 1,
+          "competition_id": "es-la-liga",
+          "competition_name": "La Liga"
+        },
+        {
+          "date": "2026-02-14T20:00:00Z",
+          "home": "Real Madrid",
+          "away": "Real Sociedad",
+          "score_home": 4,
+          "score_away": 1,
+          "competition_id": "es-la-liga",
+          "competition_name": "La Liga"
+        },
+        {
+          "date": "2025-09-13T14:15:00Z",
+          "home": "Real Sociedad",
+          "away": "Real Madrid",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "es-la-liga",
+          "competition_name": "La Liga"
+        },
+        {
+          "date": "2025-05-24T14:15:00Z",
+          "home": "Real Madrid",
+          "away": "Real Sociedad",
+          "score_home": 2,
+          "score_away": 0,
+          "competition_id": "es-la-liga",
+          "competition_name": "La Liga"
+        },
+        {
+          "date": "2024-09-14T19:00:00Z",
+          "home": "Real Sociedad",
+          "away": "Real Madrid",
+          "score_home": 0,
+          "score_away": 2,
+          "competition_id": "es-la-liga",
+          "competition_name": "La Liga"
         }
       ]
     },
@@ -3645,6 +3780,48 @@
         }
       ]
     },
+    "afc bournemouth|brighton hove albion": {
+      "team_a": "AFC Bournemouth",
+      "team_b": "Brighton & Hove Albion",
+      "matches": [
+        {
+          "date": "2026-01-19T20:00:00Z",
+          "home": "Brighton & Hove Albion",
+          "away": "AFC Bournemouth",
+          "score_home": 1,
+          "score_away": 1,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        },
+        {
+          "date": "2025-09-13T14:00:00Z",
+          "home": "AFC Bournemouth",
+          "away": "Brighton & Hove Albion",
+          "score_home": 2,
+          "score_away": 1,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        },
+        {
+          "date": "2025-02-25T19:30:00Z",
+          "home": "Brighton & Hove Albion",
+          "away": "AFC Bournemouth",
+          "score_home": 2,
+          "score_away": 1,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        },
+        {
+          "date": "2024-11-23T15:00:00Z",
+          "home": "AFC Bournemouth",
+          "away": "Brighton & Hove Albion",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        }
+      ]
+    },
     "brentford|everton": {
       "team_a": "Brentford",
       "team_b": "Everton",
@@ -4071,6 +4248,75 @@
         }
       ]
     },
+    "atletico madrid|barcelona": {
+      "team_a": "Atlético Madrid",
+      "team_b": "Barcelona",
+      "matches": [
+        {
+          "date": "2026-11-08T20:00:00Z",
+          "home": "Atlético Madrid",
+          "away": "Barcelona",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "es-la-liga",
+          "competition_name": "La Liga"
+        },
+        {
+          "date": "2026-04-14T19:00:00Z",
+          "home": "Atlético Madrid",
+          "away": "Barcelona",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "uefa-champions-league",
+          "competition_name": "Ligue des champions UEFA"
+        },
+        {
+          "date": "2026-04-08T19:00:00Z",
+          "home": "Barcelona",
+          "away": "Atlético Madrid",
+          "score_home": 0,
+          "score_away": 2,
+          "competition_id": "uefa-champions-league",
+          "competition_name": "Ligue des champions UEFA"
+        },
+        {
+          "date": "2026-04-04T19:00:00Z",
+          "home": "Atlético Madrid",
+          "away": "Barcelona",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "es-la-liga",
+          "competition_name": "La Liga"
+        },
+        {
+          "date": "2025-12-02T20:00:00Z",
+          "home": "Barcelona",
+          "away": "Atlético Madrid",
+          "score_home": 3,
+          "score_away": 1,
+          "competition_id": "es-la-liga",
+          "competition_name": "La Liga"
+        },
+        {
+          "date": "2025-03-16T20:00:00Z",
+          "home": "Atlético Madrid",
+          "away": "Barcelona",
+          "score_home": 2,
+          "score_away": 4,
+          "competition_id": "es-la-liga",
+          "competition_name": "La Liga"
+        },
+        {
+          "date": "2024-12-21T20:00:00Z",
+          "home": "Barcelona",
+          "away": "Atlético Madrid",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "es-la-liga",
+          "competition_name": "La Liga"
+        }
+      ]
+    },
     "parma|roma": {
       "team_a": "Parma",
       "team_b": "Roma",
@@ -4278,6 +4524,90 @@
           "score_away": 2,
           "competition_id": "pt-primeira-liga",
           "competition_name": "Primeira Liga"
+        }
+      ]
+    },
+    "manchester united|newcastle united": {
+      "team_a": "Manchester United",
+      "team_b": "Newcastle United",
+      "matches": [
+        {
+          "date": "2026-03-04T20:15:00Z",
+          "home": "Newcastle United",
+          "away": "Manchester United",
+          "score_home": 2,
+          "score_away": 1,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        },
+        {
+          "date": "2025-12-26T20:00:00Z",
+          "home": "Manchester United",
+          "away": "Newcastle United",
+          "score_home": 1,
+          "score_away": 0,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        },
+        {
+          "date": "2025-04-13T15:30:00Z",
+          "home": "Newcastle United",
+          "away": "Manchester United",
+          "score_home": 4,
+          "score_away": 1,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        },
+        {
+          "date": "2024-12-30T20:00:00Z",
+          "home": "Manchester United",
+          "away": "Newcastle United",
+          "score_home": 0,
+          "score_away": 2,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        }
+      ]
+    },
+    "arsenal|brentford": {
+      "team_a": "Arsenal",
+      "team_b": "Brentford",
+      "matches": [
+        {
+          "date": "2026-02-12T20:00:00Z",
+          "home": "Brentford",
+          "away": "Arsenal",
+          "score_home": 1,
+          "score_away": 1,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        },
+        {
+          "date": "2025-12-03T19:30:00Z",
+          "home": "Arsenal",
+          "away": "Brentford",
+          "score_home": 2,
+          "score_away": 0,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        },
+        {
+          "date": "2025-04-12T16:30:00Z",
+          "home": "Arsenal",
+          "away": "Brentford",
+          "score_home": 1,
+          "score_away": 1,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        },
+        {
+          "date": "2025-01-01T17:30:00Z",
+          "home": "Brentford",
+          "away": "Arsenal",
+          "score_home": 1,
+          "score_away": 3,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
         }
       ]
     },
@@ -5004,6 +5334,30 @@
         }
       ]
     },
+    "leeds united|manchester city": {
+      "team_a": "Leeds United",
+      "team_b": "Manchester City",
+      "matches": [
+        {
+          "date": "2026-02-28T17:30:00Z",
+          "home": "Leeds United",
+          "away": "Manchester City",
+          "score_home": 0,
+          "score_away": 1,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        },
+        {
+          "date": "2025-11-29T15:00:00Z",
+          "home": "Manchester City",
+          "away": "Leeds United",
+          "score_home": 3,
+          "score_away": 2,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        }
+      ]
+    },
     "chelsea|leeds united": {
       "team_a": "Chelsea",
       "team_b": "Leeds United",
@@ -5022,6 +5376,30 @@
           "home": "Leeds United",
           "away": "Chelsea",
           "score_home": 3,
+          "score_away": 1,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        }
+      ]
+    },
+    "liverpool|sunderland": {
+      "team_a": "Liverpool",
+      "team_b": "Sunderland",
+      "matches": [
+        {
+          "date": "2026-02-11T20:15:00Z",
+          "home": "Sunderland",
+          "away": "Liverpool",
+          "score_home": 0,
+          "score_away": 1,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        },
+        {
+          "date": "2025-12-03T20:15:00Z",
+          "home": "Liverpool",
+          "away": "Sunderland",
+          "score_home": 1,
           "score_away": 1,
           "competition_id": "gb-premier-league",
           "competition_name": "Premier League"
