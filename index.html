@@ -2575,6 +2575,24 @@ p.history-data-meta{margin:8px 2px 0!important;color:#555555!important;font-weig
 .match-detail-accordion[open]>summary{background:linear-gradient(105deg,#102f52 0%,#1d4d7d 100%);color:#fff}
 .match-detail-accordion[open] .match-detail-accordion-chevron{transform:rotate(180deg)}
 .match-detail-accordion-body{padding:13px 12px;border-top:1px solid #e5edf6;color:#526b89;font-size:13px;line-height:1.5;min-width:0}
+
+/* Accordéon Cotes (Unibet / Odds-API) : hauteur totale plafonnée à 500px. */
+.match-detail-accordion:has(> .match-detail-accordion-body[data-detail-panel="odds"]){
+  max-height:500px;
+}
+.match-detail-accordion:has(> .match-detail-accordion-body[data-detail-panel="odds"])[open]{
+  display:flex;
+  flex-direction:column;
+}
+.match-detail-accordion:has(> .match-detail-accordion-body[data-detail-panel="odds"])>summary{
+  flex:0 0 auto;
+}
+.match-detail-accordion:has(> .match-detail-accordion-body[data-detail-panel="odds"])>.match-detail-accordion-body{
+  flex:1 1 auto;
+  min-height:0;
+  overflow-y:auto;
+  overscroll-behavior:contain;
+}
 /* Statistiques d'équipe — reproduction de la capture de référence */
 .match-analytics-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 .match-analytics-team{min-width:0;padding:0 0 12px;border:1px solid #dce9f7;border-radius:16px;background:linear-gradient(180deg,#fff 0%,#fbfdff 100%);box-shadow:0 3px 12px rgba(31,75,120,.08);overflow:hidden;color:#0b2853}
