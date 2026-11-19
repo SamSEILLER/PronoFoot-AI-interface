@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-11-19T08:17:32.935309+00:00",
+  "generated_at_utc": "2026-11-19T09:06:09.461666+00:00",
   "sources": {
     "pitchapi": {
       "status": "PARTIAL",
@@ -21744,6 +21744,71 @@
             "id": "t_3k7Fcc",
             "name": "Celtic",
             "image_url": "https://cdn.pitchapi.dev/images/teams/962c70903cb3c720b0baedc22bee5480b8d41fce1ba696b043ae311d3103de14.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_4CzZeC",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-21T21:00:00+00:00",
+      "collected_at_utc": "2026-11-19T09:06:09.192663+00:00",
+      "competition": "MLS",
+      "home_team": "FC Dallas",
+      "away_team": "Portland Timbers",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_4CzZeC",
+        "home_team": {
+          "id": "t_1Rkw2U",
+          "name": "FC Dallas",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/5ffa253ed1109a32378858b11a3e90ca1ebd49cc8b098eb3a884936381833524.webp"
+        },
+        "away_team": {
+          "id": "t_0ptYTE",
+          "name": "Portland Timbers",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/550c9258f2dd3b75f4a15d1d78ccf3318aae6d3b0380c4963bd99b5538f6822d.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_4CzZeC",
+          "home_team": {
+            "id": "t_1Rkw2U",
+            "name": "FC Dallas",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/5ffa253ed1109a32378858b11a3e90ca1ebd49cc8b098eb3a884936381833524.webp"
+          },
+          "away_team": {
+            "id": "t_0ptYTE",
+            "name": "Portland Timbers",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/550c9258f2dd3b75f4a15d1d78ccf3318aae6d3b0380c4963bd99b5538f6822d.webp"
           },
           "home": {
             "formation": "",
