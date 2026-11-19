@@ -905,7 +905,12 @@
         availabilityTab.addEventListener("click",()=>setTab("availability"));
         target.append(tabs,compositionsPanel,availabilityPanel);
 
-        const playerList = (parent,title,players) => {
+        const normalizePlayerName = value => String(value || "").normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").toLocaleLowerCase("fr").replace(/[^a-z0-9]+/g," ").trim();
+        const unavailableBySide = new Map(teams.map(team => [team.side,new Set(facts
+          .filter(fact => fact.team_side===team.side && fact.status==="unavailable")
+          .map(fact => normalizePlayerName(fact.player_name))
+          .filter(Boolean))]));
+        const playerList = (parent,title,players,side) => {
           const details=el("details","composition-player-group");
           details.open=title.startsWith("Titulaires");
           const summaryNode=el("summary","composition-player-group-heading",title+" ("+(Array.isArray(players)?players.length:0)+")");
@@ -919,7 +924,13 @@
               const name=person.name || person.player_name || "Joueur sans nom";
               const meta=[person.number?"#"+person.number:"",person.position||"",person.role||person.type||""].filter(Boolean).join(" · ");
               const item=el("li","composition-player");
-              item.append(el("strong","",name));
+              const identity=el("span","composition-player-identity");
+              identity.append(el("strong","",name));
+              if(unavailableBySide.get(side)?.has(normalizePlayerName(name))) {
+                identity.append(el("span","composition-player-unavailable","Indisponible · ChatGPT"));
+                item.classList.add("has-availability-conflict");
+              }
+              item.append(identity);
               if(meta)item.append(el("span","composition-player-meta",meta));
               list.append(item);
             });
@@ -938,8 +949,8 @@
             header.append(el("h4","",team.name),el("span","composition-pill "+(Array.isArray(data.starters)&&data.starters.length?"is-partial":"is-muted"),Array.isArray(data.starters)&&data.starters.length?"Partielle":"En attente"));
             const formation=el("p","composition-formation","Formation : "+(data.formation||"Non communiquée"));
             card.append(header,formation);
-            playerList(card,"Titulaires",data.starters);
-            playerList(card,"Remplaçants",data.subs);
+            playerList(card,"Titulaires",data.starters,team.side);
+            playerList(card,"Remplaçants",data.subs,team.side);
             card.append(el("p","composition-source-note","Source : PitchAPI · instantané "+(latest.snapshot||"inconnu")+" · "+formatDate(latest.collected_at_utc||compositionGeneratedAt)));
             cards.append(card);
           });
