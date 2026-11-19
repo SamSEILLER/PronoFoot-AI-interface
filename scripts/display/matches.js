@@ -830,10 +830,10 @@
         if (!target) return;
         target.replaceChildren();
 
-        const makeText = (tag, value, className) => {
+        const el = (tag, className, value) => {
           const node = document.createElement(tag);
           if (className) node.className = className;
-          node.textContent = value == null ? "" : String(value);
+          if (value != null) node.textContent = String(value);
           return node;
         };
         const formatDate = value => {
@@ -844,140 +844,165 @@
             : "Date inconnue";
         };
         const matchId = String(match.match_id || match.provider_match_id || match.id || "");
-        const showMessage = (message) => target.append(makeText("p", message, "match-composition-empty"));
+        const teams = [
+          {side:"home",name:match.home_team || "Équipe domicile"},
+          {side:"away",name:match.away_team || "Équipe extérieure"}
+        ];
+        const records = compositionRecords === null ? [] : compositionRecords
+          .filter(record => String(record.match_id || "") === matchId && record.provider === "PitchAPI")
+          .sort((a,b) => ["J-7","J-2","J-1"].indexOf(b.snapshot) - ["J-7","J-2","J-1"].indexOf(a.snapshot));
+        const observation = chatgptAvailabilityRecords === null ? null
+          : chatgptAvailabilityRecords.find(record => String(record.match_id || "") === matchId) || null;
+        const lineupsOf = record => record?.lineups && typeof record.lineups === "object" ? record.lineups : {};
+        const hasPlayers = record => ["home","away"].some(side => {
+          const data=lineupsOf(record)[side] || {};
+          return ["starters","subs"].some(key => Array.isArray(data[key]) && data[key].length);
+        });
+        const latest = records.find(hasPlayers) || records[0] || null;
+        const latestLineups = lineupsOf(latest);
+        const coverage = observation?.coverage || {};
+        const facts = Array.isArray(observation?.facts) ? observation.facts : [];
+        const factCount = facts.length;
+        const compositionState = latest
+          ? (latest.status === "provided" && teams.every(t => {
+              const data=latestLineups[t.side] || {};
+              return Array.isArray(data.starters) && data.starters.length;
+            }) ? "Compositions reçues" : hasPlayers(latest) ? "Compositions partielles" : "Aucun joueur communiqué")
+          : compositionRecords === null ? "Données indisponibles" : "Aucun instantané";
+        const updatedAt = latest?.collected_at_utc || compositionGeneratedAt;
+        const summary = el("div","composition-overview");
+        const state = el("div","composition-summary-item");
+        state.append(el("span","composition-summary-label","Compositions"),el("strong","composition-pill "+(hasPlayers(latest)?"is-partial":"is-muted"),compositionState));
+        const availability = el("div","composition-summary-item");
+        availability.append(el("span","composition-summary-label","Disponibilités"),el("strong","composition-pill "+(factCount?"is-info":"is-muted"),observation ? factCount+" information"+(factCount>1?"s":"") : "Non recherchées"));
+        const updated = el("div","composition-summary-item");
+        updated.append(el("span","composition-summary-label","Dernière actualisation"),el("strong","composition-summary-value",formatDate(updatedAt)));
+        summary.append(state,availability,updated);
+        target.append(summary);
 
-        // Section PitchAPI — les observations restent affichées séparément de ChatGPT.
-        if (compositionRecords === null) {
-          showMessage("Les données PitchAPI sont temporairement indisponibles.");
-        } else {
-          const records = compositionRecords
-            .filter(record => String(record.match_id || "") === matchId && record.provider === "PitchAPI")
-            .sort((a,b) => ["J-7","J-2","J-1"].indexOf(a.snapshot) - ["J-7","J-2","J-1"].indexOf(b.snapshot));
-          if (!records.length) {
-            showMessage("PitchAPI : aucun instantané publié pour ce match. L'absence de données ne signifie pas qu'un joueur est absent.");
+        const tabs=el("div","composition-tabs");
+        const compositionTab=el("button","composition-tab is-active","Compositions");
+        const availabilityTab=el("button","composition-tab","Disponibilités");
+        compositionTab.type=availabilityTab.type="button";
+        compositionTab.setAttribute("aria-pressed","true");
+        availabilityTab.setAttribute("aria-pressed","false");
+        tabs.append(compositionTab,availabilityTab);
+        const compositionsPanel=el("div","composition-tab-panel");
+        compositionsPanel.dataset.compositionView="lineups";
+        const availabilityPanel=el("div","composition-tab-panel");
+        availabilityPanel.dataset.compositionView="availability";
+        availabilityPanel.hidden=true;
+        const setTab = active => {
+          const showLineups=active==="lineups";
+          compositionsPanel.hidden=!showLineups;
+          availabilityPanel.hidden=showLineups;
+          compositionTab.classList.toggle("is-active",showLineups);
+          availabilityTab.classList.toggle("is-active",!showLineups);
+          compositionTab.setAttribute("aria-pressed",String(showLineups));
+          availabilityTab.setAttribute("aria-pressed",String(!showLineups));
+        };
+        compositionTab.addEventListener("click",()=>setTab("lineups"));
+        availabilityTab.addEventListener("click",()=>setTab("availability"));
+        target.append(tabs,compositionsPanel,availabilityPanel);
+
+        const playerList = (parent,title,players) => {
+          const details=el("details","composition-player-group");
+          details.open=title.startsWith("Titulaires");
+          const summaryNode=el("summary","composition-player-group-heading",title+" ("+(Array.isArray(players)?players.length:0)+")");
+          details.append(summaryNode);
+          if (!Array.isArray(players) || !players.length) {
+            details.append(el("p","composition-empty","Aucun joueur communiqué par PitchAPI."));
+          } else {
+            const list=el("ul","composition-player-list");
+            players.forEach(player=>{
+              const person=player?.player && typeof player.player==="object" ? player.player : (player||{});
+              const name=person.name || person.player_name || "Joueur sans nom";
+              const meta=[person.number?"#"+person.number:"",person.position||"",person.role||person.type||""].filter(Boolean).join(" · ");
+              const item=el("li","composition-player");
+              item.append(el("strong","",name));
+              if(meta)item.append(el("span","composition-player-meta",meta));
+              list.append(item);
+            });
+            details.append(list);
           }
-          const addPlayers = (parent, title, players) => {
-            if (!Array.isArray(players)) return;
-            const section = document.createElement("section");
-            section.className = "match-composition-team";
-            section.append(makeText("h4", title));
-            if (!players.length) {
-              section.append(makeText("p", "Aucun joueur communiqué par PitchAPI."));
-            } else {
-              const list = document.createElement("ul");
-              list.className = "match-composition-player-list";
-              players.forEach(player => {
-                const person = player && player.player && typeof player.player === "object" ? player.player : (player || {});
-                const name = person.name || person.player_name || "Joueur sans nom";
-                const number = person.number ? " · #" + person.number : "";
-                const position = person.position ? " · " + person.position : "";
-                const role = person.role || person.type || "";
-                list.append(makeText("li", name + number + position + (role ? " · " + role : "")));
+          parent.append(details);
+        };
+        if (compositionRecords===null) compositionsPanel.append(el("p","composition-empty","Les données PitchAPI sont temporairement indisponibles."));
+        else if (!latest) compositionsPanel.append(el("p","composition-empty","Aucun instantané PitchAPI pour ce match. L'absence de données ne signifie pas qu'un joueur est absent."));
+        else {
+          const cards=el("div","composition-team-grid");
+          teams.forEach(team=>{
+            const data=latestLineups[team.side] || {};
+            const card=el("section","composition-team-card");
+            const header=el("header","composition-team-heading");
+            header.append(el("h4","",team.name),el("span","composition-pill "+(Array.isArray(data.starters)&&data.starters.length?"is-partial":"is-muted"),Array.isArray(data.starters)&&data.starters.length?"Partielle":"En attente"));
+            const formation=el("p","composition-formation","Formation : "+(data.formation||"Non communiquée"));
+            card.append(header,formation);
+            playerList(card,"Titulaires",data.starters);
+            playerList(card,"Remplaçants",data.subs);
+            card.append(el("p","composition-source-note","Source : PitchAPI · instantané "+(latest.snapshot||"inconnu")+" · "+formatDate(latest.collected_at_utc||compositionGeneratedAt)));
+            cards.append(card);
+          });
+          compositionsPanel.append(cards);
+          if(records.length>1){
+            const history=el("details","composition-history");
+            history.append(el("summary","","Chronologie des instantanés ("+records.length+")"));
+            records.forEach(record=>{
+              const row=el("div","composition-history-row");
+              const status=record.status==="provided"?"Joueurs reçus":record.status==="metadata_only"?"Métadonnées uniquement":record.status==="collection_error"?"Erreur de collecte":"Non communiqué";
+              row.append(el("strong","",record.snapshot||"Instantané"),el("span","",status),el("small","",formatDate(record.collected_at_utc||compositionGeneratedAt)));
+              history.append(row);
+            });
+            compositionsPanel.append(history);
+          }
+        }
+
+        const coverageLabel = value => ({
+          checked_no_issue:"Recherche effectuée — aucun problème signalé",
+          issues_found:"Informations trouvées",
+          partial:"Recherche partielle",
+          not_checked:"Non vérifié"
+        })[value] || "Non vérifié";
+        const categoryLabel = value => ({injury:"Blessure",suspension:"Suspension",coach_decision:"Décision de l'entraîneur",doubtful:"Incertain",return:"Retour",other:"Autre"})[value] || value || "Information";
+        const statusLabel = value => ({unavailable:"Indisponible",doubtful:"Incertain",available:"Disponible",unknown:"Statut inconnu"})[value] || value || "Statut inconnu";
+        const confidenceLabel = value => ({confirmed:"Confirmé",probable:"Probable",uncertain:"Incertain"})[value] || value || "";
+        if(chatgptAvailabilityRecords===null) availabilityPanel.append(el("p","composition-empty","Données ChatGPT temporairement indisponibles."));
+        else if(!observation) availabilityPanel.append(el("p","composition-empty","Aucune recherche ChatGPT importée pour ce match. Les informations ne sont pas considérées comme vérifiées."));
+        else {
+          availabilityPanel.append(el("p","composition-availability-date","Recherche vérifiée le "+formatDate(observation.checked_at_utc)+" · statut global : "+(observation.research_status||"inconnu")));
+          const grid=el("div","composition-team-grid");
+          teams.forEach(team=>{
+            const card=el("section","composition-team-card");
+            card.append(el("h4","composition-team-heading-title",team.name));
+            const coverageStatus=coverage[team.side];
+            card.append(el("p","composition-coverage",coverageLabel(coverageStatus)));
+            const teamFacts=facts.filter(fact=>fact.team_side===team.side);
+            if(!teamFacts.length) card.append(el("p","composition-empty","Aucun joueur signalé dans les informations importées. Cela ne prouve pas l'absence d'indisponibilité."));
+            else {
+              const list=el("ul","composition-availability-list");
+              teamFacts.forEach(fact=>{
+                const item=el("li","composition-availability-item");
+                const top=el("div","composition-availability-top");
+                top.append(el("strong","",fact.player_name||"Joueur non identifié"),el("span","composition-status-chip status-"+(fact.confidence||fact.status||"unknown"),statusLabel(fact.status)));
+                item.append(top,el("p","composition-availability-meta",categoryLabel(fact.category)+" · "+confidenceLabel(fact.confidence)));
+                if(fact.details)item.append(el("p","composition-availability-details",fact.details));
+                if(typeof fact.source_url==="string" && /^https?:\/\//i.test(fact.source_url)){
+                  const link=el("a","composition-source-link",fact.source_title||"Consulter la source");
+                  link.href=fact.source_url;link.target="_blank";link.rel="noopener noreferrer";item.append(link);
+                }
+                list.append(item);
               });
-              section.append(list);
+              card.append(list);
             }
-            parent.append(section);
-          };
-          records.forEach(record => {
-            const snapshot = document.createElement("section");
-            snapshot.className = "match-composition-snapshot";
-            const lineups = record.lineups && typeof record.lineups === "object" ? record.lineups : {};
-            const home = lineups.home && typeof lineups.home === "object" ? lineups.home : {};
-            const away = lineups.away && typeof lineups.away === "object" ? lineups.away : {};
-            const homeHasPlayers = ["starters","subs"].some(key => Array.isArray(home[key]) && home[key].length);
-            const awayHasPlayers = ["starters","subs"].some(key => Array.isArray(away[key]) && away[key].length);
-            const hasPlayers = homeHasPlayers || awayHasPlayers;
-            let statusLabel;
-            if (record.status === "provided" && homeHasPlayers && awayHasPlayers) statusLabel = "Joueurs reçus pour les deux équipes";
-            else if (record.status === "provided" || hasPlayers) statusLabel = "Composition partielle — joueurs reçus pour une équipe ou une partie de l'effectif";
-            else if (record.status === "metadata_only") statusLabel = "Métadonnées uniquement — aucun joueur communiqué";
-            else if (record.status === "not_provided" || record.status === "not_available") statusLabel = "Composition non communiquée par PitchAPI";
-            else if (record.status === "collection_error") statusLabel = "Erreur lors de la collecte PitchAPI";
-            else statusLabel = record.message || "Statut non déterminé";
-            const snapshotHeading = makeText("h4", (record.snapshot || "Instantané") + " · PitchAPI");
-            const compositionUpdatedAt = record.collected_at_utc || compositionGeneratedAt;
-            const compositionUpdatedLabel = compositionUpdatedAt ? formatDate(compositionUpdatedAt) : "Date de mise à jour inconnue";
-            snapshotHeading.title = "Mise à jour des compositions : " + compositionUpdatedLabel;
-            snapshot.append(snapshotHeading);
-            snapshot.append(makeText("p", statusLabel, "match-composition-status"));
-            snapshot.append(makeText("p", "Dernière mise à jour des compositions : " + compositionUpdatedLabel, "match-composition-status"));
-            if (hasPlayers) {
-              [{data:home,name:match.home_team || "Équipe domicile"},{data:away,name:match.away_team || "Équipe extérieure"}].forEach(({data,name}) => {
-                const formation = data.formation ? " · " + data.formation : "";
-                const confirmation = data.confirmed === true ? " · Confirmée par la source" : data.confirmed === false ? " · Non confirmée" : "";
-                if (Array.isArray(data.starters)) addPlayers(snapshot, name + " · titulaires" + formation + confirmation, data.starters);
-                if (Array.isArray(data.subs)) addPlayers(snapshot, name + " · remplaçants", data.subs);
-              });
-            } else if (record.message) snapshot.append(makeText("p", record.message, "match-composition-message"));
-            target.append(snapshot);
+            grid.append(card);
+          });
+          availabilityPanel.append(grid);
+          (Array.isArray(observation.sources)?observation.sources:[]).forEach(source=>{
+            if(typeof source?.url!=="string" || !/^https?:\/\//i.test(source.url))return;
+            const link=el("a","composition-source-link",source.title||"Consulter la source");
+            link.href=source.url;link.target="_blank";link.rel="noopener noreferrer";availabilityPanel.append(link);
           });
         }
-
-        // Section ChatGPT — données sourcées, historisées et indépendantes de PitchAPI.
-        const chatSection = document.createElement("section");
-        chatSection.className = "match-composition-snapshot match-chatgpt-availability";
-        chatSection.append(makeText("h4", "Recherche de disponibilité · ChatGPT"));
-        if (chatgptAvailabilityRecords === null) {
-          chatSection.append(makeText("p", "Données ChatGPT temporairement indisponibles.", "match-composition-empty"));
-        } else {
-          const observation = chatgptAvailabilityRecords.find(record => String(record.match_id || "") === matchId);
-          if (!observation) {
-            chatSection.append(makeText("p", "Aucune recherche ChatGPT importée pour ce match. Les données ne sont pas considérées comme vérifiées.", "match-composition-empty"));
-          } else {
-            chatSection.append(makeText("p", "Vérifié le " + formatDate(observation.checked_at_utc) + " · " + (observation.research_status || "statut inconnu"), "match-composition-status"));
-            const coverage = observation.coverage || {};
-            const coverageLabel = value => ({
-              checked_no_issue:"Recherche effectuée — aucun problème signalé",
-              issues_found:"Informations trouvées",
-              partial:"Recherche partielle",
-              not_checked:"Non vérifié"
-            })[value] || "Non vérifié";
-            [{side:"home",name:match.home_team || "Équipe domicile"},{side:"away",name:match.away_team || "Équipe extérieure"}].forEach(team => {
-              const teamSection = document.createElement("section");
-              teamSection.className = "match-composition-team";
-              teamSection.append(makeText("h4", team.name));
-              teamSection.append(makeText("p", coverageLabel(coverage[team.side]), "match-composition-status"));
-              const facts = (Array.isArray(observation.facts) ? observation.facts : []).filter(fact => fact.team_side === team.side);
-              if (!facts.length) {
-                teamSection.append(makeText("p", "Aucun joueur signalé dans les informations importées. Cela ne prouve pas l'absence d'indisponibilité.", "match-composition-empty"));
-              } else {
-                const list = document.createElement("ul");
-                list.className = "match-composition-player-list";
-                facts.forEach(fact => {
-                  const item = document.createElement("li");
-                  const category = ({injury:"Blessure",suspension:"Suspension",coach_decision:"Décision de l'entraîneur",doubtful:"Incertain",return:"Retour",other:"Autre"})[fact.category] || fact.category || "Information";
-                  const status = ({unavailable:"Indisponible",doubtful:"Incertain",available:"Disponible",unknown:"Statut inconnu"})[fact.status] || fact.status || "Statut inconnu";
-                  const confidence = ({confirmed:"Confirmé",probable:"Probable",uncertain:"Incertain"})[fact.confidence] || fact.confidence || "";
-                  item.append(makeText("strong", fact.player_name || "Joueur non identifié"));
-                  item.append(document.createTextNode(" · " + category + " · " + status + (confidence ? " · " + confidence : "")));
-                  if (fact.details) item.append(makeText("p", fact.details));
-                  if (typeof fact.source_url === "string" && /^https?:\/\//i.test(fact.source_url)) {
-                    const link = document.createElement("a");
-                    link.href = fact.source_url;
-                    link.target = "_blank";
-                    link.rel = "noopener noreferrer";
-                    link.textContent = fact.source_title || "Consulter la source";
-                    item.append(link);
-                  }
-                  list.append(item);
-                });
-                teamSection.append(list);
-              }
-              chatSection.append(teamSection);
-            });
-            (Array.isArray(observation.sources) ? observation.sources : []).forEach(source => {
-              if (typeof source?.url !== "string" || !/^https?:\/\//i.test(source.url)) return;
-              const link = document.createElement("a");
-              link.href = source.url;
-              link.target = "_blank";
-              link.rel = "noopener noreferrer";
-              link.textContent = source.title || source.url;
-              link.className = "match-composition-source";
-              chatSection.append(link);
-            });
-          }
-        }
-        target.append(chatSection);
       };
 
       const renderDetailAccordions = () => {
