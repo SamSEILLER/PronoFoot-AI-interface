@@ -3007,13 +3007,14 @@ p.history-data-meta{margin:8px 2px 0!important;color:#555555!important;font-weig
 
 
 
-/* Composition équipe — présentation synthétique et responsive */
-.composition-overview{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:12px 14px;margin:0 0 12px;background:#f3f7fc;border:1px solid #e4ebf5;border-radius:12px}
-.composition-summary-item{display:flex;align-items:center;justify-content:center;gap:8px;min-width:0}
+/* Composition équipe — synthèse lisible même dans une fiche étroite */
+.composition-overview{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:12px 14px;margin:0 0 12px;background:#f3f7fc;border:1px solid #e4ebf5;border-radius:12px}
+.composition-summary-item{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:5px;min-width:0;padding:2px 10px}
+.composition-summary-item:first-child{padding-left:0}
 .composition-summary-item+.composition-summary-item{border-left:1px solid #d8e2ef}
-.composition-summary-label{font-size:12px;color:#587092;font-weight:650}
-.composition-summary-value{font-size:12px;color:#10254d}
-.composition-pill{display:inline-flex;align-items:center;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:750;white-space:nowrap}
+.composition-summary-label{font-size:11px;line-height:1.3;color:#587092;font-weight:650}
+.composition-summary-value{font-size:12px;line-height:1.4;color:#10254d;overflow-wrap:anywhere}
+.composition-pill{display:inline-flex;align-items:center;max-width:100%;padding:4px 10px;border-radius:20px;font-size:11px;line-height:1.35;font-weight:750;white-space:normal;overflow-wrap:anywhere}
 .composition-pill.is-partial{background:#fff0ce;color:#975300}
 .composition-pill.is-info{background:#dcecff;color:#1555ae}
 .composition-pill.is-muted{background:#e9eef5;color:#53657c}
