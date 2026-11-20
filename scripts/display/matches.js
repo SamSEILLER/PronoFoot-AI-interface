@@ -1106,8 +1106,6 @@
             };
             const formatAverage = (result, digits=2, suffix="") => result.value === null ? "—" : result.value.toLocaleString("fr-FR",{minimumFractionDigits:digits,maximumFractionDigits:digits})+suffix;
             const metricDefinitions = [
-              ["Buts marqués / match", goalForByMatch, "goals"],
-              ["Buts encaissés / match", goalAgainstByMatch, "goals"],
               ["Tirs / match", metricByMatch.map(item=>item.get("Tirs") ?? null), "stats"],
               ["Tirs cadrés / match", metricByMatch.map(item=>item.get("Tirs cadrés") ?? null), "stats"],
               ["Possession (%)", metricByMatch.map(item=>item.get("Possession (%)") ?? null), "possession"],
@@ -1122,7 +1120,7 @@
             const periodRows = metricDefinitions.map(([label,values,kind]) =>
               '<tr><th scope="row">'+label+'</th>'+periodCell(values,10,kind)+periodCell(values,5,kind)+'</tr>'
             ).join("");
-            const periodTable = '<div class="match-analytics-period-wrap"><table class="match-analytics-period-table"><thead><tr><th>Indicateur</th><th>10 matchs</th><th>5 matchs</th></tr></thead><tbody>'+periodRows+'</tbody></table></div>';
+            const periodTable = '<section class="match-analytics-extra"><h5>Statistiques complémentaires · 10 derniers matchs</h5><div class="match-analytics-period-wrap"><table class="match-analytics-period-table"><thead><tr><th>Indicateur</th><th>10 matchs</th><th>5 matchs</th></tr></thead><tbody>'+periodRows+'</tbody></table></div></section>';
             // Diagnostic comparatif : 5 derniers matchs contre les 5 précédents.
             // Le JSON ne contient que les 10 derniers matchs détaillés, pas toute la saison.
             const previousFive = recent.slice(0, Math.max(0, recent.length - 5));
