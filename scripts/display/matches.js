@@ -1098,7 +1098,7 @@
               +'<div class="over15-team-heading"><strong>'+escapeHtml(team.name)+'</strong><span>'+(team.pct===null?'—':team.pct+' %')+'</span></div>'
               +'<div class="over15-progress" role="img" aria-label="'+escapeHtml(team.name)+': '+(team.pct===null?'données insuffisantes':team.pct+' %')+'"><span style="width:'+(team.pct===null?0:team.pct)+'%"></span></div>'
               +'<p>'+(team.validCount?team.over+' / '+team.validCount+' matchs avec au moins 2 buts':'Aucun score exploitable')
-              +(team.requestedCount<10?' · '+team.requestedCount+' match(s) trouvé(s)':'')+'</p></section>'
+              +'</p></section>'
           );
           const sufficient = teamStats.every(team=>team.validCount>=5 && team.pct!==null);
           const both = teamStats.every(team=>team.pct!==null);
