@@ -2713,6 +2713,42 @@ p.history-data-meta{margin:8px 2px 0!important;color:#555555!important;font-weig
  .match-form-quick-read>div{grid-template-columns:minmax(0,1fr)}
 }
 
+
+/* Lecture rapide — synthèse chiffrée et comparative, sans texte superflu */
+.match-form-quick-read{display:grid;grid-template-columns:190px minmax(0,1fr);align-items:stretch;gap:0;padding:0;overflow:hidden;border:1px solid #214b82;border-radius:15px;background:#fff;box-shadow:0 4px 14px rgba(20,48,90,.08)}
+.match-form-quick-read>strong{display:flex;align-items:center;justify-content:center;padding:20px 18px;border:0;background:linear-gradient(145deg,#164d91,#0d3470);color:#fff;font-size:23px;line-height:1.25;text-align:center}
+.match-form-quick-read>div{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;min-width:0}
+.match-form-quick-team{display:flex;align-items:center;gap:18px;min-width:0;padding:16px 20px}
+.match-form-quick-team+ .match-form-quick-team{border-left:1px solid #b8c8e1}
+.match-form-quick-team-identity{display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-width:112px}
+.match-form-quick-team-identity>strong{font-size:17px;line-height:1.2;color:#101d3b}
+.match-form-quick-status{display:inline-flex;padding:6px 12px;border-radius:10px;background:#edf1f7;color:#31415b;font-size:14px;font-weight:850;white-space:nowrap}
+.match-form-quick-status.is-positive{background:#d9f5df;color:#08752f}
+.match-form-quick-status.is-negative{background:#ffe2df;color:#c62920}
+.match-form-quick-status.is-warning{background:#ffecd9;color:#a95a0a}
+.match-form-quick-metrics{display:grid;grid-template-columns:repeat(4,minmax(58px,1fr));gap:10px;flex:1;min-width:0}
+.match-form-quick-metric{display:flex;flex-direction:column;align-items:center;gap:5px;min-width:0;text-align:center}
+.match-form-quick-metric b{font-size:clamp(14px,1.4vw,19px);font-weight:900;white-space:nowrap;color:#29364e}
+.match-form-quick-metric small{font-size:11px;line-height:1.2;color:#33415b;white-space:nowrap}
+.match-form-quick-metric.is-good b{color:#15933b}
+.match-form-quick-metric.is-bad b{color:#e02720}
+.match-form-quick-metric.is-neutral b{color:#34445f}
+@media(max-width:1100px){
+ .match-form-quick-read{grid-template-columns:150px minmax(0,1fr)}
+ .match-form-quick-team{flex-direction:column;align-items:flex-start;gap:10px;padding:14px}
+ .match-form-quick-metrics{width:100%;grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:620px){
+ .match-form-quick-read{grid-template-columns:1fr}
+ .match-form-quick-read>strong{padding:12px;font-size:18px}
+ .match-form-quick-read>div{grid-template-columns:1fr}
+ .match-form-quick-team{flex-direction:row;align-items:center}
+ .match-form-quick-team+.match-form-quick-team{border-left:0;border-top:1px solid #b8c8e1}
+ .match-form-quick-team-identity{min-width:105px}
+ .match-form-quick-team-identity>strong{font-size:14px}
+ .match-form-quick-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
 /* H2H — taille des noms de clubs */
 .history-h2h-home,.history-h2h-away{
   font-size:13px!important;
