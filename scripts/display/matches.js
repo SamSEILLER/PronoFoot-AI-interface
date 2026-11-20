@@ -283,15 +283,20 @@
       .catch((error) => { console.warn("Estimations de buts attendus indisponibles.", error); return null; }),
     fetch("./data/match-analytics.json?v=" + Date.now(), { cache: "no-store" })
       .then((response) => { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); })
-      .catch((error) => { console.warn("Statistiques détaillées et tirs récents indisponibles.", error); return null; })
+      .catch((error) => { console.warn("Statistiques détaillées et tirs récents indisponibles.", error); return null; }),
+    fetch("./data/prediction-history.json?v=" + Date.now(), { cache: "no-store" })
+      .then((response) => { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); })
+      .catch((error) => { console.warn("Archive des pronostics expérimentaux indisponible.", error); return null; })
   ])
-    .then(([matches, standings, seasonGoals, goalPredictions, matchAnalytics]) => {
+    .then(([matches, standings, seasonGoals, goalPredictions, matchAnalytics, predictionHistory]) => {
       const matchRecords = matches;
       if (!Array.isArray(matchRecords)) throw new Error("Format de données inattendu");
 
       const standingsIndex = buildStandingsIndex(standings);
       const seasonGoalsIndex = buildSeasonGoalsIndex(seasonGoals);
       const goalPredictionsIndex = buildGoalPredictionsIndex(goalPredictions);
+      const predictionHistoryIndex = new Map((Array.isArray(predictionHistory?.records) ? predictionHistory.records : [])
+        .map(record => [String(record.match_id || ""), record]));
       const matchAnalyticsIndex = new Map();
       (Array.isArray(matchAnalytics?.competitions) ? matchAnalytics.competitions : []).forEach((competition) => {
         const matchesById = new Map((Array.isArray(competition.matches) ? competition.matches : [])
@@ -865,8 +870,14 @@
         const latest = records.find(hasPlayers) || records[0] || null;
         const latestLineups = lineupsOf(latest);
         const coverage = observation?.coverage || {};
-        const facts = Array.isArray(observation?.facts) ? observation.facts : [];
+        const currentFacts = Array.isArray(observation?.facts) ? observation.facts : [];
+        const previousWithFacts = (Array.isArray(observation?.previous_observations) ? observation.previous_observations : [])
+          .find(previous => Array.isArray(previous?.facts) && previous.facts.length > 0) || null;
+        const factsObservation = currentFacts.length ? observation : previousWithFacts;
+        const facts = currentFacts.length ? currentFacts : (Array.isArray(previousWithFacts?.facts) ? previousWithFacts.facts : []);
         const factCount = facts.length;
+        const factsAreHistorical = facts.length > 0 && factsObservation !== observation;
+        const factsCoverage = factsObservation?.coverage || coverage;
         const hasBothStarters = latest && teams.every(t => {
           const data=latestLineups[t.side] || {};
           return Array.isArray(data.starters) && data.starters.length;
@@ -884,7 +895,9 @@
         const state = el("div","composition-summary-item");
         state.append(el("span","composition-summary-label","Compositions"),el("strong","composition-pill "+(hasPlayers(latest)?"is-partial":"is-muted"),compositionState));
         const availability = el("div","composition-summary-item");
-        availability.append(el("span","composition-summary-label","Disponibilités"),el("strong","composition-pill "+(factCount?"is-info":"is-muted"),observation ? factCount+" information"+(factCount>1?"s":"") : "Non recherchées"));
+        availability.append(el("span","composition-summary-label","Disponibilités"),el("strong","composition-pill "+(factCount?"is-info":"is-muted"),factCount
+          ? factCount+" information"+(factCount>1?"s":"")+(factsAreHistorical?" · antérieures":"")
+          : observation ? "Aucun fait dans la dernière recherche" : "Non recherchées"));
         const updated = el("div","composition-summary-item");
         updated.append(el("span","composition-summary-label","Dernière actualisation"),el("strong","composition-summary-value",formatDate(updatedAt)));
         summary.append(state,availability,updated);
@@ -999,12 +1012,12 @@
         if(chatgptAvailabilityRecords===null) availabilityPanel.append(el("p","composition-empty","Données ChatGPT temporairement indisponibles."));
         else if(!observation) availabilityPanel.append(el("p","composition-empty","Aucune recherche ChatGPT importée pour ce match. Les informations ne sont pas considérées comme vérifiées."));
         else {
-          availabilityPanel.append(el("p","composition-availability-date","Recherche vérifiée le "+formatDate(observation.checked_at_utc)+" · statut global : "+(observation.research_status||"inconnu")));
+          availabilityPanel.append(el("p","composition-availability-date",(factsAreHistorical?"Dernière observation avec faits : ":"Recherche vérifiée le ")+formatDate(factsObservation?.checked_at_utc || observation.checked_at_utc)+" · statut global : "+(factsObservation?.research_status||observation.research_status||"inconnu")+(factsAreHistorical?" · la recherche la plus récente n'a pas confirmé ces informations.":"")));
           const grid=el("div","composition-team-grid");
           teams.forEach(team=>{
             const card=el("section","composition-team-card");
             card.append(el("h4","composition-team-heading-title",team.name));
-            const coverageStatus=coverage[team.side];
+            const coverageStatus=factsCoverage[team.side];
             card.append(el("p","composition-coverage",coverageLabel(coverageStatus)));
             const teamFacts=facts.filter(fact=>fact.team_side===team.side);
             if(!teamFacts.length) card.append(el("p","composition-empty","Aucun joueur signalé dans les informations importées. Cela ne prouve pas l'absence d'indisponibilité."));
@@ -1061,7 +1074,17 @@
             {id:String(selectedDetailMatch.home_team_id||""),name:selectedDetailMatch.home_team,side:"home"},
             {id:String(selectedDetailMatch.away_team_id||""),name:selectedDetailMatch.away_team,side:"away"}
           ];
+          const archivedPrediction = predictionHistoryIndex.get(String(selectedDetailMatch.match_id || selectedDetailMatch.id || ""));
+          const archivedRates = archivedPrediction?.prediction;
           const teamStats = sides.map(team => {
+            if (archivedRates) {
+              const rate = archivedRates[team.side === "home" ? "over_1_5_home_frequency" : "over_1_5_away_frequency"];
+              if (rate && Number.isFinite(rate.percentage)) return {
+                name:team.name, over:Number(rate.over_1_5_count) || 0,
+                validCount:Number(rate.matches) || 0, requestedCount:Number(rate.matches) || 0,
+                pct:Math.round(rate.percentage), archived:true
+              };
+            }
             const entry = analytics.teams.get(team.id);
             const recent = (entry?.recent_match_ids||[])
               .map(id=>analytics.matchesById.get(String(id))).filter(Boolean)
@@ -1085,8 +1108,8 @@
           );
           const sufficient = teamStats.every(team=>team.validCount>=5 && team.pct!==null);
           const both = teamStats.every(team=>team.pct!==null);
-          let tier = null;
-          if (sufficient && both) {
+          let tier = Number.isInteger(archivedRates?.over_1_5_tier) ? archivedRates.over_1_5_tier : null;
+          if (tier === null && sufficient && both) {
             const [homePct,awayPct]=teamStats.map(team=>team.pct);
             if (homePct>=80 && awayPct>=80) tier=1;
             else if (homePct>=70 && awayPct>=70) tier=2;
