@@ -1122,12 +1122,80 @@
               '<tr><th scope="row">'+label+'</th>'+periodCell(values,10,kind)+periodCell(values,5,kind)+'</tr>'
             ).join("");
             const periodTable = '<div class="match-analytics-period-wrap"><table class="match-analytics-period-table"><thead><tr><th>Indicateur</th><th>10 matchs</th><th>5 matchs</th></tr></thead><tbody>'+periodRows+'</tbody></table></div>';
+            // Diagnostic comparatif : 5 derniers matchs contre les 5 précédents.
+            // Le JSON ne contient que les 10 derniers matchs détaillés, pas toute la saison.
+            const previousFive = recent.slice(0, Math.max(0, recent.length - 5));
+            const latestFive = recent.slice(-5);
+            const meanOf = (values) => {
+              const valid = values.filter(value => value !== null && value !== undefined && Number.isFinite(Number(value))).map(Number);
+              return valid.length ? {value:valid.reduce((sum,value)=>sum+value,0)/valid.length,count:valid.length} : {value:null,count:0};
+            };
+            const pointsFor = (match) => {
+              const side = String(match.home_team_id) === team.id ? "home" : "away";
+              const gf = match[side+"_score"], ga = match[(side==="home"?"away":"home")+"_score"];
+              if (gf == null || ga == null || !Number.isFinite(Number(gf)) || !Number.isFinite(Number(ga))) return null;
+              return Number(gf)>Number(ga) ? 3 : Number(gf)===Number(ga) ? 1 : 0;
+            };
+            const periodMetrics = (period) => {
+              const indexes = period.map(match => recent.indexOf(match));
+              const take = (values) => meanOf(indexes.map(index => values[index] ?? null));
+              return {
+                goals:take(goalForByMatch), conceded:take(goalAgainstByMatch),
+                points:meanOf(period.map(pointsFor)),
+                xg:take(xgValues), xga:take(xgaValues),
+                shots:take(metricByMatch.map(item=>item.get("Tirs") ?? null))
+              };
+            };
+            const before = periodMetrics(previousFive);
+            const latest = periodMetrics(latestFive);
+            const fmt = (value,digits=2) => value == null ? "—" : value.toLocaleString("fr-FR",{minimumFractionDigits:digits,maximumFractionDigits:digits});
+            const delta = (current,reference) => current.value == null || reference.value == null ? null : current.value-reference.value;
+            const resultDelta = delta(latest.points,before.points);
+            const goalDelta = delta(latest.goals,before.goals);
+            const concededDelta = delta(latest.conceded,before.conceded);
+            const xgDelta = delta(latest.xg,before.xg);
+            const xgaDelta = delta(latest.xga,before.xga);
+            const enoughMatches = previousFive.length >= 3 && latestFive.length >= 3 && latest.points.count >= 3 && before.points.count >= 3;
+            const resultsBetter = resultDelta !== null && resultDelta >= 0.45 && (goalDelta === null || goalDelta >= 0.25) && (concededDelta === null || concededDelta <= 0.15);
+            const resultsWorse = resultDelta !== null && resultDelta <= -0.45 && (goalDelta === null || goalDelta <= -0.25 || concededDelta >= 0.25);
+            const underlyingAvailable = latest.xg.count >= 3 && before.xg.count >= 3;
+            const underlyingBetter = underlyingAvailable && xgDelta !== null && xgDelta >= 0.2 && (xgaDelta === null || xgaDelta <= 0.15);
+            const underlyingWorse = underlyingAvailable && xgDelta !== null && xgDelta <= -0.2;
+            let formLabel = "Performance proche de la référence";
+            let formTone = "neutral";
+            let formExplanation = "Les écarts entre les deux périodes ne sont pas assez nets pour signaler une anomalie.";
+            if (!enoughMatches) {
+              formLabel = "Données insuffisantes";
+              formTone = "neutral";
+              formExplanation = "Il faut au moins 3 matchs exploitables dans chacune des deux périodes pour établir une comparaison.";
+            } else if (resultsBetter && underlyingAvailable && !underlyingBetter) {
+              formLabel = "Surperformance possiblement fragile";
+              formTone = "warning";
+              formExplanation = "Les résultats progressent davantage que les xG disponibles. Une efficacité exceptionnelle peut contribuer à la série.";
+            } else if (resultsBetter && (!underlyingAvailable || underlyingBetter)) {
+              formLabel = "Surperformance";
+              formTone = "positive";
+              formExplanation = underlyingBetter ? "Les résultats progressent et les occasions (xG) vont dans le même sens." : "Les résultats progressent. Les xG sont trop incomplets pour confirmer la qualité de cette hausse.";
+            } else if (resultsWorse && underlyingBetter) {
+              formLabel = "Sous-performance potentiellement passagère";
+              formTone = "info";
+              formExplanation = "Les résultats reculent alors que les xG restent mieux orientés. Un retour vers le niveau antérieur est possible, sans être garanti.";
+            } else if (resultsWorse && underlyingWorse) {
+              formLabel = "Sous-performance confirmée";
+              formTone = "negative";
+              formExplanation = "Les résultats et les indicateurs xG disponibles se dégradent ensemble.";
+            } else if (resultsWorse) {
+              formLabel = "Sous-performance";
+              formTone = "negative";
+              formExplanation = "Les résultats sont en retrait. Les données sous-jacentes ne permettent pas encore d'en identifier clairement la cause.";
+            }
+            const trendCard = '<section class="match-form-diagnostic is-'+formTone+'"><header class="match-form-diagnostic-heading"><div><span class="match-form-eyebrow">FORME PAR RAPPORT À LA RÉFÉRENCE</span><h5>'+escapeHtml(formLabel)+'</h5></div><span class="match-form-period-tag">'+previousFive.length+' vs '+latestFive.length+' matchs</span></header><p class="match-form-explanation">'+escapeHtml(formExplanation)+'</p><div class="match-form-comparison"><div><small>Période précédente</small><strong>'+fmt(before.points.value,2)+' pts/m</strong><small>'+fmt(before.goals.value,2)+' but(s) marqués/m</small></div><div class="match-form-arrow" aria-hidden="true">→</div><div><small>5 derniers matchs</small><strong>'+fmt(latest.points.value,2)+' pts/m</strong><small>'+fmt(latest.goals.value,2)+' but(s) marqués/m</small></div></div><div class="match-form-evidence"><span><small>xG</small><b>'+fmt(before.xg.value)+' → '+fmt(latest.xg.value)+'</b><em>'+latest.xg.count+'/'+latestFive.length+' récents dispo.</em></span><span><small>Buts encaissés/m</small><b>'+fmt(before.conceded.value)+' → '+fmt(latest.conceded.value)+'</b><em>'+latest.conceded.count+'/'+latestFive.length+' récents dispo.</em></span><span><small>Tirs/m</small><b>'+fmt(before.shots.value)+' → '+fmt(latest.shots.value)+'</b><em>'+latest.shots.count+'/'+latestFive.length+' récents dispo.</em></span></div><p class="match-form-caveat">Référence limitée aux matchs détaillés disponibles : période précédente vs 5 derniers. Ce diagnostic décrit une tendance, pas une prédiction. Il ne remplace pas la moyenne de saison.</p></section>';
             const chartId = "match-team-chart-"+teamIndex;
             chartPayloads.push({id:chartId,labels,xg:xgValues,xga:xgaValues});
             const statsAvailable = recent.filter(item=>item.stats_status==="available").length;
             const shotsAvailable = recent.filter(item=>item.shots_status==="available").length;
             const coverageDenominator = Math.min(10, Math.max(recent.length, Number(entry?.season_matches_count) || 0));
-            return '<section class="match-analytics-team"><header class="match-analytics-team-heading"><h4>'+escapeHtml(team.name)+'</h4><span>'+recent.length+' / 10 matchs</span></header>'+periodTable+'<div class="match-analytics-chart-title">Évolution xG / xG Adverse · 10 derniers matchs</div><div class="match-analytics-chart"><canvas id="'+chartId+'" aria-label="Évolution xG et xG Adverse de '+escapeHtml(team.name)+' sur les '+recent.length+' matchs disponibles (maximum 10)"></canvas></div><details class="match-analytics-recent-accordion"><summary class="match-analytics-recent-list-title">10 derniers matchs ('+recent.length+' disponibles)</summary><div class="match-analytics-recent-list">'+rows.join("")+'</div></details><p class="match-analytics-team-coverage">Stats disponibles : '+statsAvailable+'/'+coverageDenominator+' · tirs/xG adverse disponibles : '+shotsAvailable+'/'+coverageDenominator+'</p></section>';
+            return '<section class="match-analytics-team"><header class="match-analytics-team-heading"><h4>'+escapeHtml(team.name)+'</h4><span>'+recent.length+' / 10 matchs</span></header>'+trendCard+periodTable+'<div class="match-analytics-chart-title">Évolution xG / xG Adverse · 10 derniers matchs</div><div class="match-analytics-chart"><canvas id="'+chartId+'" aria-label="Évolution xG et xG Adverse de '+escapeHtml(team.name)+' sur les '+recent.length+' matchs disponibles (maximum 10)"></canvas></div><details class="match-analytics-recent-accordion"><summary class="match-analytics-recent-list-title">10 derniers matchs ('+recent.length+' disponibles)</summary><div class="match-analytics-recent-list">'+rows.join("")+'</div></details><p class="match-analytics-team-coverage">Stats disponibles : '+statsAvailable+'/'+coverageDenominator+' · tirs/xG adverse disponibles : '+shotsAvailable+'/'+coverageDenominator+'</p></section>';
           });
           const html = '<div class="match-analytics-grid">'+cards.join("")+'</div><p class="match-analytics-note">Matchs terminés de la saison en cours et de la même compétition, antérieurs au coup d’envoi. Les périodes 5 et 10 utilisent uniquement les matchs réellement disponibles ; les indicateurs manquants restent indisponibles et ne sont jamais remplacés par zéro. xG adverse est calculé à partir des tirs adverses documentés et peut être partiel.</p>';
           if (teamStats) {
