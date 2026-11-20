@@ -900,6 +900,7 @@
         const overview = detailPanel.querySelector('[data-detail-panel="overview"]');
         const experiment = detailPanel.querySelector('[data-detail-panel="experimentation"]');
         const experimentOver25 = detailPanel.querySelector('[data-detail-panel="experimentation-over25"]');
+        const experimentBtts = detailPanel.querySelector('[data-detail-panel="experimentation-btts"]');
         const odds = detailPanel.querySelector('[data-detail-panel="odds"]');
         const weather = detailPanel.querySelector('[data-detail-panel="weather"]');
         const teamStats = detailPanel.querySelector('[data-detail-panel="team-stats"]');
@@ -908,6 +909,7 @@
         if (overview) renderHistoryOverview(overview, selectedDetailMatch);
         if (experiment) experiment.replaceChildren();
         if (experimentOver25) experimentOver25.replaceChildren();
+        if (experimentBtts) experimentBtts.replaceChildren();
         if (odds) renderOdds(odds, selectedDetailMatch);
         if (weather) renderWeather(weather, selectedDetailMatch);
         const analytics = matchAnalyticsIndex.get(String(selectedDetailMatch.competition_slug || ""));
@@ -1029,6 +1031,64 @@
           experimentOver25.innerHTML = '<section class="over15-experiment"><div class="over15-experiment-intro"><div><h4>Fréquence historique du +2,5 buts</h4><p class="over15-experiment-note">'+escapeHtml(sampleDescription)+'</p></div><span class="over15-sample-tag">10 matchs max.</span></div><div class="over15-team-grid">'+cards.join("")+'</div>'+tierHtml+'<p class="over15-experiment-caveat">Indicateur descriptif du passé. Il ne constitue ni une probabilité de match ni une recommandation de pari. Les matchs sans score valide sont exclus.</p></section>';
         };
         renderOver25Experiment();
+        const renderBttsExperiment = () => {
+          if (!experimentBtts) return;
+          if (!analytics) {
+            experimentBtts.innerHTML = '<p class="match-detail-empty">Données de matchs historiques indisponibles pour calculer le taux BTTS.</p>';
+            return;
+          }
+          const sides = [
+            {id:String(selectedDetailMatch.home_team_id||""),name:selectedDetailMatch.home_team},
+            {id:String(selectedDetailMatch.away_team_id||""),name:selectedDetailMatch.away_team}
+          ];
+          const teamStats = sides.map(team => {
+            const entry = analytics.teams.get(team.id);
+            // Même périmètre que les autres expérimentations : 10 derniers matchs
+            // terminés, même compétition et saison, avant le coup d'envoi analysé.
+            const recent = (entry?.recent_match_ids||[])
+              .map(id=>analytics.matchesById.get(String(id))).filter(Boolean)
+              .filter(item=>String(item.season||"")===String(selectedDetailMatch.season||""))
+              .filter(item=>Date.parse(item.kickoff_utc||"")<Date.parse(selectedDetailMatch.kickoff_utc||""))
+              .filter(item=>{
+                const hg=Number(item.home_score), ag=Number(item.away_score);
+                return Number.isInteger(hg)&&Number.isInteger(ag)&&hg>=0&&ag>=0;
+              })
+              .sort((a,b)=>String(b.kickoff_utc||"").localeCompare(String(a.kickoff_utc||"")))
+              .slice(0,10);
+            const btts = recent.filter(item=>Number(item.home_score)>=1 && Number(item.away_score)>=1).length;
+            const count = recent.length;
+            const pct = count ? Math.round(btts/count*100) : null;
+            return {name:team.name,btts,validCount:count,pct};
+          });
+          const cards = teamStats.map(team =>
+            '<section class="over15-team-card">'
+              +'<div class="over15-team-heading"><strong>'+escapeHtml(team.name)+'</strong><span>'+(team.pct===null?'—':team.pct+' %')+'</span></div>'
+              +'<div class="over15-progress" role="img" aria-label="'+escapeHtml(team.name)+': '+(team.pct===null?'données insuffisantes':team.pct+' %')+'"><span style="width:'+(team.pct===null?0:team.pct)+'%"></span></div>'
+              +'<p>'+(team.validCount?team.btts+' / '+team.validCount+' matchs avec les deux équipes qui marquent':'Aucun score exploitable')
+              +'</p></section>'
+          );
+          const sufficient = teamStats.every(team=>team.validCount>=5 && team.pct!==null);
+          let tier = null;
+          if (sufficient) {
+            const [homePct,awayPct]=teamStats.map(team=>team.pct);
+            if (homePct>=80 && awayPct>=80) tier=1;
+            else if (homePct>=70 && awayPct>=70) tier=2;
+            else if (homePct>=60 || awayPct>=60) tier=3;
+            else tier=4;
+          }
+          const tierLabels = {1:"Très favorable",2:"Favorable",3:"Mitigé",4:"Défavorable"};
+          const tierHtml = tier===null
+            ? '<div class="over15-prediction over15-tier-unavailable"><span class="over15-prediction-kicker">Pronostic expérimental</span><strong>Données insuffisantes</strong><small>5 matchs valides minimum par équipe requis.</small></div>'
+            : '<div class="over15-prediction over15-tier-'+tier+'"><span class="over15-prediction-kicker">Niveau '+tier+' · '+tierLabels[tier]+'</span><small>Classement descriptif basé sur les fréquences historiques, pas une probabilité calibrée.</small></div>';
+          const sampleCounts = [...new Set(teamStats.map(team=>team.validCount))];
+          const sampleDescription = sampleCounts.length===1
+            ? (sampleCounts[0]
+              ? "Part des matchs où les deux équipes ont marqué parmi les "+sampleCounts[0]+" derniers matchs disponibles, dans la même compétition et la même saison."
+              : "Aucun match terminé avec un score exploitable n’est disponible dans la même compétition et la même saison.")
+            : "Part des matchs où les deux équipes ont marqué parmi les derniers matchs disponibles, dans la même compétition et la même saison ("+teamStats.map(team=>team.validCount+" pour "+team.name).join(", ")+").";
+          experimentBtts.innerHTML = '<section class="over15-experiment"><div class="over15-experiment-intro"><div><h4>Fréquence historique du BTTS</h4><p class="over15-experiment-note">'+escapeHtml(sampleDescription)+'</p></div><span class="over15-sample-tag">10 matchs max.</span></div><div class="over15-team-grid">'+cards.join("")+'</div>'+tierHtml+'<p class="over15-experiment-caveat">Indicateur descriptif du passé. Il ne constitue ni une probabilité de match ni une recommandation de pari. Les matchs sans score valide sont exclus. BTTS signifie que les deux équipes ont marqué au moins un but.</p></section>';
+        };
+        renderBttsExperiment();
         const renderRecentTeamStats = () => {
           if (!analytics) {
             if (teamStats) teamStats.innerHTML = '<p class="match-detail-empty">Aucune collecte de statistiques détaillées disponible pour cette compétition.</p>';
