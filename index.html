@@ -2702,6 +2702,17 @@ p.history-data-meta{margin:8px 2px 0!important;color:#555555!important;font-weig
  .match-form-quick-read>div{grid-template-columns:minmax(0,1fr)}
 }
 
+
+/* Disposition demandée : lecture rapide en tête, équipes en pleine largeur */
+.match-analytics-grid{grid-template-columns:minmax(0,1fr)!important;gap:18px!important}
+.match-analytics-team{width:100%;max-width:none}
+.match-form-quick-read{order:-1;width:100%;margin:0 0 18px;align-items:center}
+.match-form-quick-read>div{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:620px){
+ .match-form-quick-read{align-items:flex-start}
+ .match-form-quick-read>div{grid-template-columns:minmax(0,1fr)}
+}
+
 /* H2H — taille des noms de clubs */
 .history-h2h-home,.history-h2h-away{
   font-size:13px!important;
