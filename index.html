@@ -2884,6 +2884,57 @@ p.history-data-meta{margin:8px 2px 0!important;color:#555555!important;font-weig
 .history-h2h-home,.history-h2h-away{
   font-size:13px!important;
 }
+
+
+/* Onglet Tirs — en-tête équipe compact et aligné */
+.match-shots-team>.match-analytics-team-heading-clean{
+  display:flex!important;
+  flex-direction:row!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  gap:12px!important;
+  min-height:0!important;
+  padding:10px 14px!important;
+  border:1px solid #d6e4f3!important;
+  border-left:3px solid #5b83b2!important;
+  border-radius:9px!important;
+  background:linear-gradient(105deg,#edf4fc 0%,#e5effa 100%)!important;
+  box-shadow:0 1px 3px rgba(23,63,104,.05)!important;
+  text-align:left!important;
+}
+.match-shots-team>.match-analytics-team-heading-clean h4{
+  min-width:0!important;
+  margin:0!important;
+  color:#173f68!important;
+  font-size:14px!important;
+  line-height:1.25!important;
+  font-weight:850!important;
+}
+.match-shots-team>.match-analytics-team-heading-clean>span{
+  display:inline-flex!important;
+  flex:0 0 auto!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:auto!important;
+  max-width:100%!important;
+  min-height:24px!important;
+  margin:0!important;
+  padding:4px 9px!important;
+  border:1px solid #d4e2f1!important;
+  border-radius:999px!important;
+  background:#fff!important;
+  color:#496987!important;
+  font-size:10px!important;
+  line-height:1.2!important;
+  font-weight:750!important;
+  white-space:nowrap!important;
+}
+@media(max-width:420px){
+  .match-shots-team>.match-analytics-team-heading-clean{gap:8px!important;padding:9px 11px!important}
+  .match-shots-team>.match-analytics-team-heading-clean h4{font-size:13px!important}
+  .match-shots-team>.match-analytics-team-heading-clean>span{font-size:9px!important;padding:4px 7px!important}
+}
+
 </style>
 <style>
 /* Icônes homogènes des panneaux météo et composition */
@@ -2965,7 +3016,7 @@ p.history-data-meta{margin:8px 2px 0!important;color:#555555!important;font-weig
 
 <script src="./scripts/display/sidebar.js" defer></script>
 <script src="./assets/chartjs-loader.js" defer></script>
-<script src="./scripts/display/matches.js?v=20261120-over15-tier-v22" defer></script>
+<script src="./scripts/display/matches.js?v=20261120-over15-tier-v23" defer></script>
 
 <style>
 /* Accordéons de la fiche match : en-têtes bleus et chevrons centrés */
