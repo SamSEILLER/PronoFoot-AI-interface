@@ -1231,10 +1231,23 @@
               const newAvg=meanOf(values.slice(-5));
               return '<div class="match-form-mini-card"><small>'+label+'</small><b>'+fmt(oldAvg.value)+' <i>→</i> '+fmt(newAvg.value)+'</b>'+sparkline(values,inverse)+'</div>';
             }).join("");
-            const mainTone = formTone==="positive"?"positive":formTone==="negative"?"negative":formTone==="warning"?"warning":"neutral";
+            const mainTone = formTone==="positive"?"positive":formTone==="negative"?"negative":(formTone==="warning"||formTone==="info")?"warning":"neutral";
             const mainDelta = before.points.value==null||latest.points.value==null||Math.abs(before.points.value)<0.001 ? "—" : ((latest.points.value-before.points.value)/Math.abs(before.points.value)*100);
             const mainDeltaText = mainDelta==="—"?"—":(mainDelta>0?"+":"")+Math.round(mainDelta)+" %";
-            quickSummaries.push('<p><strong>'+escapeHtml(team.name)+'</strong> '+escapeHtml(formLabel.toLowerCase())+' : '+escapeHtml(formExplanation)+'</p>');
+            const quickStatus = mainTone==="positive"?"En forme":mainTone==="negative"?"En baisse":mainTone==="warning"?"À surveiller":enoughMatches?"Stable":"Données limitées";
+            const quickMetrics = [
+              ["Points",before.points,latest.points,false],
+              ["xG",before.xg,latest.xg,false],
+              ["Buts marqués",before.goals,latest.goals,false],
+              ["Buts encaissés",before.conceded,latest.conceded,true]
+            ];
+            const quickMetricHtml = quickMetrics.map(([label,oldMetric,newMetric,inverse]) => {
+              const tone=compareTone(oldMetric,newMetric,inverse);
+              const pct=comparePct(oldMetric,newMetric,inverse);
+              const arrow=pct==="—"?"→":pct.startsWith("-")?"↘":pct.startsWith("+")?"↗":"→";
+              return '<span class="match-form-quick-metric is-'+tone+'"><b>'+arrow+' '+pct+'</b><small>'+label+'</small></span>';
+            }).join("");
+            quickSummaries.push('<article class="match-form-quick-team"><div class="match-form-quick-team-identity"><strong>'+escapeHtml(team.name)+'</strong><span class="match-form-quick-status is-'+mainTone+'">'+quickStatus+'</span></div><div class="match-form-quick-metrics">'+quickMetricHtml+'</div></article>');
             const trendCard = '<section class="match-form-diagnostic is-'+mainTone+'"><div class="match-form-hero"><div><span class="match-form-eyebrow">Forme par rapport à la référence <span class="match-form-info" title="Comparaison des cinq matchs précédents avec les cinq derniers disponibles">ⓘ</span></span><h5>'+escapeHtml(formLabel)+'</h5><p>'+escapeHtml(formExplanation)+'</p></div><div class="match-form-main-delta"><strong>'+(mainDeltaText==="—"?"→":mainDeltaText.startsWith("-")?"↘":"↗")+' '+mainDeltaText+'</strong><small>(pts/match)</small></div></div><div class="match-form-table-wrap"><table class="match-form-table"><thead><tr><th>Indicateur</th><th>Période précédente<br>(5 matchs)</th><th>5 derniers matchs</th><th>Écart</th></tr></thead><tbody>'+tableRows+'</tbody></table></div><div class="match-form-mini-grid">'+miniCards+'</div><p class="match-form-caveat">Comparaison calculée sur les matchs détaillés disponibles. Les indicateurs manquants restent exclus ; cette tendance n’est pas une prédiction.</p></section>';
             const chartId = "match-team-chart-"+teamIndex;
             chartPayloads.push({id:chartId,labels,xg:xgValues,xga:xgaValues});
