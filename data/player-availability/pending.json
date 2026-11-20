@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "document_type": "pronofoot_chatgpt_player_availability",
-  "generated_at_utc": "2026-11-19T15:41:16.486236+00:00",
+  "generated_at_utc": "2026-11-20T13:34:43.428533+00:00",
   "window": {
-    "start_utc": "2026-11-19T15:41:16.486236+00:00",
-    "end_utc": "2026-11-26T15:41:16.486236+00:00",
+    "start_utc": "2026-11-20T13:34:43.428533+00:00",
+    "end_utc": "2026-11-27T13:34:43.428533+00:00",
     "days": 7
   },
   "instructions": {
@@ -30,680 +30,6 @@
     "empty_rule": "Si rien n'est trouvé, utiliser coverage=partial ou not_checked, jamais checked_no_issue sans vérification explicite."
   },
   "matches": [
-    {
-      "match_id": "m_0ojMZu",
-      "provider_match_id": "m_0ojMZu",
-      "competition": "MLS",
-      "competition_slug": "us-mls",
-      "season": "2026",
-      "kickoff_utc": "2026-11-20T00:30:00+00:00",
-      "home_team": {
-        "name": "Orlando City",
-        "team_id": "t_3N3Xe0"
-      },
-      "away_team": {
-        "name": "FC Cincinnati",
-        "team_id": "t_0T0wL5"
-      },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
-      "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
-      },
-      "facts": [],
-      "sources": [],
-      "previous_observations": [
-        {
-          "match_id": "m_0ojMZu",
-          "provider_match_id": "m_0ojMZu",
-          "competition": "MLS",
-          "competition_slug": "us-mls",
-          "season": "2026",
-          "kickoff_utc": "2026-11-20T00:30:00+00:00",
-          "home_team": {
-            "name": "Orlando City",
-            "team_id": "t_3N3Xe0"
-          },
-          "away_team": {
-            "name": "FC Cincinnati",
-            "team_id": "t_0T0wL5"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-19T08:32:51+00:00",
-          "coverage": {
-            "home": "issues_found",
-            "away": "issues_found"
-          },
-          "facts": [
-            {
-              "player_name": "Robin Jansson",
-              "team_side": "home",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "confirmed",
-              "details": "Listed out with a foot injury in the MLS Wild Card player status report.",
-              "source_url": "https://www.sports360news.com/en/football/orlando-city-vs-fc-cincinnati-mls-wild-card-s360-football-mls-hp1/11146526",
-              "source_title": "Orlando City vs. FC Cincinnati: Wild Card Injury Report and Kickoff — Sports360News (19 novembre 2026)",
-              "published_at_utc": "2026-11-19"
-            },
-            {
-              "player_name": "Tyrese Spicer",
-              "team_side": "home",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "confirmed",
-              "details": "Listed out with a foot injury in the MLS Wild Card player status report.",
-              "source_url": "https://www.sports360news.com/en/football/orlando-city-vs-fc-cincinnati-mls-wild-card-s360-football-mls-hp1/11146526",
-              "source_title": "Orlando City vs. FC Cincinnati: Wild Card Injury Report and Kickoff — Sports360News (19 novembre 2026)",
-              "published_at_utc": "2026-11-19"
-            },
-            {
-              "player_name": "Wilder Cartagena",
-              "team_side": "home",
-              "category": "doubtful",
-              "status": "doubtful",
-              "confidence": "probable",
-              "details": "Listed questionable with a thigh injury; availability at kickoff not confirmed.",
-              "source_url": "https://www.sports360news.com/en/football/orlando-city-vs-fc-cincinnati-mls-wild-card-s360-football-mls-hp1/11146526",
-              "source_title": "Orlando City vs. FC Cincinnati: Wild Card Injury Report and Kickoff — Sports360News (19 novembre 2026)",
-              "published_at_utc": "2026-11-19"
-            },
-            {
-              "player_name": "Braian Ojeda",
-              "team_side": "home",
-              "category": "doubtful",
-              "status": "doubtful",
-              "confidence": "probable",
-              "details": "Listed questionable with a lower-extremity issue; availability at kickoff not confirmed.",
-              "source_url": "https://www.sports360news.com/en/football/orlando-city-vs-fc-cincinnati-mls-wild-card-s360-football-mls-hp1/11146526",
-              "source_title": "Orlando City vs. FC Cincinnati: Wild Card Injury Report and Kickoff — Sports360News (19 novembre 2026)",
-              "published_at_utc": "2026-11-19"
-            },
-            {
-              "player_name": "Brian Anunga",
-              "team_side": "away",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "confirmed",
-              "details": "Listed out with a leg injury in the MLS Wild Card player status report.",
-              "source_url": "https://www.sports360news.com/en/football/orlando-city-vs-fc-cincinnati-mls-wild-card-s360-football-mls-hp1/11146526",
-              "source_title": "Orlando City vs. FC Cincinnati: Wild Card Injury Report and Kickoff — Sports360News (19 novembre 2026)",
-              "published_at_utc": "2026-11-19"
-            },
-            {
-              "player_name": "Teenage Hadebe",
-              "team_side": "away",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "confirmed",
-              "details": "Listed out with a leg injury in the MLS Wild Card player status report.",
-              "source_url": "https://www.sports360news.com/en/football/orlando-city-vs-fc-cincinnati-mls-wild-card-s360-football-mls-hp1/11146526",
-              "source_title": "Orlando City vs. FC Cincinnati: Wild Card Injury Report and Kickoff — Sports360News (19 novembre 2026)",
-              "published_at_utc": "2026-11-19"
-            }
-          ],
-          "sources": [
-            {
-              "url": "https://www.sports360news.com/en/football/orlando-city-vs-fc-cincinnati-mls-wild-card-s360-football-mls-hp1/11146526",
-              "title": "Orlando City vs. FC Cincinnati: Wild Card Injury Report and Kickoff — Sports360News (19 novembre 2026)"
-            },
-            {
-              "url": "https://www.mlssoccer.com/playoffs/2026/news/wild-card-format-key-info-audi-2026-mls-cup-playoffs",
-              "title": "Wild Card format & key info: Audi 2026 MLS Cup Playoffs — MLSsoccer.com"
-            }
-          ],
-          "previous_observations": [
-            {
-              "match_id": "m_0ojMZu",
-              "provider_match_id": "m_0ojMZu",
-              "competition": "MLS",
-              "competition_slug": "us-mls",
-              "season": "2026",
-              "kickoff_utc": "2026-11-20T00:30:00+00:00",
-              "home_team": {
-                "name": "Orlando City",
-                "team_id": "t_3N3Xe0"
-              },
-              "away_team": {
-                "name": "FC Cincinnati",
-                "team_id": "t_0T0wL5"
-              },
-              "research_status": "partial",
-              "checked_at_utc": "2026-11-16T21:38:00+00:00",
-              "coverage": {
-                "home": "not_checked",
-                "away": "not_checked"
-              },
-              "facts": [],
-              "sources": [],
-              "previous_observations": [],
-              "observation_id": "1521a903adacd47534be0b4b657b13cf5425f5364b10f5f1ed629b78fc1e6174",
-              "provider": "ChatGPT",
-              "imported_at_utc": "2026-11-16T22:39:10.312313+00:00"
-            }
-          ],
-          "observation_id": "42fbbbcab568f8bc1d330a9ec3bb378276af4b8cae82b7451c856ef28b177c34",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-19T11:47:55.962806+00:00"
-        }
-      ]
-    },
-    {
-      "match_id": "m_2i2gIX",
-      "provider_match_id": "m_2i2gIX",
-      "competition": "MLS",
-      "competition_slug": "us-mls",
-      "season": "2026",
-      "kickoff_utc": "2026-11-20T03:00:00+00:00",
-      "home_team": {
-        "name": "Seattle Sounders FC",
-        "team_id": "t_0DiXbX"
-      },
-      "away_team": {
-        "name": "Real Salt Lake",
-        "team_id": "t_2o7nsk"
-      },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
-      "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
-      },
-      "facts": [],
-      "sources": [],
-      "previous_observations": [
-        {
-          "match_id": "m_2i2gIX",
-          "provider_match_id": "m_2i2gIX",
-          "competition": "MLS",
-          "competition_slug": "us-mls",
-          "season": "2026",
-          "kickoff_utc": "2026-11-20T03:00:00+00:00",
-          "home_team": {
-            "name": "Seattle Sounders FC",
-            "team_id": "t_0DiXbX"
-          },
-          "away_team": {
-            "name": "Real Salt Lake",
-            "team_id": "t_2o7nsk"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-19T08:32:51+00:00",
-          "coverage": {
-            "home": "partial",
-            "away": "partial"
-          },
-          "facts": [],
-          "sources": [
-            {
-              "url": "https://www.mlssoccer.com/playoffs/2026/news/wild-card-format-key-info-audi-2026-mls-cup-playoffs",
-              "title": "Wild Card format & key info: Audi 2026 MLS Cup Playoffs — MLSsoccer.com"
-            }
-          ],
-          "previous_observations": [
-            {
-              "match_id": "m_2i2gIX",
-              "provider_match_id": "m_2i2gIX",
-              "competition": "MLS",
-              "competition_slug": "us-mls",
-              "season": "2026",
-              "kickoff_utc": "2026-11-20T03:00:00+00:00",
-              "home_team": {
-                "name": "Seattle Sounders FC",
-                "team_id": "t_0DiXbX"
-              },
-              "away_team": {
-                "name": "Real Salt Lake",
-                "team_id": "t_2o7nsk"
-              },
-              "research_status": "partial",
-              "checked_at_utc": "2026-11-16T21:38:00+00:00",
-              "coverage": {
-                "home": "not_checked",
-                "away": "not_checked"
-              },
-              "facts": [],
-              "sources": [],
-              "previous_observations": [],
-              "observation_id": "23d3f97e919f6f3eb3682ae43e88ff61b5b3692522c79125a5e81da6c7295dd1",
-              "provider": "ChatGPT",
-              "imported_at_utc": "2026-11-16T22:39:10.312342+00:00"
-            }
-          ],
-          "observation_id": "31457778790bfe4d8acbfe63ee095250a435e1fd71af7b79a1ef774ca1c06eac",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-19T11:47:55.962841+00:00"
-        }
-      ]
-    },
-    {
-      "match_id": "m_080aBE",
-      "provider_match_id": "m_080aBE",
-      "competition": "J1 League",
-      "competition_slug": "jp-j1-league",
-      "season": "2026",
-      "kickoff_utc": "2026-11-20T10:00:00+00:00",
-      "home_team": {
-        "name": "Kashiwa Reysol",
-        "team_id": "t_49j3Z1"
-      },
-      "away_team": {
-        "name": "JEF United Chiba",
-        "team_id": "t_25A1QK"
-      },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
-      "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
-      },
-      "facts": [],
-      "sources": [],
-      "previous_observations": [
-        {
-          "match_id": "m_080aBE",
-          "provider_match_id": "m_080aBE",
-          "competition": "J1 League",
-          "competition_slug": "jp-j1-league",
-          "season": "2026",
-          "kickoff_utc": "2026-11-20T10:00:00+00:00",
-          "home_team": {
-            "name": "Kashiwa Reysol",
-            "team_id": "t_49j3Z1"
-          },
-          "away_team": {
-            "name": "JEF United Chiba",
-            "team_id": "t_25A1QK"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-19T08:32:51+00:00",
-          "coverage": {
-            "home": "issues_found",
-            "away": "partial"
-          },
-          "facts": [
-            {
-              "player_name": "Yuto Yamada",
-              "team_side": "home",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Blessure au ménisque.",
-              "source_url": "https://wmrtips.com/fr/blesses/j1-league-japan/",
-              "source_title": "J1 League japonaise : blessés & suspendus actuels — WmR (au 16 novembre 2026)",
-              "published_at_utc": "2026-11-16"
-            },
-            {
-              "player_name": "Seiya Baba",
-              "team_side": "home",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Blessure au ligament croisé.",
-              "source_url": "https://wmrtips.com/fr/blesses/j1-league-japan/",
-              "source_title": "J1 League japonaise : blessés & suspendus actuels — WmR (au 16 novembre 2026)",
-              "published_at_utc": "2026-11-16"
-            },
-            {
-              "player_name": "Tomoaki Okubo",
-              "team_side": "home",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Déchirure partielle du tendon d'Achille.",
-              "source_url": "https://wmrtips.com/fr/blesses/j1-league-japan/",
-              "source_title": "J1 League japonaise : blessés & suspendus actuels — WmR (au 16 novembre 2026)",
-              "published_at_utc": "2026-11-16"
-            },
-            {
-              "player_name": "Koki Kumasaka",
-              "team_side": "home",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Rupture du ligament latéral interne du genou.",
-              "source_url": "https://wmrtips.com/fr/blesses/j1-league-japan/",
-              "source_title": "J1 League japonaise : blessés & suspendus actuels — WmR (au 16 novembre 2026)",
-              "published_at_utc": "2026-11-16"
-            }
-          ],
-          "sources": [
-            {
-              "url": "https://wmrtips.com/fr/blesses/j1-league-japan/",
-              "title": "J1 League japonaise : blessés & suspendus actuels — WmR (au 16 novembre 2026)"
-            }
-          ],
-          "previous_observations": [
-            {
-              "match_id": "m_080aBE",
-              "provider_match_id": "m_080aBE",
-              "competition": "J1 League",
-              "competition_slug": "jp-j1-league",
-              "season": "2026",
-              "kickoff_utc": "2026-11-20T10:00:00+00:00",
-              "home_team": {
-                "name": "Kashiwa Reysol",
-                "team_id": "t_49j3Z1"
-              },
-              "away_team": {
-                "name": "JEF United Chiba",
-                "team_id": "t_25A1QK"
-              },
-              "research_status": "partial",
-              "checked_at_utc": "2026-11-16T21:38:00+00:00",
-              "coverage": {
-                "home": "issues_found",
-                "away": "partial"
-              },
-              "facts": [
-                {
-                  "player_name": "Masaki Watai",
-                  "team_side": "home",
-                  "category": "return",
-                  "status": "available",
-                  "confidence": "confirmed",
-                  "details": "A disputé 25 minutes en sortie de banc le 15 novembre; retour à la compétition signalé.",
-                  "source_url": "https://jleaguescout.soraretactics.com/football/injuries",
-                  "source_title": "J League Scout — J1 injuries and team news",
-                  "published_at_utc": "2026-11-15"
-                }
-              ],
-              "sources": [
-                {
-                  "url": "https://jleaguescout.soraretactics.com/football/injuries",
-                  "title": "J League Scout — J1 injuries and team news (consulté le 16 novembre 2026)"
-                }
-              ],
-              "previous_observations": [],
-              "observation_id": "c14596d2afcaf2966a4f227aefdb0d28f0e70f4624e834eb9249b45f0e9d62c6",
-              "provider": "ChatGPT",
-              "imported_at_utc": "2026-11-16T22:39:10.312373+00:00"
-            }
-          ],
-          "observation_id": "3e0af971c96df92cea1636edb1919e7f6230d81676faa949156f8f7bf9c9f7de",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-19T11:47:55.962881+00:00"
-        }
-      ]
-    },
-    {
-      "match_id": "m_2m6zPx",
-      "provider_match_id": "m_2m6zPx",
-      "competition": "J1 League",
-      "competition_slug": "jp-j1-league",
-      "season": "2026",
-      "kickoff_utc": "2026-11-20T10:00:00+00:00",
-      "home_team": {
-        "name": "Vissel Kobe",
-        "team_id": "t_0LfLJ4"
-      },
-      "away_team": {
-        "name": "Mito Hollyhock",
-        "team_id": "t_01uUy2"
-      },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
-      "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
-      },
-      "facts": [],
-      "sources": [],
-      "previous_observations": [
-        {
-          "match_id": "m_2m6zPx",
-          "provider_match_id": "m_2m6zPx",
-          "competition": "J1 League",
-          "competition_slug": "jp-j1-league",
-          "season": "2026",
-          "kickoff_utc": "2026-11-20T10:00:00+00:00",
-          "home_team": {
-            "name": "Vissel Kobe",
-            "team_id": "t_0LfLJ4"
-          },
-          "away_team": {
-            "name": "Mito Hollyhock",
-            "team_id": "t_01uUy2"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-19T08:32:51+00:00",
-          "coverage": {
-            "home": "issues_found",
-            "away": "issues_found"
-          },
-          "facts": [
-            {
-              "player_name": "Daiju Sasaki",
-              "team_side": "home",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Blessure au ménisque.",
-              "source_url": "https://wmrtips.com/fr/blesses/j1-league-japan/",
-              "source_title": "J1 League japonaise : blessés & suspendus actuels — WmR (au 16 novembre 2026)",
-              "published_at_utc": "2026-11-16"
-            },
-            {
-              "player_name": "Yoshiki Torikai",
-              "team_side": "away",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Blessure à la cuisse.",
-              "source_url": "https://wmrtips.com/fr/blesses/j1-league-japan/",
-              "source_title": "J1 League japonaise : blessés & suspendus actuels — WmR (au 16 novembre 2026)",
-              "published_at_utc": "2026-11-16"
-            },
-            {
-              "player_name": "Kazuma Okamoto",
-              "team_side": "away",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Entorse de la cheville.",
-              "source_url": "https://wmrtips.com/fr/blesses/j1-league-japan/",
-              "source_title": "J1 League japonaise : blessés & suspendus actuels — WmR (au 16 novembre 2026)",
-              "published_at_utc": "2026-11-16"
-            }
-          ],
-          "sources": [
-            {
-              "url": "https://wmrtips.com/fr/blesses/j1-league-japan/",
-              "title": "J1 League japonaise : blessés & suspendus actuels — WmR (au 16 novembre 2026)"
-            }
-          ],
-          "previous_observations": [
-            {
-              "match_id": "m_2m6zPx",
-              "provider_match_id": "m_2m6zPx",
-              "competition": "J1 League",
-              "competition_slug": "jp-j1-league",
-              "season": "2026",
-              "kickoff_utc": "2026-11-20T10:00:00+00:00",
-              "home_team": {
-                "name": "Vissel Kobe",
-                "team_id": "t_0LfLJ4"
-              },
-              "away_team": {
-                "name": "Mito Hollyhock",
-                "team_id": "t_01uUy2"
-              },
-              "research_status": "partial",
-              "checked_at_utc": "2026-11-16T21:38:00+00:00",
-              "coverage": {
-                "home": "partial",
-                "away": "partial"
-              },
-              "facts": [],
-              "sources": [
-                {
-                  "url": "https://jleaguescout.soraretactics.com/football/injuries",
-                  "title": "J League Scout — J1 injuries and team news (consulté le 16 novembre 2026)"
-                }
-              ],
-              "previous_observations": [],
-              "observation_id": "5d72de41d8aee827e7e592497a2affc8975872cd518851935cbcaea5cf45ffae",
-              "provider": "ChatGPT",
-              "imported_at_utc": "2026-11-16T22:39:10.312391+00:00"
-            }
-          ],
-          "observation_id": "37cc1f245d0720c910f035b572d194736128f93d6eac82e5895e133d1b97e2ae",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-19T11:47:55.962913+00:00"
-        }
-      ]
-    },
-    {
-      "match_id": "m_3bUb0Q",
-      "provider_match_id": "m_3bUb0Q",
-      "competition": "J1 League",
-      "competition_slug": "jp-j1-league",
-      "season": "2026",
-      "kickoff_utc": "2026-11-20T10:00:00+00:00",
-      "home_team": {
-        "name": "Kashima Antlers",
-        "team_id": "t_3RSWKx"
-      },
-      "away_team": {
-        "name": "Shimizu S-Pulse",
-        "team_id": "t_1E6Pbm"
-      },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
-      "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
-      },
-      "facts": [],
-      "sources": [],
-      "previous_observations": [
-        {
-          "match_id": "m_3bUb0Q",
-          "provider_match_id": "m_3bUb0Q",
-          "competition": "J1 League",
-          "competition_slug": "jp-j1-league",
-          "season": "2026",
-          "kickoff_utc": "2026-11-20T10:00:00+00:00",
-          "home_team": {
-            "name": "Kashima Antlers",
-            "team_id": "t_3RSWKx"
-          },
-          "away_team": {
-            "name": "Shimizu S-Pulse",
-            "team_id": "t_1E6Pbm"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-19T08:32:51+00:00",
-          "coverage": {
-            "home": "issues_found",
-            "away": "partial"
-          },
-          "facts": [
-            {
-              "player_name": "Tae-hyeon Kim",
-              "team_side": "home",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Fracture du tibia.",
-              "source_url": "https://wmrtips.com/fr/blesses/j1-league-japan/",
-              "source_title": "J1 League japonaise : blessés & suspendus actuels — WmR (au 16 novembre 2026)",
-              "published_at_utc": "2026-11-16"
-            },
-            {
-              "player_name": "Yuta Higuchi",
-              "team_side": "home",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Fracture du péroné.",
-              "source_url": "https://wmrtips.com/fr/blesses/j1-league-japan/",
-              "source_title": "J1 League japonaise : blessés & suspendus actuels — WmR (au 16 novembre 2026)",
-              "published_at_utc": "2026-11-16"
-            },
-            {
-              "player_name": "Koki Anzai",
-              "team_side": "home",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Blessure au ligament croisé.",
-              "source_url": "https://wmrtips.com/fr/blesses/j1-league-japan/",
-              "source_title": "J1 League japonaise : blessés & suspendus actuels — WmR (au 16 novembre 2026)",
-              "published_at_utc": "2026-11-16"
-            }
-          ],
-          "sources": [
-            {
-              "url": "https://wmrtips.com/fr/blesses/j1-league-japan/",
-              "title": "J1 League japonaise : blessés & suspendus actuels — WmR (au 16 novembre 2026)"
-            }
-          ],
-          "previous_observations": [
-            {
-              "match_id": "m_3bUb0Q",
-              "provider_match_id": "m_3bUb0Q",
-              "competition": "J1 League",
-              "competition_slug": "jp-j1-league",
-              "season": "2026",
-              "kickoff_utc": "2026-11-20T10:00:00+00:00",
-              "home_team": {
-                "name": "Kashima Antlers",
-                "team_id": "t_3RSWKx"
-              },
-              "away_team": {
-                "name": "Shimizu S-Pulse",
-                "team_id": "t_1E6Pbm"
-              },
-              "research_status": "partial",
-              "checked_at_utc": "2026-11-16T21:38:00+00:00",
-              "coverage": {
-                "home": "issues_found",
-                "away": "issues_found"
-              },
-              "facts": [
-                {
-                  "player_name": "Ryuta Koike",
-                  "team_side": "home",
-                  "category": "doubtful",
-                  "status": "doubtful",
-                  "confidence": "probable",
-                  "details": "Signalé comme sorti sur blessure après 34 minutes le 15 novembre; disponibilité pour le match du 20 novembre incertaine.",
-                  "source_url": "https://jleaguescout.soraretactics.com/football/injuries",
-                  "source_title": "J League Scout — J1 injuries and team news",
-                  "published_at_utc": "2026-11-15"
-                },
-                {
-                  "player_name": "Sodai Hasukawa",
-                  "team_side": "away",
-                  "category": "injury",
-                  "status": "unavailable",
-                  "confidence": "confirmed",
-                  "details": "Déchirure de l'ischio-jambier gauche signalée le 15 novembre.",
-                  "source_url": "https://jleaguescout.soraretactics.com/football/injuries",
-                  "source_title": "J League Scout — J1 injuries and team news",
-                  "published_at_utc": "2026-11-15"
-                }
-              ],
-              "sources": [
-                {
-                  "url": "https://jleaguescout.soraretactics.com/football/injuries",
-                  "title": "J League Scout — J1 injuries and team news (consulté le 16 novembre 2026)"
-                }
-              ],
-              "previous_observations": [],
-              "observation_id": "66c6ec2f169d79795be1407f6b3682b278e88762d554eb3e4a5747f5d080c329",
-              "provider": "ChatGPT",
-              "imported_at_utc": "2026-11-16T22:39:10.312416+00:00"
-            }
-          ],
-          "observation_id": "cbcc6ff408b6c8db4e9b2a93aeb0d8983bfa9dca82cc2db2c6791a1ccce95ac9",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-19T11:47:55.962948+00:00"
-        }
-      ]
-    },
     {
       "match_id": "m_01XpUc",
       "provider_match_id": "m_01XpUc",
@@ -12237,6 +11563,456 @@
       "away_team": {
         "name": "Roma",
         "team_id": "t_0RhqmW"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_2aKzEl",
+      "provider_match_id": "m_2aKzEl",
+      "competition": "Ligue Europa UEFA",
+      "competition_slug": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T17:45:00+00:00",
+      "home_team": {
+        "name": "Celta Vigo",
+        "team_id": "t_4aQcO7"
+      },
+      "away_team": {
+        "name": "AFC Bournemouth",
+        "team_id": "t_1iaglr"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_0dkmnA",
+      "provider_match_id": "m_0dkmnA",
+      "competition": "Ligue Europa UEFA",
+      "competition_slug": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T17:45:00+00:00",
+      "home_team": {
+        "name": "Dinamo Zagreb",
+        "team_id": "t_1n1mzJ"
+      },
+      "away_team": {
+        "name": "Bayer Leverkusen",
+        "team_id": "t_2lHR8t"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_3SZtsw",
+      "provider_match_id": "m_3SZtsw",
+      "competition": "Ligue Europa UEFA",
+      "competition_slug": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T17:45:00+00:00",
+      "home_team": {
+        "name": "Marseille",
+        "team_id": "t_2s2eyG"
+      },
+      "away_team": {
+        "name": "Levski Sofia",
+        "team_id": "t_2EeexA"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_0ADq1e",
+      "provider_match_id": "m_0ADq1e",
+      "competition": "Ligue Europa UEFA",
+      "competition_slug": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T17:45:00+00:00",
+      "home_team": {
+        "name": "Olympiacos",
+        "team_id": "t_3rpdJh"
+      },
+      "away_team": {
+        "name": "Milan",
+        "team_id": "t_1DYf1D"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_1rxRZA",
+      "provider_match_id": "m_1rxRZA",
+      "competition": "Ligue Europa UEFA",
+      "competition_slug": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T17:45:00+00:00",
+      "home_team": {
+        "name": "Salzburg",
+        "team_id": "t_2Mf10x"
+      },
+      "away_team": {
+        "name": "Ararat Armenia",
+        "team_id": "t_2cGY1H"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_1NQ9Kt",
+      "provider_match_id": "m_1NQ9Kt",
+      "competition": "Ligue Europa UEFA",
+      "competition_slug": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T17:45:00+00:00",
+      "home_team": {
+        "name": "Union St.Gilloise",
+        "team_id": "t_3pK6v1"
+      },
+      "away_team": {
+        "name": "Lech Poznań",
+        "team_id": "t_0PcBZL"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_1UYxQd",
+      "provider_match_id": "m_1UYxQd",
+      "competition": "Ligue Europa UEFA",
+      "competition_slug": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T17:45:00+00:00",
+      "home_team": {
+        "name": "Viktoria Plzeň",
+        "team_id": "t_1G8RuA"
+      },
+      "away_team": {
+        "name": "Benfica",
+        "team_id": "t_0Mzm1V"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_2wltyW",
+      "provider_match_id": "m_2wltyW",
+      "competition": "Ligue Europa UEFA",
+      "competition_slug": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T17:45:00+00:00",
+      "home_team": {
+        "name": "Beşiktaş",
+        "team_id": "t_0QAIlC"
+      },
+      "away_team": {
+        "name": "Hapoel Beer Sheva",
+        "team_id": "t_3A3W9Z"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_0ryVxp",
+      "provider_match_id": "m_0ryVxp",
+      "competition": "Ligue Europa UEFA",
+      "competition_slug": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T20:00:00+00:00",
+      "home_team": {
+        "name": "Sparta Prague",
+        "team_id": "t_19pSyq"
+      },
+      "away_team": {
+        "name": "AZ Alkmaar",
+        "team_id": "t_1cDwJb"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_0snBmF",
+      "provider_match_id": "m_0snBmF",
+      "competition": "Ligue Europa UEFA",
+      "competition_slug": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T20:00:00+00:00",
+      "home_team": {
+        "name": "Ferencváros",
+        "team_id": "t_0Ep5Xd"
+      },
+      "away_team": {
+        "name": "NK Celje",
+        "team_id": "t_2ULmuf"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_12vC0r",
+      "provider_match_id": "m_12vC0r",
+      "competition": "Ligue Europa UEFA",
+      "competition_slug": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T20:00:00+00:00",
+      "home_team": {
+        "name": "Sunderland",
+        "team_id": "t_2xPV6y"
+      },
+      "away_team": {
+        "name": "Jagiellonia Białystok",
+        "team_id": "t_4E67Fm"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_4CEVyM",
+      "provider_match_id": "m_4CEVyM",
+      "competition": "Ligue Europa UEFA",
+      "competition_slug": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T20:00:00+00:00",
+      "home_team": {
+        "name": "Torreense",
+        "team_id": "t_0btWrh"
+      },
+      "away_team": {
+        "name": "Celtic",
+        "team_id": "t_3k7Fcc"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_1IDFXG",
+      "provider_match_id": "m_1IDFXG",
+      "competition": "Ligue Europa UEFA",
+      "competition_slug": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T20:00:00+00:00",
+      "home_team": {
+        "name": "Crystal Palace",
+        "team_id": "t_4bz4EP"
+      },
+      "away_team": {
+        "name": "Real Sociedad",
+        "team_id": "t_1hKtUw"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_2yFf8O",
+      "provider_match_id": "m_2yFf8O",
+      "competition": "Ligue Europa UEFA",
+      "competition_slug": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T20:00:00+00:00",
+      "home_team": {
+        "name": "Hoffenheim",
+        "team_id": "t_3xyER9"
+      },
+      "away_team": {
+        "name": "Sturm Graz",
+        "team_id": "t_0qB4tc"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_04Y9Kg",
+      "provider_match_id": "m_04Y9Kg",
+      "competition": "Ligue Europa UEFA",
+      "competition_slug": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T20:00:00+00:00",
+      "home_team": {
+        "name": "Juventus",
+        "team_id": "t_4ZwKDn"
+      },
+      "away_team": {
+        "name": "Omonia Nicosia",
+        "team_id": "t_0YNrpr"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_30yUrS",
+      "provider_match_id": "m_30yUrS",
+      "competition": "Ligue Europa UEFA",
+      "competition_slug": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T20:00:00+00:00",
+      "home_team": {
+        "name": "Lyon",
+        "team_id": "t_0xMlRV"
+      },
+      "away_team": {
+        "name": "Lillestrøm",
+        "team_id": "t_1wU4wq"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_1NPdGz",
+      "provider_match_id": "m_1NPdGz",
+      "competition": "Ligue Europa UEFA",
+      "competition_slug": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T20:00:00+00:00",
+      "home_team": {
+        "name": "NEC Nijmegen",
+        "team_id": "t_20mGQ4"
+      },
+      "away_team": {
+        "name": "Rennes",
+        "team_id": "t_3Ng6PH"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_1R2Vyf",
+      "provider_match_id": "m_1R2Vyf",
+      "competition": "Ligue Europa UEFA",
+      "competition_slug": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T20:00:00+00:00",
+      "home_team": {
+        "name": "OFI Crete",
+        "team_id": "t_0G7jPq"
+      },
+      "away_team": {
+        "name": "Anderlecht",
+        "team_id": "t_2J5yFC"
       },
       "research_status": "not_researched",
       "checked_at_utc": null,
