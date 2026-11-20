@@ -1,8 +1,8 @@
 {
   "provider": "pitchapi_processed_history",
-  "generated_at_utc": "2026-11-19T15:41:48.359907+00:00",
+  "generated_at_utc": "2026-11-20T08:21:29.117266+00:00",
   "recent_limit_per_competition": 5,
-  "matches_considered": 9402,
+  "matches_considered": 9404,
   "teams": {
     "inter miami cf": {
       "name": "Inter Miami CF",
@@ -40,46 +40,6 @@
           "result": "N",
           "score": "3-3",
           "opponent": "Charlotte FC",
-          "competition_id": "us-mls"
-        }
-      ]
-    },
-    "real salt lake": {
-      "name": "Real Salt Lake",
-      "matches": [
-        {
-          "date": "2026-10-18T00:30:00Z",
-          "result": "V",
-          "score": "3-1",
-          "opponent": "Sporting Kansas City",
-          "competition_id": "us-mls"
-        },
-        {
-          "date": "2026-10-25T01:30:00Z",
-          "result": "V",
-          "score": "3-0",
-          "opponent": "St. Louis City",
-          "competition_id": "us-mls"
-        },
-        {
-          "date": "2026-10-29T00:30:00Z",
-          "result": "V",
-          "score": "2-1",
-          "opponent": "Austin FC",
-          "competition_id": "us-mls"
-        },
-        {
-          "date": "2026-10-31T21:00:00Z",
-          "result": "D",
-          "score": "1-2",
-          "opponent": "San Jose Earthquakes",
-          "competition_id": "us-mls"
-        },
-        {
-          "date": "2026-11-08T00:10:00Z",
-          "result": "V",
-          "score": "2-1",
-          "opponent": "LA Galaxy",
           "competition_id": "us-mls"
         }
       ]
@@ -604,86 +564,6 @@
         }
       ]
     },
-    "seattle sounders fc": {
-      "name": "Seattle Sounders FC",
-      "matches": [
-        {
-          "date": "2026-10-18T02:30:00Z",
-          "result": "N",
-          "score": "1-1",
-          "opponent": "CF Montréal",
-          "competition_id": "us-mls"
-        },
-        {
-          "date": "2026-10-25T02:30:00Z",
-          "result": "N",
-          "score": "2-2",
-          "opponent": "San Diego FC",
-          "competition_id": "us-mls"
-        },
-        {
-          "date": "2026-10-29T02:30:00Z",
-          "result": "D",
-          "score": "0-1",
-          "opponent": "Houston Dynamo FC",
-          "competition_id": "us-mls"
-        },
-        {
-          "date": "2026-11-01T20:30:00Z",
-          "result": "D",
-          "score": "1-5",
-          "opponent": "Vancouver Whitecaps",
-          "competition_id": "us-mls"
-        },
-        {
-          "date": "2026-11-08T00:10:00Z",
-          "result": "V",
-          "score": "2-1",
-          "opponent": "Los Angeles FC",
-          "competition_id": "us-mls"
-        }
-      ]
-    },
-    "orlando city": {
-      "name": "Orlando City",
-      "matches": [
-        {
-          "date": "2026-10-17T23:30:00Z",
-          "result": "V",
-          "score": "4-1",
-          "opponent": "DC United",
-          "competition_id": "us-mls"
-        },
-        {
-          "date": "2026-10-24T23:30:00Z",
-          "result": "N",
-          "score": "2-2",
-          "opponent": "New York City FC",
-          "competition_id": "us-mls"
-        },
-        {
-          "date": "2026-10-29T00:30:00Z",
-          "result": "N",
-          "score": "2-2",
-          "opponent": "Chicago Fire FC",
-          "competition_id": "us-mls"
-        },
-        {
-          "date": "2026-10-31T17:00:00Z",
-          "result": "D",
-          "score": "0-4",
-          "opponent": "Charlotte FC",
-          "competition_id": "us-mls"
-        },
-        {
-          "date": "2026-11-07T21:00:00Z",
-          "result": "V",
-          "score": "1-0",
-          "opponent": "New England Revolution",
-          "competition_id": "us-mls"
-        }
-      ]
-    },
     "philadelphia union": {
       "name": "Philadelphia Union",
       "matches": [
@@ -1201,46 +1081,6 @@
           "score": "1-1",
           "opponent": "Fagiano Okayama FC",
           "competition_id": "jp-j1-league"
-        }
-      ]
-    },
-    "fc cincinnati": {
-      "name": "FC Cincinnati",
-      "matches": [
-        {
-          "date": "2026-10-21T23:15:00Z",
-          "result": "V",
-          "score": "2-1",
-          "opponent": "DC United",
-          "competition_id": "us-mls"
-        },
-        {
-          "date": "2026-10-24T23:30:00Z",
-          "result": "V",
-          "score": "2-0",
-          "opponent": "DC United",
-          "competition_id": "us-mls"
-        },
-        {
-          "date": "2026-10-28T23:30:00Z",
-          "result": "N",
-          "score": "2-2",
-          "opponent": "Inter Miami CF",
-          "competition_id": "us-mls"
-        },
-        {
-          "date": "2026-10-31T18:00:00Z",
-          "result": "V",
-          "score": "1-0",
-          "opponent": "Philadelphia Union",
-          "competition_id": "us-mls"
-        },
-        {
-          "date": "2026-11-07T21:00:00Z",
-          "result": "D",
-          "score": "0-2",
-          "opponent": "Nashville SC",
-          "competition_id": "us-mls"
         }
       ]
     },

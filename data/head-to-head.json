@@ -1,7 +1,7 @@
 {
   "provider": "pitchapi_processed_history",
-  "generated_at_utc": "2026-11-19T15:41:48.359907+00:00",
-  "matches_considered": 9402,
+  "generated_at_utc": "2026-11-20T08:21:29.117266+00:00",
+  "matches_considered": 9404,
   "pairs": {
     "cerezo osaka|fc tokyo": {
       "team_a": "Cerezo Osaka",
@@ -267,66 +267,6 @@
         }
       ]
     },
-    "fc cincinnati|orlando city": {
-      "team_a": "FC Cincinnati",
-      "team_b": "Orlando City",
-      "matches": [
-        {
-          "date": "2026-08-15T23:30:00Z",
-          "home": "Orlando City",
-          "away": "FC Cincinnati",
-          "score_home": 1,
-          "score_away": 1,
-          "competition_id": "us-mls",
-          "competition_name": "MLS"
-        },
-        {
-          "date": "2026-05-23T23:30:00Z",
-          "home": "FC Cincinnati",
-          "away": "Orlando City",
-          "score_home": 6,
-          "score_away": 2,
-          "competition_id": "us-mls",
-          "competition_name": "MLS"
-        },
-        {
-          "date": "2025-09-28T23:00:00Z",
-          "home": "FC Cincinnati",
-          "away": "Orlando City",
-          "score_home": 1,
-          "score_away": 1,
-          "competition_id": "us-mls",
-          "competition_name": "MLS"
-        },
-        {
-          "date": "2025-06-28T23:30:00Z",
-          "home": "Orlando City",
-          "away": "FC Cincinnati",
-          "score_home": 1,
-          "score_away": 2,
-          "competition_id": "us-mls",
-          "competition_name": "MLS"
-        },
-        {
-          "date": "2024-10-05T23:30:00Z",
-          "home": "FC Cincinnati",
-          "away": "Orlando City",
-          "score_home": 1,
-          "score_away": 3,
-          "competition_id": "us-mls",
-          "competition_name": "MLS"
-        },
-        {
-          "date": "2024-05-04T23:30:00Z",
-          "home": "Orlando City",
-          "away": "FC Cincinnati",
-          "score_home": 0,
-          "score_away": 1,
-          "competition_id": "us-mls",
-          "competition_name": "MLS"
-        }
-      ]
-    },
     "avispa fukuoka|kawasaki frontale": {
       "team_a": "Avispa Fukuoka",
       "team_b": "Kawasaki Frontale",
@@ -526,66 +466,6 @@
           "away": "Los Angeles FC",
           "score_home": 0,
           "score_away": 2,
-          "competition_id": "us-mls",
-          "competition_name": "MLS"
-        }
-      ]
-    },
-    "real salt lake|seattle sounders fc": {
-      "team_a": "Real Salt Lake",
-      "team_b": "Seattle Sounders FC",
-      "matches": [
-        {
-          "date": "2026-09-24T01:30:00Z",
-          "home": "Seattle Sounders FC",
-          "away": "Real Salt Lake",
-          "score_home": 2,
-          "score_away": 0,
-          "competition_id": "us-mls",
-          "competition_name": "MLS"
-        },
-        {
-          "date": "2026-03-01T00:30:00Z",
-          "home": "Real Salt Lake",
-          "away": "Seattle Sounders FC",
-          "score_home": 2,
-          "score_away": 1,
-          "competition_id": "us-mls",
-          "competition_name": "MLS"
-        },
-        {
-          "date": "2025-10-12T01:30:00Z",
-          "home": "Seattle Sounders FC",
-          "away": "Real Salt Lake",
-          "score_home": 1,
-          "score_away": 0,
-          "competition_id": "us-mls",
-          "competition_name": "MLS"
-        },
-        {
-          "date": "2025-03-01T21:40:00Z",
-          "home": "Real Salt Lake",
-          "away": "Seattle Sounders FC",
-          "score_home": 2,
-          "score_away": 0,
-          "competition_id": "us-mls",
-          "competition_name": "MLS"
-        },
-        {
-          "date": "2024-05-30T02:30:00Z",
-          "home": "Seattle Sounders FC",
-          "away": "Real Salt Lake",
-          "score_home": 1,
-          "score_away": 1,
-          "competition_id": "us-mls",
-          "competition_name": "MLS"
-        },
-        {
-          "date": "2024-05-16T01:30:00Z",
-          "home": "Real Salt Lake",
-          "away": "Seattle Sounders FC",
-          "score_home": 2,
-          "score_away": 0,
           "competition_id": "us-mls",
           "competition_name": "MLS"
         }
@@ -3927,6 +3807,48 @@
           "score_away": 0,
           "competition_id": "it-serie-a",
           "competition_name": "Serie A"
+        }
+      ]
+    },
+    "fulham|tottenham hotspur": {
+      "team_a": "Fulham",
+      "team_b": "Tottenham Hotspur",
+      "matches": [
+        {
+          "date": "2026-03-01T14:00:00Z",
+          "home": "Fulham",
+          "away": "Tottenham Hotspur",
+          "score_home": 2,
+          "score_away": 1,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        },
+        {
+          "date": "2025-11-29T20:00:00Z",
+          "home": "Tottenham Hotspur",
+          "away": "Fulham",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        },
+        {
+          "date": "2025-03-16T13:30:00Z",
+          "home": "Fulham",
+          "away": "Tottenham Hotspur",
+          "score_home": 2,
+          "score_away": 0,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        },
+        {
+          "date": "2024-12-01T13:30:00Z",
+          "home": "Tottenham Hotspur",
+          "away": "Fulham",
+          "score_home": 1,
+          "score_away": 1,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
         }
       ]
     },

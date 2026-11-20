@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-19T15:41:48.116858Z",
-  "updated_at": "2026-11-19T15:41:48.116858Z",
+  "generated_at": "2026-11-20T08:21:28.925426Z",
+  "updated_at": "2026-11-20T08:21:28.925426Z",
   "season": null,
   "competitions": [
     {
@@ -2337,6 +2337,20 @@
           "position": 11
         },
         {
+          "team_id": "t_0T0wL5",
+          "team_name": "FC Cincinnati",
+          "team_logo": "https://cdn.pitchapi.dev/images/teams/7d36f564934ff81a9843d76df80814e1bfff56bfcbde2f9e8ecc3b1d524a823d.webp",
+          "played": 35,
+          "wins": 13,
+          "draws": 10,
+          "losses": 12,
+          "goals_for": 70,
+          "goals_against": 76,
+          "points": 49,
+          "goal_difference": -6,
+          "position": 12
+        },
+        {
           "team_id": "t_4ac71F",
           "team_name": "Los Angeles FC",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/8dc1e0f49bbc549d861b36669ac8d2463d88554a59d3c4e84d298c4fe1e94f67.webp",
@@ -2348,7 +2362,7 @@
           "goals_against": 40,
           "points": 47,
           "goal_difference": 12,
-          "position": 12
+          "position": 13
         },
         {
           "team_id": "t_1avIKi",
@@ -2362,7 +2376,21 @@
           "goals_against": 52,
           "points": 47,
           "goal_difference": 7,
-          "position": 13
+          "position": 14
+        },
+        {
+          "team_id": "t_0DiXbX",
+          "team_name": "Seattle Sounders FC",
+          "team_logo": "https://cdn.pitchapi.dev/images/teams/c17c2794b619248bcb07e847aad7ebf69d1ed423c66857b5790e1488c6f8be30.webp",
+          "played": 35,
+          "wins": 12,
+          "draws": 11,
+          "losses": 12,
+          "goals_for": 45,
+          "goals_against": 47,
+          "points": 47,
+          "goal_difference": -2,
+          "position": 15
         },
         {
           "team_id": "t_0ptYTE",
@@ -2376,62 +2404,34 @@
           "goals_against": 61,
           "points": 46,
           "goal_difference": 1,
-          "position": 14
-        },
-        {
-          "team_id": "t_0DiXbX",
-          "team_name": "Seattle Sounders FC",
-          "team_logo": "https://cdn.pitchapi.dev/images/teams/c17c2794b619248bcb07e847aad7ebf69d1ed423c66857b5790e1488c6f8be30.webp",
-          "played": 34,
-          "wins": 12,
-          "draws": 10,
-          "losses": 12,
-          "goals_for": 44,
-          "goals_against": 46,
-          "points": 46,
-          "goal_difference": -2,
-          "position": 15
-        },
-        {
-          "team_id": "t_0T0wL5",
-          "team_name": "FC Cincinnati",
-          "team_logo": "https://cdn.pitchapi.dev/images/teams/7d36f564934ff81a9843d76df80814e1bfff56bfcbde2f9e8ecc3b1d524a823d.webp",
-          "played": 34,
-          "wins": 12,
-          "draws": 10,
-          "losses": 12,
-          "goals_for": 67,
-          "goals_against": 75,
-          "points": 46,
-          "goal_difference": -8,
           "position": 16
-        },
-        {
-          "team_id": "t_3N3Xe0",
-          "team_name": "Orlando City",
-          "team_logo": "https://cdn.pitchapi.dev/images/teams/a20b444b717dc94ddf1ffad850dbff6fed12cbdb16e00dcb64b4dd7bc8032d4a.webp",
-          "played": 34,
-          "wins": 13,
-          "draws": 7,
-          "losses": 14,
-          "goals_for": 63,
-          "goals_against": 78,
-          "points": 46,
-          "goal_difference": -15,
-          "position": 17
         },
         {
           "team_id": "t_2o7nsk",
           "team_name": "Real Salt Lake",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/9150053efa5637124416ca40fc49f1f1b4655dcf99bf3a7f5f4fad0715cfaa61.webp",
-          "played": 34,
+          "played": 35,
           "wins": 13,
-          "draws": 6,
+          "draws": 7,
           "losses": 15,
-          "goals_for": 53,
-          "goals_against": 52,
-          "points": 45,
+          "goals_for": 54,
+          "goals_against": 53,
+          "points": 46,
           "goal_difference": 1,
+          "position": 17
+        },
+        {
+          "team_id": "t_3N3Xe0",
+          "team_name": "Orlando City",
+          "team_logo": "https://cdn.pitchapi.dev/images/teams/a20b444b717dc94ddf1ffad850dbff6fed12cbdb16e00dcb64b4dd7bc8032d4a.webp",
+          "played": 35,
+          "wins": 13,
+          "draws": 7,
+          "losses": 15,
+          "goals_for": 64,
+          "goals_against": 81,
+          "points": 46,
+          "goal_difference": -17,
           "position": 18
         },
         {
@@ -2603,7 +2603,7 @@
           "position": 30
         }
       ],
-      "matches_counted": 510
+      "matches_counted": 512
     },
     {
       "id": "uefa-champions-league",
