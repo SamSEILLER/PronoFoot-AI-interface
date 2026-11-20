@@ -1189,6 +1189,10 @@
               formLabel = "Sous-performance";
               formTone = "negative";
               formExplanation = "Les résultats sont en retrait. Les données sous-jacentes ne permettent pas encore d'en identifier clairement la cause.";
+            } else if (underlyingWorse && goalDelta !== null && goalDelta <= -0.25) {
+              formLabel = "Baisse des performances";
+              formTone = "negative";
+              formExplanation = "Les buts marqués et les xG reculent nettement, même si les points par match restent stables. La baisse offensive est à surveiller.";
             }
 
             const comparisonRows = [
@@ -1248,7 +1252,7 @@
               return '<span class="match-form-quick-metric is-'+tone+'"><b>'+arrow+' '+pct+'</b><small>'+label+'</small></span>';
             }).join("");
             quickSummaries.push('<article class="match-form-quick-team"><div class="match-form-quick-team-identity"><strong>'+escapeHtml(team.name)+'</strong><span class="match-form-quick-status is-'+mainTone+'">'+quickStatus+'</span></div><div class="match-form-quick-metrics">'+quickMetricHtml+'</div></article>');
-            const trendHeader = '<div class="match-form-hero"><div><span class="match-form-eyebrow">Forme par rapport à la référence <span class="match-form-info" title="Comparaison des cinq matchs précédents avec les cinq derniers disponibles">ⓘ</span></span><h5>'+escapeHtml(formLabel)+'</h5><p>'+escapeHtml(formExplanation)+'</p></div><div class="match-form-main-delta"><strong>'+(mainDeltaText==="—"?"→":mainDeltaText.startsWith("-")?"↘":"↗")+' '+mainDeltaText+'</strong><small>(pts/match)</small></div></div>';
+            const trendHeader = '<div class="match-form-hero"><div><h5>'+escapeHtml(formLabel)+'</h5><p>'+escapeHtml(formExplanation)+'</p></div><div class="match-form-main-delta"><strong>'+(mainDeltaText==="—"?"→":mainDeltaText.startsWith("-")?"↘":"↗")+' '+mainDeltaText+'</strong><small>(pts/match)</small></div></div>';
             const trendCard = '<section class="match-form-diagnostic is-'+mainTone+'"><div class="match-form-table-wrap"><table class="match-form-table"><thead><tr><th>Indicateur</th><th>Période précédente<br>(5 matchs)</th><th>5 derniers matchs</th><th>Écart</th></tr></thead><tbody>'+tableRows+'</tbody></table></div><div class="match-form-mini-grid">'+miniCards+'</div><p class="match-form-caveat">Comparaison calculée sur les matchs détaillés disponibles. Les indicateurs manquants restent exclus ; cette tendance n’est pas une prédiction.</p></section>';
             const chartId = "match-team-chart-"+teamIndex;
             chartPayloads.push({id:chartId,labels,xg:xgValues,xga:xgaValues});
