@@ -867,11 +867,17 @@
         const coverage = observation?.coverage || {};
         const facts = Array.isArray(observation?.facts) ? observation.facts : [];
         const factCount = facts.length;
+        const hasBothStarters = latest && teams.every(t => {
+          const data=latestLineups[t.side] || {};
+          return Array.isArray(data.starters) && data.starters.length;
+        });
+        const isHistoricalXI = latest && teams.every(t => {
+          const data=latestLineups[t.side] || {};
+          return data.lineup_type==="lastStarting11" && data.confirmed!==true;
+        });
         const compositionState = latest
-          ? (latest.status === "provided" && teams.every(t => {
-              const data=latestLineups[t.side] || {};
-              return Array.isArray(data.starters) && data.starters.length;
-            }) ? "Compositions reçues" : hasPlayers(latest) ? "Compositions partielles" : "Aucun joueur communiqué")
+          ? (isHistoricalXI ? "Derniers onze connus" : latest.status === "provided" && hasBothStarters
+              ? "Compositions reçues" : hasPlayers(latest) ? "Compositions partielles" : "Aucun joueur communiqué")
           : compositionRecords === null ? "Données indisponibles" : "Aucun instantané";
         const updatedAt = latest?.collected_at_utc || compositionGeneratedAt;
         const summary = el("div","composition-overview");
@@ -932,7 +938,12 @@
               const identity=el("span","composition-player-identity");
               identity.append(el("strong","",name));
               if(unavailableBySide.get(side)?.has(normalizePlayerName(name))) {
-                identity.append(el("span","composition-player-unavailable","Indisponible · ChatGPT"));
+                const availabilityFact=facts.find(fact=>fact.team_side===side&&fact.status==="unavailable"&&normalizePlayerName(fact.player_name)===normalizePlayerName(name));
+                const availabilityDate=availabilityFact?.published_at_utc ? " · source du "+availabilityFact.published_at_utc : "";
+                const availabilityReason=availabilityFact?.details ? " : "+availabilityFact.details : "";
+                const availabilityBadge=el("span","composition-player-unavailable","Indisponible · ChatGPT");
+                availabilityBadge.title="Signalé indisponible par ChatGPT"+availabilityDate+availabilityReason+". PitchAPI peut encore afficher ce joueur dans un ancien onze.";
+                identity.append(availabilityBadge);
                 item.classList.add("has-availability-conflict");
               }
               item.append(identity);
