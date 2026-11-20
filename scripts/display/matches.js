@@ -1443,7 +1443,7 @@
                 <div class="match-detail-accordion-body" data-detail-panel="compositions">Chargement des données de composition…</div>
               </details>
               <details class="match-detail-accordion" name="match-detail">
-                <summary><span class="match-detail-accordion-icon">${detailTabs[2].icon}</span><span>Cotes</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
+                <summary><span class="match-detail-accordion-icon">${detailTabs[1].icon}</span><span>Cotes</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
                 <div class="match-detail-accordion-body" data-detail-panel="odds">Chargement des données…</div>
               </details>
             </div>
