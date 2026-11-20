@@ -18,6 +18,7 @@
     "7. Chaque fait doit contenir player_name, team_side (home/away), category (injury/suspension/coach_decision/doubtful/return/other), status (available/unavailable/doubtful/unknown), confidence (confirmed/probable/uncertain), source_url. Ajoute details, source_title et published_at_utc si disponibles.",
     "8. Garde sources sous forme de liste d'objets {url,title}. N'ajoute que les sources réellement consultées.",
     "9. Préserve les champs de chaque match, notamment previous_observations. N'efface pas les observations antérieures.",
+    "10. Les faits sourcés des observations précédentes restent des informations documentées tant qu'aucune source plus récente ne les contredit explicitement. Une recherche vide, partielle ou not_checked ne supprime jamais ces faits. Ne les présente pas comme nouvellement vérifiés : conserve leur date et leur source. Un retour ou une disponibilité explicitement documenté(e) peut remplacer un ancien signalement pour le même joueur.",
     "SORTIE : retourne uniquement un JSON valide, sans Markdown ni commentaire, correspondant à l'objet input avec schema_version=1, document_type=pronofoot_chatgpt_player_availability, window, instructions et matches. La sortie sera enregistrée directement comme completed.json. Ne retourne surtout pas l'enveloppe {prompt,input}."
   ].join("\n");
   let pending = null;
