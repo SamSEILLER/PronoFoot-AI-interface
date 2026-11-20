@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-11-20T21:16:50.627081Z",
+  "generated_at_utc": "2026-11-20T21:17:17.325843Z",
   "status": "ok",
   "label": "Opérationnel",
   "threshold_hours": 24,
@@ -90,7 +90,7 @@
   "weather": {
     "status": "ok",
     "last_success_at_utc": "2026-11-20T20:57:00.985520Z",
-    "age_hours": 0.33,
+    "age_hours": 0.34,
     "fresh_within_24h": true,
     "threshold_hours": 24,
     "provider": "Open-Meteo",
