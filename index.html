@@ -2638,6 +2638,70 @@ p.history-data-meta{margin:8px 2px 0!important;color:#555555!important;font-weig
  .match-form-quick-read>div{grid-template-columns:minmax(0,1fr)}
 }
 
+
+/* Maquette validée — tableau de bord comparatif des statistiques équipes */
+.match-analytics-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:stretch}
+.match-analytics-team{min-width:0;overflow:hidden;border:1px solid #d6e0f2;border-radius:16px;background:linear-gradient(180deg,#f8faff 0%,#fff 100%);box-shadow:0 5px 16px rgba(20,48,90,.08)}
+.match-analytics-team-heading{min-height:82px;padding:16px 20px;background:linear-gradient(110deg,#dce8ff,#cbdcff);border-bottom:0}
+.match-analytics-team-heading h4{font-size:clamp(18px,2vw,26px);font-weight:850;color:#091b43}
+.match-analytics-team-heading span{font-size:13px;padding:7px 13px;border-radius:20px;background:#fff}
+.match-form-diagnostic{margin:16px 18px 18px;padding:0;border:0;background:transparent}
+.match-form-hero{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:18px 20px;border:1px solid #d8e3f8;border-radius:14px;background:linear-gradient(115deg,#edf3ff,#dce7fb)}
+.match-form-hero>div{min-width:0}
+.match-form-eyebrow{display:block;font-size:13px;font-weight:650;color:#182d58;letter-spacing:.1px}
+.match-form-info{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;margin-left:5px;border:1.5px solid #2856a1;border-radius:50%;color:#2856a1;font-size:12px}
+.match-form-hero h5{margin:12px 0 8px;font-size:clamp(19px,2vw,27px);line-height:1.2;font-weight:900;color:#091b43}
+.match-form-hero p{margin:0;color:#1b2c50;font-size:14px;line-height:1.5}
+.match-form-main-delta{flex:0 0 auto;min-width:116px;padding:12px 14px;border-radius:24px;background:#e7efff;text-align:center;color:#12366f}
+.match-form-main-delta strong{display:block;font-size:24px;line-height:1.2;font-weight:900;white-space:nowrap}
+.match-form-main-delta small{display:block;margin-top:3px;font-size:12px}
+.match-form-diagnostic.is-positive .match-form-main-delta{background:#e0f4e7;color:#087747}
+.match-form-diagnostic.is-negative .match-form-main-delta{background:#ffe3e0;color:#c52b26}
+.match-form-diagnostic.is-warning .match-form-main-delta{background:#ffecd9;color:#b65b0b}
+.match-form-table-wrap{overflow-x:auto;margin-top:16px;border:1px solid #cbd8ed;border-radius:12px;background:rgba(255,255,255,.86)}
+.match-form-table{width:100%;min-width:480px;border-collapse:collapse;font-size:13px}
+.match-form-table th,.match-form-table td{padding:11px 10px;border-bottom:1px solid #dbe4f2;text-align:center;font-variant-numeric:tabular-nums}
+.match-form-table thead th{background:#edf2fb;color:#101c36;font-size:12px;font-weight:800;line-height:1.35}
+.match-form-table thead th:first-child,.match-form-table tbody th{text-align:left}
+.match-form-table tbody th{color:#111e39;font-size:13px;font-weight:750;white-space:nowrap}
+.match-form-table tbody td{color:#0c1833;font-size:17px;font-weight:850}
+.match-form-table tbody tr:last-child>*{border-bottom:0}
+.match-form-row-icon{display:inline-flex;width:24px;margin-right:7px;align-items:center;justify-content:center;font-size:16px}
+.match-form-change{display:inline-block;min-width:64px;padding:6px 9px;border-radius:12px;font-size:13px;font-weight:850}
+.match-form-change.is-good{background:#d9f2df;color:#08752f}
+.match-form-change.is-bad{background:#ffe2df;color:#c62920}
+.match-form-change.is-neutral{background:#edf0f5;color:#354057}
+.match-form-mini-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:14px}
+.match-form-mini-card{min-width:0;padding:11px 10px 8px;border:1px solid #cbd8ed;border-radius:11px;background:rgba(255,255,255,.9)}
+.match-form-mini-card small{display:block;color:#10244a;font-size:12px;font-weight:700}
+.match-form-mini-card b{display:block;margin-top:6px;color:#101a31;font-size:14px;font-weight:850;white-space:nowrap}
+.match-form-mini-card b i{color:#7c8aa5;font-style:normal}
+.match-form-mini-card svg{display:block;width:100%;height:38px;margin-top:4px;overflow:visible}
+.match-form-mini-card polyline.is-good{stroke:#16a34a}
+.match-form-mini-card polyline.is-bad{stroke:#ef3f35}
+.match-form-mini-card polyline.is-neutral{stroke:#5278b6}
+.match-form-spark-empty{display:block;margin-top:10px;color:#7b879b;font-size:10px}
+.match-form-caveat{margin:12px 2px 0;color:#65738b;font-size:10px;line-height:1.45}
+.match-form-quick-read{display:flex;align-items:center;gap:24px;margin:18px 0 10px;padding:18px 24px;border:1px solid #d5def4;border-radius:16px;background:linear-gradient(105deg,#eff0ff,#dfe5fb)}
+.match-form-quick-read>strong{flex:0 0 auto;padding-right:24px;border-right:1px solid #9baed5;color:#101c73;font-size:20px;font-weight:850}
+.match-form-quick-read>div{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 22px;flex:1}
+.match-form-quick-read p{margin:0;color:#101d3b;font-size:14px;line-height:1.5}
+.match-form-quick-read p strong{font-weight:900}
+@media(max-width:1050px){.match-analytics-grid{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:620px){
+ .match-form-diagnostic{margin:10px 9px 13px}
+ .match-form-hero{padding:13px;gap:8px}
+ .match-form-hero h5{font-size:18px}
+ .match-form-hero p{font-size:12px}
+ .match-form-main-delta{min-width:84px;padding:9px 8px}
+ .match-form-main-delta strong{font-size:18px}
+ .match-form-table{min-width:450px}
+ .match-form-mini-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .match-form-quick-read{align-items:flex-start;flex-direction:column;gap:10px;padding:14px}
+ .match-form-quick-read>strong{padding:0 0 8px;border-right:0;border-bottom:1px solid #9baed5}
+ .match-form-quick-read>div{grid-template-columns:minmax(0,1fr)}
+}
+
 /* H2H — taille des noms de clubs */
 .history-h2h-home,.history-h2h-away{
   font-size:13px!important;
