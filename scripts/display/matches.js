@@ -708,13 +708,23 @@
         const latestLineups = lineupsOf(latest);
         const coverage = observation?.coverage || {};
         const currentFacts = Array.isArray(observation?.facts) ? observation.facts : [];
-        const previousWithFacts = (Array.isArray(observation?.previous_observations) ? observation.previous_observations : [])
-          .find(previous => Array.isArray(previous?.facts) && previous.facts.length > 0) || null;
-        const factsObservation = currentFacts.length ? observation : previousWithFacts;
-        const facts = currentFacts.length ? currentFacts : (Array.isArray(previousWithFacts?.facts) ? previousWithFacts.facts : []);
+        const historicalFacts = (Array.isArray(observation?.previous_observations) ? observation.previous_observations : [])
+          .flatMap(previous => (Array.isArray(previous?.facts) ? previous.facts : []).map(fact => ({
+            ...fact,
+            fact_checked_at_utc: fact.fact_checked_at_utc || previous.checked_at_utc
+          })));
+        const factMap = new Map();
+        [...historicalFacts, ...currentFacts].forEach(fact => {
+          const key = [fact.team_side, normalizePlayerName(fact.player_name)].join("|");
+          if (!fact.player_name || !fact.team_side) return;
+          const previous = factMap.get(key);
+          const currentDate = Date.parse(fact.fact_checked_at_utc || observation?.checked_at_utc || 0);
+          const previousDate = Date.parse(previous?.fact_checked_at_utc || observation?.checked_at_utc || 0);
+          if (!previous || currentDate >= previousDate) factMap.set(key, fact);
+        });
+        const facts = [...factMap.values()];
         const factCount = facts.length;
-        const factsAreHistorical = facts.length > 0 && factsObservation !== observation;
-        const factsCoverage = factsObservation?.coverage || coverage;
+        const factsCoverage = coverage;
         const hasBothStarters = latest && teams.every(t => {
           const data=latestLineups[t.side] || {};
           return Array.isArray(data.starters) && data.starters.length;
@@ -733,8 +743,8 @@
         state.append(el("span","composition-summary-label","Compositions"),el("strong","composition-pill "+(hasPlayers(latest)?"is-partial":"is-muted"),compositionState));
         const availability = el("div","composition-summary-item");
         availability.append(el("span","composition-summary-label","Disponibilités"),el("strong","composition-pill "+(factCount?"is-info":"is-muted"),factCount
-          ? factCount+" information"+(factCount>1?"s":"")+(factsAreHistorical?" · antérieures":"")
-          : observation ? "Aucun fait dans la dernière recherche" : "Non recherchées"));
+          ? factCount+" information"+(factCount>1?"s":"")+" documentée"+(factCount>1?"s":"")
+          : observation ? "Aucune information documentée" : "Non recherchées"));
         const updated = el("div","composition-summary-item");
         updated.append(el("span","composition-summary-label","Dernière actualisation"),el("strong","composition-summary-value",formatDate(updatedAt)));
         summary.append(state,availability,updated);
@@ -849,7 +859,7 @@
         if(chatgptAvailabilityRecords===null) availabilityPanel.append(el("p","composition-empty","Données ChatGPT temporairement indisponibles."));
         else if(!observation) availabilityPanel.append(el("p","composition-empty","Aucune recherche ChatGPT importée pour ce match. Les informations ne sont pas considérées comme vérifiées."));
         else {
-          availabilityPanel.append(el("p","composition-availability-date",(factsAreHistorical?"Dernière observation avec faits : ":"Recherche vérifiée le ")+formatDate(factsObservation?.checked_at_utc || observation.checked_at_utc)+" · statut global : "+(factsObservation?.research_status||observation.research_status||"inconnu")+(factsAreHistorical?" · la recherche la plus récente n'a pas confirmé ces informations.":"")));
+          availabilityPanel.append(el("h3","composition-availability-heading","Informations documentées"));
           const grid=el("div","composition-team-grid");
           teams.forEach(team=>{
             const card=el("section","composition-team-card");
