@@ -1083,11 +1083,22 @@
               +'<p>'+(team.validCount?team.over+' / '+team.validCount+' matchs avec au moins 2 buts':'Aucun score exploitable')
               +(team.requestedCount<10?' · '+team.requestedCount+' match(s) trouvé(s)':'')+'</p></section>'
           );
-          const comparable = teamStats.every(team=>team.pct!==null);
-          const gap = comparable ? Math.abs(teamStats[0].pct-teamStats[1].pct) : null;
-          const leader = comparable ? (teamStats[0].pct===teamStats[1].pct?'Égalité historique':(teamStats[0].pct>teamStats[1].pct?teamStats[0].name:teamStats[1].name)+' en tête') : 'Comparaison indisponible';
-          const gapText = gap===null?'Écart non calculable':(gap===0?'Aucun écart':(teamStats[0].pct>teamStats[1].pct?'+':'−')+gap+' points pour '+escapeHtml(teamStats[0].pct>teamStats[1].pct?teamStats[0].name:teamStats[1].name));
-          experiment.innerHTML = '<section class="over15-experiment"><div class="over15-experiment-intro"><div><h4>Fréquence historique du +1,5 buts</h4><p class="over15-experiment-note">Part des matchs terminés avec au moins 2 buts parmi les 10 derniers matchs disponibles, dans la même compétition et la même saison.</p></div><span class="over15-sample-tag">10 matchs max.</span></div><div class="over15-team-grid">'+cards.join("")+'</div><div class="over15-gap"><span class="over15-gap-label">Écart historique</span><strong>'+(gap===null?'—':gap+' pts')+'</strong><span>'+gapText+'</span></div><p class="over15-experiment-caveat">Indicateur descriptif du passé, pas une probabilité du prochain match. Les matchs sans score valide sont exclus. '+leader+'.</p></section>';
+          const sufficient = teamStats.every(team=>team.validCount>=5 && team.pct!==null);
+          const both = teamStats.every(team=>team.pct!==null);
+          let tier = null;
+          if (sufficient && both) {
+            const [homePct,awayPct]=teamStats.map(team=>team.pct);
+            if (homePct>=80 && awayPct>=80) tier=1;
+            else if (homePct>=70 && awayPct>=70) tier=2;
+            else if (homePct>=60 || awayPct>=60) tier=3;
+            else tier=4;
+          }
+          const tierLabels = {1:"Très favorable",2:"Favorable",3:"Mitigé",4:"Défavorable"};
+          const tierColors = {1:"success",2:"positive",3:"warning",4:"danger"};
+          const tierHtml = tier===null
+            ? '<div class="over15-prediction over15-tier-unavailable"><span class="over15-prediction-kicker">Pronostic expérimental</span><strong>Données insuffisantes</strong><small>5 matchs valides minimum par équipe requis.</small></div>'
+            : '<div class="over15-prediction over15-tier-'+tier+'"><span class="over15-prediction-kicker">Pronostic expérimental</span><strong>Niveau '+tier+' · '+tierLabels[tier]+'</strong><small>Classement descriptif basé sur les fréquences historiques, pas une probabilité calibrée.</small></div>';
+          experiment.innerHTML = '<section class="over15-experiment"><div class="over15-experiment-intro"><div><h4>Fréquence historique du +1,5 buts</h4><p class="over15-experiment-note">Part des matchs terminés avec au moins 2 buts parmi les 10 derniers matchs disponibles, dans la même compétition et la même saison.</p></div><span class="over15-sample-tag">10 matchs max.</span></div><div class="over15-team-grid">'+cards.join("")+'</div>'+tierHtml+'<p class="over15-experiment-caveat">Indicateur descriptif du passé. Il ne constitue ni une probabilité de match ni une recommandation de pari. Les matchs sans score valide sont exclus.</p></section>';
         };
         renderOver15Experiment();
         const renderRecentTeamStats = () => {
