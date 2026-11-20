@@ -6,7 +6,6 @@
   const DATA_URL = "./data/matches_future.json";
   const NOW = Date.now();
   const STANDINGS_URL = "./data/standings.json";
-  const SEASON_GOALS_URL = "./data/season-goals.json";
   const GOAL_PREDICTIONS_URL = "./data/goal-predictions.json";
 
   // Codes d'affichage uniques des 12 compétitions suivies.
@@ -141,23 +140,6 @@
     return index;
   };
 
-  const buildSeasonGoalsIndex = (data) => {
-    const index = new Map();
-    (Array.isArray(data?.competitions) ? data.competitions : []).forEach((competition) => {
-      const teams = new Map();
-      (Array.isArray(competition.teams) ? competition.teams : []).forEach((team) => {
-        if (team?.team_id) teams.set(String(team.team_id), team);
-      });
-      index.set(String(competition.id), {
-        season: String(competition.season || ""),
-        matchesCounted: Number(competition.matches_counted || 0),
-        baseline: competition.baseline || null,
-        teams
-      });
-    });
-    return index;
-  };
-
   const buildGoalPredictionsIndex = (data) => {
     const source = data?.matches && typeof data.matches === "object" ? data.matches : {};
     return new Map(Object.entries(source).map(([key, value]) => [String(key), value]));
@@ -275,9 +257,6 @@
     fetch(STANDINGS_URL + "?v=" + Date.now(), { cache: "no-store" })
       .then((response) => { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); })
       .catch((error) => { console.warn("Classements indisponibles : numéros de classement et de journée masqués.", error); return null; }),
-    fetch(SEASON_GOALS_URL + "?v=" + Date.now(), { cache: "no-store" })
-      .then((response) => { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); })
-      .catch((error) => { console.warn("Statistiques de buts par saison indisponibles.", error); return null; }),
     fetch(GOAL_PREDICTIONS_URL + "?v=" + Date.now(), { cache: "no-store" })
       .then((response) => { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); })
       .catch((error) => { console.warn("Estimations de buts attendus indisponibles.", error); return null; }),
@@ -288,12 +267,11 @@
       .then((response) => { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); })
       .catch((error) => { console.warn("Archive des pronostics expérimentaux indisponible.", error); return null; })
   ])
-    .then(([matches, standings, seasonGoals, goalPredictions, matchAnalytics, predictionHistory]) => {
+    .then(([matches, standings, goalPredictions, matchAnalytics, predictionHistory]) => {
       const matchRecords = matches;
       if (!Array.isArray(matchRecords)) throw new Error("Format de données inattendu");
 
       const standingsIndex = buildStandingsIndex(standings);
-      const seasonGoalsIndex = buildSeasonGoalsIndex(seasonGoals);
       const goalPredictionsIndex = buildGoalPredictionsIndex(goalPredictions);
       const predictionHistoryIndex = new Map((Array.isArray(predictionHistory?.records) ? predictionHistory.records : [])
         .map(record => [String(record.match_id || ""), record]));
@@ -399,7 +377,6 @@
       const detailPanel = document.getElementById("matchDetailPanel");
       const detailTabs = [
         { id:"overview", label:"Vue d'ensemble", icon:"<svg viewBox='0 0 24 24' aria-hidden='true'><rect x='3.5' y='3.5' width='7' height='7' rx='1.5'/><rect x='13.5' y='3.5' width='7' height='7' rx='1.5'/><rect x='3.5' y='13.5' width='7' height='7' rx='1.5'/><rect x='13.5' y='13.5' width='7' height='7' rx='1.5'/></svg>" },
-        { id:"analysis", label:"Analyse & IA", icon:"<svg viewBox='0 0 24 24' aria-hidden='true'><path d='M12 3.5 13.8 9l5.7 1.8-5.7 1.8-1.8 5.7-1.8-5.7-5.7-1.8L10.2 9 12 3.5Z'/><path d='m19 14 .9 2.1L22 17l-2.1.9L19 20l-.9-2.1L16 17l2.1-.9L19 14Z'/></svg>" },
         { id:"odds", label:"Cotes", icon:"<svg viewBox='0 0 24 24' aria-hidden='true'><path d='M3.5 6.5h17v13h-17z'/><path d='M3.5 10h17M7 3.5v3M17 3.5v3M7.5 14h3M13.5 14h3M7.5 17h3'/></svg>" }
       ];
       let selectedDetailMatch = null;
@@ -689,146 +666,6 @@
           renderFormChart(formChartStats);
         });
       };
-      const renderSeasonGoalAnalysis = (body, match) => {
-        body.innerHTML = '<p class="analysis-loading">Chargement des statistiques de buts de la saison…</p>';
-        const competitionSlug = String(match.competition_slug || "");
-        const competition = seasonGoalsIndex.get(competitionSlug);
-        const season = String(match.season || "");
-        if (!competition || !season || competition.season !== season) {
-          body.innerHTML = '<section class="season-goals-empty"><strong>Statistiques indisponibles</strong><p>Aucune donnée validée pour cette compétition et cette saison. Aucune autre compétition ni saison ne sera utilisée en remplacement.</p></section>';
-          return;
-        }
-        const marketLabels = [
-          ["over_0_5", "Over 0.5 — Buts du match"],
-          ["over_1_5", "Over 1.5 — Buts du match"],
-          ["over_2_5", "Over 2.5 — Buts du match"],
-          ["over_3_5", "Over 3.5 — Buts du match"],
-          ["under_2_5", "Under 2.5 — Buts du match"],
-          ["under_3_5", "Under 3.5 — Buts du match"]
-        ];
-        const renderTeam = (name, teamId, side) => {
-          const team = competition.teams.get(String(teamId || ""));
-          if (!team || !Number.isInteger(Number(team.played)) || Number(team.played) < 1) {
-            return '<section class="season-goals-team"><div class="season-goals-team-heading"><h4>'+escapeHtml(name)+'</h4><span>Données insuffisantes</span></div><p class="season-goals-team-empty">Données insuffisantes pour cette équipe dans la saison sélectionnée.</p></section>';
-          }
-          const played = Number(team.played);
-          const formatAverage = (total) => Number.isFinite(Number(total))
-            ? (Number(total) / played).toLocaleString("fr-FR", { minimumFractionDigits:2, maximumFractionDigits:2 })
-            : "—";
-          const averageStats = '<div class="season-goals-averages">'
-            + '<div class="season-goals-average"><strong>'+formatAverage(team.goals_for)+'</strong><span>Buts marqués / match</span></div>'
-            + '<div class="season-goals-average"><strong>'+formatAverage(team.goals_against)+'</strong><span>Buts encaissés / match</span></div>'
-            + '</div>';
-          const venue = side === "home" ? "home" : "away";
-          const venueLabel = side === "home" ? "À domicile" : "À l'extérieur";
-          const venuePlayed = Number(team[venue + "_played"]);
-          const venueStatsValid = Number.isInteger(venuePlayed) && venuePlayed > 0
-            && Number.isFinite(Number(team[venue + "_goals_for"]))
-            && Number.isFinite(Number(team[venue + "_goals_against"]));
-          const venueStats = venueStatsValid
-            ? '<div class="season-goals-venue"><div class="season-goals-venue-heading">'+venueLabel+' · '+venuePlayed+' matchs</div>'
-              + '<div class="season-goals-averages">'
-              + '<div class="season-goals-average"><strong>'+(Number(team[venue + "_goals_for"]) / venuePlayed).toLocaleString("fr-FR",{minimumFractionDigits:2,maximumFractionDigits:2})+'</strong><span>Buts marqués / match</span></div>'
-              + '<div class="season-goals-average"><strong>'+(Number(team[venue + "_goals_against"]) / venuePlayed).toLocaleString("fr-FR",{minimumFractionDigits:2,maximumFractionDigits:2})+'</strong><span>Buts encaissés / match</span></div>'
-              + '</div></div>'
-            : '<div class="season-goals-venue"><div class="season-goals-venue-heading">'+venueLabel+'</div><p class="season-goals-team-empty">Échantillon insuffisant : aucune moyenne exploitable sur ce lieu.</p></div>';
-          const teamScoringStats = [
-            ["scored_0_count", name + " : matchs sans but marqué"],
-            ["scored_2plus_count", name + " : matchs avec 2 buts ou plus"]
-          ].map(([key, label]) => {
-            const count = team[key];
-            const valid = Number.isInteger(count) && count >= 0 && count <= played;
-            const percentage = valid ? (count * 100 / played).toLocaleString("fr-FR", { maximumFractionDigits:2 }) + " %" : "—";
-            const detail = valid ? count + " / " + played + " matchs" : "Non disponible";
-            return '<div class="season-goals-row"><span>'+label+'</span><strong>'+percentage+'</strong><small>'+detail+'</small></div>';
-          }).join("");
-          const distributionKeys = ["over_0_5", "over_1_5", "over_2_5"];
-          const distributionMetrics = distributionKeys.map(key => team.markets?.[key]);
-          const distributionCounts = distributionMetrics.map(metric => Number(metric?.count));
-          const distributionValid = distributionMetrics.every((metric, index) =>
-            metric && Number.isInteger(Number(metric.count))
-            && Number(metric.count) >= 0
-            && Number(metric.played) === played
-          ) && distributionCounts[0] <= played
-            && distributionCounts[0] >= distributionCounts[1]
-            && distributionCounts[1] >= distributionCounts[2];
-          const distributionValues = distributionValid
-            ? [played - distributionCounts[0], distributionCounts[0] - distributionCounts[1],
-              distributionCounts[1] - distributionCounts[2], distributionCounts[2]]
-            : null;
-          const distributionLabels = ["0 but", "1 but", "2 buts", "3 buts et +"];
-          const distributionColors = ["#16a34a", "#2585ed", "#eab308", "#ef4444"];
-          const distributionHtml = distributionValid
-            ? '<div class="season-goals-distribution">'
-              + '<div class="season-goals-distribution-chart"><canvas id="seasonGoalsDistribution-'+side+'" role="img" aria-label="Répartition des buts totaux dans les matchs de '+escapeHtml(name)+'"></canvas>'
-              + '<div class="season-goals-distribution-center"><strong>'+played+'</strong><span>matchs</span></div></div>'
-              + '<div class="season-goals-distribution-legend">'+distributionValues.map((count,index) =>
-                '<div class="season-goals-distribution-item"><i style="background:'+distributionColors[index]+'"></i><span>'+distributionLabels[index]+'</span><strong>'+count+' / '+played+'</strong></div>'
-              ).join("")+'</div></div>'
-            : '<p class="season-goals-distribution-empty">Répartition indisponible : compteurs historiques incomplets ou incohérents.</p>';
-          const rows = marketLabels.map(([key, label]) => {
-            let metric = team.markets?.[key];
-            if (key === "under_3_5") {
-              const over35 = team.markets?.over_3_5;
-              const overCount = Number(over35?.count);
-              const overPlayed = Number(over35?.played);
-              metric = over35
-                && Number.isInteger(overCount)
-                && overCount >= 0
-                && overCount <= played
-                && overPlayed === played
-                ? {
-                    count: played - overCount,
-                    played,
-                    percentage: (played - overCount) * 100 / played
-                  }
-                : null;
-            }
-            if (!metric || Number(metric.played) !== played
-              || !Number.isInteger(Number(metric.count))
-              || Number(metric.count) < 0
-              || Number(metric.count) > played
-              || !Number.isFinite(Number(metric.percentage))) {
-              return '<div class="season-goals-row"><span>'+label+'</span><strong>—</strong><small>Non disponible</small></div>';
-            }
-            return '<div class="season-goals-row"><span>'+label+'</span><strong>'+Number(metric.percentage).toLocaleString("fr-FR",{maximumFractionDigits:2})+' %</strong><small>'+Number(metric.count)+' / '+Number(metric.played)+' matchs</small></div>';
-          }).join("");
-          return '<section class="season-goals-team"><div class="season-goals-team-heading"><h4>'+escapeHtml(name)+'</h4><span>'+Number(team.played)+' matchs joués</span></div>'+averageStats+venueStats+'<div class="season-goals-distribution-heading">Répartition des buts totaux par match</div>'+distributionHtml+teamScoringStats+rows+'</section>';
-        };
-        body.innerHTML = '<div class="season-goals-analysis"><div class="season-goals-meta"><strong>'+escapeHtml(competition.name)+'</strong><span>Saison '+escapeHtml(season)+' · '+competition.matchesCounted+' matchs retenus</span></div><div class="season-goals-grid">'+renderTeam(match.home_team,match.home_team_id,'home')+renderTeam(match.away_team,match.away_team_id,'away')+'</div><p class="season-goals-footnote">Répartition fondée sur le nombre total de buts inscrits par les deux équipes dans chaque rencontre. Fréquences calculées uniquement sur les matchs terminés de la même compétition et de la même saison ; elles ne constituent pas des probabilités prédictives.</p></div>';
-        const drawSeasonGoalCharts = (ChartConstructor) => {
-          if (!ChartConstructor || !body.isConnected) return;
-          body.querySelectorAll(".season-goals-distribution-chart canvas").forEach(canvas => {
-            if (!canvas.isConnected) return;
-            const team = competition.teams.get(String(canvas.id.endsWith("-home") ? match.home_team_id : match.away_team_id));
-            if (!team) return;
-            const played = Number(team.played);
-            const metrics = ["over_0_5", "over_1_5", "over_2_5"].map(key => team.markets?.[key]);
-            if (!metrics.every(metric => metric && Number.isInteger(Number(metric.count)) && Number(metric.played) === played)) return;
-            const over = metrics.map(metric => Number(metric.count));
-            if (over[0] > played || over[0] < over[1] || over[1] < over[2]) return;
-            const buckets = [played-over[0], over[0]-over[1], over[1]-over[2], over[2]];
-            const existing = ChartConstructor.getChart?.(canvas);
-            if (existing) existing.destroy();
-            new ChartConstructor(canvas, {
-              type:"doughnut",
-              data:{labels:["0 but","1 but","2 buts","3 buts et +"],datasets:[{
-                data:buckets,
-                backgroundColor:["#16a34a","#2585ed","#eab308","#ef4444"],
-                borderColor:"#ffffff",borderWidth:3,spacing:2,hoverOffset:3
-              }]},
-              options:{responsive:true,maintainAspectRatio:false,cutout:"66%",rotation:-90,animation:false,
-                plugins:{legend:{display:false},tooltip:{enabled:true,callbacks:{
-                  label:(context)=>" "+context.label+" : "+context.raw+" / "+played+" ("+Math.round(context.raw/played*100)+" %)"
-                }}}
-              }
-            });
-          });
-        };
-        if (window.chartJsReady && typeof window.chartJsReady.then==="function") window.chartJsReady.then(drawSeasonGoalCharts);
-        else drawSeasonGoalCharts(window.Chart);
-      };
-
       const renderMatchCompositions = (match) => {
         if (!detailPanel || !match) return;
         const target = detailPanel.querySelector('[data-detail-panel="compositions"]');
@@ -1051,7 +888,6 @@
       const renderDetailAccordions = () => {
         if (!detailPanel || !selectedDetailMatch) return;
         const overview = detailPanel.querySelector('[data-detail-panel="overview"]');
-        const analysis = detailPanel.querySelector('[data-detail-panel="analysis"]');
         const experiment = detailPanel.querySelector('[data-detail-panel="experimentation"]');
         const odds = detailPanel.querySelector('[data-detail-panel="odds"]');
         const weather = detailPanel.querySelector('[data-detail-panel="weather"]');
@@ -1059,7 +895,6 @@
         const shots = detailPanel.querySelector('[data-detail-panel="shots"]');
         renderMatchCompositions(selectedDetailMatch);
         if (overview) renderHistoryOverview(overview, selectedDetailMatch);
-        if (analysis) renderSeasonGoalAnalysis(analysis, selectedDetailMatch);
         if (experiment) experiment.replaceChildren();
         if (odds) renderOdds(odds, selectedDetailMatch);
         if (weather) renderWeather(weather, selectedDetailMatch);
@@ -1598,10 +1433,6 @@
               <details class="match-detail-accordion" name="match-detail">
                 <summary class="match-detail-accordion-summary-shots"><span class="match-detail-accordion-icon">🎯</span><span>Tirs</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
                 <div class="match-detail-accordion-body" data-detail-panel="shots">Chargement des tirs…</div>
-              </details>
-              <details class="match-detail-accordion" name="match-detail">
-                <summary><span class="match-detail-accordion-icon">${detailTabs[1].icon}</span><span>Analyse &amp; IA</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
-                <div class="match-detail-accordion-body" data-detail-panel="analysis">Chargement des données…</div>
               </details>
               <details class="match-detail-accordion" name="match-detail">
                 <summary><span class="match-detail-accordion-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="8" cy="8" r="3"/><path d="M8 1.8v1.4M8 12.8v1.4M1.8 8h1.4M12.8 8h1.4M3.6 3.6l1 1M11.4 11.4l1 1M13.5 17.5h6a3 3 0 0 0 .2-6 4.5 4.5 0 0 0-8.6-1.1"/></svg></span><span>Météo</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
