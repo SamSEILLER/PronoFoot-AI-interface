@@ -2479,6 +2479,40 @@ p.history-data-meta{margin:8px 2px 0!important;color:#555555!important;font-weig
 .match-composition-player-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px 12px;margin:0;padding:0;list-style:none}
 .match-composition-player-list li{min-width:0;padding:6px 8px;border-radius:6px;background:#f1f6fb;color:#294965;font-size:11px;line-height:1.35;overflow-wrap:anywhere}
 @media(max-width:600px){.match-composition-snapshot{padding:9px}.match-composition-team{padding:8px}.match-composition-player-list{grid-template-columns:1fr}}
+
+/* H2H — dates intégralement visibles et noms de clubs moins envahissants */
+.history-h2h-row{
+  grid-template-columns:104px 44px minmax(0,1fr) 68px minmax(0,1fr)!important;
+  column-gap:8px!important;
+}
+.history-h2h-date{
+  min-width:0;
+  overflow:visible!important;
+  text-overflow:clip!important;
+  font-size:11px!important;
+  white-space:nowrap!important;
+}
+.history-h2h-home,.history-h2h-away{
+  min-width:0;
+  font-size:12px!important;
+  line-height:1.25!important;
+  padding:0 4px!important;
+}
+@media(max-width:760px){
+  .history-h2h-row{
+    grid-template-columns:82px 34px minmax(0,1fr) 54px minmax(0,1fr)!important;
+    column-gap:4px!important;
+    padding:7px 4px!important;
+  }
+  .history-h2h-date{font-size:10px!important}
+  .history-h2h-home,.history-h2h-away{
+    font-size:10px!important;
+    font-weight:700!important;
+    padding:0 2px!important;
+  }
+  .history-h2h-score{min-width:0!important;width:100%;font-size:12px!important}
+}
+
 </style>
 <style>
 /* Icônes homogènes des panneaux météo et composition */
