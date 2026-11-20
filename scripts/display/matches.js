@@ -1301,9 +1301,9 @@
               const pct=(newMetric.value-oldMetric.value)/Math.abs(oldMetric.value)*100*(inverse?-1:1);
               return (pct>0?"+":"")+Math.round(pct)+" %";
             };
-            const hasFullComparison = previousFive.length >= 5 && latestFive.length >= 5;
+            const hasPreviousPeriod = previousFive.length > 0 && latestFive.length > 0;
             const tableRows = comparisonRows.map(([icon,label,oldMetric,newMetric,inverse]) => {
-              if (!hasFullComparison) {
+              if (!hasPreviousPeriod) {
                 return '<tr><th><span class="match-form-row-icon">'+icon+'</span>'+label+'</th><td>'+fmt(newMetric.value)+'</td></tr>';
               }
               const tone=compareTone(oldMetric,newMetric,inverse);
@@ -1345,17 +1345,17 @@
               const arrow=pct==="—"?"→":pct.startsWith("-")?"↘":pct.startsWith("+")?"↗":"→";
               return '<span class="match-form-quick-metric is-'+tone+'"><b>'+arrow+' '+pct+'</b><small>'+label+'</small></span>';
             }).join("");
-            if (hasFullComparison) quickSummaries.push('<article class="match-form-quick-team"><div class="match-form-quick-team-identity"><strong>'+escapeHtml(team.name)+'</strong><span class="match-form-quick-status is-'+mainTone+'">'+quickStatus+'</span></div><div class="match-form-quick-metrics">'+quickMetricHtml+'</div></article>');
-            const trendHeader = hasFullComparison
+            if (hasPreviousPeriod) quickSummaries.push('<article class="match-form-quick-team"><div class="match-form-quick-team-identity"><strong>'+escapeHtml(team.name)+'</strong><span class="match-form-quick-status is-'+mainTone+'">'+quickStatus+'</span></div><div class="match-form-quick-metrics">'+quickMetricHtml+'</div></article>');
+            const trendHeader = hasPreviousPeriod
               ? '<div class="match-form-hero"><div><h5>'+escapeHtml(formLabel)+'</h5><p>'+escapeHtml(formExplanation)+'</p></div><div class="match-form-main-delta"><strong>'+(mainDeltaText==="—"?"→":mainDeltaText.startsWith("-")?"↘":"↗")+' '+mainDeltaText+'</strong><small>(pts/match)</small></div></div>'
               : '';
-            const trendTableHead = hasFullComparison
-              ? '<tr><th>Indicateur</th><th>Période précédente<br>(5 matchs)</th><th>5 derniers matchs</th><th>Écart</th></tr>'
-              : '<tr><th>Indicateur</th><th>5 derniers matchs</th></tr>';
-            const trendMiniCards = hasFullComparison ? '<div class="match-form-mini-grid">'+miniCards+'</div>' : '';
-            const trendNote = hasFullComparison
-              ? 'Comparaison calculée sur deux périodes complètes de cinq matchs. Les indicateurs manquants restent exclus ; cette tendance n’est pas une prédiction.'
-              : 'Comparaison masquée : cinq matchs précédents complets ne sont pas disponibles. Les valeurs affichées portent sur les cinq derniers matchs disponibles au maximum.';
+            const trendTableHead = hasPreviousPeriod
+              ? '<tr><th>Indicateur</th><th>Période précédente<br>('+previousFive.length+' matchs)</th><th>'+latestFive.length+' derniers matchs</th><th>Écart</th></tr>'
+              : '<tr><th>Indicateur</th><th>'+latestFive.length+' derniers matchs</th></tr>';
+            const trendMiniCards = hasPreviousPeriod ? '<div class="match-form-mini-grid">'+miniCards+'</div>' : '';
+            const trendNote = hasPreviousPeriod
+              ? 'Comparaison calculée sur '+previousFive.length+' match(s) précédents et '+latestFive.length+' match(s) récents réellement disponibles. Chaque moyenne utilise uniquement les matchs de sa période ; les indicateurs manquants restent exclus.'
+              : 'Aucune période précédente disponible. Les valeurs affichées portent sur '+latestFive.length+' match(s) récent(s) réellement disponibles.';
             const trendCard = '<section class="match-form-diagnostic is-'+mainTone+'"><div class="match-form-table-wrap"><table class="match-form-table"><thead>'+trendTableHead+'</thead><tbody>'+tableRows+'</tbody></table></div>'+trendMiniCards+'<p class="match-form-caveat">'+trendNote+'</p></section>';
             const chartId = "match-team-chart-"+teamIndex;
             chartPayloads.push({id:chartId,labels,xg:xgValues,xga:xgaValues});
