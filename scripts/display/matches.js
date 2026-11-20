@@ -1115,7 +1115,11 @@
           const tierHtml = tier===null
             ? '<div class="over15-prediction over15-tier-unavailable"><span class="over15-prediction-kicker">Pronostic expérimental</span><strong>Données insuffisantes</strong><small>5 matchs valides minimum par équipe requis.</small></div>'
             : '<div class="over15-prediction over15-tier-'+tier+'"><span class="over15-prediction-kicker">Pronostic expérimental</span><strong>Niveau '+tier+' · '+tierLabels[tier]+'</strong><small>Classement descriptif basé sur les fréquences historiques, pas une probabilité calibrée.</small></div>';
-          experiment.innerHTML = '<section class="over15-experiment"><div class="over15-experiment-intro"><div><h4>Fréquence historique du +1,5 buts</h4><p class="over15-experiment-note">Part des matchs terminés avec au moins 2 buts parmi les 10 derniers matchs disponibles, dans la même compétition et la même saison.</p></div><span class="over15-sample-tag">10 matchs max.</span></div><div class="over15-team-grid">'+cards.join("")+'</div>'+tierHtml+'<p class="over15-experiment-caveat">Indicateur descriptif du passé. Il ne constitue ni une probabilité de match ni une recommandation de pari. Les matchs sans score valide sont exclus.</p></section>';
+          const sampleCount = Math.max(...teamStats.map(team=>team.validCount));
+          const sampleDescription = sampleCount
+            ? "Part des matchs terminés avec au moins 2 buts parmi les "+sampleCount+" derniers matchs disponibles, dans la même compétition et la même saison."
+            : "Aucun match terminé avec un score exploitable n’est disponible dans la même compétition et la même saison.";
+          experiment.innerHTML = '<section class="over15-experiment"><div class="over15-experiment-intro"><div><h4>Fréquence historique du +1,5 buts</h4><p class="over15-experiment-note">'+escapeHtml(sampleDescription)+'</p></div><span class="over15-sample-tag">10 matchs max.</span></div><div class="over15-team-grid">'+cards.join("")+'</div>'+tierHtml+'<p class="over15-experiment-caveat">Indicateur descriptif du passé. Il ne constitue ni une probabilité de match ni une recommandation de pari. Les matchs sans score valide sont exclus.</p></section>';
         };
         renderOver15Experiment();
         const renderRecentTeamStats = () => {
