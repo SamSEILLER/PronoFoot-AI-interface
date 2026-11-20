@@ -970,6 +970,7 @@
           ];
           const chartPayloads = [];
           const quickSummaries = [];
+          const comparisonPeriods = [];
           const cards = sides.map((team, teamIndex) => {
             const entry = analytics.teams.get(team.id);
             const recent = (entry?.recent_match_ids || []).map((id) => analytics.matchesById.get(String(id))).filter(Boolean)
@@ -1054,6 +1055,7 @@
             // Le JSON ne contient que les 10 derniers matchs détaillés, pas toute la saison.
             const previousFive = recent.slice(0, Math.max(0, recent.length - 5));
             const latestFive = recent.slice(-5);
+            comparisonPeriods.push({name:team.name,previous:previousFive.length,latest:latestFive.length});
             const meanOf = (values) => {
               const valid = values.filter(value => value !== null && value !== undefined && Number.isFinite(Number(value))).map(Number);
               return valid.length ? {value:valid.reduce((sum,value)=>sum+value,0)/valid.length,count:valid.length} : {value:null,count:0};
@@ -1201,7 +1203,8 @@
             const coverageDenominator = Math.min(10, Math.max(recent.length, Number(entry?.season_matches_count) || 0));
             return '<section class="match-analytics-team"><header class="match-analytics-team-heading"><div class="match-analytics-team-header-main"><h4>'+escapeHtml(team.name)+'</h4><span>'+recent.length+(recent.length===10?' / 10':'')+' matchs</span></div>'+trendHeader+'</header>'+trendCard+'<div class="match-analytics-chart-title">Évolution xG / xG Adverse · 10 derniers matchs</div><div class="match-analytics-chart"><canvas id="'+chartId+'" aria-label="Évolution xG et xG Adverse de '+escapeHtml(team.name)+' sur les '+recent.length+' matchs disponibles (maximum 10)"></canvas></div><details class="match-analytics-recent-accordion"><summary class="match-analytics-recent-list-title">10 derniers matchs ('+recent.length+' disponibles)</summary><div class="match-analytics-recent-list">'+rows.join("")+'</div></details><p class="match-analytics-team-coverage">Stats disponibles : '+statsAvailable+'/'+coverageDenominator+' · tirs/xG adverse disponibles : '+shotsAvailable+'/'+coverageDenominator+'</p></section>';
           });
-          const html = '<aside class="match-form-quick-read"><div>'+quickSummaries.join("")+'</div></aside><div class="match-analytics-grid">'+cards.join("")+'</div><p class="match-analytics-note">Matchs terminés de la saison en cours et de la même compétition, antérieurs au coup d’envoi. La comparaison porte sur '+previousFive.length+' match(s) précédent(s) et '+latestFive.length+' dernier(s) match(s) réellement disponibles. xG adverse peut être partiel.</p>';
+          const periodDescription = comparisonPeriods.map(period=>escapeHtml(period.name)+' : '+period.previous+' précédent(s) / '+period.latest+' récent(s)').join(' ; ');
+          const html = '<aside class="match-form-quick-read"><div>'+quickSummaries.join("")+'</div></aside><div class="match-analytics-grid">'+cards.join("")+'</div><p class="match-analytics-note">Matchs terminés de la saison en cours et de la même compétition, antérieurs au coup d’envoi. Périodes comparées — '+periodDescription+'. Chaque moyenne utilise uniquement les matchs disponibles. xG adverse peut être partiel.</p>';
           if (teamStats) {
             teamStats.innerHTML = html;
             const drawCharts = (ChartConstructor) => {
