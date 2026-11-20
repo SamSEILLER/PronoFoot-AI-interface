@@ -1074,30 +1074,24 @@
             {id:String(selectedDetailMatch.home_team_id||""),name:selectedDetailMatch.home_team,side:"home"},
             {id:String(selectedDetailMatch.away_team_id||""),name:selectedDetailMatch.away_team,side:"away"}
           ];
-          const archivedPrediction = predictionHistoryIndex.get(String(selectedDetailMatch.match_id || selectedDetailMatch.id || ""));
-          const archivedRates = archivedPrediction?.prediction;
           const teamStats = sides.map(team => {
-            if (archivedRates) {
-              const rate = archivedRates[team.side === "home" ? "over_1_5_home_frequency" : "over_1_5_away_frequency"];
-              if (rate && Number.isFinite(rate.percentage)) return {
-                name:team.name, over:Number(rate.over_1_5_count) || 0,
-                validCount:Number(rate.matches) || 0, requestedCount:Number(rate.matches) || 0,
-                pct:Math.round(rate.percentage), archived:true
-              };
-            }
             const entry = analytics.teams.get(team.id);
+            // On retient les 10 derniers matchs terminés avec un score exploitable,
+            // dans la même compétition (index analytics), la même saison et avant le match analysé.
             const recent = (entry?.recent_match_ids||[])
               .map(id=>analytics.matchesById.get(String(id))).filter(Boolean)
               .filter(item=>String(item.season||"")===String(selectedDetailMatch.season||""))
               .filter(item=>Date.parse(item.kickoff_utc||"")<Date.parse(selectedDetailMatch.kickoff_utc||""))
-              .sort((a,b)=>String(b.kickoff_utc||"").localeCompare(String(a.kickoff_utc||""))).slice(0,10);
-            const valid = recent.filter(item=>{
-              const hg=Number(item.home_score), ag=Number(item.away_score);
-              return Number.isInteger(hg)&&Number.isInteger(ag)&&hg>=0&&ag>=0;
-            });
-            const over = valid.filter(item=>Number(item.home_score)+Number(item.away_score)>=2).length;
-            const pct = valid.length ? Math.round(over/valid.length*100) : null;
-            return {name:team.name,over,validCount:valid.length,requestedCount:recent.length,pct};
+              .filter(item=>{
+                const hg=Number(item.home_score), ag=Number(item.away_score);
+                return Number.isInteger(hg)&&Number.isInteger(ag)&&hg>=0&&ag>=0;
+              })
+              .sort((a,b)=>String(b.kickoff_utc||"").localeCompare(String(a.kickoff_utc||"")))
+              .slice(0,10);
+            const over = recent.filter(item=>Number(item.home_score)+Number(item.away_score)>=2).length;
+            const count = recent.length;
+            const pct = count ? Math.round(over/count*100) : null;
+            return {name:team.name,over,validCount:count,requestedCount:count,pct};
           });
           const cards = teamStats.map((team,index) =>
             '<section class="over15-team-card">'
