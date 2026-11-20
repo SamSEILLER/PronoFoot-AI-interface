@@ -1,7 +1,7 @@
 {
   "provider": "pitchapi_processed_history",
-  "generated_at_utc": "2026-11-20T14:21:17.654776+00:00",
-  "matches_considered": 9404,
+  "generated_at_utc": "2026-11-20T14:28:30.689062+00:00",
+  "matches_considered": 9407,
   "pairs": {
     "cerezo osaka|fc tokyo": {
       "team_a": "Cerezo Osaka",
@@ -4833,30 +4833,6 @@
         }
       ]
     },
-    "kashima antlers|shimizu s pulse": {
-      "team_a": "Kashima Antlers",
-      "team_b": "Shimizu S-Pulse",
-      "matches": [
-        {
-          "date": "2025-08-31T09:30:00Z",
-          "home": "Shimizu S-Pulse",
-          "away": "Kashima Antlers",
-          "score_home": 1,
-          "score_away": 1,
-          "competition_id": "jp-j1-league",
-          "competition_name": "J1 League"
-        },
-        {
-          "date": "2025-05-17T06:00:00Z",
-          "home": "Kashima Antlers",
-          "away": "Shimizu S-Pulse",
-          "score_home": 1,
-          "score_away": 0,
-          "competition_id": "jp-j1-league",
-          "competition_name": "J1 League"
-        }
-      ]
-    },
     "angers|paris fc": {
       "team_a": "Angers",
       "team_b": "Paris FC",
@@ -5442,30 +5418,6 @@
           "home": "Tokyo Verdy",
           "away": "Mito Hollyhock",
           "score_home": 3,
-          "score_away": 1,
-          "competition_id": "jp-j1-league",
-          "competition_name": "J1 League"
-        }
-      ]
-    },
-    "jef united chiba|kashiwa reysol": {
-      "team_a": "JEF United Chiba",
-      "team_b": "Kashiwa Reysol",
-      "matches": [
-        {
-          "date": "2026-05-23T09:00:00Z",
-          "home": "Kashiwa Reysol",
-          "away": "JEF United Chiba",
-          "score_home": 4,
-          "score_away": 2,
-          "competition_id": "jp-j1-league",
-          "competition_name": "J1 League"
-        },
-        {
-          "date": "2026-03-07T04:00:00Z",
-          "home": "JEF United Chiba",
-          "away": "Kashiwa Reysol",
-          "score_home": 2,
           "score_away": 1,
           "competition_id": "jp-j1-league",
           "competition_name": "J1 League"

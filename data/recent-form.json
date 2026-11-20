@@ -1,8 +1,8 @@
 {
   "provider": "pitchapi_processed_history",
-  "generated_at_utc": "2026-11-20T14:21:17.654776+00:00",
+  "generated_at_utc": "2026-11-20T14:28:30.689062+00:00",
   "recent_limit_per_competition": 5,
-  "matches_considered": 9404,
+  "matches_considered": 9407,
   "teams": {
     "inter miami cf": {
       "name": "Inter Miami CF",
@@ -168,13 +168,6 @@
       "name": "Kashima Antlers",
       "matches": [
         {
-          "date": "2026-10-17T06:00:00Z",
-          "result": "V",
-          "score": "2-0",
-          "opponent": "V-Varen Nagasaki",
-          "competition_id": "jp-j1-league"
-        },
-        {
           "date": "2026-10-21T10:00:00Z",
           "result": "N",
           "score": "2-2",
@@ -201,19 +194,19 @@
           "score": "0-2",
           "opponent": "FC Tokyo",
           "competition_id": "jp-j1-league"
+        },
+        {
+          "date": "2026-11-20T10:00:00Z",
+          "result": "N",
+          "score": "1-1",
+          "opponent": "Shimizu S-Pulse",
+          "competition_id": "jp-j1-league"
         }
       ]
     },
     "vissel kobe": {
       "name": "Vissel Kobe",
       "matches": [
-        {
-          "date": "2026-10-18T04:55:00Z",
-          "result": "V",
-          "score": "3-0",
-          "opponent": "Fagiano Okayama FC",
-          "competition_id": "jp-j1-league"
-        },
         {
           "date": "2026-10-21T10:00:00Z",
           "result": "D",
@@ -240,6 +233,13 @@
           "result": "N",
           "score": "2-2",
           "opponent": "Urawa Red Diamonds",
+          "competition_id": "jp-j1-league"
+        },
+        {
+          "date": "2026-11-20T10:00:00Z",
+          "result": "D",
+          "score": "1-2",
+          "opponent": "Mito Hollyhock",
           "competition_id": "jp-j1-league"
         }
       ]
@@ -928,13 +928,6 @@
       "name": "Kashiwa Reysol",
       "matches": [
         {
-          "date": "2026-10-17T10:00:00Z",
-          "result": "D",
-          "score": "1-3",
-          "opponent": "Nagoya Grampus",
-          "competition_id": "jp-j1-league"
-        },
-        {
           "date": "2026-10-21T10:00:00Z",
           "result": "N",
           "score": "0-0",
@@ -960,6 +953,13 @@
           "result": "V",
           "score": "2-1",
           "opponent": "Kawasaki Frontale",
+          "competition_id": "jp-j1-league"
+        },
+        {
+          "date": "2026-11-20T10:00:00Z",
+          "result": "D",
+          "score": "0-1",
+          "opponent": "JEF United Chiba",
           "competition_id": "jp-j1-league"
         }
       ]
@@ -9151,13 +9151,6 @@
       "name": "Shimizu S-Pulse",
       "matches": [
         {
-          "date": "2026-10-17T04:00:00Z",
-          "result": "N",
-          "score": "2-2",
-          "opponent": "Gamba Osaka",
-          "competition_id": "jp-j1-league"
-        },
-        {
           "date": "2026-10-21T10:00:00Z",
           "result": "D",
           "score": "0-5",
@@ -9183,6 +9176,13 @@
           "result": "D",
           "score": "0-1",
           "opponent": "Tokyo Verdy",
+          "competition_id": "jp-j1-league"
+        },
+        {
+          "date": "2026-11-20T10:00:00Z",
+          "result": "N",
+          "score": "1-1",
+          "opponent": "Kashima Antlers",
           "competition_id": "jp-j1-league"
         }
       ]
@@ -10364,13 +10364,6 @@
       "name": "JEF United Chiba",
       "matches": [
         {
-          "date": "2026-10-17T05:00:00Z",
-          "result": "N",
-          "score": "0-0",
-          "opponent": "Yokohama F.Marinos",
-          "competition_id": "jp-j1-league"
-        },
-        {
           "date": "2026-10-21T10:30:00Z",
           "result": "D",
           "score": "2-3",
@@ -10397,19 +10390,19 @@
           "score": "1-0",
           "opponent": "Mito Hollyhock",
           "competition_id": "jp-j1-league"
+        },
+        {
+          "date": "2026-11-20T10:00:00Z",
+          "result": "V",
+          "score": "1-0",
+          "opponent": "Kashiwa Reysol",
+          "competition_id": "jp-j1-league"
         }
       ]
     },
     "mito hollyhock": {
       "name": "Mito Hollyhock",
       "matches": [
-        {
-          "date": "2026-10-17T07:00:00Z",
-          "result": "D",
-          "score": "0-1",
-          "opponent": "Urawa Red Diamonds",
-          "competition_id": "jp-j1-league"
-        },
         {
           "date": "2026-10-21T10:00:00Z",
           "result": "D",
@@ -10436,6 +10429,13 @@
           "result": "D",
           "score": "0-1",
           "opponent": "JEF United Chiba",
+          "competition_id": "jp-j1-league"
+        },
+        {
+          "date": "2026-11-20T10:00:00Z",
+          "result": "V",
+          "score": "2-1",
+          "opponent": "Vissel Kobe",
           "competition_id": "jp-j1-league"
         }
       ]
