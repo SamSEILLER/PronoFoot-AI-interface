@@ -850,7 +850,11 @@
         ];
         const records = compositionRecords === null ? [] : compositionRecords
           .filter(record => String(record.match_id || "") === matchId && record.provider === "PitchAPI")
-          .sort((a,b) => ["J-7","J-2","J-1"].indexOf(b.snapshot) - ["J-7","J-2","J-1"].indexOf(a.snapshot));
+          .sort((a,b) => {
+            const priority = {"J-7":1,"J-2":2,"J-1":3,"J0":4};
+            return (priority[b.snapshot]||0) - (priority[a.snapshot]||0)
+              || Date.parse(b.collected_at_utc||0) - Date.parse(a.collected_at_utc||0);
+          });
         const observation = chatgptAvailabilityRecords === null ? null
           : chatgptAvailabilityRecords.find(record => String(record.match_id || "") === matchId) || null;
         const lineupsOf = record => record?.lineups && typeof record.lineups === "object" ? record.lineups : {};
@@ -910,10 +914,11 @@
           .filter(fact => fact.team_side===team.side && fact.status==="unavailable")
           .map(fact => normalizePlayerName(fact.player_name))
           .filter(Boolean))]));
-        const playerList = (parent,title,players,side) => {
+        const playerList = (parent,title,players,side,lineupType) => {
           const details=el("details","composition-player-group");
-          details.open=title.startsWith("Titulaires");
-          const summaryNode=el("summary","composition-player-group-heading",title+" ("+(Array.isArray(players)?players.length:0)+")");
+          details.open=title==="Titulaires" || title==="Dernier onze connu";
+          const displayTitle = title==="Titulaires" && lineupType==="lastStarting11" ? "Dernier onze connu" : title;
+          const summaryNode=el("summary","composition-player-group-heading",displayTitle+" ("+(Array.isArray(players)?players.length:0)+")");
           details.append(summaryNode);
           if (!Array.isArray(players) || !players.length) {
             details.append(el("p","composition-empty","Aucun joueur communiqué par PitchAPI."));
@@ -946,11 +951,14 @@
             const data=latestLineups[team.side] || {};
             const card=el("section","composition-team-card");
             const header=el("header","composition-team-heading");
-            header.append(el("h4","",team.name),el("span","composition-pill "+(Array.isArray(data.starters)&&data.starters.length?"is-partial":"is-muted"),Array.isArray(data.starters)&&data.starters.length?"Partielle":"En attente"));
+            const isLastKnown = data.lineup_type==="lastStarting11" && data.confirmed!==true;
+            const hasStarters = Array.isArray(data.starters)&&data.starters.length;
+            header.append(el("h4","",team.name),el("span","composition-pill "+(hasStarters?(isLastKnown?"is-muted":"is-partial"):"is-muted"),hasStarters?(isLastKnown?"Indicatif":"Partielle"):"En attente"));
             const formation=el("p","composition-formation","Formation : "+(data.formation||"Non communiquée"));
             card.append(header,formation);
-            playerList(card,"Titulaires",data.starters,team.side);
-            playerList(card,"Remplaçants",data.subs,team.side);
+            if(isLastKnown) card.append(el("p","composition-source-note","PitchAPI fournit le dernier onze connu, pas une composition officielle confirmée."));
+            playerList(card,"Titulaires",data.starters,team.side,data.lineup_type);
+            playerList(card,"Remplaçants",data.subs,team.side,data.lineup_type);
             card.append(el("p","composition-source-note","Source : PitchAPI · instantané "+(latest.snapshot||"inconnu")+" · "+formatDate(latest.collected_at_utc||compositionGeneratedAt)));
             cards.append(card);
           });
