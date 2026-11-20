@@ -1079,7 +1079,7 @@
           const tierLabels = {1:"Très favorable",2:"Favorable",3:"Mitigé",4:"Défavorable"};
           const tierHtml = tier===null
             ? '<div class="over15-prediction over15-tier-unavailable"><span class="over15-prediction-kicker">Pronostic expérimental</span><strong>Données insuffisantes</strong><small>5 matchs valides minimum par équipe requis.</small></div>'
-            : '<div class="over15-prediction over15-tier-'+tier+'"><span class="over15-prediction-kicker">Niveau '+tier+' · '+tierLabels[tier]+'</span><small>Classement descriptif basé sur les fréquences historiques, pas une probabilité calibrée.</small></div>';
+            : '<div class="over15-prediction over15-tier-'+tier+'"><span class="over15-prediction-kicker">Pronostic expérimental</span><strong>Niveau '+tier+' · '+tierLabels[tier]+'</strong><small>Classement descriptif basé sur les fréquences historiques, pas une probabilité calibrée.</small></div>';
           const sampleCounts = [...new Set(teamStats.map(team=>team.validCount))];
           const sampleDescription = sampleCounts.length===1
             ? (sampleCounts[0]
