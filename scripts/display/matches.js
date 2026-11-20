@@ -1061,7 +1061,7 @@
             {id:String(selectedDetailMatch.home_team_id||""),name:selectedDetailMatch.home_team,side:"home"},
             {id:String(selectedDetailMatch.away_team_id||""),name:selectedDetailMatch.away_team,side:"away"}
           ];
-          const cards = sides.map(team => {
+          const teamStats = sides.map(team => {
             const entry = analytics.teams.get(team.id);
             const recent = (entry?.recent_match_ids||[])
               .map(id=>analytics.matchesById.get(String(id))).filter(Boolean)
@@ -1074,11 +1074,20 @@
             });
             const over = valid.filter(item=>Number(item.home_score)+Number(item.away_score)>=2).length;
             const pct = valid.length ? Math.round(over/valid.length*100) : null;
-            return '<section class="over15-team-card"><div class="over15-team-heading"><strong>'+escapeHtml(team.name)+'</strong><span>'+(pct===null?'Données insuffisantes':pct+' %')+'</span></div>'
-              +'<div class="over15-progress"><span style="width:'+(pct===null?0:pct)+'%"></span></div>'
-              +'<p>'+ (pct===null?'Aucun score exploitable':over+' / '+valid.length+' matchs avec au moins 2 buts')+'</p></section>';
+            return {name:team.name,over,validCount:valid.length,requestedCount:recent.length,pct};
           });
-          experiment.innerHTML = '<section class="over15-experiment"><h4>Fréquence historique du +1,5 buts</h4><p class="over15-experiment-note">Part des matchs terminés avec au moins 2 buts parmi les 10 derniers matchs disponibles de chaque équipe, dans la même compétition et la même saison.</p><div class="over15-team-grid">'+cards.join("")+'</div><p class="over15-experiment-caveat">Indicateur descriptif historique, pas une probabilité garantie pour le prochain match. Les matchs sans score valide sont exclus.</p></section>';
+          const cards = teamStats.map((team,index) =>
+            '<section class="over15-team-card">'
+              +'<div class="over15-team-heading"><strong>'+escapeHtml(team.name)+'</strong><span>'+(team.pct===null?'—':team.pct+' %')+'</span></div>'
+              +'<div class="over15-progress" role="img" aria-label="'+escapeHtml(team.name)+': '+(team.pct===null?'données insuffisantes':team.pct+' %')+'"><span style="width:'+(team.pct===null?0:team.pct)+'%"></span></div>'
+              +'<p>'+(team.validCount?team.over+' / '+team.validCount+' matchs avec au moins 2 buts':'Aucun score exploitable')
+              +(team.requestedCount<10?' · '+team.requestedCount+' match(s) trouvé(s)':'')+'</p></section>'
+          );
+          const comparable = teamStats.every(team=>team.pct!==null);
+          const gap = comparable ? Math.abs(teamStats[0].pct-teamStats[1].pct) : null;
+          const leader = comparable ? (teamStats[0].pct===teamStats[1].pct?'Égalité historique':(teamStats[0].pct>teamStats[1].pct?teamStats[0].name:teamStats[1].name)+' en tête') : 'Comparaison indisponible';
+          const gapText = gap===null?'Écart non calculable':(gap===0?'Aucun écart':(teamStats[0].pct>teamStats[1].pct?'+':'−')+gap+' points pour '+escapeHtml(teamStats[0].pct>teamStats[1].pct?teamStats[0].name:teamStats[1].name));
+          experiment.innerHTML = '<section class="over15-experiment"><div class="over15-experiment-intro"><div><h4>Fréquence historique du +1,5 buts</h4><p class="over15-experiment-note">Part des matchs terminés avec au moins 2 buts parmi les 10 derniers matchs disponibles, dans la même compétition et la même saison.</p></div><span class="over15-sample-tag">10 matchs max.</span></div><div class="over15-team-grid">'+cards.join("")+'</div><div class="over15-gap"><span class="over15-gap-label">Écart historique</span><strong>'+(gap===null?'—':gap+' pts')+'</strong><span>'+gapText+'</span></div><p class="over15-experiment-caveat">Indicateur descriptif du passé, pas une probabilité du prochain match. Les matchs sans score valide sont exclus. '+leader+'.</p></section>';
         };
         renderOver15Experiment();
         const renderRecentTeamStats = () => {
