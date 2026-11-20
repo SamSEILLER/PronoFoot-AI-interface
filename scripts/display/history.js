@@ -14,10 +14,11 @@
   const outcome = (r) => !isEvaluable(r) ? "pending" : r.prediction.over_1_5_pick === r.actual.over_1_5 ? "correct" : "incorrect";
   const pct = (n,d) => d ? (100*n/d).toFixed(1).replace(".",",")+" %" : "—";
   function filtered() {
-    const comp=$("competitionFilter").value, result=$("resultFilter").value, period=$("periodFilter").value;
+    const comp=$("competitionFilter").value, result=$("resultFilter").value, period=$("periodFilter").value, tier=$("tierFilter").value;
     const cutoff=period==="all"?0:Date.now()-Number(period)*86400000;
     return state.records.filter(r => (!comp || r.competition===comp)
       && (!result || outcome(r)===result)
+      && (!tier || String(r.prediction?.over_1_5_tier ?? "")===tier)
       && (!cutoff || (new Date(r.kickoff_utc).getTime()>=cutoff)));
   }
   function render() {
@@ -32,8 +33,9 @@
       const status=outcome(r), score=isEvaluable(r)?r.actual.home_score+" - "+r.actual.away_score:"—";
       const pick=r.prediction?.over_1_5_pick===true?"+1,5 OUI":r.prediction?.over_1_5_pick===false?"+1,5 NON":"Non renseigné";
       const probability=Number.isFinite(r.prediction?.over_1_5_probability)?pct(r.prediction.over_1_5_probability,1):"—";
+      const tierLabel=({1:"Niveau 1 · Très favorable",2:"Niveau 2 · Favorable",3:"Niveau 3 · Mitigé",4:"Niveau 4 · Défavorable"})[r.prediction?.over_1_5_tier]||"Non enregistré";
       const label=status==="correct"?"Juste":status==="incorrect"?"Faux":"En attente";
-      return "<tr><td>"+esc(dateValue(r.kickoff_utc))+"</td><td>"+esc(r.competition||"—")+"</td><td class='teams'>"+esc(r.home_team)+" – "+esc(r.away_team)+"</td><td class='score'>"+esc(score)+"</td><td>"+esc(pick)+"</td><td>"+esc(probability)+"</td><td><span class='pill "+status+"'>"+label+"</span></td></tr>";
+      return "<tr><td>"+esc(dateValue(r.kickoff_utc))+"</td><td>"+esc(r.competition||"—")+"</td><td class='teams'>"+esc(r.home_team)+" – "+esc(r.away_team)+"</td><td class='score'>"+esc(score)+"</td><td>"+esc(pick)+"</td><td>"+esc(tierLabel)+"</td><td>"+esc(probability)+"</td><td><span class='pill "+status+"'>"+label+"</span></td></tr>";
     }).join("");
   }
   async function init() {
@@ -55,6 +57,6 @@
       $("metricCount").textContent="0";$("metricAccuracy").textContent="—";$("metricCorrect").textContent="0";$("metricIncorrect").textContent="0";
     }
   }
-  ["competitionFilter","resultFilter","periodFilter"].forEach(id=>$(id).addEventListener("change",render));
+  ["competitionFilter","resultFilter","periodFilter","tierFilter"].forEach(id=>$(id).addEventListener("change",render));
   init();
 })();
