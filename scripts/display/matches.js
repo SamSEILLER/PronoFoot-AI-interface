@@ -874,7 +874,7 @@
                 const item=el("li","composition-availability-item");
                 const top=el("div","composition-availability-top");
                 top.append(el("strong","",fact.player_name||"Joueur non identifié"),el("span","composition-status-chip status-"+(fact.confidence||fact.status||"unknown"),statusLabel(fact.status)));
-                item.append(top,el("p","composition-availability-meta",categoryLabel(fact.category)+" · "+confidenceLabel(fact.confidence)));
+                item.append(top,el("p","composition-availability-meta",categoryLabel(fact.category)+" · "+confidenceLabel(fact.confidence)+(fact.fact_checked_at_utc || fact.published_at_utc || observation.checked_at_utc ? " · signalé le "+formatDate(fact.fact_checked_at_utc || fact.published_at_utc || observation.checked_at_utc) : "")));
                 if(fact.details)item.append(el("p","composition-availability-details",fact.details));
                 if(typeof fact.source_url==="string" && /^https?:\/\//i.test(fact.source_url)){
                   const link=el("a","composition-source-link",fact.source_title||"Consulter la source");
