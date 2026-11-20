@@ -1301,7 +1301,11 @@
               const pct=(newMetric.value-oldMetric.value)/Math.abs(oldMetric.value)*100*(inverse?-1:1);
               return (pct>0?"+":"")+Math.round(pct)+" %";
             };
+            const hasFullComparison = previousFive.length >= 5 && latestFive.length >= 5;
             const tableRows = comparisonRows.map(([icon,label,oldMetric,newMetric,inverse]) => {
+              if (!hasFullComparison) {
+                return '<tr><th><span class="match-form-row-icon">'+icon+'</span>'+label+'</th><td>'+fmt(newMetric.value)+'</td></tr>';
+              }
               const tone=compareTone(oldMetric,newMetric,inverse);
               return '<tr><th><span class="match-form-row-icon">'+icon+'</span>'+label+'</th><td>'+fmt(oldMetric.value)+'</td><td>'+fmt(newMetric.value)+'</td><td><span class="match-form-change is-'+tone+'">'+comparePct(oldMetric,newMetric,inverse)+'</span></td></tr>';
             }).join("");
@@ -1341,15 +1345,24 @@
               const arrow=pct==="—"?"→":pct.startsWith("-")?"↘":pct.startsWith("+")?"↗":"→";
               return '<span class="match-form-quick-metric is-'+tone+'"><b>'+arrow+' '+pct+'</b><small>'+label+'</small></span>';
             }).join("");
-            quickSummaries.push('<article class="match-form-quick-team"><div class="match-form-quick-team-identity"><strong>'+escapeHtml(team.name)+'</strong><span class="match-form-quick-status is-'+mainTone+'">'+quickStatus+'</span></div><div class="match-form-quick-metrics">'+quickMetricHtml+'</div></article>');
-            const trendHeader = '<div class="match-form-hero"><div><h5>'+escapeHtml(formLabel)+'</h5><p>'+escapeHtml(formExplanation)+'</p></div><div class="match-form-main-delta"><strong>'+(mainDeltaText==="—"?"→":mainDeltaText.startsWith("-")?"↘":"↗")+' '+mainDeltaText+'</strong><small>(pts/match)</small></div></div>';
-            const trendCard = '<section class="match-form-diagnostic is-'+mainTone+'"><div class="match-form-table-wrap"><table class="match-form-table"><thead><tr><th>Indicateur</th><th>Période précédente<br>(5 matchs)</th><th>5 derniers matchs</th><th>Écart</th></tr></thead><tbody>'+tableRows+'</tbody></table></div><div class="match-form-mini-grid">'+miniCards+'</div><p class="match-form-caveat">Comparaison calculée sur les matchs détaillés disponibles. Les indicateurs manquants restent exclus ; cette tendance n’est pas une prédiction.</p></section>';
+            if (hasFullComparison) quickSummaries.push('<article class="match-form-quick-team"><div class="match-form-quick-team-identity"><strong>'+escapeHtml(team.name)+'</strong><span class="match-form-quick-status is-'+mainTone+'">'+quickStatus+'</span></div><div class="match-form-quick-metrics">'+quickMetricHtml+'</div></article>');
+            const trendHeader = hasFullComparison
+              ? '<div class="match-form-hero"><div><h5>'+escapeHtml(formLabel)+'</h5><p>'+escapeHtml(formExplanation)+'</p></div><div class="match-form-main-delta"><strong>'+(mainDeltaText==="—"?"→":mainDeltaText.startsWith("-")?"↘":"↗")+' '+mainDeltaText+'</strong><small>(pts/match)</small></div></div>'
+              : '';
+            const trendTableHead = hasFullComparison
+              ? '<tr><th>Indicateur</th><th>Période précédente<br>(5 matchs)</th><th>5 derniers matchs</th><th>Écart</th></tr>'
+              : '<tr><th>Indicateur</th><th>5 derniers matchs</th></tr>';
+            const trendMiniCards = hasFullComparison ? '<div class="match-form-mini-grid">'+miniCards+'</div>' : '';
+            const trendNote = hasFullComparison
+              ? 'Comparaison calculée sur deux périodes complètes de cinq matchs. Les indicateurs manquants restent exclus ; cette tendance n’est pas une prédiction.'
+              : 'Comparaison masquée : cinq matchs précédents complets ne sont pas disponibles. Les valeurs affichées portent sur les cinq derniers matchs disponibles au maximum.';
+            const trendCard = '<section class="match-form-diagnostic is-'+mainTone+'"><div class="match-form-table-wrap"><table class="match-form-table"><thead>'+trendTableHead+'</thead><tbody>'+tableRows+'</tbody></table></div>'+trendMiniCards+'<p class="match-form-caveat">'+trendNote+'</p></section>';
             const chartId = "match-team-chart-"+teamIndex;
             chartPayloads.push({id:chartId,labels,xg:xgValues,xga:xgaValues});
             const statsAvailable = recent.filter(item=>item.stats_status==="available").length;
             const shotsAvailable = recent.filter(item=>item.shots_status==="available").length;
             const coverageDenominator = Math.min(10, Math.max(recent.length, Number(entry?.season_matches_count) || 0));
-            return '<section class="match-analytics-team"><header class="match-analytics-team-heading"><div class="match-analytics-team-header-main"><h4>'+escapeHtml(team.name)+'</h4><span>'+recent.length+' / 10 matchs</span></div>'+trendHeader+'</header>'+trendCard+'<div class="match-analytics-chart-title">Évolution xG / xG Adverse · 10 derniers matchs</div><div class="match-analytics-chart"><canvas id="'+chartId+'" aria-label="Évolution xG et xG Adverse de '+escapeHtml(team.name)+' sur les '+recent.length+' matchs disponibles (maximum 10)"></canvas></div><details class="match-analytics-recent-accordion"><summary class="match-analytics-recent-list-title">10 derniers matchs ('+recent.length+' disponibles)</summary><div class="match-analytics-recent-list">'+rows.join("")+'</div></details><p class="match-analytics-team-coverage">Stats disponibles : '+statsAvailable+'/'+coverageDenominator+' · tirs/xG adverse disponibles : '+shotsAvailable+'/'+coverageDenominator+'</p></section>';
+            return '<section class="match-analytics-team"><header class="match-analytics-team-heading"><div class="match-analytics-team-header-main"><h4>'+escapeHtml(team.name)+'</h4><span>'+recent.length+(recent.length===10?' / 10':'')+' matchs</span></div>'+trendHeader+'</header>'+trendCard+'<div class="match-analytics-chart-title">Évolution xG / xG Adverse · 10 derniers matchs</div><div class="match-analytics-chart"><canvas id="'+chartId+'" aria-label="Évolution xG et xG Adverse de '+escapeHtml(team.name)+' sur les '+recent.length+' matchs disponibles (maximum 10)"></canvas></div><details class="match-analytics-recent-accordion"><summary class="match-analytics-recent-list-title">10 derniers matchs ('+recent.length+' disponibles)</summary><div class="match-analytics-recent-list">'+rows.join("")+'</div></details><p class="match-analytics-team-coverage">Stats disponibles : '+statsAvailable+'/'+coverageDenominator+' · tirs/xG adverse disponibles : '+shotsAvailable+'/'+coverageDenominator+'</p></section>';
           });
           const html = '<aside class="match-form-quick-read"><div>'+quickSummaries.join("")+'</div></aside><div class="match-analytics-grid">'+cards.join("")+'</div><p class="match-analytics-note">Matchs terminés de la saison en cours et de la même compétition, antérieurs au coup d’envoi. La comparaison porte sur les cinq matchs précédents et les cinq derniers réellement disponibles. xG adverse peut être partiel.</p>';
           if (teamStats) {
