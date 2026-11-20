@@ -1042,6 +1042,7 @@
             { id: String(selectedDetailMatch.away_team_id || ""), name: selectedDetailMatch.away_team, side: "away" }
           ];
           const chartPayloads = [];
+          const quickSummaries = [];
           const cards = sides.map((team, teamIndex) => {
             const entry = analytics.teams.get(team.id);
             const recent = (entry?.recent_match_ids || []).map((id) => analytics.matchesById.get(String(id))).filter(Boolean)
@@ -1189,7 +1190,52 @@
               formTone = "negative";
               formExplanation = "Les résultats sont en retrait. Les données sous-jacentes ne permettent pas encore d'en identifier clairement la cause.";
             }
-            const trendCard = '<section class="match-form-diagnostic is-'+formTone+'"><header class="match-form-diagnostic-heading"><div><span class="match-form-eyebrow">FORME PAR RAPPORT À LA RÉFÉRENCE</span><h5>'+escapeHtml(formLabel)+'</h5></div><span class="match-form-period-tag">'+previousFive.length+' vs '+latestFive.length+' matchs</span></header><p class="match-form-explanation">'+escapeHtml(formExplanation)+'</p><div class="match-form-comparison"><div><small>Période précédente</small><strong>'+fmt(before.points.value,2)+' pts/m</strong><small>'+fmt(before.goals.value,2)+' but(s) marqués/m</small></div><div class="match-form-arrow" aria-hidden="true">→</div><div><small>5 derniers matchs</small><strong>'+fmt(latest.points.value,2)+' pts/m</strong><small>'+fmt(latest.goals.value,2)+' but(s) marqués/m</small></div></div><div class="match-form-evidence"><span><small>xG</small><b>'+fmt(before.xg.value)+' → '+fmt(latest.xg.value)+'</b><em>'+latest.xg.count+'/'+latestFive.length+' récents dispo.</em></span><span><small>Buts encaissés/m</small><b>'+fmt(before.conceded.value)+' → '+fmt(latest.conceded.value)+'</b><em>'+latest.conceded.count+'/'+latestFive.length+' récents dispo.</em></span><span><small>Tirs/m</small><b>'+fmt(before.shots.value)+' → '+fmt(latest.shots.value)+'</b><em>'+latest.shots.count+'/'+latestFive.length+' récents dispo.</em></span></div><p class="match-form-caveat">Référence limitée aux matchs détaillés disponibles : période précédente vs 5 derniers. Ce diagnostic décrit une tendance, pas une prédiction. Il ne remplace pas la moyenne de saison.</p></section>';
+
+            const comparisonRows = [
+              ["🏆","Points / match",before.points,latest.points,false],
+              ["⚽","Buts marqués / match",before.goals,latest.goals,false],
+              ["🛡","Buts encaissés / match",before.conceded,latest.conceded,true],
+              ["◎","xG / match",before.xg,latest.xg,false]
+            ];
+            const compareTone = (oldMetric,newMetric,inverse=false) => {
+              if(oldMetric.value==null || newMetric.value==null) return "neutral";
+              const diff=(newMetric.value-oldMetric.value)*(inverse?-1:1);
+              return Math.abs(diff)<0.001?"neutral":diff>0?"good":"bad";
+            };
+            const comparePct = (oldMetric,newMetric,inverse=false) => {
+              if(oldMetric.value==null || newMetric.value==null || Math.abs(oldMetric.value)<0.001) return "—";
+              const pct=(newMetric.value-oldMetric.value)/Math.abs(oldMetric.value)*100*(inverse?-1:1);
+              return (pct>0?"+":"")+Math.round(pct)+" %";
+            };
+            const tableRows = comparisonRows.map(([icon,label,oldMetric,newMetric,inverse]) => {
+              const tone=compareTone(oldMetric,newMetric,inverse);
+              return '<tr><th><span class="match-form-row-icon">'+icon+'</span>'+label+'</th><td>'+fmt(oldMetric.value)+'</td><td>'+fmt(newMetric.value)+'</td><td><span class="match-form-change is-'+tone+'">'+comparePct(oldMetric,newMetric,inverse)+'</span></td></tr>';
+            }).join("");
+            const sparkline = (values,inverse=false) => {
+              const nums=values.map(v=>v==null?null:Number(v));
+              const valid=nums.filter(v=>v!==null&&Number.isFinite(v));
+              if(valid.length<2) return '<span class="match-form-spark-empty">Données limitées</span>';
+              const min=Math.min(...valid), max=Math.max(...valid), range=max-min||1;
+              const pts=nums.map((v,i)=>v===null?null:(i/(Math.max(1,nums.length-1))*120).toFixed(1)+','+(27-(v-min)/range*22).toFixed(1)).filter(Boolean).join(' ');
+              const oldAvg=meanOf(nums.slice(0,Math.max(0,nums.length-5)));
+              const newAvg=meanOf(nums.slice(-5));
+              const tone=compareTone(oldAvg,newAvg,inverse);
+              return '<svg viewBox="0 0 120 32" aria-hidden="true"><polyline class="is-'+tone+'" points="'+pts+'" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+            };
+            const miniCards = [
+              ["xG",xgValues,false],["Buts encaissés",goalAgainstByMatch,true],
+              ["Tirs",metricByMatch.map(m=>m.get("Tirs") ?? null),false],
+              ["Buts marqués",goalForByMatch,false]
+            ].map(([label,values,inverse]) => {
+              const oldAvg=meanOf(values.slice(0,Math.max(0,values.length-5)));
+              const newAvg=meanOf(values.slice(-5));
+              return '<div class="match-form-mini-card"><small>'+label+'</small><b>'+fmt(oldAvg.value)+' <i>→</i> '+fmt(newAvg.value)+'</b>'+sparkline(values,inverse)+'</div>';
+            }).join("");
+            const mainTone = formTone==="positive"?"positive":formTone==="negative"?"negative":formTone==="warning"?"warning":"neutral";
+            const mainDelta = before.points.value==null||latest.points.value==null||Math.abs(before.points.value)<0.001 ? "—" : ((latest.points.value-before.points.value)/Math.abs(before.points.value)*100);
+            const mainDeltaText = mainDelta==="—"?"—":(mainDelta>0?"+":"")+Math.round(mainDelta)+" %";
+            quickSummaries.push('<p><strong>'+escapeHtml(team.name)+'</strong> '+escapeHtml(formLabel.toLowerCase())+' : '+escapeHtml(formExplanation)+'</p>');
+            const trendCard = '<section class="match-form-diagnostic is-'+mainTone+'"><div class="match-form-hero"><div><span class="match-form-eyebrow">Forme par rapport à la référence <span class="match-form-info" title="Comparaison des cinq matchs précédents avec les cinq derniers disponibles">ⓘ</span></span><h5>'+escapeHtml(formLabel)+'</h5><p>'+escapeHtml(formExplanation)+'</p></div><div class="match-form-main-delta"><strong>'+(mainDeltaText==="—"?"→":mainDeltaText.startsWith("-")?"↘":"↗")+' '+mainDeltaText+'</strong><small>(pts/match)</small></div></div><div class="match-form-table-wrap"><table class="match-form-table"><thead><tr><th>Indicateur</th><th>Période précédente<br>(5 matchs)</th><th>5 derniers matchs</th><th>Écart</th></tr></thead><tbody>'+tableRows+'</tbody></table></div><div class="match-form-mini-grid">'+miniCards+'</div><p class="match-form-caveat">Comparaison calculée sur les matchs détaillés disponibles. Les indicateurs manquants restent exclus ; cette tendance n’est pas une prédiction.</p></section>';
             const chartId = "match-team-chart-"+teamIndex;
             chartPayloads.push({id:chartId,labels,xg:xgValues,xga:xgaValues});
             const statsAvailable = recent.filter(item=>item.stats_status==="available").length;
@@ -1197,7 +1243,7 @@
             const coverageDenominator = Math.min(10, Math.max(recent.length, Number(entry?.season_matches_count) || 0));
             return '<section class="match-analytics-team"><header class="match-analytics-team-heading"><h4>'+escapeHtml(team.name)+'</h4><span>'+recent.length+' / 10 matchs</span></header>'+trendCard+periodTable+'<div class="match-analytics-chart-title">Évolution xG / xG Adverse · 10 derniers matchs</div><div class="match-analytics-chart"><canvas id="'+chartId+'" aria-label="Évolution xG et xG Adverse de '+escapeHtml(team.name)+' sur les '+recent.length+' matchs disponibles (maximum 10)"></canvas></div><details class="match-analytics-recent-accordion"><summary class="match-analytics-recent-list-title">10 derniers matchs ('+recent.length+' disponibles)</summary><div class="match-analytics-recent-list">'+rows.join("")+'</div></details><p class="match-analytics-team-coverage">Stats disponibles : '+statsAvailable+'/'+coverageDenominator+' · tirs/xG adverse disponibles : '+shotsAvailable+'/'+coverageDenominator+'</p></section>';
           });
-          const html = '<div class="match-analytics-grid">'+cards.join("")+'</div><p class="match-analytics-note">Matchs terminés de la saison en cours et de la même compétition, antérieurs au coup d’envoi. Les périodes 5 et 10 utilisent uniquement les matchs réellement disponibles ; les indicateurs manquants restent indisponibles et ne sont jamais remplacés par zéro. xG adverse est calculé à partir des tirs adverses documentés et peut être partiel.</p>';
+          const html = '<div class="match-analytics-grid">'+cards.join("")+'</div><aside class="match-form-quick-read"><strong>💡 Lecture rapide</strong><div>'+quickSummaries.join("")+'</div></aside><p class="match-analytics-note">Matchs terminés de la saison en cours et de la même compétition, antérieurs au coup d’envoi. La comparaison porte sur les cinq matchs précédents et les cinq derniers réellement disponibles. xG adverse peut être partiel.</p>';
           if (teamStats) {
             teamStats.innerHTML = html;
             const drawCharts = (ChartConstructor) => {
