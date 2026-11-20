@@ -22,7 +22,7 @@ main{max-width:1600px;margin:auto;padding:20px}.page-heading{display:flex;justif
 </head>
 <body>
 <main>
-<section class="page-heading"><div><div class="eyebrow">Football Prediction Lab</div><h1>Historique des pronostics</h1><p>Mesurer les prévisions du +1,5 but et suivre leur fiabilité dans le temps.</p></div></section>
+<section class="page-heading"><div><div class="eyebrow">Football Prediction Lab</div><h1>Historique des pronostics</h1><p>Archiver les trois expérimentations de buts à partir du snapshot réalisé deux jours avant chaque match.</p></div></section>
 <div class="notice" id="archiveNotice" role="status">Chargement de l'archive des pronostics…</div>
 <section class="toolbar" aria-label="Filtres de l'historique">
 <label>Compétition<select id="competitionFilter"><option value="">Toutes les compétitions</option></select></label>
@@ -33,13 +33,13 @@ main{max-width:1600px;margin:auto;padding:20px}.page-heading{display:flex;justif
 <section class="metrics" aria-label="Indicateurs de performance">
 <div class="metric"><span>Pronostics évaluables</span><strong id="metricCount">—</strong><small>Résultat final connu</small></div>
 <div class="metric"><span>Taux de réussite</span><strong id="metricAccuracy">—</strong><small>Sur les pronostics évaluables</small></div>
-<div class="metric"><span>Pronostics justes</span><strong id="metricCorrect">—</strong><small>+1,5 validé</small></div>
-<div class="metric"><span>Pronostics faux</span><strong id="metricIncorrect">—</strong><small>0 ou 1 but au total</small></div>
+<div class="metric"><span>Matchs archivés J-2</span><strong id="metricCorrect">—</strong><small>Snapshots conservés</small></div>
+<div class="metric"><span>Matchs évalués</span><strong id="metricIncorrect">—</strong><small>Score final connu</small></div>
 </section>
 <section class="panel">
 <div class="panel-head"><h2>Détail des matchs</h2><span id="rowCount">0 match</span></div>
-<div class="table-wrap"><table><thead><tr><th>Date</th><th>Compétition</th><th>Match</th><th>Score final</th><th>Pronostic</th><th>Niveau historique</th><th>Probabilité annoncée</th><th>Évaluation</th></tr></thead><tbody id="historyRows"></tbody></table></div>
-<div class="empty" id="emptyState" hidden><strong>Aucun pronostic archivé pour le moment</strong>L'archive doit conserver la prévision disponible avant le coup d'envoi, puis la rapprocher du score final. Les matchs historiques seuls ne suffisent pas à mesurer la qualité de nos pronostics.</div>
+<div class="table-wrap"><table><thead><tr><th>Date</th><th>Compétition</th><th>Match</th><th>Score final</th><th>+1,5 buts</th><th>+2,5 buts</th><th>BTTS</th><th>Snapshot</th><th>Score final</th></tr></thead><tbody id="historyRows"></tbody></table></div>
+<div class="empty" id="emptyState" hidden><strong>Aucun pronostic archivé pour le moment</strong>Un match apparaît uniquement si son snapshot J-2 a été enregistré. Les trois fréquences sont conservées telles qu'elles étaient à J-2.</div>
 </section>
 <p class="footnote">Méthode : un pronostic est évalué uniquement si une prévision horodatée avant le coup d'envoi et un score final valide sont disponibles. Le seuil de sélection du +1,5 OUI est fixé à 70 % pour les nouveaux pronostics ; les estimations inférieures restent affichées et les anciens snapshots conservent leur seuil d'origine. Le taux de réussite ne mesure pas la rentabilité et ne remplace pas l'analyse des cotes. Les probabilités affichées sont calculées par une hypothèse de Poisson indépendant à partir des buts attendus ; le modèle est actuellement non calibré et ces valeurs ne constituent pas des probabilités validées.</p>
 </main>
