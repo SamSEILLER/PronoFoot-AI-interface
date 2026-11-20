@@ -1102,7 +1102,7 @@
           );
           const sufficient = teamStats.every(team=>team.validCount>=5 && team.pct!==null);
           const both = teamStats.every(team=>team.pct!==null);
-          let tier = Number.isInteger(archivedRates?.over_1_5_tier) ? archivedRates.over_1_5_tier : null;
+          let tier = null;
           if (tier === null && sufficient && both) {
             const [homePct,awayPct]=teamStats.map(team=>team.pct);
             if (homePct>=80 && awayPct>=80) tier=1;
