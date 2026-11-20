@@ -706,6 +706,7 @@
         });
         const latest = records.find(hasPlayers) || records[0] || null;
         const latestLineups = lineupsOf(latest);
+        const normalizePlayerName = value => String(value || "").normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").toLocaleLowerCase("fr").replace(/[^a-z0-9]+/g," ").trim();
         const coverage = observation?.coverage || {};
         const currentFacts = Array.isArray(observation?.facts) ? observation.facts : [];
         const historicalFacts = (Array.isArray(observation?.previous_observations) ? observation.previous_observations : [])
@@ -775,7 +776,6 @@
         availabilityTab.addEventListener("click",()=>setTab("availability"));
         target.append(tabs,compositionsPanel,availabilityPanel);
 
-        const normalizePlayerName = value => String(value || "").normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").toLocaleLowerCase("fr").replace(/[^a-z0-9]+/g," ").trim();
         const unavailableBySide = new Map(teams.map(team => [team.side,new Set(facts
           .filter(fact => fact.team_side===team.side && fact.status==="unavailable")
           .map(fact => normalizePlayerName(fact.player_name))
