@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at_utc": "2026-11-21T00:52:13.475227Z",
+  "generated_at_utc": "2026-11-21T03:12:43.292231Z",
   "description": "Snapshots immuables J-2, avec récupération explicitement marquée à J-1 si le passage J-2 a été manqué, des expérimentations +1,5, +2,5 et BTTS.",
   "records": [
     {
@@ -10,7 +10,7 @@
       "kickoff_utc": "2026-11-23T20:00:00Z",
       "home_team": "Brentford",
       "away_team": "Everton",
-      "snapshot_at_utc": "2026-11-21T00:52:13.475227Z",
+      "snapshot_at_utc": "2026-11-21T03:12:43.292231Z",
       "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
@@ -73,7 +73,7 @@
       "kickoff_utc": "2026-11-23T20:00:00Z",
       "home_team": "Levante",
       "away_team": "Elche",
-      "snapshot_at_utc": "2026-11-21T00:52:13.475227Z",
+      "snapshot_at_utc": "2026-11-21T03:12:43.292231Z",
       "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
@@ -136,7 +136,7 @@
       "kickoff_utc": "2026-11-23T19:45:00Z",
       "home_team": "Monza",
       "away_team": "Fiorentina",
-      "snapshot_at_utc": "2026-11-21T00:52:13.475227Z",
+      "snapshot_at_utc": "2026-11-21T03:12:43.292231Z",
       "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
@@ -199,7 +199,7 @@
       "kickoff_utc": "2026-11-23T19:45:00Z",
       "home_team": "Nantes",
       "away_team": "Grenoble",
-      "snapshot_at_utc": "2026-11-21T00:52:13.475227Z",
+      "snapshot_at_utc": "2026-11-21T03:12:43.292231Z",
       "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
@@ -262,7 +262,7 @@
       "kickoff_utc": "2026-11-23T19:45:00Z",
       "home_team": "Sochaux",
       "away_team": "Dunkerque",
-      "snapshot_at_utc": "2026-11-21T00:52:13.475227Z",
+      "snapshot_at_utc": "2026-11-21T03:12:43.292231Z",
       "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
@@ -325,7 +325,7 @@
       "kickoff_utc": "2026-11-23T01:30:00Z",
       "home_team": "Vancouver Whitecaps",
       "away_team": "Seattle Sounders FC/Real Salt Lake",
-      "snapshot_at_utc": "2026-11-21T00:52:13.475227Z",
+      "snapshot_at_utc": "2026-11-21T03:12:43.292231Z",
       "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
@@ -388,7 +388,7 @@
       "kickoff_utc": "2026-11-22T23:30:00Z",
       "home_team": "Chicago Fire FC",
       "away_team": "Charlotte FC",
-      "snapshot_at_utc": "2026-11-21T00:52:13.475227Z",
+      "snapshot_at_utc": "2026-11-21T03:12:43.292231Z",
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
@@ -451,7 +451,7 @@
       "kickoff_utc": "2026-11-22T21:00:00Z",
       "home_team": "Nashville SC",
       "away_team": "Orlando City/FC Cincinnati",
-      "snapshot_at_utc": "2026-11-21T00:52:13.475227Z",
+      "snapshot_at_utc": "2026-11-21T03:12:43.292231Z",
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
@@ -514,7 +514,7 @@
       "kickoff_utc": "2026-11-22T20:00:00Z",
       "home_team": "Getafe",
       "away_team": "Atlético Madrid",
-      "snapshot_at_utc": "2026-11-21T00:52:13.475227Z",
+      "snapshot_at_utc": "2026-11-21T03:12:43.292231Z",
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
@@ -577,7 +577,7 @@
       "kickoff_utc": "2026-11-22T19:45:00Z",
       "home_team": "Atalanta",
       "away_team": "Inter",
-      "snapshot_at_utc": "2026-11-21T00:52:13.475227Z",
+      "snapshot_at_utc": "2026-11-21T03:12:43.292231Z",
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
@@ -640,7 +640,7 @@
       "kickoff_utc": "2026-11-22T19:45:00Z",
       "home_team": "Marseille",
       "away_team": "Le Mans",
-      "snapshot_at_utc": "2026-11-21T00:52:13.475227Z",
+      "snapshot_at_utc": "2026-11-21T03:12:43.292231Z",
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
@@ -703,7 +703,7 @@
       "kickoff_utc": "2026-11-22T18:15:00Z",
       "home_team": "Lommel",
       "away_team": "Standard Liège",
-      "snapshot_at_utc": "2026-11-21T00:52:13.475227Z",
+      "snapshot_at_utc": "2026-11-21T03:12:43.292231Z",
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
@@ -766,7 +766,7 @@
       "kickoff_utc": "2026-11-22T17:30:00Z",
       "home_team": "Osasuna",
       "away_team": "Málaga",
-      "snapshot_at_utc": "2026-11-21T00:52:13.475227Z",
+      "snapshot_at_utc": "2026-11-21T03:12:43.292231Z",
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
@@ -829,7 +829,7 @@
       "kickoff_utc": "2026-11-22T17:30:00Z",
       "home_team": "Anderlecht",
       "away_team": "OH Leuven",
-      "snapshot_at_utc": "2026-11-21T00:52:13.475227Z",
+      "snapshot_at_utc": "2026-11-21T03:12:43.292231Z",
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
@@ -892,7 +892,7 @@
       "kickoff_utc": "2026-11-22T17:00:00Z",
       "home_team": "Milan",
       "away_team": "Frosinone",
-      "snapshot_at_utc": "2026-11-21T00:52:13.475227Z",
+      "snapshot_at_utc": "2026-11-21T03:12:43.292231Z",
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
@@ -955,7 +955,7 @@
       "kickoff_utc": "2026-11-22T16:30:00Z",
       "home_team": "Liverpool",
       "away_team": "Manchester United",
-      "snapshot_at_utc": "2026-11-21T00:52:13.475227Z",
+      "snapshot_at_utc": "2026-11-21T03:12:43.292231Z",
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
@@ -1018,7 +1018,7 @@
       "kickoff_utc": "2026-11-22T16:30:00Z",
       "home_team": "Werder Bremen",
       "away_team": "Hamburger SV",
-      "snapshot_at_utc": "2026-11-21T00:52:13.475227Z",
+      "snapshot_at_utc": "2026-11-21T03:12:43.292231Z",
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
@@ -1081,7 +1081,7 @@
       "kickoff_utc": "2026-11-22T16:15:00Z",
       "home_team": "Lorient",
       "away_team": "Rennes",
-      "snapshot_at_utc": "2026-11-21T00:52:13.475227Z",
+      "snapshot_at_utc": "2026-11-21T03:12:43.292231Z",
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
@@ -1144,7 +1144,7 @@
       "kickoff_utc": "2026-11-22T15:15:00Z",
       "home_team": "Racing Santander",
       "away_team": "Real Sociedad",
-      "snapshot_at_utc": "2026-11-21T00:52:13.475227Z",
+      "snapshot_at_utc": "2026-11-21T03:12:43.292231Z",
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
@@ -1207,7 +1207,7 @@
       "kickoff_utc": "2026-11-22T15:00:00Z",
       "home_team": "Kortrijk",
       "away_team": "Union St.Gilloise",
-      "snapshot_at_utc": "2026-11-21T00:52:13.475227Z",
+      "snapshot_at_utc": "2026-11-21T03:12:43.292231Z",
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
@@ -1270,7 +1270,7 @@
       "kickoff_utc": "2026-11-22T14:30:00Z",
       "home_team": "Augsburg",
       "away_team": "Mainz 05",
-      "snapshot_at_utc": "2026-11-21T00:52:13.475227Z",
+      "snapshot_at_utc": "2026-11-21T03:12:43.292231Z",
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
@@ -1333,7 +1333,7 @@
       "kickoff_utc": "2026-11-22T14:00:00Z",
       "home_team": "Hull City",
       "away_team": "Brighton & Hove Albion",
-      "snapshot_at_utc": "2026-11-21T00:52:13.475227Z",
+      "snapshot_at_utc": "2026-11-21T03:12:43.292231Z",
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
@@ -1396,7 +1396,7 @@
       "kickoff_utc": "2026-11-22T14:00:00Z",
       "home_team": "Sassuolo",
       "away_team": "Genoa",
-      "snapshot_at_utc": "2026-11-21T00:52:13.475227Z",
+      "snapshot_at_utc": "2026-11-21T03:12:43.292231Z",
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
@@ -1459,7 +1459,7 @@
       "kickoff_utc": "2026-11-22T14:00:00Z",
       "home_team": "Bologna",
       "away_team": "Udinese",
-      "snapshot_at_utc": "2026-11-21T00:52:13.475227Z",
+      "snapshot_at_utc": "2026-11-21T03:12:43.292231Z",
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
@@ -1522,7 +1522,7 @@
       "kickoff_utc": "2026-11-22T14:00:00Z",
       "home_team": "Paris FC",
       "away_team": "Angers",
-      "snapshot_at_utc": "2026-11-21T00:52:13.475227Z",
+      "snapshot_at_utc": "2026-11-21T03:12:43.292231Z",
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
@@ -1585,7 +1585,7 @@
       "kickoff_utc": "2026-11-22T13:00:00Z",
       "home_team": "Barcelona",
       "away_team": "Villarreal",
-      "snapshot_at_utc": "2026-11-21T00:52:13.475227Z",
+      "snapshot_at_utc": "2026-11-21T03:12:43.292231Z",
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
@@ -1648,7 +1648,7 @@
       "kickoff_utc": "2026-11-22T12:30:00Z",
       "home_team": "SK Beveren",
       "away_team": "Gent",
-      "snapshot_at_utc": "2026-11-21T00:52:13.475227Z",
+      "snapshot_at_utc": "2026-11-21T03:12:43.292231Z",
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
@@ -1711,7 +1711,7 @@
       "kickoff_utc": "2026-11-22T11:30:00Z",
       "home_team": "Juventus",
       "away_team": "Venezia",
-      "snapshot_at_utc": "2026-11-21T00:52:13.475227Z",
+      "snapshot_at_utc": "2026-11-21T03:12:43.292231Z",
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
