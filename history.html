@@ -33,20 +33,20 @@ main{max-width:1600px;margin:auto;padding:20px}.page-heading{display:flex;justif
 <section class="metrics" aria-label="Indicateurs de performance">
 <div class="metric"><span>Pronostics évaluables</span><strong id="metricCount">—</strong><small>Résultat final connu</small></div>
 <div class="metric"><span>Taux de réussite</span><strong id="metricAccuracy">—</strong><small>Sur les pronostics évaluables</small></div>
-<div class="metric"><span>Matchs archivés J-2</span><strong id="metricCorrect">—</strong><small>Snapshots conservés</small></div>
+<div class="metric"><span>Snapshots conservés</span><strong id="metricCorrect">—</strong><small>Snapshots conservés</small></div>
 <div class="metric"><span>Matchs évalués</span><strong id="metricIncorrect">—</strong><small>Score final connu</small></div>
 </section>
 <section class="panel" style="margin-bottom:14px">
 <div class="panel-head"><h2>Matchs à venir · J-1 et jour J</h2><span id="upcomingCount">0 match</span></div>
 <div class="table-wrap"><table><thead><tr><th>Date</th><th>Compétition</th><th>Match</th><th>+1,5 buts</th><th>+2,5 buts</th><th>BTTS</th><th>Snapshot</th></tr></thead><tbody id="upcomingRows"></tbody></table></div>
-<div class="empty" id="upcomingEmpty" hidden><strong>Aucun match à afficher</strong>Les matchs apparaissent ici à partir de la veille du coup d'envoi et restent visibles le jour J.</div>
+<div class="empty" id="upcomingEmpty" hidden><strong>Aucun match à afficher</strong>Les matchs apparaissent ici à partir de à partir de la veille du coup d'envoi et restent visibles le jour J.</div>
 </section>
 <section class="panel">
 <div class="panel-head"><h2>Archives · matchs terminés</h2><span id="rowCount">0 match</span></div>
-<div class="table-wrap"><table><thead><tr><th>Date</th><th>Compétition</th><th>Match</th><th>+1,5 buts</th><th>+2,5 buts</th><th>BTTS</th><th>Snapshot J-2</th><th>Score final</th></tr></thead><tbody id="historyRows"></tbody></table></div>
-<div class="empty" id="emptyState" hidden><strong>Aucun match archivé pour le moment</strong>Après confirmation du score final, le match rejoint automatiquement les archives avec ses trois pronostics J-2 conservés.</div>
+<div class="table-wrap"><table><thead><tr><th>Date</th><th>Compétition</th><th>Match</th><th>+1,5 buts</th><th>+2,5 buts</th><th>BTTS</th><th>Snapshot</th><th>Score final</th></tr></thead><tbody id="historyRows"></tbody></table></div>
+<div class="empty" id="emptyState" hidden><strong>Aucun match archivé pour le moment</strong>Après confirmation du score final, le match rejoint automatiquement les archives avec ses trois pronostics conservés.</div>
 </section>
-<p class="footnote">Méthode : un pronostic est évalué uniquement si une prévision horodatée avant le coup d'envoi et un score final valide sont disponibles. Le seuil de sélection du +1,5 OUI est fixé à 70 % pour les nouveaux pronostics ; les estimations inférieures restent affichées et les anciens snapshots conservent leur seuil d'origine. Le taux de réussite ne mesure pas la rentabilité et ne remplace pas l'analyse des cotes. Les probabilités affichées sont calculées par une hypothèse de Poisson indépendant à partir des buts attendus ; le modèle est actuellement non calibré et ces valeurs ne constituent pas des probabilités validées.</p>
+<p class="footnote">Méthode : un snapshot est créé la veille du coup d'envoi (J-1). Il reste dans les matchs à venir jusqu'au score final, puis rejoint automatiquement les archives. Un pronostic est évalué uniquement si une prévision horodatée avant le coup d'envoi et un score final valide sont disponibles. Le seuil de sélection du +1,5 OUI est fixé à 70 % pour les nouveaux pronostics ; les estimations inférieures restent affichées et les anciens snapshots conservent leur seuil d'origine. Le taux de réussite ne mesure pas la rentabilité et ne remplace pas l'analyse des cotes. Les probabilités affichées sont calculées par une hypothèse de Poisson indépendant à partir des buts attendus ; le modèle est actuellement non calibré et ces valeurs ne constituent pas des probabilités validées.</p>
 </main>
 <script src="./scripts/display/sidebar.js" defer></script>
 <script src="./scripts/display/history.js" defer></script>
