@@ -1,68 +1,8 @@
 {
   "provider": "pitchapi_processed_history",
-  "generated_at_utc": "2026-11-21T08:10:41.256992+00:00",
-  "matches_considered": 9420,
+  "generated_at_utc": "2026-11-21T08:14:17.290809+00:00",
+  "matches_considered": 9422,
   "pairs": {
-    "cerezo osaka|fc tokyo": {
-      "team_a": "Cerezo Osaka",
-      "team_b": "FC Tokyo",
-      "matches": [
-        {
-          "date": "2026-06-06T05:00:00Z",
-          "home": "FC Tokyo",
-          "away": "Cerezo Osaka",
-          "score_home": 1,
-          "score_away": 3,
-          "competition_id": "jp-j1-league",
-          "competition_name": "J1 League"
-        },
-        {
-          "date": "2026-05-30T06:00:00Z",
-          "home": "Cerezo Osaka",
-          "away": "FC Tokyo",
-          "score_home": 2,
-          "score_away": 2,
-          "competition_id": "jp-j1-league",
-          "competition_name": "J1 League"
-        },
-        {
-          "date": "2025-06-14T10:00:00Z",
-          "home": "FC Tokyo",
-          "away": "Cerezo Osaka",
-          "score_home": 2,
-          "score_away": 2,
-          "competition_id": "jp-j1-league",
-          "competition_name": "J1 League"
-        },
-        {
-          "date": "2025-04-20T06:00:00Z",
-          "home": "Cerezo Osaka",
-          "away": "FC Tokyo",
-          "score_home": 1,
-          "score_away": 1,
-          "competition_id": "jp-j1-league",
-          "competition_name": "J1 League"
-        },
-        {
-          "date": "2024-12-08T05:00:00Z",
-          "home": "FC Tokyo",
-          "away": "Cerezo Osaka",
-          "score_home": 3,
-          "score_away": 0,
-          "competition_id": "jp-j1-league",
-          "competition_name": "J1 League"
-        },
-        {
-          "date": "2024-02-24T06:00:00Z",
-          "home": "Cerezo Osaka",
-          "away": "FC Tokyo",
-          "score_home": 2,
-          "score_away": 2,
-          "competition_id": "jp-j1-league",
-          "competition_name": "J1 League"
-        }
-      ]
-    },
     "avispa fukuoka|yokohama f marinos": {
       "team_a": "Avispa Fukuoka",
       "team_b": "Yokohama F.Marinos",
@@ -382,48 +322,6 @@
           "away": "Avispa Fukuoka",
           "score_home": 0,
           "score_away": 0,
-          "competition_id": "jp-j1-league",
-          "competition_name": "J1 League"
-        }
-      ]
-    },
-    "avispa fukuoka|kawasaki frontale": {
-      "team_a": "Avispa Fukuoka",
-      "team_b": "Kawasaki Frontale",
-      "matches": [
-        {
-          "date": "2025-08-09T10:00:00Z",
-          "home": "Kawasaki Frontale",
-          "away": "Avispa Fukuoka",
-          "score_home": 2,
-          "score_away": 5,
-          "competition_id": "jp-j1-league",
-          "competition_name": "J1 League"
-        },
-        {
-          "date": "2025-02-26T10:00:00Z",
-          "home": "Avispa Fukuoka",
-          "away": "Kawasaki Frontale",
-          "score_home": 1,
-          "score_away": 2,
-          "competition_id": "jp-j1-league",
-          "competition_name": "J1 League"
-        },
-        {
-          "date": "2024-12-08T05:00:00Z",
-          "home": "Kawasaki Frontale",
-          "away": "Avispa Fukuoka",
-          "score_home": 3,
-          "score_away": 1,
-          "competition_id": "jp-j1-league",
-          "competition_name": "J1 League"
-        },
-        {
-          "date": "2024-05-06T05:00:00Z",
-          "home": "Avispa Fukuoka",
-          "away": "Kawasaki Frontale",
-          "score_home": 1,
-          "score_away": 1,
           "competition_id": "jp-j1-league",
           "competition_name": "J1 League"
         }

@@ -1,8 +1,8 @@
 {
   "provider": "pitchapi_processed_history",
-  "generated_at_utc": "2026-11-21T08:10:41.256992+00:00",
+  "generated_at_utc": "2026-11-21T08:14:17.290809+00:00",
   "recent_limit_per_competition": 5,
-  "matches_considered": 9420,
+  "matches_considered": 9422,
   "teams": {
     "inter miami cf": {
       "name": "Inter Miami CF",
@@ -288,13 +288,6 @@
       "name": "Avispa Fukuoka",
       "matches": [
         {
-          "date": "2026-10-18T07:00:00Z",
-          "result": "D",
-          "score": "0-3",
-          "opponent": "Machida Zelvia",
-          "competition_id": "jp-j1-league"
-        },
-        {
           "date": "2026-10-21T10:00:00Z",
           "result": "D",
           "score": "1-2",
@@ -321,19 +314,19 @@
           "score": "1-1",
           "opponent": "V-Varen Nagasaki",
           "competition_id": "jp-j1-league"
+        },
+        {
+          "date": "2026-11-21T06:00:00Z",
+          "result": "D",
+          "score": "0-1",
+          "opponent": "Kawasaki Frontale",
+          "competition_id": "jp-j1-league"
         }
       ]
     },
     "kawasaki frontale": {
       "name": "Kawasaki Frontale",
       "matches": [
-        {
-          "date": "2026-10-17T06:00:00Z",
-          "result": "V",
-          "score": "4-2",
-          "opponent": "Cerezo Osaka",
-          "competition_id": "jp-j1-league"
-        },
         {
           "date": "2026-10-21T10:00:00Z",
           "result": "V",
@@ -360,6 +353,13 @@
           "result": "D",
           "score": "1-2",
           "opponent": "Kashiwa Reysol",
+          "competition_id": "jp-j1-league"
+        },
+        {
+          "date": "2026-11-21T06:00:00Z",
+          "result": "V",
+          "score": "1-0",
+          "opponent": "Avispa Fukuoka",
           "competition_id": "jp-j1-league"
         }
       ]
@@ -448,13 +448,6 @@
       "name": "Cerezo Osaka",
       "matches": [
         {
-          "date": "2026-10-17T06:00:00Z",
-          "result": "D",
-          "score": "2-4",
-          "opponent": "Kawasaki Frontale",
-          "competition_id": "jp-j1-league"
-        },
-        {
           "date": "2026-10-21T10:00:00Z",
           "result": "N",
           "score": "1-1",
@@ -481,19 +474,19 @@
           "score": "3-2",
           "opponent": "Gamba Osaka",
           "competition_id": "jp-j1-league"
+        },
+        {
+          "date": "2026-11-21T06:00:00Z",
+          "result": "D",
+          "score": "0-3",
+          "opponent": "FC Tokyo",
+          "competition_id": "jp-j1-league"
         }
       ]
     },
     "fc tokyo": {
       "name": "FC Tokyo",
       "matches": [
-        {
-          "date": "2026-10-17T05:00:00Z",
-          "result": "V",
-          "score": "4-0",
-          "opponent": "Tokyo Verdy",
-          "competition_id": "jp-j1-league"
-        },
         {
           "date": "2026-10-21T10:00:00Z",
           "result": "N",
@@ -520,6 +513,13 @@
           "result": "V",
           "score": "2-0",
           "opponent": "Kashima Antlers",
+          "competition_id": "jp-j1-league"
+        },
+        {
+          "date": "2026-11-21T06:00:00Z",
+          "result": "V",
+          "score": "3-0",
+          "opponent": "Cerezo Osaka",
           "competition_id": "jp-j1-league"
         }
       ]

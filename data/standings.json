@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-21T08:10:41.018993Z",
-  "updated_at": "2026-11-21T08:10:41.018993Z",
+  "generated_at": "2026-11-21T08:14:17.048530Z",
+  "updated_at": "2026-11-21T08:14:17.048530Z",
   "season": null,
   "competitions": [
     {
@@ -3638,6 +3638,20 @@
       "season": "2026",
       "standings": [
         {
+          "team_id": "t_17gQhK",
+          "team_name": "FC Tokyo",
+          "team_logo": "https://cdn.pitchapi.dev/images/teams/f615b6c25401d6c580656741b7b4673c69c51b6cd7b9b81de36c2eb33a109b86.webp",
+          "played": 35,
+          "wins": 20,
+          "draws": 10,
+          "losses": 5,
+          "goals_for": 67,
+          "goals_against": 29,
+          "points": 70,
+          "goal_difference": 38,
+          "position": 1
+        },
+        {
           "team_id": "t_3RSWKx",
           "team_name": "Kashima Antlers",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/d933c712bc9fcd3c920f090c2fb009be1e8e2dbaa6cae7716676bd59823d70a1.webp",
@@ -3649,20 +3663,6 @@
           "goals_against": 39,
           "points": 70,
           "goal_difference": 22,
-          "position": 1
-        },
-        {
-          "team_id": "t_17gQhK",
-          "team_name": "FC Tokyo",
-          "team_logo": "https://cdn.pitchapi.dev/images/teams/f615b6c25401d6c580656741b7b4673c69c51b6cd7b9b81de36c2eb33a109b86.webp",
-          "played": 34,
-          "wins": 19,
-          "draws": 10,
-          "losses": 5,
-          "goals_for": 64,
-          "goals_against": 29,
-          "points": 67,
-          "goal_difference": 35,
           "position": 2
         },
         {
@@ -3722,17 +3722,17 @@
           "position": 6
         },
         {
-          "team_id": "t_4gLxod",
-          "team_name": "Cerezo Osaka",
-          "team_logo": "https://cdn.pitchapi.dev/images/teams/692e6c878909c25c9805ba10f5856295bccc448cdbf6c3df5dfd42db58d345fe.webp",
-          "played": 34,
-          "wins": 12,
-          "draws": 12,
-          "losses": 10,
-          "goals_for": 47,
-          "goals_against": 47,
-          "points": 48,
-          "goal_difference": 0,
+          "team_id": "t_37dBko",
+          "team_name": "Kawasaki Frontale",
+          "team_logo": "https://cdn.pitchapi.dev/images/teams/4a1738813ff2f7c13b04962a4db57c4982ba9ac1762b28e35e8357d2d729deb4.webp",
+          "played": 35,
+          "wins": 14,
+          "draws": 8,
+          "losses": 13,
+          "goals_for": 53,
+          "goals_against": 54,
+          "points": 50,
+          "goal_difference": -1,
           "position": 7
         },
         {
@@ -3750,6 +3750,20 @@
           "position": 8
         },
         {
+          "team_id": "t_4gLxod",
+          "team_name": "Cerezo Osaka",
+          "team_logo": "https://cdn.pitchapi.dev/images/teams/692e6c878909c25c9805ba10f5856295bccc448cdbf6c3df5dfd42db58d345fe.webp",
+          "played": 35,
+          "wins": 12,
+          "draws": 12,
+          "losses": 11,
+          "goals_for": 47,
+          "goals_against": 50,
+          "points": 48,
+          "goal_difference": -3,
+          "position": 9
+        },
+        {
           "team_id": "t_1mTqNS",
           "team_name": "Yokohama F.Marinos",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/75e1e0a290d0d8d4fa2e1c286ed90c0dd77c2b6d2f855b05141fc06c35329f47.webp",
@@ -3761,20 +3775,6 @@
           "goals_against": 47,
           "points": 47,
           "goal_difference": 8,
-          "position": 9
-        },
-        {
-          "team_id": "t_37dBko",
-          "team_name": "Kawasaki Frontale",
-          "team_logo": "https://cdn.pitchapi.dev/images/teams/4a1738813ff2f7c13b04962a4db57c4982ba9ac1762b28e35e8357d2d729deb4.webp",
-          "played": 34,
-          "wins": 13,
-          "draws": 8,
-          "losses": 13,
-          "goals_for": 52,
-          "goals_against": 54,
-          "points": 47,
-          "goal_difference": -2,
           "position": 10
         },
         {
@@ -3876,20 +3876,6 @@
           "position": 17
         },
         {
-          "team_id": "t_2u1BXQ",
-          "team_name": "Avispa Fukuoka",
-          "team_logo": "https://cdn.pitchapi.dev/images/teams/99cf3b497f10d87e37f6c2b64598310dc5d8a189d6fe2c1fecf06a13f68c3a63.webp",
-          "played": 34,
-          "wins": 6,
-          "draws": 11,
-          "losses": 17,
-          "goals_for": 35,
-          "goals_against": 55,
-          "points": 29,
-          "goal_difference": -20,
-          "position": 18
-        },
-        {
           "team_id": "t_25A1QK",
           "team_name": "JEF United Chiba",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/b335ff892f763c6306c346fa015678bc966436ffdd49db0bcd5aa6a5304d1268.webp",
@@ -3899,6 +3885,20 @@
           "losses": 20,
           "goals_for": 38,
           "goals_against": 59,
+          "points": 29,
+          "goal_difference": -21,
+          "position": 18
+        },
+        {
+          "team_id": "t_2u1BXQ",
+          "team_name": "Avispa Fukuoka",
+          "team_logo": "https://cdn.pitchapi.dev/images/teams/99cf3b497f10d87e37f6c2b64598310dc5d8a189d6fe2c1fecf06a13f68c3a63.webp",
+          "played": 35,
+          "wins": 6,
+          "draws": 11,
+          "losses": 18,
+          "goals_for": 35,
+          "goals_against": 56,
           "points": 29,
           "goal_difference": -21,
           "position": 19
@@ -3918,7 +3918,7 @@
           "position": 20
         }
       ],
-      "matches_counted": 346
+      "matches_counted": 348
     }
   ],
   "notes": [

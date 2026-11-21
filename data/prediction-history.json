@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at_utc": "2026-11-21T08:13:35.986979Z",
-  "description": "Snapshots immuables J-2, avec récupération explicitement marquée à J-1 si le passage J-2 a été manqué, des expérimentations +1,5, +2,5 et BTTS.",
+  "generated_at_utc": "2026-11-21T08:14:17.634764Z",
+  "description": "Snapshots immuables créés à J-1 (la veille du coup d'envoi) pour les expérimentations +1,5, +2,5 et BTTS. Les matchs terminés sont évalués puis archivés.",
   "records": [
     {
       "match_id": "m_2FVfvL",
@@ -1768,5 +1768,5 @@
       "evaluation_status": "pending"
     }
   ],
-  "created_this_run": 22
+  "created_this_run": 0
 }
