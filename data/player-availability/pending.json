@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "document_type": "pronofoot_chatgpt_player_availability",
-  "generated_at_utc": "2026-11-21T17:56:57.497458+00:00",
+  "generated_at_utc": "2026-11-21T23:06:36.876136+00:00",
   "window": {
-    "start_utc": "2026-11-21T17:56:57.497458+00:00",
-    "end_utc": "2026-11-28T17:56:57.497458+00:00",
+    "start_utc": "2026-11-21T23:06:36.876136+00:00",
+    "end_utc": "2026-11-28T23:06:36.876136+00:00",
     "days": 7
   },
   "instructions": {
@@ -31,2694 +31,6 @@
     "history_rule": "Les faits sourcés des observations précédentes restent documentés tant qu'aucune source plus récente ne les contredit explicitement. Une recherche vide, partielle ou not_checked ne supprime jamais ces faits. Conserver leur date et leur source ; un retour ou une disponibilité explicitement documenté(e) peut remplacer un ancien signalement pour le même joueur."
   },
   "matches": [
-    {
-      "match_id": "m_3S7nsk",
-      "provider_match_id": "m_3S7nsk",
-      "competition": "Ligue 2",
-      "competition_slug": "fr-ligue-2",
-      "season": "2026/2027",
-      "kickoff_utc": "2026-11-21T19:00:00+00:00",
-      "home_team": {
-        "name": "Reims",
-        "team_id": "t_48iHmF"
-      },
-      "away_team": {
-        "name": "Saint-Étienne",
-        "team_id": "t_4EnJ8g"
-      },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
-      "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
-      },
-      "facts": [],
-      "sources": [],
-      "previous_observations": [
-        {
-          "match_id": "m_3S7nsk",
-          "provider_match_id": "m_3S7nsk",
-          "competition": "Ligue 2",
-          "competition_slug": "fr-ligue-2",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-21T19:00:00+00:00",
-          "home_team": {
-            "name": "Reims",
-            "team_id": "t_48iHmF"
-          },
-          "away_team": {
-            "name": "Saint-Étienne",
-            "team_id": "t_4EnJ8g"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-16T21:38:00+00:00",
-          "coverage": {
-            "home": "issues_found",
-            "away": "issues_found"
-          },
-          "facts": [
-            {
-              "player_name": "Martial Tia",
-              "team_side": "home",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Blessure à la cheville; retour non communiqué Information recensée dans le relevé Ligue 2 du 13 novembre 2026; confirmation de l'absence au coup d'envoi non disponible.",
-              "source_url": "https://wmrtips.com/fr/blesses/ligue-2/",
-              "source_title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)",
-              "published_at_utc": "2026-11-13"
-            },
-            {
-              "player_name": "Mory Gbane",
-              "team_side": "home",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Blessure au genou; retour non communiqué Information recensée dans le relevé Ligue 2 du 13 novembre 2026; confirmation de l'absence au coup d'envoi non disponible.",
-              "source_url": "https://wmrtips.com/fr/blesses/ligue-2/",
-              "source_title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)",
-              "published_at_utc": "2026-11-13"
-            },
-            {
-              "player_name": "Hafiz Umar Ibrahim",
-              "team_side": "home",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Blessure au ligament croisé; retour non communiqué Information recensée dans le relevé Ligue 2 du 13 novembre 2026; confirmation de l'absence au coup d'envoi non disponible.",
-              "source_url": "https://wmrtips.com/fr/blesses/ligue-2/",
-              "source_title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)",
-              "published_at_utc": "2026-11-13"
-            },
-            {
-              "player_name": "Joseph Okumu",
-              "team_side": "home",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Déchirure ligamentaire partielle du genou; retour non communiqué Information recensée dans le relevé Ligue 2 du 13 novembre 2026; confirmation de l'absence au coup d'envoi non disponible.",
-              "source_url": "https://wmrtips.com/fr/blesses/ligue-2/",
-              "source_title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)",
-              "published_at_utc": "2026-11-13"
-            },
-            {
-              "player_name": "Lenny Sylla",
-              "team_side": "home",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Blessure au genou; retour non communiqué Information recensée dans le relevé Ligue 2 du 13 novembre 2026; confirmation de l'absence au coup d'envoi non disponible.",
-              "source_url": "https://wmrtips.com/fr/blesses/ligue-2/",
-              "source_title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)",
-              "published_at_utc": "2026-11-13"
-            },
-            {
-              "player_name": "Gautier Larsonneur",
-              "team_side": "away",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Blessure au genou; retour non communiqué Information recensée dans le relevé Ligue 2 du 13 novembre 2026; confirmation de l'absence au coup d'envoi non disponible.",
-              "source_url": "https://wmrtips.com/fr/blesses/ligue-2/",
-              "source_title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)",
-              "published_at_utc": "2026-11-13"
-            },
-            {
-              "player_name": "Tamar Svetlin",
-              "team_side": "away",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Contusion du tendon d'Achille; retour non communiqué Information recensée dans le relevé Ligue 2 du 13 novembre 2026; confirmation de l'absence au coup d'envoi non disponible.",
-              "source_url": "https://wmrtips.com/fr/blesses/ligue-2/",
-              "source_title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)",
-              "published_at_utc": "2026-11-13"
-            },
-            {
-              "player_name": "Paul Eymard",
-              "team_side": "away",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Fracture du pied; retour non communiqué Information recensée dans le relevé Ligue 2 du 13 novembre 2026; confirmation de l'absence au coup d'envoi non disponible.",
-              "source_url": "https://wmrtips.com/fr/blesses/ligue-2/",
-              "source_title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)",
-              "published_at_utc": "2026-11-13"
-            }
-          ],
-          "sources": [
-            {
-              "url": "https://wmrtips.com/fr/blesses/ligue-2/",
-              "title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)"
-            }
-          ],
-          "observation_id": "d3ec1014cfbb368c898c20190132089a6687ae024947bc12c2f4eb393a246abd",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-16T22:39:10.313219+00:00"
-        },
-        {
-          "match_id": "m_3S7nsk",
-          "provider_match_id": "m_3S7nsk",
-          "competition": "Ligue 2",
-          "competition_slug": "fr-ligue-2",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-21T19:00:00+00:00",
-          "home_team": {
-            "name": "Reims",
-            "team_id": "t_48iHmF"
-          },
-          "away_team": {
-            "name": "Saint-Étienne",
-            "team_id": "t_4EnJ8g"
-          },
-          "research_status": "completed",
-          "checked_at_utc": "2026-11-19T08:32:51+00:00",
-          "coverage": {
-            "home": "checked_no_issue",
-            "away": "checked_no_issue"
-          },
-          "facts": [],
-          "sources": [
-            {
-              "url": "https://arenarete.com/fr/blesses/ligue-2",
-              "title": "Blessés et suspendus de Ligue 2 — Arena Rete (consulté le 19 novembre 2026)"
-            }
-          ],
-          "observation_id": "dd06dccbc16c3c52da4f12ea7386dfa5a187b48cd25d6188cb3d45ffc86cc299",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-19T11:47:55.964302+00:00"
-        },
-        {
-          "match_id": "m_3S7nsk",
-          "provider_match_id": "m_3S7nsk",
-          "competition": "Ligue 2",
-          "competition_slug": "fr-ligue-2",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-21T19:00:00+00:00",
-          "home_team": {
-            "name": "Reims",
-            "team_id": "t_48iHmF"
-          },
-          "away_team": {
-            "name": "Saint-Étienne",
-            "team_id": "t_4EnJ8g"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-20T13:45:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "75adfa8fc06f0dea8e1385803aee5051b1858b666caf6920163ad27b725a70de",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-20T14:05:55.499594+00:00"
-        },
-        {
-          "match_id": "m_3S7nsk",
-          "provider_match_id": "m_3S7nsk",
-          "competition": "Ligue 2",
-          "competition_slug": "fr-ligue-2",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-21T19:00:00+00:00",
-          "home_team": {
-            "name": "Reims",
-            "team_id": "t_48iHmF"
-          },
-          "away_team": {
-            "name": "Saint-Étienne",
-            "team_id": "t_4EnJ8g"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-20T21:21:00+00:00",
-          "coverage": {
-            "home": "partial",
-            "away": "partial"
-          },
-          "facts": [
-            {
-              "player_name": "Martial Tia",
-              "team_side": "home",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Blessure à la cheville; retour non communiqué Information recensée dans le relevé Ligue 2 du 13 novembre 2026; confirmation de l'absence au coup d'envoi non disponible.",
-              "source_url": "https://wmrtips.com/fr/blesses/ligue-2/",
-              "source_title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)",
-              "published_at_utc": "2026-11-13"
-            },
-            {
-              "player_name": "Mory Gbane",
-              "team_side": "home",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Blessure au genou; retour non communiqué Information recensée dans le relevé Ligue 2 du 13 novembre 2026; confirmation de l'absence au coup d'envoi non disponible.",
-              "source_url": "https://wmrtips.com/fr/blesses/ligue-2/",
-              "source_title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)",
-              "published_at_utc": "2026-11-13"
-            },
-            {
-              "player_name": "Hafiz Umar Ibrahim",
-              "team_side": "home",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Blessure au ligament croisé; retour non communiqué Information recensée dans le relevé Ligue 2 du 13 novembre 2026; confirmation de l'absence au coup d'envoi non disponible.",
-              "source_url": "https://wmrtips.com/fr/blesses/ligue-2/",
-              "source_title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)",
-              "published_at_utc": "2026-11-13"
-            },
-            {
-              "player_name": "Joseph Okumu",
-              "team_side": "home",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Déchirure ligamentaire partielle du genou; retour non communiqué Information recensée dans le relevé Ligue 2 du 13 novembre 2026; confirmation de l'absence au coup d'envoi non disponible.",
-              "source_url": "https://wmrtips.com/fr/blesses/ligue-2/",
-              "source_title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)",
-              "published_at_utc": "2026-11-13"
-            },
-            {
-              "player_name": "Lenny Sylla",
-              "team_side": "home",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Blessure au genou; retour non communiqué Information recensée dans le relevé Ligue 2 du 13 novembre 2026; confirmation de l'absence au coup d'envoi non disponible.",
-              "source_url": "https://wmrtips.com/fr/blesses/ligue-2/",
-              "source_title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)",
-              "published_at_utc": "2026-11-13"
-            },
-            {
-              "player_name": "Gautier Larsonneur",
-              "team_side": "away",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Blessure au genou; retour non communiqué Information recensée dans le relevé Ligue 2 du 13 novembre 2026; confirmation de l'absence au coup d'envoi non disponible.",
-              "source_url": "https://wmrtips.com/fr/blesses/ligue-2/",
-              "source_title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)",
-              "published_at_utc": "2026-11-13"
-            },
-            {
-              "player_name": "Tamar Svetlin",
-              "team_side": "away",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Contusion du tendon d'Achille; retour non communiqué Information recensée dans le relevé Ligue 2 du 13 novembre 2026; confirmation de l'absence au coup d'envoi non disponible.",
-              "source_url": "https://wmrtips.com/fr/blesses/ligue-2/",
-              "source_title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)",
-              "published_at_utc": "2026-11-13"
-            },
-            {
-              "player_name": "Paul Eymard",
-              "team_side": "away",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Fracture du pied; retour non communiqué Information recensée dans le relevé Ligue 2 du 13 novembre 2026; confirmation de l'absence au coup d'envoi non disponible.",
-              "source_url": "https://wmrtips.com/fr/blesses/ligue-2/",
-              "source_title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)",
-              "published_at_utc": "2026-11-13"
-            }
-          ],
-          "sources": [
-            {
-              "url": "https://wmrtips.com/fr/blesses/ligue-2/",
-              "title": "Ligue 2 : blessés & suspendus actuels (WmR, 13 novembre 2026)"
-            },
-            {
-              "url": "https://arenarete.com/fr/blesses/ligue-2",
-              "title": "Blessés et suspendus de Ligue 2 (consulté le 20 novembre 2026)"
-            }
-          ],
-          "observation_id": "c9a71893a939937b0bfa61e475f39f6a409785e10244a6d3f43cf66c3904f164",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-20T21:27:23.988687+00:00"
-        }
-      ]
-    },
-    {
-      "match_id": "m_21rdJJ",
-      "provider_match_id": "m_21rdJJ",
-      "competition": "MLS",
-      "competition_slug": "us-mls",
-      "season": "2026",
-      "kickoff_utc": "2026-11-21T19:00:00+00:00",
-      "home_team": {
-        "name": "New England Revolution",
-        "team_id": "t_0G2JlW"
-      },
-      "away_team": {
-        "name": "Philadelphia Union",
-        "team_id": "t_0uw6NW"
-      },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
-      "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
-      },
-      "facts": [],
-      "sources": [],
-      "previous_observations": [
-        {
-          "match_id": "m_21rdJJ",
-          "provider_match_id": "m_21rdJJ",
-          "competition": "MLS",
-          "competition_slug": "us-mls",
-          "season": "2026",
-          "kickoff_utc": "2026-11-21T19:00:00+00:00",
-          "home_team": {
-            "name": "New England Revolution",
-            "team_id": "t_0G2JlW"
-          },
-          "away_team": {
-            "name": "Philadelphia Union",
-            "team_id": "t_0uw6NW"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-16T21:38:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "20b1d3c8b5033032f894b274362a25eda5ad56d6e3c798ea9dfc3d73e35d4f56",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-16T22:39:10.313230+00:00"
-        },
-        {
-          "match_id": "m_21rdJJ",
-          "provider_match_id": "m_21rdJJ",
-          "competition": "MLS",
-          "competition_slug": "us-mls",
-          "season": "2026",
-          "kickoff_utc": "2026-11-21T19:00:00+00:00",
-          "home_team": {
-            "name": "New England Revolution",
-            "team_id": "t_0G2JlW"
-          },
-          "away_team": {
-            "name": "Philadelphia Union",
-            "team_id": "t_0uw6NW"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-19T08:32:51+00:00",
-          "coverage": {
-            "home": "partial",
-            "away": "partial"
-          },
-          "facts": [],
-          "sources": [
-            {
-              "url": "https://www.mlssoccer.com/playoffs/2026/news/wild-card-format-key-info-audi-2026-mls-cup-playoffs",
-              "title": "Wild Card format & key info: Audi 2026 MLS Cup Playoffs — MLSsoccer.com"
-            }
-          ],
-          "observation_id": "289842852d5a7782500beafed7dc262829609c142323fe1d4727003a7b443ec8",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-19T11:47:55.964320+00:00"
-        },
-        {
-          "match_id": "m_21rdJJ",
-          "provider_match_id": "m_21rdJJ",
-          "competition": "MLS",
-          "competition_slug": "us-mls",
-          "season": "2026",
-          "kickoff_utc": "2026-11-21T19:00:00+00:00",
-          "home_team": {
-            "name": "New England Revolution",
-            "team_id": "t_0G2JlW"
-          },
-          "away_team": {
-            "name": "Philadelphia Union",
-            "team_id": "t_0uw6NW"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-20T13:45:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "ec2ba6b3af5d41a15f4bbbd1b6a1ab0e3f3dee6a386a58dbe552879e42dbae04",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-20T14:05:55.499625+00:00"
-        },
-        {
-          "match_id": "m_21rdJJ",
-          "provider_match_id": "m_21rdJJ",
-          "competition": "MLS",
-          "competition_slug": "us-mls",
-          "season": "2026",
-          "kickoff_utc": "2026-11-21T19:00:00+00:00",
-          "home_team": {
-            "name": "New England Revolution",
-            "team_id": "t_0G2JlW"
-          },
-          "away_team": {
-            "name": "Philadelphia Union",
-            "team_id": "t_0uw6NW"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-20T21:21:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "55bdff675138fbd0791e8d6b3ed28485c9ebf89f9afaf1505750f17dba4ecdf8",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-20T21:27:23.988722+00:00"
-        }
-      ]
-    },
-    {
-      "match_id": "m_1fI6f1",
-      "provider_match_id": "m_1fI6f1",
-      "competition": "Belgian Pro League",
-      "competition_slug": "be-first-division-a",
-      "season": "2026/2027",
-      "kickoff_utc": "2026-11-21T19:45:00+00:00",
-      "home_team": {
-        "name": "Zulte Waregem",
-        "team_id": "t_0n3xxl"
-      },
-      "away_team": {
-        "name": "Royal Antwerp",
-        "team_id": "t_0E5vxj"
-      },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
-      "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
-      },
-      "facts": [],
-      "sources": [],
-      "previous_observations": [
-        {
-          "match_id": "m_1fI6f1",
-          "provider_match_id": "m_1fI6f1",
-          "competition": "Belgian Pro League",
-          "competition_slug": "be-first-division-a",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-21T19:45:00+00:00",
-          "home_team": {
-            "name": "Zulte Waregem",
-            "team_id": "t_0n3xxl"
-          },
-          "away_team": {
-            "name": "Royal Antwerp",
-            "team_id": "t_0E5vxj"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-16T21:38:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "45262f0ac2f7993473a18c098f0b0814d57aa04790b2e41af9e6e62daf329937",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-16T22:39:10.313241+00:00"
-        },
-        {
-          "match_id": "m_1fI6f1",
-          "provider_match_id": "m_1fI6f1",
-          "competition": "Belgian Pro League",
-          "competition_slug": "be-first-division-a",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-21T19:45:00+00:00",
-          "home_team": {
-            "name": "Zulte Waregem",
-            "team_id": "t_0n3xxl"
-          },
-          "away_team": {
-            "name": "Royal Antwerp",
-            "team_id": "t_0E5vxj"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-19T08:32:51+00:00",
-          "coverage": {
-            "home": "issues_found",
-            "away": "issues_found"
-          },
-          "facts": [
-            {
-              "player_name": "Salim Diakité",
-              "team_side": "home",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Pépin mineur signalé.",
-              "source_url": "https://wmrtips.com/fr/blesses/pro-league-belgien/",
-              "source_title": "Pro League belge : blessés & suspendus actuels — WmR (au 15 novembre 2026)",
-              "published_at_utc": "2026-11-15"
-            },
-            {
-              "player_name": "Arthur Vermeeren",
-              "team_side": "away",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Blessure à la cheville.",
-              "source_url": "https://wmrtips.com/fr/blesses/pro-league-belgien/",
-              "source_title": "Pro League belge : blessés & suspendus actuels — WmR (au 15 novembre 2026)",
-              "published_at_utc": "2026-11-15"
-            },
-            {
-              "player_name": "Thibo Somers",
-              "team_side": "away",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Blessure musculaire.",
-              "source_url": "https://wmrtips.com/fr/blesses/pro-league-belgien/",
-              "source_title": "Pro League belge : blessés & suspendus actuels — WmR (au 15 novembre 2026)",
-              "published_at_utc": "2026-11-15"
-            }
-          ],
-          "sources": [
-            {
-              "url": "https://wmrtips.com/fr/blesses/pro-league-belgien/",
-              "title": "Pro League belge : blessés & suspendus actuels — WmR (au 15 novembre 2026)"
-            }
-          ],
-          "observation_id": "f3f8e16ea22f0aacc4f051ece7ba87ed399d9b319d1618a3371c875da48e399d",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-19T11:47:55.964345+00:00"
-        },
-        {
-          "match_id": "m_1fI6f1",
-          "provider_match_id": "m_1fI6f1",
-          "competition": "Belgian Pro League",
-          "competition_slug": "be-first-division-a",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-21T19:45:00+00:00",
-          "home_team": {
-            "name": "Zulte Waregem",
-            "team_id": "t_0n3xxl"
-          },
-          "away_team": {
-            "name": "Royal Antwerp",
-            "team_id": "t_0E5vxj"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-20T13:45:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "809a54b45b352c3a42c0a5aba24df481cb99664da7b35a0c4323f70369baeea9",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-20T14:05:55.499701+00:00"
-        },
-        {
-          "match_id": "m_1fI6f1",
-          "provider_match_id": "m_1fI6f1",
-          "competition": "Belgian Pro League",
-          "competition_slug": "be-first-division-a",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-21T19:45:00+00:00",
-          "home_team": {
-            "name": "Zulte Waregem",
-            "team_id": "t_0n3xxl"
-          },
-          "away_team": {
-            "name": "Royal Antwerp",
-            "team_id": "t_0E5vxj"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-20T21:21:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [
-            {
-              "player_name": "Salim Diakité",
-              "team_side": "home",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Pépin mineur signalé.",
-              "source_url": "https://wmrtips.com/fr/blesses/pro-league-belgien/",
-              "source_title": "Pro League belge : blessés & suspendus actuels — WmR (au 15 novembre 2026)",
-              "published_at_utc": "2026-11-15"
-            },
-            {
-              "player_name": "Arthur Vermeeren",
-              "team_side": "away",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Blessure à la cheville.",
-              "source_url": "https://wmrtips.com/fr/blesses/pro-league-belgien/",
-              "source_title": "Pro League belge : blessés & suspendus actuels — WmR (au 15 novembre 2026)",
-              "published_at_utc": "2026-11-15"
-            },
-            {
-              "player_name": "Thibo Somers",
-              "team_side": "away",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Blessure musculaire.",
-              "source_url": "https://wmrtips.com/fr/blesses/pro-league-belgien/",
-              "source_title": "Pro League belge : blessés & suspendus actuels — WmR (au 15 novembre 2026)",
-              "published_at_utc": "2026-11-15"
-            }
-          ],
-          "sources": [
-            {
-              "url": "https://wmrtips.com/fr/blesses/pro-league-belgien/",
-              "title": "Pro League belge : blessés & suspendus actuels — WmR (au 15 novembre 2026)"
-            }
-          ],
-          "observation_id": "6d073047224598bf6c3c497ffaa90734b2d61e03c7624c12dea47f6d59d520ff",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-20T21:27:23.988777+00:00"
-        }
-      ]
-    },
-    {
-      "match_id": "m_3J0Hxd",
-      "provider_match_id": "m_3J0Hxd",
-      "competition": "Belgian Pro League",
-      "competition_slug": "be-first-division-a",
-      "season": "2026/2027",
-      "kickoff_utc": "2026-11-21T19:45:00+00:00",
-      "home_team": {
-        "name": "KV Mechelen",
-        "team_id": "t_3HWU9N"
-      },
-      "away_team": {
-        "name": "Club Brugge",
-        "team_id": "t_1mTmMO"
-      },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
-      "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
-      },
-      "facts": [],
-      "sources": [],
-      "previous_observations": [
-        {
-          "match_id": "m_3J0Hxd",
-          "provider_match_id": "m_3J0Hxd",
-          "competition": "Belgian Pro League",
-          "competition_slug": "be-first-division-a",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-21T19:45:00+00:00",
-          "home_team": {
-            "name": "KV Mechelen",
-            "team_id": "t_3HWU9N"
-          },
-          "away_team": {
-            "name": "Club Brugge",
-            "team_id": "t_1mTmMO"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-16T21:38:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "8177cdb88cf768b2435481052e7da734cdd89cad431e7adb49890646cce82957",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-16T22:39:10.313252+00:00"
-        },
-        {
-          "match_id": "m_3J0Hxd",
-          "provider_match_id": "m_3J0Hxd",
-          "competition": "Belgian Pro League",
-          "competition_slug": "be-first-division-a",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-21T19:45:00+00:00",
-          "home_team": {
-            "name": "KV Mechelen",
-            "team_id": "t_3HWU9N"
-          },
-          "away_team": {
-            "name": "Club Brugge",
-            "team_id": "t_1mTmMO"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-19T08:32:51+00:00",
-          "coverage": {
-            "home": "issues_found",
-            "away": "issues_found"
-          },
-          "facts": [
-            {
-              "player_name": "Bouke Boersma",
-              "team_side": "home",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Blessure musculaire.",
-              "source_url": "https://wmrtips.com/fr/blesses/pro-league-belgien/",
-              "source_title": "Pro League belge : blessés & suspendus actuels — WmR (au 15 novembre 2026)",
-              "published_at_utc": "2026-11-15"
-            },
-            {
-              "player_name": "Fredrik Hammar",
-              "team_side": "home",
-              "category": "suspension",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Suspendu un match; retour indiqué le 22 novembre.",
-              "source_url": "https://wmrtips.com/fr/blesses/pro-league-belgien/",
-              "source_title": "Pro League belge : blessés & suspendus actuels — WmR (au 15 novembre 2026)",
-              "published_at_utc": "2026-11-15"
-            },
-            {
-              "player_name": "Tommy St. Jago",
-              "team_side": "home",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Rupture tendineuse.",
-              "source_url": "https://wmrtips.com/fr/blesses/pro-league-belgien/",
-              "source_title": "Pro League belge : blessés & suspendus actuels — WmR (au 15 novembre 2026)",
-              "published_at_utc": "2026-11-15"
-            },
-            {
-              "player_name": "Leo Hjelde",
-              "team_side": "home",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Déchirure partielle du tendon rotulien; retour indiqué en mai 2027.",
-              "source_url": "https://wmrtips.com/fr/blesses/pro-league-belgien/",
-              "source_title": "Pro League belge : blessés & suspendus actuels — WmR (au 15 novembre 2026)",
-              "published_at_utc": "2026-11-15"
-            },
-            {
-              "player_name": "Nicolò Tresoldi",
-              "team_side": "away",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Commotion cérébrale; retour non précisé.",
-              "source_url": "https://wmrtips.com/fr/blesses/pro-league-belgien/",
-              "source_title": "Pro League belge : blessés & suspendus actuels — WmR (au 15 novembre 2026)",
-              "published_at_utc": "2026-11-15"
-            },
-            {
-              "player_name": "Joel Ordóñez",
-              "team_side": "away",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Fracture du métatarse.",
-              "source_url": "https://wmrtips.com/fr/blesses/pro-league-belgien/",
-              "source_title": "Pro League belge : blessés & suspendus actuels — WmR (au 15 novembre 2026)",
-              "published_at_utc": "2026-11-15"
-            },
-            {
-              "player_name": "Jan Virgili",
-              "team_side": "away",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Blessure à l'aine.",
-              "source_url": "https://wmrtips.com/fr/blesses/pro-league-belgien/",
-              "source_title": "Pro League belge : blessés & suspendus actuels — WmR (au 15 novembre 2026)",
-              "published_at_utc": "2026-11-15"
-            }
-          ],
-          "sources": [
-            {
-              "url": "https://wmrtips.com/fr/blesses/pro-league-belgien/",
-              "title": "Pro League belge : blessés & suspendus actuels — WmR (au 15 novembre 2026)"
-            }
-          ],
-          "observation_id": "f7220bdace380808a0dc3c804b7b339194a6c8c49a714e87505e7956e8743124",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-19T11:47:55.964385+00:00"
-        },
-        {
-          "match_id": "m_3J0Hxd",
-          "provider_match_id": "m_3J0Hxd",
-          "competition": "Belgian Pro League",
-          "competition_slug": "be-first-division-a",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-21T19:45:00+00:00",
-          "home_team": {
-            "name": "KV Mechelen",
-            "team_id": "t_3HWU9N"
-          },
-          "away_team": {
-            "name": "Club Brugge",
-            "team_id": "t_1mTmMO"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-20T13:45:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "bddb55983f0555bb2eb5c1288500283d3dff77e162aba43599fb6f15de5462e8",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-20T14:05:55.499760+00:00"
-        },
-        {
-          "match_id": "m_3J0Hxd",
-          "provider_match_id": "m_3J0Hxd",
-          "competition": "Belgian Pro League",
-          "competition_slug": "be-first-division-a",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-21T19:45:00+00:00",
-          "home_team": {
-            "name": "KV Mechelen",
-            "team_id": "t_3HWU9N"
-          },
-          "away_team": {
-            "name": "Club Brugge",
-            "team_id": "t_1mTmMO"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-20T21:21:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [
-            {
-              "player_name": "Bouke Boersma",
-              "team_side": "home",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Blessure musculaire.",
-              "source_url": "https://wmrtips.com/fr/blesses/pro-league-belgien/",
-              "source_title": "Pro League belge : blessés & suspendus actuels — WmR (au 15 novembre 2026)",
-              "published_at_utc": "2026-11-15"
-            },
-            {
-              "player_name": "Fredrik Hammar",
-              "team_side": "home",
-              "category": "suspension",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Suspendu un match; retour indiqué le 22 novembre.",
-              "source_url": "https://wmrtips.com/fr/blesses/pro-league-belgien/",
-              "source_title": "Pro League belge : blessés & suspendus actuels — WmR (au 15 novembre 2026)",
-              "published_at_utc": "2026-11-15"
-            },
-            {
-              "player_name": "Tommy St. Jago",
-              "team_side": "home",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Rupture tendineuse.",
-              "source_url": "https://wmrtips.com/fr/blesses/pro-league-belgien/",
-              "source_title": "Pro League belge : blessés & suspendus actuels — WmR (au 15 novembre 2026)",
-              "published_at_utc": "2026-11-15"
-            },
-            {
-              "player_name": "Leo Hjelde",
-              "team_side": "home",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Déchirure partielle du tendon rotulien; retour indiqué en mai 2027.",
-              "source_url": "https://wmrtips.com/fr/blesses/pro-league-belgien/",
-              "source_title": "Pro League belge : blessés & suspendus actuels — WmR (au 15 novembre 2026)",
-              "published_at_utc": "2026-11-15"
-            },
-            {
-              "player_name": "Nicolò Tresoldi",
-              "team_side": "away",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Commotion cérébrale; retour non précisé.",
-              "source_url": "https://wmrtips.com/fr/blesses/pro-league-belgien/",
-              "source_title": "Pro League belge : blessés & suspendus actuels — WmR (au 15 novembre 2026)",
-              "published_at_utc": "2026-11-15"
-            },
-            {
-              "player_name": "Joel Ordóñez",
-              "team_side": "away",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Fracture du métatarse.",
-              "source_url": "https://wmrtips.com/fr/blesses/pro-league-belgien/",
-              "source_title": "Pro League belge : blessés & suspendus actuels — WmR (au 15 novembre 2026)",
-              "published_at_utc": "2026-11-15"
-            },
-            {
-              "player_name": "Jan Virgili",
-              "team_side": "away",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Blessure à l'aine.",
-              "source_url": "https://wmrtips.com/fr/blesses/pro-league-belgien/",
-              "source_title": "Pro League belge : blessés & suspendus actuels — WmR (au 15 novembre 2026)",
-              "published_at_utc": "2026-11-15"
-            }
-          ],
-          "sources": [
-            {
-              "url": "https://wmrtips.com/fr/blesses/pro-league-belgien/",
-              "title": "Pro League belge : blessés & suspendus actuels — WmR (au 15 novembre 2026)"
-            }
-          ],
-          "observation_id": "11cccf96347a2ec32f1217d2f048c396df7e0bc8686340f042ab423051d23d71",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-20T21:27:23.988858+00:00"
-        }
-      ]
-    },
-    {
-      "match_id": "m_47p1ca",
-      "provider_match_id": "m_47p1ca",
-      "competition": "Ligue 1",
-      "competition_slug": "fr-ligue-1",
-      "season": "2026/2027",
-      "kickoff_utc": "2026-11-21T19:45:00+00:00",
-      "home_team": {
-        "name": "Strasbourg",
-        "team_id": "t_1p1AQf"
-      },
-      "away_team": {
-        "name": "Brest",
-        "team_id": "t_0EMLtg"
-      },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
-      "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
-      },
-      "facts": [],
-      "sources": [],
-      "previous_observations": [
-        {
-          "match_id": "m_47p1ca",
-          "provider_match_id": "m_47p1ca",
-          "competition": "Ligue 1",
-          "competition_slug": "fr-ligue-1",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-21T19:45:00+00:00",
-          "home_team": {
-            "name": "Strasbourg",
-            "team_id": "t_1p1AQf"
-          },
-          "away_team": {
-            "name": "Brest",
-            "team_id": "t_0EMLtg"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-16T21:38:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "75da501be904929c6ee1e67f249b3f2a885c704363433dd53af910dc30ede7e6",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-16T22:39:10.313264+00:00"
-        },
-        {
-          "match_id": "m_47p1ca",
-          "provider_match_id": "m_47p1ca",
-          "competition": "Ligue 1",
-          "competition_slug": "fr-ligue-1",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-21T19:45:00+00:00",
-          "home_team": {
-            "name": "Strasbourg",
-            "team_id": "t_1p1AQf"
-          },
-          "away_team": {
-            "name": "Brest",
-            "team_id": "t_0EMLtg"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-19T08:32:51+00:00",
-          "coverage": {
-            "home": "partial",
-            "away": "partial"
-          },
-          "facts": [],
-          "sources": [
-            {
-              "url": "https://arenarete.com/fr/blesses/ligue-1",
-              "title": "Blessés et suspendus de Ligue 1 — Arena Rete (consulté le 19 novembre 2026)"
-            }
-          ],
-          "observation_id": "fa1759161cd091c178055c0b14fe9263808fe376850ee47697b7bdbc9577b3d7",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-19T11:47:55.964401+00:00"
-        },
-        {
-          "match_id": "m_47p1ca",
-          "provider_match_id": "m_47p1ca",
-          "competition": "Ligue 1",
-          "competition_slug": "fr-ligue-1",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-21T19:45:00+00:00",
-          "home_team": {
-            "name": "Strasbourg",
-            "team_id": "t_1p1AQf"
-          },
-          "away_team": {
-            "name": "Brest",
-            "team_id": "t_0EMLtg"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-20T13:45:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "8179efbec91eb46bed2369a4c5ac0074b4c662bebd8639352dc867597934b8a8",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-20T14:05:55.499792+00:00"
-        },
-        {
-          "match_id": "m_47p1ca",
-          "provider_match_id": "m_47p1ca",
-          "competition": "Ligue 1",
-          "competition_slug": "fr-ligue-1",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-21T19:45:00+00:00",
-          "home_team": {
-            "name": "Strasbourg",
-            "team_id": "t_1p1AQf"
-          },
-          "away_team": {
-            "name": "Brest",
-            "team_id": "t_0EMLtg"
-          },
-          "research_status": "completed",
-          "checked_at_utc": "2026-11-20T21:21:00+00:00",
-          "coverage": {
-            "home": "issues_found",
-            "away": "issues_found"
-          },
-          "facts": [
-            {
-              "player_name": "Panichelli",
-              "team_side": "home",
-              "category": "other",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Listed absent in the matchday preview",
-              "source_url": "https://ligue1.com/en/articles/l1_article_5704-les-compositions-probables-ligue-1-2026-2027",
-              "source_title": "J11 : Les compositions probables (20 novembre 2026)",
-              "published_at_utc": "2026-11-20"
-            },
-            {
-              "player_name": "Reyna",
-              "team_side": "home",
-              "category": "other",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Listed absent in the matchday preview",
-              "source_url": "https://ligue1.com/en/articles/l1_article_5704-les-compositions-probables-ligue-1-2026-2027",
-              "source_title": "J11 : Les compositions probables (20 novembre 2026)",
-              "published_at_utc": "2026-11-20"
-            },
-            {
-              "player_name": "Oso",
-              "team_side": "home",
-              "category": "other",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Listed absent in the matchday preview",
-              "source_url": "https://ligue1.com/en/articles/l1_article_5704-les-compositions-probables-ligue-1-2026-2027",
-              "source_title": "J11 : Les compositions probables (20 novembre 2026)",
-              "published_at_utc": "2026-11-20"
-            },
-            {
-              "player_name": "F. Baldé",
-              "team_side": "home",
-              "category": "doubtful",
-              "status": "doubtful",
-              "confidence": "probable",
-              "details": "Listed uncertain in the matchday preview",
-              "source_url": "https://ligue1.com/en/articles/l1_article_5704-les-compositions-probables-ligue-1-2026-2027",
-              "source_title": "J11 : Les compositions probables (20 novembre 2026)",
-              "published_at_utc": "2026-11-20"
-            },
-            {
-              "player_name": "Chardonnet",
-              "team_side": "away",
-              "category": "other",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Listed absent in the matchday preview",
-              "source_url": "https://ligue1.com/en/articles/l1_article_5704-les-compositions-probables-ligue-1-2026-2027",
-              "source_title": "J11 : Les compositions probables (20 novembre 2026)",
-              "published_at_utc": "2026-11-20"
-            },
-            {
-              "player_name": "Le Guen",
-              "team_side": "away",
-              "category": "other",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Listed absent in the matchday preview",
-              "source_url": "https://ligue1.com/en/articles/l1_article_5704-les-compositions-probables-ligue-1-2026-2027",
-              "source_title": "J11 : Les compositions probables (20 novembre 2026)",
-              "published_at_utc": "2026-11-20"
-            },
-            {
-              "player_name": "Sa. Diop",
-              "team_side": "away",
-              "category": "doubtful",
-              "status": "doubtful",
-              "confidence": "probable",
-              "details": "Listed uncertain in the matchday preview",
-              "source_url": "https://ligue1.com/en/articles/l1_article_5704-les-compositions-probables-ligue-1-2026-2027",
-              "source_title": "J11 : Les compositions probables (20 novembre 2026)",
-              "published_at_utc": "2026-11-20"
-            }
-          ],
-          "sources": [
-            {
-              "url": "https://ligue1.com/en/articles/l1_article_5704-les-compositions-probables-ligue-1-2026-2027",
-              "title": "J11 : Les compositions probables (20 novembre 2026)"
-            }
-          ],
-          "observation_id": "c2e33fb243f9533721a2d46cc5a86e5455ad898f9a68fde3768a22ac978e810a",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-20T21:27:23.988916+00:00"
-        }
-      ]
-    },
-    {
-      "match_id": "m_3vBvLr",
-      "provider_match_id": "m_3vBvLr",
-      "competition": "Ligue 1",
-      "competition_slug": "fr-ligue-1",
-      "season": "2026/2027",
-      "kickoff_utc": "2026-11-21T19:45:00+00:00",
-      "home_team": {
-        "name": "Monaco",
-        "team_id": "t_13gLEF"
-      },
-      "away_team": {
-        "name": "Auxerre",
-        "team_id": "t_2Vc7mg"
-      },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
-      "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
-      },
-      "facts": [],
-      "sources": [],
-      "previous_observations": [
-        {
-          "match_id": "m_3vBvLr",
-          "provider_match_id": "m_3vBvLr",
-          "competition": "Ligue 1",
-          "competition_slug": "fr-ligue-1",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-21T19:45:00+00:00",
-          "home_team": {
-            "name": "Monaco",
-            "team_id": "t_13gLEF"
-          },
-          "away_team": {
-            "name": "Auxerre",
-            "team_id": "t_2Vc7mg"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-16T21:38:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "550afbb40de71f9975de80ec1b4de230b08e68ba5a1fdb0bcd9e8fbbb4f31774",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-16T22:39:10.313275+00:00"
-        },
-        {
-          "match_id": "m_3vBvLr",
-          "provider_match_id": "m_3vBvLr",
-          "competition": "Ligue 1",
-          "competition_slug": "fr-ligue-1",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-21T19:45:00+00:00",
-          "home_team": {
-            "name": "Monaco",
-            "team_id": "t_13gLEF"
-          },
-          "away_team": {
-            "name": "Auxerre",
-            "team_id": "t_2Vc7mg"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-19T08:32:51+00:00",
-          "coverage": {
-            "home": "partial",
-            "away": "partial"
-          },
-          "facts": [],
-          "sources": [
-            {
-              "url": "https://arenarete.com/fr/blesses/ligue-1",
-              "title": "Blessés et suspendus de Ligue 1 — Arena Rete (consulté le 19 novembre 2026)"
-            }
-          ],
-          "observation_id": "f111361b1b6ccc32c91a33868171d1d54b2d78a7f00c8c57436b295f56ff86a5",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-19T11:47:55.964417+00:00"
-        },
-        {
-          "match_id": "m_3vBvLr",
-          "provider_match_id": "m_3vBvLr",
-          "competition": "Ligue 1",
-          "competition_slug": "fr-ligue-1",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-21T19:45:00+00:00",
-          "home_team": {
-            "name": "Monaco",
-            "team_id": "t_13gLEF"
-          },
-          "away_team": {
-            "name": "Auxerre",
-            "team_id": "t_2Vc7mg"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-20T13:45:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "f4779a8c56c5920507c45d1953372d031ac902f8f550308900921aa56a04826e",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-20T14:05:55.499821+00:00"
-        },
-        {
-          "match_id": "m_3vBvLr",
-          "provider_match_id": "m_3vBvLr",
-          "competition": "Ligue 1",
-          "competition_slug": "fr-ligue-1",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-21T19:45:00+00:00",
-          "home_team": {
-            "name": "Monaco",
-            "team_id": "t_13gLEF"
-          },
-          "away_team": {
-            "name": "Auxerre",
-            "team_id": "t_2Vc7mg"
-          },
-          "research_status": "completed",
-          "checked_at_utc": "2026-11-20T21:21:00+00:00",
-          "coverage": {
-            "home": "issues_found",
-            "away": "issues_found"
-          },
-          "facts": [
-            {
-              "player_name": "Idumbo",
-              "team_side": "home",
-              "category": "other",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Listed absent in the matchday preview",
-              "source_url": "https://ligue1.com/en/articles/l1_article_5704-les-compositions-probables-ligue-1-2026-2027",
-              "source_title": "J11 : Les compositions probables (20 novembre 2026)",
-              "published_at_utc": "2026-11-20"
-            },
-            {
-              "player_name": "Golovin",
-              "team_side": "home",
-              "category": "other",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Listed absent in the matchday preview",
-              "source_url": "https://ligue1.com/en/articles/l1_article_5704-les-compositions-probables-ligue-1-2026-2027",
-              "source_title": "J11 : Les compositions probables (20 novembre 2026)",
-              "published_at_utc": "2026-11-20"
-            },
-            {
-              "player_name": "Fati",
-              "team_side": "home",
-              "category": "other",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Listed absent in the matchday preview",
-              "source_url": "https://ligue1.com/en/articles/l1_article_5704-les-compositions-probables-ligue-1-2026-2027",
-              "source_title": "J11 : Les compositions probables (20 novembre 2026)",
-              "published_at_utc": "2026-11-20"
-            },
-            {
-              "player_name": "Mawissa",
-              "team_side": "home",
-              "category": "doubtful",
-              "status": "doubtful",
-              "confidence": "probable",
-              "details": "Listed uncertain in the matchday preview",
-              "source_url": "https://ligue1.com/en/articles/l1_article_5704-les-compositions-probables-ligue-1-2026-2027",
-              "source_title": "J11 : Les compositions probables (20 novembre 2026)",
-              "published_at_utc": "2026-11-20"
-            },
-            {
-              "player_name": "Akpa",
-              "team_side": "away",
-              "category": "other",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Listed absent in the matchday preview",
-              "source_url": "https://ligue1.com/en/articles/l1_article_5704-les-compositions-probables-ligue-1-2026-2027",
-              "source_title": "J11 : Les compositions probables (20 novembre 2026)",
-              "published_at_utc": "2026-11-20"
-            },
-            {
-              "player_name": "Namaso",
-              "team_side": "away",
-              "category": "other",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Listed absent in the matchday preview",
-              "source_url": "https://ligue1.com/en/articles/l1_article_5704-les-compositions-probables-ligue-1-2026-2027",
-              "source_title": "J11 : Les compositions probables (20 novembre 2026)",
-              "published_at_utc": "2026-11-20"
-            },
-            {
-              "player_name": "S. Fofana",
-              "team_side": "away",
-              "category": "other",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Listed absent in the matchday preview",
-              "source_url": "https://ligue1.com/en/articles/l1_article_5704-les-compositions-probables-ligue-1-2026-2027",
-              "source_title": "J11 : Les compositions probables (20 novembre 2026)",
-              "published_at_utc": "2026-11-20"
-            },
-            {
-              "player_name": "Okoh",
-              "team_side": "away",
-              "category": "other",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Listed absent in the matchday preview",
-              "source_url": "https://ligue1.com/en/articles/l1_article_5704-les-compositions-probables-ligue-1-2026-2027",
-              "source_title": "J11 : Les compositions probables (20 novembre 2026)",
-              "published_at_utc": "2026-11-20"
-            },
-            {
-              "player_name": "A. Dioussé",
-              "team_side": "away",
-              "category": "other",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Listed absent in the matchday preview",
-              "source_url": "https://ligue1.com/en/articles/l1_article_5704-les-compositions-probables-ligue-1-2026-2027",
-              "source_title": "J11 : Les compositions probables (20 novembre 2026)",
-              "published_at_utc": "2026-11-20"
-            },
-            {
-              "player_name": "Zaddy",
-              "team_side": "away",
-              "category": "other",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Listed absent in the matchday preview",
-              "source_url": "https://ligue1.com/en/articles/l1_article_5704-les-compositions-probables-ligue-1-2026-2027",
-              "source_title": "J11 : Les compositions probables (20 novembre 2026)",
-              "published_at_utc": "2026-11-20"
-            },
-            {
-              "player_name": "L. Dioubaté",
-              "team_side": "away",
-              "category": "return",
-              "status": "available",
-              "confidence": "confirmed",
-              "details": "Return listed in the matchday preview",
-              "source_url": "https://ligue1.com/en/articles/l1_article_5704-les-compositions-probables-ligue-1-2026-2027",
-              "source_title": "J11 : Les compositions probables (20 novembre 2026)",
-              "published_at_utc": "2026-11-20"
-            }
-          ],
-          "sources": [
-            {
-              "url": "https://ligue1.com/en/articles/l1_article_5704-les-compositions-probables-ligue-1-2026-2027",
-              "title": "J11 : Les compositions probables (20 novembre 2026)"
-            }
-          ],
-          "observation_id": "f6b7b625584113e9a15a297bbe269adeda8bf74c708d70dee3f5a896e5016ec1",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-20T21:27:23.988986+00:00"
-        }
-      ]
-    },
-    {
-      "match_id": "m_39zXtJ",
-      "provider_match_id": "m_39zXtJ",
-      "competition": "Ligue 1",
-      "competition_slug": "fr-ligue-1",
-      "season": "2026/2027",
-      "kickoff_utc": "2026-11-21T19:45:00+00:00",
-      "home_team": {
-        "name": "Lens",
-        "team_id": "t_38NVJO"
-      },
-      "away_team": {
-        "name": "Toulouse",
-        "team_id": "t_3t6spd"
-      },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
-      "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
-      },
-      "facts": [],
-      "sources": [],
-      "previous_observations": [
-        {
-          "match_id": "m_39zXtJ",
-          "provider_match_id": "m_39zXtJ",
-          "competition": "Ligue 1",
-          "competition_slug": "fr-ligue-1",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-21T19:45:00+00:00",
-          "home_team": {
-            "name": "Lens",
-            "team_id": "t_38NVJO"
-          },
-          "away_team": {
-            "name": "Toulouse",
-            "team_id": "t_3t6spd"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-16T21:38:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "4e338e6d5f0a7783fa31cf65378cda08bf23ba56cc7722879d33861bdcc7331d",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-16T22:39:10.313294+00:00"
-        },
-        {
-          "match_id": "m_39zXtJ",
-          "provider_match_id": "m_39zXtJ",
-          "competition": "Ligue 1",
-          "competition_slug": "fr-ligue-1",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-21T19:45:00+00:00",
-          "home_team": {
-            "name": "Lens",
-            "team_id": "t_38NVJO"
-          },
-          "away_team": {
-            "name": "Toulouse",
-            "team_id": "t_3t6spd"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-19T08:32:51+00:00",
-          "coverage": {
-            "home": "partial",
-            "away": "partial"
-          },
-          "facts": [],
-          "sources": [
-            {
-              "url": "https://arenarete.com/fr/blesses/ligue-1",
-              "title": "Blessés et suspendus de Ligue 1 — Arena Rete (consulté le 19 novembre 2026)"
-            }
-          ],
-          "observation_id": "b1c5b76577a4c7931c8080cf0d1196320cd47de5bbfe32285d12dbf5805236b5",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-19T11:47:55.964435+00:00"
-        },
-        {
-          "match_id": "m_39zXtJ",
-          "provider_match_id": "m_39zXtJ",
-          "competition": "Ligue 1",
-          "competition_slug": "fr-ligue-1",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-21T19:45:00+00:00",
-          "home_team": {
-            "name": "Lens",
-            "team_id": "t_38NVJO"
-          },
-          "away_team": {
-            "name": "Toulouse",
-            "team_id": "t_3t6spd"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-20T13:45:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "20af72e90b85c6209a09f38f3c2c0dbb6543e98244957884e1797005fe655466",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-20T14:05:55.499849+00:00"
-        },
-        {
-          "match_id": "m_39zXtJ",
-          "provider_match_id": "m_39zXtJ",
-          "competition": "Ligue 1",
-          "competition_slug": "fr-ligue-1",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-21T19:45:00+00:00",
-          "home_team": {
-            "name": "Lens",
-            "team_id": "t_38NVJO"
-          },
-          "away_team": {
-            "name": "Toulouse",
-            "team_id": "t_3t6spd"
-          },
-          "research_status": "completed",
-          "checked_at_utc": "2026-11-20T21:21:00+00:00",
-          "coverage": {
-            "home": "issues_found",
-            "away": "issues_found"
-          },
-          "facts": [
-            {
-              "player_name": "Bulatovic",
-              "team_side": "home",
-              "category": "other",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Listed absent in the matchday preview",
-              "source_url": "https://ligue1.com/en/articles/l1_article_5704-les-compositions-probables-ligue-1-2026-2027",
-              "source_title": "J11 : Les compositions probables (20 novembre 2026)",
-              "published_at_utc": "2026-11-20"
-            },
-            {
-              "player_name": "Édouard",
-              "team_side": "home",
-              "category": "other",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Listed absent in the matchday preview",
-              "source_url": "https://ligue1.com/en/articles/l1_article_5704-les-compositions-probables-ligue-1-2026-2027",
-              "source_title": "J11 : Les compositions probables (20 novembre 2026)",
-              "published_at_utc": "2026-11-20"
-            },
-            {
-              "player_name": "Nawrocki",
-              "team_side": "home",
-              "category": "other",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Listed absent in the matchday preview",
-              "source_url": "https://ligue1.com/en/articles/l1_article_5704-les-compositions-probables-ligue-1-2026-2027",
-              "source_title": "J11 : Les compositions probables (20 novembre 2026)",
-              "published_at_utc": "2026-11-20"
-            },
-            {
-              "player_name": "Ganiou",
-              "team_side": "home",
-              "category": "doubtful",
-              "status": "doubtful",
-              "confidence": "probable",
-              "details": "Listed uncertain in the matchday preview",
-              "source_url": "https://ligue1.com/en/articles/l1_article_5704-les-compositions-probables-ligue-1-2026-2027",
-              "source_title": "J11 : Les compositions probables (20 novembre 2026)",
-              "published_at_utc": "2026-11-20"
-            },
-            {
-              "player_name": "Sima",
-              "team_side": "home",
-              "category": "doubtful",
-              "status": "doubtful",
-              "confidence": "probable",
-              "details": "Listed uncertain in the matchday preview",
-              "source_url": "https://ligue1.com/en/articles/l1_article_5704-les-compositions-probables-ligue-1-2026-2027",
-              "source_title": "J11 : Les compositions probables (20 novembre 2026)",
-              "published_at_utc": "2026-11-20"
-            },
-            {
-              "player_name": "Ivanovic",
-              "team_side": "home",
-              "category": "return",
-              "status": "available",
-              "confidence": "confirmed",
-              "details": "Return listed in the matchday preview",
-              "source_url": "https://ligue1.com/en/articles/l1_article_5704-les-compositions-probables-ligue-1-2026-2027",
-              "source_title": "J11 : Les compositions probables (20 novembre 2026)",
-              "published_at_utc": "2026-11-20"
-            },
-            {
-              "player_name": "Messali",
-              "team_side": "away",
-              "category": "other",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Listed absent in the matchday preview",
-              "source_url": "https://ligue1.com/en/articles/l1_article_5704-les-compositions-probables-ligue-1-2026-2027",
-              "source_title": "J11 : Les compositions probables (20 novembre 2026)",
-              "published_at_utc": "2026-11-20"
-            },
-            {
-              "player_name": "Schmidt",
-              "team_side": "away",
-              "category": "other",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Listed absent in the matchday preview",
-              "source_url": "https://ligue1.com/en/articles/l1_article_5704-les-compositions-probables-ligue-1-2026-2027",
-              "source_title": "J11 : Les compositions probables (20 novembre 2026)",
-              "published_at_utc": "2026-11-20"
-            },
-            {
-              "player_name": "Odogu",
-              "team_side": "away",
-              "category": "other",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Listed absent in the matchday preview",
-              "source_url": "https://ligue1.com/en/articles/l1_article_5704-les-compositions-probables-ligue-1-2026-2027",
-              "source_title": "J11 : Les compositions probables (20 novembre 2026)",
-              "published_at_utc": "2026-11-20"
-            },
-            {
-              "player_name": "Donnum",
-              "team_side": "away",
-              "category": "return",
-              "status": "available",
-              "confidence": "confirmed",
-              "details": "Return listed in the matchday preview",
-              "source_url": "https://ligue1.com/en/articles/l1_article_5704-les-compositions-probables-ligue-1-2026-2027",
-              "source_title": "J11 : Les compositions probables (20 novembre 2026)",
-              "published_at_utc": "2026-11-20"
-            },
-            {
-              "player_name": "A. Francis",
-              "team_side": "away",
-              "category": "return",
-              "status": "available",
-              "confidence": "confirmed",
-              "details": "Return listed in the matchday preview",
-              "source_url": "https://ligue1.com/en/articles/l1_article_5704-les-compositions-probables-ligue-1-2026-2027",
-              "source_title": "J11 : Les compositions probables (20 novembre 2026)",
-              "published_at_utc": "2026-11-20"
-            },
-            {
-              "player_name": "Amougou",
-              "team_side": "away",
-              "category": "return",
-              "status": "available",
-              "confidence": "confirmed",
-              "details": "Return listed in the matchday preview",
-              "source_url": "https://ligue1.com/en/articles/l1_article_5704-les-compositions-probables-ligue-1-2026-2027",
-              "source_title": "J11 : Les compositions probables (20 novembre 2026)",
-              "published_at_utc": "2026-11-20"
-            }
-          ],
-          "sources": [
-            {
-              "url": "https://ligue1.com/en/articles/l1_article_5704-les-compositions-probables-ligue-1-2026-2027",
-              "title": "J11 : Les compositions probables (20 novembre 2026)"
-            }
-          ],
-          "observation_id": "cb5e2da4916afb35963143d797e08cb48b56954a395181ee98685625434c11b4",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-20T21:27:23.989057+00:00"
-        }
-      ]
-    },
-    {
-      "match_id": "m_1waD57",
-      "provider_match_id": "m_1waD57",
-      "competition": "Ligue 1",
-      "competition_slug": "fr-ligue-1",
-      "season": "2026/2027",
-      "kickoff_utc": "2026-11-21T19:45:00+00:00",
-      "home_team": {
-        "name": "Lille",
-        "team_id": "t_0tnX1I"
-      },
-      "away_team": {
-        "name": "Lyon",
-        "team_id": "t_0xMlRV"
-      },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
-      "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
-      },
-      "facts": [],
-      "sources": [],
-      "previous_observations": [
-        {
-          "match_id": "m_1waD57",
-          "provider_match_id": "m_1waD57",
-          "competition": "Ligue 1",
-          "competition_slug": "fr-ligue-1",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-21T19:45:00+00:00",
-          "home_team": {
-            "name": "Lille",
-            "team_id": "t_0tnX1I"
-          },
-          "away_team": {
-            "name": "Lyon",
-            "team_id": "t_0xMlRV"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-16T21:38:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "2f431f5f48f724621d771c40b6e3181810a70eb8bfd6167f44ba1a380722fcb1",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-16T22:39:10.313306+00:00"
-        },
-        {
-          "match_id": "m_1waD57",
-          "provider_match_id": "m_1waD57",
-          "competition": "Ligue 1",
-          "competition_slug": "fr-ligue-1",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-21T19:45:00+00:00",
-          "home_team": {
-            "name": "Lille",
-            "team_id": "t_0tnX1I"
-          },
-          "away_team": {
-            "name": "Lyon",
-            "team_id": "t_0xMlRV"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-19T08:32:51+00:00",
-          "coverage": {
-            "home": "partial",
-            "away": "partial"
-          },
-          "facts": [],
-          "sources": [
-            {
-              "url": "https://arenarete.com/fr/blesses/ligue-1",
-              "title": "Blessés et suspendus de Ligue 1 — Arena Rete (consulté le 19 novembre 2026)"
-            }
-          ],
-          "observation_id": "91ac05237a9c81e524845037adf1168e65071fe2c3582e4cec3a56e384082135",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-19T11:47:55.964451+00:00"
-        },
-        {
-          "match_id": "m_1waD57",
-          "provider_match_id": "m_1waD57",
-          "competition": "Ligue 1",
-          "competition_slug": "fr-ligue-1",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-21T19:45:00+00:00",
-          "home_team": {
-            "name": "Lille",
-            "team_id": "t_0tnX1I"
-          },
-          "away_team": {
-            "name": "Lyon",
-            "team_id": "t_0xMlRV"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-20T13:45:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "0624e5cca7324022e881ab150cca447d823c8440187a927f0310c38ae1e14d38",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-20T14:05:55.499877+00:00"
-        },
-        {
-          "match_id": "m_1waD57",
-          "provider_match_id": "m_1waD57",
-          "competition": "Ligue 1",
-          "competition_slug": "fr-ligue-1",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-21T19:45:00+00:00",
-          "home_team": {
-            "name": "Lille",
-            "team_id": "t_0tnX1I"
-          },
-          "away_team": {
-            "name": "Lyon",
-            "team_id": "t_0xMlRV"
-          },
-          "research_status": "completed",
-          "checked_at_utc": "2026-11-20T21:21:00+00:00",
-          "coverage": {
-            "home": "issues_found",
-            "away": "issues_found"
-          },
-          "facts": [
-            {
-              "player_name": "Igamane",
-              "team_side": "home",
-              "category": "other",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Listed absent in the matchday preview",
-              "source_url": "https://ligue1.com/en/articles/l1_article_5704-les-compositions-probables-ligue-1-2026-2027",
-              "source_title": "J11 : Les compositions probables (20 novembre 2026)",
-              "published_at_utc": "2026-11-20"
-            },
-            {
-              "player_name": "T. Santos",
-              "team_side": "home",
-              "category": "other",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Listed absent in the matchday preview",
-              "source_url": "https://ligue1.com/en/articles/l1_article_5704-les-compositions-probables-ligue-1-2026-2027",
-              "source_title": "J11 : Les compositions probables (20 novembre 2026)",
-              "published_at_utc": "2026-11-20"
-            },
-            {
-              "player_name": "Ueda",
-              "team_side": "home",
-              "category": "return",
-              "status": "available",
-              "confidence": "confirmed",
-              "details": "Return listed in the matchday preview",
-              "source_url": "https://ligue1.com/en/articles/l1_article_5704-les-compositions-probables-ligue-1-2026-2027",
-              "source_title": "J11 : Les compositions probables (20 novembre 2026)",
-              "published_at_utc": "2026-11-20"
-            },
-            {
-              "player_name": "Mata",
-              "team_side": "away",
-              "category": "other",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Listed absent in the matchday preview",
-              "source_url": "https://ligue1.com/en/articles/l1_article_5704-les-compositions-probables-ligue-1-2026-2027",
-              "source_title": "J11 : Les compositions probables (20 novembre 2026)",
-              "published_at_utc": "2026-11-20"
-            },
-            {
-              "player_name": "Openda",
-              "team_side": "away",
-              "category": "other",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Listed absent in the matchday preview",
-              "source_url": "https://ligue1.com/en/articles/l1_article_5704-les-compositions-probables-ligue-1-2026-2027",
-              "source_title": "J11 : Les compositions probables (20 novembre 2026)",
-              "published_at_utc": "2026-11-20"
-            },
-            {
-              "player_name": "Morton",
-              "team_side": "away",
-              "category": "other",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Listed absent in the matchday preview",
-              "source_url": "https://ligue1.com/en/articles/l1_article_5704-les-compositions-probables-ligue-1-2026-2027",
-              "source_title": "J11 : Les compositions probables (20 novembre 2026)",
-              "published_at_utc": "2026-11-20"
-            },
-            {
-              "player_name": "Sulc",
-              "team_side": "away",
-              "category": "other",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Listed absent in the matchday preview",
-              "source_url": "https://ligue1.com/en/articles/l1_article_5704-les-compositions-probables-ligue-1-2026-2027",
-              "source_title": "J11 : Les compositions probables (20 novembre 2026)",
-              "published_at_utc": "2026-11-20"
-            },
-            {
-              "player_name": "Ouedraogo",
-              "team_side": "away",
-              "category": "other",
-              "status": "unavailable",
-              "confidence": "probable",
-              "details": "Listed absent in the matchday preview",
-              "source_url": "https://ligue1.com/en/articles/l1_article_5704-les-compositions-probables-ligue-1-2026-2027",
-              "source_title": "J11 : Les compositions probables (20 novembre 2026)",
-              "published_at_utc": "2026-11-20"
-            },
-            {
-              "player_name": "Himbert",
-              "team_side": "away",
-              "category": "return",
-              "status": "available",
-              "confidence": "confirmed",
-              "details": "Return listed in the matchday preview",
-              "source_url": "https://ligue1.com/en/articles/l1_article_5704-les-compositions-probables-ligue-1-2026-2027",
-              "source_title": "J11 : Les compositions probables (20 novembre 2026)",
-              "published_at_utc": "2026-11-20"
-            },
-            {
-              "player_name": "Kango",
-              "team_side": "away",
-              "category": "return",
-              "status": "available",
-              "confidence": "confirmed",
-              "details": "Return listed in the matchday preview",
-              "source_url": "https://ligue1.com/en/articles/l1_article_5704-les-compositions-probables-ligue-1-2026-2027",
-              "source_title": "J11 : Les compositions probables (20 novembre 2026)",
-              "published_at_utc": "2026-11-20"
-            }
-          ],
-          "sources": [
-            {
-              "url": "https://ligue1.com/en/articles/l1_article_5704-les-compositions-probables-ligue-1-2026-2027",
-              "title": "J11 : Les compositions probables (20 novembre 2026)"
-            }
-          ],
-          "observation_id": "9c6d56b254231f1f2fc5972b3b2f3f02715cf539dd09560c4d0307cface088b9",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-20T21:27:23.989123+00:00"
-        }
-      ]
-    },
-    {
-      "match_id": "m_1jov2C",
-      "provider_match_id": "m_1jov2C",
-      "competition": "Serie A",
-      "competition_slug": "it-serie-a",
-      "season": "2026/2027",
-      "kickoff_utc": "2026-11-21T19:45:00+00:00",
-      "home_team": {
-        "name": "Napoli",
-        "team_id": "t_2toJRF"
-      },
-      "away_team": {
-        "name": "Torino",
-        "team_id": "t_1fXtzU"
-      },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
-      "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
-      },
-      "facts": [],
-      "sources": [],
-      "previous_observations": [
-        {
-          "match_id": "m_1jov2C",
-          "provider_match_id": "m_1jov2C",
-          "competition": "Serie A",
-          "competition_slug": "it-serie-a",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-21T19:45:00+00:00",
-          "home_team": {
-            "name": "Napoli",
-            "team_id": "t_2toJRF"
-          },
-          "away_team": {
-            "name": "Torino",
-            "team_id": "t_1fXtzU"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-16T21:38:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "30a4fac79c3cef047d51534ac85fee890f91913284f7637bd206afa6099d0caf",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-16T22:39:10.313317+00:00"
-        },
-        {
-          "match_id": "m_1jov2C",
-          "provider_match_id": "m_1jov2C",
-          "competition": "Serie A",
-          "competition_slug": "it-serie-a",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-21T19:45:00+00:00",
-          "home_team": {
-            "name": "Napoli",
-            "team_id": "t_2toJRF"
-          },
-          "away_team": {
-            "name": "Torino",
-            "team_id": "t_1fXtzU"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-19T08:32:51+00:00",
-          "coverage": {
-            "home": "issues_found",
-            "away": "partial"
-          },
-          "facts": [
-            {
-              "player_name": "Di Lorenzo",
-              "team_side": "home",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "confirmed",
-              "details": "Lésion de l'adducteur gauche; indisponible contre Torino.",
-              "source_url": "https://sport.sky.it/calcio/serie-a/2026/11/18/serie-a-indisponibili-infortunati-squalificati-giornata-12",
-              "source_title": "Serie A, indisponibili, infortunati e squalificati per la 12^ giornata — Sky Sport (18 novembre 2026)",
-              "published_at_utc": "2026-11-18"
-            },
-            {
-              "player_name": "Lobotka",
-              "team_side": "home",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "confirmed",
-              "details": "Lésion de la syndesmose tibio-fibulaire et atteinte de la cheville gauche; retour en seconde moitié de décembre.",
-              "source_url": "https://sport.sky.it/calcio/serie-a/2026/11/18/serie-a-indisponibili-infortunati-squalificati-giornata-12",
-              "source_title": "Serie A, indisponibili, infortunati e squalificati per la 12^ giornata — Sky Sport (18 novembre 2026)",
-              "published_at_utc": "2026-11-18"
-            },
-            {
-              "player_name": "Badiashile",
-              "team_side": "home",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "confirmed",
-              "details": "Lésion de grade moyen du droit fémoral droit; retour fin novembre.",
-              "source_url": "https://sport.sky.it/calcio/serie-a/2026/11/18/serie-a-indisponibili-infortunati-squalificati-giornata-12",
-              "source_title": "Serie A, indisponibili, infortunati e squalificati per la 12^ giornata — Sky Sport (18 novembre 2026)",
-              "published_at_utc": "2026-11-18"
-            },
-            {
-              "player_name": "Alisson Santos",
-              "team_side": "home",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "confirmed",
-              "details": "Lésion de grade moyen du biceps fémoral gauche; retour fin décembre.",
-              "source_url": "https://sport.sky.it/calcio/serie-a/2026/11/18/serie-a-indisponibili-infortunati-squalificati-giornata-12",
-              "source_title": "Serie A, indisponibili, infortunati e squalificati per la 12^ giornata — Sky Sport (18 novembre 2026)",
-              "published_at_utc": "2026-11-18"
-            },
-            {
-              "player_name": "Buongiorno",
-              "team_side": "home",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "confirmed",
-              "details": "Opéré du ménisque; retour prévu en janvier 2027.",
-              "source_url": "https://sport.sky.it/calcio/serie-a/2026/11/18/serie-a-indisponibili-infortunati-squalificati-giornata-12",
-              "source_title": "Serie A, indisponibili, infortunati e squalificati per la 12^ giornata — Sky Sport (18 novembre 2026)",
-              "published_at_utc": "2026-11-18"
-            }
-          ],
-          "sources": [
-            {
-              "url": "https://www.injurywire.com/serie-a/",
-              "title": "Serie A injuries and suspensions — Injury Wire (mis à jour le 18 novembre 2026; 17/20 effectifs vérifiés)"
-            },
-            {
-              "url": "https://sport.sky.it/calcio/serie-a/2026/11/18/serie-a-indisponibili-infortunati-squalificati-giornata-12",
-              "title": "Serie A, indisponibili, infortunati e squalificati per la 12^ giornata — Sky Sport (18 novembre 2026)"
-            }
-          ],
-          "observation_id": "9a25961d601b3aeaf92581744b9377b058e98cf7b7f61ce1bfd0e337423e2adb",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-19T11:47:55.964486+00:00"
-        },
-        {
-          "match_id": "m_1jov2C",
-          "provider_match_id": "m_1jov2C",
-          "competition": "Serie A",
-          "competition_slug": "it-serie-a",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-21T19:45:00+00:00",
-          "home_team": {
-            "name": "Napoli",
-            "team_id": "t_2toJRF"
-          },
-          "away_team": {
-            "name": "Torino",
-            "team_id": "t_1fXtzU"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-20T13:45:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "3f670a458cb3e5a26661bf70f0d910601b6f37061bad5d50c4d53b3f64c00cfd",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-20T14:05:55.499931+00:00"
-        },
-        {
-          "match_id": "m_1jov2C",
-          "provider_match_id": "m_1jov2C",
-          "competition": "Serie A",
-          "competition_slug": "it-serie-a",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-21T19:45:00+00:00",
-          "home_team": {
-            "name": "Napoli",
-            "team_id": "t_2toJRF"
-          },
-          "away_team": {
-            "name": "Torino",
-            "team_id": "t_1fXtzU"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-20T21:21:00+00:00",
-          "coverage": {
-            "home": "partial",
-            "away": "partial"
-          },
-          "facts": [
-            {
-              "player_name": "Di Lorenzo",
-              "team_side": "home",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "confirmed",
-              "details": "Lésion de l'adducteur gauche; indisponible contre Torino.",
-              "source_url": "https://sport.sky.it/calcio/serie-a/2026/11/18/serie-a-indisponibili-infortunati-squalificati-giornata-12",
-              "source_title": "Serie A, indisponibili, infortunati e squalificati per la 12^ giornata — Sky Sport (18 novembre 2026)",
-              "published_at_utc": "2026-11-18"
-            },
-            {
-              "player_name": "Lobotka",
-              "team_side": "home",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "confirmed",
-              "details": "Lésion de la syndesmose tibio-fibulaire et atteinte de la cheville gauche; retour en seconde moitié de décembre.",
-              "source_url": "https://sport.sky.it/calcio/serie-a/2026/11/18/serie-a-indisponibili-infortunati-squalificati-giornata-12",
-              "source_title": "Serie A, indisponibili, infortunati e squalificati per la 12^ giornata — Sky Sport (18 novembre 2026)",
-              "published_at_utc": "2026-11-18"
-            },
-            {
-              "player_name": "Badiashile",
-              "team_side": "home",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "confirmed",
-              "details": "Lésion de grade moyen du droit fémoral droit; retour fin novembre.",
-              "source_url": "https://sport.sky.it/calcio/serie-a/2026/11/18/serie-a-indisponibili-infortunati-squalificati-giornata-12",
-              "source_title": "Serie A, indisponibili, infortunati e squalificati per la 12^ giornata — Sky Sport (18 novembre 2026)",
-              "published_at_utc": "2026-11-18"
-            },
-            {
-              "player_name": "Alisson Santos",
-              "team_side": "home",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "confirmed",
-              "details": "Lésion de grade moyen du biceps fémoral gauche; retour fin décembre.",
-              "source_url": "https://sport.sky.it/calcio/serie-a/2026/11/18/serie-a-indisponibili-infortunati-squalificati-giornata-12",
-              "source_title": "Serie A, indisponibili, infortunati e squalificati per la 12^ giornata — Sky Sport (18 novembre 2026)",
-              "published_at_utc": "2026-11-18"
-            },
-            {
-              "player_name": "Buongiorno",
-              "team_side": "home",
-              "category": "injury",
-              "status": "unavailable",
-              "confidence": "confirmed",
-              "details": "Opéré du ménisque; retour prévu en janvier 2027.",
-              "source_url": "https://sport.sky.it/calcio/serie-a/2026/11/18/serie-a-indisponibili-infortunati-squalificati-giornata-12",
-              "source_title": "Serie A, indisponibili, infortunati e squalificati per la 12^ giornata — Sky Sport (18 novembre 2026)",
-              "published_at_utc": "2026-11-18"
-            }
-          ],
-          "sources": [
-            {
-              "url": "https://sport.sky.it/calcio/serie-a/2026/11/18/serie-a-indisponibili-infortunati-squalificati-giornata-12",
-              "title": "Serie A, indisponibili, infortunati e squalificati per la 12^ giornata — Sky Sport (18 novembre 2026)"
-            },
-            {
-              "url": "https://www.tuttomercatoweb.com/serie-a/indisponibili-squalificati-serie-a-salta-dodicesima-giornata-campionato-2295351",
-              "title": "Indisponibili e squalificati della Serie A (20 novembre 2026)"
-            }
-          ],
-          "observation_id": "3b3d63707327d12f43df2804ad722c2ffe67e49a97c4acb241a43596ca2e3a89",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-20T21:27:23.989202+00:00"
-        }
-      ]
-    },
-    {
-      "match_id": "m_101pSt",
-      "provider_match_id": "m_101pSt",
-      "competition": "La Liga",
-      "competition_slug": "es-la-liga",
-      "season": "2026/2027",
-      "kickoff_utc": "2026-11-21T20:00:00+00:00",
-      "home_team": {
-        "name": "Real Madrid",
-        "team_id": "t_4NZcri"
-      },
-      "away_team": {
-        "name": "Celta Vigo",
-        "team_id": "t_4aQcO7"
-      },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
-      "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
-      },
-      "facts": [],
-      "sources": [],
-      "previous_observations": [
-        {
-          "match_id": "m_101pSt",
-          "provider_match_id": "m_101pSt",
-          "competition": "La Liga",
-          "competition_slug": "es-la-liga",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-21T20:00:00+00:00",
-          "home_team": {
-            "name": "Real Madrid",
-            "team_id": "t_4NZcri"
-          },
-          "away_team": {
-            "name": "Celta Vigo",
-            "team_id": "t_4aQcO7"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-16T21:38:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "08df0118492b1e02363413fe28c88bc1b0884708fccc597ea77559016dc67cb1",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-16T22:39:10.313327+00:00"
-        },
-        {
-          "match_id": "m_101pSt",
-          "provider_match_id": "m_101pSt",
-          "competition": "La Liga",
-          "competition_slug": "es-la-liga",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-21T20:00:00+00:00",
-          "home_team": {
-            "name": "Real Madrid",
-            "team_id": "t_4NZcri"
-          },
-          "away_team": {
-            "name": "Celta Vigo",
-            "team_id": "t_4aQcO7"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-19T08:32:51+00:00",
-          "coverage": {
-            "home": "partial",
-            "away": "partial"
-          },
-          "facts": [],
-          "sources": [
-            {
-              "url": "https://www.soccernews.com/soccer-stats/la-liga/injuries-suspensions/",
-              "title": "Spanish La Liga Injuries & Suspensions — SoccerNews (mis à jour le 18 novembre 2026)"
-            }
-          ],
-          "observation_id": "43a83556f234c5686ca0015d6857e7972c04c648c7169d54e60203b03928ecc5",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-19T11:47:55.964502+00:00"
-        },
-        {
-          "match_id": "m_101pSt",
-          "provider_match_id": "m_101pSt",
-          "competition": "La Liga",
-          "competition_slug": "es-la-liga",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-21T20:00:00+00:00",
-          "home_team": {
-            "name": "Real Madrid",
-            "team_id": "t_4NZcri"
-          },
-          "away_team": {
-            "name": "Celta Vigo",
-            "team_id": "t_4aQcO7"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-20T13:45:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "f78cc5655f20a1ff9eac38d7d1c76cc0762ac4681b0e1f3e4e74a11d58e249c7",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-20T14:05:55.499960+00:00"
-        },
-        {
-          "match_id": "m_101pSt",
-          "provider_match_id": "m_101pSt",
-          "competition": "La Liga",
-          "competition_slug": "es-la-liga",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-21T20:00:00+00:00",
-          "home_team": {
-            "name": "Real Madrid",
-            "team_id": "t_4NZcri"
-          },
-          "away_team": {
-            "name": "Celta Vigo",
-            "team_id": "t_4aQcO7"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-20T21:21:00+00:00",
-          "coverage": {
-            "home": "partial",
-            "away": "partial"
-          },
-          "facts": [],
-          "sources": [
-            {
-              "url": "https://www.injurywire.com/la-liga/",
-              "title": "La Liga injuries and suspensions, Matchday 13 (20 novembre 2026)"
-            }
-          ],
-          "observation_id": "9db667a8bb2c16e5e10802b9b35bb22d74bd97aa1ebb88f476cc998ce9d9fd2b",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-20T21:27:23.989238+00:00"
-        }
-      ]
-    },
-    {
-      "match_id": "m_4CzZeC",
-      "provider_match_id": "m_4CzZeC",
-      "competition": "MLS",
-      "competition_slug": "us-mls",
-      "season": "2026",
-      "kickoff_utc": "2026-11-21T21:00:00+00:00",
-      "home_team": {
-        "name": "FC Dallas",
-        "team_id": "t_1Rkw2U"
-      },
-      "away_team": {
-        "name": "Portland Timbers",
-        "team_id": "t_0ptYTE"
-      },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
-      "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
-      },
-      "facts": [],
-      "sources": [],
-      "previous_observations": [
-        {
-          "match_id": "m_4CzZeC",
-          "provider_match_id": "m_4CzZeC",
-          "competition": "MLS",
-          "competition_slug": "us-mls",
-          "season": "2026",
-          "kickoff_utc": "2026-11-21T21:00:00+00:00",
-          "home_team": {
-            "name": "FC Dallas",
-            "team_id": "t_1Rkw2U"
-          },
-          "away_team": {
-            "name": "Portland Timbers",
-            "team_id": "t_0ptYTE"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-16T21:38:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "bbd260a7027de184179de4fbb222320d49afe074922d98b3c511cefa8d5464d7",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-16T22:39:10.313337+00:00"
-        },
-        {
-          "match_id": "m_4CzZeC",
-          "provider_match_id": "m_4CzZeC",
-          "competition": "MLS",
-          "competition_slug": "us-mls",
-          "season": "2026",
-          "kickoff_utc": "2026-11-21T21:00:00+00:00",
-          "home_team": {
-            "name": "FC Dallas",
-            "team_id": "t_1Rkw2U"
-          },
-          "away_team": {
-            "name": "Portland Timbers",
-            "team_id": "t_0ptYTE"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-19T08:32:51+00:00",
-          "coverage": {
-            "home": "partial",
-            "away": "partial"
-          },
-          "facts": [],
-          "sources": [
-            {
-              "url": "https://www.mlssoccer.com/playoffs/2026/news/wild-card-format-key-info-audi-2026-mls-cup-playoffs",
-              "title": "Wild Card format & key info: Audi 2026 MLS Cup Playoffs — MLSsoccer.com"
-            }
-          ],
-          "observation_id": "e2dae74d46d187cd014d670f6e8545e9c2f66cc6d9960a485afe5a53ca4b8bcd",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-19T11:47:55.964518+00:00"
-        },
-        {
-          "match_id": "m_4CzZeC",
-          "provider_match_id": "m_4CzZeC",
-          "competition": "MLS",
-          "competition_slug": "us-mls",
-          "season": "2026",
-          "kickoff_utc": "2026-11-21T21:00:00+00:00",
-          "home_team": {
-            "name": "FC Dallas",
-            "team_id": "t_1Rkw2U"
-          },
-          "away_team": {
-            "name": "Portland Timbers",
-            "team_id": "t_0ptYTE"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-20T13:45:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "bbea814e74ba8c18bf197a01065e5c92ae551c9f9191104e7bd72e318d434c93",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-20T14:05:55.499991+00:00"
-        },
-        {
-          "match_id": "m_4CzZeC",
-          "provider_match_id": "m_4CzZeC",
-          "competition": "MLS",
-          "competition_slug": "us-mls",
-          "season": "2026",
-          "kickoff_utc": "2026-11-21T21:00:00+00:00",
-          "home_team": {
-            "name": "FC Dallas",
-            "team_id": "t_1Rkw2U"
-          },
-          "away_team": {
-            "name": "Portland Timbers",
-            "team_id": "t_0ptYTE"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-20T21:21:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "41beab4c7c11808a90d908066bf0f09edbce7b127f123942c7f51694a67bad3e",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-20T21:27:23.989271+00:00"
-        }
-      ]
-    },
-    {
-      "match_id": "m_1jjxcN",
-      "provider_match_id": "m_1jjxcN",
-      "competition": "MLS",
-      "competition_slug": "us-mls",
-      "season": "2026",
-      "kickoff_utc": "2026-11-21T23:00:00+00:00",
-      "home_team": {
-        "name": "Inter Miami CF",
-        "team_id": "t_1rgPN4"
-      },
-      "away_team": {
-        "name": "Columbus Crew",
-        "team_id": "t_1avIKi"
-      },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
-      "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
-      },
-      "facts": [],
-      "sources": [],
-      "previous_observations": [
-        {
-          "match_id": "m_1jjxcN",
-          "provider_match_id": "m_1jjxcN",
-          "competition": "MLS",
-          "competition_slug": "us-mls",
-          "season": "2026",
-          "kickoff_utc": "2026-11-21T23:00:00+00:00",
-          "home_team": {
-            "name": "Inter Miami CF",
-            "team_id": "t_1rgPN4"
-          },
-          "away_team": {
-            "name": "Columbus Crew",
-            "team_id": "t_1avIKi"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-16T21:38:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "ef054ddbd7c7a00dfe474fd331d7dd9f81b17856d6d298a14e75cbf5d7726eb5",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-16T22:39:10.313348+00:00"
-        },
-        {
-          "match_id": "m_1jjxcN",
-          "provider_match_id": "m_1jjxcN",
-          "competition": "MLS",
-          "competition_slug": "us-mls",
-          "season": "2026",
-          "kickoff_utc": "2026-11-21T23:00:00+00:00",
-          "home_team": {
-            "name": "Inter Miami CF",
-            "team_id": "t_1rgPN4"
-          },
-          "away_team": {
-            "name": "Columbus Crew",
-            "team_id": "t_1avIKi"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-19T08:32:51+00:00",
-          "coverage": {
-            "home": "partial",
-            "away": "partial"
-          },
-          "facts": [],
-          "sources": [
-            {
-              "url": "https://www.mlssoccer.com/playoffs/2026/news/wild-card-format-key-info-audi-2026-mls-cup-playoffs",
-              "title": "Wild Card format & key info: Audi 2026 MLS Cup Playoffs — MLSsoccer.com"
-            }
-          ],
-          "observation_id": "5d25a1c39f9f410b31cb87afb3f924682c0995627d66cfe8a6d2732c4fbde597",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-19T11:47:55.964534+00:00"
-        },
-        {
-          "match_id": "m_1jjxcN",
-          "provider_match_id": "m_1jjxcN",
-          "competition": "MLS",
-          "competition_slug": "us-mls",
-          "season": "2026",
-          "kickoff_utc": "2026-11-21T23:00:00+00:00",
-          "home_team": {
-            "name": "Inter Miami CF",
-            "team_id": "t_1rgPN4"
-          },
-          "away_team": {
-            "name": "Columbus Crew",
-            "team_id": "t_1avIKi"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-20T13:45:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "8f884b2eec12da87b7710b1d2d04243abc58f3eafaf8cab73025517e7e5cc267",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-20T14:05:55.500020+00:00"
-        },
-        {
-          "match_id": "m_1jjxcN",
-          "provider_match_id": "m_1jjxcN",
-          "competition": "MLS",
-          "competition_slug": "us-mls",
-          "season": "2026",
-          "kickoff_utc": "2026-11-21T23:00:00+00:00",
-          "home_team": {
-            "name": "Inter Miami CF",
-            "team_id": "t_1rgPN4"
-          },
-          "away_team": {
-            "name": "Columbus Crew",
-            "team_id": "t_1avIKi"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-20T21:21:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "97d7c94bb2337ce74c7f73531ade1e420d6742765b42023138482bf90989b65b",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-20T21:27:23.989303+00:00"
-        }
-      ]
-    },
     {
       "match_id": "m_0M5Pz1",
       "provider_match_id": "m_0M5Pz1",
@@ -14629,6 +11941,306 @@
       "away_team": {
         "name": "Chicago Fire FC",
         "team_id": "t_09gmAn"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_1TuCqj",
+      "provider_match_id": "m_1TuCqj",
+      "competition": "Primeira Liga",
+      "competition_slug": "pt-primeira-liga",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-28T18:00:00+00:00",
+      "home_team": {
+        "name": "Académico Viseu",
+        "team_id": "t_4gF23N"
+      },
+      "away_team": {
+        "name": "Alverca",
+        "team_id": "t_30Ofp1"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_0Kpxdv",
+      "provider_match_id": "m_0Kpxdv",
+      "competition": "MLS",
+      "competition_slug": "us-mls",
+      "season": "2026",
+      "kickoff_utc": "2026-11-28T19:30:00+00:00",
+      "home_team": {
+        "name": "Houston Dynamo FC",
+        "team_id": "t_2L8yh8"
+      },
+      "away_team": {
+        "name": "San Jose Earthquakes",
+        "team_id": "t_1ngZfb"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_0lEnns",
+      "provider_match_id": "m_0lEnns",
+      "competition": "Belgian Pro League",
+      "competition_slug": "be-first-division-a",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-28T19:45:00+00:00",
+      "home_team": {
+        "name": "Lommel",
+        "team_id": "t_2Ylrj9"
+      },
+      "away_team": {
+        "name": "Zulte Waregem",
+        "team_id": "t_0n3xxl"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_3yaq0f",
+      "provider_match_id": "m_3yaq0f",
+      "competition": "Belgian Pro League",
+      "competition_slug": "be-first-division-a",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-28T19:45:00+00:00",
+      "home_team": {
+        "name": "Sporting Charleroi",
+        "team_id": "t_3UiOcj"
+      },
+      "away_team": {
+        "name": "SK Beveren",
+        "team_id": "t_0BmLrB"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_4f73g7",
+      "provider_match_id": "m_4f73g7",
+      "competition": "Ligue 1",
+      "competition_slug": "fr-ligue-1",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-28T19:45:00+00:00",
+      "home_team": {
+        "name": "Le Havre",
+        "team_id": "t_4BCeSu"
+      },
+      "away_team": {
+        "name": "Strasbourg",
+        "team_id": "t_1p1AQf"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_1LWSAq",
+      "provider_match_id": "m_1LWSAq",
+      "competition": "Ligue 1",
+      "competition_slug": "fr-ligue-1",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-28T19:45:00+00:00",
+      "home_team": {
+        "name": "Paris Saint-Germain",
+        "team_id": "t_41iFW3"
+      },
+      "away_team": {
+        "name": "Lorient",
+        "team_id": "t_2lHmy6"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_1m7rKw",
+      "provider_match_id": "m_1m7rKw",
+      "competition": "Ligue 1",
+      "competition_slug": "fr-ligue-1",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-28T19:45:00+00:00",
+      "home_team": {
+        "name": "Nice",
+        "team_id": "t_0QUJ2Y"
+      },
+      "away_team": {
+        "name": "Troyes",
+        "team_id": "t_0zVhE4"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_2UeyHL",
+      "provider_match_id": "m_2UeyHL",
+      "competition": "Ligue 1",
+      "competition_slug": "fr-ligue-1",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-28T19:45:00+00:00",
+      "home_team": {
+        "name": "Le Mans",
+        "team_id": "t_0GDAiO"
+      },
+      "away_team": {
+        "name": "Lille",
+        "team_id": "t_0tnX1I"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_1wivS8",
+      "provider_match_id": "m_1wivS8",
+      "competition": "Serie A",
+      "competition_slug": "it-serie-a",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-28T19:45:00+00:00",
+      "home_team": {
+        "name": "Inter",
+        "team_id": "t_3CPHHF"
+      },
+      "away_team": {
+        "name": "Genoa",
+        "team_id": "t_24sV8w"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_3rnAZg",
+      "provider_match_id": "m_3rnAZg",
+      "competition": "La Liga",
+      "competition_slug": "es-la-liga",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-28T20:00:00+00:00",
+      "home_team": {
+        "name": "Real Madrid",
+        "team_id": "t_4NZcri"
+      },
+      "away_team": {
+        "name": "Deportivo Alavés",
+        "team_id": "t_1cpTpB"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_18cs8d",
+      "provider_match_id": "m_18cs8d",
+      "competition": "Primeira Liga",
+      "competition_slug": "pt-primeira-liga",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-28T20:30:00+00:00",
+      "home_team": {
+        "name": "Vitória de Guimarães",
+        "team_id": "t_2S7UQI"
+      },
+      "away_team": {
+        "name": "Estrela da Amadora",
+        "team_id": "t_4JHbKY"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_2fJgQV",
+      "provider_match_id": "m_2fJgQV",
+      "competition": "MLS",
+      "competition_slug": "us-mls",
+      "season": "2026",
+      "kickoff_utc": "2026-11-28T21:30:00+00:00",
+      "home_team": {
+        "name": "Philadelphia Union",
+        "team_id": "t_0uw6NW"
+      },
+      "away_team": {
+        "name": "New England Revolution",
+        "team_id": "t_0G2JlW"
       },
       "research_status": "not_researched",
       "checked_at_utc": null,
