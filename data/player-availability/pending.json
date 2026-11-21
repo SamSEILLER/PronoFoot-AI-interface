@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "document_type": "pronofoot_chatgpt_player_availability",
-  "generated_at_utc": "2026-11-20T21:46:45.074723+00:00",
+  "generated_at_utc": "2026-11-21T03:08:44.999798+00:00",
   "window": {
-    "start_utc": "2026-11-20T21:46:45.074723+00:00",
-    "end_utc": "2026-11-27T21:46:45.074723+00:00",
+    "start_utc": "2026-11-21T03:08:44.999798+00:00",
+    "end_utc": "2026-11-28T03:08:44.999798+00:00",
     "days": 7
   },
   "instructions": {
@@ -22516,6 +22516,56 @@
       "away_team": {
         "name": "Nacional",
         "team_id": "t_2JgxI7"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_0ygK7R",
+      "provider_match_id": "m_0ygK7R",
+      "competition": "MLS",
+      "competition_slug": "us-mls",
+      "season": "2026",
+      "kickoff_utc": "2026-11-28T01:00:00+00:00",
+      "home_team": {
+        "name": "Columbus Crew",
+        "team_id": "t_1avIKi"
+      },
+      "away_team": {
+        "name": "Inter Miami CF",
+        "team_id": "t_1rgPN4"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_36k6uj",
+      "provider_match_id": "m_36k6uj",
+      "competition": "MLS",
+      "competition_slug": "us-mls",
+      "season": "2026",
+      "kickoff_utc": "2026-11-28T03:00:00+00:00",
+      "home_team": {
+        "name": "Seattle Sounders FC/Real Salt Lake",
+        "team_id": "t_2MTtP7"
+      },
+      "away_team": {
+        "name": "Vancouver Whitecaps",
+        "team_id": "t_2CuHdk"
       },
       "research_status": "not_researched",
       "checked_at_utc": null,
