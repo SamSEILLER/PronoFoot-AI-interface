@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-11-21T03:12:42.799847Z",
+  "generated_at_utc": "2026-11-21T07:54:21.345461Z",
   "status": "ok",
   "label": "Opérationnel",
   "threshold_hours": 24,
   "history": {
     "status": "ok",
-    "last_success_at_utc": "2026-11-20T14:27:51.173925Z",
-    "age_hours": 12.75,
+    "last_success_at_utc": "2026-11-21T07:53:42.901501Z",
+    "age_hours": 0.01,
     "fresh_within_24h": true,
     "threshold_hours": 24,
     "provider": "PitchAPI",
@@ -15,15 +15,15 @@
     "competitions_total": 12,
     "competitions_collected": 12,
     "competitions_failed": 0,
-    "records": 9631,
+    "records": 9642,
     "failed_seasons": 0,
     "errors": 0,
-    "last_attempt_at_utc": "2026-11-20T14:27:51.173925+00:00"
+    "last_attempt_at_utc": "2026-11-21T07:53:42.901501+00:00"
   },
   "odds": {
     "status": "ok",
     "last_success_at_utc": "2026-11-20T14:28:30.183648Z",
-    "age_hours": 12.74,
+    "age_hours": 17.43,
     "fresh_within_24h": true,
     "threshold_hours": 24,
     "provider": "Odds-API.io / Unibet",
@@ -90,7 +90,7 @@
   "weather": {
     "status": "ok",
     "last_success_at_utc": "2026-11-20T20:57:00.985520Z",
-    "age_hours": 6.26,
+    "age_hours": 10.96,
     "fresh_within_24h": true,
     "threshold_hours": 24,
     "provider": "Open-Meteo",

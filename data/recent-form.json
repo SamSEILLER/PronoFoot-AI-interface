@@ -1,8 +1,8 @@
 {
   "provider": "pitchapi_processed_history",
-  "generated_at_utc": "2026-11-21T03:12:43.058504+00:00",
+  "generated_at_utc": "2026-11-21T07:54:21.720804+00:00",
   "recent_limit_per_competition": 5,
-  "matches_considered": 9407,
+  "matches_considered": 9420,
   "teams": {
     "inter miami cf": {
       "name": "Inter Miami CF",
@@ -44,16 +44,49 @@
         }
       ]
     },
+    "real salt lake": {
+      "name": "Real Salt Lake",
+      "matches": [
+        {
+          "date": "2026-10-25T01:30:00Z",
+          "result": "V",
+          "score": "3-0",
+          "opponent": "St. Louis City",
+          "competition_id": "us-mls"
+        },
+        {
+          "date": "2026-10-29T00:30:00Z",
+          "result": "V",
+          "score": "2-1",
+          "opponent": "Austin FC",
+          "competition_id": "us-mls"
+        },
+        {
+          "date": "2026-10-31T21:00:00Z",
+          "result": "D",
+          "score": "1-2",
+          "opponent": "San Jose Earthquakes",
+          "competition_id": "us-mls"
+        },
+        {
+          "date": "2026-11-08T00:10:00Z",
+          "result": "V",
+          "score": "2-1",
+          "opponent": "LA Galaxy",
+          "competition_id": "us-mls"
+        },
+        {
+          "date": "2026-11-20T03:00:00Z",
+          "result": "N",
+          "score": "1-1",
+          "opponent": "Seattle Sounders FC",
+          "competition_id": "us-mls"
+        }
+      ]
+    },
     "sanfrecce hiroshima": {
       "name": "Sanfrecce Hiroshima",
       "matches": [
-        {
-          "date": "2026-10-17T05:00:00Z",
-          "result": "V",
-          "score": "3-0",
-          "opponent": "Kyoto Sanga FC",
-          "competition_id": "jp-j1-league"
-        },
         {
           "date": "2026-10-21T10:00:00Z",
           "result": "D",
@@ -81,19 +114,19 @@
           "score": "0-0",
           "opponent": "Machida Zelvia",
           "competition_id": "jp-j1-league"
+        },
+        {
+          "date": "2026-11-21T05:00:00Z",
+          "result": "N",
+          "score": "2-2",
+          "opponent": "Yokohama F.Marinos",
+          "competition_id": "jp-j1-league"
         }
       ]
     },
     "urawa red diamonds": {
       "name": "Urawa Red Diamonds",
       "matches": [
-        {
-          "date": "2026-10-17T07:00:00Z",
-          "result": "V",
-          "score": "1-0",
-          "opponent": "Mito Hollyhock",
-          "competition_id": "jp-j1-league"
-        },
         {
           "date": "2026-10-21T10:30:00Z",
           "result": "V",
@@ -121,19 +154,19 @@
           "score": "2-2",
           "opponent": "Vissel Kobe",
           "competition_id": "jp-j1-league"
+        },
+        {
+          "date": "2026-11-21T05:00:00Z",
+          "result": "D",
+          "score": "1-2",
+          "opponent": "Kyoto Sanga FC",
+          "competition_id": "jp-j1-league"
         }
       ]
     },
     "nagoya grampus": {
       "name": "Nagoya Grampus",
       "matches": [
-        {
-          "date": "2026-10-17T10:00:00Z",
-          "result": "V",
-          "score": "3-1",
-          "opponent": "Kashiwa Reysol",
-          "competition_id": "jp-j1-league"
-        },
         {
           "date": "2026-10-21T10:00:00Z",
           "result": "N",
@@ -160,6 +193,13 @@
           "result": "D",
           "score": "0-2",
           "opponent": "Kyoto Sanga FC",
+          "competition_id": "jp-j1-league"
+        },
+        {
+          "date": "2026-11-21T05:00:00Z",
+          "result": "N",
+          "score": "0-0",
+          "opponent": "Tokyo Verdy",
           "competition_id": "jp-j1-league"
         }
       ]
@@ -328,13 +368,6 @@
       "name": "Machida Zelvia",
       "matches": [
         {
-          "date": "2026-10-18T07:00:00Z",
-          "result": "V",
-          "score": "3-0",
-          "opponent": "Avispa Fukuoka",
-          "competition_id": "jp-j1-league"
-        },
-        {
           "date": "2026-10-21T10:00:00Z",
           "result": "V",
           "score": "5-0",
@@ -360,6 +393,13 @@
           "result": "N",
           "score": "0-0",
           "opponent": "Sanfrecce Hiroshima",
+          "competition_id": "jp-j1-league"
+        },
+        {
+          "date": "2026-11-21T05:00:00Z",
+          "result": "N",
+          "score": "0-0",
+          "opponent": "V-Varen Nagasaki",
           "competition_id": "jp-j1-league"
         }
       ]
@@ -968,13 +1008,6 @@
       "name": "Kyoto Sanga FC",
       "matches": [
         {
-          "date": "2026-10-17T05:00:00Z",
-          "result": "D",
-          "score": "0-3",
-          "opponent": "Sanfrecce Hiroshima",
-          "competition_id": "jp-j1-league"
-        },
-        {
           "date": "2026-10-21T10:00:00Z",
           "result": "N",
           "score": "2-2",
@@ -1001,19 +1034,19 @@
           "score": "2-0",
           "opponent": "Nagoya Grampus",
           "competition_id": "jp-j1-league"
+        },
+        {
+          "date": "2026-11-21T05:00:00Z",
+          "result": "V",
+          "score": "2-1",
+          "opponent": "Urawa Red Diamonds",
+          "competition_id": "jp-j1-league"
         }
       ]
     },
     "tokyo verdy": {
       "name": "Tokyo Verdy",
       "matches": [
-        {
-          "date": "2026-10-17T05:00:00Z",
-          "result": "D",
-          "score": "0-4",
-          "opponent": "FC Tokyo",
-          "competition_id": "jp-j1-league"
-        },
         {
           "date": "2026-10-21T10:00:00Z",
           "result": "N",
@@ -1041,19 +1074,19 @@
           "score": "1-0",
           "opponent": "Shimizu S-Pulse",
           "competition_id": "jp-j1-league"
+        },
+        {
+          "date": "2026-11-21T05:00:00Z",
+          "result": "N",
+          "score": "0-0",
+          "opponent": "Nagoya Grampus",
+          "competition_id": "jp-j1-league"
         }
       ]
     },
     "yokohama f marinos": {
       "name": "Yokohama F.Marinos",
       "matches": [
-        {
-          "date": "2026-10-17T05:00:00Z",
-          "result": "N",
-          "score": "0-0",
-          "opponent": "JEF United Chiba",
-          "competition_id": "jp-j1-league"
-        },
         {
           "date": "2026-10-21T10:00:00Z",
           "result": "N",
@@ -1081,6 +1114,53 @@
           "score": "1-1",
           "opponent": "Fagiano Okayama FC",
           "competition_id": "jp-j1-league"
+        },
+        {
+          "date": "2026-11-21T05:00:00Z",
+          "result": "N",
+          "score": "2-2",
+          "opponent": "Sanfrecce Hiroshima",
+          "competition_id": "jp-j1-league"
+        }
+      ]
+    },
+    "fc cincinnati": {
+      "name": "FC Cincinnati",
+      "matches": [
+        {
+          "date": "2026-10-24T23:30:00Z",
+          "result": "V",
+          "score": "2-0",
+          "opponent": "DC United",
+          "competition_id": "us-mls"
+        },
+        {
+          "date": "2026-10-28T23:30:00Z",
+          "result": "N",
+          "score": "2-2",
+          "opponent": "Inter Miami CF",
+          "competition_id": "us-mls"
+        },
+        {
+          "date": "2026-10-31T18:00:00Z",
+          "result": "V",
+          "score": "1-0",
+          "opponent": "Philadelphia Union",
+          "competition_id": "us-mls"
+        },
+        {
+          "date": "2026-11-07T21:00:00Z",
+          "result": "D",
+          "score": "0-2",
+          "opponent": "Nashville SC",
+          "competition_id": "us-mls"
+        },
+        {
+          "date": "2026-11-20T00:30:00Z",
+          "result": "V",
+          "score": "3-1",
+          "opponent": "Orlando City",
+          "competition_id": "us-mls"
         }
       ]
     },
@@ -1823,13 +1903,6 @@
       "name": "Westerlo",
       "matches": [
         {
-          "date": "2026-09-20T14:00:00Z",
-          "result": "V",
-          "score": "2-0",
-          "opponent": "St.Truiden",
-          "competition_id": "be-first-division-a"
-        },
-        {
           "date": "2026-10-11T16:30:00Z",
           "result": "V",
           "score": "5-1",
@@ -1856,19 +1929,19 @@
           "score": "1-5",
           "opponent": "Sporting Charleroi",
           "competition_id": "be-first-division-a"
+        },
+        {
+          "date": "2026-11-20T19:45:00Z",
+          "result": "D",
+          "score": "0-1",
+          "opponent": "Cercle Brugge",
+          "competition_id": "be-first-division-a"
         }
       ]
     },
     "cercle brugge": {
       "name": "Cercle Brugge",
       "matches": [
-        {
-          "date": "2026-09-19T16:15:00Z",
-          "result": "D",
-          "score": "2-3",
-          "opponent": "Sporting Charleroi",
-          "competition_id": "be-first-division-a"
-        },
         {
           "date": "2026-10-10T14:00:00Z",
           "result": "D",
@@ -1895,6 +1968,13 @@
           "result": "V",
           "score": "1-0",
           "opponent": "RAAL La Louvière",
+          "competition_id": "be-first-division-a"
+        },
+        {
+          "date": "2026-11-20T19:45:00Z",
+          "result": "V",
+          "score": "1-0",
+          "opponent": "Westerlo",
           "competition_id": "be-first-division-a"
         }
       ]
@@ -2769,13 +2849,6 @@
           "competition_id": "uefa-champions-league"
         },
         {
-          "date": "2026-10-17T19:00:00Z",
-          "result": "N",
-          "score": "0-0",
-          "opponent": "Valencia",
-          "competition_id": "es-la-liga"
-        },
-        {
           "date": "2026-10-21T18:00:00Z",
           "result": "D",
           "score": "1-3",
@@ -2801,6 +2874,13 @@
           "result": "N",
           "score": "1-1",
           "opponent": "Osasuna",
+          "competition_id": "es-la-liga"
+        },
+        {
+          "date": "2026-11-20T20:00:00Z",
+          "result": "D",
+          "score": "0-1",
+          "opponent": "Espanyol",
           "competition_id": "es-la-liga"
         }
       ]
@@ -3067,13 +3147,6 @@
       "name": "Le Havre",
       "matches": [
         {
-          "date": "2026-10-10T15:15:00Z",
-          "result": "D",
-          "score": "0-1",
-          "opponent": "Lille",
-          "competition_id": "fr-ligue-1"
-        },
-        {
           "date": "2026-10-18T15:15:00Z",
           "result": "D",
           "score": "1-3",
@@ -3099,6 +3172,13 @@
           "result": "D",
           "score": "0-2",
           "opponent": "Lorient",
+          "competition_id": "fr-ligue-1"
+        },
+        {
+          "date": "2026-11-20T19:45:00Z",
+          "result": "D",
+          "score": "1-3",
+          "opponent": "Troyes",
           "competition_id": "fr-ligue-1"
         }
       ]
@@ -6651,13 +6731,6 @@
       "name": "Espanyol",
       "matches": [
         {
-          "date": "2026-10-09T19:00:00Z",
-          "result": "N",
-          "score": "1-1",
-          "opponent": "Málaga",
-          "competition_id": "es-la-liga"
-        },
-        {
           "date": "2026-10-17T12:00:00Z",
           "result": "D",
           "score": "0-1",
@@ -6683,6 +6756,13 @@
           "result": "N",
           "score": "0-0",
           "opponent": "Deportivo A Coruña",
+          "competition_id": "es-la-liga"
+        },
+        {
+          "date": "2026-11-20T20:00:00Z",
+          "result": "V",
+          "score": "1-0",
+          "opponent": "Athletic Club",
           "competition_id": "es-la-liga"
         }
       ]
@@ -7959,13 +8039,6 @@
           "competition_id": "uefa-champions-league"
         },
         {
-          "date": "2026-10-10T13:30:00Z",
-          "result": "N",
-          "score": "2-2",
-          "opponent": "Augsburg",
-          "competition_id": "de-bundesliga"
-        },
-        {
           "date": "2026-10-13T19:00:00Z",
           "result": "N",
           "score": "3-3",
@@ -8012,6 +8085,13 @@
           "result": "V",
           "score": "2-1",
           "opponent": "Mainz 05",
+          "competition_id": "de-bundesliga"
+        },
+        {
+          "date": "2026-11-20T19:30:00Z",
+          "result": "N",
+          "score": "1-1",
+          "opponent": "1. FC Köln",
           "competition_id": "de-bundesliga"
         }
       ]
@@ -9271,13 +9351,6 @@
       "name": "Guingamp",
       "matches": [
         {
-          "date": "2026-10-09T18:00:00Z",
-          "result": "D",
-          "score": "0-1",
-          "opponent": "Nancy",
-          "competition_id": "fr-ligue-2"
-        },
-        {
           "date": "2026-10-16T18:00:00Z",
           "result": "D",
           "score": "1-2",
@@ -9303,6 +9376,13 @@
           "result": "D",
           "score": "0-3",
           "opponent": "Dunkerque",
+          "competition_id": "fr-ligue-2"
+        },
+        {
+          "date": "2026-11-20T19:00:00Z",
+          "result": "D",
+          "score": "1-3",
+          "opponent": "Rodez",
           "competition_id": "fr-ligue-2"
         }
       ]
@@ -9382,56 +9462,9 @@
         }
       ]
     },
-    "red star": {
-      "name": "Red Star",
-      "matches": [
-        {
-          "date": "2026-10-10T12:00:00Z",
-          "result": "V",
-          "score": "3-2",
-          "opponent": "Clermont Foot",
-          "competition_id": "fr-ligue-2"
-        },
-        {
-          "date": "2026-10-17T18:00:00Z",
-          "result": "D",
-          "score": "0-1",
-          "opponent": "Saint-Étienne",
-          "competition_id": "fr-ligue-2"
-        },
-        {
-          "date": "2026-10-26T19:45:00Z",
-          "result": "D",
-          "score": "1-2",
-          "opponent": "Montpellier",
-          "competition_id": "fr-ligue-2"
-        },
-        {
-          "date": "2026-11-02T19:45:00Z",
-          "result": "D",
-          "score": "1-4",
-          "opponent": "Nancy",
-          "competition_id": "fr-ligue-2"
-        },
-        {
-          "date": "2026-11-06T19:00:00Z",
-          "result": "D",
-          "score": "0-1",
-          "opponent": "Dijon",
-          "competition_id": "fr-ligue-2"
-        }
-      ]
-    },
     "pau": {
       "name": "Pau",
       "matches": [
-        {
-          "date": "2026-09-18T18:00:00Z",
-          "result": "V",
-          "score": "2-0",
-          "opponent": "Dunkerque",
-          "competition_id": "fr-ligue-2"
-        },
         {
           "date": "2026-10-16T18:00:00Z",
           "result": "V",
@@ -9459,19 +9492,19 @@
           "score": "0-2",
           "opponent": "Nantes",
           "competition_id": "fr-ligue-2"
+        },
+        {
+          "date": "2026-11-20T19:00:00Z",
+          "result": "D",
+          "score": "1-2",
+          "opponent": "Red Star",
+          "competition_id": "fr-ligue-2"
         }
       ]
     },
     "annecy fc": {
       "name": "Annecy FC",
       "matches": [
-        {
-          "date": "2026-10-09T18:00:00Z",
-          "result": "V",
-          "score": "1-0",
-          "opponent": "Dunkerque",
-          "competition_id": "fr-ligue-2"
-        },
         {
           "date": "2026-10-16T18:00:00Z",
           "result": "D",
@@ -9499,85 +9532,12 @@
           "score": "0-3",
           "opponent": "Boulogne",
           "competition_id": "fr-ligue-2"
-        }
-      ]
-    },
-    "rodez": {
-      "name": "Rodez",
-      "matches": [
-        {
-          "date": "2026-10-10T18:00:00Z",
-          "result": "D",
-          "score": "0-2",
-          "opponent": "Saint-Étienne",
-          "competition_id": "fr-ligue-2"
         },
         {
-          "date": "2026-10-19T18:45:00Z",
-          "result": "D",
-          "score": "0-3",
-          "opponent": "Montpellier",
-          "competition_id": "fr-ligue-2"
-        },
-        {
-          "date": "2026-10-24T12:00:00Z",
+          "date": "2026-11-20T19:00:00Z",
           "result": "V",
-          "score": "2-1",
-          "opponent": "Dijon",
-          "competition_id": "fr-ligue-2"
-        },
-        {
-          "date": "2026-10-30T19:00:00Z",
-          "result": "V",
-          "score": "1-0",
-          "opponent": "Dunkerque",
-          "competition_id": "fr-ligue-2"
-        },
-        {
-          "date": "2026-11-07T13:00:00Z",
-          "result": "D",
-          "score": "0-1",
+          "score": "4-2",
           "opponent": "Clermont Foot",
-          "competition_id": "fr-ligue-2"
-        }
-      ]
-    },
-    "nancy": {
-      "name": "Nancy",
-      "matches": [
-        {
-          "date": "2026-10-09T18:00:00Z",
-          "result": "V",
-          "score": "1-0",
-          "opponent": "Guingamp",
-          "competition_id": "fr-ligue-2"
-        },
-        {
-          "date": "2026-10-16T18:00:00Z",
-          "result": "V",
-          "score": "2-1",
-          "opponent": "Annecy FC",
-          "competition_id": "fr-ligue-2"
-        },
-        {
-          "date": "2026-10-23T18:00:00Z",
-          "result": "V",
-          "score": "1-0",
-          "opponent": "Laval",
-          "competition_id": "fr-ligue-2"
-        },
-        {
-          "date": "2026-11-02T19:45:00Z",
-          "result": "V",
-          "score": "4-1",
-          "opponent": "Red Star",
-          "competition_id": "fr-ligue-2"
-        },
-        {
-          "date": "2026-11-06T19:00:00Z",
-          "result": "V",
-          "score": "1-0",
-          "opponent": "Sochaux",
           "competition_id": "fr-ligue-2"
         }
       ]
@@ -9661,13 +9621,6 @@
           "competition_id": "fr-ligue-2"
         },
         {
-          "date": "2026-10-11T18:45:00Z",
-          "result": "D",
-          "score": "0-2",
-          "opponent": "Marseille",
-          "competition_id": "fr-ligue-1"
-        },
-        {
           "date": "2026-10-17T18:45:00Z",
           "result": "D",
           "score": "1-3",
@@ -9693,6 +9646,13 @@
           "result": "D",
           "score": "0-1",
           "opponent": "Paris Saint-Germain",
+          "competition_id": "fr-ligue-1"
+        },
+        {
+          "date": "2026-11-20T19:45:00Z",
+          "result": "V",
+          "score": "3-1",
+          "opponent": "Le Havre",
           "competition_id": "fr-ligue-1"
         }
       ]
@@ -9781,13 +9741,6 @@
       "name": "Clermont Foot",
       "matches": [
         {
-          "date": "2026-10-10T12:00:00Z",
-          "result": "D",
-          "score": "2-3",
-          "opponent": "Red Star",
-          "competition_id": "fr-ligue-2"
-        },
-        {
           "date": "2026-10-16T18:00:00Z",
           "result": "N",
           "score": "3-3",
@@ -9813,6 +9766,13 @@
           "result": "V",
           "score": "1-0",
           "opponent": "Rodez",
+          "competition_id": "fr-ligue-2"
+        },
+        {
+          "date": "2026-11-20T19:00:00Z",
+          "result": "D",
+          "score": "2-4",
+          "opponent": "Annecy FC",
           "competition_id": "fr-ligue-2"
         }
       ]
@@ -9861,13 +9821,6 @@
       "name": "Boulogne",
       "matches": [
         {
-          "date": "2026-10-09T18:00:00Z",
-          "result": "N",
-          "score": "1-1",
-          "opponent": "Sochaux",
-          "competition_id": "fr-ligue-2"
-        },
-        {
           "date": "2026-10-16T18:00:00Z",
           "result": "V",
           "score": "2-0",
@@ -9893,6 +9846,13 @@
           "result": "V",
           "score": "3-0",
           "opponent": "Annecy FC",
+          "competition_id": "fr-ligue-2"
+        },
+        {
+          "date": "2026-11-20T19:00:00Z",
+          "result": "D",
+          "score": "1-2",
+          "opponent": "Metz",
           "competition_id": "fr-ligue-2"
         }
       ]
@@ -10084,13 +10044,6 @@
           "competition_id": "fr-ligue-1"
         },
         {
-          "date": "2026-10-12T18:45:00Z",
-          "result": "D",
-          "score": "2-4",
-          "opponent": "Dijon",
-          "competition_id": "fr-ligue-2"
-        },
-        {
           "date": "2026-10-17T12:00:00Z",
           "result": "V",
           "score": "3-2",
@@ -10116,6 +10069,13 @@
           "result": "V",
           "score": "3-2",
           "opponent": "Montpellier",
+          "competition_id": "fr-ligue-2"
+        },
+        {
+          "date": "2026-11-20T19:00:00Z",
+          "result": "V",
+          "score": "2-1",
+          "opponent": "Boulogne",
           "competition_id": "fr-ligue-2"
         }
       ]
@@ -10284,13 +10244,6 @@
       "name": "1. FC Köln",
       "matches": [
         {
-          "date": "2026-10-11T13:30:00Z",
-          "result": "V",
-          "score": "2-1",
-          "opponent": "Borussia Mönchengladbach",
-          "competition_id": "de-bundesliga"
-        },
-        {
           "date": "2026-10-16T18:30:00Z",
           "result": "D",
           "score": "0-1",
@@ -10316,6 +10269,13 @@
           "result": "D",
           "score": "1-2",
           "opponent": "Bayer Leverkusen",
+          "competition_id": "de-bundesliga"
+        },
+        {
+          "date": "2026-11-20T19:30:00Z",
+          "result": "N",
+          "score": "1-1",
+          "opponent": "Bayern München",
           "competition_id": "de-bundesliga"
         }
       ]
@@ -10444,13 +10404,6 @@
       "name": "V-Varen Nagasaki",
       "matches": [
         {
-          "date": "2026-10-17T06:00:00Z",
-          "result": "D",
-          "score": "0-2",
-          "opponent": "Kashima Antlers",
-          "competition_id": "jp-j1-league"
-        },
-        {
           "date": "2026-10-21T10:00:00Z",
           "result": "V",
           "score": "4-0",
@@ -10476,6 +10429,13 @@
           "result": "N",
           "score": "1-1",
           "opponent": "Avispa Fukuoka",
+          "competition_id": "jp-j1-league"
+        },
+        {
+          "date": "2026-11-21T05:00:00Z",
+          "result": "N",
+          "score": "0-0",
+          "opponent": "Machida Zelvia",
           "competition_id": "jp-j1-league"
         }
       ]
@@ -10604,13 +10564,6 @@
       "name": "Dijon",
       "matches": [
         {
-          "date": "2026-10-12T18:45:00Z",
-          "result": "V",
-          "score": "4-2",
-          "opponent": "Metz",
-          "competition_id": "fr-ligue-2"
-        },
-        {
           "date": "2026-10-16T18:00:00Z",
           "result": "D",
           "score": "2-4",
@@ -10636,6 +10589,13 @@
           "result": "V",
           "score": "1-0",
           "opponent": "Red Star",
+          "competition_id": "fr-ligue-2"
+        },
+        {
+          "date": "2026-11-20T19:00:00Z",
+          "result": "D",
+          "score": "0-1",
+          "opponent": "Nancy",
           "competition_id": "fr-ligue-2"
         }
       ]
