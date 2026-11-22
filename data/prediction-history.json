@@ -1,8 +1,386 @@
 {
   "schema_version": 2,
-  "generated_at_utc": "2026-11-21T23:13:44.747583Z",
+  "generated_at_utc": "2026-11-22T02:21:12.101811Z",
   "description": "Snapshots immuables créés à J-1 (la veille du coup d'envoi) pour les expérimentations +1,5, +2,5 et BTTS. Les matchs terminés sont évalués puis archivés.",
   "records": [
+    {
+      "match_id": "m_2FVfvL",
+      "competition": "gb-premier-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-23T20:00:00Z",
+      "home_team": "Brentford",
+      "away_team": "Everton",
+      "snapshot_at_utc": "2026-11-22T02:21:12.101811Z",
+      "snapshot_stage": "J-1",
+      "prediction": {
+        "over_1_5": {
+          "tier": 2,
+          "tier_label": "Favorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 10,
+            "percentage": 100.0
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70.0
+          },
+          "pick": false,
+          "probability": 0.647691
+        },
+        "over_2_5": {
+          "tier": 4,
+          "tier_label": "Défavorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50.0
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 3,
+            "percentage": 30.0
+          }
+        },
+        "btts": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60.0
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 4,
+            "percentage": 40.0
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending"
+    },
+    {
+      "match_id": "m_3jVoFq",
+      "competition": "es-la-liga",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-23T20:00:00Z",
+      "home_team": "Levante",
+      "away_team": "Elche",
+      "snapshot_at_utc": "2026-11-22T02:21:12.101811Z",
+      "snapshot_stage": "J-1",
+      "prediction": {
+        "over_1_5": {
+          "tier": 2,
+          "tier_label": "Favorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80.0
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70.0
+          },
+          "pick": true,
+          "probability": 0.893964
+        },
+        "over_2_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60.0
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50.0
+          }
+        },
+        "btts": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70.0
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50.0
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending"
+    },
+    {
+      "match_id": "m_08lkfg",
+      "competition": "it-serie-a",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-23T19:45:00Z",
+      "home_team": "Monza",
+      "away_team": "Fiorentina",
+      "snapshot_at_utc": "2026-11-22T02:21:12.101811Z",
+      "snapshot_stage": "J-1",
+      "prediction": {
+        "over_1_5": {
+          "tier": 1,
+          "tier_label": "Très favorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 9,
+            "percentage": 90.0
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 10,
+            "percentage": 100.0
+          },
+          "pick": true,
+          "probability": 0.911925
+        },
+        "over_2_5": {
+          "tier": 1,
+          "tier_label": "Très favorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80.0
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 9,
+            "percentage": 90.0
+          }
+        },
+        "btts": {
+          "tier": 1,
+          "tier_label": "Très favorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80.0
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 9,
+            "percentage": 90.0
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending"
+    },
+    {
+      "match_id": "m_1WA9Tt",
+      "competition": "fr-ligue-2",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-23T19:45:00Z",
+      "home_team": "Nantes",
+      "away_team": "Grenoble",
+      "snapshot_at_utc": "2026-11-22T02:21:12.101811Z",
+      "snapshot_stage": "J-1",
+      "prediction": {
+        "over_1_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60.0
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 9,
+            "percentage": 90.0
+          },
+          "pick": true,
+          "probability": 0.762756
+        },
+        "over_2_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 4,
+            "percentage": 40.0
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60.0
+          }
+        },
+        "btts": {
+          "tier": 4,
+          "tier_label": "Défavorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50.0
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50.0
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending"
+    },
+    {
+      "match_id": "m_2DFzlK",
+      "competition": "fr-ligue-2",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-23T19:45:00Z",
+      "home_team": "Sochaux",
+      "away_team": "Dunkerque",
+      "snapshot_at_utc": "2026-11-22T02:21:12.101811Z",
+      "snapshot_stage": "J-1",
+      "prediction": {
+        "over_1_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60.0
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70.0
+          },
+          "pick": true,
+          "probability": 0.73406
+        },
+        "over_2_5": {
+          "tier": 4,
+          "tier_label": "Défavorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 2,
+            "percentage": 20.0
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 3,
+            "percentage": 30.0
+          }
+        },
+        "btts": {
+          "tier": 4,
+          "tier_label": "Défavorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50.0
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 4,
+            "percentage": 40.0
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending"
+    },
+    {
+      "match_id": "m_18axex",
+      "competition": "us-mls",
+      "season": "2026",
+      "kickoff_utc": "2026-11-23T01:30:00Z",
+      "home_team": "Vancouver Whitecaps",
+      "away_team": "Real Salt Lake",
+      "snapshot_at_utc": "2026-11-22T02:21:12.101811Z",
+      "snapshot_stage": "J-1",
+      "prediction": {
+        "over_1_5": {
+          "tier": 1,
+          "tier_label": "Très favorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80.0
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 10,
+            "percentage": 100.0
+          },
+          "pick": true,
+          "probability": 0.829307
+        },
+        "over_2_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60.0
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70.0
+          }
+        },
+        "btts": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60.0
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70.0
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending"
+    },
     {
       "match_id": "m_3uRPBe",
       "competition": "us-mls",
@@ -4042,5 +4420,5 @@
       "evaluated_at_utc": "2026-11-21T08:17:36Z"
     }
   ],
-  "created_this_run": 0
+  "created_this_run": 6
 }
