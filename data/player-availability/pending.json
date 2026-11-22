@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "document_type": "pronofoot_chatgpt_player_availability",
-  "generated_at_utc": "2026-11-21T23:06:36.876136+00:00",
+  "generated_at_utc": "2026-11-22T03:02:52.813793+00:00",
   "window": {
-    "start_utc": "2026-11-21T23:06:36.876136+00:00",
-    "end_utc": "2026-11-28T23:06:36.876136+00:00",
+    "start_utc": "2026-11-22T03:02:52.813793+00:00",
+    "end_utc": "2026-11-29T03:02:52.813793+00:00",
     "days": 7
   },
   "instructions": {
@@ -12241,6 +12241,56 @@
       "away_team": {
         "name": "New England Revolution",
         "team_id": "t_0G2JlW"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_3oXBmV",
+      "provider_match_id": "m_3oXBmV",
+      "competition": "MLS",
+      "competition_slug": "us-mls",
+      "season": "2026",
+      "kickoff_utc": "2026-11-28T23:30:00+00:00",
+      "home_team": {
+        "name": "FC Cincinnati",
+        "team_id": "t_0T0wL5"
+      },
+      "away_team": {
+        "name": "Nashville SC",
+        "team_id": "t_0DpITA"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_0t4u2h",
+      "provider_match_id": "m_0t4u2h",
+      "competition": "MLS",
+      "competition_slug": "us-mls",
+      "season": "2026",
+      "kickoff_utc": "2026-11-29T01:30:00+00:00",
+      "home_team": {
+        "name": "Los Angeles FC",
+        "team_id": "t_4ac71F"
+      },
+      "away_team": {
+        "name": "St. Louis City",
+        "team_id": "t_3B5RBi"
       },
       "research_status": "not_researched",
       "checked_at_utc": null,
