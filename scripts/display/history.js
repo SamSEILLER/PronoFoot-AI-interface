@@ -27,5 +27,7 @@ async function init(){try{const response=await fetch(DATA_URL,{cache:"no-store"}
 ["competitionFilter","resultFilter","periodFilter","tierFilter"].forEach(id=>$(id).addEventListener("change",()=>{state.archivePage=1;state.upcomingPage=1;render()}));
 $("archivePrev").addEventListener("click",()=>{if(state.archivePage>1){state.archivePage--;render()}});
 $("archiveNext").addEventListener("click",()=>{state.archivePage++;render()});
-$("upcomingPrev").addEventListener("click",()=>{if(state.upcomingPage>1){state.upcomingPage--;render()}});\n$("upcomingNext").addEventListener("click",()=>{state.upcomingPage++;render()});\ninit();
+$("upcomingPrev").addEventListener("click",()=>{if(state.upcomingPage>1){state.upcomingPage--;render()}});
+$("upcomingNext").addEventListener("click",()=>{state.upcomingPage++;render()});
+init();
 })();
