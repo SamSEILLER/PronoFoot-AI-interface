@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "document_type": "pronofoot_chatgpt_player_availability",
-  "generated_at_utc": "2026-11-22T03:02:52.813793+00:00",
+  "generated_at_utc": "2026-11-22T11:09:08.040487+00:00",
   "window": {
-    "start_utc": "2026-11-22T03:02:52.813793+00:00",
-    "end_utc": "2026-11-29T03:02:52.813793+00:00",
+    "start_utc": "2026-11-22T11:09:08.040487+00:00",
+    "end_utc": "2026-11-29T11:09:08.040487+00:00",
     "days": 7
   },
   "instructions": {
@@ -12291,6 +12291,156 @@
       "away_team": {
         "name": "St. Louis City",
         "team_id": "t_3B5RBi"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_1UlTIh",
+      "provider_match_id": "m_1UlTIh",
+      "competition": "MLS",
+      "competition_slug": "us-mls",
+      "season": "2026",
+      "kickoff_utc": "2026-11-29T03:30:00+00:00",
+      "home_team": {
+        "name": "Portland Timbers",
+        "team_id": "t_0ptYTE"
+      },
+      "away_team": {
+        "name": "FC Dallas",
+        "team_id": "t_1Rkw2U"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_3jNltC",
+      "provider_match_id": "m_3jNltC",
+      "competition": "J1 League",
+      "competition_slug": "jp-j1-league",
+      "season": "2026",
+      "kickoff_utc": "2026-11-29T05:00:00+00:00",
+      "home_team": {
+        "name": "Yokohama F.Marinos",
+        "team_id": "t_1mTqNS"
+      },
+      "away_team": {
+        "name": "FC Tokyo",
+        "team_id": "t_17gQhK"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_1HxufU",
+      "provider_match_id": "m_1HxufU",
+      "competition": "J1 League",
+      "competition_slug": "jp-j1-league",
+      "season": "2026",
+      "kickoff_utc": "2026-11-29T05:00:00+00:00",
+      "home_team": {
+        "name": "Mito Hollyhock",
+        "team_id": "t_01uUy2"
+      },
+      "away_team": {
+        "name": "V-Varen Nagasaki",
+        "team_id": "t_1W837G"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_2LCXhb",
+      "provider_match_id": "m_2LCXhb",
+      "competition": "J1 League",
+      "competition_slug": "jp-j1-league",
+      "season": "2026",
+      "kickoff_utc": "2026-11-29T06:00:00+00:00",
+      "home_team": {
+        "name": "Kawasaki Frontale",
+        "team_id": "t_37dBko"
+      },
+      "away_team": {
+        "name": "Gamba Osaka",
+        "team_id": "t_1pt1Bj"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_2hlk40",
+      "provider_match_id": "m_2hlk40",
+      "competition": "J1 League",
+      "competition_slug": "jp-j1-league",
+      "season": "2026",
+      "kickoff_utc": "2026-11-29T06:00:00+00:00",
+      "home_team": {
+        "name": "Nagoya Grampus",
+        "team_id": "t_1mrdfo"
+      },
+      "away_team": {
+        "name": "Avispa Fukuoka",
+        "team_id": "t_2u1BXQ"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_31mPhe",
+      "provider_match_id": "m_31mPhe",
+      "competition": "J1 League",
+      "competition_slug": "jp-j1-league",
+      "season": "2026",
+      "kickoff_utc": "2026-11-29T07:00:00+00:00",
+      "home_team": {
+        "name": "Machida Zelvia",
+        "team_id": "t_2731yf"
+      },
+      "away_team": {
+        "name": "Tokyo Verdy",
+        "team_id": "t_2HK8gL"
       },
       "research_status": "not_researched",
       "checked_at_utc": null,
