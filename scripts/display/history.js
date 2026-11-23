@@ -17,12 +17,14 @@ function engineRecords(){return state.records}
 function renderEngine(){const version=state.versions[0];$("engineDescription").textContent=version?.description||"Classification V1 fondée sur les fréquences historiques des équipes."; $("engineTags").innerHTML='<span class="tag active">V1 · moteur unique</span>';$("engineVersion").value="v1"}
 function renderStats(){
  const rows=engineRecords();
+ const withTier=rows.filter(r=>MARKETS.some(m=>tierFor(r,m.id)!==null)).length;
+ const favorable=rows.filter(r=>MARKETS.some(m=>[1,2].includes(tierFor(r,m.id)))).length;
  $("overallRate").textContent=rows.length;
- $("overallBar").style.width="100%";
- $("overallDetail").textContent="Snapshots V1 conservés · aucune sélection OUI/NON";
- $("totalEvaluated").textContent=rows.filter(r=>MARKETS.some(m=>tierFor(r,m.id)!==null)).length;
- $("totalHits").textContent=rows.filter(r=>MARKETS.some(m=>tierFor(r,m.id)!==null)).length;
- $("totalFailed").textContent=rows.filter(r=>MARKETS.every(m=>tierFor(r,m.id)===null)).length;
+ $("overallBar").style.width=(rows.length?withTier/rows.length*100:0)+"%";
+ $("overallDetail").textContent=withTier+" rencontre(s) avec au moins un niveau attribué · couverture "+(rows.length?Math.round(withTier/rows.length*100):0)+" %";
+ $("totalEvaluated").textContent=withTier;
+ $("totalHits").textContent=favorable;
+ $("totalFailed").textContent=rows.length-withTier;
  $("totalPending").textContent=rows.filter(hasScore).length;
  $("marketGrid").innerHTML=MARKETS.map(m=>{
   const counts=[1,2,3,4].map(t=>rows.filter(r=>tierFor(r,m.id)===t).length);
