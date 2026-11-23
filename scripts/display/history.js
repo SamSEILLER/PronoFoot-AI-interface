@@ -1,154 +1,43 @@
 (() => {
 "use strict";
-const $ = id => document.getElementById(id);
-const state = { records: [], versions: [], page: 1, pageSize: 10 };
-const esc = value => String(value ?? "—").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const dateValue = value => {
-  const d = new Date(value);
-  return Number.isNaN(d.getTime()) ? "—" : new Intl.DateTimeFormat("fr-FR",{day:"2-digit",month:"short",year:"numeric",hour:"2-digit",minute:"2-digit"}).format(d);
-};
-const hasScore = r => Number.isInteger(r.actual?.home_score) && r.actual.home_score >= 0 && Number.isInteger(r.actual?.away_score) && r.actual.away_score >= 0;
-const hasStarted = r => { const d = new Date(r.kickoff_utc); return !Number.isNaN(d.getTime()) && d.getTime() <= Date.now(); };
-const totalGoals = r => r.actual.home_score + r.actual.away_score;
-function resultFor(r, key) {
-  if (!hasScore(r)) return "pending";
-  const h = r.actual.home_score, a = r.actual.away_score, g = h + a;
-  return key === "over_1_5" ? (g >= 2 ? "correct" : "incorrect") :
-    key === "over_2_5" ? (g >= 3 ? "correct" : "incorrect") :
-    (h >= 1 && a >= 1 ? "correct" : "incorrect");
+const $=id=>document.getElementById(id);
+const state={versions:[],records:[],page:1,pageSize:10,market:"over_1_5"};
+const MARKETS=[
+ {id:"over_1_5",label:"+1,5 buts",short:"+1,5"},
+ {id:"over_2_5",label:"+2,5 buts",short:"+2,5"},
+ {id:"btts",label:"Les deux équipes marquent",short:"BTTS"}
+];
+const esc=v=>String(v??"—").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const dateValue=v=>{const d=new Date(v);return Number.isNaN(d.getTime())?"—":new Intl.DateTimeFormat("fr-FR",{day:"2-digit",month:"short",year:"numeric",hour:"2-digit",minute:"2-digit"}).format(d)};
+const hasScore=r=>Number.isInteger(r.actual?.home_score)&&r.actual.home_score>=0&&Number.isInteger(r.actual?.away_score)&&r.actual.away_score>=0;
+const goals=r=>r.actual.home_score+r.actual.away_score;
+function actualFor(r,key){const h=r.actual.home_score,a=r.actual.away_score;return key==="over_1_5"?h+a>=2:key==="over_2_5"?h+a>=3:h>=1&&a>=1}
+function pickFor(r,key){const p=r.prediction?.[key]?.pick;return typeof p==="boolean"?p:null}
+function rate(rows,key){const eligible=rows.filter(r=>hasScore(r)&&pickFor(r,key)!==null);const hits=eligible.filter(r=>pickFor(r,key)===actualFor(r,key)).length;return{hits,total:eligible.length,pct:eligible.length?100*hits/eligible.length:null}}
+function allPicks(rows){return rows.flatMap(r=>MARKETS.filter(m=>pickFor(r,m.id)!==null).map(m=>({record:r,market:m.id})))}
+function engineRecords(){return state.records}
+function renderEngine(){const sel=$("engineVersion").value;const version=state.versions.find(v=>v.id===sel);$("engineDescription").textContent=sel==="all"?"Vue consolidée de toutes les versions publiées. Les statistiques restent calculées à partir des sélections réellement enregistrées.":(version?.description||version?.label||"Version sélectionnée");$("engineTags").innerHTML=state.versions.map(v=>'<span class="tag '+(sel===v.id?"active":"")+'">'+esc(v.label.replace(/^Moteur /,""))+'</span>').join("")}
+function renderStats(){
+ const rows=engineRecords(), picks=allPicks(rows), evaluated=picks.filter(x=>hasScore(x.record)),pending=picks.filter(x=>!hasScore(x.record));
+ const hits=evaluated.filter(x=>pickFor(x.record,x.market)===actualFor(x.record,x.market)).length;
+ const pct=evaluated.length?100*hits/evaluated.length:null;
+ $("overallRate").textContent=pct===null?"N/D":pct.toFixed(1).replace(".",",")+" %";
+ $("overallBar").style.width=(pct||0)+"%";
+ $("overallDetail").textContent=evaluated.length?hits+" réussis / "+evaluated.length+" sélections évaluées":"Aucune sélection explicite évaluée à ce jour";
+ $("totalEvaluated").textContent=evaluated.length;$("totalHits").textContent=hits;$("totalPending").textContent=pending.length;
+ $("marketGrid").innerHTML=MARKETS.map(m=>{const r=rate(rows,m.id),n=rows.filter(x=>pickFor(x,m.id)!==null).length;const pctText=r.pct===null?"N/D":r.pct.toFixed(1).replace(".",",")+" %";return '<button type="button" class="market-tile '+(state.market===m.id?"selected":"")+'" data-market="'+m.id+'" aria-pressed="'+(state.market===m.id)+'"><div class="market-top"><span class="market-name">'+m.label+'</span><span class="market-pct">'+pctText+'</span></div><div class="market-detail">'+(r.total?r.hits+" réussis / "+r.total+" évalués":n?"Aucune sélection terminée":"Aucune sélection binaire archivée")+'</div><div class="progress"><span style="width:'+(r.pct||0)+'%"></span></div></button>'}).join("");
+ $("marketGrid").querySelectorAll("[data-market]").forEach(b=>b.addEventListener("click",()=>{state.market=b.dataset.market;state.page=1;renderStats();renderMatches()}));
 }
-function filtered() {
-  const competition = $("competitionFilter").value;
-  const tier = $("marketFilter").value;
-  const status = $("statusFilter").value;
-  const period = $("periodFilter").value;
-  const cutoff = period === "all" ? 0 : Date.now() - Number(period) * 86400000;
-  return state.records.filter(r => {
-    if (!hasStarted(r)) return false;
-    if (competition && r.competition !== competition) return false;
-    const t = r.prediction?.over_1_5?.tier;
-    if (tier === "none" && t != null) return false;
-    if (tier && tier !== "none" && String(t ?? "") !== tier) return false;
-    if (status === "pending" && hasScore(r)) return false;
-    if (status === "evaluated" && !hasScore(r)) return false;
-    const time = new Date(r.kickoff_utc).getTime();
-    if (cutoff && (!Number.isFinite(time) || time < cutoff)) return false;
-    return true;
-  }).sort((a,b) => new Date(b.kickoff_utc) - new Date(a.kickoff_utc));
-}
-function tierMarkup(p) {
-  if (!p) return '<span class="pill">Non renseigné</span>';
-  const n = p.tier;
-  const cls = n === 1 ? "green" : n === 4 ? "red" : n === 2 ? "amber" : "";
-  const label = n ? "Niveau " + n + " · " + (p.tier_label || "") : "Données insuffisantes";
-  const h = p.home_frequency || {}, a = p.away_frequency || {};
-  const detail = "Domicile " + (h.count ?? "—") + "/" + (h.matches ?? 0) + " · Extérieur " + (a.count ?? "—") + "/" + (a.matches ?? 0);
-  return '<span class="pill '+cls+'">'+esc(label)+'</span><small>'+esc(detail)+'</small>';
-}
-function over15Status(r) {
-  const p = r.prediction?.over_1_5;
-  if (typeof p?.pick !== "boolean") return '<span class="pill">Sélection absente</span>';
-  if (!hasScore(r)) return '<span class="pill amber">En attente</span>';
-  const hit = (p.pick && totalGoals(r) >= 2) || (!p.pick && totalGoals(r) < 2);
-  return '<span class="pill '+(hit ? "green" : "red")+'">'+(hit ? "Sélection juste" : "Sélection fausse")+'</span>';
-}
-function row(r) {
-  const score = hasScore(r) ? '<span class="score">'+esc(r.actual.home_score+' – '+r.actual.away_score)+'</span>' : '<span class="pill amber">Score en attente</span>';
-  const competition = (r.competition || "Compétition inconnue").replaceAll("-", " ");
-  return '<tr><td>'+esc(dateValue(r.kickoff_utc))+'<small class="sub">'+esc(competition)+'</small></td>'+
-    '<td><span class="match">'+esc(r.home_team)+' – '+esc(r.away_team)+'</span><small class="sub">ID '+esc(r.match_id)+'</small></td>'+
-    '<td class="market">'+tierMarkup(r.prediction?.over_1_5)+'<small>Pick : '+(r.prediction?.over_1_5?.pick === true ? "OUI" : r.prediction?.over_1_5?.pick === false ? "NON" : "—")+'</small></td>'+
-    '<td class="market">'+tierMarkup(r.prediction?.over_2_5)+'</td>'+
-    '<td class="market">'+tierMarkup(r.prediction?.btts)+'</td>'+
-    '<td>'+esc(dateValue(r.snapshot_at_utc))+'<small class="sub">'+esc(r.snapshot_stage || "Snapshot")+'</small></td>'+
-    '<td>'+score+(hasScore(r) ? '<small class="sub">'+over15Status(r)+'</small>' : '')+'</td></tr>';
-}
-function rateOver15(rows) {
-  const evaluated = rows.filter(r => hasScore(r) && typeof r.prediction?.over_1_5?.pick === "boolean");
-  const hits = evaluated.filter(r => {
-    const actual = totalGoals(r) >= 2;
-    return actual === r.prediction.over_1_5.pick;
-  }).length;
-  return {hits,total:evaluated.length,pct:evaluated.length ? 100*hits/evaluated.length : null};
-}
-function render() {
-  const rows = filtered();
-  const evaluated = rows.filter(hasScore);
-  const pending = rows.length - evaluated.length;
-  const rate = rateOver15(rows);
-  $("metricTotal").textContent = rows.length;
-  $("metricEvaluated").textContent = evaluated.length;
-  $("metricEvaluatedDetail").textContent = rows.length ? (100*evaluated.length/rows.length).toFixed(0)+" % des matchs affichés" : "Aucun match affiché";
-  $("metricPending").textContent = pending;
-  $("metricOver15").textContent = rate.pct === null ? "N/D" : rate.pct.toFixed(1).replace(".",",")+" %";
-  $("metricOver15Detail").textContent = rate.hits+" / "+rate.total+" sélections explicites évaluées";
-  $("rowCount").textContent = rows.length+" match"+(rows.length>1?"s":"");
-  $("emptyState").hidden = rows.length !== 0;
-  const pages = Math.max(1,Math.ceil(rows.length/state.pageSize));
-  state.page = Math.min(state.page,pages);
-  const start = (state.page-1)*state.pageSize;
-  $("historyRows").innerHTML = rows.slice(start,start+state.pageSize).map(row).join("");
-  $("archivePageInfo").textContent = "Page "+state.page+" / "+pages+" · "+rows.length+" matchs · 10 par page";
-  $("archivePrev").disabled = state.page <= 1;
-  $("archiveNext").disabled = state.page >= pages;
-  $("archivePagination").hidden = rows.length <= state.pageSize;
-}
-function populateCompetitions() {
-  const select = $("competitionFilter"), current = select.value;
-  select.innerHTML = '<option value="">Toutes les compétitions</option>';
-  [...new Set(state.records.map(r=>r.competition).filter(Boolean))].sort().forEach(value => {
-    const option = document.createElement("option");
-    option.value = value; option.textContent = value.replaceAll("-"," ");
-    select.appendChild(option);
-  });
-  if ([...select.options].some(o=>o.value===current)) select.value=current;
-}
-async function loadVersion(id) {
-  const version = state.versions.find(v=>v.id===id);
-  if (!version) throw new Error("Version non disponible.");
-  const response = await fetch("./data/"+encodeURIComponent(version.archive),{cache:"no-store"});
-  if (!response.ok) throw new Error("Archive "+version.archive+" introuvable.");
-  const payload = await response.json();
-  if (!Array.isArray(payload.records)) throw new Error("Format d'archive invalide : tableau records absent.");
-  state.records = payload.records.filter(r=>r && typeof r==="object");
-  state.page = 1;
-  populateCompetitions();
-  $("versionDescription").textContent = version.description || version.label;
-  $("versionCount").textContent = state.records.length+" snapshots · "+esc(version.label);
-  $("archiveNotice").className = "notice";
-  $("archiveNotice").textContent = version.label+" chargée. Les matchs non commencés sont conservés dans l'archive mais masqués de ce journal.";
-  render();
-}
-async function init() {
-  try {
-    const response = await fetch("./data/prediction-history-index.json",{cache:"no-store"});
-    if (!response.ok) throw new Error("Catalogue des versions introuvable.");
-    const payload = await response.json();
-    state.versions = Array.isArray(payload.versions) ? payload.versions : [];
-    const select = $("engineVersion");
-    state.versions.forEach(v=>{
-      const option=document.createElement("option"); option.value=v.id; option.textContent=v.label; select.appendChild(option);
-    });
-    if (!state.versions.some(v=>v.id==="v2")) {
-      const option=document.createElement("option"); option.value="v2"; option.textContent="Moteur V2 — en préparation"; option.disabled=true; select.appendChild(option);
-    }
-    if (!state.versions.length) throw new Error("Aucune archive versionnée disponible.");
-    const active = state.versions.find(v=>v.id===payload.active_version) || state.versions[0];
-    select.value=active.id;
-    await loadVersion(active.id);
-  } catch(error) {
-    $("archiveNotice").className="notice error";
-    $("archiveNotice").textContent="Impossible de charger les archives : "+error.message;
-    $("emptyState").hidden=false;
-  }
-}
-["competitionFilter","marketFilter","statusFilter","periodFilter"].forEach(id=>{
-  $(id).addEventListener("change",()=>{state.page=1;render();});
-});
-$("engineVersion").addEventListener("change",()=>loadVersion($("engineVersion").value).catch(error=>{
-  $("archiveNotice").className="notice error"; $("archiveNotice").textContent=error.message;
-}));
-$("archivePrev").addEventListener("click",()=>{if(state.page>1){state.page--;render();}});
-$("archiveNext").addEventListener("click",()=>{state.page++;render();});
+function populateCompetitions(){const select=$("competitionFilter"),current=select.value;select.innerHTML='<option value="">Toutes les compétitions</option>';[...new Set(state.records.map(r=>r.competition).filter(Boolean))].sort().forEach(v=>{const o=document.createElement("option");o.value=v;o.textContent=v.replaceAll("-"," ");select.appendChild(o)});if([...select.options].some(o=>o.value===current))select.value=current}
+function filteredMatches(){const competition=$("competitionFilter").value,status=$("statusFilter").value,period=$("periodFilter").value,cutoff=period==="all"?0:Date.now()-Number(period)*86400000;return state.records.filter(r=>{if(pickFor(r,state.market)===null)return false;if(competition&&r.competition!==competition)return false;if(status==="pending"&&hasScore(r))return false;if(status==="evaluated"&&!hasScore(r))return false;const t=new Date(r.kickoff_utc).getTime();if(cutoff&&(!Number.isFinite(t)||t<cutoff))return false;return true}).sort((a,b)=>new Date(b.kickoff_utc)-new Date(a.kickoff_utc))}
+function matchRow(r){const key=state.market,p=r.prediction?.[key]||{},pick=pickFor(r,key),evaluated=hasScore(r),hit=evaluated?pick===actualFor(r,key):null;const pickLabel=pick?"OUI":"NON";const probability=Number.isFinite(p.probability)?(p.probability*100).toFixed(1).replace(".",",")+" %":"—";const score=evaluated?r.actual.home_score+" – "+r.actual.away_score:'<span class="pill amber">En attente</span>';const status=!evaluated?'<span class="pill amber">En attente</span>':'<span class="pill '+(hit?"green":"red")+'">'+(hit?"Réussi":"Échoué")+'</span>';const competition=(r.competition||"Compétition inconnue").replaceAll("-"," ");return '<tr><td>'+esc(dateValue(r.kickoff_utc))+'<small class="sub">'+esc(competition)+'</small></td><td><span class="match">'+esc(r.home_team)+" – "+esc(r.away_team)+'</span><small class="sub">Snapshot '+esc(r.snapshot_stage||"")+' · '+esc(dateValue(r.snapshot_at_utc))+'</small></td><td><span class="pill '+(pick?"green":"amber")+'">'+pickLabel+'</span></td><td>'+esc(probability)+'</td><td>'+score+'</td><td>'+status+'</td><td>'+esc(r.engine_label||r.engine_id||"V1")+'</td></tr>'}
+function renderMatches(){const rows=filteredMatches(),market=MARKETS.find(m=>m.id===state.market);$("matchesTitle").textContent="4. Rencontres · "+market.label;$("rowCount").textContent=rows.length+" sélection"+(rows.length>1?"s":"");$("emptyState").hidden=rows.length!==0;const pages=Math.max(1,Math.ceil(rows.length/state.pageSize));state.page=Math.min(state.page,pages);const start=(state.page-1)*state.pageSize;$("historyRows").innerHTML=rows.slice(start,start+state.pageSize).map(matchRow).join("");$("archivePageInfo").textContent="Page "+state.page+" / "+pages+" · "+rows.length+" sélections · 10 par page";$("archivePrev").disabled=state.page<=1;$("archiveNext").disabled=state.page>=pages;$("archivePagination").hidden=rows.length<=state.pageSize}
+async function loadAll(){const loaded=await Promise.all(state.versions.map(async v=>{const response=await fetch("./data/"+encodeURIComponent(v.archive),{cache:"no-store"});if(!response.ok)throw new Error("Archive "+v.archive+" introuvable.");const payload=await response.json();if(!Array.isArray(payload.records))throw new Error("Format invalide pour "+v.label);return payload.records.filter(r=>r&&typeof r==="object").map(r=>({...r,engine_id:v.id,engine_label:v.label.replace(/ — .*/,"")}))}));return loaded.flat()}
+async function loadSelected(){const value=$("engineVersion").value;const selected=state.versions.filter(v=>value==="all"||v.id===value);const loaded=await Promise.all(selected.map(async v=>{const res=await fetch("./data/"+encodeURIComponent(v.archive),{cache:"no-store"});if(!res.ok)throw new Error("Archive "+v.archive+" introuvable.");const payload=await res.json();if(!Array.isArray(payload.records))throw new Error("Format d'archive invalide.");return payload.records.filter(r=>r&&typeof r==="object").map(r=>({...r,engine_id:v.id,engine_label:v.label.replace(/ — .*/,"")}))}));state.records=loaded.flat();state.page=1;populateCompetitions();renderEngine();renderStats();renderMatches();$("archiveNotice").className="notice";$("archiveNotice").textContent=state.records.length+" snapshots chargés · "+selected.length+" moteur"+(selected.length>1?"s":"")+". Les matchs futurs restent visibles avec le statut « En attente »."}
+async function init(){try{const res=await fetch("./data/prediction-history-index.json",{cache:"no-store"});if(!res.ok)throw new Error("Catalogue des moteurs introuvable.");const payload=await res.json();state.versions=Array.isArray(payload.versions)?payload.versions:[];if(!state.versions.length)throw new Error("Aucun moteur publié.");const select=$("engineVersion");state.versions.forEach(v=>{const o=document.createElement("option");o.value=v.id;o.textContent=v.label;select.appendChild(o)});if(!state.versions.some(v=>v.id==="v2")){const o=document.createElement("option");o.value="v2";o.textContent="Moteur V2 — en préparation";o.disabled=true;select.appendChild(o)}select.value=payload.active_version||"all";await loadSelected()}catch(e){$("archiveNotice").className="notice error";$("archiveNotice").textContent="Impossible de charger les archives : "+e.message;$("emptyState").hidden=false}}
+$("engineVersion").addEventListener("change",()=>loadSelected().catch(e=>{$("archiveNotice").className="notice error";$("archiveNotice").textContent=e.message}));
+["competitionFilter","statusFilter","periodFilter"].forEach(id=>$(id).addEventListener("change",()=>{state.page=1;renderMatches()}));
+$("archivePrev").addEventListener("click",()=>{if(state.page>1){state.page--;renderMatches()}});
+$("archiveNext").addEventListener("click",()=>{state.page++;renderMatches()});
 init();
 })();
