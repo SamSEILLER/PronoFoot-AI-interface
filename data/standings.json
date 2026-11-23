@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-23T05:49:07.878305Z",
-  "updated_at": "2026-11-23T05:49:07.878305Z",
+  "generated_at": "2026-11-23T08:50:54.541965Z",
+  "updated_at": "2026-11-23T08:50:54.541965Z",
   "season": null,
   "competitions": [
     {
@@ -28,14 +28,14 @@
           "team_id": "t_3eV7Ev",
           "team_name": "Brighton & Hove Albion",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/edc80a6849f7358a9c1656ab7a28be3d2ed9c1acfba36b4efca7dfea00bfb769.webp",
-          "played": 10,
+          "played": 11,
           "wins": 7,
           "draws": 1,
-          "losses": 2,
+          "losses": 3,
           "goals_for": 26,
-          "goals_against": 7,
+          "goals_against": 9,
           "points": 22,
-          "goal_difference": 19,
+          "goal_difference": 17,
           "position": 2
         },
         {
@@ -53,6 +53,20 @@
           "position": 3
         },
         {
+          "team_id": "t_0BrMnM",
+          "team_name": "Liverpool",
+          "team_logo": "https://cdn.pitchapi.dev/images/teams/5538ce3ddde32fc5d72918ee128c4b04a49443a3586aec8e7e99d911d3d36c99.webp",
+          "played": 11,
+          "wins": 6,
+          "draws": 3,
+          "losses": 2,
+          "goals_for": 18,
+          "goals_against": 10,
+          "points": 21,
+          "goal_difference": 8,
+          "position": 4
+        },
+        {
           "team_id": "t_1iaglr",
           "team_name": "AFC Bournemouth",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/40e4779117edc3d821c9ca142e60fe85ed9bae6e44750df5173a4f39c0cf9fe8.webp",
@@ -62,20 +76,6 @@
           "losses": 3,
           "goals_for": 18,
           "goals_against": 14,
-          "points": 18,
-          "goal_difference": 4,
-          "position": 4
-        },
-        {
-          "team_id": "t_0BrMnM",
-          "team_name": "Liverpool",
-          "team_logo": "https://cdn.pitchapi.dev/images/teams/5538ce3ddde32fc5d72918ee128c4b04a49443a3586aec8e7e99d911d3d36c99.webp",
-          "played": 10,
-          "wins": 5,
-          "draws": 3,
-          "losses": 2,
-          "goals_for": 14,
-          "goals_against": 10,
           "points": 18,
           "goal_difference": 4,
           "position": 5
@@ -151,6 +151,20 @@
           "position": 10
         },
         {
+          "team_id": "t_0HV3k6",
+          "team_name": "Hull City",
+          "team_logo": "https://cdn.pitchapi.dev/images/teams/fe961fdaaac89ab548052d63401cadf43219f461739cc8e8f99baaa07cb7ed1e.webp",
+          "played": 11,
+          "wins": 3,
+          "draws": 5,
+          "losses": 3,
+          "goals_for": 13,
+          "goals_against": 11,
+          "points": 14,
+          "goal_difference": 2,
+          "position": 11
+        },
+        {
           "team_id": "t_4RqKpo",
           "team_name": "Aston Villa",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/fba3bf0754a20dffd4acc44c3d5f6b12f7d8ab9c79ae6000a745d30385cd631c.webp",
@@ -162,7 +176,7 @@
           "goals_against": 17,
           "points": 14,
           "goal_difference": -3,
-          "position": 11
+          "position": 12
         },
         {
           "team_id": "t_2eQl9k",
@@ -176,7 +190,7 @@
           "goals_against": 18,
           "points": 13,
           "goal_difference": -3,
-          "position": 12
+          "position": 13
         },
         {
           "team_id": "t_0C4xyR",
@@ -190,20 +204,6 @@
           "goals_against": 21,
           "points": 12,
           "goal_difference": -8,
-          "position": 13
-        },
-        {
-          "team_id": "t_0HV3k6",
-          "team_name": "Hull City",
-          "team_logo": "https://cdn.pitchapi.dev/images/teams/fe961fdaaac89ab548052d63401cadf43219f461739cc8e8f99baaa07cb7ed1e.webp",
-          "played": 10,
-          "wins": 2,
-          "draws": 5,
-          "losses": 3,
-          "goals_for": 11,
-          "goals_against": 11,
-          "points": 11,
-          "goal_difference": 0,
           "position": 14
         },
         {
@@ -266,14 +266,14 @@
           "team_id": "t_2I313i",
           "team_name": "Manchester United",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/d64e82187ecc985ae095feba4db1dd6607f7009424f39a745102713bb0e1e6bb.webp",
-          "played": 10,
+          "played": 11,
           "wins": 1,
           "draws": 5,
-          "losses": 4,
+          "losses": 5,
           "goals_for": 14,
-          "goals_against": 19,
+          "goals_against": 23,
           "points": 8,
-          "goal_difference": -5,
+          "goal_difference": -9,
           "position": 19
         },
         {
@@ -291,7 +291,7 @@
           "position": 20
         }
       ],
-      "matches_counted": 107
+      "matches_counted": 109
     },
     {
       "id": "de-bundesliga",
@@ -373,14 +373,14 @@
           "team_id": "t_2vkbPM",
           "team_name": "Werder Bremen",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/9d49871d125a1287776ac7b6707f594a67dcb299298a7ca069c68dd3863cb861.webp",
-          "played": 9,
-          "wins": 4,
+          "played": 10,
+          "wins": 5,
           "draws": 3,
           "losses": 2,
-          "goals_for": 17,
+          "goals_for": 21,
           "goals_against": 15,
-          "points": 15,
-          "goal_difference": 2,
+          "points": 18,
+          "goal_difference": 6,
           "position": 6
         },
         {
@@ -426,6 +426,20 @@
           "position": 9
         },
         {
+          "team_id": "t_14USF9",
+          "team_name": "Augsburg",
+          "team_logo": "https://cdn.pitchapi.dev/images/teams/2095e7ed15bb5cd6a1204fc1f564eb70e835c50ea0943d20a562f1aa36e950d9.webp",
+          "played": 10,
+          "wins": 3,
+          "draws": 3,
+          "losses": 4,
+          "goals_for": 23,
+          "goals_against": 21,
+          "points": 12,
+          "goal_difference": 2,
+          "position": 10
+        },
+        {
           "team_id": "t_3xyER9",
           "team_name": "Hoffenheim",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/b5ac3a3e493c752b9eb37367f9d58d704dbccf83b0b325090c5b89c327f212fd.webp",
@@ -437,35 +451,35 @@
           "goals_against": 18,
           "points": 12,
           "goal_difference": -2,
-          "position": 10
+          "position": 11
         },
         {
           "team_id": "t_1pQZDX",
           "team_name": "Hamburger SV",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/aeb175ab92cb3317ad4f19f71de974531b67a4552a18b2be523c81f4384f375f.webp",
-          "played": 9,
+          "played": 10,
           "wins": 4,
           "draws": 0,
-          "losses": 5,
+          "losses": 6,
           "goals_for": 10,
-          "goals_against": 20,
+          "goals_against": 24,
           "points": 12,
-          "goal_difference": -10,
-          "position": 11
+          "goal_difference": -14,
+          "position": 12
         },
         {
           "team_id": "t_3pp390",
           "team_name": "Mainz 05",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/78d5a44b02c256582756d96a8783071ad2369b050e514c17359836acca508669.webp",
-          "played": 9,
+          "played": 10,
           "wins": 3,
           "draws": 1,
-          "losses": 5,
-          "goals_for": 18,
-          "goals_against": 19,
+          "losses": 6,
+          "goals_for": 19,
+          "goals_against": 22,
           "points": 10,
-          "goal_difference": -1,
-          "position": 12
+          "goal_difference": -3,
+          "position": 13
         },
         {
           "team_id": "t_0x6Gji",
@@ -479,7 +493,7 @@
           "goals_against": 15,
           "points": 10,
           "goal_difference": -4,
-          "position": 13
+          "position": 14
         },
         {
           "team_id": "t_3j2hQL",
@@ -493,20 +507,6 @@
           "goals_against": 15,
           "points": 10,
           "goal_difference": -7,
-          "position": 14
-        },
-        {
-          "team_id": "t_14USF9",
-          "team_name": "Augsburg",
-          "team_logo": "https://cdn.pitchapi.dev/images/teams/2095e7ed15bb5cd6a1204fc1f564eb70e835c50ea0943d20a562f1aa36e950d9.webp",
-          "played": 9,
-          "wins": 2,
-          "draws": 3,
-          "losses": 4,
-          "goals_for": 20,
-          "goals_against": 20,
-          "points": 9,
-          "goal_difference": 0,
           "position": 15
         },
         {
@@ -552,7 +552,7 @@
           "position": 18
         }
       ],
-      "matches_counted": 88
+      "matches_counted": 90
     },
     {
       "id": "es-la-liga",
@@ -564,14 +564,14 @@
           "team_id": "t_32jSEF",
           "team_name": "Barcelona",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/71881ba9f1d678143d4d2b88feab251ce8a840eca4c46768e756e73e5170687c.webp",
-          "played": 12,
-          "wins": 11,
+          "played": 13,
+          "wins": 12,
           "draws": 0,
           "losses": 1,
-          "goals_for": 48,
-          "goals_against": 13,
-          "points": 33,
-          "goal_difference": 35,
+          "goals_for": 51,
+          "goals_against": 15,
+          "points": 36,
+          "goal_difference": 36,
           "position": 1
         },
         {
@@ -592,14 +592,14 @@
           "team_id": "t_3NIiXl",
           "team_name": "Atlético Madrid",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/e7ed0850dc75498dd5989ac217e4c9345476f9967d89385e5ece1ef5bcd8a330.webp",
-          "played": 12,
-          "wins": 9,
+          "played": 13,
+          "wins": 10,
           "draws": 1,
           "losses": 2,
-          "goals_for": 23,
+          "goals_for": 26,
           "goals_against": 10,
-          "points": 28,
-          "goal_difference": 13,
+          "points": 31,
+          "goal_difference": 16,
           "position": 3
         },
         {
@@ -620,14 +620,14 @@
           "team_id": "t_1hKtUw",
           "team_name": "Real Sociedad",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/ef917e418f18783f60198c20a1fa9ec4983b40bdddba6f23b1eaefa1a4110fc0.webp",
-          "played": 12,
+          "played": 13,
           "wins": 7,
           "draws": 1,
-          "losses": 4,
-          "goals_for": 21,
-          "goals_against": 20,
+          "losses": 5,
+          "goals_for": 23,
+          "goals_against": 23,
           "points": 22,
-          "goal_difference": 1,
+          "goal_difference": 0,
           "position": 5
         },
         {
@@ -645,6 +645,20 @@
           "position": 6
         },
         {
+          "team_id": "t_3kAVv6",
+          "team_name": "Racing Santander",
+          "team_logo": "https://cdn.pitchapi.dev/images/teams/5678d05be93b701d8cce69ec478e33baf9b71504c96ba5449c6f6664816e16e2.webp",
+          "played": 13,
+          "wins": 5,
+          "draws": 2,
+          "losses": 6,
+          "goals_for": 20,
+          "goals_against": 32,
+          "points": 17,
+          "goal_difference": -12,
+          "position": 7
+        },
+        {
           "team_id": "t_3kZPrE",
           "team_name": "Athletic Club",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/3df8987ea318edccd9c2d8887b27324fa47c275eea7604e9e9c8539f5a69cda3.webp",
@@ -656,7 +670,7 @@
           "goals_against": 12,
           "points": 16,
           "goal_difference": 3,
-          "position": 7
+          "position": 8
         },
         {
           "team_id": "t_1cpTpB",
@@ -670,21 +684,21 @@
           "goals_against": 18,
           "points": 16,
           "goal_difference": 0,
-          "position": 8
+          "position": 9
         },
         {
           "team_id": "t_4SV4jg",
           "team_name": "Villarreal",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/9cd74c38ef6d75a878041878ed6f18da3fb9e6cf81baae23d266a64821a63a71.webp",
-          "played": 12,
+          "played": 13,
           "wins": 4,
           "draws": 3,
-          "losses": 5,
-          "goals_for": 17,
-          "goals_against": 15,
+          "losses": 6,
+          "goals_for": 19,
+          "goals_against": 18,
           "points": 15,
-          "goal_difference": 2,
-          "position": 9
+          "goal_difference": 1,
+          "position": 10
         },
         {
           "team_id": "t_3WlXqr",
@@ -698,7 +712,7 @@
           "goals_against": 14,
           "points": 15,
           "goal_difference": 0,
-          "position": 10
+          "position": 11
         },
         {
           "team_id": "t_2xafLl",
@@ -712,21 +726,21 @@
           "goals_against": 17,
           "points": 15,
           "goal_difference": -1,
-          "position": 11
+          "position": 12
         },
         {
-          "team_id": "t_3kAVv6",
-          "team_name": "Racing Santander",
-          "team_logo": "https://cdn.pitchapi.dev/images/teams/5678d05be93b701d8cce69ec478e33baf9b71504c96ba5449c6f6664816e16e2.webp",
-          "played": 12,
+          "team_id": "t_0HBI4G",
+          "team_name": "Osasuna",
+          "team_logo": "https://cdn.pitchapi.dev/images/teams/e88a92bcdd0c1c32989fcffab9239e4a411961c9f8de71a0afe80f09b4b7d89b.webp",
+          "played": 13,
           "wins": 4,
-          "draws": 2,
+          "draws": 3,
           "losses": 6,
-          "goals_for": 17,
-          "goals_against": 30,
-          "points": 14,
-          "goal_difference": -13,
-          "position": 12
+          "goals_for": 13,
+          "goals_against": 23,
+          "points": 15,
+          "goal_difference": -10,
+          "position": 13
         },
         {
           "team_id": "t_4aQcO7",
@@ -740,7 +754,7 @@
           "goals_against": 12,
           "points": 13,
           "goal_difference": -1,
-          "position": 13
+          "position": 14
         },
         {
           "team_id": "t_17aOG3",
@@ -754,35 +768,7 @@
           "goals_against": 22,
           "points": 12,
           "goal_difference": -7,
-          "position": 14
-        },
-        {
-          "team_id": "t_3i7zAH",
-          "team_name": "Getafe",
-          "team_logo": "https://cdn.pitchapi.dev/images/teams/20e0f7f9929f4ff5886dc12a076fc16c191d455f36be5c2f90d9fd83798d9f77.webp",
-          "played": 12,
-          "wins": 3,
-          "draws": 3,
-          "losses": 6,
-          "goals_for": 8,
-          "goals_against": 18,
-          "points": 12,
-          "goal_difference": -10,
           "position": 15
-        },
-        {
-          "team_id": "t_0HBI4G",
-          "team_name": "Osasuna",
-          "team_logo": "https://cdn.pitchapi.dev/images/teams/e88a92bcdd0c1c32989fcffab9239e4a411961c9f8de71a0afe80f09b4b7d89b.webp",
-          "played": 12,
-          "wins": 3,
-          "draws": 3,
-          "losses": 6,
-          "goals_for": 12,
-          "goals_against": 23,
-          "points": 12,
-          "goal_difference": -11,
-          "position": 16
         },
         {
           "team_id": "t_3TftmE",
@@ -796,6 +782,20 @@
           "goals_against": 20,
           "points": 12,
           "goal_difference": -11,
+          "position": 16
+        },
+        {
+          "team_id": "t_3i7zAH",
+          "team_name": "Getafe",
+          "team_logo": "https://cdn.pitchapi.dev/images/teams/20e0f7f9929f4ff5886dc12a076fc16c191d455f36be5c2f90d9fd83798d9f77.webp",
+          "played": 13,
+          "wins": 3,
+          "draws": 3,
+          "losses": 7,
+          "goals_for": 8,
+          "goals_against": 21,
+          "points": 12,
+          "goal_difference": -13,
           "position": 17
         },
         {
@@ -830,18 +830,18 @@
           "team_id": "t_2DcXQn",
           "team_name": "Málaga",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/3da2b557c37768939a618508757dbf4923370ed95b9b79a02645e0396dae068b.webp",
-          "played": 12,
+          "played": 13,
           "wins": 0,
           "draws": 5,
-          "losses": 7,
+          "losses": 8,
           "goals_for": 9,
-          "goals_against": 23,
+          "goals_against": 24,
           "points": 5,
-          "goal_difference": -14,
+          "goal_difference": -15,
           "position": 20
         }
       ],
-      "matches_counted": 124
+      "matches_counted": 128
     },
     {
       "id": "it-serie-a",
@@ -881,15 +881,29 @@
           "team_id": "t_3CPHHF",
           "team_name": "Inter",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/66c6a85491df0b8111e1c35695ef712af120a2bf0aa9b03a877377889516611e.webp",
-          "played": 11,
+          "played": 12,
           "wins": 9,
-          "draws": 1,
+          "draws": 2,
           "losses": 1,
-          "goals_for": 28,
-          "goals_against": 13,
-          "points": 28,
+          "goals_for": 32,
+          "goals_against": 17,
+          "points": 29,
           "goal_difference": 15,
           "position": 3
+        },
+        {
+          "team_id": "t_1DYf1D",
+          "team_name": "Milan",
+          "team_logo": "https://cdn.pitchapi.dev/images/teams/084d6673fc303d26d77ffa8d8763966663b002403d5bbdf17916de163f389018.webp",
+          "played": 12,
+          "wins": 8,
+          "draws": 3,
+          "losses": 1,
+          "goals_for": 28,
+          "goals_against": 14,
+          "points": 27,
+          "goal_difference": 14,
+          "position": 4
         },
         {
           "team_id": "t_0oXTvZ",
@@ -903,35 +917,35 @@
           "goals_against": 10,
           "points": 26,
           "goal_difference": 10,
-          "position": 4
+          "position": 5
         },
         {
-          "team_id": "t_1DYf1D",
-          "team_name": "Milan",
-          "team_logo": "https://cdn.pitchapi.dev/images/teams/084d6673fc303d26d77ffa8d8763966663b002403d5bbdf17916de163f389018.webp",
-          "played": 11,
-          "wins": 7,
+          "team_id": "t_4ZwKDn",
+          "team_name": "Juventus",
+          "team_logo": "https://cdn.pitchapi.dev/images/teams/7eaf5f4fe543152082fc53d035dc7f0663b4a090cab3ab701fc5f4df3a711784.webp",
+          "played": 12,
+          "wins": 6,
           "draws": 3,
-          "losses": 1,
-          "goals_for": 23,
-          "goals_against": 13,
-          "points": 24,
-          "goal_difference": 10,
-          "position": 5
+          "losses": 3,
+          "goals_for": 19,
+          "goals_against": 12,
+          "points": 21,
+          "goal_difference": 7,
+          "position": 6
         },
         {
           "team_id": "t_1YXpHZ",
           "team_name": "Frosinone",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/097fc95a83112a7fa163b200006b2fdffd2823180101ff48cf116ec881a3d0f0.webp",
-          "played": 11,
+          "played": 12,
           "wins": 6,
           "draws": 2,
-          "losses": 3,
-          "goals_for": 24,
-          "goals_against": 15,
+          "losses": 4,
+          "goals_for": 25,
+          "goals_against": 20,
           "points": 20,
-          "goal_difference": 9,
-          "position": 6
+          "goal_difference": 5,
+          "position": 7
         },
         {
           "team_id": "t_2toJRF",
@@ -945,35 +959,35 @@
           "goals_against": 14,
           "points": 18,
           "goal_difference": 5,
-          "position": 7
-        },
-        {
-          "team_id": "t_4ZwKDn",
-          "team_name": "Juventus",
-          "team_logo": "https://cdn.pitchapi.dev/images/teams/7eaf5f4fe543152082fc53d035dc7f0663b4a090cab3ab701fc5f4df3a711784.webp",
-          "played": 11,
-          "wins": 5,
-          "draws": 3,
-          "losses": 3,
-          "goals_for": 15,
-          "goals_against": 12,
-          "points": 18,
-          "goal_difference": 3,
           "position": 8
         },
         {
           "team_id": "t_2O0E6I",
           "team_name": "Bologna",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/666c2362e7fc4aa2380cdb768cfe1a9539333a548feb4268b900ebba19278439.webp",
-          "played": 11,
+          "played": 12,
           "wins": 5,
-          "draws": 2,
+          "draws": 3,
           "losses": 4,
-          "goals_for": 16,
-          "goals_against": 14,
-          "points": 17,
+          "goals_for": 17,
+          "goals_against": 15,
+          "points": 18,
           "goal_difference": 2,
           "position": 9
+        },
+        {
+          "team_id": "t_24sV8w",
+          "team_name": "Genoa",
+          "team_logo": "https://cdn.pitchapi.dev/images/teams/c303d188af518260d4e49f3708493f3324c501752d19c0fb26d49214af885f4d.webp",
+          "played": 12,
+          "wins": 5,
+          "draws": 1,
+          "losses": 6,
+          "goals_for": 13,
+          "goals_against": 16,
+          "points": 16,
+          "goal_difference": -3,
+          "position": 10
         },
         {
           "team_id": "t_3V0mmv",
@@ -987,21 +1001,21 @@
           "goals_against": 17,
           "points": 16,
           "goal_difference": -7,
-          "position": 10
+          "position": 11
         },
         {
           "team_id": "t_0r0zEG",
           "team_name": "Atalanta",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/108eb0aab69689251ffd6d722eff62fd754c93e39c20909a373b26464bbb38be.webp",
-          "played": 11,
+          "played": 12,
           "wins": 4,
-          "draws": 2,
+          "draws": 3,
           "losses": 5,
-          "goals_for": 17,
-          "goals_against": 20,
-          "points": 14,
+          "goals_for": 21,
+          "goals_against": 24,
+          "points": 15,
           "goal_difference": -3,
-          "position": 11
+          "position": 12
         },
         {
           "team_id": "t_1fXtzU",
@@ -1015,20 +1029,6 @@
           "goals_against": 18,
           "points": 14,
           "goal_difference": -3,
-          "position": 12
-        },
-        {
-          "team_id": "t_24sV8w",
-          "team_name": "Genoa",
-          "team_logo": "https://cdn.pitchapi.dev/images/teams/c303d188af518260d4e49f3708493f3324c501752d19c0fb26d49214af885f4d.webp",
-          "played": 11,
-          "wins": 4,
-          "draws": 1,
-          "losses": 6,
-          "goals_for": 11,
-          "goals_against": 16,
-          "points": 13,
-          "goal_difference": -5,
           "position": 13
         },
         {
@@ -1077,14 +1077,14 @@
           "team_id": "t_20vMky",
           "team_name": "Sassuolo",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/6d1458229c36991186c0335b8d5656e50422806805f2bf064712147162e428c8.webp",
-          "played": 11,
+          "played": 12,
           "wins": 2,
           "draws": 2,
-          "losses": 7,
+          "losses": 8,
           "goals_for": 16,
-          "goals_against": 29,
+          "goals_against": 31,
           "points": 8,
-          "goal_difference": -13,
+          "goal_difference": -15,
           "position": 17
         },
         {
@@ -1102,35 +1102,35 @@
           "position": 18
         },
         {
-          "team_id": "t_3TALFY",
-          "team_name": "Venezia",
-          "team_logo": "https://cdn.pitchapi.dev/images/teams/ef4cf59b13e1d9d130d304bad00d700783a9783ba1c0469952db26a8a76a5b38.webp",
-          "played": 11,
-          "wins": 2,
-          "draws": 0,
-          "losses": 9,
-          "goals_for": 8,
-          "goals_against": 21,
+          "team_id": "t_2ur07g",
+          "team_name": "Udinese",
+          "team_logo": "https://cdn.pitchapi.dev/images/teams/bf074b2992c5c0d8bb4fefdf71b549070c402656ac2e6405a52e8ee9ef6c8801.webp",
+          "played": 12,
+          "wins": 1,
+          "draws": 3,
+          "losses": 8,
+          "goals_for": 13,
+          "goals_against": 26,
           "points": 6,
           "goal_difference": -13,
           "position": 19
         },
         {
-          "team_id": "t_2ur07g",
-          "team_name": "Udinese",
-          "team_logo": "https://cdn.pitchapi.dev/images/teams/bf074b2992c5c0d8bb4fefdf71b549070c402656ac2e6405a52e8ee9ef6c8801.webp",
-          "played": 11,
-          "wins": 1,
-          "draws": 2,
-          "losses": 8,
-          "goals_for": 12,
+          "team_id": "t_3TALFY",
+          "team_name": "Venezia",
+          "team_logo": "https://cdn.pitchapi.dev/images/teams/ef4cf59b13e1d9d130d304bad00d700783a9783ba1c0469952db26a8a76a5b38.webp",
+          "played": 12,
+          "wins": 2,
+          "draws": 0,
+          "losses": 10,
+          "goals_for": 8,
           "goals_against": 25,
-          "points": 5,
-          "goal_difference": -13,
+          "points": 6,
+          "goal_difference": -17,
           "position": 20
         }
       ],
-      "matches_counted": 114
+      "matches_counted": 119
     },
     {
       "id": "fr-ligue-1",
@@ -1153,6 +1153,20 @@
           "position": 1
         },
         {
+          "team_id": "t_0LMnwp",
+          "team_name": "Paris FC",
+          "team_logo": "https://cdn.pitchapi.dev/images/teams/b9cad4d256831ccc0a700cc4a5c7f246a0937745dc14fe981517d735f3be7472.webp",
+          "played": 11,
+          "wins": 7,
+          "draws": 2,
+          "losses": 2,
+          "goals_for": 21,
+          "goals_against": 10,
+          "points": 23,
+          "goal_difference": 11,
+          "position": 2
+        },
+        {
           "team_id": "t_0tnX1I",
           "team_name": "Lille",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/1e97c1ce973c99ad73ddfbeee79d47efeb8946124983ddb3282074045bd3ea7a.webp",
@@ -1164,20 +1178,6 @@
           "goals_against": 8,
           "points": 21,
           "goal_difference": 6,
-          "position": 2
-        },
-        {
-          "team_id": "t_0LMnwp",
-          "team_name": "Paris FC",
-          "team_logo": "https://cdn.pitchapi.dev/images/teams/b9cad4d256831ccc0a700cc4a5c7f246a0937745dc14fe981517d735f3be7472.webp",
-          "played": 10,
-          "wins": 6,
-          "draws": 2,
-          "losses": 2,
-          "goals_for": 17,
-          "goals_against": 10,
-          "points": 20,
-          "goal_difference": 7,
           "position": 3
         },
         {
@@ -1198,14 +1198,14 @@
           "team_id": "t_2s2eyG",
           "team_name": "Marseille",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/10ec6fe14a73f5994c3b2570231e34cd8884232163027b8a423fe45957045ffd.webp",
-          "played": 10,
+          "played": 11,
           "wins": 6,
           "draws": 0,
-          "losses": 4,
-          "goals_for": 22,
-          "goals_against": 14,
+          "losses": 5,
+          "goals_for": 24,
+          "goals_against": 17,
           "points": 18,
-          "goal_difference": 8,
+          "goal_difference": 7,
           "position": 5
         },
         {
@@ -1254,13 +1254,13 @@
           "team_id": "t_3Ng6PH",
           "team_name": "Rennes",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/87e4093af8a42182c2394abd11392cfe7a9b5988266f8161a20e126a66a8238b.webp",
-          "played": 10,
+          "played": 11,
           "wins": 5,
-          "draws": 1,
+          "draws": 2,
           "losses": 4,
-          "goals_for": 21,
-          "goals_against": 21,
-          "points": 16,
+          "goals_for": 22,
+          "goals_against": 22,
+          "points": 17,
           "goal_difference": 0,
           "position": 9
         },
@@ -1268,13 +1268,13 @@
           "team_id": "t_2lHmy6",
           "team_name": "Lorient",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/1f56f4e83b5165a9233d27bda3d67602e4517667cdc7c7584558bf9fedbfbfa3.webp",
-          "played": 10,
+          "played": 11,
           "wins": 4,
-          "draws": 3,
+          "draws": 4,
           "losses": 3,
-          "goals_for": 9,
-          "goals_against": 8,
-          "points": 15,
+          "goals_for": 10,
+          "goals_against": 9,
+          "points": 16,
           "goal_difference": 1,
           "position": 10
         },
@@ -1307,6 +1307,20 @@
           "position": 12
         },
         {
+          "team_id": "t_0GDAiO",
+          "team_name": "Le Mans",
+          "team_logo": "https://cdn.pitchapi.dev/images/teams/1cb6a08139354588a88094bbdfa0f38eb68cbb145b19af79fe548402d4534de4.webp",
+          "played": 11,
+          "wins": 2,
+          "draws": 5,
+          "losses": 4,
+          "goals_for": 15,
+          "goals_against": 21,
+          "points": 11,
+          "goal_difference": -6,
+          "position": 13
+        },
+        {
           "team_id": "t_0zVhE4",
           "team_name": "Troyes",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/a805183b27f376ca106faf014559528f32f291be0a93b621357697efc173aeeb.webp",
@@ -1318,7 +1332,7 @@
           "goals_against": 18,
           "points": 11,
           "goal_difference": -8,
-          "position": 13
+          "position": 14
         },
         {
           "team_id": "t_2Vc7mg",
@@ -1332,7 +1346,7 @@
           "goals_against": 25,
           "points": 11,
           "goal_difference": -11,
-          "position": 14
+          "position": 15
         },
         {
           "team_id": "t_1p1AQf",
@@ -1346,34 +1360,20 @@
           "goals_against": 23,
           "points": 10,
           "goal_difference": -5,
-          "position": 15
-        },
-        {
-          "team_id": "t_0GDAiO",
-          "team_name": "Le Mans",
-          "team_logo": "https://cdn.pitchapi.dev/images/teams/1cb6a08139354588a88094bbdfa0f38eb68cbb145b19af79fe548402d4534de4.webp",
-          "played": 10,
-          "wins": 1,
-          "draws": 5,
-          "losses": 4,
-          "goals_for": 12,
-          "goals_against": 19,
-          "points": 8,
-          "goal_difference": -7,
           "position": 16
         },
         {
           "team_id": "t_0ZkdUF",
           "team_name": "Angers",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/97e37649cadc979d8f16bc30ef4064d4144b44dad5392d4eb8585ff6947d367a.webp",
-          "played": 10,
+          "played": 11,
           "wins": 2,
           "draws": 2,
-          "losses": 6,
+          "losses": 7,
           "goals_for": 9,
-          "goals_against": 19,
+          "goals_against": 23,
           "points": 8,
-          "goal_difference": -10,
+          "goal_difference": -14,
           "position": 17
         },
         {
@@ -1391,7 +1391,7 @@
           "position": 18
         }
       ],
-      "matches_counted": 96
+      "matches_counted": 99
     },
     {
       "id": "fr-ligue-2",
@@ -1661,6 +1661,20 @@
       "season": "2026/2027",
       "standings": [
         {
+          "team_id": "t_3pK6v1",
+          "team_name": "Union St.Gilloise",
+          "team_logo": "https://cdn.pitchapi.dev/images/teams/cc9e82f36cf9b8918eec77a1ca09fa19a35f1907a32b1ea9c3abcf1526761123.webp",
+          "played": 12,
+          "wins": 10,
+          "draws": 2,
+          "losses": 0,
+          "goals_for": 31,
+          "goals_against": 7,
+          "points": 32,
+          "goal_difference": 24,
+          "position": 1
+        },
+        {
           "team_id": "t_1mTmMO",
           "team_name": "Club Brugge",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/27ed7332a13ab1db112824396edb58f2636ca7955b5cf2fd46e64b37afadbee0.webp",
@@ -1672,35 +1686,7 @@
           "goals_against": 10,
           "points": 31,
           "goal_difference": 22,
-          "position": 1
-        },
-        {
-          "team_id": "t_3pK6v1",
-          "team_name": "Union St.Gilloise",
-          "team_logo": "https://cdn.pitchapi.dev/images/teams/cc9e82f36cf9b8918eec77a1ca09fa19a35f1907a32b1ea9c3abcf1526761123.webp",
-          "played": 11,
-          "wins": 9,
-          "draws": 2,
-          "losses": 0,
-          "goals_for": 30,
-          "goals_against": 7,
-          "points": 29,
-          "goal_difference": 23,
           "position": 2
-        },
-        {
-          "team_id": "t_3CeUfH",
-          "team_name": "Gent",
-          "team_logo": "https://cdn.pitchapi.dev/images/teams/4d3630629aedbb82ff7550c39d0156bb21390007610ead3039bc2efbb27f6087.webp",
-          "played": 11,
-          "wins": 9,
-          "draws": 1,
-          "losses": 1,
-          "goals_for": 20,
-          "goals_against": 6,
-          "points": 28,
-          "goal_difference": 14,
-          "position": 3
         },
         {
           "team_id": "t_3UiOcj",
@@ -1714,20 +1700,34 @@
           "goals_against": 15,
           "points": 28,
           "goal_difference": 13,
+          "position": 3
+        },
+        {
+          "team_id": "t_3CeUfH",
+          "team_name": "Gent",
+          "team_logo": "https://cdn.pitchapi.dev/images/teams/4d3630629aedbb82ff7550c39d0156bb21390007610ead3039bc2efbb27f6087.webp",
+          "played": 12,
+          "wins": 9,
+          "draws": 1,
+          "losses": 2,
+          "goals_for": 20,
+          "goals_against": 7,
+          "points": 28,
+          "goal_difference": 13,
           "position": 4
         },
         {
           "team_id": "t_2J5yFC",
           "team_name": "Anderlecht",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/c15c2bcf549e0a436011be5c585115ce2ac295d75bd774e19c56fd8dde1618cd.webp",
-          "played": 11,
-          "wins": 6,
+          "played": 12,
+          "wins": 7,
           "draws": 2,
           "losses": 3,
-          "goals_for": 14,
+          "goals_for": 15,
           "goals_against": 12,
-          "points": 20,
-          "goal_difference": 2,
+          "points": 23,
+          "goal_difference": 3,
           "position": 5
         },
         {
@@ -1745,31 +1745,31 @@
           "position": 6
         },
         {
-          "team_id": "t_2Ylrj9",
-          "team_name": "Lommel",
-          "team_logo": "https://cdn.pitchapi.dev/images/teams/25fe3da95ee7ed0fe2484c77bdc40634c80c70b7dc3ee86136fc3a3c96348890.webp",
-          "played": 11,
-          "wins": 4,
-          "draws": 4,
-          "losses": 3,
-          "goals_for": 15,
-          "goals_against": 13,
-          "points": 16,
-          "goal_difference": 2,
-          "position": 7
-        },
-        {
           "team_id": "t_0xsWjs",
           "team_name": "Standard Liège",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/c69b17cdb312a03d76f0664ae9ca2df93289896868e7f1766cf0c17a665da377.webp",
-          "played": 11,
-          "wins": 4,
+          "played": 12,
+          "wins": 5,
           "draws": 3,
           "losses": 4,
-          "goals_for": 18,
-          "goals_against": 16,
-          "points": 15,
-          "goal_difference": 2,
+          "goals_for": 20,
+          "goals_against": 17,
+          "points": 18,
+          "goal_difference": 3,
+          "position": 7
+        },
+        {
+          "team_id": "t_2Ylrj9",
+          "team_name": "Lommel",
+          "team_logo": "https://cdn.pitchapi.dev/images/teams/25fe3da95ee7ed0fe2484c77bdc40634c80c70b7dc3ee86136fc3a3c96348890.webp",
+          "played": 12,
+          "wins": 4,
+          "draws": 4,
+          "losses": 4,
+          "goals_for": 16,
+          "goals_against": 15,
+          "points": 16,
+          "goal_difference": 1,
           "position": 8
         },
         {
@@ -1787,6 +1787,20 @@
           "position": 9
         },
         {
+          "team_id": "t_0BmLrB",
+          "team_name": "SK Beveren",
+          "team_logo": "https://cdn.pitchapi.dev/images/teams/2fad0a7d1a4604a0cedd8bb539d3cde9729df1eb7511ff83b4ee85e4076370d8.webp",
+          "played": 12,
+          "wins": 4,
+          "draws": 1,
+          "losses": 7,
+          "goals_for": 14,
+          "goals_against": 23,
+          "points": 13,
+          "goal_difference": -9,
+          "position": 10
+        },
+        {
           "team_id": "t_11R95l",
           "team_name": "St.Truiden",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/dd6e3aa3a230e69a5b13c385696a5e357528a93e2c9ae68d88835e2cb5bfb9e9.webp",
@@ -1798,20 +1812,6 @@
           "goals_against": 24,
           "points": 12,
           "goal_difference": 0,
-          "position": 10
-        },
-        {
-          "team_id": "t_3rAYPk",
-          "team_name": "OH Leuven",
-          "team_logo": "https://cdn.pitchapi.dev/images/teams/7ee7e02c976515403ab0e3fa3a2693d08b3680a207e1db18eb2bbb011a33c18b.webp",
-          "played": 11,
-          "wins": 3,
-          "draws": 3,
-          "losses": 5,
-          "goals_for": 12,
-          "goals_against": 17,
-          "points": 12,
-          "goal_difference": -5,
           "position": 11
         },
         {
@@ -1829,6 +1829,20 @@
           "position": 12
         },
         {
+          "team_id": "t_3rAYPk",
+          "team_name": "OH Leuven",
+          "team_logo": "https://cdn.pitchapi.dev/images/teams/7ee7e02c976515403ab0e3fa3a2693d08b3680a207e1db18eb2bbb011a33c18b.webp",
+          "played": 12,
+          "wins": 3,
+          "draws": 3,
+          "losses": 6,
+          "goals_for": 12,
+          "goals_against": 18,
+          "points": 12,
+          "goal_difference": -6,
+          "position": 13
+        },
+        {
           "team_id": "t_4GqgXb",
           "team_name": "Cercle Brugge",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/aef5bc74faad03c2c156e599aa6bad28885caf2b41ab1a1f70554ea7936a39af.webp",
@@ -1840,7 +1854,7 @@
           "goals_against": 22,
           "points": 12,
           "goal_difference": -7,
-          "position": 13
+          "position": 14
         },
         {
           "team_id": "t_0n3xxl",
@@ -1854,7 +1868,7 @@
           "goals_against": 22,
           "points": 12,
           "goal_difference": -7,
-          "position": 14
+          "position": 15
         },
         {
           "team_id": "t_3HWU9N",
@@ -1868,20 +1882,6 @@
           "goals_against": 25,
           "points": 12,
           "goal_difference": -11,
-          "position": 15
-        },
-        {
-          "team_id": "t_0BmLrB",
-          "team_name": "SK Beveren",
-          "team_logo": "https://cdn.pitchapi.dev/images/teams/2fad0a7d1a4604a0cedd8bb539d3cde9729df1eb7511ff83b4ee85e4076370d8.webp",
-          "played": 11,
-          "wins": 3,
-          "draws": 1,
-          "losses": 7,
-          "goals_for": 13,
-          "goals_against": 23,
-          "points": 10,
-          "goal_difference": -10,
           "position": 16
         },
         {
@@ -1902,18 +1902,18 @@
           "team_id": "t_3F5Qx8",
           "team_name": "Kortrijk",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/345036497c5b926f4fd74f2ccefca995172c2fb423543ad84ac3a5b7613aefaf.webp",
-          "played": 11,
+          "played": 12,
           "wins": 1,
           "draws": 1,
-          "losses": 9,
+          "losses": 10,
           "goals_for": 4,
-          "goals_against": 23,
+          "goals_against": 24,
           "points": 4,
-          "goal_difference": -19,
+          "goal_difference": -20,
           "position": 18
         }
       ],
-      "matches_counted": 104
+      "matches_counted": 108
     },
     {
       "id": "pt-primeira-liga",
@@ -2186,28 +2186,28 @@
           "team_id": "t_0DpITA",
           "team_name": "Nashville SC",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/1b454d33eb55c0d4feb6ba8bc7c3a020d185a7a2400466f533f125f09217dafd.webp",
-          "played": 34,
+          "played": 35,
           "wins": 23,
           "draws": 8,
-          "losses": 3,
+          "losses": 4,
           "goals_for": 71,
-          "goals_against": 25,
+          "goals_against": 26,
           "points": 77,
-          "goal_difference": 46,
+          "goal_difference": 45,
           "position": 1
         },
         {
           "team_id": "t_2CuHdk",
           "team_name": "Vancouver Whitecaps",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/df0e3f588a02d715b111562ddc56a10d4c07a7b0e0d9161152360e6cba09b909.webp",
-          "played": 34,
-          "wins": 19,
+          "played": 35,
+          "wins": 20,
           "draws": 7,
           "losses": 8,
-          "goals_for": 74,
+          "goals_for": 76,
           "goals_against": 34,
-          "points": 64,
-          "goal_difference": 40,
+          "points": 67,
+          "goal_difference": 42,
           "position": 2
         },
         {
@@ -2253,31 +2253,31 @@
           "position": 5
         },
         {
-          "team_id": "t_09gmAn",
-          "team_name": "Chicago Fire FC",
-          "team_logo": "https://cdn.pitchapi.dev/images/teams/aad56df5be7925a6010c80d01bf4b332ba4368526d2ce47bf053b088724b7755.webp",
-          "played": 34,
-          "wins": 16,
-          "draws": 7,
-          "losses": 11,
-          "goals_for": 64,
-          "goals_against": 54,
-          "points": 55,
-          "goal_difference": 10,
-          "position": 6
-        },
-        {
           "team_id": "t_3NDbTT",
           "team_name": "Charlotte FC",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/351d9bbbcf87efe605157514bf3b52105d6fe5c8438a994e5b4870f3f890a206.webp",
-          "played": 34,
-          "wins": 15,
+          "played": 35,
+          "wins": 16,
           "draws": 9,
           "losses": 10,
-          "goals_for": 66,
-          "goals_against": 51,
-          "points": 54,
-          "goal_difference": 15,
+          "goals_for": 68,
+          "goals_against": 52,
+          "points": 57,
+          "goal_difference": 16,
+          "position": 6
+        },
+        {
+          "team_id": "t_09gmAn",
+          "team_name": "Chicago Fire FC",
+          "team_logo": "https://cdn.pitchapi.dev/images/teams/aad56df5be7925a6010c80d01bf4b332ba4368526d2ce47bf053b088724b7755.webp",
+          "played": 35,
+          "wins": 16,
+          "draws": 7,
+          "losses": 12,
+          "goals_for": 65,
+          "goals_against": 56,
+          "points": 55,
+          "goal_difference": 9,
           "position": 7
         },
         {
@@ -2309,6 +2309,20 @@
           "position": 9
         },
         {
+          "team_id": "t_0T0wL5",
+          "team_name": "FC Cincinnati",
+          "team_logo": "https://cdn.pitchapi.dev/images/teams/7d36f564934ff81a9843d76df80814e1bfff56bfcbde2f9e8ecc3b1d524a823d.webp",
+          "played": 36,
+          "wins": 14,
+          "draws": 10,
+          "losses": 12,
+          "goals_for": 71,
+          "goals_against": 76,
+          "points": 52,
+          "goal_difference": -5,
+          "position": 10
+        },
+        {
           "team_id": "t_2L8yh8",
           "team_name": "Houston Dynamo FC",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/558a5d6a87450486dd99116e79aa8ebddea076387c37be1b1c3b6adec065fdac.webp",
@@ -2320,7 +2334,7 @@
           "goals_against": 43,
           "points": 51,
           "goal_difference": 0,
-          "position": 10
+          "position": 11
         },
         {
           "team_id": "t_0uw6NW",
@@ -2334,7 +2348,7 @@
           "goals_against": 54,
           "points": 50,
           "goal_difference": 12,
-          "position": 11
+          "position": 12
         },
         {
           "team_id": "t_1avIKi",
@@ -2348,20 +2362,6 @@
           "goals_against": 52,
           "points": 50,
           "goal_difference": 10,
-          "position": 12
-        },
-        {
-          "team_id": "t_0T0wL5",
-          "team_name": "FC Cincinnati",
-          "team_logo": "https://cdn.pitchapi.dev/images/teams/7d36f564934ff81a9843d76df80814e1bfff56bfcbde2f9e8ecc3b1d524a823d.webp",
-          "played": 35,
-          "wins": 13,
-          "draws": 10,
-          "losses": 12,
-          "goals_for": 70,
-          "goals_against": 76,
-          "points": 49,
-          "goal_difference": -6,
           "position": 13
         },
         {
@@ -2396,14 +2396,14 @@
           "team_id": "t_2o7nsk",
           "team_name": "Real Salt Lake",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/9150053efa5637124416ca40fc49f1f1b4655dcf99bf3a7f5f4fad0715cfaa61.webp",
-          "played": 35,
+          "played": 36,
           "wins": 13,
           "draws": 7,
-          "losses": 15,
+          "losses": 16,
           "goals_for": 54,
-          "goals_against": 53,
+          "goals_against": 55,
           "points": 46,
-          "goal_difference": 1,
+          "goal_difference": -1,
           "position": 16
         },
         {
@@ -2603,7 +2603,7 @@
           "position": 30
         }
       ],
-      "matches_counted": 515
+      "matches_counted": 518
     },
     {
       "id": "uefa-champions-league",

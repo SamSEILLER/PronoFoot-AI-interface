@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at_utc": "2026-11-23T05:49:08.417916Z",
+  "generated_at_utc": "2026-11-23T08:50:54.991901Z",
   "description": "Snapshots immuables créés à J-1 (la veille du coup d'envoi) pour les expérimentations +1,5, +2,5 et BTTS. Les matchs terminés sont évalués puis archivés.",
   "records": [
     {
@@ -1006,10 +1006,10 @@
         "calibration_status": "not_calibrated"
       },
       "actual": {
-        "home_score": null,
-        "away_score": null
+        "home_score": 2,
+        "away_score": 0
       },
-      "evaluation_status": "pending"
+      "evaluation_status": "evaluated"
     },
     {
       "match_id": "m_3uRPBe",
@@ -1069,10 +1069,10 @@
         "calibration_status": "not_calibrated"
       },
       "actual": {
-        "home_score": null,
-        "away_score": null
+        "home_score": 1,
+        "away_score": 2
       },
-      "evaluation_status": "pending"
+      "evaluation_status": "evaluated"
     },
     {
       "match_id": "m_3hlI0a",
@@ -1132,10 +1132,10 @@
         "calibration_status": "not_calibrated"
       },
       "actual": {
-        "home_score": null,
-        "away_score": null
+        "home_score": 0,
+        "away_score": 1
       },
-      "evaluation_status": "pending"
+      "evaluation_status": "evaluated"
     },
     {
       "match_id": "m_3ZF56r",
@@ -1195,10 +1195,10 @@
         "calibration_status": "not_calibrated"
       },
       "actual": {
-        "home_score": null,
-        "away_score": null
+        "home_score": 0,
+        "away_score": 3
       },
-      "evaluation_status": "pending"
+      "evaluation_status": "evaluated"
     },
     {
       "match_id": "m_0ZgZVI",
@@ -1258,10 +1258,10 @@
         "calibration_status": "not_calibrated"
       },
       "actual": {
-        "home_score": null,
-        "away_score": null
+        "home_score": 4,
+        "away_score": 4
       },
-      "evaluation_status": "pending"
+      "evaluation_status": "evaluated"
     },
     {
       "match_id": "m_3pvUaB",
@@ -1321,10 +1321,10 @@
         "calibration_status": "not_calibrated"
       },
       "actual": {
-        "home_score": null,
-        "away_score": null
+        "home_score": 2,
+        "away_score": 3
       },
-      "evaluation_status": "pending"
+      "evaluation_status": "evaluated"
     },
     {
       "match_id": "m_10jYg0",
@@ -1384,10 +1384,10 @@
         "calibration_status": "not_calibrated"
       },
       "actual": {
-        "home_score": null,
-        "away_score": null
+        "home_score": 1,
+        "away_score": 2
       },
-      "evaluation_status": "pending"
+      "evaluation_status": "evaluated"
     },
     {
       "match_id": "m_25yFU8",
@@ -1447,10 +1447,10 @@
         "calibration_status": "not_calibrated"
       },
       "actual": {
-        "home_score": null,
-        "away_score": null
+        "home_score": 1,
+        "away_score": 0
       },
-      "evaluation_status": "pending"
+      "evaluation_status": "evaluated"
     },
     {
       "match_id": "m_2SxIxt",
@@ -1510,10 +1510,10 @@
         "calibration_status": "not_calibrated"
       },
       "actual": {
-        "home_score": null,
-        "away_score": null
+        "home_score": 1,
+        "away_score": 0
       },
-      "evaluation_status": "pending"
+      "evaluation_status": "evaluated"
     },
     {
       "match_id": "m_40elPe",
@@ -1573,10 +1573,10 @@
         "calibration_status": "not_calibrated"
       },
       "actual": {
-        "home_score": null,
-        "away_score": null
+        "home_score": 5,
+        "away_score": 1
       },
-      "evaluation_status": "pending"
+      "evaluation_status": "evaluated"
     },
     {
       "match_id": "m_4Pdd0e",
@@ -1636,10 +1636,10 @@
         "calibration_status": "not_calibrated"
       },
       "actual": {
-        "home_score": null,
-        "away_score": null
+        "home_score": 4,
+        "away_score": 0
       },
-      "evaluation_status": "pending"
+      "evaluation_status": "evaluated"
     },
     {
       "match_id": "m_1FnTzR",
@@ -1699,10 +1699,10 @@
         "calibration_status": "not_calibrated"
       },
       "actual": {
-        "home_score": null,
-        "away_score": null
+        "home_score": 4,
+        "away_score": 0
       },
-      "evaluation_status": "pending"
+      "evaluation_status": "evaluated"
     },
     {
       "match_id": "m_1AvzJo",
@@ -1762,10 +1762,10 @@
         "calibration_status": "not_calibrated"
       },
       "actual": {
-        "home_score": null,
-        "away_score": null
+        "home_score": 1,
+        "away_score": 1
       },
-      "evaluation_status": "pending"
+      "evaluation_status": "evaluated"
     },
     {
       "match_id": "m_2WvtVu",
@@ -1825,10 +1825,10 @@
         "calibration_status": "not_calibrated"
       },
       "actual": {
-        "home_score": null,
-        "away_score": null
+        "home_score": 3,
+        "away_score": 2
       },
-      "evaluation_status": "pending"
+      "evaluation_status": "evaluated"
     },
     {
       "match_id": "m_0pIsi0",
@@ -1888,10 +1888,10 @@
         "calibration_status": "not_calibrated"
       },
       "actual": {
-        "home_score": null,
-        "away_score": null
+        "home_score": 0,
+        "away_score": 1
       },
-      "evaluation_status": "pending"
+      "evaluation_status": "evaluated"
     },
     {
       "match_id": "m_34jUwH",
@@ -1951,10 +1951,10 @@
         "calibration_status": "not_calibrated"
       },
       "actual": {
-        "home_score": null,
-        "away_score": null
+        "home_score": 3,
+        "away_score": 1
       },
-      "evaluation_status": "pending"
+      "evaluation_status": "evaluated"
     },
     {
       "match_id": "m_18ul5S",
@@ -2014,10 +2014,10 @@
         "calibration_status": "not_calibrated"
       },
       "actual": {
-        "home_score": null,
-        "away_score": null
+        "home_score": 2,
+        "away_score": 0
       },
-      "evaluation_status": "pending"
+      "evaluation_status": "evaluated"
     },
     {
       "match_id": "m_4TXXCg",
@@ -2077,10 +2077,10 @@
         "calibration_status": "not_calibrated"
       },
       "actual": {
-        "home_score": null,
-        "away_score": null
+        "home_score": 0,
+        "away_score": 2
       },
-      "evaluation_status": "pending"
+      "evaluation_status": "evaluated"
     },
     {
       "match_id": "m_1PKq2V",
@@ -2140,10 +2140,10 @@
         "calibration_status": "not_calibrated"
       },
       "actual": {
-        "home_score": null,
-        "away_score": null
+        "home_score": 1,
+        "away_score": 1
       },
-      "evaluation_status": "pending"
+      "evaluation_status": "evaluated"
     },
     {
       "match_id": "m_11vVyC",
@@ -2203,10 +2203,10 @@
         "calibration_status": "not_calibrated"
       },
       "actual": {
-        "home_score": null,
-        "away_score": null
+        "home_score": 4,
+        "away_score": 0
       },
-      "evaluation_status": "pending"
+      "evaluation_status": "evaluated"
     },
     {
       "match_id": "m_2xAkEu",
@@ -2266,10 +2266,10 @@
         "calibration_status": "not_calibrated"
       },
       "actual": {
-        "home_score": null,
-        "away_score": null
+        "home_score": 3,
+        "away_score": 2
       },
-      "evaluation_status": "pending"
+      "evaluation_status": "evaluated"
     },
     {
       "match_id": "m_0FYEVK",
@@ -2329,10 +2329,10 @@
         "calibration_status": "not_calibrated"
       },
       "actual": {
-        "home_score": null,
-        "away_score": null
+        "home_score": 1,
+        "away_score": 0
       },
-      "evaluation_status": "pending"
+      "evaluation_status": "evaluated"
     },
     {
       "match_id": "m_0M5Pz1",
@@ -2392,10 +2392,10 @@
         "calibration_status": "not_calibrated"
       },
       "actual": {
-        "home_score": null,
-        "away_score": null
+        "home_score": 4,
+        "away_score": 0
       },
-      "evaluation_status": "pending"
+      "evaluation_status": "evaluated"
     },
     {
       "match_id": "m_1jjxcN",

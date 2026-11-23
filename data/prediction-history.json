@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at_utc": "2026-11-23T08:50:12.628251Z",
+  "generated_at_utc": "2026-11-23T08:50:54.991901Z",
   "description": "Snapshots immuables créés à J-1 (la veille du coup d'envoi) pour les expérimentations +1,5, +2,5 et BTTS. Les matchs terminés sont évalués puis archivés.",
   "records": [
     {
@@ -10,7 +10,7 @@
       "kickoff_utc": "2026-11-24T20:00:00Z",
       "home_team": "Arsenal",
       "away_team": "Borussia Dortmund",
-      "snapshot_at_utc": "2026-11-23T08:50:12.628251Z",
+      "snapshot_at_utc": "2026-11-23T00:50:23.024558Z",
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
@@ -73,7 +73,7 @@
       "kickoff_utc": "2026-11-24T20:00:00Z",
       "home_team": "Slovan Bratislava",
       "away_team": "Real Betis",
-      "snapshot_at_utc": "2026-11-23T08:50:12.628251Z",
+      "snapshot_at_utc": "2026-11-23T00:50:23.024558Z",
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
@@ -136,7 +136,7 @@
       "kickoff_utc": "2026-11-24T20:00:00Z",
       "home_team": "Real Madrid",
       "away_team": "PSV Eindhoven",
-      "snapshot_at_utc": "2026-11-23T08:50:12.628251Z",
+      "snapshot_at_utc": "2026-11-23T00:50:23.024558Z",
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
@@ -199,7 +199,7 @@
       "kickoff_utc": "2026-11-24T20:00:00Z",
       "home_team": "RB Leipzig",
       "away_team": "Lens",
-      "snapshot_at_utc": "2026-11-23T08:50:12.628251Z",
+      "snapshot_at_utc": "2026-11-23T00:50:23.024558Z",
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
@@ -262,7 +262,7 @@
       "kickoff_utc": "2026-11-24T20:00:00Z",
       "home_team": "Manchester City",
       "away_team": "Napoli",
-      "snapshot_at_utc": "2026-11-23T08:50:12.628251Z",
+      "snapshot_at_utc": "2026-11-23T00:50:23.024558Z",
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
@@ -325,7 +325,7 @@
       "kickoff_utc": "2026-11-24T20:00:00Z",
       "home_team": "Feyenoord",
       "away_team": "FC Porto",
-      "snapshot_at_utc": "2026-11-23T08:50:12.628251Z",
+      "snapshot_at_utc": "2026-11-23T00:50:23.024558Z",
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
@@ -388,7 +388,7 @@
       "kickoff_utc": "2026-11-24T20:00:00Z",
       "home_team": "Como",
       "away_team": "AEK Athens",
-      "snapshot_at_utc": "2026-11-23T08:50:12.628251Z",
+      "snapshot_at_utc": "2026-11-23T00:50:23.024558Z",
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
@@ -451,7 +451,7 @@
       "kickoff_utc": "2026-11-24T17:45:00Z",
       "home_team": "Bodø/Glimt",
       "away_team": "LASK",
-      "snapshot_at_utc": "2026-11-23T08:50:12.628251Z",
+      "snapshot_at_utc": "2026-11-23T00:50:23.024558Z",
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
@@ -514,7 +514,7 @@
       "kickoff_utc": "2026-11-24T17:45:00Z",
       "home_team": "Galatasaray",
       "away_team": "Aston Villa",
-      "snapshot_at_utc": "2026-11-23T08:50:12.628251Z",
+      "snapshot_at_utc": "2026-11-23T00:50:23.024558Z",
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
@@ -577,7 +577,7 @@
       "kickoff_utc": "2026-11-24T01:00:00Z",
       "home_team": "St. Louis City",
       "away_team": "Los Angeles FC",
-      "snapshot_at_utc": "2026-11-23T08:50:12.628251Z",
+      "snapshot_at_utc": "2026-11-23T00:50:23.024558Z",
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
@@ -594,7 +594,7 @@
             "percentage": 90.0
           },
           "pick": true,
-          "probability": 0.765494
+          "probability": 0.764959
         },
         "over_2_5": {
           "tier": 3,
@@ -649,12 +649,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 10,
-            "percentage": 100.0
+            "percentage": 100
           },
           "away_frequency": {
             "matches": 10,
             "count": 7,
-            "percentage": 70.0
+            "percentage": 70
           },
           "pick": false,
           "probability": 0.647691
@@ -665,12 +665,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 5,
-            "percentage": 50.0
+            "percentage": 50
           },
           "away_frequency": {
             "matches": 10,
             "count": 3,
-            "percentage": 30.0
+            "percentage": 30
           }
         },
         "btts": {
@@ -679,12 +679,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 6,
-            "percentage": 60.0
+            "percentage": 60
           },
           "away_frequency": {
             "matches": 10,
             "count": 4,
-            "percentage": 40.0
+            "percentage": 40
           }
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
@@ -712,12 +712,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 8,
-            "percentage": 80.0
+            "percentage": 80
           },
           "away_frequency": {
             "matches": 10,
             "count": 7,
-            "percentage": 70.0
+            "percentage": 70
           },
           "pick": true,
           "probability": 0.893964
@@ -728,12 +728,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 6,
-            "percentage": 60.0
+            "percentage": 60
           },
           "away_frequency": {
             "matches": 10,
             "count": 5,
-            "percentage": 50.0
+            "percentage": 50
           }
         },
         "btts": {
@@ -742,12 +742,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 7,
-            "percentage": 70.0
+            "percentage": 70
           },
           "away_frequency": {
             "matches": 10,
             "count": 5,
-            "percentage": 50.0
+            "percentage": 50
           }
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
@@ -775,12 +775,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 9,
-            "percentage": 90.0
+            "percentage": 90
           },
           "away_frequency": {
             "matches": 10,
             "count": 10,
-            "percentage": 100.0
+            "percentage": 100
           },
           "pick": true,
           "probability": 0.911925
@@ -791,12 +791,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 8,
-            "percentage": 80.0
+            "percentage": 80
           },
           "away_frequency": {
             "matches": 10,
             "count": 9,
-            "percentage": 90.0
+            "percentage": 90
           }
         },
         "btts": {
@@ -805,12 +805,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 8,
-            "percentage": 80.0
+            "percentage": 80
           },
           "away_frequency": {
             "matches": 10,
             "count": 9,
-            "percentage": 90.0
+            "percentage": 90
           }
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
@@ -838,12 +838,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 6,
-            "percentage": 60.0
+            "percentage": 60
           },
           "away_frequency": {
             "matches": 10,
             "count": 9,
-            "percentage": 90.0
+            "percentage": 90
           },
           "pick": true,
           "probability": 0.762756
@@ -854,12 +854,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 4,
-            "percentage": 40.0
+            "percentage": 40
           },
           "away_frequency": {
             "matches": 10,
             "count": 6,
-            "percentage": 60.0
+            "percentage": 60
           }
         },
         "btts": {
@@ -868,12 +868,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 5,
-            "percentage": 50.0
+            "percentage": 50
           },
           "away_frequency": {
             "matches": 10,
             "count": 5,
-            "percentage": 50.0
+            "percentage": 50
           }
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
@@ -901,12 +901,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 6,
-            "percentage": 60.0
+            "percentage": 60
           },
           "away_frequency": {
             "matches": 10,
             "count": 7,
-            "percentage": 70.0
+            "percentage": 70
           },
           "pick": true,
           "probability": 0.73406
@@ -917,12 +917,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 2,
-            "percentage": 20.0
+            "percentage": 20
           },
           "away_frequency": {
             "matches": 10,
             "count": 3,
-            "percentage": 30.0
+            "percentage": 30
           }
         },
         "btts": {
@@ -931,12 +931,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 5,
-            "percentage": 50.0
+            "percentage": 50
           },
           "away_frequency": {
             "matches": 10,
             "count": 4,
-            "percentage": 40.0
+            "percentage": 40
           }
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
@@ -964,12 +964,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 8,
-            "percentage": 80.0
+            "percentage": 80
           },
           "away_frequency": {
             "matches": 10,
             "count": 10,
-            "percentage": 100.0
+            "percentage": 100
           },
           "pick": true,
           "probability": 0.829307
@@ -980,12 +980,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 6,
-            "percentage": 60.0
+            "percentage": 60
           },
           "away_frequency": {
             "matches": 10,
             "count": 7,
-            "percentage": 70.0
+            "percentage": 70
           }
         },
         "btts": {
@@ -994,12 +994,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 6,
-            "percentage": 60.0
+            "percentage": 60
           },
           "away_frequency": {
             "matches": 10,
             "count": 7,
-            "percentage": 70.0
+            "percentage": 70
           }
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
@@ -1018,8 +1018,8 @@
       "kickoff_utc": "2026-11-22T23:30:00Z",
       "home_team": "Chicago Fire FC",
       "away_team": "Charlotte FC",
-      "snapshot_at_utc": "2026-11-21T08:13:35.986979Z",
-      "snapshot_stage": "J-1_RECOVERY",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
           "tier": 1,
@@ -1027,12 +1027,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 8,
-            "percentage": 80.0
+            "percentage": 80
           },
           "away_frequency": {
             "matches": 10,
             "count": 9,
-            "percentage": 90.0
+            "percentage": 90
           },
           "pick": true,
           "probability": 0.891673
@@ -1043,12 +1043,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 8,
-            "percentage": 80.0
+            "percentage": 80
           },
           "away_frequency": {
             "matches": 10,
             "count": 9,
-            "percentage": 90.0
+            "percentage": 90
           }
         },
         "btts": {
@@ -1057,12 +1057,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 7,
-            "percentage": 70.0
+            "percentage": 70
           },
           "away_frequency": {
             "matches": 10,
             "count": 7,
-            "percentage": 70.0
+            "percentage": 70
           }
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
@@ -1080,52 +1080,52 @@
       "season": "2026",
       "kickoff_utc": "2026-11-22T21:00:00Z",
       "home_team": "Nashville SC",
-      "away_team": "FC Cincinnati",
-      "snapshot_at_utc": "2026-11-21T08:13:35.986979Z",
-      "snapshot_stage": "J-1_RECOVERY",
+      "away_team": "Orlando City/FC Cincinnati",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
-          "tier": 1,
-          "tier_label": "Très favorable",
+          "tier": null,
+          "tier_label": null,
           "home_frequency": {
             "matches": 10,
             "count": 9,
-            "percentage": 90.0
+            "percentage": 90
           },
           "away_frequency": {
-            "matches": 10,
-            "count": 9,
-            "percentage": 90.0
+            "matches": 0,
+            "count": 0,
+            "percentage": null
           },
           "pick": true,
-          "probability": 0.933263
+          "probability": 0.869944
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
+          "tier": null,
+          "tier_label": null,
           "home_frequency": {
             "matches": 10,
             "count": 5,
-            "percentage": 50.0
+            "percentage": 50
           },
           "away_frequency": {
-            "matches": 10,
-            "count": 6,
-            "percentage": 60.0
+            "matches": 0,
+            "count": 0,
+            "percentage": null
           }
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
+          "tier": null,
+          "tier_label": null,
           "home_frequency": {
             "matches": 10,
             "count": 4,
-            "percentage": 40.0
+            "percentage": 40
           },
           "away_frequency": {
-            "matches": 10,
-            "count": 6,
-            "percentage": 60.0
+            "matches": 0,
+            "count": 0,
+            "percentage": null
           }
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
@@ -1144,8 +1144,8 @@
       "kickoff_utc": "2026-11-22T20:00:00Z",
       "home_team": "Getafe",
       "away_team": "Atlético Madrid",
-      "snapshot_at_utc": "2026-11-21T08:13:35.986979Z",
-      "snapshot_stage": "J-1_RECOVERY",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
           "tier": 2,
@@ -1153,15 +1153,15 @@
           "home_frequency": {
             "matches": 10,
             "count": 7,
-            "percentage": 70.0
+            "percentage": 70
           },
           "away_frequency": {
             "matches": 10,
             "count": 8,
-            "percentage": 80.0
+            "percentage": 80
           },
           "pick": false,
-          "probability": 0.655765
+          "probability": 0.65598
         },
         "over_2_5": {
           "tier": 3,
@@ -1169,12 +1169,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 3,
-            "percentage": 30.0
+            "percentage": 30
           },
           "away_frequency": {
             "matches": 10,
             "count": 7,
-            "percentage": 70.0
+            "percentage": 70
           }
         },
         "btts": {
@@ -1183,12 +1183,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 4,
-            "percentage": 40.0
+            "percentage": 40
           },
           "away_frequency": {
             "matches": 10,
             "count": 4,
-            "percentage": 40.0
+            "percentage": 40
           }
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
@@ -1207,8 +1207,8 @@
       "kickoff_utc": "2026-11-22T19:45:00Z",
       "home_team": "Atalanta",
       "away_team": "Inter",
-      "snapshot_at_utc": "2026-11-21T08:13:35.986979Z",
-      "snapshot_stage": "J-1_RECOVERY",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
           "tier": 1,
@@ -1216,12 +1216,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 8,
-            "percentage": 80.0
+            "percentage": 80
           },
           "away_frequency": {
             "matches": 10,
             "count": 9,
-            "percentage": 90.0
+            "percentage": 90
           },
           "pick": true,
           "probability": 0.848519
@@ -1232,12 +1232,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 7,
-            "percentage": 70.0
+            "percentage": 70
           },
           "away_frequency": {
             "matches": 10,
             "count": 7,
-            "percentage": 70.0
+            "percentage": 70
           }
         },
         "btts": {
@@ -1246,12 +1246,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 6,
-            "percentage": 60.0
+            "percentage": 60
           },
           "away_frequency": {
             "matches": 10,
             "count": 6,
-            "percentage": 60.0
+            "percentage": 60
           }
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
@@ -1270,8 +1270,8 @@
       "kickoff_utc": "2026-11-22T19:45:00Z",
       "home_team": "Marseille",
       "away_team": "Le Mans",
-      "snapshot_at_utc": "2026-11-21T08:13:35.986979Z",
-      "snapshot_stage": "J-1_RECOVERY",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
           "tier": 1,
@@ -1279,15 +1279,15 @@
           "home_frequency": {
             "matches": 10,
             "count": 9,
-            "percentage": 90.0
+            "percentage": 90
           },
           "away_frequency": {
             "matches": 10,
             "count": 10,
-            "percentage": 100.0
+            "percentage": 100
           },
           "pick": true,
-          "probability": 0.877586
+          "probability": 0.87794
         },
         "over_2_5": {
           "tier": 3,
@@ -1295,12 +1295,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 6,
-            "percentage": 60.0
+            "percentage": 60
           },
           "away_frequency": {
             "matches": 10,
             "count": 6,
-            "percentage": 60.0
+            "percentage": 60
           }
         },
         "btts": {
@@ -1309,12 +1309,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 5,
-            "percentage": 50.0
+            "percentage": 50
           },
           "away_frequency": {
             "matches": 10,
             "count": 8,
-            "percentage": 80.0
+            "percentage": 80
           }
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
@@ -1333,8 +1333,8 @@
       "kickoff_utc": "2026-11-22T18:15:00Z",
       "home_team": "Lommel",
       "away_team": "Standard Liège",
-      "snapshot_at_utc": "2026-11-21T08:13:35.986979Z",
-      "snapshot_stage": "J-1_RECOVERY",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
           "tier": 3,
@@ -1342,15 +1342,15 @@
           "home_frequency": {
             "matches": 10,
             "count": 6,
-            "percentage": 60.0
+            "percentage": 60
           },
           "away_frequency": {
             "matches": 10,
             "count": 8,
-            "percentage": 80.0
+            "percentage": 80
           },
           "pick": true,
-          "probability": 0.763434
+          "probability": 0.763816
         },
         "over_2_5": {
           "tier": 3,
@@ -1358,12 +1358,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 5,
-            "percentage": 50.0
+            "percentage": 50
           },
           "away_frequency": {
             "matches": 10,
             "count": 6,
-            "percentage": 60.0
+            "percentage": 60
           }
         },
         "btts": {
@@ -1372,12 +1372,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 3,
-            "percentage": 30.0
+            "percentage": 30
           },
           "away_frequency": {
             "matches": 10,
             "count": 6,
-            "percentage": 60.0
+            "percentage": 60
           }
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
@@ -1396,8 +1396,8 @@
       "kickoff_utc": "2026-11-22T17:30:00Z",
       "home_team": "Osasuna",
       "away_team": "Málaga",
-      "snapshot_at_utc": "2026-11-21T08:13:35.986979Z",
-      "snapshot_stage": "J-1_RECOVERY",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
           "tier": 1,
@@ -1405,15 +1405,15 @@
           "home_frequency": {
             "matches": 10,
             "count": 9,
-            "percentage": 90.0
+            "percentage": 90
           },
           "away_frequency": {
             "matches": 10,
             "count": 8,
-            "percentage": 80.0
+            "percentage": 80
           },
           "pick": false,
-          "probability": 0.568039
+          "probability": 0.568237
         },
         "over_2_5": {
           "tier": 4,
@@ -1421,12 +1421,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 4,
-            "percentage": 40.0
+            "percentage": 40
           },
           "away_frequency": {
             "matches": 10,
             "count": 5,
-            "percentage": 50.0
+            "percentage": 50
           }
         },
         "btts": {
@@ -1435,12 +1435,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 5,
-            "percentage": 50.0
+            "percentage": 50
           },
           "away_frequency": {
             "matches": 10,
             "count": 7,
-            "percentage": 70.0
+            "percentage": 70
           }
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
@@ -1459,8 +1459,8 @@
       "kickoff_utc": "2026-11-22T17:30:00Z",
       "home_team": "Anderlecht",
       "away_team": "OH Leuven",
-      "snapshot_at_utc": "2026-11-21T08:13:35.986979Z",
-      "snapshot_stage": "J-1_RECOVERY",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
           "tier": 3,
@@ -1468,15 +1468,15 @@
           "home_frequency": {
             "matches": 10,
             "count": 6,
-            "percentage": 60.0
+            "percentage": 60
           },
           "away_frequency": {
             "matches": 10,
             "count": 9,
-            "percentage": 90.0
+            "percentage": 90
           },
           "pick": true,
-          "probability": 0.7306
+          "probability": 0.731105
         },
         "over_2_5": {
           "tier": 4,
@@ -1484,12 +1484,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 5,
-            "percentage": 50.0
+            "percentage": 50
           },
           "away_frequency": {
             "matches": 10,
             "count": 5,
-            "percentage": 50.0
+            "percentage": 50
           }
         },
         "btts": {
@@ -1498,12 +1498,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 3,
-            "percentage": 30.0
+            "percentage": 30
           },
           "away_frequency": {
             "matches": 10,
             "count": 5,
-            "percentage": 50.0
+            "percentage": 50
           }
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
@@ -1522,8 +1522,8 @@
       "kickoff_utc": "2026-11-22T17:00:00Z",
       "home_team": "Milan",
       "away_team": "Frosinone",
-      "snapshot_at_utc": "2026-11-21T08:13:35.986979Z",
-      "snapshot_stage": "J-1_RECOVERY",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
           "tier": 1,
@@ -1531,12 +1531,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 10,
-            "percentage": 100.0
+            "percentage": 100
           },
           "away_frequency": {
             "matches": 10,
             "count": 9,
-            "percentage": 90.0
+            "percentage": 90
           },
           "pick": true,
           "probability": 0.886487
@@ -1547,12 +1547,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 6,
-            "percentage": 60.0
+            "percentage": 60
           },
           "away_frequency": {
             "matches": 10,
             "count": 6,
-            "percentage": 60.0
+            "percentage": 60
           }
         },
         "btts": {
@@ -1561,12 +1561,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 7,
-            "percentage": 70.0
+            "percentage": 70
           },
           "away_frequency": {
             "matches": 10,
             "count": 5,
-            "percentage": 50.0
+            "percentage": 50
           }
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
@@ -1585,8 +1585,8 @@
       "kickoff_utc": "2026-11-22T16:30:00Z",
       "home_team": "Liverpool",
       "away_team": "Manchester United",
-      "snapshot_at_utc": "2026-11-21T08:13:35.986979Z",
-      "snapshot_stage": "J-1_RECOVERY",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
           "tier": 2,
@@ -1594,12 +1594,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 7,
-            "percentage": 70.0
+            "percentage": 70
           },
           "away_frequency": {
             "matches": 10,
             "count": 9,
-            "percentage": 90.0
+            "percentage": 90
           },
           "pick": false,
           "probability": 0.643402
@@ -1610,12 +1610,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 5,
-            "percentage": 50.0
+            "percentage": 50
           },
           "away_frequency": {
             "matches": 10,
             "count": 4,
-            "percentage": 40.0
+            "percentage": 40
           }
         },
         "btts": {
@@ -1624,12 +1624,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 4,
-            "percentage": 40.0
+            "percentage": 40
           },
           "away_frequency": {
             "matches": 10,
             "count": 6,
-            "percentage": 60.0
+            "percentage": 60
           }
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
@@ -1648,8 +1648,8 @@
       "kickoff_utc": "2026-11-22T16:30:00Z",
       "home_team": "Werder Bremen",
       "away_team": "Hamburger SV",
-      "snapshot_at_utc": "2026-11-21T08:13:35.986979Z",
-      "snapshot_stage": "J-1_RECOVERY",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
           "tier": 2,
@@ -1665,7 +1665,7 @@
             "percentage": 77.78
           },
           "pick": true,
-          "probability": 0.873195
+          "probability": 0.873205
         },
         "over_2_5": {
           "tier": 3,
@@ -1711,8 +1711,8 @@
       "kickoff_utc": "2026-11-22T16:15:00Z",
       "home_team": "Lorient",
       "away_team": "Rennes",
-      "snapshot_at_utc": "2026-11-21T08:13:35.986979Z",
-      "snapshot_stage": "J-1_RECOVERY",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
           "tier": 3,
@@ -1720,15 +1720,15 @@
           "home_frequency": {
             "matches": 10,
             "count": 5,
-            "percentage": 50.0
+            "percentage": 50
           },
           "away_frequency": {
             "matches": 10,
             "count": 9,
-            "percentage": 90.0
+            "percentage": 90
           },
           "pick": true,
-          "probability": 0.85627
+          "probability": 0.856292
         },
         "over_2_5": {
           "tier": 3,
@@ -1736,12 +1736,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 3,
-            "percentage": 30.0
+            "percentage": 30
           },
           "away_frequency": {
             "matches": 10,
             "count": 9,
-            "percentage": 90.0
+            "percentage": 90
           }
         },
         "btts": {
@@ -1750,12 +1750,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 3,
-            "percentage": 30.0
+            "percentage": 30
           },
           "away_frequency": {
             "matches": 10,
             "count": 7,
-            "percentage": 70.0
+            "percentage": 70
           }
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
@@ -1774,8 +1774,8 @@
       "kickoff_utc": "2026-11-22T15:15:00Z",
       "home_team": "Racing Santander",
       "away_team": "Real Sociedad",
-      "snapshot_at_utc": "2026-11-21T08:13:35.986979Z",
-      "snapshot_stage": "J-1_RECOVERY",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
           "tier": 1,
@@ -1783,15 +1783,15 @@
           "home_frequency": {
             "matches": 10,
             "count": 10,
-            "percentage": 100.0
+            "percentage": 100
           },
           "away_frequency": {
             "matches": 10,
             "count": 8,
-            "percentage": 80.0
+            "percentage": 80
           },
           "pick": true,
-          "probability": 0.924687
+          "probability": 0.924413
         },
         "over_2_5": {
           "tier": 1,
@@ -1799,12 +1799,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 9,
-            "percentage": 90.0
+            "percentage": 90
           },
           "away_frequency": {
             "matches": 10,
             "count": 8,
-            "percentage": 80.0
+            "percentage": 80
           }
         },
         "btts": {
@@ -1813,12 +1813,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 7,
-            "percentage": 70.0
+            "percentage": 70
           },
           "away_frequency": {
             "matches": 10,
             "count": 7,
-            "percentage": 70.0
+            "percentage": 70
           }
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
@@ -1837,8 +1837,8 @@
       "kickoff_utc": "2026-11-22T15:00:00Z",
       "home_team": "Kortrijk",
       "away_team": "Union St.Gilloise",
-      "snapshot_at_utc": "2026-11-21T08:13:35.986979Z",
-      "snapshot_stage": "J-1_RECOVERY",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
           "tier": 2,
@@ -1846,15 +1846,15 @@
           "home_frequency": {
             "matches": 10,
             "count": 7,
-            "percentage": 70.0
+            "percentage": 70
           },
           "away_frequency": {
             "matches": 10,
             "count": 8,
-            "percentage": 80.0
+            "percentage": 80
           },
           "pick": true,
-          "probability": 0.888942
+          "probability": 0.8883
         },
         "over_2_5": {
           "tier": 3,
@@ -1862,12 +1862,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 5,
-            "percentage": 50.0
+            "percentage": 50
           },
           "away_frequency": {
             "matches": 10,
             "count": 6,
-            "percentage": 60.0
+            "percentage": 60
           }
         },
         "btts": {
@@ -1876,12 +1876,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 3,
-            "percentage": 30.0
+            "percentage": 30
           },
           "away_frequency": {
             "matches": 10,
             "count": 4,
-            "percentage": 40.0
+            "percentage": 40
           }
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
@@ -1900,8 +1900,8 @@
       "kickoff_utc": "2026-11-22T14:30:00Z",
       "home_team": "Augsburg",
       "away_team": "Mainz 05",
-      "snapshot_at_utc": "2026-11-21T08:13:35.986979Z",
-      "snapshot_stage": "J-1_RECOVERY",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
           "tier": 2,
@@ -1909,7 +1909,7 @@
           "home_frequency": {
             "matches": 9,
             "count": 9,
-            "percentage": 100.0
+            "percentage": 100
           },
           "away_frequency": {
             "matches": 9,
@@ -1917,7 +1917,7 @@
             "percentage": 77.78
           },
           "pick": true,
-          "probability": 0.893863
+          "probability": 0.893939
         },
         "over_2_5": {
           "tier": 2,
@@ -1963,8 +1963,8 @@
       "kickoff_utc": "2026-11-22T14:00:00Z",
       "home_team": "Hull City",
       "away_team": "Brighton & Hove Albion",
-      "snapshot_at_utc": "2026-11-21T08:13:35.986979Z",
-      "snapshot_stage": "J-1_RECOVERY",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
           "tier": 3,
@@ -1972,12 +1972,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 6,
-            "percentage": 60.0
+            "percentage": 60
           },
           "away_frequency": {
             "matches": 10,
             "count": 9,
-            "percentage": 90.0
+            "percentage": 90
           },
           "pick": true,
           "probability": 0.779809
@@ -1988,12 +1988,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 4,
-            "percentage": 40.0
+            "percentage": 40
           },
           "away_frequency": {
             "matches": 10,
             "count": 5,
-            "percentage": 50.0
+            "percentage": 50
           }
         },
         "btts": {
@@ -2002,12 +2002,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 5,
-            "percentage": 50.0
+            "percentage": 50
           },
           "away_frequency": {
             "matches": 10,
             "count": 2,
-            "percentage": 20.0
+            "percentage": 20
           }
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
@@ -2026,8 +2026,8 @@
       "kickoff_utc": "2026-11-22T14:00:00Z",
       "home_team": "Sassuolo",
       "away_team": "Genoa",
-      "snapshot_at_utc": "2026-11-21T08:13:35.986979Z",
-      "snapshot_stage": "J-1_RECOVERY",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
           "tier": 1,
@@ -2035,12 +2035,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 10,
-            "percentage": 100.0
+            "percentage": 100
           },
           "away_frequency": {
             "matches": 10,
             "count": 8,
-            "percentage": 80.0
+            "percentage": 80
           },
           "pick": true,
           "probability": 0.855735
@@ -2051,12 +2051,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 8,
-            "percentage": 80.0
+            "percentage": 80
           },
           "away_frequency": {
             "matches": 10,
             "count": 5,
-            "percentage": 50.0
+            "percentage": 50
           }
         },
         "btts": {
@@ -2065,12 +2065,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 8,
-            "percentage": 80.0
+            "percentage": 80
           },
           "away_frequency": {
             "matches": 10,
             "count": 6,
-            "percentage": 60.0
+            "percentage": 60
           }
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
@@ -2089,8 +2089,8 @@
       "kickoff_utc": "2026-11-22T14:00:00Z",
       "home_team": "Bologna",
       "away_team": "Udinese",
-      "snapshot_at_utc": "2026-11-21T08:13:35.986979Z",
-      "snapshot_stage": "J-1_RECOVERY",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
           "tier": 1,
@@ -2098,12 +2098,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 8,
-            "percentage": 80.0
+            "percentage": 80
           },
           "away_frequency": {
             "matches": 10,
             "count": 8,
-            "percentage": 80.0
+            "percentage": 80
           },
           "pick": true,
           "probability": 0.836953
@@ -2114,12 +2114,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 6,
-            "percentage": 60.0
+            "percentage": 60
           },
           "away_frequency": {
             "matches": 10,
             "count": 7,
-            "percentage": 70.0
+            "percentage": 70
           }
         },
         "btts": {
@@ -2128,12 +2128,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 7,
-            "percentage": 70.0
+            "percentage": 70
           },
           "away_frequency": {
             "matches": 10,
             "count": 6,
-            "percentage": 60.0
+            "percentage": 60
           }
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
@@ -2152,8 +2152,8 @@
       "kickoff_utc": "2026-11-22T14:00:00Z",
       "home_team": "Paris FC",
       "away_team": "Angers",
-      "snapshot_at_utc": "2026-11-21T08:13:35.986979Z",
-      "snapshot_stage": "J-1_RECOVERY",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
           "tier": 3,
@@ -2161,15 +2161,15 @@
           "home_frequency": {
             "matches": 10,
             "count": 6,
-            "percentage": 60.0
+            "percentage": 60
           },
           "away_frequency": {
             "matches": 10,
             "count": 8,
-            "percentage": 80.0
+            "percentage": 80
           },
           "pick": true,
-          "probability": 0.835323
+          "probability": 0.835612
         },
         "over_2_5": {
           "tier": 3,
@@ -2177,12 +2177,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 6,
-            "percentage": 60.0
+            "percentage": 60
           },
           "away_frequency": {
             "matches": 10,
             "count": 4,
-            "percentage": 40.0
+            "percentage": 40
           }
         },
         "btts": {
@@ -2191,12 +2191,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 5,
-            "percentage": 50.0
+            "percentage": 50
           },
           "away_frequency": {
             "matches": 10,
             "count": 4,
-            "percentage": 40.0
+            "percentage": 40
           }
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
@@ -2215,8 +2215,8 @@
       "kickoff_utc": "2026-11-22T13:00:00Z",
       "home_team": "Barcelona",
       "away_team": "Villarreal",
-      "snapshot_at_utc": "2026-11-21T08:13:35.986979Z",
-      "snapshot_stage": "J-1_RECOVERY",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
           "tier": 3,
@@ -2224,15 +2224,15 @@
           "home_frequency": {
             "matches": 10,
             "count": 10,
-            "percentage": 100.0
+            "percentage": 100
           },
           "away_frequency": {
             "matches": 10,
             "count": 6,
-            "percentage": 60.0
+            "percentage": 60
           },
           "pick": true,
-          "probability": 0.906767
+          "probability": 0.906334
         },
         "over_2_5": {
           "tier": 3,
@@ -2240,12 +2240,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 10,
-            "percentage": 100.0
+            "percentage": 100
           },
           "away_frequency": {
             "matches": 10,
             "count": 5,
-            "percentage": 50.0
+            "percentage": 50
           }
         },
         "btts": {
@@ -2254,12 +2254,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 8,
-            "percentage": 80.0
+            "percentage": 80
           },
           "away_frequency": {
             "matches": 10,
             "count": 5,
-            "percentage": 50.0
+            "percentage": 50
           }
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
@@ -2278,8 +2278,8 @@
       "kickoff_utc": "2026-11-22T12:30:00Z",
       "home_team": "SK Beveren",
       "away_team": "Gent",
-      "snapshot_at_utc": "2026-11-21T08:13:35.986979Z",
-      "snapshot_stage": "J-1_RECOVERY",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
           "tier": 1,
@@ -2287,15 +2287,15 @@
           "home_frequency": {
             "matches": 10,
             "count": 8,
-            "percentage": 80.0
+            "percentage": 80
           },
           "away_frequency": {
             "matches": 10,
             "count": 8,
-            "percentage": 80.0
+            "percentage": 80
           },
           "pick": true,
-          "probability": 0.716478
+          "probability": 0.716802
         },
         "over_2_5": {
           "tier": 3,
@@ -2303,12 +2303,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 7,
-            "percentage": 70.0
+            "percentage": 70
           },
           "away_frequency": {
             "matches": 10,
             "count": 5,
-            "percentage": 50.0
+            "percentage": 50
           }
         },
         "btts": {
@@ -2317,12 +2317,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 3,
-            "percentage": 30.0
+            "percentage": 30
           },
           "away_frequency": {
             "matches": 10,
             "count": 4,
-            "percentage": 40.0
+            "percentage": 40
           }
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
@@ -2341,8 +2341,8 @@
       "kickoff_utc": "2026-11-22T11:30:00Z",
       "home_team": "Juventus",
       "away_team": "Venezia",
-      "snapshot_at_utc": "2026-11-21T08:13:35.986979Z",
-      "snapshot_stage": "J-1_RECOVERY",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
           "tier": 2,
@@ -2350,12 +2350,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 10,
-            "percentage": 100.0
+            "percentage": 100
           },
           "away_frequency": {
             "matches": 10,
             "count": 7,
-            "percentage": 70.0
+            "percentage": 70
           },
           "pick": true,
           "probability": 0.711531
@@ -2366,12 +2366,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 3,
-            "percentage": 30.0
+            "percentage": 30
           },
           "away_frequency": {
             "matches": 10,
             "count": 4,
-            "percentage": 40.0
+            "percentage": 40
           }
         },
         "btts": {
@@ -2380,12 +2380,12 @@
           "home_frequency": {
             "matches": 10,
             "count": 4,
-            "percentage": 40.0
+            "percentage": 40
           },
           "away_frequency": {
             "matches": 10,
             "count": 4,
-            "percentage": 40.0
+            "percentage": 40
           }
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
@@ -2396,7 +2396,2653 @@
         "away_score": 0
       },
       "evaluation_status": "evaluated"
+    },
+    {
+      "match_id": "m_1jjxcN",
+      "competition": "us-mls",
+      "season": "2026",
+      "kickoff_utc": "2026-11-21T23:00:00Z",
+      "home_team": "Inter Miami CF",
+      "away_team": "Columbus Crew",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-1_RECOVERY",
+      "prediction": {
+        "over_1_5": {
+          "tier": 1,
+          "tier_label": "Très favorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 10,
+            "percentage": 100
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 9,
+            "percentage": 90
+          },
+          "pick": true,
+          "probability": 0.947438
+        },
+        "over_2_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          }
+        },
+        "btts": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": 0,
+        "away_score": 3
+      },
+      "evaluation_status": "evaluated"
+    },
+    {
+      "match_id": "m_4CzZeC",
+      "competition": "us-mls",
+      "season": "2026",
+      "kickoff_utc": "2026-11-21T21:00:00Z",
+      "home_team": "FC Dallas",
+      "away_team": "Portland Timbers",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-1_RECOVERY",
+      "prediction": {
+        "over_1_5": {
+          "tier": 2,
+          "tier_label": "Favorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80
+          },
+          "pick": true,
+          "probability": 0.849102
+        },
+        "over_2_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          }
+        },
+        "btts": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": 3,
+        "away_score": 0
+      },
+      "evaluation_status": "evaluated"
+    },
+    {
+      "match_id": "m_101pSt",
+      "competition": "es-la-liga",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-21T20:00:00Z",
+      "home_team": "Real Madrid",
+      "away_team": "Celta Vigo",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-1_RECOVERY",
+      "prediction": {
+        "over_1_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          },
+          "pick": false,
+          "probability": 0.695371
+        },
+        "over_2_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 3,
+            "percentage": 30
+          }
+        },
+        "btts": {
+          "tier": 4,
+          "tier_label": "Défavorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 3,
+            "percentage": 30
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": 2,
+        "away_score": 1
+      },
+      "evaluation_status": "evaluated"
+    },
+    {
+      "match_id": "m_1jov2C",
+      "competition": "it-serie-a",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-21T19:45:00Z",
+      "home_team": "Napoli",
+      "away_team": "Torino",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-1_RECOVERY",
+      "prediction": {
+        "over_1_5": {
+          "tier": 1,
+          "tier_label": "Très favorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 10,
+            "percentage": 100
+          },
+          "pick": true,
+          "probability": 0.767744
+        },
+        "over_2_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          }
+        },
+        "btts": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": 1,
+        "away_score": 0
+      },
+      "evaluation_status": "evaluated"
+    },
+    {
+      "match_id": "m_47p1ca",
+      "competition": "fr-ligue-1",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-21T19:45:00Z",
+      "home_team": "Strasbourg",
+      "away_team": "Brest",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-1_RECOVERY",
+      "prediction": {
+        "over_1_5": {
+          "tier": 1,
+          "tier_label": "Très favorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 10,
+            "percentage": 100
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 9,
+            "percentage": 90
+          },
+          "pick": true,
+          "probability": 0.829164
+        },
+        "over_2_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 9,
+            "percentage": 90
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          }
+        },
+        "btts": {
+          "tier": 2,
+          "tier_label": "Favorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": 0,
+        "away_score": 1
+      },
+      "evaluation_status": "evaluated"
+    },
+    {
+      "match_id": "m_3vBvLr",
+      "competition": "fr-ligue-1",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-21T19:45:00Z",
+      "home_team": "Monaco",
+      "away_team": "Auxerre",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-1_RECOVERY",
+      "prediction": {
+        "over_1_5": {
+          "tier": 1,
+          "tier_label": "Très favorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80
+          },
+          "pick": true,
+          "probability": 0.908612
+        },
+        "over_2_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 4,
+            "percentage": 40
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70
+          }
+        },
+        "btts": {
+          "tier": 2,
+          "tier_label": "Favorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": 1,
+        "away_score": 1
+      },
+      "evaluation_status": "evaluated"
+    },
+    {
+      "match_id": "m_39zXtJ",
+      "competition": "fr-ligue-1",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-21T19:45:00Z",
+      "home_team": "Lens",
+      "away_team": "Toulouse",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-1_RECOVERY",
+      "prediction": {
+        "over_1_5": {
+          "tier": 1,
+          "tier_label": "Très favorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80
+          },
+          "pick": true,
+          "probability": 0.853735
+        },
+        "over_2_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          }
+        },
+        "btts": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": 1,
+        "away_score": 1
+      },
+      "evaluation_status": "evaluated"
+    },
+    {
+      "match_id": "m_1waD57",
+      "competition": "fr-ligue-1",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-21T19:45:00Z",
+      "home_team": "Lille",
+      "away_team": "Lyon",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-1_RECOVERY",
+      "prediction": {
+        "over_1_5": {
+          "tier": 2,
+          "tier_label": "Favorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 9,
+            "percentage": 90
+          },
+          "pick": false,
+          "probability": 0.597797
+        },
+        "over_2_5": {
+          "tier": 4,
+          "tier_label": "Défavorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 3,
+            "percentage": 30
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 4,
+            "percentage": 40
+          }
+        },
+        "btts": {
+          "tier": 4,
+          "tier_label": "Défavorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 4,
+            "percentage": 40
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": 0,
+        "away_score": 1
+      },
+      "evaluation_status": "evaluated"
+    },
+    {
+      "match_id": "m_1fI6f1",
+      "competition": "be-first-division-a",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-21T19:45:00Z",
+      "home_team": "Zulte Waregem",
+      "away_team": "Royal Antwerp",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-1_RECOVERY",
+      "prediction": {
+        "over_1_5": {
+          "tier": 1,
+          "tier_label": "Très favorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 9,
+            "percentage": 90
+          },
+          "pick": true,
+          "probability": 0.839124
+        },
+        "over_2_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80
+          }
+        },
+        "btts": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 3,
+            "percentage": 30
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": 2,
+        "away_score": 2
+      },
+      "evaluation_status": "evaluated"
+    },
+    {
+      "match_id": "m_3J0Hxd",
+      "competition": "be-first-division-a",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-21T19:45:00Z",
+      "home_team": "KV Mechelen",
+      "away_team": "Club Brugge",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-1_RECOVERY",
+      "prediction": {
+        "over_1_5": {
+          "tier": 2,
+          "tier_label": "Favorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80
+          },
+          "pick": true,
+          "probability": 0.903603
+        },
+        "over_2_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70
+          }
+        },
+        "btts": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 4,
+            "percentage": 40
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": 1,
+        "away_score": 5
+      },
+      "evaluation_status": "evaluated"
+    },
+    {
+      "match_id": "m_3S7nsk",
+      "competition": "fr-ligue-2",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-21T19:00:00Z",
+      "home_team": "Reims",
+      "away_team": "Saint-Étienne",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-1_RECOVERY",
+      "prediction": {
+        "over_1_5": {
+          "tier": 1,
+          "tier_label": "Très favorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 9,
+            "percentage": 90
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80
+          },
+          "pick": true,
+          "probability": 0.888308
+        },
+        "over_2_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          }
+        },
+        "btts": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 4,
+            "percentage": 40
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": 0,
+        "away_score": 1
+      },
+      "evaluation_status": "evaluated"
+    },
+    {
+      "match_id": "m_21rdJJ",
+      "competition": "us-mls",
+      "season": "2026",
+      "kickoff_utc": "2026-11-21T19:00:00Z",
+      "home_team": "New England Revolution",
+      "away_team": "Philadelphia Union",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-1_RECOVERY",
+      "prediction": {
+        "over_1_5": {
+          "tier": 1,
+          "tier_label": "Très favorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80
+          },
+          "pick": true,
+          "probability": 0.86759
+        },
+        "over_2_5": {
+          "tier": 1,
+          "tier_label": "Très favorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80
+          }
+        },
+        "btts": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": 2,
+        "away_score": 0
+      },
+      "evaluation_status": "evaluated"
+    },
+    {
+      "match_id": "m_3XXOvK",
+      "competition": "gb-premier-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-21T17:30:00Z",
+      "home_team": "Newcastle United",
+      "away_team": "Arsenal",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-1_RECOVERY",
+      "prediction": {
+        "over_1_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          },
+          "pick": false,
+          "probability": 0.631017
+        },
+        "over_2_5": {
+          "tier": 4,
+          "tier_label": "Défavorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 4,
+            "percentage": 40
+          }
+        },
+        "btts": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 2,
+            "percentage": 20
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": 2,
+        "away_score": 2
+      },
+      "evaluation_status": "evaluated"
+    },
+    {
+      "match_id": "m_38aXX1",
+      "competition": "de-bundesliga",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-21T17:30:00Z",
+      "home_team": "Schalke 04",
+      "away_team": "VfB Stuttgart",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-1_RECOVERY",
+      "prediction": {
+        "over_1_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 9,
+            "count": 5,
+            "percentage": 55.56
+          },
+          "away_frequency": {
+            "matches": 9,
+            "count": 6,
+            "percentage": 66.67
+          },
+          "pick": false,
+          "probability": 0.676028
+        },
+        "over_2_5": {
+          "tier": 4,
+          "tier_label": "Défavorable",
+          "home_frequency": {
+            "matches": 9,
+            "count": 4,
+            "percentage": 44.44
+          },
+          "away_frequency": {
+            "matches": 9,
+            "count": 5,
+            "percentage": 55.56
+          }
+        },
+        "btts": {
+          "tier": 4,
+          "tier_label": "Défavorable",
+          "home_frequency": {
+            "matches": 9,
+            "count": 3,
+            "percentage": 33.33
+          },
+          "away_frequency": {
+            "matches": 9,
+            "count": 5,
+            "percentage": 55.56
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": 0,
+        "away_score": 0
+      },
+      "evaluation_status": "evaluated"
+    },
+    {
+      "match_id": "m_4DeisY",
+      "competition": "es-la-liga",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-21T17:30:00Z",
+      "home_team": "Sevilla",
+      "away_team": "Real Betis",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-1_RECOVERY",
+      "prediction": {
+        "over_1_5": {
+          "tier": 2,
+          "tier_label": "Favorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70
+          },
+          "pick": false,
+          "probability": 0.693513
+        },
+        "over_2_5": {
+          "tier": 4,
+          "tier_label": "Défavorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50
+          }
+        },
+        "btts": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": 1,
+        "away_score": 1
+      },
+      "evaluation_status": "evaluated"
+    },
+    {
+      "match_id": "m_47zSbe",
+      "competition": "be-first-division-a",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-21T17:15:00Z",
+      "home_team": "Genk",
+      "away_team": "RAAL La Louvière",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-1_RECOVERY",
+      "prediction": {
+        "over_1_5": {
+          "tier": 2,
+          "tier_label": "Favorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 9,
+            "percentage": 90
+          },
+          "pick": true,
+          "probability": 0.882614
+        },
+        "over_2_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70
+          }
+        },
+        "btts": {
+          "tier": 4,
+          "tier_label": "Défavorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 4,
+            "percentage": 40
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 4,
+            "percentage": 40
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": 3,
+        "away_score": 0
+      },
+      "evaluation_status": "evaluated"
+    },
+    {
+      "match_id": "m_2fNTjV",
+      "competition": "it-serie-a",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-21T17:00:00Z",
+      "home_team": "Parma",
+      "away_team": "Roma",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-1_RECOVERY",
+      "prediction": {
+        "over_1_5": {
+          "tier": 1,
+          "tier_label": "Très favorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 9,
+            "percentage": 90
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 9,
+            "percentage": 90
+          },
+          "pick": true,
+          "probability": 0.786047
+        },
+        "over_2_5": {
+          "tier": 2,
+          "tier_label": "Favorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70
+          }
+        },
+        "btts": {
+          "tier": 4,
+          "tier_label": "Défavorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": 1,
+        "away_score": 5
+      },
+      "evaluation_status": "evaluated"
+    },
+    {
+      "match_id": "m_3qap9x",
+      "competition": "fr-ligue-1",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-21T16:15:00Z",
+      "home_team": "Nice",
+      "away_team": "Paris Saint-Germain",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-1_RECOVERY",
+      "prediction": {
+        "over_1_5": {
+          "tier": 1,
+          "tier_label": "Très favorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80
+          },
+          "pick": true,
+          "probability": 0.836328
+        },
+        "over_2_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70
+          }
+        },
+        "btts": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": 2,
+        "away_score": 3
+      },
+      "evaluation_status": "evaluated"
+    },
+    {
+      "match_id": "m_3JKUH6",
+      "competition": "es-la-liga",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-21T15:15:00Z",
+      "home_team": "Rayo Vallecano",
+      "away_team": "Valencia",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-1_RECOVERY",
+      "prediction": {
+        "over_1_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 9,
+            "percentage": 90
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          },
+          "pick": true,
+          "probability": 0.747926
+        },
+        "over_2_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          }
+        },
+        "btts": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 4,
+            "percentage": 40
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": 0,
+        "away_score": 1
+      },
+      "evaluation_status": "evaluated"
+    },
+    {
+      "match_id": "m_2PtCYr",
+      "competition": "gb-premier-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-21T15:00:00Z",
+      "home_team": "Tottenham Hotspur",
+      "away_team": "Ipswich Town",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-1_RECOVERY",
+      "prediction": {
+        "over_1_5": {
+          "tier": 2,
+          "tier_label": "Favorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 9,
+            "percentage": 90
+          },
+          "pick": true,
+          "probability": 0.861693
+        },
+        "over_2_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 3,
+            "percentage": 30
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70
+          }
+        },
+        "btts": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 3,
+            "percentage": 30
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": 2,
+        "away_score": 0
+      },
+      "evaluation_status": "evaluated"
+    },
+    {
+      "match_id": "m_3IrTv6",
+      "competition": "gb-premier-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-21T15:00:00Z",
+      "home_team": "AFC Bournemouth",
+      "away_team": "Nottingham Forest",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-1_RECOVERY",
+      "prediction": {
+        "over_1_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 9,
+            "percentage": 90
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          },
+          "pick": true,
+          "probability": 0.731512
+        },
+        "over_2_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 4,
+            "percentage": 40
+          }
+        },
+        "btts": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": 2,
+        "away_score": 0
+      },
+      "evaluation_status": "evaluated"
+    },
+    {
+      "match_id": "m_04ixCx",
+      "competition": "gb-premier-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-21T15:00:00Z",
+      "home_team": "Aston Villa",
+      "away_team": "Sunderland",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-1_RECOVERY",
+      "prediction": {
+        "over_1_5": {
+          "tier": 2,
+          "tier_label": "Favorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70
+          },
+          "pick": true,
+          "probability": 0.821122
+        },
+        "over_2_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 3,
+            "percentage": 30
+          }
+        },
+        "btts": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 4,
+            "percentage": 40
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": 0,
+        "away_score": 0
+      },
+      "evaluation_status": "evaluated"
+    },
+    {
+      "match_id": "m_0B6kF2",
+      "competition": "gb-premier-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-21T15:00:00Z",
+      "home_team": "Coventry City",
+      "away_team": "Crystal Palace",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-1_RECOVERY",
+      "prediction": {
+        "over_1_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 9,
+            "percentage": 90
+          },
+          "pick": true,
+          "probability": 0.787127
+        },
+        "over_2_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          }
+        },
+        "btts": {
+          "tier": 4,
+          "tier_label": "Défavorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 4,
+            "percentage": 40
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": 3,
+        "away_score": 2
+      },
+      "evaluation_status": "evaluated"
+    },
+    {
+      "match_id": "m_19nSVX",
+      "competition": "gb-premier-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-21T15:00:00Z",
+      "home_team": "Chelsea",
+      "away_team": "Leeds United",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-1_RECOVERY",
+      "prediction": {
+        "over_1_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 9,
+            "percentage": 90
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          },
+          "pick": true,
+          "probability": 0.761551
+        },
+        "over_2_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 2,
+            "percentage": 20
+          }
+        },
+        "btts": {
+          "tier": 4,
+          "tier_label": "Défavorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": 1,
+        "away_score": 4
+      },
+      "evaluation_status": "evaluated"
+    },
+    {
+      "match_id": "m_3TVwFX",
+      "competition": "be-first-division-a",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-21T15:00:00Z",
+      "home_team": "Sporting Charleroi",
+      "away_team": "St.Truiden",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-1_RECOVERY",
+      "prediction": {
+        "over_1_5": {
+          "tier": 2,
+          "tier_label": "Favorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 10,
+            "percentage": 100
+          },
+          "pick": true,
+          "probability": 0.958449
+        },
+        "over_2_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80
+          }
+        },
+        "btts": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": 2,
+        "away_score": 2
+      },
+      "evaluation_status": "evaluated"
+    },
+    {
+      "match_id": "m_2mXps3",
+      "competition": "de-bundesliga",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-21T14:30:00Z",
+      "home_team": "Elversberg",
+      "away_team": "Freiburg",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-1_RECOVERY",
+      "prediction": {
+        "over_1_5": {
+          "tier": 2,
+          "tier_label": "Favorable",
+          "home_frequency": {
+            "matches": 9,
+            "count": 7,
+            "percentage": 77.78
+          },
+          "away_frequency": {
+            "matches": 9,
+            "count": 8,
+            "percentage": 88.89
+          },
+          "pick": true,
+          "probability": 0.890328
+        },
+        "over_2_5": {
+          "tier": 2,
+          "tier_label": "Favorable",
+          "home_frequency": {
+            "matches": 9,
+            "count": 7,
+            "percentage": 77.78
+          },
+          "away_frequency": {
+            "matches": 9,
+            "count": 7,
+            "percentage": 77.78
+          }
+        },
+        "btts": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 9,
+            "count": 6,
+            "percentage": 66.67
+          },
+          "away_frequency": {
+            "matches": 9,
+            "count": 6,
+            "percentage": 66.67
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": 0,
+        "away_score": 1
+      },
+      "evaluation_status": "evaluated"
+    },
+    {
+      "match_id": "m_0aFyPg",
+      "competition": "de-bundesliga",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-21T14:30:00Z",
+      "home_team": "Eintracht Frankfurt",
+      "away_team": "Hoffenheim",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-1_RECOVERY",
+      "prediction": {
+        "over_1_5": {
+          "tier": 2,
+          "tier_label": "Favorable",
+          "home_frequency": {
+            "matches": 9,
+            "count": 7,
+            "percentage": 77.78
+          },
+          "away_frequency": {
+            "matches": 9,
+            "count": 9,
+            "percentage": 100
+          },
+          "pick": true,
+          "probability": 0.862774
+        },
+        "over_2_5": {
+          "tier": 2,
+          "tier_label": "Favorable",
+          "home_frequency": {
+            "matches": 9,
+            "count": 7,
+            "percentage": 77.78
+          },
+          "away_frequency": {
+            "matches": 9,
+            "count": 8,
+            "percentage": 88.89
+          }
+        },
+        "btts": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 9,
+            "count": 6,
+            "percentage": 66.67
+          },
+          "away_frequency": {
+            "matches": 9,
+            "count": 7,
+            "percentage": 77.78
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": 1,
+        "away_score": 0
+      },
+      "evaluation_status": "evaluated"
+    },
+    {
+      "match_id": "m_0vvP0O",
+      "competition": "de-bundesliga",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-21T14:30:00Z",
+      "home_team": "Union Berlin",
+      "away_team": "RB Leipzig",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-1_RECOVERY",
+      "prediction": {
+        "over_1_5": {
+          "tier": 2,
+          "tier_label": "Favorable",
+          "home_frequency": {
+            "matches": 9,
+            "count": 7,
+            "percentage": 77.78
+          },
+          "away_frequency": {
+            "matches": 9,
+            "count": 9,
+            "percentage": 100
+          },
+          "pick": true,
+          "probability": 0.814879
+        },
+        "over_2_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 9,
+            "count": 4,
+            "percentage": 44.44
+          },
+          "away_frequency": {
+            "matches": 9,
+            "count": 7,
+            "percentage": 77.78
+          }
+        },
+        "btts": {
+          "tier": 4,
+          "tier_label": "Défavorable",
+          "home_frequency": {
+            "matches": 9,
+            "count": 4,
+            "percentage": 44.44
+          },
+          "away_frequency": {
+            "matches": 9,
+            "count": 3,
+            "percentage": 33.33
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": 1,
+        "away_score": 5
+      },
+      "evaluation_status": "evaluated"
+    },
+    {
+      "match_id": "m_3vFZhn",
+      "competition": "de-bundesliga",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-21T14:30:00Z",
+      "home_team": "Bayer Leverkusen",
+      "away_team": "Paderborn",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-1_RECOVERY",
+      "prediction": {
+        "over_1_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 9,
+            "count": 9,
+            "percentage": 100
+          },
+          "away_frequency": {
+            "matches": 9,
+            "count": 5,
+            "percentage": 55.56
+          },
+          "pick": true,
+          "probability": 0.771312
+        },
+        "over_2_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 9,
+            "count": 8,
+            "percentage": 88.89
+          },
+          "away_frequency": {
+            "matches": 9,
+            "count": 4,
+            "percentage": 44.44
+          }
+        },
+        "btts": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 9,
+            "count": 6,
+            "percentage": 66.67
+          },
+          "away_frequency": {
+            "matches": 9,
+            "count": 3,
+            "percentage": 33.33
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": 4,
+        "away_score": 0
+      },
+      "evaluation_status": "evaluated"
+    },
+    {
+      "match_id": "m_0k03w6",
+      "competition": "de-bundesliga",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-21T14:30:00Z",
+      "home_team": "Borussia Mönchengladbach",
+      "away_team": "Borussia Dortmund",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-1_RECOVERY",
+      "prediction": {
+        "over_1_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 9,
+            "count": 8,
+            "percentage": 88.89
+          },
+          "away_frequency": {
+            "matches": 9,
+            "count": 6,
+            "percentage": 66.67
+          },
+          "pick": true,
+          "probability": 0.858677
+        },
+        "over_2_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 9,
+            "count": 8,
+            "percentage": 88.89
+          },
+          "away_frequency": {
+            "matches": 9,
+            "count": 5,
+            "percentage": 55.56
+          }
+        },
+        "btts": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 9,
+            "count": 6,
+            "percentage": 66.67
+          },
+          "away_frequency": {
+            "matches": 9,
+            "count": 4,
+            "percentage": 44.44
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": 0,
+        "away_score": 1
+      },
+      "evaluation_status": "evaluated"
+    },
+    {
+      "match_id": "m_4MACO8",
+      "competition": "it-serie-a",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-21T14:00:00Z",
+      "home_team": "Lazio",
+      "away_team": "Lecce",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-1_RECOVERY",
+      "prediction": {
+        "over_1_5": {
+          "tier": 1,
+          "tier_label": "Très favorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 9,
+            "percentage": 90
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 9,
+            "percentage": 90
+          },
+          "pick": true,
+          "probability": 0.79174
+        },
+        "over_2_5": {
+          "tier": 2,
+          "tier_label": "Favorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70
+          }
+        },
+        "btts": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": 3,
+        "away_score": 0
+      },
+      "evaluation_status": "evaluated"
+    },
+    {
+      "match_id": "m_01qIw5",
+      "competition": "it-serie-a",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-21T14:00:00Z",
+      "home_team": "Como",
+      "away_team": "Cagliari",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-1_RECOVERY",
+      "prediction": {
+        "over_1_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          },
+          "pick": false,
+          "probability": 0.68966
+        },
+        "over_2_5": {
+          "tier": 4,
+          "tier_label": "Défavorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 4,
+            "percentage": 40
+          }
+        },
+        "btts": {
+          "tier": 4,
+          "tier_label": "Défavorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 4,
+            "percentage": 40
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": 2,
+        "away_score": 0
+      },
+      "evaluation_status": "evaluated"
+    },
+    {
+      "match_id": "m_1MrgIP",
+      "competition": "es-la-liga",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-21T13:00:00Z",
+      "home_team": "Deportivo Alavés",
+      "away_team": "Deportivo A Coruña",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-1_RECOVERY",
+      "prediction": {
+        "over_1_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70
+          },
+          "pick": true,
+          "probability": 0.74064
+        },
+        "over_2_5": {
+          "tier": 4,
+          "tier_label": "Défavorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 4,
+            "percentage": 40
+          }
+        },
+        "btts": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": 3,
+        "away_score": 1
+      },
+      "evaluation_status": "evaluated"
+    },
+    {
+      "match_id": "m_2XMLNw",
+      "competition": "fr-ligue-2",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-21T13:00:00Z",
+      "home_team": "Laval",
+      "away_team": "Montpellier",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-1_RECOVERY",
+      "prediction": {
+        "over_1_5": {
+          "tier": 2,
+          "tier_label": "Favorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70
+          },
+          "pick": true,
+          "probability": 0.752408
+        },
+        "over_2_5": {
+          "tier": 4,
+          "tier_label": "Défavorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50
+          }
+        },
+        "btts": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 4,
+            "percentage": 40
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": 1,
+        "away_score": 0
+      },
+      "evaluation_status": "evaluated"
+    },
+    {
+      "match_id": "m_4S00KG",
+      "competition": "gb-premier-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-21T12:30:00Z",
+      "home_team": "Manchester City",
+      "away_team": "Fulham",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-1_RECOVERY",
+      "prediction": {
+        "over_1_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          },
+          "pick": false,
+          "probability": 0.690491
+        },
+        "over_2_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 3,
+            "percentage": 30
+          }
+        },
+        "btts": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": 1,
+        "away_score": 1
+      },
+      "evaluation_status": "evaluated"
+    },
+    {
+      "match_id": "m_1cuUd1",
+      "competition": "jp-j1-league",
+      "season": "2026",
+      "kickoff_utc": "2026-11-21T07:00:00Z",
+      "home_team": "Gamba Osaka",
+      "away_team": "Fagiano Okayama FC",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-1_RECOVERY",
+      "prediction": {
+        "over_1_5": {
+          "tier": 1,
+          "tier_label": "Très favorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 10,
+            "percentage": 100
+          },
+          "pick": true,
+          "probability": 0.79188
+        },
+        "over_2_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80
+          }
+        },
+        "btts": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": 0,
+        "away_score": 1
+      },
+      "evaluation_status": "evaluated"
+    },
+    {
+      "match_id": "m_45SAfB",
+      "competition": "jp-j1-league",
+      "season": "2026",
+      "kickoff_utc": "2026-11-21T06:00:00Z",
+      "home_team": "Cerezo Osaka",
+      "away_team": "FC Tokyo",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-1_RECOVERY",
+      "prediction": {
+        "over_1_5": {
+          "tier": 1,
+          "tier_label": "Très favorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80
+          },
+          "pick": true,
+          "probability": 0.712353
+        },
+        "over_2_5": {
+          "tier": 4,
+          "tier_label": "Défavorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 4,
+            "percentage": 40
+          }
+        },
+        "btts": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 1,
+            "percentage": 10
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": 0,
+        "away_score": 3
+      },
+      "evaluation_status": "evaluated"
+    },
+    {
+      "match_id": "m_4JXuBD",
+      "competition": "jp-j1-league",
+      "season": "2026",
+      "kickoff_utc": "2026-11-21T06:00:00Z",
+      "home_team": "Kawasaki Frontale",
+      "away_team": "Avispa Fukuoka",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-1_RECOVERY",
+      "prediction": {
+        "over_1_5": {
+          "tier": 1,
+          "tier_label": "Très favorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 9,
+            "percentage": 90
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80
+          },
+          "pick": true,
+          "probability": 0.844956
+        },
+        "over_2_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 9,
+            "percentage": 90
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          }
+        },
+        "btts": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 9,
+            "percentage": 90
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": 1,
+        "away_score": 0
+      },
+      "evaluation_status": "evaluated"
+    },
+    {
+      "match_id": "m_18009J",
+      "competition": "jp-j1-league",
+      "season": "2026",
+      "kickoff_utc": "2026-11-21T05:00:00Z",
+      "home_team": "Kyoto Sanga FC",
+      "away_team": "Urawa Red Diamonds",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-1_RECOVERY",
+      "prediction": {
+        "over_1_5": {
+          "tier": 2,
+          "tier_label": "Favorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 9,
+            "percentage": 90
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70
+          },
+          "pick": true,
+          "probability": 0.82787
+        },
+        "over_2_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70
+          }
+        },
+        "btts": {
+          "tier": 4,
+          "tier_label": "Défavorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": 2,
+        "away_score": 1
+      },
+      "evaluation_status": "evaluated"
+    },
+    {
+      "match_id": "m_1DU0Lz",
+      "competition": "jp-j1-league",
+      "season": "2026",
+      "kickoff_utc": "2026-11-21T05:00:00Z",
+      "home_team": "Machida Zelvia",
+      "away_team": "V-Varen Nagasaki",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-1_RECOVERY",
+      "prediction": {
+        "over_1_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 9,
+            "percentage": 90
+          },
+          "pick": false,
+          "probability": 0.667737
+        },
+        "over_2_5": {
+          "tier": 4,
+          "tier_label": "Défavorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 4,
+            "percentage": 40
+          }
+        },
+        "btts": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 4,
+            "percentage": 40
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": 0,
+        "away_score": 0
+      },
+      "evaluation_status": "evaluated"
+    },
+    {
+      "match_id": "m_4YPBpl",
+      "competition": "jp-j1-league",
+      "season": "2026",
+      "kickoff_utc": "2026-11-21T05:00:00Z",
+      "home_team": "Sanfrecce Hiroshima",
+      "away_team": "Yokohama F.Marinos",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-1_RECOVERY",
+      "prediction": {
+        "over_1_5": {
+          "tier": 1,
+          "tier_label": "Très favorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80
+          },
+          "pick": true,
+          "probability": 0.754444
+        },
+        "over_2_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 2,
+            "percentage": 20
+          }
+        },
+        "btts": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 2,
+            "percentage": 20
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": 2,
+        "away_score": 2
+      },
+      "evaluation_status": "evaluated"
+    },
+    {
+      "match_id": "m_0d6lv9",
+      "competition": "jp-j1-league",
+      "season": "2026",
+      "kickoff_utc": "2026-11-21T05:00:00Z",
+      "home_team": "Tokyo Verdy",
+      "away_team": "Nagoya Grampus",
+      "snapshot_at_utc": "2026-11-20T22:01:32.498300Z",
+      "snapshot_stage": "J-1_RECOVERY",
+      "prediction": {
+        "over_1_5": {
+          "tier": 1,
+          "tier_label": "Très favorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 9,
+            "percentage": 90
+          },
+          "pick": true,
+          "probability": 0.818952
+        },
+        "over_2_5": {
+          "tier": 4,
+          "tier_label": "Défavorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50
+          }
+        },
+        "btts": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          }
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": 0,
+        "away_score": 0
+      },
+      "evaluation_status": "evaluated"
     }
   ],
-  "created_this_run": 10
+  "created_this_run": 0
 }

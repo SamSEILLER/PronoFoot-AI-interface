@@ -1,7 +1,7 @@
 {
   "provider": "pitchapi_processed_history",
-  "generated_at_utc": "2026-11-23T05:49:08.105266+00:00",
-  "matches_considered": 9458,
+  "generated_at_utc": "2026-11-23T08:50:54.720150+00:00",
+  "matches_considered": 9481,
   "pairs": {
     "avispa fukuoka|yokohama f marinos": {
       "team_a": "Avispa Fukuoka",
@@ -87,10 +87,79 @@
         }
       ]
     },
+    "sanfrecce hiroshima|vissel kobe": {
+      "team_a": "Sanfrecce Hiroshima",
+      "team_b": "Vissel Kobe",
+      "matches": [
+        {
+          "date": "2026-05-06T06:00:00Z",
+          "home": "Sanfrecce Hiroshima",
+          "away": "Vissel Kobe",
+          "score_home": 1,
+          "score_away": 1,
+          "competition_id": "jp-j1-league",
+          "competition_name": "J1 League"
+        },
+        {
+          "date": "2026-03-27T10:00:00Z",
+          "home": "Vissel Kobe",
+          "away": "Sanfrecce Hiroshima",
+          "score_home": 2,
+          "score_away": 1,
+          "competition_id": "jp-j1-league",
+          "competition_name": "J1 League"
+        },
+        {
+          "date": "2025-08-20T10:00:00Z",
+          "home": "Sanfrecce Hiroshima",
+          "away": "Vissel Kobe",
+          "score_home": 0,
+          "score_away": 1,
+          "competition_id": "jp-j1-league",
+          "competition_name": "J1 League"
+        },
+        {
+          "date": "2025-07-02T10:00:00Z",
+          "home": "Vissel Kobe",
+          "away": "Sanfrecce Hiroshima",
+          "score_home": 1,
+          "score_away": 0,
+          "competition_id": "jp-j1-league",
+          "competition_name": "J1 League"
+        },
+        {
+          "date": "2024-07-05T10:03:00Z",
+          "home": "Sanfrecce Hiroshima",
+          "away": "Vissel Kobe",
+          "score_home": 1,
+          "score_away": 3,
+          "competition_id": "jp-j1-league",
+          "competition_name": "J1 League"
+        },
+        {
+          "date": "2024-03-16T05:00:00Z",
+          "home": "Vissel Kobe",
+          "away": "Sanfrecce Hiroshima",
+          "score_home": 0,
+          "score_away": 0,
+          "competition_id": "jp-j1-league",
+          "competition_name": "J1 League"
+        }
+      ]
+    },
     "real salt lake|vancouver whitecaps": {
       "team_a": "Real Salt Lake",
       "team_b": "Vancouver Whitecaps",
       "matches": [
+        {
+          "date": "2026-11-23T01:30:00Z",
+          "home": "Vancouver Whitecaps",
+          "away": "Real Salt Lake",
+          "score_home": 2,
+          "score_away": 0,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
         {
           "date": "2026-09-20T01:30:00Z",
           "home": "Real Salt Lake",
@@ -369,6 +438,48 @@
         }
       ]
     },
+    "gamba osaka|yokohama f marinos": {
+      "team_a": "Gamba Osaka",
+      "team_b": "Yokohama F.Marinos",
+      "matches": [
+        {
+          "date": "2025-09-23T10:00:00Z",
+          "home": "Gamba Osaka",
+          "away": "Yokohama F.Marinos",
+          "score_home": 3,
+          "score_away": 1,
+          "competition_id": "jp-j1-league",
+          "competition_name": "J1 League"
+        },
+        {
+          "date": "2025-03-16T05:00:00Z",
+          "home": "Yokohama F.Marinos",
+          "away": "Gamba Osaka",
+          "score_home": 2,
+          "score_away": 0,
+          "competition_id": "jp-j1-league",
+          "competition_name": "J1 League"
+        },
+        {
+          "date": "2024-07-06T10:00:00Z",
+          "home": "Gamba Osaka",
+          "away": "Yokohama F.Marinos",
+          "score_home": 4,
+          "score_away": 0,
+          "competition_id": "jp-j1-league",
+          "competition_name": "J1 League"
+        },
+        {
+          "date": "2024-04-10T10:00:00Z",
+          "home": "Yokohama F.Marinos",
+          "away": "Gamba Osaka",
+          "score_home": 2,
+          "score_away": 0,
+          "competition_id": "jp-j1-league",
+          "competition_name": "J1 League"
+        }
+      ]
+    },
     "nagoya grampus|urawa red diamonds": {
       "team_a": "Nagoya Grampus",
       "team_b": "Urawa Red Diamonds",
@@ -415,6 +526,15 @@
       "team_a": "Charlotte FC",
       "team_b": "Chicago Fire FC",
       "matches": [
+        {
+          "date": "2026-11-22T23:30:00Z",
+          "home": "Chicago Fire FC",
+          "away": "Charlotte FC",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
         {
           "date": "2026-09-26T23:30:00Z",
           "home": "Charlotte FC",
@@ -767,6 +887,15 @@
       "team_b": "Nashville SC",
       "matches": [
         {
+          "date": "2026-11-22T21:00:00Z",
+          "home": "Nashville SC",
+          "away": "FC Cincinnati",
+          "score_home": 0,
+          "score_away": 1,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
+        {
           "date": "2026-11-07T21:00:00Z",
           "home": "FC Cincinnati",
           "away": "Nashville SC",
@@ -877,6 +1006,48 @@
           "away": "Cerezo Osaka",
           "score_home": 1,
           "score_away": 1,
+          "competition_id": "jp-j1-league",
+          "competition_name": "J1 League"
+        }
+      ]
+    },
+    "avispa fukuoka|kashiwa reysol": {
+      "team_a": "Avispa Fukuoka",
+      "team_b": "Kashiwa Reysol",
+      "matches": [
+        {
+          "date": "2025-08-31T10:00:00Z",
+          "home": "Kashiwa Reysol",
+          "away": "Avispa Fukuoka",
+          "score_home": 2,
+          "score_away": 1,
+          "competition_id": "jp-j1-league",
+          "competition_name": "J1 League"
+        },
+        {
+          "date": "2025-02-15T05:03:00Z",
+          "home": "Avispa Fukuoka",
+          "away": "Kashiwa Reysol",
+          "score_home": 0,
+          "score_away": 1,
+          "competition_id": "jp-j1-league",
+          "competition_name": "J1 League"
+        },
+        {
+          "date": "2024-11-03T06:00:00Z",
+          "home": "Avispa Fukuoka",
+          "away": "Kashiwa Reysol",
+          "score_home": 2,
+          "score_away": 1,
+          "competition_id": "jp-j1-league",
+          "competition_name": "J1 League"
+        },
+        {
+          "date": "2024-06-02T10:00:00Z",
+          "home": "Kashiwa Reysol",
+          "away": "Avispa Fukuoka",
+          "score_home": 0,
+          "score_away": 2,
           "competition_id": "jp-j1-league",
           "competition_name": "J1 League"
         }
@@ -1206,48 +1377,6 @@
         }
       ]
     },
-    "anderlecht|oh leuven": {
-      "team_a": "Anderlecht",
-      "team_b": "OH Leuven",
-      "matches": [
-        {
-          "date": "2026-02-28T19:45:00Z",
-          "home": "Anderlecht",
-          "away": "OH Leuven",
-          "score_home": 5,
-          "score_away": 1,
-          "competition_id": "be-first-division-a",
-          "competition_name": "Belgian Pro League"
-        },
-        {
-          "date": "2025-09-26T18:45:00Z",
-          "home": "OH Leuven",
-          "away": "Anderlecht",
-          "score_home": 1,
-          "score_away": 1,
-          "competition_id": "be-first-division-a",
-          "competition_name": "Belgian Pro League"
-        },
-        {
-          "date": "2024-12-01T15:00:00Z",
-          "home": "OH Leuven",
-          "away": "Anderlecht",
-          "score_home": 0,
-          "score_away": 0,
-          "competition_id": "be-first-division-a",
-          "competition_name": "Belgian Pro League"
-        },
-        {
-          "date": "2024-08-10T18:45:00Z",
-          "home": "Anderlecht",
-          "away": "OH Leuven",
-          "score_home": 1,
-          "score_away": 1,
-          "competition_id": "be-first-division-a",
-          "competition_name": "Belgian Pro League"
-        }
-      ]
-    },
     "benfica|famalicao": {
       "team_a": "Benfica",
       "team_b": "Famalicão",
@@ -1416,45 +1545,45 @@
         }
       ]
     },
-    "bologna|udinese": {
-      "team_a": "Bologna",
-      "team_b": "Udinese",
+    "estoril|vitoria de guimaraes": {
+      "team_a": "Estoril",
+      "team_b": "Vitória de Guimarães",
       "matches": [
         {
-          "date": "2026-02-23T19:45:00Z",
-          "home": "Bologna",
-          "away": "Udinese",
+          "date": "2026-01-24T20:30:00Z",
+          "home": "Estoril",
+          "away": "Vitória de Guimarães",
+          "score_home": 4,
+          "score_away": 2,
+          "competition_id": "pt-primeira-liga",
+          "competition_name": "Primeira Liga"
+        },
+        {
+          "date": "2025-08-16T17:00:00Z",
+          "home": "Vitória de Guimarães",
+          "away": "Estoril",
+          "score_home": 3,
+          "score_away": 2,
+          "competition_id": "pt-primeira-liga",
+          "competition_name": "Primeira Liga"
+        },
+        {
+          "date": "2025-01-26T15:30:00Z",
+          "home": "Estoril",
+          "away": "Vitória de Guimarães",
           "score_home": 1,
           "score_away": 0,
-          "competition_id": "it-serie-a",
-          "competition_name": "Serie A"
+          "competition_id": "pt-primeira-liga",
+          "competition_name": "Primeira Liga"
         },
         {
-          "date": "2025-11-22T14:00:00Z",
-          "home": "Udinese",
-          "away": "Bologna",
-          "score_home": 0,
-          "score_away": 3,
-          "competition_id": "it-serie-a",
-          "competition_name": "Serie A"
-        },
-        {
-          "date": "2025-04-28T16:30:00Z",
-          "home": "Udinese",
-          "away": "Bologna",
-          "score_home": 0,
-          "score_away": 0,
-          "competition_id": "it-serie-a",
-          "competition_name": "Serie A"
-        },
-        {
-          "date": "2024-08-18T16:30:00Z",
-          "home": "Bologna",
-          "away": "Udinese",
+          "date": "2024-08-18T17:00:00Z",
+          "home": "Vitória de Guimarães",
+          "away": "Estoril",
           "score_home": 1,
-          "score_away": 1,
-          "competition_id": "it-serie-a",
-          "competition_name": "Serie A"
+          "score_away": 0,
+          "competition_id": "pt-primeira-liga",
+          "competition_name": "Primeira Liga"
         }
       ]
     },
@@ -1668,6 +1797,48 @@
         }
       ]
     },
+    "milan|parma": {
+      "team_a": "Milan",
+      "team_b": "Parma",
+      "matches": [
+        {
+          "date": "2026-02-22T17:00:00Z",
+          "home": "Milan",
+          "away": "Parma",
+          "score_home": 0,
+          "score_away": 1,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        },
+        {
+          "date": "2025-11-08T19:45:00Z",
+          "home": "Parma",
+          "away": "Milan",
+          "score_home": 2,
+          "score_away": 2,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        },
+        {
+          "date": "2025-01-26T11:30:00Z",
+          "home": "Milan",
+          "away": "Parma",
+          "score_home": 3,
+          "score_away": 2,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        },
+        {
+          "date": "2024-08-24T16:30:00Z",
+          "home": "Parma",
+          "away": "Milan",
+          "score_home": 2,
+          "score_away": 1,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        }
+      ]
+    },
     "estoril|gil vicente": {
       "team_a": "Estoril",
       "team_b": "Gil Vicente",
@@ -1749,48 +1920,6 @@
           "score_away": 3,
           "competition_id": "es-la-liga",
           "competition_name": "La Liga"
-        }
-      ]
-    },
-    "atalanta|inter": {
-      "team_a": "Atalanta",
-      "team_b": "Inter",
-      "matches": [
-        {
-          "date": "2026-03-14T14:00:00Z",
-          "home": "Inter",
-          "away": "Atalanta",
-          "score_home": 1,
-          "score_away": 1,
-          "competition_id": "it-serie-a",
-          "competition_name": "Serie A"
-        },
-        {
-          "date": "2025-12-28T19:45:00Z",
-          "home": "Atalanta",
-          "away": "Inter",
-          "score_home": 0,
-          "score_away": 1,
-          "competition_id": "it-serie-a",
-          "competition_name": "Serie A"
-        },
-        {
-          "date": "2025-03-16T19:45:00Z",
-          "home": "Atalanta",
-          "away": "Inter",
-          "score_home": 0,
-          "score_away": 2,
-          "competition_id": "it-serie-a",
-          "competition_name": "Serie A"
-        },
-        {
-          "date": "2024-08-30T18:45:00Z",
-          "home": "Inter",
-          "away": "Atalanta",
-          "score_home": 4,
-          "score_away": 0,
-          "competition_id": "it-serie-a",
-          "competition_name": "Serie A"
         }
       ]
     },
@@ -1897,48 +2026,6 @@
           "away": "Crystal Palace",
           "score_home": 1,
           "score_away": 1,
-          "competition_id": "gb-premier-league",
-          "competition_name": "Premier League"
-        }
-      ]
-    },
-    "liverpool|manchester united": {
-      "team_a": "Liverpool",
-      "team_b": "Manchester United",
-      "matches": [
-        {
-          "date": "2026-05-03T14:30:00Z",
-          "home": "Manchester United",
-          "away": "Liverpool",
-          "score_home": 3,
-          "score_away": 2,
-          "competition_id": "gb-premier-league",
-          "competition_name": "Premier League"
-        },
-        {
-          "date": "2025-10-19T15:30:00Z",
-          "home": "Liverpool",
-          "away": "Manchester United",
-          "score_home": 1,
-          "score_away": 2,
-          "competition_id": "gb-premier-league",
-          "competition_name": "Premier League"
-        },
-        {
-          "date": "2025-01-05T16:30:00Z",
-          "home": "Liverpool",
-          "away": "Manchester United",
-          "score_home": 2,
-          "score_away": 2,
-          "competition_id": "gb-premier-league",
-          "competition_name": "Premier League"
-        },
-        {
-          "date": "2024-09-01T15:00:00Z",
-          "home": "Manchester United",
-          "away": "Liverpool",
-          "score_home": 0,
-          "score_away": 3,
           "competition_id": "gb-premier-league",
           "competition_name": "Premier League"
         }
@@ -2094,6 +2181,48 @@
         }
       ]
     },
+    "marseille|nice": {
+      "team_a": "Marseille",
+      "team_b": "Nice",
+      "matches": [
+        {
+          "date": "2026-04-26T18:45:00Z",
+          "home": "Marseille",
+          "away": "Nice",
+          "score_home": 1,
+          "score_away": 1,
+          "competition_id": "fr-ligue-1",
+          "competition_name": "Ligue 1"
+        },
+        {
+          "date": "2025-11-21T19:45:00Z",
+          "home": "Nice",
+          "away": "Marseille",
+          "score_home": 1,
+          "score_away": 5,
+          "competition_id": "fr-ligue-1",
+          "competition_name": "Ligue 1"
+        },
+        {
+          "date": "2025-01-26T19:45:00Z",
+          "home": "Nice",
+          "away": "Marseille",
+          "score_home": 2,
+          "score_away": 0,
+          "competition_id": "fr-ligue-1",
+          "competition_name": "Ligue 1"
+        },
+        {
+          "date": "2024-09-14T15:00:00Z",
+          "home": "Marseille",
+          "away": "Nice",
+          "score_home": 2,
+          "score_away": 0,
+          "competition_id": "fr-ligue-1",
+          "competition_name": "Ligue 1"
+        }
+      ]
+    },
     "aston villa|everton": {
       "team_a": "Aston Villa",
       "team_b": "Everton",
@@ -2187,45 +2316,45 @@
         }
       ]
     },
-    "augsburg|mainz 05": {
-      "team_a": "Augsburg",
-      "team_b": "Mainz 05",
+    "arsenal|tottenham hotspur": {
+      "team_a": "Arsenal",
+      "team_b": "Tottenham Hotspur",
       "matches": [
         {
-          "date": "2026-02-07T14:30:00Z",
-          "home": "Mainz 05",
-          "away": "Augsburg",
-          "score_home": 2,
-          "score_away": 0,
-          "competition_id": "de-bundesliga",
-          "competition_name": "Bundesliga"
-        },
-        {
-          "date": "2025-09-20T13:30:00Z",
-          "home": "Augsburg",
-          "away": "Mainz 05",
+          "date": "2026-02-22T16:30:00Z",
+          "home": "Tottenham Hotspur",
+          "away": "Arsenal",
           "score_home": 1,
           "score_away": 4,
-          "competition_id": "de-bundesliga",
-          "competition_name": "Bundesliga"
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
         },
         {
-          "date": "2025-02-08T14:30:00Z",
-          "home": "Mainz 05",
-          "away": "Augsburg",
-          "score_home": 0,
-          "score_away": 0,
-          "competition_id": "de-bundesliga",
-          "competition_name": "Bundesliga"
+          "date": "2025-11-23T16:30:00Z",
+          "home": "Arsenal",
+          "away": "Tottenham Hotspur",
+          "score_home": 4,
+          "score_away": 1,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
         },
         {
-          "date": "2024-09-20T18:30:00Z",
-          "home": "Augsburg",
-          "away": "Mainz 05",
+          "date": "2025-01-15T20:00:00Z",
+          "home": "Arsenal",
+          "away": "Tottenham Hotspur",
           "score_home": 2,
-          "score_away": 3,
-          "competition_id": "de-bundesliga",
-          "competition_name": "Bundesliga"
+          "score_away": 1,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        },
+        {
+          "date": "2024-09-15T13:00:00Z",
+          "home": "Tottenham Hotspur",
+          "away": "Arsenal",
+          "score_home": 0,
+          "score_away": 1,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
         }
       ]
     },
@@ -2352,48 +2481,6 @@
           "score_away": 2,
           "competition_id": "gb-premier-league",
           "competition_name": "Premier League"
-        }
-      ]
-    },
-    "barcelona|villarreal": {
-      "team_a": "Barcelona",
-      "team_b": "Villarreal",
-      "matches": [
-        {
-          "date": "2026-02-28T15:15:00Z",
-          "home": "Barcelona",
-          "away": "Villarreal",
-          "score_home": 4,
-          "score_away": 1,
-          "competition_id": "es-la-liga",
-          "competition_name": "La Liga"
-        },
-        {
-          "date": "2025-12-21T15:15:00Z",
-          "home": "Villarreal",
-          "away": "Barcelona",
-          "score_home": 0,
-          "score_away": 2,
-          "competition_id": "es-la-liga",
-          "competition_name": "La Liga"
-        },
-        {
-          "date": "2025-05-18T17:00:00Z",
-          "home": "Barcelona",
-          "away": "Villarreal",
-          "score_home": 2,
-          "score_away": 3,
-          "competition_id": "es-la-liga",
-          "competition_name": "La Liga"
-        },
-        {
-          "date": "2024-09-22T16:30:00Z",
-          "home": "Villarreal",
-          "away": "Barcelona",
-          "score_home": 1,
-          "score_away": 5,
-          "competition_id": "es-la-liga",
-          "competition_name": "La Liga"
         }
       ]
     },
@@ -2571,27 +2658,45 @@
         }
       ]
     },
-    "kortrijk|union st gilloise": {
-      "team_a": "Kortrijk",
-      "team_b": "Union St.Gilloise",
+    "estrela da amadora|gil vicente": {
+      "team_a": "Estrela da Amadora",
+      "team_b": "Gil Vicente",
       "matches": [
         {
-          "date": "2025-02-09T15:00:00Z",
-          "home": "Kortrijk",
-          "away": "Union St.Gilloise",
-          "score_home": 1,
+          "date": "2026-03-08T15:30:00Z",
+          "home": "Estrela da Amadora",
+          "away": "Gil Vicente",
+          "score_home": 2,
           "score_away": 2,
-          "competition_id": "be-first-division-a",
-          "competition_name": "Belgian Pro League"
+          "competition_id": "pt-primeira-liga",
+          "competition_name": "Primeira Liga"
         },
         {
-          "date": "2024-09-29T14:00:00Z",
-          "home": "Union St.Gilloise",
-          "away": "Kortrijk",
+          "date": "2025-10-04T14:30:00Z",
+          "home": "Gil Vicente",
+          "away": "Estrela da Amadora",
+          "score_home": 2,
+          "score_away": 0,
+          "competition_id": "pt-primeira-liga",
+          "competition_name": "Primeira Liga"
+        },
+        {
+          "date": "2025-03-07T20:15:00Z",
+          "home": "Estrela da Amadora",
+          "away": "Gil Vicente",
+          "score_home": 1,
+          "score_away": 1,
+          "competition_id": "pt-primeira-liga",
+          "competition_name": "Primeira Liga"
+        },
+        {
+          "date": "2024-10-05T14:30:00Z",
+          "home": "Gil Vicente",
+          "away": "Estrela da Amadora",
           "score_home": 3,
           "score_away": 0,
-          "competition_id": "be-first-division-a",
-          "competition_name": "Belgian Pro League"
+          "competition_id": "pt-primeira-liga",
+          "competition_name": "Primeira Liga"
         }
       ]
     },
@@ -2826,6 +2931,48 @@
           "score_away": 1,
           "competition_id": "gb-premier-league",
           "competition_name": "Premier League"
+        }
+      ]
+    },
+    "brest|rennes": {
+      "team_a": "Brest",
+      "team_b": "Rennes",
+      "matches": [
+        {
+          "date": "2026-04-04T17:00:00Z",
+          "home": "Brest",
+          "away": "Rennes",
+          "score_home": 3,
+          "score_away": 4,
+          "competition_id": "fr-ligue-1",
+          "competition_name": "Ligue 1"
+        },
+        {
+          "date": "2025-12-13T16:00:00Z",
+          "home": "Rennes",
+          "away": "Brest",
+          "score_home": 3,
+          "score_away": 1,
+          "competition_id": "fr-ligue-1",
+          "competition_name": "Ligue 1"
+        },
+        {
+          "date": "2025-01-18T18:00:00Z",
+          "home": "Rennes",
+          "away": "Brest",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "fr-ligue-1",
+          "competition_name": "Ligue 1"
+        },
+        {
+          "date": "2024-10-19T15:00:00Z",
+          "home": "Brest",
+          "away": "Rennes",
+          "score_home": 1,
+          "score_away": 1,
+          "competition_id": "fr-ligue-1",
+          "competition_name": "Ligue 1"
         }
       ]
     },
@@ -3075,6 +3222,132 @@
         }
       ]
     },
+    "everton|fulham": {
+      "team_a": "Everton",
+      "team_b": "Fulham",
+      "matches": [
+        {
+          "date": "2026-02-07T15:00:00Z",
+          "home": "Fulham",
+          "away": "Everton",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        },
+        {
+          "date": "2025-11-08T15:00:00Z",
+          "home": "Everton",
+          "away": "Fulham",
+          "score_home": 2,
+          "score_away": 0,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        },
+        {
+          "date": "2025-05-10T14:00:00Z",
+          "home": "Fulham",
+          "away": "Everton",
+          "score_home": 1,
+          "score_away": 3,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        },
+        {
+          "date": "2024-10-26T16:30:00Z",
+          "home": "Everton",
+          "away": "Fulham",
+          "score_home": 1,
+          "score_away": 1,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
+        }
+      ]
+    },
+    "getafe|valencia": {
+      "team_a": "Getafe",
+      "team_b": "Valencia",
+      "matches": [
+        {
+          "date": "2026-01-18T13:00:00Z",
+          "home": "Getafe",
+          "away": "Valencia",
+          "score_home": 0,
+          "score_away": 1,
+          "competition_id": "es-la-liga",
+          "competition_name": "La Liga"
+        },
+        {
+          "date": "2025-08-29T19:30:00Z",
+          "home": "Valencia",
+          "away": "Getafe",
+          "score_home": 3,
+          "score_away": 0,
+          "competition_id": "es-la-liga",
+          "competition_name": "La Liga"
+        },
+        {
+          "date": "2025-05-10T12:00:00Z",
+          "home": "Valencia",
+          "away": "Getafe",
+          "score_home": 3,
+          "score_away": 0,
+          "competition_id": "es-la-liga",
+          "competition_name": "La Liga"
+        },
+        {
+          "date": "2024-10-27T15:15:00Z",
+          "home": "Getafe",
+          "away": "Valencia",
+          "score_home": 1,
+          "score_away": 1,
+          "competition_id": "es-la-liga",
+          "competition_name": "La Liga"
+        }
+      ]
+    },
+    "atletico madrid|real betis": {
+      "team_a": "Atlético Madrid",
+      "team_b": "Real Betis",
+      "matches": [
+        {
+          "date": "2026-02-08T17:30:00Z",
+          "home": "Atlético Madrid",
+          "away": "Real Betis",
+          "score_home": 0,
+          "score_away": 1,
+          "competition_id": "es-la-liga",
+          "competition_name": "La Liga"
+        },
+        {
+          "date": "2025-10-27T20:00:00Z",
+          "home": "Real Betis",
+          "away": "Atlético Madrid",
+          "score_home": 0,
+          "score_away": 2,
+          "competition_id": "es-la-liga",
+          "competition_name": "La Liga"
+        },
+        {
+          "date": "2025-05-18T17:00:00Z",
+          "home": "Atlético Madrid",
+          "away": "Real Betis",
+          "score_home": 4,
+          "score_away": 1,
+          "competition_id": "es-la-liga",
+          "competition_name": "La Liga"
+        },
+        {
+          "date": "2024-10-27T17:30:00Z",
+          "home": "Real Betis",
+          "away": "Atlético Madrid",
+          "score_home": 1,
+          "score_away": 0,
+          "competition_id": "es-la-liga",
+          "competition_name": "La Liga"
+        }
+      ]
+    },
     "estrela da amadora|vitoria de guimaraes": {
       "team_a": "Estrela da Amadora",
       "team_b": "Vitória de Guimarães",
@@ -3156,6 +3429,90 @@
           "score_away": 1,
           "competition_id": "fr-ligue-1",
           "competition_name": "Ligue 1"
+        }
+      ]
+    },
+    "casa pia ac|rio ave": {
+      "team_a": "Casa Pia AC",
+      "team_b": "Rio Ave",
+      "matches": [
+        {
+          "date": "2026-05-16T17:00:00Z",
+          "home": "Casa Pia AC",
+          "away": "Rio Ave",
+          "score_home": 1,
+          "score_away": 1,
+          "competition_id": "pt-primeira-liga",
+          "competition_name": "Primeira Liga"
+        },
+        {
+          "date": "2026-01-04T15:30:00Z",
+          "home": "Rio Ave",
+          "away": "Casa Pia AC",
+          "score_home": 3,
+          "score_away": 1,
+          "competition_id": "pt-primeira-liga",
+          "competition_name": "Primeira Liga"
+        },
+        {
+          "date": "2025-03-29T15:30:00Z",
+          "home": "Casa Pia AC",
+          "away": "Rio Ave",
+          "score_home": 2,
+          "score_away": 1,
+          "competition_id": "pt-primeira-liga",
+          "competition_name": "Primeira Liga"
+        },
+        {
+          "date": "2024-11-02T15:30:00Z",
+          "home": "Rio Ave",
+          "away": "Casa Pia AC",
+          "score_home": 2,
+          "score_away": 2,
+          "competition_id": "pt-primeira-liga",
+          "competition_name": "Primeira Liga"
+        }
+      ]
+    },
+    "juventus|udinese": {
+      "team_a": "Juventus",
+      "team_b": "Udinese",
+      "matches": [
+        {
+          "date": "2026-03-14T19:45:00Z",
+          "home": "Udinese",
+          "away": "Juventus",
+          "score_home": 0,
+          "score_away": 1,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        },
+        {
+          "date": "2025-10-29T17:30:00Z",
+          "home": "Juventus",
+          "away": "Udinese",
+          "score_home": 3,
+          "score_away": 1,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        },
+        {
+          "date": "2025-05-18T18:45:00Z",
+          "home": "Juventus",
+          "away": "Udinese",
+          "score_home": 2,
+          "score_away": 0,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        },
+        {
+          "date": "2024-11-02T17:00:00Z",
+          "home": "Udinese",
+          "away": "Juventus",
+          "score_home": 0,
+          "score_away": 2,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
         }
       ]
     },
@@ -3897,6 +4254,90 @@
         }
       ]
     },
+    "athletic club|real madrid": {
+      "team_a": "Athletic Club",
+      "team_b": "Real Madrid",
+      "matches": [
+        {
+          "date": "2026-05-23T19:00:00Z",
+          "home": "Real Madrid",
+          "away": "Athletic Club",
+          "score_home": 4,
+          "score_away": 2,
+          "competition_id": "es-la-liga",
+          "competition_name": "La Liga"
+        },
+        {
+          "date": "2025-12-03T18:00:00Z",
+          "home": "Athletic Club",
+          "away": "Real Madrid",
+          "score_home": 0,
+          "score_away": 3,
+          "competition_id": "es-la-liga",
+          "competition_name": "La Liga"
+        },
+        {
+          "date": "2025-04-20T19:00:00Z",
+          "home": "Real Madrid",
+          "away": "Athletic Club",
+          "score_home": 1,
+          "score_away": 0,
+          "competition_id": "es-la-liga",
+          "competition_name": "La Liga"
+        },
+        {
+          "date": "2024-12-04T20:00:00Z",
+          "home": "Athletic Club",
+          "away": "Real Madrid",
+          "score_home": 2,
+          "score_away": 1,
+          "competition_id": "es-la-liga",
+          "competition_name": "La Liga"
+        }
+      ]
+    },
+    "genoa|torino": {
+      "team_a": "Genoa",
+      "team_b": "Torino",
+      "matches": [
+        {
+          "date": "2026-02-22T11:30:00Z",
+          "home": "Genoa",
+          "away": "Torino",
+          "score_home": 3,
+          "score_away": 0,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        },
+        {
+          "date": "2025-10-26T11:30:00Z",
+          "home": "Torino",
+          "away": "Genoa",
+          "score_home": 2,
+          "score_away": 1,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        },
+        {
+          "date": "2025-02-08T19:45:00Z",
+          "home": "Torino",
+          "away": "Genoa",
+          "score_home": 1,
+          "score_away": 1,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        },
+        {
+          "date": "2024-12-07T14:00:00Z",
+          "home": "Genoa",
+          "away": "Torino",
+          "score_home": 0,
+          "score_away": 0,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        }
+      ]
+    },
     "freiburg|hoffenheim": {
       "team_a": "Freiburg",
       "team_b": "Hoffenheim",
@@ -3974,72 +4415,6 @@
           "date": "2024-12-09T20:00:00Z",
           "home": "Getafe",
           "away": "Espanyol",
-          "score_home": 1,
-          "score_away": 0,
-          "competition_id": "es-la-liga",
-          "competition_name": "La Liga"
-        }
-      ]
-    },
-    "juventus|venezia": {
-      "team_a": "Juventus",
-      "team_b": "Venezia",
-      "matches": [
-        {
-          "date": "2025-05-25T18:45:00Z",
-          "home": "Venezia",
-          "away": "Juventus",
-          "score_home": 2,
-          "score_away": 3,
-          "competition_id": "it-serie-a",
-          "competition_name": "Serie A"
-        },
-        {
-          "date": "2024-12-14T19:45:00Z",
-          "home": "Juventus",
-          "away": "Venezia",
-          "score_home": 2,
-          "score_away": 2,
-          "competition_id": "it-serie-a",
-          "competition_name": "Serie A"
-        }
-      ]
-    },
-    "atletico madrid|getafe": {
-      "team_a": "Atlético Madrid",
-      "team_b": "Getafe",
-      "matches": [
-        {
-          "date": "2026-03-14T15:15:00Z",
-          "home": "Atlético Madrid",
-          "away": "Getafe",
-          "score_home": 1,
-          "score_away": 0,
-          "competition_id": "es-la-liga",
-          "competition_name": "La Liga"
-        },
-        {
-          "date": "2025-11-23T17:30:00Z",
-          "home": "Getafe",
-          "away": "Atlético Madrid",
-          "score_home": 0,
-          "score_away": 1,
-          "competition_id": "es-la-liga",
-          "competition_name": "La Liga"
-        },
-        {
-          "date": "2025-03-09T13:00:00Z",
-          "home": "Getafe",
-          "away": "Atlético Madrid",
-          "score_home": 2,
-          "score_away": 1,
-          "competition_id": "es-la-liga",
-          "competition_name": "La Liga"
-        },
-        {
-          "date": "2024-12-15T13:00:00Z",
-          "home": "Atlético Madrid",
-          "away": "Getafe",
           "score_home": 1,
           "score_away": 0,
           "competition_id": "es-la-liga",
@@ -4279,6 +4654,48 @@
           "away": "Udinese",
           "score_home": 1,
           "score_away": 2,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        }
+      ]
+    },
+    "atalanta|lazio": {
+      "team_a": "Atalanta",
+      "team_b": "Lazio",
+      "matches": [
+        {
+          "date": "2026-02-14T17:00:00Z",
+          "home": "Lazio",
+          "away": "Atalanta",
+          "score_home": 0,
+          "score_away": 2,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        },
+        {
+          "date": "2025-10-19T16:00:00Z",
+          "home": "Atalanta",
+          "away": "Lazio",
+          "score_home": 0,
+          "score_away": 0,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        },
+        {
+          "date": "2025-04-06T16:00:00Z",
+          "home": "Atalanta",
+          "away": "Lazio",
+          "score_home": 0,
+          "score_away": 1,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        },
+        {
+          "date": "2024-12-28T19:45:00Z",
+          "home": "Lazio",
+          "away": "Atalanta",
+          "score_home": 1,
+          "score_away": 1,
           "competition_id": "it-serie-a",
           "competition_name": "Serie A"
         }
@@ -4752,27 +5169,27 @@
         }
       ]
     },
-    "angers|paris fc": {
-      "team_a": "Angers",
-      "team_b": "Paris FC",
+    "fagiano okayama fc|machida zelvia": {
+      "team_a": "Fagiano Okayama FC",
+      "team_b": "Machida Zelvia",
       "matches": [
         {
-          "date": "2026-01-25T16:15:00Z",
-          "home": "Paris FC",
-          "away": "Angers",
-          "score_home": 0,
-          "score_away": 0,
-          "competition_id": "fr-ligue-1",
-          "competition_name": "Ligue 1"
-        },
-        {
-          "date": "2025-08-17T15:15:00Z",
-          "home": "Angers",
-          "away": "Paris FC",
+          "date": "2025-09-27T07:00:00Z",
+          "home": "Machida Zelvia",
+          "away": "Fagiano Okayama FC",
           "score_home": 1,
           "score_away": 0,
-          "competition_id": "fr-ligue-1",
-          "competition_name": "Ligue 1"
+          "competition_id": "jp-j1-league",
+          "competition_name": "J1 League"
+        },
+        {
+          "date": "2025-05-25T04:00:00Z",
+          "home": "Fagiano Okayama FC",
+          "away": "Machida Zelvia",
+          "score_home": 2,
+          "score_away": 2,
+          "competition_id": "jp-j1-league",
+          "competition_name": "J1 League"
         }
       ]
     },
@@ -4821,30 +5238,6 @@
           "score_away": 1,
           "competition_id": "es-la-liga",
           "competition_name": "La Liga"
-        }
-      ]
-    },
-    "lorient|rennes": {
-      "team_a": "Lorient",
-      "team_b": "Rennes",
-      "matches": [
-        {
-          "date": "2026-01-24T16:00:00Z",
-          "home": "Rennes",
-          "away": "Lorient",
-          "score_home": 0,
-          "score_away": 2,
-          "competition_id": "fr-ligue-1",
-          "competition_name": "Ligue 1"
-        },
-        {
-          "date": "2025-08-24T13:00:00Z",
-          "home": "Lorient",
-          "away": "Rennes",
-          "score_home": 4,
-          "score_away": 0,
-          "competition_id": "fr-ligue-1",
-          "competition_name": "Ligue 1"
         }
       ]
     },
@@ -4956,6 +5349,30 @@
           "score_away": 3,
           "competition_id": "fr-ligue-2",
           "competition_name": "Ligue 2"
+        }
+      ]
+    },
+    "elche|osasuna": {
+      "team_a": "Elche",
+      "team_b": "Osasuna",
+      "matches": [
+        {
+          "date": "2026-02-13T20:00:00Z",
+          "home": "Elche",
+          "away": "Osasuna",
+          "score_home": 0,
+          "score_away": 0,
+          "competition_id": "es-la-liga",
+          "competition_name": "La Liga"
+        },
+        {
+          "date": "2025-09-25T17:30:00Z",
+          "home": "Osasuna",
+          "away": "Elche",
+          "score_home": 1,
+          "score_away": 1,
+          "competition_id": "es-la-liga",
+          "competition_name": "La Liga"
         }
       ]
     },
@@ -5151,30 +5568,6 @@
         }
       ]
     },
-    "genoa|sassuolo": {
-      "team_a": "Genoa",
-      "team_b": "Sassuolo",
-      "matches": [
-        {
-          "date": "2026-04-12T10:30:00Z",
-          "home": "Genoa",
-          "away": "Sassuolo",
-          "score_home": 2,
-          "score_away": 1,
-          "competition_id": "it-serie-a",
-          "competition_name": "Serie A"
-        },
-        {
-          "date": "2025-11-03T17:30:00Z",
-          "home": "Sassuolo",
-          "away": "Genoa",
-          "score_home": 1,
-          "score_away": 2,
-          "competition_id": "it-serie-a",
-          "competition_name": "Serie A"
-        }
-      ]
-    },
     "nancy|saint etienne": {
       "team_a": "Nancy",
       "team_b": "Saint-Étienne",
@@ -5247,27 +5640,27 @@
         }
       ]
     },
-    "hamburger sv|werder bremen": {
-      "team_a": "Hamburger SV",
-      "team_b": "Werder Bremen",
+    "newcastle united|sunderland": {
+      "team_a": "Newcastle United",
+      "team_b": "Sunderland",
       "matches": [
         {
-          "date": "2026-04-18T13:30:00Z",
-          "home": "Werder Bremen",
-          "away": "Hamburger SV",
-          "score_home": 3,
-          "score_away": 1,
-          "competition_id": "de-bundesliga",
-          "competition_name": "Bundesliga"
+          "date": "2026-03-22T12:00:00Z",
+          "home": "Newcastle United",
+          "away": "Sunderland",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
         },
         {
-          "date": "2025-12-07T14:30:00Z",
-          "home": "Hamburger SV",
-          "away": "Werder Bremen",
-          "score_home": 3,
-          "score_away": 2,
-          "competition_id": "de-bundesliga",
-          "competition_name": "Bundesliga"
+          "date": "2025-12-14T14:00:00Z",
+          "home": "Sunderland",
+          "away": "Newcastle United",
+          "score_home": 1,
+          "score_away": 0,
+          "competition_id": "gb-premier-league",
+          "competition_name": "Premier League"
         }
       ]
     },
