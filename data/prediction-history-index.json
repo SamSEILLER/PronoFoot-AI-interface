@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "active_version": "v1",
+  "versions": [
+    {
+      "id": "v1",
+      "label": "Moteur V1 — référence du 23/11/2026",
+      "archive": "prediction-history-v1.json",
+      "engine_model": "venue_attack_defence_poisson_baseline_v1 + independent_poisson_from_expected_goals_v1",
+      "engine_commit": "6fcc7318669cdd143cc65aa37410fa0f6f43ce09",
+      "baseline_commit": "ab9f804b89849100f08b72f6c64be68287b57d37",
+      "created_at_utc": "2026-11-23T00:57:51.139905Z",
+      "status": "reference",
+      "description": "Version de référence avant les modifications du moteur. Les snapshots sont conservés et les scores finaux sont complétés à mesure de leur disponibilité."
+    }
+  ]
+}
