@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at_utc": "2026-11-23T13:25:42.173761Z",
+  "generated_at_utc": "2026-11-23T13:39:05.523682Z",
   "description": "Snapshots immuables créés à J-1 (la veille du coup d'envoi) pour les expérimentations +1,5, +2,5 et BTTS. Les matchs terminés sont évalués puis archivés.",
   "records": [
     {
@@ -64,7 +64,8 @@
           "pick_threshold": 0.7
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        "calibration_status": "not_calibrated",
+        "pick_threshold": 0.7
       },
       "actual": {
         "home_score": null,
@@ -133,7 +134,8 @@
           "pick_threshold": 0.7
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        "calibration_status": "not_calibrated",
+        "pick_threshold": 0.7
       },
       "actual": {
         "home_score": null,
@@ -202,7 +204,8 @@
           "pick_threshold": 0.7
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        "calibration_status": "not_calibrated",
+        "pick_threshold": 0.7
       },
       "actual": {
         "home_score": null,
@@ -271,7 +274,8 @@
           "pick_threshold": 0.7
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        "calibration_status": "not_calibrated",
+        "pick_threshold": 0.7
       },
       "actual": {
         "home_score": null,
@@ -340,7 +344,8 @@
           "pick_threshold": 0.7
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        "calibration_status": "not_calibrated",
+        "pick_threshold": 0.7
       },
       "actual": {
         "home_score": null,
@@ -409,7 +414,8 @@
           "pick_threshold": 0.7
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        "calibration_status": "not_calibrated",
+        "pick_threshold": 0.7
       },
       "actual": {
         "home_score": null,
@@ -478,7 +484,8 @@
           "pick_threshold": 0.7
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        "calibration_status": "not_calibrated",
+        "pick_threshold": 0.7
       },
       "actual": {
         "home_score": null,
@@ -547,7 +554,8 @@
           "pick_threshold": 0.7
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        "calibration_status": "not_calibrated",
+        "pick_threshold": 0.7
       },
       "actual": {
         "home_score": null,
@@ -616,7 +624,8 @@
           "pick_threshold": 0.7
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        "calibration_status": "not_calibrated",
+        "pick_threshold": 0.7
       },
       "actual": {
         "home_score": null,
@@ -685,7 +694,8 @@
           "pick_threshold": 0.7
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        "calibration_status": "not_calibrated",
+        "pick_threshold": 0.7
       },
       "actual": {
         "home_score": null,
