@@ -25,24 +25,24 @@ main{max-width:1600px;margin:auto;padding:20px}.hero{display:flex;justify-conten
 <body>
 
 <main>
-<header class="hero"><div><h1>Archives des pronostics</h1><p>Choisis un moteur, consulte ses performances par marché puis retrouve les rencontres archivées. Les snapshots restent figés dans leur version d'origine.</p></div></header>
+<header class="hero"><div><h1>Archives des pronostics</h1><p>Consulte les niveaux historiques V1 pour les trois marchés. Les fréquences sont figées au moment du snapshot J-1.</p></div></header>
 <div class="notice" id="archiveNotice" role="status">Chargement des archives…</div>
 <section class="card engine-card">
-<div><h2 class="section-title">1. Moteur de sélection</h2><div class="engine-note" id="engineDescription">Sélectionne un moteur pour consulter ses statistiques et ses marchés disponibles.</div><div class="engine-tags" id="engineTags"></div></div>
+<div><h2 class="section-title">1. Moteur actif</h2><div class="engine-note" id="engineDescription">V1 est le seul moteur publié. Les niveaux reprennent les critères de la page Matchs.</div><div class="engine-tags" id="engineTags"></div></div>
 <div class="field"><label for="engineVersion">VERSION DU MOTEUR</label><select id="engineVersion"><option value="all">Tous les moteurs</option></select></div>
 </section>
 <section class="card">
-<h2 class="section-title">2. Réussite globale du moteur</h2>
+<h2 class="section-title">2. Couverture des données V1</h2>
 <div class="overview">
-<div class="overall"><div class="label">TAUX DE RÉUSSITE GLOBAL</div><strong id="overallRate">N/D</strong><div class="progress"><span id="overallBar" style="width:0%"></span></div><small id="overallDetail">Aucune sélection évaluée</small></div>
-<div class="metric"><div class="label">PRONOSTICS ÉVALUÉS</div><strong id="totalEvaluated">0</strong><small>Avec sélection explicite et score final</small></div>
-<div class="metric"><div class="label">RÉUSSIS</div><strong id="totalHits">0</strong><small>Sélections correctes</small></div>
-<div class="metric"><div class="label">ÉCHOUÉS</div><strong id="totalFailed">0</strong><small>Sélections incorrectes</small></div>
-<div class="metric"><div class="label">EN ATTENTE</div><strong id="totalPending">0</strong><small>Matchs sans score final</small></div>
+<div class="overall"><div class="label">RENCONTRES ARCHIVÉES</div><strong id="overallRate">N/D</strong><div class="progress"><span id="overallBar" style="width:0%"></span></div><small id="overallDetail">Snapshots V1 · niveaux descriptifs, pas de picks</small></div>
+<div class="metric"><div class="label">AVEC NIVEAU ATTRIBUÉ</div><strong id="totalEvaluated">0</strong><small>Au moins 5 matchs valides par équipe</small></div>
+<div class="metric"><div class="label">NIVEAUX 1–2</div><strong id="totalHits">0</strong><small>Très favorable ou favorable</small></div>
+<div class="metric"><div class="label">DONNÉES INSUFFISANTES</div><strong id="totalFailed">0</strong><small>Moins de 5 matchs valides pour une équipe</small></div>
+<div class="metric"><div class="label">SCORES REÇUS</div><strong id="totalPending">0</strong><small>Résultats finaux disponibles</small></div>
 </div>
 </section>
 <section class="card">
-<h2 class="section-title">3. Réussite par type de pari</h2>
+<h2 class="section-title">3. Répartition des niveaux par marché</h2>
 <div class="market-grid" id="marketGrid"></div>
 </section>
 <section class="card filters">
@@ -53,11 +53,11 @@ main{max-width:1600px;margin:auto;padding:20px}.hero{display:flex;justify-conten
 </section>
 <section class="panel">
 <div class="panel-head"><h2 id="matchesTitle">4. Rencontres archivées</h2><span id="rowCount">0 match</span></div>
-<div class="table-wrap"><table><thead><tr><th>DATE / COMPÉTITION</th><th>RENCONTRE</th><th>SÉLECTION</th><th>PROBABILITÉ</th><th>SCORE FINAL</th><th>ÉVALUATION</th><th>MOTEUR</th></tr></thead><tbody id="historyRows"></tbody></table></div>
-<div class="empty" id="emptyState" hidden><strong>Aucune rencontre à afficher</strong>Ce marché ne possède peut-être pas encore de sélection archivée, ou les filtres sont trop restrictifs.</div>
+<div class="table-wrap"><table><thead><tr><th>DATE / COMPÉTITION</th><th>RENCONTRE</th><th>FRÉQUENCE DOMICILE</th><th>FRÉQUENCE EXTÉRIEUR</th><th>NIVEAU V1</th><th>SCORE FINAL</th><th>ÉTAT</th></tr></thead><tbody id="historyRows"></tbody></table></div>
+<div class="empty" id="emptyState" hidden><strong>Aucune rencontre à afficher</strong>Aucune rencontre ne correspond aux filtres sélectionnés.</div>
 <div class="pagination" id="archivePagination" hidden><span id="archivePageInfo">Page 1 / 1</span><div><button id="archivePrev" type="button">Précédent</button> <button id="archiveNext" type="button">Suivant</button></div></div>
 </section>
-<p class="footnote"><strong>Règle de calcul.</strong> Un taux de réussite n'est affiché que si le moteur a enregistré une sélection OUI/NON explicite et que le score final est disponible. Les matchs en attente sont exclus du dénominateur. Les probabilités seules et les fréquences historiques ne sont pas assimilées à des sélections. Les marchés sans données évaluables affichent « N/D » plutôt qu'un pourcentage artificiel. Un taux global agrège les sélections évaluables, pas les matchs.</p>
+<p class="footnote"><strong>Règle de calcul V1.</strong> Pour chaque équipe : jusqu'aux 10 derniers matchs terminés, dans la même compétition et la même saison, antérieurs au coup d'envoi. Minimum 5 matchs valides par équipe. Niveau 1 : les deux fréquences ≥ 80 % ; niveau 2 : les deux ≥ 70 % ; niveau 3 : au moins une ≥ 60 % ; niveau 4 : aucune condition précédente. Sinon : données insuffisantes. Ces niveaux décrivent les fréquences passées et ne sont ni des probabilités calibrées ni des recommandations de pari. Aucun pick OUI/NON ni seuil Poisson à 70 % n'est utilisé.</p>
 </main>
 <script src="./scripts/display/sidebar.js" defer></script><script src="./scripts/display/history.js" defer></script>
 </body></html>
