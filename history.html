@@ -1,55 +1,67 @@
 <!doctype html>
 <html lang="fr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#243744">
-<link rel="icon" type="image/svg+xml" href="./assets/football-ai-circuit.svg">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#243744"><link rel="icon" type="image/svg+xml" href="./assets/football-ai-circuit.svg">
 <title>Archives des pronostics — PronoFoot AI</title>
 <style>
-:root{color-scheme:light;--ink:#0a1b46;--muted:#607796;--line:#e5edf7;--bg:#f3f8fc;--green:#08a966;--amber:#a77a19;--red:#bd4853;--blue:#3976bd}
-*{box-sizing:border-box}body{margin:0;color:var(--ink);font-family:Inter,"Segoe UI",Roboto,Arial,sans-serif;background:linear-gradient(180deg,#f5f9fd 0,#eef5fa 100%);font-size:14px}
-main{max-width:1600px;margin:auto;padding:20px}.hero{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin:4px 0 18px}.eyebrow{font-size:11px;font-weight:800;letter-spacing:1.4px;color:#08a966;text-transform:uppercase}.hero h1{font-size:27px;margin:5px 0 4px}.hero p{margin:0;color:var(--muted);max-width:800px}.hero-mark{border:1px solid var(--line);background:#fff;border-radius:10px;padding:10px 14px;color:var(--muted);font-size:12px;white-space:nowrap}
-.notice{padding:13px 15px;border:1px solid #ead9a9;background:#fffaf0;border-radius:9px;color:#70551a;margin-bottom:16px;line-height:1.5}.notice.error{border-color:#e5b9bd;background:#fff3f3;color:#963e48}
-.toolbar{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;align-items:end;background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px;margin-bottom:14px}.field label{display:block;font-size:12px;color:var(--muted);font-weight:700;margin-bottom:4px}.field select{display:block;width:100%;min-width:0;padding:9px 11px;border:1px solid var(--line);border-radius:6px;background:white;color:var(--ink);font:inherit}
-.versionline{display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--muted);font-size:12px;margin:0 2px 12px}.versionline strong{color:var(--ink)}
-.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:14px}.metric{background:#fff;border:1px solid var(--line);border-radius:10px;padding:15px}.metric .label{display:block;color:var(--muted);font-size:12px}.metric strong{display:block;font-size:25px;margin-top:5px;color:var(--ink)}.metric small{color:var(--muted)}
-.panel{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}.panel-head{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:14px 16px;border-bottom:1px solid var(--line)}.panel-head h2{font-size:16px;margin:0}.panel-head span{font-size:12px;color:var(--muted)}
-.table-wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;min-width:980px}th,td{text-align:left;padding:12px 14px;border-bottom:1px solid #edf1f6;white-space:nowrap}th{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);background:#f8fbfe}td{font-size:13px}.match{font-weight:700;color:var(--ink)}.sub{display:block;color:var(--muted);font-size:10px;margin-top:3px}.score{font-weight:800;font-variant-numeric:tabular-nums}.pill{display:inline-flex;align-items:center;gap:5px;padding:4px 8px;border:1px solid var(--line);border-radius:30px;color:var(--muted);font-size:10px;white-space:nowrap}.pill.green{border-color:#b9e5d1;background:#effaf4;color:#087c4b}.pill.amber{border-color:#ead9a9;background:#fffaf0;color:#876313}.pill.red{border-color:#edc4c7;background:#fff3f3;color:#a43e48}.market{font-weight:700}.market small{display:block;color:var(--muted);font-weight:400;margin-top:3px;font-size:10px}.empty{padding:42px 20px;text-align:center;color:var(--muted)}.empty strong{display:block;color:var(--ink);font-size:16px;margin-bottom:7px}.pagination{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:13px 16px}.pagination span{color:var(--muted);font-size:12px}.pagination button{background:#fff;border:1px solid var(--line);border-radius:6px;color:var(--ink);padding:8px 12px;cursor:pointer}.pagination button:disabled{opacity:.4;cursor:not-allowed}.footnote{margin:12px 2px 0;color:var(--muted);font-size:11px;line-height:1.5}.footnote strong{color:var(--ink)}
-@media(max-width:900px){main{padding:13px}.toolbar{grid-template-columns:repeat(2,minmax(0,1fr))}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{display:block}.hero-mark{display:none}.hero h1{font-size:23px}}
-@media(max-width:520px){.toolbar{grid-template-columns:1fr}.metrics{gap:8px}.metric{padding:11px}.metric strong{font-size:21px}.versionline{align-items:flex-start;flex-direction:column}}
+:root{color-scheme:light;--ink:#0a1b46;--muted:#4f6d99;--green:#08b968;--line:#e5edf7;--bg:#f3f8fc;--pale:#f5f8fc;--shadow:0 3px 12px rgba(17,43,72,.035)}
+*{box-sizing:border-box}body{margin:0;color:var(--ink);font:14px Inter,"Segoe UI",Roboto,Arial,sans-serif;background:linear-gradient(180deg,#f5f9fd 0,#eef5fa 100%);min-height:100vh}
+.topbar{min-height:86px;padding:12px max(20px,calc((100% - 1600px)/2 + 20px));display:flex;align-items:center;gap:25px;color:#f9fbff;background:linear-gradient(110deg,#1c2c38,#293b48 57%,#1b303e);box-shadow:0 2px 8px #172e3b18}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff;min-width:260px}.brand-logo{width:48px;height:48px}.brand-name{font-size:30px;line-height:1;font-weight:800;letter-spacing:-1px}.brand-name em{font-style:normal;color:#05c77b}.brand-sub{font-size:11px;letter-spacing:1.2px;margin-top:4px}.nav{display:flex;gap:5px;align-items:center;flex-wrap:wrap}.nav a{padding:12px 13px;border-radius:9px;text-decoration:none;color:#f1f5f9;font-size:14px}.nav a:hover,.nav a.active{background:#ffffff12;color:#91edc1}.nav a.active{box-shadow:inset 0 -3px #08c977}
+main{max-width:1600px;margin:auto;padding:20px}.hero{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin:4px 0 18px}.eyebrow{font-size:11px;font-weight:800;letter-spacing:1.4px;color:var(--green);text-transform:uppercase}.hero h1{font-size:27px;margin:5px 0 4px}.hero p{margin:0;color:var(--muted);max-width:800px}.hero-mark{border:1px solid var(--line);background:#fff;border-radius:10px;padding:10px 14px;color:var(--muted);font-size:12px;white-space:nowrap}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:16px;margin-bottom:13px}.section-title{font-size:15px;font-weight:800;margin:0 0 12px}.field label{display:block;color:var(--muted);font-size:11px;font-weight:800;letter-spacing:.4px;margin-bottom:6px}.field select{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink);font:inherit}
+.engine-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,360px);gap:18px;align-items:center}.engine-note{color:var(--muted);font-size:12px;line-height:1.5}.engine-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}.tag{border:1px solid var(--line);border-radius:20px;padding:4px 9px;font-size:10px;color:var(--muted)}.tag.active{background:#effaf4;border-color:#b9e5d1;color:#087c4b}
+.overview{display:grid;grid-template-columns:minmax(220px,1.1fr) repeat(3,minmax(110px,.7fr));gap:12px;align-items:stretch}.overall{background:#f7fbf9;border:1px solid #d9eee3;border-radius:10px;padding:15px}.overall .label,.metric .label{font-size:11px;color:var(--muted);font-weight:750}.overall strong{display:block;font-size:32px;line-height:1.25;color:#087c4b;margin:4px 0}.overall small,.metric small{font-size:11px;color:var(--muted)}.progress{height:8px;background:#e8eef5;border-radius:20px;overflow:hidden;margin:8px 0}.progress span{height:100%;display:block;background:var(--green);border-radius:20px}.metric{border:1px solid var(--line);border-radius:10px;padding:15px}.metric strong{display:block;font-size:25px;margin:5px 0;color:var(--ink)}
+.market-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.market-tile{width:100%;text-align:left;background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px;cursor:pointer;color:var(--ink);transition:border-color .15s,box-shadow .15s}.market-tile:hover{border-color:#9acdb4}.market-tile.selected{border:2px solid var(--green);padding:13px;box-shadow:0 0 0 3px #08b96812}.market-top{display:flex;justify-content:space-between;align-items:center;gap:8px}.market-name{font-weight:800}.market-pct{font-size:22px;font-weight:850;color:#087c4b}.market-detail{font-size:11px;color:var(--muted);margin-top:6px}.market-tile .progress{margin:10px 0 0}
+.filters{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:10px;align-items:end}.filter-hint{grid-column:1/-1;color:var(--muted);font-size:11px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}.panel-head{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:15px 16px;border-bottom:1px solid var(--line)}.panel-head h2{font-size:16px;margin:0}.panel-head span{font-size:12px;color:var(--muted)}
+.table-wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;min-width:800px}th,td{text-align:left;padding:12px 14px;border-bottom:1px solid #edf1f6;white-space:nowrap}th{font-size:10px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);background:#f8fbfe}td{font-size:13px}.match{font-weight:750}.sub{display:block;color:var(--muted);font-size:10px;margin-top:3px}.pill{display:inline-flex;padding:4px 8px;border:1px solid var(--line);border-radius:30px;color:var(--muted);font-size:10px}.pill.green{border-color:#b9e5d1;background:#effaf4;color:#087c4b}.pill.amber{border-color:#ead9a9;background:#fffaf0;color:#876313}.pill.red{border-color:#edc4c7;background:#fff3f3;color:#a43e48}
+.empty{padding:38px 18px;text-align:center;color:var(--muted)}.empty strong{display:block;color:var(--ink);font-size:15px;margin-bottom:6px}.pagination{display:flex;justify-content:space-between;align-items:center;padding:13px 16px}.pagination span{font-size:12px;color:var(--muted)}.pagination button{padding:8px 12px;border:1px solid var(--line);border-radius:7px;background:#fff;color:var(--ink);cursor:pointer}.pagination button:disabled{opacity:.4;cursor:not-allowed}.notice{padding:12px 15px;border:1px solid #d8e8f6;background:#f5faff;border-radius:9px;color:#456587;margin-bottom:14px;line-height:1.5}.notice.error{border-color:#e5b9bd;background:#fff3f3;color:#963e48}.footnote{color:var(--muted);font-size:11px;line-height:1.55;margin:12px 2px}.footnote strong{color:var(--ink)}
+@media(max-width:900px){.topbar{gap:12px;flex-wrap:wrap}.nav{width:100%}.hero-mark{display:none}.overview{grid-template-columns:repeat(3,minmax(0,1fr))}.overall{grid-column:1/-1}.filters{grid-template-columns:repeat(2,minmax(0,1fr))}.engine-card{grid-template-columns:1fr}}
+@media(max-width:560px){main{padding:13px}.topbar{padding:12px}.brand{min-width:0}.brand-logo{width:38px;height:38px}.brand-name{font-size:24px}.nav{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}.nav a{text-align:center;padding:9px 4px;font-size:12px}.hero h1{font-size:23px}.card{padding:12px}.overview{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.overall{grid-column:1/-1}.market-grid{grid-template-columns:1fr}.filters{grid-template-columns:1fr}.filter-hint{grid-column:auto}.metric{padding:11px}.metric strong{font-size:21px}}
 </style>
 </head>
 <body>
-<main>
-<header class="hero">
- <div><div class="eyebrow">Football Prediction Lab · Centre de contrôle</div><h1>Archives des pronostics</h1><p>Historique des snapshots pré-match, suivi des résultats et comparaison des versions du moteur. Les prévisions archivées restent figées dans leur version d'origine.</p></div>
- <div class="hero-mark">ARCHIVES · VERSIONS DU MOTEUR</div>
+<header class="topbar">
+<a class="brand" href="./index.html"><img class="brand-logo" src="./assets/football-ai-circuit.svg" alt=""><span><span class="brand-name">PronoFoot <em>AI</em></span><span class="brand-sub">FOOTBALL PREDICTION LAB</span></span></a>
+<nav class="nav" aria-label="Navigation principale">
+<a href="./index.html">Accueil</a><a href="./ranking.html">Classement</a><a href="./analysis.html">Analyse</a><a class="active" href="./history.html" aria-current="page">Archives</a>
+</nav>
 </header>
+<main>
+<header class="hero"><div><div class="eyebrow">Football Prediction Lab · Historique & performances</div><h1>Archives des pronostics</h1><p>Choisis un moteur, consulte ses performances par marché puis retrouve les rencontres archivées. Les snapshots restent figés dans leur version d'origine.</p></div><div class="hero-mark">ARCHIVES · VERSIONS DU MOTEUR</div></header>
 <div class="notice" id="archiveNotice" role="status">Chargement des archives…</div>
-<section class="toolbar" aria-label="Filtres des archives">
- <div class="field"><label for="engineVersion">VERSION DU MOTEUR</label><select id="engineVersion"></select></div>
- <div class="field"><label for="competitionFilter">COMPÉTITION</label><select id="competitionFilter"><option value="">Toutes les compétitions</option></select></div>
- <div class="field"><label for="marketFilter">MARCHÉ / NIVEAU</label><select id="marketFilter"><option value="">Tous les niveaux</option><option value="1">Niveau 1 · Très favorable</option><option value="2">Niveau 2 · Favorable</option><option value="3">Niveau 3 · Mitigé</option><option value="4">Niveau 4 · Défavorable</option><option value="none">Données insuffisantes</option></select></div>
- <div class="field"><label for="statusFilter">ÉTAT DU MATCH</label><select id="statusFilter"><option value="">Tous les matchs</option><option value="pending">Score en attente</option><option value="evaluated">Score reçu</option></select></div>
- <div class="field"><label for="periodFilter">PÉRIODE</label><select id="periodFilter"><option value="all">Toute l'archive</option><option value="30">30 derniers jours</option><option value="90">90 derniers jours</option><option value="365">12 derniers mois</option></select></div>
+<section class="card engine-card">
+<div><h2 class="section-title">1. Moteur de sélection</h2><div class="engine-note" id="engineDescription">Sélectionne un moteur pour consulter ses statistiques et ses marchés disponibles.</div><div class="engine-tags" id="engineTags"></div></div>
+<div class="field"><label for="engineVersion">VERSION DU MOTEUR</label><select id="engineVersion"><option value="all">Tous les moteurs</option></select></div>
 </section>
-<div class="versionline"><span id="versionDescription">Version sélectionnée</span><strong id="versionCount">—</strong></div>
-<section class="metrics" aria-label="Indicateurs de l'archive">
- <article class="metric"><div class="label">MATCHS ARCHIVÉS</div><strong id="metricTotal">—</strong><small>Snapshots conservés</small></article>
- <article class="metric"><div class="label">SCORES REÇUS</div><strong id="metricEvaluated">—</strong><small id="metricEvaluatedDetail">Résultats finaux disponibles</small></article>
- <article class="metric"><div class="label">EN ATTENTE</div><strong id="metricPending">—</strong><small>Matchs sans score final exploitable</small></article>
- <article class="metric"><div class="label">RÉUSSITE DU +1,5</div><strong id="metricOver15">—</strong><small id="metricOver15Detail">Uniquement les sélections explicites évaluables</small></article>
+<section class="card">
+<h2 class="section-title">2. Réussite globale du moteur</h2>
+<div class="overview">
+<div class="overall"><div class="label">TAUX DE RÉUSSITE GLOBAL</div><strong id="overallRate">N/D</strong><div class="progress"><span id="overallBar" style="width:0%"></span></div><small id="overallDetail">Aucune sélection évaluée</small></div>
+<div class="metric"><div class="label">PRONOSTICS ÉVALUÉS</div><strong id="totalEvaluated">0</strong><small>Avec sélection explicite et score final</small></div>
+<div class="metric"><div class="label">RÉUSSIS</div><strong id="totalHits">0</strong><small>Sélections correctes</small></div>
+<div class="metric"><div class="label">EN ATTENTE</div><strong id="totalPending">0</strong><small>Matchs sans score final</small></div>
+</div>
+</section>
+<section class="card">
+<h2 class="section-title">3. Réussite par type de pari</h2>
+<div class="market-grid" id="marketGrid"></div>
+</section>
+<section class="card filters">
+<div class="field"><label for="competitionFilter">COMPÉTITION</label><select id="competitionFilter"><option value="">Toutes les compétitions</option></select></div>
+<div class="field"><label for="statusFilter">ÉTAT DU MATCH</label><select id="statusFilter"><option value="">Tous les matchs</option><option value="pending">Score en attente</option><option value="evaluated">Score reçu</option></select></div>
+<div class="field"><label for="periodFilter">PÉRIODE</label><select id="periodFilter"><option value="all">Toute l'archive</option><option value="30">30 derniers jours</option><option value="90">90 derniers jours</option><option value="365">12 derniers mois</option></select></div>
+<div class="filter-hint">Les filtres s'appliquent aux rencontres du marché sélectionné.</div>
 </section>
 <section class="panel">
- <div class="panel-head"><h2>Journal des snapshots</h2><span id="rowCount">0 match</span></div>
- <div class="table-wrap"><table><thead><tr><th>DATE / COMPÉTITION</th><th>RENCONTRE</th><th>+1,5 BUTS</th><th>+2,5 BUTS</th><th>BTTS</th><th>SNAPSHOT</th><th>RÉSULTAT</th></tr></thead><tbody id="historyRows"></tbody></table></div>
- <div class="empty" id="emptyState" hidden><strong>Aucun match pour ces filtres</strong>Modifie les filtres ou sélectionne une autre version du moteur.</div>
- <div class="pagination" id="archivePagination" hidden><span id="archivePageInfo">Page 1 / 1</span><div><button id="archivePrev" type="button">Précédent</button> <button id="archiveNext" type="button">Suivant</button></div></div>
+<div class="panel-head"><h2 id="matchesTitle">4. Rencontres archivées</h2><span id="rowCount">0 match</span></div>
+<div class="table-wrap"><table><thead><tr><th>DATE / COMPÉTITION</th><th>RENCONTRE</th><th>SÉLECTION</th><th>PROBABILITÉ</th><th>SCORE FINAL</th><th>ÉVALUATION</th><th>MOTEUR</th></tr></thead><tbody id="historyRows"></tbody></table></div>
+<div class="empty" id="emptyState" hidden><strong>Aucune rencontre à afficher</strong>Ce marché ne possède peut-être pas encore de sélection archivée, ou les filtres sont trop restrictifs.</div>
+<div class="pagination" id="archivePagination" hidden><span id="archivePageInfo">Page 1 / 1</span><div><button id="archivePrev" type="button">Précédent</button> <button id="archiveNext" type="button">Suivant</button></div></div>
 </section>
-<p class="footnote"><strong>Lecture des données.</strong> Les niveaux affichés correspondent aux fréquences historiques enregistrées dans chaque snapshot ; ils ne sont pas des probabilités calibrées. Le taux de réussite +1,5 n'est calculé que lorsque le snapshot contient une sélection explicite et que le score final est connu. Les marchés +2,5 et BTTS ne disposent pas encore d'une sélection binaire dans les archives actuelles : aucun taux de réussite artificiel n'est affiché. La V2 apparaîtra dans le sélecteur lorsqu'une archive V2 réelle sera publiée. Les snapshots V1 ne sont jamais recalculés avec un nouveau moteur.</p>
+<p class="footnote"><strong>Règle de calcul.</strong> Un taux de réussite n'est affiché que si le moteur a enregistré une sélection OUI/NON explicite et que le score final est disponible. Les matchs en attente sont exclus du dénominateur. Les probabilités seules et les fréquences historiques ne sont pas assimilées à des sélections. Les marchés sans données évaluables affichent « N/D » plutôt qu'un pourcentage artificiel. Un taux global agrège les sélections évaluables, pas les matchs.</p>
 </main>
-<script src="./scripts/display/sidebar.js" defer></script>
-<script src="./scripts/display/history.js" defer></script>
-</body>
-</html>
+<script src="./scripts/display/sidebar.js" defer></script><script src="./scripts/display/history.js" defer></script>
+</body></html>
