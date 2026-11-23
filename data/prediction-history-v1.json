@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at_utc": "2026-11-23T13:42:15.018993Z",
-  "description": "Snapshots immuables créés à J-1 (la veille du coup d'envoi) pour les expérimentations +1,5, +2,5 et BTTS. Les matchs terminés sont évalués puis archivés.",
+  "generated_at_utc": "2026-11-23T13:44:38.912912Z",
+  "description": "Snapshots J-1 basés sur les fréquences des 10 derniers matchs de même compétition et saison. Niveaux 1 à 4 identiques à l'interface Matchs; minimum 5 matchs valides par équipe. Les scores finaux sont complétés à mesure de leur disponibilité.",
   "records": [
     {
       "match_id": "m_2cwDyu",
@@ -25,9 +25,7 @@
             "matches": 4,
             "count": 3,
             "percentage": 75.0
-          },
-          "pick": true,
-          "probability": 0.841475
+          }
         },
         "over_2_5": {
           "tier": null,
@@ -41,10 +39,7 @@
             "matches": 4,
             "count": 3,
             "percentage": 75.0
-          },
-          "pick": false,
-          "probability": 0.640694,
-          "pick_threshold": 0.7
+          }
         },
         "btts": {
           "tier": null,
@@ -58,14 +53,8 @@
             "matches": 4,
             "count": 3,
             "percentage": 75.0
-          },
-          "pick": false,
-          "probability": 0.623746,
-          "pick_threshold": 0.7
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated",
-        "pick_threshold": 0.7
+          }
+        }
       },
       "actual": {
         "home_score": null,
@@ -95,9 +84,7 @@
             "matches": 4,
             "count": 3,
             "percentage": 75.0
-          },
-          "pick": true,
-          "probability": 0.89932
+          }
         },
         "over_2_5": {
           "tier": null,
@@ -111,10 +98,7 @@
             "matches": 4,
             "count": 3,
             "percentage": 75.0
-          },
-          "pick": true,
-          "probability": 0.743968,
-          "pick_threshold": 0.7
+          }
         },
         "btts": {
           "tier": null,
@@ -128,14 +112,8 @@
             "matches": 4,
             "count": 3,
             "percentage": 75.0
-          },
-          "pick": true,
-          "probability": 0.732381,
-          "pick_threshold": 0.7
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated",
-        "pick_threshold": 0.7
+          }
+        }
       },
       "actual": {
         "home_score": null,
@@ -165,9 +143,7 @@
             "matches": 4,
             "count": 2,
             "percentage": 50.0
-          },
-          "pick": true,
-          "probability": 0.823361
+          }
         },
         "over_2_5": {
           "tier": null,
@@ -181,10 +157,7 @@
             "matches": 4,
             "count": 1,
             "percentage": 25.0
-          },
-          "pick": false,
-          "probability": 0.611453,
-          "pick_threshold": 0.7
+          }
         },
         "btts": {
           "tier": null,
@@ -198,14 +171,8 @@
             "matches": 4,
             "count": 2,
             "percentage": 50.0
-          },
-          "pick": false,
-          "probability": 0.60161,
-          "pick_threshold": 0.7
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated",
-        "pick_threshold": 0.7
+          }
+        }
       },
       "actual": {
         "home_score": null,
@@ -235,9 +202,7 @@
             "matches": 4,
             "count": 4,
             "percentage": 100.0
-          },
-          "pick": true,
-          "probability": 0.886451
+          }
         },
         "over_2_5": {
           "tier": null,
@@ -251,10 +216,7 @@
             "matches": 4,
             "count": 3,
             "percentage": 75.0
-          },
-          "pick": true,
-          "probability": 0.719492,
-          "pick_threshold": 0.7
+          }
         },
         "btts": {
           "tier": null,
@@ -268,14 +230,8 @@
             "matches": 4,
             "count": 2,
             "percentage": 50.0
-          },
-          "pick": true,
-          "probability": 0.702993,
-          "pick_threshold": 0.7
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated",
-        "pick_threshold": 0.7
+          }
+        }
       },
       "actual": {
         "home_score": null,
@@ -305,9 +261,7 @@
             "matches": 4,
             "count": 3,
             "percentage": 75.0
-          },
-          "pick": true,
-          "probability": 0.950441
+          }
         },
         "over_2_5": {
           "tier": null,
@@ -321,10 +275,7 @@
             "matches": 4,
             "count": 3,
             "percentage": 75.0
-          },
-          "pick": true,
-          "probability": 0.853099,
-          "pick_threshold": 0.7
+          }
         },
         "btts": {
           "tier": null,
@@ -338,14 +289,8 @@
             "matches": 4,
             "count": 3,
             "percentage": 75.0
-          },
-          "pick": true,
-          "probability": 0.78033,
-          "pick_threshold": 0.7
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated",
-        "pick_threshold": 0.7
+          }
+        }
       },
       "actual": {
         "home_score": null,
@@ -375,9 +320,7 @@
             "matches": 4,
             "count": 3,
             "percentage": 75.0
-          },
-          "pick": true,
-          "probability": 0.921009
+          }
         },
         "over_2_5": {
           "tier": null,
@@ -391,10 +334,7 @@
             "matches": 4,
             "count": 2,
             "percentage": 50.0
-          },
-          "pick": true,
-          "probability": 0.787637,
-          "pick_threshold": 0.7
+          }
         },
         "btts": {
           "tier": null,
@@ -408,14 +348,8 @@
             "matches": 4,
             "count": 2,
             "percentage": 50.0
-          },
-          "pick": true,
-          "probability": 0.767235,
-          "pick_threshold": 0.7
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated",
-        "pick_threshold": 0.7
+          }
+        }
       },
       "actual": {
         "home_score": null,
@@ -445,9 +379,7 @@
             "matches": 4,
             "count": 3,
             "percentage": 75.0
-          },
-          "pick": true,
-          "probability": 0.948722
+          }
         },
         "over_2_5": {
           "tier": null,
@@ -461,10 +393,7 @@
             "matches": 4,
             "count": 3,
             "percentage": 75.0
-          },
-          "pick": true,
-          "probability": 0.849031,
-          "pick_threshold": 0.7
+          }
         },
         "btts": {
           "tier": null,
@@ -478,14 +407,8 @@
             "matches": 4,
             "count": 3,
             "percentage": 75.0
-          },
-          "pick": true,
-          "probability": 0.711528,
-          "pick_threshold": 0.7
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated",
-        "pick_threshold": 0.7
+          }
+        }
       },
       "actual": {
         "home_score": null,
@@ -515,9 +438,7 @@
             "matches": 4,
             "count": 3,
             "percentage": 75.0
-          },
-          "pick": true,
-          "probability": 0.769381
+          }
         },
         "over_2_5": {
           "tier": null,
@@ -531,10 +452,7 @@
             "matches": 4,
             "count": 3,
             "percentage": 75.0
-          },
-          "pick": false,
-          "probability": 0.53119,
-          "pick_threshold": 0.7
+          }
         },
         "btts": {
           "tier": null,
@@ -548,14 +466,8 @@
             "matches": 4,
             "count": 2,
             "percentage": 50.0
-          },
-          "pick": false,
-          "probability": 0.556524,
-          "pick_threshold": 0.7
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated",
-        "pick_threshold": 0.7
+          }
+        }
       },
       "actual": {
         "home_score": null,
@@ -585,9 +497,7 @@
             "matches": 4,
             "count": 4,
             "percentage": 100.0
-          },
-          "pick": true,
-          "probability": 0.898169
+          }
         },
         "over_2_5": {
           "tier": null,
@@ -601,10 +511,7 @@
             "matches": 4,
             "count": 4,
             "percentage": 100.0
-          },
-          "pick": true,
-          "probability": 0.741738,
-          "pick_threshold": 0.7
+          }
         },
         "btts": {
           "tier": null,
@@ -618,14 +525,8 @@
             "matches": 4,
             "count": 2,
             "percentage": 50.0
-          },
-          "pick": true,
-          "probability": 0.725923,
-          "pick_threshold": 0.7
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated",
-        "pick_threshold": 0.7
+          }
+        }
       },
       "actual": {
         "home_score": null,
@@ -655,9 +556,7 @@
             "matches": 10,
             "count": 9,
             "percentage": 90.0
-          },
-          "pick": true,
-          "probability": 0.764959
+          }
         },
         "over_2_5": {
           "tier": 3,
@@ -671,10 +570,7 @@
             "matches": 10,
             "count": 6,
             "percentage": 60.0
-          },
-          "pick": false,
-          "probability": 0.525765,
-          "pick_threshold": 0.7
+          }
         },
         "btts": {
           "tier": 3,
@@ -688,14 +584,8 @@
             "matches": 10,
             "count": 8,
             "percentage": 80.0
-          },
-          "pick": false,
-          "probability": 0.554279,
-          "pick_threshold": 0.7
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated",
-        "pick_threshold": 0.7
+          }
+        }
       },
       "actual": {
         "home_score": null,
@@ -725,9 +615,7 @@
             "matches": 10,
             "count": 7,
             "percentage": 70
-          },
-          "pick": false,
-          "probability": 0.647691
+          }
         },
         "over_2_5": {
           "tier": 4,
@@ -756,9 +644,7 @@
             "count": 4,
             "percentage": 40
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": null,
@@ -788,9 +674,7 @@
             "matches": 10,
             "count": 7,
             "percentage": 70
-          },
-          "pick": true,
-          "probability": 0.893964
+          }
         },
         "over_2_5": {
           "tier": 3,
@@ -819,9 +703,7 @@
             "count": 5,
             "percentage": 50
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": null,
@@ -851,9 +733,7 @@
             "matches": 10,
             "count": 10,
             "percentage": 100
-          },
-          "pick": true,
-          "probability": 0.911925
+          }
         },
         "over_2_5": {
           "tier": 1,
@@ -882,9 +762,7 @@
             "count": 9,
             "percentage": 90
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": null,
@@ -914,9 +792,7 @@
             "matches": 10,
             "count": 9,
             "percentage": 90
-          },
-          "pick": true,
-          "probability": 0.762756
+          }
         },
         "over_2_5": {
           "tier": 3,
@@ -945,9 +821,7 @@
             "count": 5,
             "percentage": 50
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": null,
@@ -977,9 +851,7 @@
             "matches": 10,
             "count": 7,
             "percentage": 70
-          },
-          "pick": true,
-          "probability": 0.73406
+          }
         },
         "over_2_5": {
           "tier": 4,
@@ -1008,9 +880,7 @@
             "count": 4,
             "percentage": 40
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": null,
@@ -1040,9 +910,7 @@
             "matches": 10,
             "count": 10,
             "percentage": 100
-          },
-          "pick": true,
-          "probability": 0.829307
+          }
         },
         "over_2_5": {
           "tier": 3,
@@ -1071,9 +939,7 @@
             "count": 7,
             "percentage": 70
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 2,
@@ -1103,9 +969,7 @@
             "matches": 10,
             "count": 9,
             "percentage": 90
-          },
-          "pick": true,
-          "probability": 0.891673
+          }
         },
         "over_2_5": {
           "tier": 1,
@@ -1134,9 +998,7 @@
             "count": 7,
             "percentage": 70
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 1,
@@ -1166,9 +1028,7 @@
             "matches": 0,
             "count": 0,
             "percentage": null
-          },
-          "pick": true,
-          "probability": 0.869944
+          }
         },
         "over_2_5": {
           "tier": null,
@@ -1197,9 +1057,7 @@
             "count": 0,
             "percentage": null
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 0,
@@ -1229,9 +1087,7 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          },
-          "pick": false,
-          "probability": 0.65598
+          }
         },
         "over_2_5": {
           "tier": 3,
@@ -1260,9 +1116,7 @@
             "count": 4,
             "percentage": 40
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 0,
@@ -1292,9 +1146,7 @@
             "matches": 10,
             "count": 9,
             "percentage": 90
-          },
-          "pick": true,
-          "probability": 0.848519
+          }
         },
         "over_2_5": {
           "tier": 2,
@@ -1323,9 +1175,7 @@
             "count": 6,
             "percentage": 60
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 4,
@@ -1355,9 +1205,7 @@
             "matches": 10,
             "count": 10,
             "percentage": 100
-          },
-          "pick": true,
-          "probability": 0.87794
+          }
         },
         "over_2_5": {
           "tier": 3,
@@ -1386,9 +1234,7 @@
             "count": 8,
             "percentage": 80
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 2,
@@ -1418,9 +1264,7 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          },
-          "pick": true,
-          "probability": 0.763816
+          }
         },
         "over_2_5": {
           "tier": 3,
@@ -1449,9 +1293,7 @@
             "count": 6,
             "percentage": 60
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 1,
@@ -1481,9 +1323,7 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          },
-          "pick": false,
-          "probability": 0.568237
+          }
         },
         "over_2_5": {
           "tier": 4,
@@ -1512,9 +1352,7 @@
             "count": 7,
             "percentage": 70
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 1,
@@ -1544,9 +1382,7 @@
             "matches": 10,
             "count": 9,
             "percentage": 90
-          },
-          "pick": true,
-          "probability": 0.731105
+          }
         },
         "over_2_5": {
           "tier": 4,
@@ -1575,9 +1411,7 @@
             "count": 5,
             "percentage": 50
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 1,
@@ -1607,9 +1441,7 @@
             "matches": 10,
             "count": 9,
             "percentage": 90
-          },
-          "pick": true,
-          "probability": 0.886487
+          }
         },
         "over_2_5": {
           "tier": 3,
@@ -1638,9 +1470,7 @@
             "count": 5,
             "percentage": 50
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 5,
@@ -1670,9 +1500,7 @@
             "matches": 10,
             "count": 9,
             "percentage": 90
-          },
-          "pick": false,
-          "probability": 0.643402
+          }
         },
         "over_2_5": {
           "tier": 4,
@@ -1701,9 +1529,7 @@
             "count": 6,
             "percentage": 60
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 4,
@@ -1733,9 +1559,7 @@
             "matches": 9,
             "count": 7,
             "percentage": 77.78
-          },
-          "pick": true,
-          "probability": 0.873205
+          }
         },
         "over_2_5": {
           "tier": 3,
@@ -1764,9 +1588,7 @@
             "count": 4,
             "percentage": 44.44
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 4,
@@ -1796,9 +1618,7 @@
             "matches": 10,
             "count": 9,
             "percentage": 90
-          },
-          "pick": true,
-          "probability": 0.856292
+          }
         },
         "over_2_5": {
           "tier": 3,
@@ -1827,9 +1647,7 @@
             "count": 7,
             "percentage": 70
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 1,
@@ -1859,9 +1677,7 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          },
-          "pick": true,
-          "probability": 0.924413
+          }
         },
         "over_2_5": {
           "tier": 1,
@@ -1890,9 +1706,7 @@
             "count": 7,
             "percentage": 70
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 3,
@@ -1922,9 +1736,7 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          },
-          "pick": true,
-          "probability": 0.8883
+          }
         },
         "over_2_5": {
           "tier": 3,
@@ -1953,9 +1765,7 @@
             "count": 4,
             "percentage": 40
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 0,
@@ -1985,9 +1795,7 @@
             "matches": 9,
             "count": 7,
             "percentage": 77.78
-          },
-          "pick": true,
-          "probability": 0.893939
+          }
         },
         "over_2_5": {
           "tier": 2,
@@ -2016,9 +1824,7 @@
             "count": 6,
             "percentage": 66.67
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 3,
@@ -2048,9 +1854,7 @@
             "matches": 10,
             "count": 9,
             "percentage": 90
-          },
-          "pick": true,
-          "probability": 0.779809
+          }
         },
         "over_2_5": {
           "tier": 4,
@@ -2079,9 +1883,7 @@
             "count": 2,
             "percentage": 20
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 2,
@@ -2111,9 +1913,7 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          },
-          "pick": true,
-          "probability": 0.855735
+          }
         },
         "over_2_5": {
           "tier": 3,
@@ -2142,9 +1942,7 @@
             "count": 6,
             "percentage": 60
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 0,
@@ -2174,9 +1972,7 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          },
-          "pick": true,
-          "probability": 0.836953
+          }
         },
         "over_2_5": {
           "tier": 3,
@@ -2205,9 +2001,7 @@
             "count": 6,
             "percentage": 60
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 1,
@@ -2237,9 +2031,7 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          },
-          "pick": true,
-          "probability": 0.835612
+          }
         },
         "over_2_5": {
           "tier": 3,
@@ -2268,9 +2060,7 @@
             "count": 4,
             "percentage": 40
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 4,
@@ -2300,9 +2090,7 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          },
-          "pick": true,
-          "probability": 0.906334
+          }
         },
         "over_2_5": {
           "tier": 3,
@@ -2331,9 +2119,7 @@
             "count": 5,
             "percentage": 50
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 3,
@@ -2363,9 +2149,7 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          },
-          "pick": true,
-          "probability": 0.716802
+          }
         },
         "over_2_5": {
           "tier": 3,
@@ -2394,9 +2178,7 @@
             "count": 4,
             "percentage": 40
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 1,
@@ -2426,9 +2208,7 @@
             "matches": 10,
             "count": 7,
             "percentage": 70
-          },
-          "pick": true,
-          "probability": 0.711531
+          }
         },
         "over_2_5": {
           "tier": 4,
@@ -2457,9 +2237,7 @@
             "count": 4,
             "percentage": 40
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 4,
@@ -2489,9 +2267,7 @@
             "matches": 10,
             "count": 9,
             "percentage": 90
-          },
-          "pick": true,
-          "probability": 0.947438
+          }
         },
         "over_2_5": {
           "tier": 3,
@@ -2520,9 +2296,7 @@
             "count": 5,
             "percentage": 50
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 0,
@@ -2552,9 +2326,7 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          },
-          "pick": true,
-          "probability": 0.849102
+          }
         },
         "over_2_5": {
           "tier": 3,
@@ -2583,9 +2355,7 @@
             "count": 6,
             "percentage": 60
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 3,
@@ -2615,9 +2385,7 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          },
-          "pick": false,
-          "probability": 0.695371
+          }
         },
         "over_2_5": {
           "tier": 3,
@@ -2646,9 +2414,7 @@
             "count": 3,
             "percentage": 30
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 2,
@@ -2678,9 +2444,7 @@
             "matches": 10,
             "count": 10,
             "percentage": 100
-          },
-          "pick": true,
-          "probability": 0.767744
+          }
         },
         "over_2_5": {
           "tier": 3,
@@ -2709,9 +2473,7 @@
             "count": 7,
             "percentage": 70
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 1,
@@ -2741,9 +2503,7 @@
             "matches": 10,
             "count": 9,
             "percentage": 90
-          },
-          "pick": true,
-          "probability": 0.829164
+          }
         },
         "over_2_5": {
           "tier": 3,
@@ -2772,9 +2532,7 @@
             "count": 7,
             "percentage": 70
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 0,
@@ -2804,9 +2562,7 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          },
-          "pick": true,
-          "probability": 0.908612
+          }
         },
         "over_2_5": {
           "tier": 3,
@@ -2835,9 +2591,7 @@
             "count": 8,
             "percentage": 80
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 1,
@@ -2867,9 +2621,7 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          },
-          "pick": true,
-          "probability": 0.853735
+          }
         },
         "over_2_5": {
           "tier": 3,
@@ -2898,9 +2650,7 @@
             "count": 5,
             "percentage": 50
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 1,
@@ -2930,9 +2680,7 @@
             "matches": 10,
             "count": 9,
             "percentage": 90
-          },
-          "pick": false,
-          "probability": 0.597797
+          }
         },
         "over_2_5": {
           "tier": 4,
@@ -2961,9 +2709,7 @@
             "count": 4,
             "percentage": 40
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 0,
@@ -2993,9 +2739,7 @@
             "matches": 10,
             "count": 9,
             "percentage": 90
-          },
-          "pick": true,
-          "probability": 0.839124
+          }
         },
         "over_2_5": {
           "tier": 3,
@@ -3024,9 +2768,7 @@
             "count": 6,
             "percentage": 60
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 2,
@@ -3056,9 +2798,7 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          },
-          "pick": true,
-          "probability": 0.903603
+          }
         },
         "over_2_5": {
           "tier": 3,
@@ -3087,9 +2827,7 @@
             "count": 6,
             "percentage": 60
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 1,
@@ -3119,9 +2857,7 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          },
-          "pick": true,
-          "probability": 0.888308
+          }
         },
         "over_2_5": {
           "tier": 3,
@@ -3150,9 +2886,7 @@
             "count": 4,
             "percentage": 40
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 0,
@@ -3182,9 +2916,7 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          },
-          "pick": true,
-          "probability": 0.86759
+          }
         },
         "over_2_5": {
           "tier": 1,
@@ -3213,9 +2945,7 @@
             "count": 7,
             "percentage": 70
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 2,
@@ -3245,9 +2975,7 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          },
-          "pick": false,
-          "probability": 0.631017
+          }
         },
         "over_2_5": {
           "tier": 4,
@@ -3276,9 +3004,7 @@
             "count": 2,
             "percentage": 20
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 2,
@@ -3308,9 +3034,7 @@
             "matches": 9,
             "count": 6,
             "percentage": 66.67
-          },
-          "pick": false,
-          "probability": 0.676028
+          }
         },
         "over_2_5": {
           "tier": 4,
@@ -3339,9 +3063,7 @@
             "count": 5,
             "percentage": 55.56
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 0,
@@ -3371,9 +3093,7 @@
             "matches": 10,
             "count": 7,
             "percentage": 70
-          },
-          "pick": false,
-          "probability": 0.693513
+          }
         },
         "over_2_5": {
           "tier": 4,
@@ -3402,9 +3122,7 @@
             "count": 6,
             "percentage": 60
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 1,
@@ -3434,9 +3152,7 @@
             "matches": 10,
             "count": 9,
             "percentage": 90
-          },
-          "pick": true,
-          "probability": 0.882614
+          }
         },
         "over_2_5": {
           "tier": 3,
@@ -3465,9 +3181,7 @@
             "count": 4,
             "percentage": 40
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 3,
@@ -3497,9 +3211,7 @@
             "matches": 10,
             "count": 9,
             "percentage": 90
-          },
-          "pick": true,
-          "probability": 0.786047
+          }
         },
         "over_2_5": {
           "tier": 2,
@@ -3528,9 +3240,7 @@
             "count": 5,
             "percentage": 50
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 1,
@@ -3560,9 +3270,7 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          },
-          "pick": true,
-          "probability": 0.836328
+          }
         },
         "over_2_5": {
           "tier": 3,
@@ -3591,9 +3299,7 @@
             "count": 7,
             "percentage": 70
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 2,
@@ -3623,9 +3329,7 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          },
-          "pick": true,
-          "probability": 0.747926
+          }
         },
         "over_2_5": {
           "tier": 3,
@@ -3654,9 +3358,7 @@
             "count": 4,
             "percentage": 40
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 0,
@@ -3686,9 +3388,7 @@
             "matches": 10,
             "count": 9,
             "percentage": 90
-          },
-          "pick": true,
-          "probability": 0.861693
+          }
         },
         "over_2_5": {
           "tier": 3,
@@ -3717,9 +3417,7 @@
             "count": 8,
             "percentage": 80
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 2,
@@ -3749,9 +3447,7 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          },
-          "pick": true,
-          "probability": 0.731512
+          }
         },
         "over_2_5": {
           "tier": 3,
@@ -3780,9 +3476,7 @@
             "count": 5,
             "percentage": 50
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 2,
@@ -3812,9 +3506,7 @@
             "matches": 10,
             "count": 7,
             "percentage": 70
-          },
-          "pick": true,
-          "probability": 0.821122
+          }
         },
         "over_2_5": {
           "tier": 3,
@@ -3843,9 +3535,7 @@
             "count": 4,
             "percentage": 40
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 0,
@@ -3875,9 +3565,7 @@
             "matches": 10,
             "count": 9,
             "percentage": 90
-          },
-          "pick": true,
-          "probability": 0.787127
+          }
         },
         "over_2_5": {
           "tier": 3,
@@ -3906,9 +3594,7 @@
             "count": 5,
             "percentage": 50
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 3,
@@ -3938,9 +3624,7 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          },
-          "pick": true,
-          "probability": 0.761551
+          }
         },
         "over_2_5": {
           "tier": 3,
@@ -3969,9 +3653,7 @@
             "count": 5,
             "percentage": 50
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 1,
@@ -4001,9 +3683,7 @@
             "matches": 10,
             "count": 10,
             "percentage": 100
-          },
-          "pick": true,
-          "probability": 0.958449
+          }
         },
         "over_2_5": {
           "tier": 3,
@@ -4032,9 +3712,7 @@
             "count": 6,
             "percentage": 60
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 2,
@@ -4064,9 +3742,7 @@
             "matches": 9,
             "count": 8,
             "percentage": 88.89
-          },
-          "pick": true,
-          "probability": 0.890328
+          }
         },
         "over_2_5": {
           "tier": 2,
@@ -4095,9 +3771,7 @@
             "count": 6,
             "percentage": 66.67
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 0,
@@ -4127,9 +3801,7 @@
             "matches": 9,
             "count": 9,
             "percentage": 100
-          },
-          "pick": true,
-          "probability": 0.862774
+          }
         },
         "over_2_5": {
           "tier": 2,
@@ -4158,9 +3830,7 @@
             "count": 7,
             "percentage": 77.78
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 1,
@@ -4190,9 +3860,7 @@
             "matches": 9,
             "count": 9,
             "percentage": 100
-          },
-          "pick": true,
-          "probability": 0.814879
+          }
         },
         "over_2_5": {
           "tier": 3,
@@ -4221,9 +3889,7 @@
             "count": 3,
             "percentage": 33.33
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 1,
@@ -4253,9 +3919,7 @@
             "matches": 9,
             "count": 5,
             "percentage": 55.56
-          },
-          "pick": true,
-          "probability": 0.771312
+          }
         },
         "over_2_5": {
           "tier": 3,
@@ -4284,9 +3948,7 @@
             "count": 3,
             "percentage": 33.33
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 4,
@@ -4316,9 +3978,7 @@
             "matches": 9,
             "count": 6,
             "percentage": 66.67
-          },
-          "pick": true,
-          "probability": 0.858677
+          }
         },
         "over_2_5": {
           "tier": 3,
@@ -4347,9 +4007,7 @@
             "count": 4,
             "percentage": 44.44
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 0,
@@ -4379,9 +4037,7 @@
             "matches": 10,
             "count": 9,
             "percentage": 90
-          },
-          "pick": true,
-          "probability": 0.79174
+          }
         },
         "over_2_5": {
           "tier": 2,
@@ -4410,9 +4066,7 @@
             "count": 5,
             "percentage": 50
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 3,
@@ -4442,9 +4096,7 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          },
-          "pick": false,
-          "probability": 0.68966
+          }
         },
         "over_2_5": {
           "tier": 4,
@@ -4473,9 +4125,7 @@
             "count": 4,
             "percentage": 40
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 2,
@@ -4505,9 +4155,7 @@
             "matches": 10,
             "count": 7,
             "percentage": 70
-          },
-          "pick": true,
-          "probability": 0.74064
+          }
         },
         "over_2_5": {
           "tier": 4,
@@ -4536,9 +4184,7 @@
             "count": 7,
             "percentage": 70
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 3,
@@ -4568,9 +4214,7 @@
             "matches": 10,
             "count": 7,
             "percentage": 70
-          },
-          "pick": true,
-          "probability": 0.752408
+          }
         },
         "over_2_5": {
           "tier": 4,
@@ -4599,9 +4243,7 @@
             "count": 4,
             "percentage": 40
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 1,
@@ -4631,9 +4273,7 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          },
-          "pick": false,
-          "probability": 0.690491
+          }
         },
         "over_2_5": {
           "tier": 3,
@@ -4662,9 +4302,7 @@
             "count": 6,
             "percentage": 60
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 1,
@@ -4694,9 +4332,7 @@
             "matches": 10,
             "count": 10,
             "percentage": 100
-          },
-          "pick": true,
-          "probability": 0.79188
+          }
         },
         "over_2_5": {
           "tier": 3,
@@ -4725,9 +4361,7 @@
             "count": 7,
             "percentage": 70
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 0,
@@ -4757,9 +4391,7 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          },
-          "pick": true,
-          "probability": 0.712353
+          }
         },
         "over_2_5": {
           "tier": 4,
@@ -4788,9 +4420,7 @@
             "count": 1,
             "percentage": 10
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 0,
@@ -4820,9 +4450,7 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          },
-          "pick": true,
-          "probability": 0.844956
+          }
         },
         "over_2_5": {
           "tier": 3,
@@ -4851,9 +4479,7 @@
             "count": 6,
             "percentage": 60
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 1,
@@ -4883,9 +4509,7 @@
             "matches": 10,
             "count": 7,
             "percentage": 70
-          },
-          "pick": true,
-          "probability": 0.82787
+          }
         },
         "over_2_5": {
           "tier": 3,
@@ -4914,9 +4538,7 @@
             "count": 5,
             "percentage": 50
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 2,
@@ -4946,9 +4568,7 @@
             "matches": 10,
             "count": 9,
             "percentage": 90
-          },
-          "pick": false,
-          "probability": 0.667737
+          }
         },
         "over_2_5": {
           "tier": 4,
@@ -4977,9 +4597,7 @@
             "count": 6,
             "percentage": 60
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 0,
@@ -5009,9 +4627,7 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          },
-          "pick": true,
-          "probability": 0.754444
+          }
         },
         "over_2_5": {
           "tier": 3,
@@ -5040,9 +4656,7 @@
             "count": 6,
             "percentage": 60
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 2,
@@ -5072,9 +4686,7 @@
             "matches": 10,
             "count": 9,
             "percentage": 90
-          },
-          "pick": true,
-          "probability": 0.818952
+          }
         },
         "over_2_5": {
           "tier": 4,
@@ -5103,9 +4715,7 @@
             "count": 6,
             "percentage": 60
           }
-        },
-        "probability_model": "independent_poisson_from_expected_goals_v1",
-        "calibration_status": "not_calibrated"
+        }
       },
       "actual": {
         "home_score": 0,
