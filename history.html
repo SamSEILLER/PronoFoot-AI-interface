@@ -29,6 +29,10 @@ main{max-width:1600px;margin:auto;padding:20px}.hero{display:flex;justify-conten
 /* Liste des moteurs en accordéons */
 .engine-list{display:grid;gap:12px}.engine-accordion{background:#fff;border:1px solid #d5e3f1;border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}.engine-toggle{width:100%;display:flex;align-items:center;gap:13px;padding:14px 18px;border:0;background:linear-gradient(100deg,#f6faff,#eaf3ff);color:var(--ink);text-align:left;cursor:pointer}.engine-toggle.archived{background:linear-gradient(100deg,#f8fafc,#eef2f7)}.engine-toggle:focus-visible{outline:3px solid #6aa8e8;outline-offset:-3px}.engine-version{display:grid;place-items:center;min-width:52px;height:46px;padding:0 8px;border-radius:9px;background:#2165aa;color:#fff;font-size:20px;font-weight:850}.engine-toggle.archived .engine-version{background:#64748b}.engine-toggle-title{font-size:17px;font-weight:850}.engine-toggle-status{margin-left:auto}.engine-chevron{display:grid;place-items:center;flex:0 0 28px;width:28px;height:28px;border:1px solid #bfd1e5;border-radius:7px;background:#fff;color:#2165aa;font-size:22px;font-weight:600;line-height:1;transition:background .15s,color .15s}.engine-toggle[aria-expanded=true] .engine-chevron{background:#2165aa;border-color:#2165aa;color:#fff}.engine-panel{padding:14px 16px 16px;border-top:1px solid #e4edf7}.engine-panel[hidden]{display:none}.engine-summary{font-size:13px;line-height:1.5;margin:0 0 11px;color:#1b2b48}.engine-market-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-bottom:13px}.engine-market{display:flex;gap:9px;align-items:flex-start;padding:10px;border-radius:9px;background:#f0f6fd}.engine-market-icon{font-size:20px;color:#216db4}.engine-market strong{display:block;font-size:12px;margin-bottom:3px}.engine-market span{font-size:11px;line-height:1.4;color:#506987}.engine-bottom-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px}.engine-subtitle{display:flex;align-items:center;gap:9px;margin:0 0 8px;font-size:14px;font-weight:850}.engine-subtitle-icon{font-size:18px;color:#2676bd}.level-intro{font-size:11px;color:#526b88;margin:0 0 8px}.level-list{display:grid;gap:5px}.level-row{display:grid;grid-template-columns:32px minmax(0,1fr) auto;align-items:center;gap:9px;padding:6px 9px;border-radius:8px;font-size:11px}.level-number{display:grid;place-items:center;width:27px;height:27px;border-radius:50%;font-size:14px;font-weight:850;color:white}.level-row strong{font-size:12px}.level-row span:last-child{font-size:11px;font-weight:750;white-space:nowrap}.level-one{background:#e8f8ec;color:#145b34}.level-one .level-number{background:#0c9b38}.level-two{background:#eaf4ff;color:#205b91}.level-two .level-number{background:#2996dc}.level-three{background:#fff5dc;color:#775313}.level-three .level-number{background:#e9a400}.level-four{background:#ffeded;color:#913c43}.level-four .level-number{background:#e44c55}.engine-keep{display:grid;gap:8px}.keep-line{display:flex;gap:8px;align-items:flex-start;font-size:11px;line-height:1.45;color:#253c5a}.keep-check{color:#2379c1;font-size:16px;line-height:1}.engine-caveat{display:flex;gap:9px;margin-top:11px;padding:9px 11px;border-radius:9px;background:#eaf3ff;color:#244d7b;font-size:11px;line-height:1.45}.engine-caveat strong{margin-right:5px;color:#155b9c}.engine-fallback{padding:12px;color:#526b88;font-size:12px;line-height:1.5}
 @media(max-width:700px){.engine-market-grid{grid-template-columns:1fr}.engine-bottom-grid{grid-template-columns:1fr;gap:13px}.engine-toggle{padding:12px}.engine-panel{padding:12px}.engine-toggle-title{font-size:15px}}
+
+/* Bilan des réussites historiques par moteur */
+.engine-performance{margin:0 0 14px;padding:12px;border:1px solid #d8e6f4;border-radius:10px;background:#fbfdff}.engine-performance-title{margin:0 0 9px;font-size:14px;font-weight:850}.engine-performance-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.engine-performance-cell{min-width:0;padding:10px;border:1px solid #e2ebf5;border-radius:8px;background:#fff}.engine-performance-cell span{display:block;color:#526b88;font-size:10px;font-weight:750;line-height:1.35}.engine-performance-cell strong{display:block;margin:5px 0 3px;color:#087c4b;font-size:21px;font-weight:850}.engine-performance-cell small{color:#526b88;font-size:10px}.engine-performance-help{margin:9px 0 0;color:#526b88;font-size:10px;line-height:1.45}
+@media(max-width:700px){.engine-performance-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>
 </head>
 <body>
@@ -49,6 +53,7 @@ const v1Details=`
 <div class="engine-market"><div class="engine-market-icon">⚽</div><div><strong>+2,5 buts</strong><span>Au moins 3 buts dans le match.</span></div></div>
 <div class="engine-market"><div class="engine-market-icon">⚽↔⚽</div><div><strong>BTTS</strong><span>Les deux équipes marquent.</span></div></div>
 </div>
+<section class="engine-performance" aria-label="Bilan des réussites historiques"><h3 class="engine-performance-title">Réussite sur les matchs passés</h3><div class="engine-performance-grid"><div class="engine-performance-cell"><span>Matchs évalués</span><strong data-stat="matches">—</strong><small>Résultat final et classement disponibles</small></div><div class="engine-performance-cell"><span>Réussite +1,5 buts</span><strong data-stat="over_1_5">—</strong><small data-detail="over_1_5">Chargement…</small></div><div class="engine-performance-cell"><span>Réussite +2,5 buts</span><strong data-stat="over_2_5">—</strong><small data-detail="over_2_5">Chargement…</small></div><div class="engine-performance-cell"><span>Réussite BTTS</span><strong data-stat="btts">—</strong><small data-detail="btts">Chargement…</small></div></div><p class="engine-performance-help">Niveau 1 ou 2 = OUI ; niveau 3 ou 4 = NON. Une réussite est comptée lorsque cette réponse correspond au score final. Les matchs sans score final ou sans niveau exploitable sont exclus.</p></section>
 <div class="engine-bottom-grid">
 <section><h3 class="engine-subtitle"><span class="engine-subtitle-icon">▥</span>Niveaux de classification</h3><p class="level-intro">Tendance basée sur les fréquences historiques des deux équipes :</p>
 <p class="level-intro">Pour chaque marché, le pourcentage indique la part des matchs de chaque équipe où le critère a été atteint : au moins 2 buts (+1,5), au moins 3 buts (+2,5) ou les deux équipes qui marquent (BTTS).</p>
@@ -83,6 +88,40 @@ if(!response.ok)throw new Error('Le catalogue des moteurs est indisponible (HTTP
 const catalog=await response.json(),versions=Array.isArray(catalog.versions)?catalog.versions:[];
 if(!versions.length)throw new Error('Aucun moteur de pronostic n’est référencé dans le catalogue.');
 list.replaceChildren(...versions.map(renderVersion));
+await Promise.all(versions.map(async v=>{
+ if(!v.archive)return;
+ const article=[...list.querySelectorAll('.engine-accordion')].find(a=>a.querySelector('.engine-version')?.textContent===String(v.id||'').toUpperCase());
+ if(!article)return;
+ const target=article.querySelector('.engine-performance');if(!target)return;
+ try{
+  const archiveResponse=await fetch('./data/'+encodeURIComponent(v.archive),{cache:'no-store'});
+  if(!archiveResponse.ok)throw new Error('Archive indisponible');
+  const archive=await archiveResponse.json(),records=Array.isArray(archive.records)?archive.records:[];
+  const keys=['over_1_5','over_2_5','btts'],stats={};
+  for(const key of keys)stats[key]={evaluated:0,success:0};
+  let common=0;
+  for(const record of records){
+   const hs=record.actual?.home_score,as=record.actual?.away_score;
+   if(!Number.isFinite(hs)||!Number.isFinite(as))continue;
+   let allMarkets=true;
+   for(const key of keys){
+    const tier=record.prediction?.[key]?.tier;
+    if(![1,2,3,4].includes(tier)){allMarkets=false;continue;}
+    const predictedYes=tier===1||tier===2;
+    const actualYes=key==='over_1_5'?hs+as>=2:key==='over_2_5'?hs+as>=3:hs>=1&&as>=1;
+    stats[key].evaluated++;
+    if(predictedYes===actualYes)stats[key].success++;
+   }
+   if(allMarkets)common++;
+  }
+  target.querySelector('[data-stat="matches"]').textContent=String(common);
+  for(const key of keys){
+   const item=stats[key],pct=item.evaluated?item.success/item.evaluated*100:null;
+   target.querySelector('[data-stat="'+key+'"]').textContent=pct===null?'—':pct.toLocaleString('fr-FR',{maximumFractionDigits:1})+' %';
+   target.querySelector('[data-detail="'+key+'"]').textContent=item.evaluated?item.success+' réussites / '+item.evaluated+' matchs':'Aucun match évaluable';
+  }
+ }catch(err){target.querySelectorAll('strong').forEach(el=>el.textContent='—');target.querySelectorAll('small').forEach(el=>el.textContent='Statistiques indisponibles');}
+}));
 }catch(e){list.innerHTML='<div class="engine-fallback">Impossible de charger la liste des moteurs.</div>';error.hidden=false;error.textContent=e.message||'Une erreur est survenue.';error.classList.add('error');}
 })();
 </script>
