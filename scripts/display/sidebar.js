@@ -6,20 +6,19 @@
   "use strict";
   if (document.querySelector("[data-sidebar-root]")) return;
 
-  const currentPath = window.location.pathname.toLowerCase();
+  const currentPath = window.location.pathname.toLowerCase().replace(/\/+$/, "");
   const activePage = currentPath.endsWith("/classements.html") ? "standings" : currentPath.endsWith("/player-availability.html") ? "availability" : currentPath.endsWith("/composition.html") ? "compositions" : currentPath.endsWith("/history.html") ? "history" : "matches";
 
   const markup = "<header class=\"topbar\" data-sidebar-root>\n<a class=\"brand\" href=\"./index.html\" aria-label=\"PronoFoot AI accueil\">\n<img class=\"brand-logo\" src=\"./assets/football-ai-circuit.svg\" alt=\"Logo PronoFoot\">\n<span class=\"brand-wordmark\"><span class=\"brand-name\">PronoFoot <em>AI</em></span><br><span class=\"brand-sub\">FOOTBALL PREDICTION LAB</span></span>\n</a>\n<nav class=\"nav\" aria-label=\"Navigation principale\">\n<a href=\"./index.html\" class=\"active\" aria-current=\"page\"><img class=\"nav-icon\" src=\"./assets/icon-matches.svg\" alt=\"\" aria-hidden=\"true\">Matchs à venir</a>\n<a href=\"./history.html\"><img class=\"nav-icon\" src=\"./assets/icon-history.svg\" alt=\"\" aria-hidden=\"true\">Historique</a>\n<a href=\"./classements.html\"><img class=\"nav-icon\" src=\"./assets/icon-ranking.svg\" alt=\"\" aria-hidden=\"true\">Classements</a>\n<button class=\"utility-menu-trigger\" id=\"utilityMenuTrigger\" type=\"button\" aria-label=\"Outils complémentaires\" aria-expanded=\"false\" aria-controls=\"utilityMenu\" title=\"Outils\">···</button>\n</nav>\n<div class=\"utility-menu\" id=\"utilityMenu\" hidden><a href=\"./player-availability.html\">Gestion des absences joueurs</a></div>\n<button class=\"api-status status-loading\" id=\"apiStatus\" type=\"button\" aria-expanded=\"false\" aria-controls=\"sourceStatusDetails\" aria-label=\"État des sources : vérification en cours\">\n<span class=\"status-symbol\" id=\"apiStatusSymbol\" aria-hidden=\"true\">…</span><span class=\"api-status-label\">Sources : <strong id=\"apiStatusLabel\">…</strong></span>\n</button>\n<div class=\"source-status-details\" id=\"sourceStatusDetails\" hidden>\n<div class=\"source-status-heading\">État des sources de données</div>\n<div class=\"source-status-row\"><span class=\"source-status-indicator\" id=\"historyIndicator\"></span><div><strong>Historique des matchs · PitchAPI</strong><p id=\"historyStatusText\">En attente des données…</p><small id=\"historyStatusMeta\"></small></div></div>\n<div class=\"source-status-row\"><span class=\"source-status-indicator\" id=\"oddsIndicator\"></span><div><strong>Cotes · Odds-API.io</strong><p id=\"oddsStatusText\">En attente des données…</p><small id=\"oddsStatusMeta\"></small></div></div>\n<div class=\"source-status-row\"><span class=\"source-status-indicator\" id=\"weatherIndicator\"></span><div><strong>Météo · Open-Meteo</strong><p id=\"weatherStatusText\">En attente des données…</p><small id=\"weatherStatusMeta\"></small></div></div>\n<div class=\"source-status-footnote\">Vert : deux collectes récentes sans anomalie · Orange : avertissement ou données de plus de 24 h · Rouge : les deux collectes sont en échec et anciennes.</div>\n</div>\n</header>";
   const template = document.createElement("template");
   template.innerHTML = markup.trim();
   const header = template.content.firstElementChild;
-  const activeLink = header.querySelector(
-    activePage === "standings" ? 'a[href="./classements.html"]'
-      : activePage === "history" ? 'a[href="./history.html"]'
-      : activePage === "compositions" ? 'a[href="./composition.html"]'
-      : activePage === "availability" ? 'a[href="./player-availability.html"]'
-      : 'a[href="./index.html"]'
-  );
+  const activeHref = activePage === "standings" ? "./classements.html"
+    : activePage === "history" ? "./history.html"
+    : activePage === "compositions" ? "./composition.html"
+    : activePage === "availability" ? "./player-availability.html"
+    : "./index.html";
+  const activeLink = Array.from(header.querySelectorAll(".nav a")).find(link => link.getAttribute("href") === activeHref);
   header.querySelectorAll(".nav a").forEach(link => {
     link.classList.remove("active");
     link.removeAttribute("aria-current");
