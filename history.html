@@ -59,4 +59,5 @@ select.disabled=false;const active=catalog.active_version||versions[0].id;select
 }catch(e){select.innerHTML='<option value="">Catalogue indisponible</option>';statusTitle.textContent='Moteur indisponible';statusText.textContent='Impossible de charger les informations du moteur.';detail.textContent='La fiche descriptive ne peut pas être affichée.';error.hidden=false;error.textContent=e.message||'Une erreur est survenue.';error.classList.add('error');}
 })();
 </script>
+<script src="./scripts/display/sidebar.js" defer></script>
 </body></html>
