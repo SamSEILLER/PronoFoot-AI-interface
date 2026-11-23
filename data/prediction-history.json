@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at_utc": "2026-11-23T13:08:49.177617Z",
+  "generated_at_utc": "2026-11-23T13:25:02.523753Z",
   "description": "Snapshots immuables créés à J-1 (la veille du coup d'envoi) pour les expérimentations +1,5, +2,5 et BTTS. Les matchs terminés sont évalués puis archivés.",
   "records": [
     {
@@ -41,7 +41,10 @@
             "matches": 4,
             "count": 3,
             "percentage": 75.0
-          }
+          },
+          "pick": false,
+          "probability": 0.640694,
+          "pick_threshold": 0.7
         },
         "btts": {
           "tier": null,
@@ -55,7 +58,10 @@
             "matches": 4,
             "count": 3,
             "percentage": 75.0
-          }
+          },
+          "pick": false,
+          "probability": 0.623746,
+          "pick_threshold": 0.7
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
         "calibration_status": "not_calibrated"
@@ -104,7 +110,10 @@
             "matches": 4,
             "count": 3,
             "percentage": 75.0
-          }
+          },
+          "pick": true,
+          "probability": 0.743968,
+          "pick_threshold": 0.7
         },
         "btts": {
           "tier": null,
@@ -118,7 +127,10 @@
             "matches": 4,
             "count": 3,
             "percentage": 75.0
-          }
+          },
+          "pick": true,
+          "probability": 0.732381,
+          "pick_threshold": 0.7
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
         "calibration_status": "not_calibrated"
@@ -167,7 +179,10 @@
             "matches": 4,
             "count": 1,
             "percentage": 25.0
-          }
+          },
+          "pick": false,
+          "probability": 0.611453,
+          "pick_threshold": 0.7
         },
         "btts": {
           "tier": null,
@@ -181,7 +196,10 @@
             "matches": 4,
             "count": 2,
             "percentage": 50.0
-          }
+          },
+          "pick": false,
+          "probability": 0.60161,
+          "pick_threshold": 0.7
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
         "calibration_status": "not_calibrated"
@@ -230,7 +248,10 @@
             "matches": 4,
             "count": 3,
             "percentage": 75.0
-          }
+          },
+          "pick": true,
+          "probability": 0.719492,
+          "pick_threshold": 0.7
         },
         "btts": {
           "tier": null,
@@ -244,7 +265,10 @@
             "matches": 4,
             "count": 2,
             "percentage": 50.0
-          }
+          },
+          "pick": true,
+          "probability": 0.702993,
+          "pick_threshold": 0.7
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
         "calibration_status": "not_calibrated"
@@ -293,7 +317,10 @@
             "matches": 4,
             "count": 3,
             "percentage": 75.0
-          }
+          },
+          "pick": true,
+          "probability": 0.853099,
+          "pick_threshold": 0.7
         },
         "btts": {
           "tier": null,
@@ -307,7 +334,10 @@
             "matches": 4,
             "count": 3,
             "percentage": 75.0
-          }
+          },
+          "pick": true,
+          "probability": 0.78033,
+          "pick_threshold": 0.7
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
         "calibration_status": "not_calibrated"
@@ -356,7 +386,10 @@
             "matches": 4,
             "count": 2,
             "percentage": 50.0
-          }
+          },
+          "pick": true,
+          "probability": 0.787637,
+          "pick_threshold": 0.7
         },
         "btts": {
           "tier": null,
@@ -370,7 +403,10 @@
             "matches": 4,
             "count": 2,
             "percentage": 50.0
-          }
+          },
+          "pick": true,
+          "probability": 0.767235,
+          "pick_threshold": 0.7
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
         "calibration_status": "not_calibrated"
@@ -419,7 +455,10 @@
             "matches": 4,
             "count": 3,
             "percentage": 75.0
-          }
+          },
+          "pick": true,
+          "probability": 0.849031,
+          "pick_threshold": 0.7
         },
         "btts": {
           "tier": null,
@@ -433,7 +472,10 @@
             "matches": 4,
             "count": 3,
             "percentage": 75.0
-          }
+          },
+          "pick": true,
+          "probability": 0.711528,
+          "pick_threshold": 0.7
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
         "calibration_status": "not_calibrated"
@@ -482,7 +524,10 @@
             "matches": 4,
             "count": 3,
             "percentage": 75.0
-          }
+          },
+          "pick": false,
+          "probability": 0.53119,
+          "pick_threshold": 0.7
         },
         "btts": {
           "tier": null,
@@ -496,7 +541,10 @@
             "matches": 4,
             "count": 2,
             "percentage": 50.0
-          }
+          },
+          "pick": false,
+          "probability": 0.556524,
+          "pick_threshold": 0.7
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
         "calibration_status": "not_calibrated"
@@ -545,7 +593,10 @@
             "matches": 4,
             "count": 4,
             "percentage": 100.0
-          }
+          },
+          "pick": true,
+          "probability": 0.741738,
+          "pick_threshold": 0.7
         },
         "btts": {
           "tier": null,
@@ -559,7 +610,10 @@
             "matches": 4,
             "count": 2,
             "percentage": 50.0
-          }
+          },
+          "pick": true,
+          "probability": 0.725923,
+          "pick_threshold": 0.7
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
         "calibration_status": "not_calibrated"
@@ -608,7 +662,10 @@
             "matches": 10,
             "count": 6,
             "percentage": 60.0
-          }
+          },
+          "pick": false,
+          "probability": 0.525765,
+          "pick_threshold": 0.7
         },
         "btts": {
           "tier": 3,
@@ -622,7 +679,10 @@
             "matches": 10,
             "count": 8,
             "percentage": 80.0
-          }
+          },
+          "pick": false,
+          "probability": 0.554279,
+          "pick_threshold": 0.7
         },
         "probability_model": "independent_poisson_from_expected_goals_v1",
         "calibration_status": "not_calibrated"
