@@ -1,0 +1,718 @@
+{
+  "schema_version": 2,
+  "generated_at_utc": "2026-11-23T11:51:58.508726Z",
+  "description": "Snapshots immuables créés à J-1 (la veille du coup d'envoi) pour les expérimentations +1,5, +2,5 et BTTS. Les matchs terminés sont évalués puis archivés.",
+  "records": [
+    {
+      "match_id": "m_2cwDyu",
+      "competition": "uefa-champions-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-24T20:00:00Z",
+      "home_team": "Arsenal",
+      "away_team": "Borussia Dortmund",
+      "snapshot_at_utc": "2026-11-23T11:51:58.508726Z",
+      "snapshot_stage": "J-1",
+      "prediction": {
+        "over_1_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75.0
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75.0
+          },
+          "pick": true,
+          "probability": 0.841475,
+          "pick_threshold": 0.7
+        },
+        "over_2_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75.0
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75.0
+          },
+          "pick": false,
+          "probability": 0.640694,
+          "pick_threshold": 0.7
+        },
+        "btts": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 2,
+            "percentage": 50.0
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75.0
+          },
+          "pick": false,
+          "probability": 0.623746,
+          "pick_threshold": 0.7
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "pick_threshold": 0.7,
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending"
+    },
+    {
+      "match_id": "m_38M4aC",
+      "competition": "uefa-champions-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-24T20:00:00Z",
+      "home_team": "Slovan Bratislava",
+      "away_team": "Real Betis",
+      "snapshot_at_utc": "2026-11-23T11:51:58.508726Z",
+      "snapshot_stage": "J-1",
+      "prediction": {
+        "over_1_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 4,
+            "percentage": 100.0
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75.0
+          },
+          "pick": true,
+          "probability": 0.89932,
+          "pick_threshold": 0.7
+        },
+        "over_2_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 4,
+            "percentage": 100.0
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75.0
+          },
+          "pick": true,
+          "probability": 0.743968,
+          "pick_threshold": 0.7
+        },
+        "btts": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 1,
+            "percentage": 25.0
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75.0
+          },
+          "pick": true,
+          "probability": 0.732381,
+          "pick_threshold": 0.7
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "pick_threshold": 0.7,
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending"
+    },
+    {
+      "match_id": "m_3H4WRT",
+      "competition": "uefa-champions-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-24T20:00:00Z",
+      "home_team": "Real Madrid",
+      "away_team": "PSV Eindhoven",
+      "snapshot_at_utc": "2026-11-23T11:51:58.508726Z",
+      "snapshot_stage": "J-1",
+      "prediction": {
+        "over_1_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 4,
+            "percentage": 100.0
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 2,
+            "percentage": 50.0
+          },
+          "pick": true,
+          "probability": 0.823361,
+          "pick_threshold": 0.7
+        },
+        "over_2_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 4,
+            "percentage": 100.0
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 1,
+            "percentage": 25.0
+          },
+          "pick": false,
+          "probability": 0.611453,
+          "pick_threshold": 0.7
+        },
+        "btts": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 4,
+            "percentage": 100.0
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 2,
+            "percentage": 50.0
+          },
+          "pick": false,
+          "probability": 0.60161,
+          "pick_threshold": 0.7
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "pick_threshold": 0.7,
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending"
+    },
+    {
+      "match_id": "m_13c8QW",
+      "competition": "uefa-champions-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-24T20:00:00Z",
+      "home_team": "RB Leipzig",
+      "away_team": "Lens",
+      "snapshot_at_utc": "2026-11-23T11:51:58.508726Z",
+      "snapshot_stage": "J-1",
+      "prediction": {
+        "over_1_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75.0
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 4,
+            "percentage": 100.0
+          },
+          "pick": true,
+          "probability": 0.886451,
+          "pick_threshold": 0.7
+        },
+        "over_2_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75.0
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75.0
+          },
+          "pick": true,
+          "probability": 0.719492,
+          "pick_threshold": 0.7
+        },
+        "btts": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75.0
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 2,
+            "percentage": 50.0
+          },
+          "pick": true,
+          "probability": 0.702993,
+          "pick_threshold": 0.7
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "pick_threshold": 0.7,
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending"
+    },
+    {
+      "match_id": "m_0c78zD",
+      "competition": "uefa-champions-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-24T20:00:00Z",
+      "home_team": "Manchester City",
+      "away_team": "Napoli",
+      "snapshot_at_utc": "2026-11-23T11:51:58.508726Z",
+      "snapshot_stage": "J-1",
+      "prediction": {
+        "over_1_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 4,
+            "percentage": 100.0
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75.0
+          },
+          "pick": true,
+          "probability": 0.950441,
+          "pick_threshold": 0.7
+        },
+        "over_2_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75.0
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75.0
+          },
+          "pick": true,
+          "probability": 0.853099,
+          "pick_threshold": 0.7
+        },
+        "btts": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75.0
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75.0
+          },
+          "pick": true,
+          "probability": 0.78033,
+          "pick_threshold": 0.7
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "pick_threshold": 0.7,
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending"
+    },
+    {
+      "match_id": "m_4J6bPl",
+      "competition": "uefa-champions-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-24T20:00:00Z",
+      "home_team": "Feyenoord",
+      "away_team": "FC Porto",
+      "snapshot_at_utc": "2026-11-23T11:51:58.508726Z",
+      "snapshot_stage": "J-1",
+      "prediction": {
+        "over_1_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75.0
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75.0
+          },
+          "pick": true,
+          "probability": 0.921009,
+          "pick_threshold": 0.7
+        },
+        "over_2_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75.0
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 2,
+            "percentage": 50.0
+          },
+          "pick": true,
+          "probability": 0.787637,
+          "pick_threshold": 0.7
+        },
+        "btts": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 2,
+            "percentage": 50.0
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 2,
+            "percentage": 50.0
+          },
+          "pick": true,
+          "probability": 0.767235,
+          "pick_threshold": 0.7
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "pick_threshold": 0.7,
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending"
+    },
+    {
+      "match_id": "m_3llrZc",
+      "competition": "uefa-champions-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-24T20:00:00Z",
+      "home_team": "Como",
+      "away_team": "AEK Athens",
+      "snapshot_at_utc": "2026-11-23T11:51:58.508726Z",
+      "snapshot_stage": "J-1",
+      "prediction": {
+        "over_1_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 4,
+            "percentage": 100.0
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75.0
+          },
+          "pick": true,
+          "probability": 0.948722,
+          "pick_threshold": 0.7
+        },
+        "over_2_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 4,
+            "percentage": 100.0
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75.0
+          },
+          "pick": true,
+          "probability": 0.849031,
+          "pick_threshold": 0.7
+        },
+        "btts": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 4,
+            "percentage": 100.0
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75.0
+          },
+          "pick": true,
+          "probability": 0.711528,
+          "pick_threshold": 0.7
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "pick_threshold": 0.7,
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending"
+    },
+    {
+      "match_id": "m_0yKeRt",
+      "competition": "uefa-champions-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-24T17:45:00Z",
+      "home_team": "Bodø/Glimt",
+      "away_team": "LASK",
+      "snapshot_at_utc": "2026-11-23T11:51:58.508726Z",
+      "snapshot_stage": "J-1",
+      "prediction": {
+        "over_1_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 2,
+            "percentage": 50.0
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75.0
+          },
+          "pick": true,
+          "probability": 0.769381,
+          "pick_threshold": 0.7
+        },
+        "over_2_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 2,
+            "percentage": 50.0
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75.0
+          },
+          "pick": false,
+          "probability": 0.53119,
+          "pick_threshold": 0.7
+        },
+        "btts": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 1,
+            "percentage": 25.0
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 2,
+            "percentage": 50.0
+          },
+          "pick": false,
+          "probability": 0.556524,
+          "pick_threshold": 0.7
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "pick_threshold": 0.7,
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending"
+    },
+    {
+      "match_id": "m_4SYMzr",
+      "competition": "uefa-champions-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-24T17:45:00Z",
+      "home_team": "Galatasaray",
+      "away_team": "Aston Villa",
+      "snapshot_at_utc": "2026-11-23T11:51:58.508726Z",
+      "snapshot_stage": "J-1",
+      "prediction": {
+        "over_1_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 4,
+            "percentage": 100.0
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 4,
+            "percentage": 100.0
+          },
+          "pick": true,
+          "probability": 0.898169,
+          "pick_threshold": 0.7
+        },
+        "over_2_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75.0
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 4,
+            "percentage": 100.0
+          },
+          "pick": true,
+          "probability": 0.741738,
+          "pick_threshold": 0.7
+        },
+        "btts": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75.0
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 2,
+            "percentage": 50.0
+          },
+          "pick": true,
+          "probability": 0.725923,
+          "pick_threshold": 0.7
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "pick_threshold": 0.7,
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending"
+    },
+    {
+      "match_id": "m_4V1CFy",
+      "competition": "us-mls",
+      "season": "2026",
+      "kickoff_utc": "2026-11-24T01:00:00Z",
+      "home_team": "St. Louis City",
+      "away_team": "Los Angeles FC",
+      "snapshot_at_utc": "2026-11-23T11:51:58.508726Z",
+      "snapshot_stage": "J-1",
+      "prediction": {
+        "over_1_5": {
+          "tier": 2,
+          "tier_label": "Favorable",
+          "home_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70.0
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 9,
+            "percentage": 90.0
+          },
+          "pick": true,
+          "probability": 0.765494,
+          "pick_threshold": 0.7
+        },
+        "over_2_5": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70.0
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60.0
+          },
+          "pick": false,
+          "probability": 0.525765,
+          "pick_threshold": 0.7
+        },
+        "btts": {
+          "tier": 3,
+          "tier_label": "Mitigé",
+          "home_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50.0
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80.0
+          },
+          "pick": false,
+          "probability": 0.554279,
+          "pick_threshold": 0.7
+        },
+        "probability_model": "independent_poisson_from_expected_goals_v1",
+        "pick_threshold": 0.7,
+        "calibration_status": "not_calibrated"
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending"
+    }
+  ],
+  "created_this_run": 10
+}
