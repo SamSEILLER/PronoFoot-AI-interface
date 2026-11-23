@@ -26,6 +26,69 @@ main{max-width:1600px;margin:auto;padding:20px}.hero{display:flex;justify-conten
 
 <main>
 <header class="hero"><div><h1>Archives des pronostics</h1><p>Consultez les analyses historiques des différents marchés, générées par les versions du moteur de pronostic. Chaque analyse est conservée afin de garantir sa traçabilité.</p></div></header>
+
+<section class="card engine-card" aria-labelledby="engine-title">
+  <div>
+    <h2 class="section-title" id="engine-title">1. Sélection du moteur de pronostic</h2>
+    <p class="engine-note">Choisissez la version du moteur dont vous souhaitez consulter les archives. Les blocs suivants de cette page s'appuieront sur cette sélection.</p>
+    <div class="engine-tags" id="engine-tags" aria-live="polite"></div>
+  </div>
+  <div class="field">
+    <label for="engine-select">MOTEUR DE PRONOSTIC</label>
+    <select id="engine-select" disabled>
+      <option value="">Chargement des moteurs…</option>
+    </select>
+    <p class="engine-note" id="engine-description" aria-live="polite">Chargement du catalogue des versions…</p>
+  </div>
+</section>
+<div class="notice" id="engine-error" role="status" hidden></div>
 </main>
+<script>
+(async function(){
+  const select=document.getElementById('engine-select');
+  const description=document.getElementById('engine-description');
+  const tags=document.getElementById('engine-tags');
+  const error=document.getElementById('engine-error');
+  try{
+    const response=await fetch('./data/prediction-history-index.json',{cache:'no-store'});
+    if(!response.ok) throw new Error('Le catalogue des moteurs est indisponible (HTTP '+response.status+').');
+    const catalog=await response.json();
+    const versions=Array.isArray(catalog.versions)?catalog.versions:[];
+    if(!versions.length) throw new Error('Aucun moteur de pronostic n’est référencé dans le catalogue.');
+    const activeId=catalog.active_version||versions[0].id;
+    versions.forEach(version=>{
+      const option=document.createElement('option');
+      option.value=version.id;
+      option.textContent=version.label||version.id;
+      select.appendChild(option);
+    });
+    function showVersion(id){
+      const version=versions.find(item=>item.id===id);
+      if(!version) return;
+      description.textContent=version.description||'Aucune description disponible pour cette version.';
+      tags.replaceChildren();
+      const status=document.createElement('span');
+      status.className='tag'+(version.status==='active'?' active':'');
+      status.textContent=version.status==='active'?'Moteur actif':'Version archivée';
+      tags.appendChild(status);
+      const model=document.createElement('span');
+      model.className='tag';
+      model.textContent='Identifiant : '+version.id;
+      tags.appendChild(model);
+      select.value=version.id;
+    }
+    select.disabled=false;
+    select.value=versions.some(item=>item.id===activeId)?activeId:versions[0].id;
+    showVersion(select.value);
+    select.addEventListener('change',()=>showVersion(select.value));
+  }catch(err){
+    select.innerHTML='<option value="">Catalogue indisponible</option>';
+    description.textContent='Impossible de charger les informations des moteurs.';
+    error.hidden=false;
+    error.textContent=err.message||'Une erreur est survenue lors du chargement du catalogue.';
+    error.classList.add('error');
+  }
+})();
+</script>
 <script src="./scripts/display/sidebar.js" defer></script>
 </body></html>
