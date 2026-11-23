@@ -11,14 +11,14 @@
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff;min-width:260px}.brand-logo{width:48px;height:48px}.brand-name{font-size:30px;line-height:1;font-weight:800;letter-spacing:-1px}.brand-name em{font-style:normal;color:#05c77b}.brand-sub{font-size:11px;letter-spacing:1.2px;margin-top:4px}.nav{display:flex;gap:5px;align-items:center;flex-wrap:wrap}.nav a{padding:12px 13px;border-radius:9px;text-decoration:none;color:#f1f5f9;font-size:14px}.nav a:hover,.nav a.active{background:#ffffff12;color:#91edc1}.nav a.active{box-shadow:inset 0 -3px #08c977}
 main{max-width:1600px;margin:auto;padding:20px}.hero{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin:4px 0 18px}.eyebrow{font-size:11px;font-weight:800;letter-spacing:1.4px;color:var(--green);text-transform:uppercase}.hero h1{font-size:27px;margin:5px 0 4px}.hero p{margin:0;color:var(--muted);max-width:800px}.hero-mark{border:1px solid var(--line);background:#fff;border-radius:10px;padding:10px 14px;color:var(--muted);font-size:12px;white-space:nowrap}
 .card{background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:16px;margin-bottom:13px}.section-title{font-size:15px;font-weight:800;margin:0 0 12px}.field label{display:block;color:var(--muted);font-size:11px;font-weight:800;letter-spacing:.4px;margin-bottom:6px}.field select{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink);font:inherit}
-.engine-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,360px);gap:18px;align-items:center}.engine-note{color:var(--muted);font-size:12px;line-height:1.5}.engine-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}.tag{border:1px solid var(--line);border-radius:20px;padding:4px 9px;font-size:10px;color:var(--muted)}.tag.active{background:#effaf4;border-color:#b9e5d1;color:#087c4b}
+.engine-card{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,390px);gap:24px;align-items:center;padding:22px 24px;border-color:#dce8f2;overflow:hidden}.engine-card:before{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:var(--green)}.engine-intro{display:flex;gap:15px;align-items:flex-start}.engine-step{flex:0 0 42px;height:42px;display:grid;place-items:center;border-radius:12px;background:#eaf8f1;color:#087c4b;font-size:17px;font-weight:850}.engine-heading{font-size:16px;font-weight:850;margin:1px 0 6px}.engine-note{color:var(--muted);font-size:12px;line-height:1.55;margin:0}.engine-choice{background:#f7fafc;border:1px solid var(--line);border-radius:11px;padding:13px}.engine-choice label{display:block;color:var(--muted);font-size:10px;font-weight:850;letter-spacing:.8px;margin-bottom:7px}.engine-choice select{width:100%;padding:12px 38px 12px 12px;border:1px solid #d8e3ed;border-radius:8px;background:#fff;color:var(--ink);font:inherit;font-weight:750;cursor:pointer;outline:none}.engine-choice select:focus{border-color:var(--green);box-shadow:0 0 0 3px #08b96820}.engine-meta{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-top:10px}.engine-selected{font-size:12px;font-weight:800;color:var(--ink)}.engine-tags{display:flex;gap:6px;flex-wrap:wrap}.tag{border:1px solid var(--line);border-radius:20px;padding:4px 9px;font-size:10px;color:var(--muted);background:#fff}.tag.active{background:#effaf4;border-color:#b9e5d1;color:#087c4b}.engine-description{margin-top:11px;padding-top:10px;border-top:1px solid #e7eef5;color:#58708e;font-size:11px;line-height:1.5}
 .overview{display:grid;grid-template-columns:minmax(220px,1.1fr) repeat(4,minmax(110px,.7fr));gap:12px;align-items:stretch}.overall{background:#f7fbf9;border:1px solid #d9eee3;border-radius:10px;padding:15px}.overall .label,.metric .label{font-size:11px;color:var(--muted);font-weight:750}.overall strong{display:block;font-size:32px;line-height:1.25;color:#087c4b;margin:4px 0}.overall small,.metric small{font-size:11px;color:var(--muted)}.progress{height:8px;background:#e8eef5;border-radius:20px;overflow:hidden;margin:8px 0}.progress span{height:100%;display:block;background:var(--green);border-radius:20px}.metric{border:1px solid var(--line);border-radius:10px;padding:15px}.metric strong{display:block;font-size:25px;margin:5px 0;color:var(--ink)}
 .market-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.market-tile{width:100%;text-align:left;background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px;cursor:pointer;color:var(--ink);transition:border-color .15s,box-shadow .15s}.market-tile:hover{border-color:#9acdb4}.market-tile.selected{border:2px solid var(--green);padding:13px;box-shadow:0 0 0 3px #08b96812}.market-top{display:flex;justify-content:space-between;align-items:center;gap:8px}.market-name{font-weight:800;font-size:15px;line-height:1.35}.market-pct{font-size:22px;font-weight:850;color:#087c4b}.market-detail{font-size:11px;color:var(--muted);margin-top:6px}.market-tile .progress{margin:10px 0 0}
 .filters{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:10px;align-items:end}.filter-hint{grid-column:1/-1;color:var(--muted);font-size:11px}
 .panel{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}.panel-head{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:15px 16px;border-bottom:1px solid var(--line)}.panel-head h2{font-size:16px;margin:0}.panel-head span{font-size:12px;color:var(--muted)}
 .table-wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;min-width:800px}th,td{text-align:left;padding:12px 14px;border-bottom:1px solid #edf1f6;white-space:nowrap}th{font-size:10px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);background:#f8fbfe}td{font-size:13px}.match{font-weight:750}.sub{display:block;color:var(--muted);font-size:10px;margin-top:3px}.pill{display:inline-flex;padding:4px 8px;border:1px solid var(--line);border-radius:30px;color:var(--muted);font-size:10px}.pill.green{border-color:#b9e5d1;background:#effaf4;color:#087c4b}.pill.amber{border-color:#ead9a9;background:#fffaf0;color:#876313}.pill.red{border-color:#edc4c7;background:#fff3f3;color:#a43e48}
 .empty{padding:38px 18px;text-align:center;color:var(--muted)}.empty strong{display:block;color:var(--ink);font-size:15px;margin-bottom:6px}.pagination{display:flex;justify-content:space-between;align-items:center;padding:13px 16px}.pagination span{font-size:12px;color:var(--muted)}.pagination button{padding:8px 12px;border:1px solid var(--line);border-radius:7px;background:#fff;color:var(--ink);cursor:pointer}.pagination button:disabled{opacity:.4;cursor:not-allowed}.notice{padding:12px 15px;border:1px solid #d8e8f6;background:#f5faff;border-radius:9px;color:#456587;margin-bottom:14px;line-height:1.5}.notice.error{border-color:#e5b9bd;background:#fff3f3;color:#963e48}.footnote{color:var(--muted);font-size:11px;line-height:1.55;margin:12px 2px}.footnote strong{color:var(--ink)}
-@media(max-width:900px){.topbar{gap:12px;flex-wrap:wrap}.nav{width:100%}.hero-mark{display:none}.overview{grid-template-columns:repeat(4,minmax(0,1fr))}.overall{grid-column:1/-1}.filters{grid-template-columns:repeat(2,minmax(0,1fr))}.engine-card{grid-template-columns:1fr}}
+@media(max-width:900px){.topbar{gap:12px;flex-wrap:wrap}.nav{width:100%}.hero-mark{display:none}.overview{grid-template-columns:repeat(4,minmax(0,1fr))}.overall{grid-column:1/-1}.filters{grid-template-columns:repeat(2,minmax(0,1fr))}.engine-card{grid-template-columns:1fr;gap:16px}}
 @media(max-width:560px){main{padding:13px}.topbar{padding:12px}.brand{min-width:0}.brand-logo{width:38px;height:38px}.brand-name{font-size:24px}.nav{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}.nav a{text-align:center;padding:9px 4px;font-size:12px}.hero h1{font-size:23px}.card{padding:12px}.overview{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.overall{grid-column:1/-1}.market-grid{grid-template-columns:1fr}.filters{grid-template-columns:1fr}.filter-hint{grid-column:auto}.metric{padding:11px}.metric strong{font-size:21px}}
 </style>
 </head>
@@ -28,17 +28,23 @@ main{max-width:1600px;margin:auto;padding:20px}.hero{display:flex;justify-conten
 <header class="hero"><div><h1>Archives des pronostics</h1><p>Consultez les analyses historiques des différents marchés, générées par les versions du moteur de pronostic. Chaque analyse est conservée afin de garantir sa traçabilité.</p></div></header>
 
 <section class="card engine-card" aria-labelledby="engine-title">
-  <div>
-    <h2 class="section-title" id="engine-title">1. Sélection du moteur de pronostic</h2>
-    <p class="engine-note">Choisissez la version du moteur dont vous souhaitez consulter les archives. Les blocs suivants de cette page s'appuieront sur cette sélection.</p>
-    <div class="engine-tags" id="engine-tags" aria-live="polite"></div>
+  <div class="engine-intro">
+    <div class="engine-step" aria-hidden="true">01</div>
+    <div>
+      <h2 class="engine-heading" id="engine-title">Choisir un moteur</h2>
+      <p class="engine-note">Sélectionnez la version à consulter. Toutes les archives affichées ensuite seront rattachées à ce moteur.</p>
+    </div>
   </div>
-  <div class="field">
-    <label for="engine-select">MOTEUR DE PRONOSTIC</label>
+  <div class="engine-choice">
+    <label for="engine-select">VERSION DU MOTEUR</label>
     <select id="engine-select" disabled>
       <option value="">Chargement des moteurs…</option>
     </select>
-    <p class="engine-note" id="engine-description" aria-live="polite">Chargement du catalogue des versions…</p>
+    <div class="engine-meta">
+      <span class="engine-selected" id="engine-selected">Moteur sélectionné</span>
+      <div class="engine-tags" id="engine-tags" aria-live="polite"></div>
+    </div>
+    <p class="engine-description" id="engine-description" aria-live="polite">Chargement du catalogue des versions…</p>
   </div>
 </section>
 <div class="notice" id="engine-error" role="status" hidden></div>
@@ -48,6 +54,7 @@ main{max-width:1600px;margin:auto;padding:20px}.hero{display:flex;justify-conten
   const select=document.getElementById('engine-select');
   const description=document.getElementById('engine-description');
   const tags=document.getElementById('engine-tags');
+  const selected=document.getElementById('engine-selected');
   const error=document.getElementById('engine-error');
   try{
     const response=await fetch('./data/prediction-history-index.json',{cache:'no-store'});
@@ -65,6 +72,7 @@ main{max-width:1600px;margin:auto;padding:20px}.hero{display:flex;justify-conten
     function showVersion(id){
       const version=versions.find(item=>item.id===id);
       if(!version) return;
+      selected.textContent=version.label||('Moteur '+version.id);
       description.textContent=version.description||'Aucune description disponible pour cette version.';
       tags.replaceChildren();
       const status=document.createElement('span');
