@@ -20,11 +20,12 @@ function renderEngine(){const sel=$("engineVersion").value;const version=state.v
 function renderStats(){
  const rows=engineRecords(), picks=allPicks(rows), evaluated=picks.filter(x=>hasScore(x.record)),pending=picks.filter(x=>!hasScore(x.record));
  const hits=evaluated.filter(x=>pickFor(x.record,x.market)===actualFor(x.record,x.market)).length;
+ const failed=evaluated.length-hits;
  const pct=evaluated.length?100*hits/evaluated.length:null;
  $("overallRate").textContent=pct===null?"N/D":pct.toFixed(1).replace(".",",")+" %";
  $("overallBar").style.width=(pct||0)+"%";
  $("overallDetail").textContent=evaluated.length?hits+" réussis / "+evaluated.length+" sélections évaluées":"Aucune sélection explicite évaluée à ce jour";
- $("totalEvaluated").textContent=evaluated.length;$("totalHits").textContent=hits;$("totalPending").textContent=pending.length;
+ $("totalEvaluated").textContent=evaluated.length;$("totalHits").textContent=hits;$("totalFailed").textContent=failed;$("totalPending").textContent=pending.length;
  $("marketGrid").innerHTML=MARKETS.map(m=>{const r=rate(rows,m.id),n=rows.filter(x=>pickFor(x,m.id)!==null).length;const pctText=r.pct===null?"N/D":r.pct.toFixed(1).replace(".",",")+" %";return '<button type="button" class="market-tile '+(state.market===m.id?"selected":"")+'" data-market="'+m.id+'" aria-pressed="'+(state.market===m.id)+'"><div class="market-top"><span class="market-name">'+m.label+'</span><span class="market-pct">'+pctText+'</span></div><div class="market-detail">'+(r.total?r.hits+" réussis / "+r.total+" évalués":n?"Aucune sélection terminée":"Aucune sélection binaire archivée")+'</div><div class="progress"><span style="width:'+(r.pct||0)+'%"></span></div></button>'}).join("");
  $("marketGrid").querySelectorAll("[data-market]").forEach(b=>b.addEventListener("click",()=>{state.market=b.dataset.market;state.page=1;renderStats();renderMatches()}));
 }
