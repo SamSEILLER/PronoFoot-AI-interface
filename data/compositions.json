@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-11-22T19:49:25.685535+00:00",
+  "generated_at_utc": "2026-11-23T00:57:21.789673+00:00",
   "sources": {
     "pitchapi": {
       "status": "PARTIAL",
@@ -59430,6 +59430,71 @@
       "schema_version": 1,
       "provider": "PitchAPI",
       "match_id": "m_1d29Gk",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-25T10:00:00+00:00",
+      "collected_at_utc": "2026-11-23T00:57:20.679780+00:00",
+      "competition": "J1 League",
+      "home_team": "FC Tokyo",
+      "away_team": "Sanfrecce Hiroshima",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_1d29Gk",
+        "home_team": {
+          "id": "t_17gQhK",
+          "name": "FC Tokyo",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/f615b6c25401d6c580656741b7b4673c69c51b6cd7b9b81de36c2eb33a109b86.webp"
+        },
+        "away_team": {
+          "id": "t_4Oonn6",
+          "name": "Sanfrecce Hiroshima",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/e5b0ecf98a46b261aa6de1108102a858ac32c651babce189e62598cde2268338.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_1d29Gk",
+          "home_team": {
+            "id": "t_17gQhK",
+            "name": "FC Tokyo",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/f615b6c25401d6c580656741b7b4673c69c51b6cd7b9b81de36c2eb33a109b86.webp"
+          },
+          "away_team": {
+            "id": "t_4Oonn6",
+            "name": "Sanfrecce Hiroshima",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/e5b0ecf98a46b261aa6de1108102a858ac32c651babce189e62598cde2268338.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_1d29Gk",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-25T10:00:00+00:00",
       "collected_at_utc": "2026-11-18T08:34:27.733365+00:00",
@@ -65388,6 +65453,71 @@
                 "pitch_y": 0
               }
             ]
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_1lENxU",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-25T10:00:00+00:00",
+      "collected_at_utc": "2026-11-23T00:57:20.679780+00:00",
+      "competition": "J1 League",
+      "home_team": "JEF United Chiba",
+      "away_team": "Nagoya Grampus",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_1lENxU",
+        "home_team": {
+          "id": "t_25A1QK",
+          "name": "JEF United Chiba",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/b335ff892f763c6306c346fa015678bc966436ffdd49db0bcd5aa6a5304d1268.webp"
+        },
+        "away_team": {
+          "id": "t_1mrdfo",
+          "name": "Nagoya Grampus",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/9a5b30c93d657b9b52bd57fde9efbd98b6008e8be22026ab5608794d24fdb317.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_1lENxU",
+          "home_team": {
+            "id": "t_25A1QK",
+            "name": "JEF United Chiba",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/b335ff892f763c6306c346fa015678bc966436ffdd49db0bcd5aa6a5304d1268.webp"
+          },
+          "away_team": {
+            "id": "t_1mrdfo",
+            "name": "Nagoya Grampus",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/9a5b30c93d657b9b52bd57fde9efbd98b6008e8be22026ab5608794d24fdb317.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
           }
         }
       }
@@ -72993,6 +73123,71 @@
             "id": "t_21IR9d",
             "name": "Everton",
             "image_url": "https://cdn.pitchapi.dev/images/teams/a755328b0286a79ef4e19406b2c63417922769a93ca17365b7333d4173cb9a2b.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_2J8kY5",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-25T10:00:00+00:00",
+      "collected_at_utc": "2026-11-23T00:57:20.679780+00:00",
+      "competition": "J1 League",
+      "home_team": "Fagiano Okayama FC",
+      "away_team": "Shimizu S-Pulse",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_2J8kY5",
+        "home_team": {
+          "id": "t_2fx2NT",
+          "name": "Fagiano Okayama FC",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/593bad4c81f93182a2721fab888521ef3ff9357a015eb1b582735ceae4569b64.webp"
+        },
+        "away_team": {
+          "id": "t_1E6Pbm",
+          "name": "Shimizu S-Pulse",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/22adf2897224b16a5258aaf5a8bad6008e2d56497a6d100c14728f3931f2dc6c.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_2J8kY5",
+          "home_team": {
+            "id": "t_2fx2NT",
+            "name": "Fagiano Okayama FC",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/593bad4c81f93182a2721fab888521ef3ff9357a015eb1b582735ceae4569b64.webp"
+          },
+          "away_team": {
+            "id": "t_1E6Pbm",
+            "name": "Shimizu S-Pulse",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/22adf2897224b16a5258aaf5a8bad6008e2d56497a6d100c14728f3931f2dc6c.webp"
           },
           "home": {
             "formation": "",
@@ -97298,6 +97493,71 @@
             "id": "t_2wJJY2",
             "name": "Fenerbahçe",
             "image_url": "https://cdn.pitchapi.dev/images/teams/c3f91e2fb35d5962a65d5ee8e24dccba47d82e950e152a39e28c1a3e733b8397.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_3GEDIo",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-25T10:30:00+00:00",
+      "collected_at_utc": "2026-11-23T00:57:20.679780+00:00",
+      "competition": "J1 League",
+      "home_team": "Urawa Red Diamonds",
+      "away_team": "Cerezo Osaka",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_3GEDIo",
+        "home_team": {
+          "id": "t_2SxYow",
+          "name": "Urawa Red Diamonds",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/7b189717adf187d6429ba053c0e99d5e8b24af65d78fe99137512f9142b3d879.webp"
+        },
+        "away_team": {
+          "id": "t_4gLxod",
+          "name": "Cerezo Osaka",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/692e6c878909c25c9805ba10f5856295bccc448cdbf6c3df5dfd42db58d345fe.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_3GEDIo",
+          "home_team": {
+            "id": "t_2SxYow",
+            "name": "Urawa Red Diamonds",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/7b189717adf187d6429ba053c0e99d5e8b24af65d78fe99137512f9142b3d879.webp"
+          },
+          "away_team": {
+            "id": "t_4gLxod",
+            "name": "Cerezo Osaka",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/692e6c878909c25c9805ba10f5856295bccc448cdbf6c3df5dfd42db58d345fe.webp"
           },
           "home": {
             "formation": "",
@@ -126528,6 +126788,71 @@
       "schema_version": 1,
       "provider": "PitchAPI",
       "match_id": "m_3vziZg",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-25T10:00:00+00:00",
+      "collected_at_utc": "2026-11-23T00:57:20.679780+00:00",
+      "competition": "J1 League",
+      "home_team": "Mito Hollyhock",
+      "away_team": "Tokyo Verdy",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_3vziZg",
+        "home_team": {
+          "id": "t_01uUy2",
+          "name": "Mito Hollyhock",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/477958a4b5247f08dc01efdfaeb2dcf6a9bc83fefa19e6d587cd55495d94035f.webp"
+        },
+        "away_team": {
+          "id": "t_2HK8gL",
+          "name": "Tokyo Verdy",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/f29595d5e2325b3b5bd49f953fd29b00c963db63c88898d75634c97686e127a8.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_3vziZg",
+          "home_team": {
+            "id": "t_01uUy2",
+            "name": "Mito Hollyhock",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/477958a4b5247f08dc01efdfaeb2dcf6a9bc83fefa19e6d587cd55495d94035f.webp"
+          },
+          "away_team": {
+            "id": "t_2HK8gL",
+            "name": "Tokyo Verdy",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/f29595d5e2325b3b5bd49f953fd29b00c963db63c88898d75634c97686e127a8.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_3vziZg",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-25T10:00:00+00:00",
       "collected_at_utc": "2026-11-18T08:34:27.733365+00:00",
@@ -147391,6 +147716,71 @@
       "schema_version": 1,
       "provider": "PitchAPI",
       "match_id": "m_4ReOc3",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-25T10:00:00+00:00",
+      "collected_at_utc": "2026-11-23T00:57:20.679780+00:00",
+      "competition": "J1 League",
+      "home_team": "V-Varen Nagasaki",
+      "away_team": "Kawasaki Frontale",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_4ReOc3",
+        "home_team": {
+          "id": "t_1W837G",
+          "name": "V-Varen Nagasaki",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/3d89356de46f5a186983072ad4b65f55b45815a687bb764dc22d2a7716fda5d8.webp"
+        },
+        "away_team": {
+          "id": "t_37dBko",
+          "name": "Kawasaki Frontale",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/4a1738813ff2f7c13b04962a4db57c4982ba9ac1762b28e35e8357d2d729deb4.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_4ReOc3",
+          "home_team": {
+            "id": "t_1W837G",
+            "name": "V-Varen Nagasaki",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/3d89356de46f5a186983072ad4b65f55b45815a687bb764dc22d2a7716fda5d8.webp"
+          },
+          "away_team": {
+            "id": "t_37dBko",
+            "name": "Kawasaki Frontale",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/4a1738813ff2f7c13b04962a4db57c4982ba9ac1762b28e35e8357d2d729deb4.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_4ReOc3",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-25T10:00:00+00:00",
       "collected_at_utc": "2026-11-18T08:34:27.733365+00:00",
@@ -147436,6 +147826,71 @@
             "id": "t_37dBko",
             "name": "Kawasaki Frontale",
             "image_url": "https://cdn.pitchapi.dev/images/teams/4a1738813ff2f7c13b04962a4db57c4982ba9ac1762b28e35e8357d2d729deb4.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_4Rx6JG",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-25T10:00:00+00:00",
+      "collected_at_utc": "2026-11-23T00:57:20.679780+00:00",
+      "competition": "J1 League",
+      "home_team": "Avispa Fukuoka",
+      "away_team": "Yokohama F.Marinos",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_4Rx6JG",
+        "home_team": {
+          "id": "t_2u1BXQ",
+          "name": "Avispa Fukuoka",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/99cf3b497f10d87e37f6c2b64598310dc5d8a189d6fe2c1fecf06a13f68c3a63.webp"
+        },
+        "away_team": {
+          "id": "t_1mTqNS",
+          "name": "Yokohama F.Marinos",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/75e1e0a290d0d8d4fa2e1c286ed90c0dd77c2b6d2f855b05141fc06c35329f47.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_4Rx6JG",
+          "home_team": {
+            "id": "t_2u1BXQ",
+            "name": "Avispa Fukuoka",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/99cf3b497f10d87e37f6c2b64598310dc5d8a189d6fe2c1fecf06a13f68c3a63.webp"
+          },
+          "away_team": {
+            "id": "t_1mTqNS",
+            "name": "Yokohama F.Marinos",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/75e1e0a290d0d8d4fa2e1c286ed90c0dd77c2b6d2f855b05141fc06c35329f47.webp"
           },
           "home": {
             "formation": "",
