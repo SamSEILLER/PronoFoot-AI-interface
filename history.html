@@ -26,38 +26,6 @@ main{max-width:1600px;margin:auto;padding:20px}.hero{display:flex;justify-conten
 
 <main>
 <header class="hero"><div><h1>Archives des pronostics</h1><p>Consultez les analyses historiques des différents marchés, générées par les versions du moteur de pronostic. Chaque analyse est conservée afin de garantir sa traçabilité.</p></div></header>
-<div class="notice" id="archiveNotice" role="status">Chargement des archives…</div>
-<section class="card engine-card">
-<div><h2 class="section-title">1. Moteur actif</h2><div class="engine-note" id="engineDescription">Les analyses sont produites à partir des données disponibles au moment de leur génération. Les snapshots sont conservés et les scores finaux complétés à mesure de leur disponibilité.</div><div class="engine-tags" id="engineTags"></div></div>
-<div class="field"><label for="engineVersion">VERSION DU MOTEUR</label><select id="engineVersion"><option value="all">Tous les moteurs</option></select></div>
-</section>
-<section class="card">
-<h2 class="section-title">2. Couverture des données</h2>
-<div class="overview">
-<div class="overall"><div class="label">RENCONTRES ARCHIVÉES</div><strong id="overallRate">N/D</strong><div class="progress"><span id="overallBar" style="width:0%"></span></div><small id="overallDetail">Snapshots V1 · niveaux descriptifs, pas de picks</small></div>
-<div class="metric"><div class="label">ANALYSES EXPLOITABLES</div><strong id="totalEvaluated">0</strong><small>Données historiques suffisantes</small></div>
-<div class="metric"><div class="label">ANALYSES FAVORABLES</div><strong id="totalHits">0</strong><small>Selon les critères du moteur actif</small></div>
-<div class="metric"><div class="label">DONNÉES INSUFFISANTES</div><strong id="totalFailed">0</strong><small>Moins de 5 matchs valides pour une équipe</small></div>
-<div class="metric"><div class="label">SCORES REÇUS</div><strong id="totalPending">0</strong><small>Résultats finaux disponibles</small></div>
-</div>
-</section>
-<section class="card">
-<h2 class="section-title">3. Synthèse des analyses par marché</h2>
-<div class="market-grid" id="marketGrid"></div>
-</section>
-<section class="card filters">
-<div class="field"><label for="competitionFilter">COMPÉTITION</label><select id="competitionFilter"><option value="">Toutes les compétitions</option></select></div>
-<div class="field"><label for="statusFilter">ÉTAT DU MATCH</label><select id="statusFilter"><option value="">Tous les matchs</option><option value="pending">Score en attente</option><option value="evaluated">Score reçu</option></select></div>
-<div class="field"><label for="periodFilter">PÉRIODE</label><select id="periodFilter"><option value="all">Toute l'archive</option><option value="30">30 derniers jours</option><option value="90">90 derniers jours</option><option value="365">12 derniers mois</option></select></div>
-
-</section>
-<section class="panel">
-<div class="panel-head"><h2 id="matchesTitle">4. Rencontres archivées</h2><span id="rowCount">0 match</span></div>
-<div class="table-wrap"><table><thead><tr><th>DATE / COMPÉTITION</th><th>RENCONTRE</th><th>FRÉQUENCE DOMICILE</th><th>FRÉQUENCE EXTÉRIEUR</th><th>SCORE FINAL</th><th>ÉTAT</th></tr></thead><tbody id="historyRows"></tbody></table></div>
-<div class="empty" id="emptyState" hidden><strong>Aucune rencontre à afficher</strong>Aucune rencontre ne correspond aux filtres sélectionnés.</div>
-<div class="pagination" id="archivePagination" hidden><span id="archivePageInfo">Page 1 / 1</span><div><button id="archivePrev" type="button">Précédent</button> <button id="archiveNext" type="button">Suivant</button></div></div>
-</section>
-
 </main>
-<script src="./scripts/display/sidebar.js" defer></script><script src="./scripts/display/history.js" defer></script>
+<script src="./scripts/display/sidebar.js" defer></script>
 </body></html>
