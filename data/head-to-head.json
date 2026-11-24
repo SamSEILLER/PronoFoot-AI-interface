@@ -1,7 +1,7 @@
 {
   "provider": "pitchapi_processed_history",
-  "generated_at_utc": "2026-11-24T06:09:30.576995+00:00",
-  "matches_considered": 9481,
+  "generated_at_utc": "2026-11-24T10:53:00.881580+00:00",
+  "matches_considered": 9487,
   "pairs": {
     "avispa fukuoka|yokohama f marinos": {
       "team_a": "Avispa Fukuoka",
@@ -595,6 +595,15 @@
       "team_a": "Los Angeles FC",
       "team_b": "St. Louis City",
       "matches": [
+        {
+          "date": "2026-11-24T01:20:00Z",
+          "home": "St. Louis City",
+          "away": "Los Angeles FC",
+          "score_home": 3,
+          "score_away": 2,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
         {
           "date": "2026-05-14T00:30:00Z",
           "home": "St. Louis City",
@@ -2028,30 +2037,6 @@
           "score_away": 1,
           "competition_id": "gb-premier-league",
           "competition_name": "Premier League"
-        }
-      ]
-    },
-    "fiorentina|monza": {
-      "team_a": "Fiorentina",
-      "team_b": "Monza",
-      "matches": [
-        {
-          "date": "2025-01-13T19:45:00Z",
-          "home": "Monza",
-          "away": "Fiorentina",
-          "score_home": 2,
-          "score_away": 1,
-          "competition_id": "it-serie-a",
-          "competition_name": "Serie A"
-        },
-        {
-          "date": "2024-09-01T16:30:00Z",
-          "home": "Fiorentina",
-          "away": "Monza",
-          "score_home": 2,
-          "score_away": 2,
-          "competition_id": "it-serie-a",
-          "competition_name": "Serie A"
         }
       ]
     },
@@ -4038,48 +4023,6 @@
         }
       ]
     },
-    "brentford|everton": {
-      "team_a": "Brentford",
-      "team_b": "Everton",
-      "matches": [
-        {
-          "date": "2026-04-11T14:00:00Z",
-          "home": "Brentford",
-          "away": "Everton",
-          "score_home": 2,
-          "score_away": 2,
-          "competition_id": "gb-premier-league",
-          "competition_name": "Premier League"
-        },
-        {
-          "date": "2026-01-04T15:00:00Z",
-          "home": "Everton",
-          "away": "Brentford",
-          "score_home": 2,
-          "score_away": 4,
-          "competition_id": "gb-premier-league",
-          "competition_name": "Premier League"
-        },
-        {
-          "date": "2025-02-26T19:30:00Z",
-          "home": "Brentford",
-          "away": "Everton",
-          "score_home": 1,
-          "score_away": 1,
-          "competition_id": "gb-premier-league",
-          "competition_name": "Premier League"
-        },
-        {
-          "date": "2024-11-23T15:00:00Z",
-          "home": "Everton",
-          "away": "Brentford",
-          "score_home": 0,
-          "score_away": 0,
-          "competition_id": "gb-premier-league",
-          "competition_name": "Premier League"
-        }
-      ]
-    },
     "eintracht frankfurt|werder bremen": {
       "team_a": "Eintracht Frankfurt",
       "team_b": "Werder Bremen",
@@ -4332,6 +4275,48 @@
           "home": "Genoa",
           "away": "Torino",
           "score_home": 0,
+          "score_away": 0,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        }
+      ]
+    },
+    "cagliari|fiorentina": {
+      "team_a": "Cagliari",
+      "team_b": "Fiorentina",
+      "matches": [
+        {
+          "date": "2026-01-24T17:00:00Z",
+          "home": "Fiorentina",
+          "away": "Cagliari",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        },
+        {
+          "date": "2025-08-24T16:30:00Z",
+          "home": "Cagliari",
+          "away": "Fiorentina",
+          "score_home": 1,
+          "score_away": 1,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        },
+        {
+          "date": "2025-04-23T16:30:00Z",
+          "home": "Cagliari",
+          "away": "Fiorentina",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "it-serie-a",
+          "competition_name": "Serie A"
+        },
+        {
+          "date": "2024-12-08T11:30:00Z",
+          "home": "Fiorentina",
+          "away": "Cagliari",
+          "score_home": 1,
           "score_away": 0,
           "competition_id": "it-serie-a",
           "competition_name": "Serie A"
@@ -5193,6 +5178,30 @@
         }
       ]
     },
+    "alverca|moreirense": {
+      "team_a": "Alverca",
+      "team_b": "Moreirense",
+      "matches": [
+        {
+          "date": "2026-01-17T18:00:00Z",
+          "home": "Alverca",
+          "away": "Moreirense",
+          "score_home": 2,
+          "score_away": 1,
+          "competition_id": "pt-primeira-liga",
+          "competition_name": "Primeira Liga"
+        },
+        {
+          "date": "2025-08-10T19:30:00Z",
+          "home": "Moreirense",
+          "away": "Alverca",
+          "score_home": 2,
+          "score_away": 1,
+          "competition_id": "pt-primeira-liga",
+          "competition_name": "Primeira Liga"
+        }
+      ]
+    },
     "napoli|sassuolo": {
       "team_a": "Napoli",
       "team_b": "Sassuolo",
@@ -5236,30 +5245,6 @@
           "away": "Elche",
           "score_home": 1,
           "score_away": 1,
-          "competition_id": "es-la-liga",
-          "competition_name": "La Liga"
-        }
-      ]
-    },
-    "elche|levante": {
-      "team_a": "Elche",
-      "team_b": "Levante",
-      "matches": [
-        {
-          "date": "2026-01-23T20:00:00Z",
-          "home": "Levante",
-          "away": "Elche",
-          "score_home": 3,
-          "score_away": 2,
-          "competition_id": "es-la-liga",
-          "competition_name": "La Liga"
-        },
-        {
-          "date": "2025-08-29T17:30:00Z",
-          "home": "Elche",
-          "away": "Levante",
-          "score_home": 2,
-          "score_away": 0,
           "competition_id": "es-la-liga",
           "competition_name": "La Liga"
         }
@@ -5419,6 +5404,30 @@
           "away": "Laval",
           "score_home": 0,
           "score_away": 0,
+          "competition_id": "fr-ligue-2",
+          "competition_name": "Ligue 2"
+        }
+      ]
+    },
+    "reims|rodez": {
+      "team_a": "Reims",
+      "team_b": "Rodez",
+      "matches": [
+        {
+          "date": "2026-03-14T13:00:00Z",
+          "home": "Reims",
+          "away": "Rodez",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "fr-ligue-2",
+          "competition_name": "Ligue 2"
+        },
+        {
+          "date": "2025-10-17T18:00:00Z",
+          "home": "Rodez",
+          "away": "Reims",
+          "score_home": 2,
+          "score_away": 2,
           "competition_id": "fr-ligue-2",
           "competition_name": "Ligue 2"
         }
