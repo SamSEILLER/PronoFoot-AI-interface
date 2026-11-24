@@ -22,6 +22,31 @@ main{width:min(1600px,100%);margin:auto;padding:26px 24px 42px}
 @media(max-width:1050px){main{padding:22px 16px}.kpi-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.kpi-summary{grid-column:1/-1;width:min(760px,100%);height:142px;min-height:142px}.summary-cell{padding:9px 14px}.summary-label{font-size:13px}.summary-icon{font-size:20px}.summary-value{font-size:39px}.kpi-performance{grid-column:span 1}.kpi-performance:before{display:none}.match-head{align-items:flex-start;flex-direction:column}.match-tools{width:100%}.search-input{width:100%;flex:1}}
 @media(max-width:700px){main{padding:17px 12px 30px}.hero p{font-size:14px}.kpi-grid{grid-template-columns:1fr;gap:10px}.kpi{min-height:100px;padding:12px}.kpi-summary{grid-column:1/-1;width:100%;height:104px;min-height:104px;padding:6px 4px;border-radius:13px}.summary-cell{padding:7px 3px;gap:7px}.summary-label{font-size:10px;gap:4px;white-space:nowrap}.summary-icon{font-size:14px}.summary-value{font-size:29px;letter-spacing:-.5px}.kpi-performance{grid-column:1/-1}.kpi-label{font-size:11px;gap:6px}.kpi-icon{font-size:16px}.kpi-value{font-size:25px;gap:6px}.kpi-performance .kpi-main-rate{font-size:23px}.kpi-result-row{grid-template-columns:minmax(0,1fr) auto;gap:5px}.kpi-detail{font-size:10px;padding:3px 6px}.kpi-ring{display:none}.kpi-distribution{gap:7px;margin-top:7px;font-size:10px}.kpi-distribution strong{font-size:10px}.kpi-distribution small{font-size:8px}.kpi-performance.btts{grid-column:1/-1}.section-heading{font-size:20px}.engine-toggle{padding:12px;gap:9px}.engine-chip{flex-basis:35px;width:35px;height:35px}.engine-toggle-title{font-size:15px}.status-pill{font-size:10px;padding:4px 7px}.engine-panel{padding:12px}.market-grid{grid-template-columns:1fr;gap:8px}.market-card{min-height:58px}.engine-info-grid{grid-template-columns:1fr}.performance-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.global-match-section{padding:10px}.match-tools{flex-direction:column;align-items:stretch}.search-input,.market-filter{width:100%}.pagination{align-items:flex-start;flex-direction:column}}
 @media(max-width:390px){.engine-toggle-status{display:none}.level-row{grid-template-columns:30px 1fr auto;gap:6px;padding:6px}.level-row small{font-size:10px}}
+
+/* Nouvelle présentation des six résultats OUI/NON */
+.kpi-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-bottom:30px}
+.kpi-summary{grid-column:1/-1;width:min(900px,100%);height:118px;min-height:118px}
+.kpi-performance{position:relative;min-height:158px;padding:17px 19px 15px;border:1px solid transparent;border-radius:16px;box-shadow:0 5px 16px #244b6d10;gap:15px}
+.kpi-performance:before{display:none}
+.kpi-performance.over15.outcome-yes,.kpi-performance.over25.outcome-yes{background:linear-gradient(145deg,#fbfffc,#eafaf0);border-color:#b9e8c9;--ring-color:#16a34a}
+.kpi-performance.over15.outcome-no,.kpi-performance.over25.outcome-no{background:linear-gradient(145deg,#fffdfd,#fff0f1);border-color:#f2c5cb;--ring-color:#dc3545}
+.kpi-performance.btts.outcome-yes{background:linear-gradient(145deg,#fbfdff,#edf6ff);border-color:#b9d9fa;--ring-color:#1688e8}
+.kpi-performance.btts.outcome-no{background:linear-gradient(145deg,#fdfbff,#f4edff);border-color:#d8c5f5;--ring-color:#7735ce}
+.kpi-card-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.kpi-label{display:flex;align-items:center;gap:9px;color:#10294b;font-size:16px;font-weight:850}
+.kpi-icon{font-size:20px}
+.outcome-badge{display:inline-flex;align-items:center;justify-content:center;min-width:58px;padding:5px 12px;border-radius:999px;background:#16a34a;color:#fff;font-size:13px;font-weight:900;letter-spacing:.2px}
+.outcome-no .outcome-badge{background:#dc3545}
+.kpi-result-row{display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:13px}
+.kpi-main-rate{display:block;min-width:0;white-space:nowrap;font-size:36px;line-height:1.05;font-weight:950;letter-spacing:-1px;color:#15964f}
+.outcome-no .kpi-main-rate{color:#dc3545}
+.btts.outcome-yes .kpi-main-rate{color:#1688e8}
+.btts.outcome-no .kpi-main-rate{color:#7135c8}
+.kpi-detail{white-space:nowrap;color:#10294b;font-size:17px;font-weight:750;font-variant-numeric:tabular-nums}
+.kpi-ring{flex:0 0 68px;width:68px;height:68px;background:conic-gradient(var(--ring-color) calc(var(--progress,0)*1%),#dce6ef 0)}
+.kpi-ring:before{inset:8px}.kpi-ring span{font-size:12px}
+@media(max-width:1050px){.kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.kpi-summary{grid-column:1/-1;width:min(900px,100%)}.kpi-performance{grid-column:span 1}}
+@media(max-width:700px){.kpi-grid{grid-template-columns:1fr;gap:10px}.kpi-summary{grid-column:1/-1;width:100%;height:104px;min-height:104px}.kpi-performance{grid-column:1/-1;min-height:116px;padding:13px 15px;gap:10px}.kpi-label{font-size:14px}.kpi-main-rate{font-size:29px}.kpi-detail{font-size:14px}.kpi-ring{flex-basis:56px;width:56px;height:56px}.kpi-ring:before{inset:7px}.kpi-ring span{font-size:10px}}
 </style>
 </head>
 <body>
@@ -37,9 +62,12 @@ main{width:min(1600px,100%);margin:auto;padding:26px 24px 42px}
     <div class="summary-cell evaluated"><div class="summary-label"><span class="summary-icon">☑</span>Matchs évalués</div><div class="summary-value" id="kpi-evaluated">—</div></div>
     <div class="summary-cell upcoming"><div class="summary-label"><span class="summary-icon">▦</span>Matchs à venir</div><div class="summary-value" id="kpi-upcoming">—</div></div>
   </article>
-  <article class="kpi kpi-performance over15"><div class="kpi-label"><span class="kpi-icon">⚽</span>Réussite +1,5 buts</div><div class="kpi-value" id="kpi-over15">—</div></article>
-  <article class="kpi kpi-performance over25"><div class="kpi-label"><span class="kpi-icon">◎</span>Réussite +2,5 buts</div><div class="kpi-value" id="kpi-over25">—</div></article>
-  <article class="kpi kpi-performance btts"><div class="kpi-label"><span class="kpi-icon">⚽↔⚽</span>BTTS</div><div class="kpi-value" id="kpi-btts">—</div></article>
+  <article class="kpi kpi-performance over15 outcome-yes" id="card-over15-yes"><div class="kpi-card-head"><span class="kpi-label"><span class="kpi-icon">⚽</span>+1,5 buts</span><span class="outcome-badge">OUI</span></div><div class="kpi-result-row"><strong class="kpi-main-rate" id="rate-over15-yes">—</strong><span class="kpi-detail" id="count-over15-yes">— / —</span><span class="kpi-ring" id="ring-over15-yes"><span>—</span></span></div></article>
+  <article class="kpi kpi-performance over15 outcome-no" id="card-over15-no"><div class="kpi-card-head"><span class="kpi-label"><span class="kpi-icon">⚽</span>+1,5 buts</span><span class="outcome-badge">NON</span></div><div class="kpi-result-row"><strong class="kpi-main-rate" id="rate-over15-no">—</strong><span class="kpi-detail" id="count-over15-no">— / —</span><span class="kpi-ring" id="ring-over15-no"><span>—</span></span></div></article>
+  <article class="kpi kpi-performance over25 outcome-yes" id="card-over25-yes"><div class="kpi-card-head"><span class="kpi-label"><span class="kpi-icon">⚽</span>+2,5 buts</span><span class="outcome-badge">OUI</span></div><div class="kpi-result-row"><strong class="kpi-main-rate" id="rate-over25-yes">—</strong><span class="kpi-detail" id="count-over25-yes">— / —</span><span class="kpi-ring" id="ring-over25-yes"><span>—</span></span></div></article>
+  <article class="kpi kpi-performance over25 outcome-no" id="card-over25-no"><div class="kpi-card-head"><span class="kpi-label"><span class="kpi-icon">⚽</span>+2,5 buts</span><span class="outcome-badge">NON</span></div><div class="kpi-result-row"><strong class="kpi-main-rate" id="rate-over25-no">—</strong><span class="kpi-detail" id="count-over25-no">— / —</span><span class="kpi-ring" id="ring-over25-no"><span>—</span></span></div></article>
+  <article class="kpi kpi-performance btts outcome-yes" id="card-btts-yes"><div class="kpi-card-head"><span class="kpi-label"><span class="kpi-icon">⚽↔⚽</span>BTTS</span><span class="outcome-badge">OUI</span></div><div class="kpi-result-row"><strong class="kpi-main-rate" id="rate-btts-yes">—</strong><span class="kpi-detail" id="count-btts-yes">— / —</span><span class="kpi-ring" id="ring-btts-yes"><span>—</span></span></div></article>
+  <article class="kpi kpi-performance btts outcome-no" id="card-btts-no"><div class="kpi-card-head"><span class="kpi-label"><span class="kpi-icon">⚽↔⚽</span>BTTS</span><span class="outcome-badge">NON</span></div><div class="kpi-result-row"><strong class="kpi-main-rate" id="rate-btts-no">—</strong><span class="kpi-detail" id="count-btts-no">— / —</span><span class="kpi-ring" id="ring-btts-no"><span>—</span></span></div></article>
 </section>
 <h2 class="section-heading">Versions du moteur</h2>
 <section aria-label="Versions des moteurs de pronostic"><div class="engine-list" id="engine-list"><div class="empty">Chargement des archives…</div></div></section>
@@ -55,10 +83,12 @@ const labels={over_1_5:"+1,5 buts",over_2_5:"+2,5 buts",btts:"BTTS"};
 function esc(value){return String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
 function statsFor(records){
  const stats={};for(const key of keys)stats[key]={evaluated:0,success:0};
- let common=0;
+ const directional={};for(const key of keys)directional[key]={yes:{evaluated:0,success:0},no:{evaluated:0,success:0}};
+ let common=0,completed=0;
  for(const r of records){
   const hs=r.actual?.home_score,as=r.actual?.away_score;
   if(!Number.isFinite(hs)||!Number.isFinite(as))continue;
+  completed++;
   let all=true;
   for(const key of keys){
    const tier=r.prediction?.[key]?.tier;
@@ -66,24 +96,32 @@ function statsFor(records){
    const predicted=tier===1||tier===2;
    const actual=key==="over_1_5"?hs+as>=2:key==="over_2_5"?hs+as>=3:hs>=1&&as>=1;
    stats[key].evaluated++;if(predicted===actual)stats[key].success++;
+   const side=predicted?"yes":"no";
+   directional[key][side].evaluated++;
+   if(predicted===actual)directional[key][side].success++;
   }
   if(all)common++;
  }
- return {stats,common};
+ return {stats,common,completed,directional};
 }
 function pct(item){return item.evaluated?(item.success/item.evaluated*100).toLocaleString("fr-FR",{maximumFractionDigits:1})+" %":"—";}
 function updateKpis(records){
- const {stats,common}=statsFor(records);
+ const {stats,common,completed,directional}=statsFor(records);
  document.getElementById("kpi-archived").textContent=records.length;
- document.getElementById("kpi-evaluated").textContent=common;
+ document.getElementById("kpi-evaluated").textContent=completed;
  const upcoming=records.filter(r=>r.evaluation_status==="pending"||(!r.evaluation_status&&(!Number.isFinite(r.actual?.home_score)||!Number.isFinite(r.actual?.away_score)))).length;
  document.getElementById("kpi-upcoming").textContent=upcoming;
- for(const [key,id] of [["over_1_5","over15"],["over_2_5","over25"],["btts","btts"]]){
-  const item=stats[key],rate=item.evaluated?item.success/item.evaluated*100:0;
-  let yes=0,no=0,unclassified=0;
-  for(const record of records){const tier=record.prediction?.[key]?.tier;if(tier===1||tier===2)yes++;else if(tier===3||tier===4)no++;else unclassified++;}
-  const classified=yes+no,yesPct=classified?yes/classified*100:0,noPct=classified?no/classified*100:0;
-  document.getElementById("kpi-"+id).innerHTML='<div class="kpi-result-row"><span class="kpi-main-rate">'+(item.evaluated?pct(item):"—")+'</span>'+(item.evaluated?'<span class="kpi-detail">'+item.success+" / "+item.evaluated+'</span><span class="kpi-ring" style="--progress:'+rate.toFixed(1)+'"><span>'+rate.toLocaleString("fr-FR",{maximumFractionDigits:1})+' %</span></span>':'')+'</div><div class="kpi-distribution"><span class="yes">OUI <strong>'+yesPct.toLocaleString("fr-FR",{maximumFractionDigits:1})+' %</strong></span><span class="no">NON <strong>'+noPct.toLocaleString("fr-FR",{maximumFractionDigits:1})+' %</strong></span>'+(unclassified?'<small>· '+unclassified+' non classé(s)</small>':'')+'</div>';
+ for(const [key,short] of [["over_1_5","over15"],["over_2_5","over25"],["btts","btts"]]){
+  for(const side of ["yes","no"]){
+   const item=directional[key][side],rate=item.evaluated?item.success/item.evaluated*100:0;
+   const suffix=side==="yes"?"yes":"no",rateText=item.evaluated?rate.toLocaleString("fr-FR",{maximumFractionDigits:1})+" %":"—";
+   document.getElementById("rate-"+short+"-"+suffix).textContent=rateText;
+   document.getElementById("count-"+short+"-"+suffix).textContent=item.success+" / "+item.evaluated;
+   const ring=document.getElementById("ring-"+short+"-"+suffix);
+   ring.style.setProperty("--progress",rate.toFixed(1));
+   ring.querySelector("span").textContent=rateText;
+   ring.setAttribute("aria-label",item.evaluated?("Taux de réussite "+rateText):"Aucun pronostic évalué");
+  }
  }
 }
 function tier(value){
