@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "document_type": "pronofoot_chatgpt_player_availability",
-  "generated_at_utc": "2026-11-23T21:14:59.983012+00:00",
+  "generated_at_utc": "2026-11-24T05:57:39.770604+00:00",
   "window": {
-    "start_utc": "2026-11-23T21:14:59.983012+00:00",
-    "end_utc": "2026-11-30T21:14:59.983012+00:00",
+    "start_utc": "2026-11-24T05:57:39.770604+00:00",
+    "end_utc": "2026-12-01T05:57:39.770604+00:00",
     "days": 7
   },
   "instructions": {
@@ -31,118 +31,6 @@
     "history_rule": "Les faits sourcés des observations précédentes restent documentés tant qu'aucune source plus récente ne les contredit explicitement. Une recherche vide, partielle ou not_checked ne supprime jamais ces faits. Conserver leur date et leur source ; un retour ou une disponibilité explicitement documenté(e) peut remplacer un ancien signalement pour le même joueur."
   },
   "matches": [
-    {
-      "match_id": "m_4V1CFy",
-      "provider_match_id": "m_4V1CFy",
-      "competition": "MLS",
-      "competition_slug": "us-mls",
-      "season": "2026",
-      "kickoff_utc": "2026-11-24T01:00:00+00:00",
-      "home_team": {
-        "name": "St. Louis City",
-        "team_id": "t_3B5RBi"
-      },
-      "away_team": {
-        "name": "Los Angeles FC",
-        "team_id": "t_4ac71F"
-      },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
-      "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
-      },
-      "facts": [],
-      "sources": [],
-      "previous_observations": [
-        {
-          "match_id": "m_4V1CFy",
-          "provider_match_id": "m_4V1CFy",
-          "competition": "MLS",
-          "competition_slug": "us-mls",
-          "season": "2026",
-          "kickoff_utc": "2026-11-24T01:00:00+00:00",
-          "home_team": {
-            "name": "St. Louis City",
-            "team_id": "t_3B5RBi"
-          },
-          "away_team": {
-            "name": "Los Angeles FC",
-            "team_id": "t_4ac71F"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-19T08:32:51+00:00",
-          "coverage": {
-            "home": "partial",
-            "away": "partial"
-          },
-          "facts": [],
-          "sources": [
-            {
-              "url": "https://www.mlssoccer.com/playoffs/2026/news/wild-card-format-key-info-audi-2026-mls-cup-playoffs",
-              "title": "Wild Card format & key info: Audi 2026 MLS Cup Playoffs — MLSsoccer.com"
-            }
-          ],
-          "observation_id": "00f7042aed540a08db4965adcbd1c052ab4a83cc234309f85dd51ba315241d59",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-19T11:47:55.965305+00:00"
-        },
-        {
-          "match_id": "m_4V1CFy",
-          "provider_match_id": "m_4V1CFy",
-          "competition": "MLS",
-          "competition_slug": "us-mls",
-          "season": "2026",
-          "kickoff_utc": "2026-11-24T01:00:00+00:00",
-          "home_team": {
-            "name": "St. Louis City",
-            "team_id": "t_3B5RBi"
-          },
-          "away_team": {
-            "name": "Los Angeles FC",
-            "team_id": "t_4ac71F"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-20T13:45:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "3c5a995e2b40b668dd78261db57492f9dfa70e1c834960e1e99dfeed1d947daa",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-20T14:05:55.501237+00:00"
-        },
-        {
-          "match_id": "m_4V1CFy",
-          "provider_match_id": "m_4V1CFy",
-          "competition": "MLS",
-          "competition_slug": "us-mls",
-          "season": "2026",
-          "kickoff_utc": "2026-11-24T01:00:00+00:00",
-          "home_team": {
-            "name": "St. Louis City",
-            "team_id": "t_3B5RBi"
-          },
-          "away_team": {
-            "name": "Los Angeles FC",
-            "team_id": "t_4ac71F"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-20T21:21:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "b454828247e07e9c597f800ca98991cf60e750b2abbbdc3afe45e1f77a3442ed",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-20T21:27:23.991192+00:00"
-        }
-      ]
-    },
     {
       "match_id": "m_0yKeRt",
       "provider_match_id": "m_0yKeRt",
