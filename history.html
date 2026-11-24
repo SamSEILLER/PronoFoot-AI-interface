@@ -63,6 +63,10 @@ main{width:min(1600px,100%);margin:auto;padding:26px 24px 42px}
 .kpi-ring:before{inset:7px}.kpi-ring span{font-size:10px}
 @media(max-width:1399px){.kpi-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.kpi-summary{grid-column:1/-1}.kpi-performance{grid-column:span 1;min-height:136px;padding:14px}.kpi-label{font-size:14px}.kpi-main-rate{font-size:31px}.kpi-detail{font-size:14px}.kpi-ring{flex-basis:62px;width:62px;height:62px}}
 @media(max-width:700px){.kpi-grid{grid-template-columns:1fr;gap:10px}.kpi-summary{grid-column:1/-1;width:100%;height:104px;min-height:104px}.kpi-performance{grid-column:1/-1;min-height:112px;padding:13px 15px;gap:9px}.kpi-label{font-size:14px}.kpi-main-rate{font-size:29px}.kpi-detail{font-size:14px}.kpi-ring{flex-basis:56px;width:56px;height:56px}}
+
+.search-filter{height:38px;min-width:155px;padding:0 10px;border:1px solid #a9c4e2;border-radius:8px;background:#fff;color:var(--ink);font:inherit;font-size:12px}
+@media(max-width:1050px){.match-tools{flex-wrap:wrap}.search-filter{flex:1 1 150px}}
+@media(max-width:700px){.search-filter{width:100%;flex:1 1 auto}}
 </style>
 </head>
 <body>
@@ -157,13 +161,33 @@ function versionDetails(){
 function renderMatches(records,container){
  const ordered=[...records].sort((a,b)=>String(b.kickoff_utc||"").localeCompare(String(a.kickoff_utc||"")));
  let page=1;const pageSize=15;
- container.innerHTML='<section class="match-section"><div class="match-head"><h3>☷ Tous les matchs archivés</h3><div class="match-tools"><input class="search-input" type="search" placeholder="Rechercher un match…" aria-label="Rechercher un match"><select class="market-filter" aria-label="Filtrer par marché"><option value="all">Tous les marchés</option><option value="over_1_5">+1,5 buts</option><option value="over_2_5">+2,5 buts</option><option value="btts">BTTS</option></select></div></div><div class="match-table"></div><div class="pagination"></div></section>';
- const search=container.querySelector(".search-input"),filter=container.querySelector(".market-filter"),table=container.querySelector(".match-table"),pagination=container.querySelector(".pagination");
+ container.innerHTML='<section class="match-section"><div class="match-head"><h3>☷ Tous les matchs archivés</h3><div class="match-tools"><input class="search-input" type="search" placeholder="Rechercher un match…" aria-label="Rechercher un match"><select class="market-filter" aria-label="Filtrer par marché"><option value="all">Tous les marchés</option><option value="over_1_5">+1,5 buts</option><option value="over_2_5">+2,5 buts</option><option value="btts">BTTS</option></select><select class="search-filter prediction-filter" aria-label="Filtrer par pronostic"><option value="all">Pronostic : OUI et NON</option><option value="yes">Pronostic : OUI</option><option value="no">Pronostic : NON</option></select><select class="search-filter level-filter" aria-label="Filtrer par niveau"><option value="all">Tous les niveaux</option><option value="1">Niveau 1</option><option value="2">Niveau 2</option><option value="3">Niveau 3</option><option value="4">Niveau 4</option></select><select class="search-filter result-filter" aria-label="Filtrer par résultat"><option value="all">Tous les résultats</option><option value="success">Réussi</option><option value="failed">Échoué</option><option value="pending">En attente</option></select></div></div><div class="match-table"></div><div class="pagination"></div></section>';
+ const search=container.querySelector(".search-input"),marketFilter=container.querySelector(".market-filter"),predictionFilter=container.querySelector(".prediction-filter"),levelFilter=container.querySelector(".level-filter"),resultFilter=container.querySelector(".result-filter"),table=container.querySelector(".match-table"),pagination=container.querySelector(".pagination");
+ function matchesMarketFilters(r,key){
+  const tierValue=r.prediction?.[key]?.tier;
+  if(![1,2,3,4].includes(tierValue))return false;
+  const side=tierValue===1||tierValue===2?"yes":"no";
+  if(predictionFilter.value!=="all"&&side!==predictionFilter.value)return false;
+  if(levelFilter.value!=="all"&&tierValue!==Number(levelFilter.value))return false;
+  if(resultFilter.value!=="all"){
+   const h=r.actual?.home_score,a=r.actual?.away_score,hasScore=Number.isFinite(h)&&Number.isFinite(a);
+   if(resultFilter.value==="pending"){if(hasScore)return false;}
+   else{
+    if(!hasScore)return false;
+    const actualYes=key==="over_1_5"?h+a>=2:key==="over_2_5"?h+a>=3:h>=1&&a>=1;
+    const predictedYes=side==="yes",success=predictedYes===actualYes;
+    if(resultFilter.value==="success"&&!success)return false;
+    if(resultFilter.value==="failed"&&success)return false;
+   }
+  }
+  return true;
+ }
  function draw(){
-  const q=search.value.trim().toLocaleLowerCase("fr"),market=filter.value;
+  const q=search.value.trim().toLocaleLowerCase("fr"),market=marketFilter.value;
   const filtered=ordered.filter(r=>{
    const hay=[r.home_team,r.away_team,r.competition,r.season].join(" ").toLocaleLowerCase("fr");
-   const hasMarket=market==="all"||[1,2,3,4].includes(r.prediction?.[market]?.tier);
+   const markets=market==="all"?keys:[market];
+   const hasMarket=markets.some(key=>matchesMarketFilters(r,key));
    return hay.includes(q)&&hasMarket;
   });
   const pages=Math.max(1,Math.ceil(filtered.length/pageSize));page=Math.min(page,pages);
@@ -176,7 +200,8 @@ function renderMatches(records,container){
   pagination.innerHTML='<span>Matchs '+(filtered.length?(page-1)*pageSize+1:0)+" à "+Math.min(page*pageSize,filtered.length)+" sur "+filtered.length+'</span><div class="pagination-controls"><button type="button" data-step="-1" '+(page===1?"disabled":"")+'>Précédent</button><button type="button" data-step="1" '+(page===pages?"disabled":"")+'>Suivant</button></div>';
   pagination.querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{page+=Number(b.dataset.step);draw();}));
  }
- search.addEventListener("input",()=>{page=1;draw();});filter.addEventListener("change",()=>{page=1;draw();});draw();
+ [search,marketFilter,predictionFilter,levelFilter,resultFilter].forEach(control=>control.addEventListener(control===search?"input":"change",()=>{page=1;draw();}));
+ draw();
 }
 function renderVersion(v,index){
  const id=String(v.id||"version-"+index),active=v.status==="active",title=id==="v1"?"Analyse historique":String(v.label||id).replace(/^Moteur\s*V\d+\s*[—-]?\s*/i,"");
