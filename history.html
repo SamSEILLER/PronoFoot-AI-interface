@@ -91,6 +91,11 @@ th .sort-header[data-sort="match"]{justify-content:flex-start;}
 .match-table th:nth-child(6),.match-table td:nth-child(6){width:20%;}
 .match-table td:nth-child(1){white-space:normal;overflow-wrap:anywhere;}
 .match-table td:nth-child(2),.match-table td:nth-child(3),.match-table td:nth-child(4),.match-table td:nth-child(5),.match-table td:nth-child(6){text-align:center;}
+
+/* Align the accordion + control to the same right edge on every engine row */
+.engine-toggle{display:grid!important;grid-template-columns:minmax(0,1fr) 32px!important;align-items:center;width:100%;gap:10px}
+.engine-select{width:100%;min-width:0}
+.engine-chevron{margin:0!important;justify-self:end}
 </style>
 </head>
 <body>
