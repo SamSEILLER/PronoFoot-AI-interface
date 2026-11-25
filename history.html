@@ -201,7 +201,7 @@ function renderMatches(records,container){
   pagination.innerHTML='<span>Matchs '+(filtered.length?(page-1)*pageSize+1:0)+" à "+Math.min(page*pageSize,filtered.length)+" sur "+filtered.length+'</span><div class="pagination-controls"><button type="button" data-step="-1" '+(page===1?"disabled":"")+'>Précédent</button><button type="button" data-step="1" '+(page===pages?"disabled":"")+'>Suivant</button></div>';
   pagination.querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{page+=Number(b.dataset.step);draw();}));
  }
- [search,marketFilter,predictionFilter,levelFilter,resultFilter].forEach(control=>control.addEventListener(control===search?"input":"change",()=>{page=1;draw();}));
+ [search,marketFilter,predictionFilter,resultFilter].forEach(control=>control.addEventListener(control===search?"input":"change",()=>{page=1;draw();}));
  draw();
 }
 function renderVersion(v,index){
