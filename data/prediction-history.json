@@ -1,8 +1,1070 @@
 {
   "schema_version": 2,
-  "generated_at_utc": "2026-11-24T17:55:24.654441Z",
+  "generated_at_utc": "2026-11-25T02:24:08.917051Z",
   "description": "Snapshots J-1 basés sur les fréquences des 10 derniers matchs de même compétition et saison. Niveaux 1 à 4 identiques à l'interface Matchs; minimum 5 matchs valides par équipe. Les scores finaux sont complétés à mesure de leur disponibilité.",
   "records": [
+    {
+      "match_id": "m_0ryVxp",
+      "competition": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T20:00:00Z",
+      "home_team": "Sparta Prague",
+      "away_team": "AZ Alkmaar",
+      "snapshot_at_utc": "2026-11-25T02:24:08.917051Z",
+      "snapshot_stage": "J-1",
+      "prediction": {
+        "over_1_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75
+          }
+        },
+        "over_2_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 2,
+            "percentage": 50
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75
+          }
+        },
+        "btts": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 2,
+            "percentage": 50
+          }
+        }
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending"
+    },
+    {
+      "match_id": "m_0snBmF",
+      "competition": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T20:00:00Z",
+      "home_team": "Ferencváros",
+      "away_team": "NK Celje",
+      "snapshot_at_utc": "2026-11-25T02:24:08.917051Z",
+      "snapshot_stage": "J-1",
+      "prediction": {
+        "over_1_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 4,
+            "percentage": 100
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 4,
+            "percentage": 100
+          }
+        },
+        "over_2_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75
+          }
+        },
+        "btts": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 2,
+            "percentage": 50
+          }
+        }
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending"
+    },
+    {
+      "match_id": "m_12vC0r",
+      "competition": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T20:00:00Z",
+      "home_team": "Sunderland",
+      "away_team": "Jagiellonia Białystok",
+      "snapshot_at_utc": "2026-11-25T02:24:08.917051Z",
+      "snapshot_stage": "J-1",
+      "prediction": {
+        "over_1_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75
+          }
+        },
+        "over_2_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 1,
+            "percentage": 25
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75
+          }
+        },
+        "btts": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 2,
+            "percentage": 50
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 2,
+            "percentage": 50
+          }
+        }
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending"
+    },
+    {
+      "match_id": "m_4CEVyM",
+      "competition": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T20:00:00Z",
+      "home_team": "Torreense",
+      "away_team": "Celtic",
+      "snapshot_at_utc": "2026-11-25T02:24:08.917051Z",
+      "snapshot_stage": "J-1",
+      "prediction": {
+        "over_1_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 4,
+            "percentage": 100
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 4,
+            "percentage": 100
+          }
+        },
+        "over_2_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 4,
+            "percentage": 100
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 4,
+            "percentage": 100
+          }
+        },
+        "btts": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 4,
+            "percentage": 100
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 4,
+            "percentage": 100
+          }
+        }
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending"
+    },
+    {
+      "match_id": "m_1IDFXG",
+      "competition": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T20:00:00Z",
+      "home_team": "Crystal Palace",
+      "away_team": "Real Sociedad",
+      "snapshot_at_utc": "2026-11-25T02:24:08.917051Z",
+      "snapshot_stage": "J-1",
+      "prediction": {
+        "over_1_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 4,
+            "percentage": 100
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 4,
+            "percentage": 100
+          }
+        },
+        "over_2_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 2,
+            "percentage": 50
+          }
+        },
+        "btts": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75
+          }
+        }
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending"
+    },
+    {
+      "match_id": "m_2yFf8O",
+      "competition": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T20:00:00Z",
+      "home_team": "Hoffenheim",
+      "away_team": "Sturm Graz",
+      "snapshot_at_utc": "2026-11-25T02:24:08.917051Z",
+      "snapshot_stage": "J-1",
+      "prediction": {
+        "over_1_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 4,
+            "percentage": 100
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 2,
+            "percentage": 50
+          }
+        },
+        "over_2_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 2,
+            "percentage": 50
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 2,
+            "percentage": 50
+          }
+        },
+        "btts": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 2,
+            "percentage": 50
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 1,
+            "percentage": 25
+          }
+        }
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending"
+    },
+    {
+      "match_id": "m_04Y9Kg",
+      "competition": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T20:00:00Z",
+      "home_team": "Juventus",
+      "away_team": "Omonia Nicosia",
+      "snapshot_at_utc": "2026-11-25T02:24:08.917051Z",
+      "snapshot_stage": "J-1",
+      "prediction": {
+        "over_1_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 4,
+            "percentage": 100
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75
+          }
+        },
+        "over_2_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 4,
+            "percentage": 100
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75
+          }
+        },
+        "btts": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 2,
+            "percentage": 50
+          }
+        }
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending"
+    },
+    {
+      "match_id": "m_30yUrS",
+      "competition": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T20:00:00Z",
+      "home_team": "Lyon",
+      "away_team": "Lillestrøm",
+      "snapshot_at_utc": "2026-11-25T02:24:08.917051Z",
+      "snapshot_stage": "J-1",
+      "prediction": {
+        "over_1_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 4,
+            "percentage": 100
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75
+          }
+        },
+        "over_2_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 2,
+            "percentage": 50
+          }
+        },
+        "btts": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 2,
+            "percentage": 50
+          }
+        }
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending"
+    },
+    {
+      "match_id": "m_1NPdGz",
+      "competition": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T20:00:00Z",
+      "home_team": "NEC Nijmegen",
+      "away_team": "Rennes",
+      "snapshot_at_utc": "2026-11-25T02:24:08.917051Z",
+      "snapshot_stage": "J-1",
+      "prediction": {
+        "over_1_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 4,
+            "percentage": 100
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 2,
+            "percentage": 50
+          }
+        },
+        "over_2_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 2,
+            "percentage": 50
+          }
+        },
+        "btts": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 2,
+            "percentage": 50
+          }
+        }
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending"
+    },
+    {
+      "match_id": "m_1R2Vyf",
+      "competition": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T20:00:00Z",
+      "home_team": "OFI Crete",
+      "away_team": "Anderlecht",
+      "snapshot_at_utc": "2026-11-25T02:24:08.917051Z",
+      "snapshot_stage": "J-1",
+      "prediction": {
+        "over_1_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 4,
+            "percentage": 100
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75
+          }
+        },
+        "over_2_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 1,
+            "percentage": 25
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 2,
+            "percentage": 50
+          }
+        },
+        "btts": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 1,
+            "percentage": 25
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 1,
+            "percentage": 25
+          }
+        }
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending"
+    },
+    {
+      "match_id": "m_2aKzEl",
+      "competition": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T17:45:00Z",
+      "home_team": "Celta Vigo",
+      "away_team": "AFC Bournemouth",
+      "snapshot_at_utc": "2026-11-25T02:24:08.917051Z",
+      "snapshot_stage": "J-1",
+      "prediction": {
+        "over_1_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 4,
+            "percentage": 100
+          }
+        },
+        "over_2_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 4,
+            "percentage": 100
+          }
+        },
+        "btts": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 2,
+            "percentage": 50
+          }
+        }
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending"
+    },
+    {
+      "match_id": "m_0dkmnA",
+      "competition": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T17:45:00Z",
+      "home_team": "Dinamo Zagreb",
+      "away_team": "Bayer Leverkusen",
+      "snapshot_at_utc": "2026-11-25T02:24:08.917051Z",
+      "snapshot_stage": "J-1",
+      "prediction": {
+        "over_1_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 2,
+            "percentage": 50
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75
+          }
+        },
+        "over_2_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 1,
+            "percentage": 25
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 1,
+            "percentage": 25
+          }
+        },
+        "btts": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 1,
+            "percentage": 25
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 0,
+            "percentage": 0
+          }
+        }
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending"
+    },
+    {
+      "match_id": "m_3SZtsw",
+      "competition": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T17:45:00Z",
+      "home_team": "Marseille",
+      "away_team": "Levski Sofia",
+      "snapshot_at_utc": "2026-11-25T02:24:08.917051Z",
+      "snapshot_stage": "J-1",
+      "prediction": {
+        "over_1_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 1,
+            "percentage": 25
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 2,
+            "percentage": 50
+          }
+        },
+        "over_2_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 1,
+            "percentage": 25
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 1,
+            "percentage": 25
+          }
+        },
+        "btts": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 1,
+            "percentage": 25
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 2,
+            "percentage": 50
+          }
+        }
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending"
+    },
+    {
+      "match_id": "m_0ADq1e",
+      "competition": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T17:45:00Z",
+      "home_team": "Olympiacos",
+      "away_team": "Milan",
+      "snapshot_at_utc": "2026-11-25T02:24:08.917051Z",
+      "snapshot_stage": "J-1",
+      "prediction": {
+        "over_1_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 1,
+            "percentage": 25
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 4,
+            "percentage": 100
+          }
+        },
+        "over_2_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 1,
+            "percentage": 25
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 2,
+            "percentage": 50
+          }
+        },
+        "btts": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 1,
+            "percentage": 25
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 0,
+            "percentage": 0
+          }
+        }
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending"
+    },
+    {
+      "match_id": "m_1rxRZA",
+      "competition": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T17:45:00Z",
+      "home_team": "Salzburg",
+      "away_team": "Ararat Armenia",
+      "snapshot_at_utc": "2026-11-25T02:24:08.917051Z",
+      "snapshot_stage": "J-1",
+      "prediction": {
+        "over_1_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 4,
+            "percentage": 100
+          }
+        },
+        "over_2_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 2,
+            "percentage": 50
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 4,
+            "percentage": 100
+          }
+        },
+        "btts": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 1,
+            "percentage": 25
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75
+          }
+        }
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending"
+    },
+    {
+      "match_id": "m_1NQ9Kt",
+      "competition": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T17:45:00Z",
+      "home_team": "Union St.Gilloise",
+      "away_team": "Lech Poznań",
+      "snapshot_at_utc": "2026-11-25T02:24:08.917051Z",
+      "snapshot_stage": "J-1",
+      "prediction": {
+        "over_1_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 4,
+            "percentage": 100
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 4,
+            "percentage": 100
+          }
+        },
+        "over_2_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75
+          }
+        },
+        "btts": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 2,
+            "percentage": 50
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 2,
+            "percentage": 50
+          }
+        }
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending"
+    },
+    {
+      "match_id": "m_1UYxQd",
+      "competition": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T17:45:00Z",
+      "home_team": "Viktoria Plzeň",
+      "away_team": "Benfica",
+      "snapshot_at_utc": "2026-11-25T02:24:08.917051Z",
+      "snapshot_stage": "J-1",
+      "prediction": {
+        "over_1_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 4,
+            "percentage": 100
+          }
+        },
+        "over_2_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75
+          }
+        },
+        "btts": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 2,
+            "percentage": 50
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75
+          }
+        }
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending"
+    },
+    {
+      "match_id": "m_2wltyW",
+      "competition": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T17:45:00Z",
+      "home_team": "Beşiktaş",
+      "away_team": "Hapoel Beer Sheva",
+      "snapshot_at_utc": "2026-11-25T02:24:08.917051Z",
+      "snapshot_stage": "J-1",
+      "prediction": {
+        "over_1_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 4,
+            "percentage": 100
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 3,
+            "percentage": 75
+          }
+        },
+        "over_2_5": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 4,
+            "percentage": 100
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 2,
+            "percentage": 50
+          }
+        },
+        "btts": {
+          "tier": null,
+          "tier_label": null,
+          "home_frequency": {
+            "matches": 4,
+            "count": 4,
+            "percentage": 100
+          },
+          "away_frequency": {
+            "matches": 4,
+            "count": 1,
+            "percentage": 25
+          }
+        }
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending"
+    },
     {
       "match_id": "m_0nnJoD",
       "competition": "uefa-champions-league",
@@ -5727,5 +6789,5 @@
       "evaluation_status": "evaluated"
     }
   ],
-  "created_this_run": 0
+  "created_this_run": 18
 }
