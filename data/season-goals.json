@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "provider": "pitchapi_processed_history",
-  "generated_at_utc": "2026-11-25T02:35:22.559909Z",
+  "generated_at_utc": "2026-11-25T09:47:36.414399Z",
   "scope": "same_competition_same_latest_season",
   "markets": [
     "over_0_5",
@@ -24422,13 +24422,13 @@
       "name": "MLS",
       "country": "États-Unis / Canada",
       "season": "2026",
-      "matches_counted": 519,
+      "matches_counted": 520,
       "baseline": {
-        "average_total_goals": 3.2408,
-        "average_home_goals": 1.8362,
-        "average_away_goals": 1.4046,
-        "over_1_5_percentage": 82.85,
-        "matches_counted": 519
+        "average_total_goals": 3.2404,
+        "average_home_goals": 1.8365,
+        "average_away_goals": 1.4038,
+        "over_1_5_percentage": 82.88,
+        "matches_counted": 520
       },
       "teams": [
         {
@@ -26054,23 +26054,34 @@
         {
           "team_id": "t_2L8yh8",
           "team_name": "Houston Dynamo FC",
-          "played": 34,
-          "goals_for": 43,
-          "goals_against": 43,
+          "played": 35,
+          "goals_for": 44,
+          "goals_against": 45,
           "home_played": 17,
           "home_goals_for": 19,
           "home_goals_against": 15,
-          "away_played": 17,
-          "away_goals_for": 24,
-          "away_goals_against": 28,
+          "away_played": 18,
+          "away_goals_for": 25,
+          "away_goals_against": 30,
           "scored_0_count": 10,
           "scored_2plus_count": 13,
-          "over_0_5": 31,
-          "over_1_5": 21,
-          "over_2_5": 14,
+          "over_0_5": 32,
+          "over_1_5": 22,
+          "over_2_5": 15,
           "over_3_5": 9,
           "under_2_5": 20,
           "recent_matches": [
+            {
+              "match_id": "m_1HfmPU",
+              "kickoff_utc": "2026-11-25T03:00:00Z",
+              "opponent_team_id": "t_1ngZfb",
+              "opponent": "San Jose Earthquakes",
+              "venue": "away",
+              "goals_for": 1,
+              "goals_against": 2,
+              "total_goals": 3,
+              "over_1_5": true
+            },
             {
               "match_id": "m_2a41sm",
               "kickoff_utc": "2026-11-08T00:00:00Z",
@@ -26169,47 +26180,36 @@
               "goals_against": 2,
               "total_goals": 4,
               "over_1_5": true
-            },
-            {
-              "match_id": "m_0oTWrT",
-              "kickoff_utc": "2026-09-13T02:30:00Z",
-              "opponent_team_id": "t_1ngZfb",
-              "opponent": "San Jose Earthquakes",
-              "venue": "away",
-              "goals_for": 0,
-              "goals_against": 1,
-              "total_goals": 1,
-              "over_1_5": false
             }
           ],
-          "average_total_goals": 2.53,
-          "scored_0_percentage": 29.41,
-          "scored_2plus_percentage": 38.24,
+          "average_total_goals": 2.54,
+          "scored_0_percentage": 28.57,
+          "scored_2plus_percentage": 37.14,
           "markets": {
             "over_0_5": {
-              "count": 31,
-              "played": 34,
-              "percentage": 91.18
+              "count": 32,
+              "played": 35,
+              "percentage": 91.43
             },
             "over_1_5": {
-              "count": 21,
-              "played": 34,
-              "percentage": 61.76
+              "count": 22,
+              "played": 35,
+              "percentage": 62.86
             },
             "over_2_5": {
-              "count": 14,
-              "played": 34,
-              "percentage": 41.18
+              "count": 15,
+              "played": 35,
+              "percentage": 42.86
             },
             "over_3_5": {
               "count": 9,
-              "played": 34,
-              "percentage": 26.47
+              "played": 35,
+              "percentage": 25.71
             },
             "under_2_5": {
               "count": 20,
-              "played": 34,
-              "percentage": 58.82
+              "played": 35,
+              "percentage": 57.14
             }
           }
         },
@@ -28322,23 +28322,34 @@
         {
           "team_id": "t_1ngZfb",
           "team_name": "San Jose Earthquakes",
-          "played": 34,
-          "goals_for": 57,
-          "goals_against": 51,
-          "home_played": 17,
-          "home_goals_for": 30,
-          "home_goals_against": 26,
+          "played": 35,
+          "goals_for": 59,
+          "goals_against": 52,
+          "home_played": 18,
+          "home_goals_for": 32,
+          "home_goals_against": 27,
           "away_played": 17,
           "away_goals_for": 27,
           "away_goals_against": 25,
           "scored_0_count": 5,
-          "scored_2plus_count": 16,
-          "over_0_5": 33,
-          "over_1_5": 28,
-          "over_2_5": 20,
+          "scored_2plus_count": 17,
+          "over_0_5": 34,
+          "over_1_5": 29,
+          "over_2_5": 21,
           "over_3_5": 16,
           "under_2_5": 14,
           "recent_matches": [
+            {
+              "match_id": "m_1HfmPU",
+              "kickoff_utc": "2026-11-25T03:00:00Z",
+              "opponent_team_id": "t_2L8yh8",
+              "opponent": "Houston Dynamo FC",
+              "venue": "home",
+              "goals_for": 2,
+              "goals_against": 1,
+              "total_goals": 3,
+              "over_1_5": true
+            },
             {
               "match_id": "m_0CXjeB",
               "kickoff_utc": "2026-11-08T00:00:00Z",
@@ -28437,47 +28448,36 @@
               "goals_against": 2,
               "total_goals": 4,
               "over_1_5": true
-            },
-            {
-              "match_id": "m_0oTWrT",
-              "kickoff_utc": "2026-09-13T02:30:00Z",
-              "opponent_team_id": "t_2L8yh8",
-              "opponent": "Houston Dynamo FC",
-              "venue": "home",
-              "goals_for": 1,
-              "goals_against": 0,
-              "total_goals": 1,
-              "over_1_5": false
             }
           ],
-          "average_total_goals": 3.18,
-          "scored_0_percentage": 14.71,
-          "scored_2plus_percentage": 47.06,
+          "average_total_goals": 3.17,
+          "scored_0_percentage": 14.29,
+          "scored_2plus_percentage": 48.57,
           "markets": {
             "over_0_5": {
-              "count": 33,
-              "played": 34,
-              "percentage": 97.06
+              "count": 34,
+              "played": 35,
+              "percentage": 97.14
             },
             "over_1_5": {
-              "count": 28,
-              "played": 34,
-              "percentage": 82.35
+              "count": 29,
+              "played": 35,
+              "percentage": 82.86
             },
             "over_2_5": {
-              "count": 20,
-              "played": 34,
-              "percentage": 58.82
+              "count": 21,
+              "played": 35,
+              "percentage": 60.0
             },
             "over_3_5": {
               "count": 16,
-              "played": 34,
-              "percentage": 47.06
+              "played": 35,
+              "percentage": 45.71
             },
             "under_2_5": {
               "count": 14,
-              "played": 34,
-              "percentage": 41.18
+              "played": 35,
+              "percentage": 40.0
             }
           }
         },
@@ -29298,35 +29298,46 @@
       "name": "Ligue des champions UEFA",
       "country": "Europe",
       "season": "2026/2027",
-      "matches_counted": 72,
+      "matches_counted": 81,
       "baseline": {
-        "average_total_goals": 4.0417,
-        "average_home_goals": 2.3194,
-        "average_away_goals": 1.7222,
-        "over_1_5_percentage": 87.5,
-        "matches_counted": 72
+        "average_total_goals": 3.8642,
+        "average_home_goals": 2.2346,
+        "average_away_goals": 1.6296,
+        "over_1_5_percentage": 83.95,
+        "matches_counted": 81
       },
       "teams": [
         {
           "team_id": "t_2jeqmO",
           "team_name": "AEK Athens",
-          "played": 4,
+          "played": 5,
           "goals_for": 5,
-          "goals_against": 11,
+          "goals_against": 12,
           "home_played": 2,
           "home_goals_for": 3,
           "home_goals_against": 3,
-          "away_played": 2,
+          "away_played": 3,
           "away_goals_for": 2,
-          "away_goals_against": 8,
-          "scored_0_count": 0,
+          "away_goals_against": 9,
+          "scored_0_count": 1,
           "scored_2plus_count": 1,
-          "over_0_5": 4,
+          "over_0_5": 5,
           "over_1_5": 3,
           "over_2_5": 3,
           "over_3_5": 3,
-          "under_2_5": 1,
+          "under_2_5": 2,
           "recent_matches": [
+            {
+              "match_id": "m_3llrZc",
+              "kickoff_utc": "2026-11-24T20:00:00Z",
+              "opponent_team_id": "t_0oXTvZ",
+              "opponent": "Como",
+              "venue": "away",
+              "goals_for": 0,
+              "goals_against": 1,
+              "total_goals": 1,
+              "over_1_5": false
+            },
             {
               "match_id": "m_2pqLCB",
               "kickoff_utc": "2026-11-04T17:45:00Z",
@@ -29372,57 +29383,68 @@
               "over_1_5": false
             }
           ],
-          "average_total_goals": 4.0,
-          "scored_0_percentage": 0.0,
-          "scored_2plus_percentage": 25.0,
+          "average_total_goals": 3.4,
+          "scored_0_percentage": 20.0,
+          "scored_2plus_percentage": 20.0,
           "markets": {
             "over_0_5": {
-              "count": 4,
-              "played": 4,
+              "count": 5,
+              "played": 5,
               "percentage": 100.0
             },
             "over_1_5": {
               "count": 3,
-              "played": 4,
-              "percentage": 75.0
+              "played": 5,
+              "percentage": 60.0
             },
             "over_2_5": {
               "count": 3,
-              "played": 4,
-              "percentage": 75.0
+              "played": 5,
+              "percentage": 60.0
             },
             "over_3_5": {
               "count": 3,
-              "played": 4,
-              "percentage": 75.0
+              "played": 5,
+              "percentage": 60.0
             },
             "under_2_5": {
-              "count": 1,
-              "played": 4,
-              "percentage": 25.0
+              "count": 2,
+              "played": 5,
+              "percentage": 40.0
             }
           }
         },
         {
           "team_id": "t_1gkhxH",
           "team_name": "Arsenal",
-          "played": 4,
-          "goals_for": 8,
-          "goals_against": 3,
-          "home_played": 1,
-          "home_goals_for": 3,
-          "home_goals_against": 0,
+          "played": 5,
+          "goals_for": 9,
+          "goals_against": 4,
+          "home_played": 2,
+          "home_goals_for": 4,
+          "home_goals_against": 1,
           "away_played": 3,
           "away_goals_for": 5,
           "away_goals_against": 3,
           "scored_0_count": 0,
           "scored_2plus_count": 3,
-          "over_0_5": 4,
-          "over_1_5": 3,
+          "over_0_5": 5,
+          "over_1_5": 4,
           "over_2_5": 3,
           "over_3_5": 1,
-          "under_2_5": 1,
+          "under_2_5": 2,
           "recent_matches": [
+            {
+              "match_id": "m_2cwDyu",
+              "kickoff_utc": "2026-11-24T20:00:00Z",
+              "opponent_team_id": "t_386iz1",
+              "opponent": "Borussia Dortmund",
+              "venue": "home",
+              "goals_for": 1,
+              "goals_against": 1,
+              "total_goals": 2,
+              "over_1_5": true
+            },
             {
               "match_id": "m_4Wgl1L",
               "kickoff_utc": "2026-11-04T20:00:00Z",
@@ -29468,57 +29490,68 @@
               "over_1_5": false
             }
           ],
-          "average_total_goals": 2.75,
+          "average_total_goals": 2.6,
           "scored_0_percentage": 0.0,
-          "scored_2plus_percentage": 75.0,
+          "scored_2plus_percentage": 60.0,
           "markets": {
             "over_0_5": {
-              "count": 4,
-              "played": 4,
+              "count": 5,
+              "played": 5,
               "percentage": 100.0
             },
             "over_1_5": {
-              "count": 3,
-              "played": 4,
-              "percentage": 75.0
+              "count": 4,
+              "played": 5,
+              "percentage": 80.0
             },
             "over_2_5": {
               "count": 3,
-              "played": 4,
-              "percentage": 75.0
+              "played": 5,
+              "percentage": 60.0
             },
             "over_3_5": {
               "count": 1,
-              "played": 4,
-              "percentage": 25.0
+              "played": 5,
+              "percentage": 20.0
             },
             "under_2_5": {
-              "count": 1,
-              "played": 4,
-              "percentage": 25.0
+              "count": 2,
+              "played": 5,
+              "percentage": 40.0
             }
           }
         },
         {
           "team_id": "t_4RqKpo",
           "team_name": "Aston Villa",
-          "played": 4,
+          "played": 5,
           "goals_for": 12,
-          "goals_against": 6,
+          "goals_against": 7,
           "home_played": 2,
           "home_goals_for": 9,
           "home_goals_against": 1,
-          "away_played": 2,
+          "away_played": 3,
           "away_goals_for": 3,
-          "away_goals_against": 5,
-          "scored_0_count": 1,
+          "away_goals_against": 6,
+          "scored_0_count": 2,
           "scored_2plus_count": 3,
-          "over_0_5": 4,
+          "over_0_5": 5,
           "over_1_5": 4,
           "over_2_5": 4,
           "over_3_5": 3,
-          "under_2_5": 0,
+          "under_2_5": 1,
           "recent_matches": [
+            {
+              "match_id": "m_4SYMzr",
+              "kickoff_utc": "2026-11-24T17:45:00Z",
+              "opponent_team_id": "t_15TWxO",
+              "opponent": "Galatasaray",
+              "venue": "away",
+              "goals_for": 0,
+              "goals_against": 1,
+              "total_goals": 1,
+              "over_1_5": false
+            },
             {
               "match_id": "m_3eSoqB",
               "kickoff_utc": "2026-11-03T20:00:00Z",
@@ -29564,34 +29597,34 @@
               "over_1_5": true
             }
           ],
-          "average_total_goals": 4.5,
-          "scored_0_percentage": 25.0,
-          "scored_2plus_percentage": 75.0,
+          "average_total_goals": 3.8,
+          "scored_0_percentage": 40.0,
+          "scored_2plus_percentage": 60.0,
           "markets": {
             "over_0_5": {
-              "count": 4,
-              "played": 4,
+              "count": 5,
+              "played": 5,
               "percentage": 100.0
             },
             "over_1_5": {
               "count": 4,
-              "played": 4,
-              "percentage": 100.0
+              "played": 5,
+              "percentage": 80.0
             },
             "over_2_5": {
               "count": 4,
-              "played": 4,
-              "percentage": 100.0
+              "played": 5,
+              "percentage": 80.0
             },
             "over_3_5": {
               "count": 3,
-              "played": 4,
-              "percentage": 75.0
+              "played": 5,
+              "percentage": 60.0
             },
             "under_2_5": {
-              "count": 0,
-              "played": 4,
-              "percentage": 0.0
+              "count": 1,
+              "played": 5,
+              "percentage": 20.0
             }
           }
         },
@@ -29886,23 +29919,34 @@
         {
           "team_id": "t_0SGPHB",
           "team_name": "Bodø/Glimt",
-          "played": 4,
-          "goals_for": 4,
+          "played": 5,
+          "goals_for": 5,
           "goals_against": 9,
-          "home_played": 2,
-          "home_goals_for": 1,
+          "home_played": 3,
+          "home_goals_for": 2,
           "home_goals_against": 0,
           "away_played": 2,
           "away_goals_for": 3,
           "away_goals_against": 9,
           "scored_0_count": 2,
           "scored_2plus_count": 1,
-          "over_0_5": 3,
+          "over_0_5": 4,
           "over_1_5": 2,
           "over_2_5": 2,
           "over_3_5": 2,
-          "under_2_5": 2,
+          "under_2_5": 3,
           "recent_matches": [
+            {
+              "match_id": "m_0yKeRt",
+              "kickoff_utc": "2026-11-24T17:45:00Z",
+              "opponent_team_id": "t_1ta56l",
+              "opponent": "LASK",
+              "venue": "home",
+              "goals_for": 1,
+              "goals_against": 0,
+              "total_goals": 1,
+              "over_1_5": false
+            },
             {
               "match_id": "m_0VlPJS",
               "kickoff_utc": "2026-11-03T20:00:00Z",
@@ -29948,57 +29992,68 @@
               "over_1_5": true
             }
           ],
-          "average_total_goals": 3.25,
-          "scored_0_percentage": 50.0,
-          "scored_2plus_percentage": 25.0,
+          "average_total_goals": 2.8,
+          "scored_0_percentage": 40.0,
+          "scored_2plus_percentage": 20.0,
           "markets": {
             "over_0_5": {
-              "count": 3,
-              "played": 4,
-              "percentage": 75.0
+              "count": 4,
+              "played": 5,
+              "percentage": 80.0
             },
             "over_1_5": {
               "count": 2,
-              "played": 4,
-              "percentage": 50.0
+              "played": 5,
+              "percentage": 40.0
             },
             "over_2_5": {
               "count": 2,
-              "played": 4,
-              "percentage": 50.0
+              "played": 5,
+              "percentage": 40.0
             },
             "over_3_5": {
               "count": 2,
-              "played": 4,
-              "percentage": 50.0
+              "played": 5,
+              "percentage": 40.0
             },
             "under_2_5": {
-              "count": 2,
-              "played": 4,
-              "percentage": 50.0
+              "count": 3,
+              "played": 5,
+              "percentage": 60.0
             }
           }
         },
         {
           "team_id": "t_386iz1",
           "team_name": "Borussia Dortmund",
-          "played": 4,
-          "goals_for": 7,
-          "goals_against": 5,
+          "played": 5,
+          "goals_for": 8,
+          "goals_against": 6,
           "home_played": 2,
           "home_goals_for": 5,
           "home_goals_against": 3,
-          "away_played": 2,
-          "away_goals_for": 2,
-          "away_goals_against": 2,
+          "away_played": 3,
+          "away_goals_for": 3,
+          "away_goals_against": 3,
           "scored_0_count": 1,
           "scored_2plus_count": 3,
-          "over_0_5": 4,
-          "over_1_5": 3,
+          "over_0_5": 5,
+          "over_1_5": 4,
           "over_2_5": 3,
           "over_3_5": 1,
-          "under_2_5": 1,
+          "under_2_5": 2,
           "recent_matches": [
+            {
+              "match_id": "m_2cwDyu",
+              "kickoff_utc": "2026-11-24T20:00:00Z",
+              "opponent_team_id": "t_1gkhxH",
+              "opponent": "Arsenal",
+              "venue": "away",
+              "goals_for": 1,
+              "goals_against": 1,
+              "total_goals": 2,
+              "over_1_5": true
+            },
             {
               "match_id": "m_2bderB",
               "kickoff_utc": "2026-11-04T20:00:00Z",
@@ -30044,34 +30099,34 @@
               "over_1_5": true
             }
           ],
-          "average_total_goals": 3.0,
-          "scored_0_percentage": 25.0,
-          "scored_2plus_percentage": 75.0,
+          "average_total_goals": 2.8,
+          "scored_0_percentage": 20.0,
+          "scored_2plus_percentage": 60.0,
           "markets": {
             "over_0_5": {
-              "count": 4,
-              "played": 4,
+              "count": 5,
+              "played": 5,
               "percentage": 100.0
             },
             "over_1_5": {
-              "count": 3,
-              "played": 4,
-              "percentage": 75.0
+              "count": 4,
+              "played": 5,
+              "percentage": 80.0
             },
             "over_2_5": {
               "count": 3,
-              "played": 4,
-              "percentage": 75.0
+              "played": 5,
+              "percentage": 60.0
             },
             "over_3_5": {
               "count": 1,
-              "played": 4,
-              "percentage": 25.0
+              "played": 5,
+              "percentage": 20.0
             },
             "under_2_5": {
-              "count": 1,
-              "played": 4,
-              "percentage": 25.0
+              "count": 2,
+              "played": 5,
+              "percentage": 40.0
             }
           }
         },
@@ -30174,23 +30229,34 @@
         {
           "team_id": "t_0oXTvZ",
           "team_name": "Como",
-          "played": 4,
-          "goals_for": 19,
+          "played": 5,
+          "goals_for": 20,
           "goals_against": 6,
-          "home_played": 2,
-          "home_goals_for": 8,
+          "home_played": 3,
+          "home_goals_for": 9,
           "home_goals_against": 2,
           "away_played": 2,
           "away_goals_for": 11,
           "away_goals_against": 4,
           "scored_0_count": 0,
           "scored_2plus_count": 4,
-          "over_0_5": 4,
+          "over_0_5": 5,
           "over_1_5": 4,
           "over_2_5": 4,
           "over_3_5": 4,
-          "under_2_5": 0,
+          "under_2_5": 1,
           "recent_matches": [
+            {
+              "match_id": "m_3llrZc",
+              "kickoff_utc": "2026-11-24T20:00:00Z",
+              "opponent_team_id": "t_2jeqmO",
+              "opponent": "AEK Athens",
+              "venue": "home",
+              "goals_for": 1,
+              "goals_against": 0,
+              "total_goals": 1,
+              "over_1_5": false
+            },
             {
               "match_id": "m_10Z35D",
               "kickoff_utc": "2026-11-04T20:00:00Z",
@@ -30236,57 +30302,68 @@
               "over_1_5": true
             }
           ],
-          "average_total_goals": 6.25,
+          "average_total_goals": 5.2,
           "scored_0_percentage": 0.0,
-          "scored_2plus_percentage": 100.0,
+          "scored_2plus_percentage": 80.0,
           "markets": {
             "over_0_5": {
-              "count": 4,
-              "played": 4,
+              "count": 5,
+              "played": 5,
               "percentage": 100.0
             },
             "over_1_5": {
               "count": 4,
-              "played": 4,
-              "percentage": 100.0
+              "played": 5,
+              "percentage": 80.0
             },
             "over_2_5": {
               "count": 4,
-              "played": 4,
-              "percentage": 100.0
+              "played": 5,
+              "percentage": 80.0
             },
             "over_3_5": {
               "count": 4,
-              "played": 4,
-              "percentage": 100.0
+              "played": 5,
+              "percentage": 80.0
             },
             "under_2_5": {
-              "count": 0,
-              "played": 4,
-              "percentage": 0.0
+              "count": 1,
+              "played": 5,
+              "percentage": 20.0
             }
           }
         },
         {
           "team_id": "t_0dVrhE",
           "team_name": "FC Porto",
-          "played": 4,
-          "goals_for": 6,
+          "played": 5,
+          "goals_for": 7,
           "goals_against": 7,
           "home_played": 3,
           "home_goals_for": 4,
           "home_goals_against": 4,
-          "away_played": 1,
-          "away_goals_for": 2,
+          "away_played": 2,
+          "away_goals_for": 3,
           "away_goals_against": 3,
           "scored_0_count": 2,
           "scored_2plus_count": 2,
-          "over_0_5": 4,
+          "over_0_5": 5,
           "over_1_5": 3,
           "over_2_5": 2,
           "over_3_5": 2,
-          "under_2_5": 2,
+          "under_2_5": 3,
           "recent_matches": [
+            {
+              "match_id": "m_4J6bPl",
+              "kickoff_utc": "2026-11-24T20:00:00Z",
+              "opponent_team_id": "t_4KvHFN",
+              "opponent": "Feyenoord",
+              "venue": "away",
+              "goals_for": 1,
+              "goals_against": 0,
+              "total_goals": 1,
+              "over_1_5": false
+            },
             {
               "match_id": "m_26ZQl6",
               "kickoff_utc": "2026-11-04T20:00:00Z",
@@ -30332,34 +30409,34 @@
               "over_1_5": true
             }
           ],
-          "average_total_goals": 3.25,
-          "scored_0_percentage": 50.0,
-          "scored_2plus_percentage": 50.0,
+          "average_total_goals": 2.8,
+          "scored_0_percentage": 40.0,
+          "scored_2plus_percentage": 40.0,
           "markets": {
             "over_0_5": {
-              "count": 4,
-              "played": 4,
+              "count": 5,
+              "played": 5,
               "percentage": 100.0
             },
             "over_1_5": {
               "count": 3,
-              "played": 4,
-              "percentage": 75.0
+              "played": 5,
+              "percentage": 60.0
             },
             "over_2_5": {
               "count": 2,
-              "played": 4,
-              "percentage": 50.0
+              "played": 5,
+              "percentage": 40.0
             },
             "over_3_5": {
               "count": 2,
-              "played": 4,
-              "percentage": 50.0
+              "played": 5,
+              "percentage": 40.0
             },
             "under_2_5": {
-              "count": 2,
-              "played": 4,
-              "percentage": 50.0
+              "count": 3,
+              "played": 5,
+              "percentage": 60.0
             }
           }
         },
@@ -30462,23 +30539,34 @@
         {
           "team_id": "t_4KvHFN",
           "team_name": "Feyenoord",
-          "played": 4,
+          "played": 5,
           "goals_for": 4,
-          "goals_against": 11,
-          "home_played": 2,
+          "goals_against": 12,
+          "home_played": 3,
           "home_goals_for": 3,
-          "home_goals_against": 5,
+          "home_goals_against": 6,
           "away_played": 2,
           "away_goals_for": 1,
           "away_goals_against": 6,
-          "scored_0_count": 2,
+          "scored_0_count": 3,
           "scored_2plus_count": 1,
-          "over_0_5": 4,
+          "over_0_5": 5,
           "over_1_5": 3,
           "over_2_5": 3,
           "over_3_5": 2,
-          "under_2_5": 1,
+          "under_2_5": 2,
           "recent_matches": [
+            {
+              "match_id": "m_4J6bPl",
+              "kickoff_utc": "2026-11-24T20:00:00Z",
+              "opponent_team_id": "t_0dVrhE",
+              "opponent": "FC Porto",
+              "venue": "home",
+              "goals_for": 0,
+              "goals_against": 1,
+              "total_goals": 1,
+              "over_1_5": false
+            },
             {
               "match_id": "m_3mPziT",
               "kickoff_utc": "2026-11-03T20:00:00Z",
@@ -30524,57 +30612,68 @@
               "over_1_5": true
             }
           ],
-          "average_total_goals": 3.75,
-          "scored_0_percentage": 50.0,
-          "scored_2plus_percentage": 25.0,
+          "average_total_goals": 3.2,
+          "scored_0_percentage": 60.0,
+          "scored_2plus_percentage": 20.0,
           "markets": {
             "over_0_5": {
-              "count": 4,
-              "played": 4,
+              "count": 5,
+              "played": 5,
               "percentage": 100.0
             },
             "over_1_5": {
               "count": 3,
-              "played": 4,
-              "percentage": 75.0
+              "played": 5,
+              "percentage": 60.0
             },
             "over_2_5": {
               "count": 3,
-              "played": 4,
-              "percentage": 75.0
+              "played": 5,
+              "percentage": 60.0
             },
             "over_3_5": {
               "count": 2,
-              "played": 4,
-              "percentage": 50.0
+              "played": 5,
+              "percentage": 40.0
             },
             "under_2_5": {
-              "count": 1,
-              "played": 4,
-              "percentage": 25.0
+              "count": 2,
+              "played": 5,
+              "percentage": 40.0
             }
           }
         },
         {
           "team_id": "t_15TWxO",
           "team_name": "Galatasaray",
-          "played": 4,
-          "goals_for": 8,
+          "played": 5,
+          "goals_for": 9,
           "goals_against": 9,
-          "home_played": 2,
-          "home_goals_for": 3,
+          "home_played": 3,
+          "home_goals_for": 4,
           "home_goals_against": 4,
           "away_played": 2,
           "away_goals_for": 5,
           "away_goals_against": 5,
           "scored_0_count": 0,
           "scored_2plus_count": 2,
-          "over_0_5": 4,
+          "over_0_5": 5,
           "over_1_5": 4,
           "over_2_5": 3,
           "over_3_5": 3,
-          "under_2_5": 1,
+          "under_2_5": 2,
           "recent_matches": [
+            {
+              "match_id": "m_4SYMzr",
+              "kickoff_utc": "2026-11-24T17:45:00Z",
+              "opponent_team_id": "t_4RqKpo",
+              "opponent": "Aston Villa",
+              "venue": "home",
+              "goals_for": 1,
+              "goals_against": 0,
+              "total_goals": 1,
+              "over_1_5": false
+            },
             {
               "match_id": "m_3AQ6Oe",
               "kickoff_utc": "2026-11-03T17:45:00Z",
@@ -30620,34 +30719,34 @@
               "over_1_5": true
             }
           ],
-          "average_total_goals": 4.25,
+          "average_total_goals": 3.6,
           "scored_0_percentage": 0.0,
-          "scored_2plus_percentage": 50.0,
+          "scored_2plus_percentage": 40.0,
           "markets": {
             "over_0_5": {
-              "count": 4,
-              "played": 4,
+              "count": 5,
+              "played": 5,
               "percentage": 100.0
             },
             "over_1_5": {
               "count": 4,
-              "played": 4,
-              "percentage": 100.0
+              "played": 5,
+              "percentage": 80.0
             },
             "over_2_5": {
               "count": 3,
-              "played": 4,
-              "percentage": 75.0
+              "played": 5,
+              "percentage": 60.0
             },
             "over_3_5": {
               "count": 3,
-              "played": 4,
-              "percentage": 75.0
+              "played": 5,
+              "percentage": 60.0
             },
             "under_2_5": {
-              "count": 1,
-              "played": 4,
-              "percentage": 25.0
+              "count": 2,
+              "played": 5,
+              "percentage": 40.0
             }
           }
         },
@@ -30750,23 +30849,34 @@
         {
           "team_id": "t_1ta56l",
           "team_name": "LASK",
-          "played": 4,
+          "played": 5,
           "goals_for": 10,
-          "goals_against": 9,
+          "goals_against": 10,
           "home_played": 2,
           "home_goals_for": 7,
           "home_goals_against": 6,
-          "away_played": 2,
+          "away_played": 3,
           "away_goals_for": 3,
-          "away_goals_against": 3,
-          "scored_0_count": 1,
+          "away_goals_against": 4,
+          "scored_0_count": 2,
           "scored_2plus_count": 3,
-          "over_0_5": 4,
+          "over_0_5": 5,
           "over_1_5": 3,
           "over_2_5": 3,
           "over_3_5": 3,
-          "under_2_5": 1,
+          "under_2_5": 2,
           "recent_matches": [
+            {
+              "match_id": "m_0yKeRt",
+              "kickoff_utc": "2026-11-24T17:45:00Z",
+              "opponent_team_id": "t_0SGPHB",
+              "opponent": "Bodø/Glimt",
+              "venue": "away",
+              "goals_for": 0,
+              "goals_against": 1,
+              "total_goals": 1,
+              "over_1_5": false
+            },
             {
               "match_id": "m_26eRTe",
               "kickoff_utc": "2026-11-03T20:00:00Z",
@@ -30812,57 +30922,68 @@
               "over_1_5": false
             }
           ],
-          "average_total_goals": 4.75,
-          "scored_0_percentage": 25.0,
-          "scored_2plus_percentage": 75.0,
+          "average_total_goals": 4.0,
+          "scored_0_percentage": 40.0,
+          "scored_2plus_percentage": 60.0,
           "markets": {
             "over_0_5": {
-              "count": 4,
-              "played": 4,
+              "count": 5,
+              "played": 5,
               "percentage": 100.0
             },
             "over_1_5": {
               "count": 3,
-              "played": 4,
-              "percentage": 75.0
+              "played": 5,
+              "percentage": 60.0
             },
             "over_2_5": {
               "count": 3,
-              "played": 4,
-              "percentage": 75.0
+              "played": 5,
+              "percentage": 60.0
             },
             "over_3_5": {
               "count": 3,
-              "played": 4,
-              "percentage": 75.0
+              "played": 5,
+              "percentage": 60.0
             },
             "under_2_5": {
-              "count": 1,
-              "played": 4,
-              "percentage": 25.0
+              "count": 2,
+              "played": 5,
+              "percentage": 40.0
             }
           }
         },
         {
           "team_id": "t_38NVJO",
           "team_name": "Lens",
-          "played": 4,
-          "goals_for": 4,
-          "goals_against": 16,
+          "played": 5,
+          "goals_for": 5,
+          "goals_against": 19,
           "home_played": 2,
           "home_goals_for": 1,
           "home_goals_against": 11,
-          "away_played": 2,
-          "away_goals_for": 3,
-          "away_goals_against": 5,
+          "away_played": 3,
+          "away_goals_for": 4,
+          "away_goals_against": 8,
           "scored_0_count": 2,
           "scored_2plus_count": 1,
-          "over_0_5": 4,
-          "over_1_5": 4,
-          "over_2_5": 3,
-          "over_3_5": 2,
+          "over_0_5": 5,
+          "over_1_5": 5,
+          "over_2_5": 4,
+          "over_3_5": 3,
           "under_2_5": 1,
           "recent_matches": [
+            {
+              "match_id": "m_13c8QW",
+              "kickoff_utc": "2026-11-24T20:00:00Z",
+              "opponent_team_id": "t_0oqUbb",
+              "opponent": "RB Leipzig",
+              "venue": "away",
+              "goals_for": 1,
+              "goals_against": 3,
+              "total_goals": 4,
+              "over_1_5": true
+            },
             {
               "match_id": "m_10Z35D",
               "kickoff_utc": "2026-11-04T20:00:00Z",
@@ -30908,34 +31029,34 @@
               "over_1_5": true
             }
           ],
-          "average_total_goals": 5.0,
-          "scored_0_percentage": 50.0,
-          "scored_2plus_percentage": 25.0,
+          "average_total_goals": 4.8,
+          "scored_0_percentage": 40.0,
+          "scored_2plus_percentage": 20.0,
           "markets": {
             "over_0_5": {
-              "count": 4,
-              "played": 4,
+              "count": 5,
+              "played": 5,
               "percentage": 100.0
             },
             "over_1_5": {
-              "count": 4,
-              "played": 4,
+              "count": 5,
+              "played": 5,
               "percentage": 100.0
             },
             "over_2_5": {
-              "count": 3,
-              "played": 4,
-              "percentage": 75.0
+              "count": 4,
+              "played": 5,
+              "percentage": 80.0
             },
             "over_3_5": {
-              "count": 2,
-              "played": 4,
-              "percentage": 50.0
+              "count": 3,
+              "played": 5,
+              "percentage": 60.0
             },
             "under_2_5": {
               "count": 1,
-              "played": 4,
-              "percentage": 25.0
+              "played": 5,
+              "percentage": 20.0
             }
           }
         },
@@ -31134,23 +31255,34 @@
         {
           "team_id": "t_0UCNPX",
           "team_name": "Manchester City",
-          "played": 4,
-          "goals_for": 12,
-          "goals_against": 7,
-          "home_played": 2,
-          "home_goals_for": 7,
-          "home_goals_against": 5,
+          "played": 5,
+          "goals_for": 14,
+          "goals_against": 9,
+          "home_played": 3,
+          "home_goals_for": 9,
+          "home_goals_against": 7,
           "away_played": 2,
           "away_goals_for": 5,
           "away_goals_against": 2,
           "scored_0_count": 0,
-          "scored_2plus_count": 4,
-          "over_0_5": 4,
-          "over_1_5": 4,
-          "over_2_5": 3,
-          "over_3_5": 3,
+          "scored_2plus_count": 5,
+          "over_0_5": 5,
+          "over_1_5": 5,
+          "over_2_5": 4,
+          "over_3_5": 4,
           "under_2_5": 1,
           "recent_matches": [
+            {
+              "match_id": "m_0c78zD",
+              "kickoff_utc": "2026-11-24T20:00:00Z",
+              "opponent_team_id": "t_2toJRF",
+              "opponent": "Napoli",
+              "venue": "home",
+              "goals_for": 2,
+              "goals_against": 2,
+              "total_goals": 4,
+              "over_1_5": true
+            },
             {
               "match_id": "m_3Bhlqj",
               "kickoff_utc": "2026-11-04T20:00:00Z",
@@ -31196,34 +31328,34 @@
               "over_1_5": true
             }
           ],
-          "average_total_goals": 4.75,
+          "average_total_goals": 4.6,
           "scored_0_percentage": 0.0,
           "scored_2plus_percentage": 100.0,
           "markets": {
             "over_0_5": {
-              "count": 4,
-              "played": 4,
+              "count": 5,
+              "played": 5,
               "percentage": 100.0
             },
             "over_1_5": {
-              "count": 4,
-              "played": 4,
+              "count": 5,
+              "played": 5,
               "percentage": 100.0
             },
             "over_2_5": {
-              "count": 3,
-              "played": 4,
-              "percentage": 75.0
+              "count": 4,
+              "played": 5,
+              "percentage": 80.0
             },
             "over_3_5": {
-              "count": 3,
-              "played": 4,
-              "percentage": 75.0
+              "count": 4,
+              "played": 5,
+              "percentage": 80.0
             },
             "under_2_5": {
               "count": 1,
-              "played": 4,
-              "percentage": 25.0
+              "played": 5,
+              "percentage": 20.0
             }
           }
         },
@@ -31326,23 +31458,34 @@
         {
           "team_id": "t_2toJRF",
           "team_name": "Napoli",
-          "played": 4,
-          "goals_for": 6,
-          "goals_against": 11,
+          "played": 5,
+          "goals_for": 8,
+          "goals_against": 13,
           "home_played": 2,
           "home_goals_for": 4,
           "home_goals_against": 4,
-          "away_played": 2,
-          "away_goals_for": 2,
-          "away_goals_against": 7,
+          "away_played": 3,
+          "away_goals_for": 4,
+          "away_goals_against": 9,
           "scored_0_count": 1,
-          "scored_2plus_count": 1,
-          "over_0_5": 4,
-          "over_1_5": 3,
-          "over_2_5": 3,
-          "over_3_5": 3,
+          "scored_2plus_count": 2,
+          "over_0_5": 5,
+          "over_1_5": 4,
+          "over_2_5": 4,
+          "over_3_5": 4,
           "under_2_5": 1,
           "recent_matches": [
+            {
+              "match_id": "m_0c78zD",
+              "kickoff_utc": "2026-11-24T20:00:00Z",
+              "opponent_team_id": "t_0UCNPX",
+              "opponent": "Manchester City",
+              "venue": "away",
+              "goals_for": 2,
+              "goals_against": 2,
+              "total_goals": 4,
+              "over_1_5": true
+            },
             {
               "match_id": "m_26ZQl6",
               "kickoff_utc": "2026-11-04T20:00:00Z",
@@ -31388,34 +31531,34 @@
               "over_1_5": false
             }
           ],
-          "average_total_goals": 4.25,
-          "scored_0_percentage": 25.0,
-          "scored_2plus_percentage": 25.0,
+          "average_total_goals": 4.2,
+          "scored_0_percentage": 20.0,
+          "scored_2plus_percentage": 40.0,
           "markets": {
             "over_0_5": {
-              "count": 4,
-              "played": 4,
+              "count": 5,
+              "played": 5,
               "percentage": 100.0
             },
             "over_1_5": {
-              "count": 3,
-              "played": 4,
-              "percentage": 75.0
+              "count": 4,
+              "played": 5,
+              "percentage": 80.0
             },
             "over_2_5": {
-              "count": 3,
-              "played": 4,
-              "percentage": 75.0
+              "count": 4,
+              "played": 5,
+              "percentage": 80.0
             },
             "over_3_5": {
-              "count": 3,
-              "played": 4,
-              "percentage": 75.0
+              "count": 4,
+              "played": 5,
+              "percentage": 80.0
             },
             "under_2_5": {
               "count": 1,
-              "played": 4,
-              "percentage": 25.0
+              "played": 5,
+              "percentage": 20.0
             }
           }
         },
@@ -31518,23 +31661,34 @@
         {
           "team_id": "t_1jOgDP",
           "team_name": "PSV Eindhoven",
-          "played": 4,
-          "goals_for": 3,
-          "goals_against": 4,
+          "played": 5,
+          "goals_for": 4,
+          "goals_against": 9,
           "home_played": 2,
           "home_goals_for": 2,
           "home_goals_against": 3,
-          "away_played": 2,
-          "away_goals_for": 1,
-          "away_goals_against": 1,
+          "away_played": 3,
+          "away_goals_for": 2,
+          "away_goals_against": 6,
           "scored_0_count": 1,
           "scored_2plus_count": 0,
-          "over_0_5": 4,
-          "over_1_5": 2,
-          "over_2_5": 1,
-          "over_3_5": 0,
+          "over_0_5": 5,
+          "over_1_5": 3,
+          "over_2_5": 2,
+          "over_3_5": 1,
           "under_2_5": 3,
           "recent_matches": [
+            {
+              "match_id": "m_3H4WRT",
+              "kickoff_utc": "2026-11-24T20:00:00Z",
+              "opponent_team_id": "t_4NZcri",
+              "opponent": "Real Madrid",
+              "venue": "away",
+              "goals_for": 1,
+              "goals_against": 5,
+              "total_goals": 6,
+              "over_1_5": true
+            },
             {
               "match_id": "m_1zT87G",
               "kickoff_utc": "2026-11-04T20:00:00Z",
@@ -31580,57 +31734,68 @@
               "over_1_5": true
             }
           ],
-          "average_total_goals": 1.75,
-          "scored_0_percentage": 25.0,
+          "average_total_goals": 2.6,
+          "scored_0_percentage": 20.0,
           "scored_2plus_percentage": 0.0,
           "markets": {
             "over_0_5": {
-              "count": 4,
-              "played": 4,
+              "count": 5,
+              "played": 5,
               "percentage": 100.0
             },
             "over_1_5": {
-              "count": 2,
-              "played": 4,
-              "percentage": 50.0
+              "count": 3,
+              "played": 5,
+              "percentage": 60.0
             },
             "over_2_5": {
-              "count": 1,
-              "played": 4,
-              "percentage": 25.0
+              "count": 2,
+              "played": 5,
+              "percentage": 40.0
             },
             "over_3_5": {
-              "count": 0,
-              "played": 4,
-              "percentage": 0.0
+              "count": 1,
+              "played": 5,
+              "percentage": 20.0
             },
             "under_2_5": {
               "count": 3,
-              "played": 4,
-              "percentage": 75.0
+              "played": 5,
+              "percentage": 60.0
             }
           }
         },
         {
           "team_id": "t_0oqUbb",
           "team_name": "RB Leipzig",
-          "played": 4,
-          "goals_for": 5,
-          "goals_against": 11,
-          "home_played": 2,
-          "home_goals_for": 3,
-          "home_goals_against": 3,
+          "played": 5,
+          "goals_for": 8,
+          "goals_against": 12,
+          "home_played": 3,
+          "home_goals_for": 6,
+          "home_goals_against": 4,
           "away_played": 2,
           "away_goals_for": 2,
           "away_goals_against": 8,
           "scored_0_count": 0,
-          "scored_2plus_count": 1,
-          "over_0_5": 4,
-          "over_1_5": 3,
-          "over_2_5": 3,
-          "over_3_5": 3,
+          "scored_2plus_count": 2,
+          "over_0_5": 5,
+          "over_1_5": 4,
+          "over_2_5": 4,
+          "over_3_5": 4,
           "under_2_5": 1,
           "recent_matches": [
+            {
+              "match_id": "m_13c8QW",
+              "kickoff_utc": "2026-11-24T20:00:00Z",
+              "opponent_team_id": "t_38NVJO",
+              "opponent": "Lens",
+              "venue": "home",
+              "goals_for": 3,
+              "goals_against": 1,
+              "total_goals": 4,
+              "over_1_5": true
+            },
             {
               "match_id": "m_3Bhlqj",
               "kickoff_utc": "2026-11-04T20:00:00Z",
@@ -31678,55 +31843,66 @@
           ],
           "average_total_goals": 4.0,
           "scored_0_percentage": 0.0,
-          "scored_2plus_percentage": 25.0,
+          "scored_2plus_percentage": 40.0,
           "markets": {
             "over_0_5": {
-              "count": 4,
-              "played": 4,
+              "count": 5,
+              "played": 5,
               "percentage": 100.0
             },
             "over_1_5": {
-              "count": 3,
-              "played": 4,
-              "percentage": 75.0
+              "count": 4,
+              "played": 5,
+              "percentage": 80.0
             },
             "over_2_5": {
-              "count": 3,
-              "played": 4,
-              "percentage": 75.0
+              "count": 4,
+              "played": 5,
+              "percentage": 80.0
             },
             "over_3_5": {
-              "count": 3,
-              "played": 4,
-              "percentage": 75.0
+              "count": 4,
+              "played": 5,
+              "percentage": 80.0
             },
             "under_2_5": {
               "count": 1,
-              "played": 4,
-              "percentage": 25.0
+              "played": 5,
+              "percentage": 20.0
             }
           }
         },
         {
           "team_id": "t_0HSzvM",
           "team_name": "Real Betis",
-          "played": 4,
-          "goals_for": 8,
+          "played": 5,
+          "goals_for": 10,
           "goals_against": 6,
           "home_played": 2,
           "home_goals_for": 4,
           "home_goals_against": 2,
-          "away_played": 2,
-          "away_goals_for": 4,
+          "away_played": 3,
+          "away_goals_for": 6,
           "away_goals_against": 4,
           "scored_0_count": 0,
-          "scored_2plus_count": 2,
-          "over_0_5": 4,
-          "over_1_5": 3,
+          "scored_2plus_count": 3,
+          "over_0_5": 5,
+          "over_1_5": 4,
           "over_2_5": 3,
           "over_3_5": 2,
-          "under_2_5": 1,
+          "under_2_5": 2,
           "recent_matches": [
+            {
+              "match_id": "m_38M4aC",
+              "kickoff_utc": "2026-11-24T20:00:00Z",
+              "opponent_team_id": "t_2yHOns",
+              "opponent": "Slovan Bratislava",
+              "venue": "away",
+              "goals_for": 2,
+              "goals_against": 0,
+              "total_goals": 2,
+              "over_1_5": true
+            },
             {
               "match_id": "m_2bderB",
               "kickoff_utc": "2026-11-04T20:00:00Z",
@@ -31772,57 +31948,68 @@
               "over_1_5": true
             }
           ],
-          "average_total_goals": 3.5,
+          "average_total_goals": 3.2,
           "scored_0_percentage": 0.0,
-          "scored_2plus_percentage": 50.0,
+          "scored_2plus_percentage": 60.0,
           "markets": {
             "over_0_5": {
-              "count": 4,
-              "played": 4,
+              "count": 5,
+              "played": 5,
               "percentage": 100.0
             },
             "over_1_5": {
-              "count": 3,
-              "played": 4,
-              "percentage": 75.0
+              "count": 4,
+              "played": 5,
+              "percentage": 80.0
             },
             "over_2_5": {
               "count": 3,
-              "played": 4,
-              "percentage": 75.0
+              "played": 5,
+              "percentage": 60.0
             },
             "over_3_5": {
               "count": 2,
-              "played": 4,
-              "percentage": 50.0
+              "played": 5,
+              "percentage": 40.0
             },
             "under_2_5": {
-              "count": 1,
-              "played": 4,
-              "percentage": 25.0
+              "count": 2,
+              "played": 5,
+              "percentage": 40.0
             }
           }
         },
         {
           "team_id": "t_4NZcri",
           "team_name": "Real Madrid",
-          "played": 4,
-          "goals_for": 13,
-          "goals_against": 7,
-          "home_played": 2,
-          "home_goals_for": 6,
-          "home_goals_against": 2,
+          "played": 5,
+          "goals_for": 18,
+          "goals_against": 8,
+          "home_played": 3,
+          "home_goals_for": 11,
+          "home_goals_against": 3,
           "away_played": 2,
           "away_goals_for": 7,
           "away_goals_against": 5,
           "scored_0_count": 0,
-          "scored_2plus_count": 4,
-          "over_0_5": 4,
-          "over_1_5": 4,
-          "over_2_5": 4,
-          "over_3_5": 3,
+          "scored_2plus_count": 5,
+          "over_0_5": 5,
+          "over_1_5": 5,
+          "over_2_5": 5,
+          "over_3_5": 4,
           "under_2_5": 0,
           "recent_matches": [
+            {
+              "match_id": "m_3H4WRT",
+              "kickoff_utc": "2026-11-24T20:00:00Z",
+              "opponent_team_id": "t_1jOgDP",
+              "opponent": "PSV Eindhoven",
+              "venue": "home",
+              "goals_for": 5,
+              "goals_against": 1,
+              "total_goals": 6,
+              "over_1_5": true
+            },
             {
               "match_id": "m_2pqLCB",
               "kickoff_utc": "2026-11-04T17:45:00Z",
@@ -31868,33 +32055,33 @@
               "over_1_5": true
             }
           ],
-          "average_total_goals": 5.0,
+          "average_total_goals": 5.2,
           "scored_0_percentage": 0.0,
           "scored_2plus_percentage": 100.0,
           "markets": {
             "over_0_5": {
-              "count": 4,
-              "played": 4,
+              "count": 5,
+              "played": 5,
               "percentage": 100.0
             },
             "over_1_5": {
-              "count": 4,
-              "played": 4,
+              "count": 5,
+              "played": 5,
               "percentage": 100.0
             },
             "over_2_5": {
-              "count": 4,
-              "played": 4,
+              "count": 5,
+              "played": 5,
               "percentage": 100.0
             },
             "over_3_5": {
-              "count": 3,
-              "played": 4,
-              "percentage": 75.0
+              "count": 4,
+              "played": 5,
+              "percentage": 80.0
             },
             "under_2_5": {
               "count": 0,
-              "played": 4,
+              "played": 5,
               "percentage": 0.0
             }
           }
@@ -32286,23 +32473,34 @@
         {
           "team_id": "t_2yHOns",
           "team_name": "Slovan Bratislava",
-          "played": 4,
+          "played": 5,
           "goals_for": 1,
-          "goals_against": 17,
-          "home_played": 1,
+          "goals_against": 19,
+          "home_played": 2,
           "home_goals_for": 0,
-          "home_goals_against": 3,
+          "home_goals_against": 5,
           "away_played": 3,
           "away_goals_for": 1,
           "away_goals_against": 14,
-          "scored_0_count": 3,
+          "scored_0_count": 4,
           "scored_2plus_count": 0,
-          "over_0_5": 4,
-          "over_1_5": 4,
+          "over_0_5": 5,
+          "over_1_5": 5,
           "over_2_5": 4,
           "over_3_5": 3,
-          "under_2_5": 0,
+          "under_2_5": 1,
           "recent_matches": [
+            {
+              "match_id": "m_38M4aC",
+              "kickoff_utc": "2026-11-24T20:00:00Z",
+              "opponent_team_id": "t_0HSzvM",
+              "opponent": "Real Betis",
+              "venue": "home",
+              "goals_for": 0,
+              "goals_against": 2,
+              "total_goals": 2,
+              "over_1_5": true
+            },
             {
               "match_id": "m_26eRTe",
               "kickoff_utc": "2026-11-03T20:00:00Z",
@@ -32348,34 +32546,34 @@
               "over_1_5": true
             }
           ],
-          "average_total_goals": 4.5,
-          "scored_0_percentage": 75.0,
+          "average_total_goals": 4.0,
+          "scored_0_percentage": 80.0,
           "scored_2plus_percentage": 0.0,
           "markets": {
             "over_0_5": {
-              "count": 4,
-              "played": 4,
+              "count": 5,
+              "played": 5,
               "percentage": 100.0
             },
             "over_1_5": {
-              "count": 4,
-              "played": 4,
+              "count": 5,
+              "played": 5,
               "percentage": 100.0
             },
             "over_2_5": {
               "count": 4,
-              "played": 4,
-              "percentage": 100.0
+              "played": 5,
+              "percentage": 80.0
             },
             "over_3_5": {
               "count": 3,
-              "played": 4,
-              "percentage": 75.0
+              "played": 5,
+              "percentage": 60.0
             },
             "under_2_5": {
-              "count": 0,
-              "played": 4,
-              "percentage": 0.0
+              "count": 1,
+              "played": 5,
+              "percentage": 20.0
             }
           }
         },
@@ -39500,8 +39698,8 @@
     "matches_missing_id": 0,
     "competitions_configured": 12,
     "competitions_with_data": 12,
-    "matches_scanned": 9491,
-    "matches_counted": 1865,
+    "matches_scanned": 9501,
+    "matches_counted": 1875,
     "excluded": {
       "invalid_record": 0,
       "wrong_competition": 0,

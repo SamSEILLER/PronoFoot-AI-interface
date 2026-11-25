@@ -1,7 +1,7 @@
 {
   "provider": "pitchapi_processed_history",
-  "generated_at_utc": "2026-11-25T02:35:22.393141+00:00",
-  "matches_considered": 9487,
+  "generated_at_utc": "2026-11-25T09:47:36.287462+00:00",
+  "matches_considered": 9497,
   "pairs": {
     "avispa fukuoka|yokohama f marinos": {
       "team_a": "Avispa Fukuoka",
@@ -322,6 +322,15 @@
       "team_a": "Houston Dynamo FC",
       "team_b": "San Jose Earthquakes",
       "matches": [
+        {
+          "date": "2026-11-25T03:00:00Z",
+          "home": "San Jose Earthquakes",
+          "away": "Houston Dynamo FC",
+          "score_home": 2,
+          "score_away": 1,
+          "competition_id": "us-mls",
+          "competition_name": "MLS"
+        },
         {
           "date": "2026-09-13T02:30:00Z",
           "home": "San Jose Earthquakes",
@@ -5130,6 +5139,30 @@
         }
       ]
     },
+    "aston villa|paris saint germain": {
+      "team_a": "Aston Villa",
+      "team_b": "Paris Saint-Germain",
+      "matches": [
+        {
+          "date": "2025-04-15T19:00:00Z",
+          "home": "Aston Villa",
+          "away": "Paris Saint-Germain",
+          "score_home": 3,
+          "score_away": 2,
+          "competition_id": "uefa-champions-league",
+          "competition_name": "Ligue des champions UEFA"
+        },
+        {
+          "date": "2025-04-09T19:00:00Z",
+          "home": "Paris Saint-Germain",
+          "away": "Aston Villa",
+          "score_home": 3,
+          "score_away": 1,
+          "competition_id": "uefa-champions-league",
+          "competition_name": "Ligue des champions UEFA"
+        }
+      ]
+    },
     "fagiano okayama fc|kashima antlers": {
       "team_a": "Fagiano Okayama FC",
       "team_b": "Kashima Antlers",
@@ -5295,21 +5328,6 @@
           "score_away": 2,
           "competition_id": "fr-ligue-1",
           "competition_name": "Ligue 1"
-        }
-      ]
-    },
-    "manchester city|napoli": {
-      "team_a": "Manchester City",
-      "team_b": "Napoli",
-      "matches": [
-        {
-          "date": "2025-09-18T19:00:00Z",
-          "home": "Manchester City",
-          "away": "Napoli",
-          "score_home": 2,
-          "score_away": 0,
-          "competition_id": "uefa-champions-league",
-          "competition_name": "Ligue des champions UEFA"
         }
       ]
     },

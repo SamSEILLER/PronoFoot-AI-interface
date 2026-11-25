@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-25T02:35:22.121773Z",
-  "updated_at": "2026-11-25T02:35:22.121773Z",
+  "generated_at": "2026-11-25T09:47:36.060911Z",
+  "updated_at": "2026-11-25T09:47:36.060911Z",
   "season": null,
   "competitions": [
     {
@@ -2298,14 +2298,14 @@
           "team_id": "t_1ngZfb",
           "team_name": "San Jose Earthquakes",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/05ae77d53490f69f82e6d06859411e7124ce07ec45d97b5b3001b374e63a7cae.webp",
-          "played": 34,
-          "wins": 14,
+          "played": 35,
+          "wins": 15,
           "draws": 10,
           "losses": 10,
-          "goals_for": 57,
-          "goals_against": 51,
-          "points": 52,
-          "goal_difference": 6,
+          "goals_for": 59,
+          "goals_against": 52,
+          "points": 55,
+          "goal_difference": 7,
           "position": 9
         },
         {
@@ -2326,14 +2326,14 @@
           "team_id": "t_2L8yh8",
           "team_name": "Houston Dynamo FC",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/558a5d6a87450486dd99116e79aa8ebddea076387c37be1b1c3b6adec065fdac.webp",
-          "played": 34,
+          "played": 35,
           "wins": 14,
           "draws": 9,
-          "losses": 11,
-          "goals_for": 43,
-          "goals_against": 43,
+          "losses": 12,
+          "goals_for": 44,
+          "goals_against": 45,
           "points": 51,
-          "goal_difference": 0,
+          "goal_difference": -1,
           "position": 11
         },
         {
@@ -2603,7 +2603,7 @@
           "position": 30
         }
       ],
-      "matches_counted": 519
+      "matches_counted": 520
     },
     {
       "id": "uefa-champions-league",
@@ -2611,6 +2611,20 @@
       "country": "Europe",
       "season": "2026/2027",
       "standings": [
+        {
+          "team_id": "t_4NZcri",
+          "team_name": "Real Madrid",
+          "team_logo": "https://cdn.pitchapi.dev/images/teams/9e7141c583abe50554615387c99815ee3663d1a4f888549679523d2acd7f716c.webp",
+          "played": 5,
+          "wins": 5,
+          "draws": 0,
+          "losses": 0,
+          "goals_for": 18,
+          "goals_against": 8,
+          "points": 15,
+          "goal_difference": 10,
+          "position": 1
+        },
         {
           "team_id": "t_41iFW3",
           "team_name": "Paris Saint-Germain",
@@ -2623,49 +2637,77 @@
           "goals_against": 5,
           "points": 12,
           "goal_difference": 15,
-          "position": 1
-        },
-        {
-          "team_id": "t_4NZcri",
-          "team_name": "Real Madrid",
-          "team_logo": "https://cdn.pitchapi.dev/images/teams/9e7141c583abe50554615387c99815ee3663d1a4f888549679523d2acd7f716c.webp",
-          "played": 4,
-          "wins": 4,
-          "draws": 0,
-          "losses": 0,
-          "goals_for": 13,
-          "goals_against": 7,
-          "points": 12,
-          "goal_difference": 6,
           "position": 2
-        },
-        {
-          "team_id": "t_1gkhxH",
-          "team_name": "Arsenal",
-          "team_logo": "https://cdn.pitchapi.dev/images/teams/cc89aa6a111b43694223ca0506940e05f825369c259a6c8bf4ab8cf8b080a05b.webp",
-          "played": 4,
-          "wins": 3,
-          "draws": 1,
-          "losses": 0,
-          "goals_for": 8,
-          "goals_against": 3,
-          "points": 10,
-          "goal_difference": 5,
-          "position": 3
         },
         {
           "team_id": "t_0oXTvZ",
           "team_name": "Como",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/35f069058222c070820cbf97102be4379a619b2c9892b41f0ee6c4d1920bdec9.webp",
-          "played": 4,
-          "wins": 3,
+          "played": 5,
+          "wins": 4,
           "draws": 0,
           "losses": 1,
-          "goals_for": 19,
+          "goals_for": 20,
           "goals_against": 6,
-          "points": 9,
-          "goal_difference": 13,
+          "points": 12,
+          "goal_difference": 14,
+          "position": 3
+        },
+        {
+          "team_id": "t_0HSzvM",
+          "team_name": "Real Betis",
+          "team_logo": "https://cdn.pitchapi.dev/images/teams/3032d6554f9f217984830cb35b054bd116c0546d5f31686fe446efafe48e79e1.webp",
+          "played": 5,
+          "wins": 4,
+          "draws": 0,
+          "losses": 1,
+          "goals_for": 10,
+          "goals_against": 6,
+          "points": 12,
+          "goal_difference": 4,
           "position": 4
+        },
+        {
+          "team_id": "t_1gkhxH",
+          "team_name": "Arsenal",
+          "team_logo": "https://cdn.pitchapi.dev/images/teams/cc89aa6a111b43694223ca0506940e05f825369c259a6c8bf4ab8cf8b080a05b.webp",
+          "played": 5,
+          "wins": 3,
+          "draws": 2,
+          "losses": 0,
+          "goals_for": 9,
+          "goals_against": 4,
+          "points": 11,
+          "goal_difference": 5,
+          "position": 5
+        },
+        {
+          "team_id": "t_0UCNPX",
+          "team_name": "Manchester City",
+          "team_logo": "https://cdn.pitchapi.dev/images/teams/a9cf2c0ab02055725d2a2a279706c44e1d375a2d3ec3cd0f67625ba883f0257d.webp",
+          "played": 5,
+          "wins": 3,
+          "draws": 1,
+          "losses": 1,
+          "goals_for": 14,
+          "goals_against": 9,
+          "points": 10,
+          "goal_difference": 5,
+          "position": 6
+        },
+        {
+          "team_id": "t_386iz1",
+          "team_name": "Borussia Dortmund",
+          "team_logo": "https://cdn.pitchapi.dev/images/teams/9a049cf470f5e8a1b096c1ac46c7a742944c23a6c82be592fd7f2889aa476de5.webp",
+          "played": 5,
+          "wins": 3,
+          "draws": 1,
+          "losses": 1,
+          "goals_for": 8,
+          "goals_against": 6,
+          "points": 10,
+          "goal_difference": 2,
+          "position": 7
         },
         {
           "team_id": "t_32jSEF",
@@ -2679,35 +2721,21 @@
           "goals_against": 6,
           "points": 9,
           "goal_difference": 8,
-          "position": 5
+          "position": 8
         },
         {
           "team_id": "t_4RqKpo",
           "team_name": "Aston Villa",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/fba3bf0754a20dffd4acc44c3d5f6b12f7d8ab9c79ae6000a745d30385cd631c.webp",
-          "played": 4,
+          "played": 5,
           "wins": 3,
           "draws": 0,
-          "losses": 1,
-          "goals_for": 12,
-          "goals_against": 6,
-          "points": 9,
-          "goal_difference": 6,
-          "position": 6
-        },
-        {
-          "team_id": "t_0UCNPX",
-          "team_name": "Manchester City",
-          "team_logo": "https://cdn.pitchapi.dev/images/teams/a9cf2c0ab02055725d2a2a279706c44e1d375a2d3ec3cd0f67625ba883f0257d.webp",
-          "played": 4,
-          "wins": 3,
-          "draws": 0,
-          "losses": 1,
+          "losses": 2,
           "goals_for": 12,
           "goals_against": 7,
           "points": 9,
           "goal_difference": 5,
-          "position": 7
+          "position": 9
         },
         {
           "team_id": "t_0BrMnM",
@@ -2721,7 +2749,7 @@
           "goals_against": 10,
           "points": 9,
           "goal_difference": 4,
-          "position": 8
+          "position": 10
         },
         {
           "team_id": "t_1mTmMO",
@@ -2735,7 +2763,7 @@
           "goals_against": 7,
           "points": 9,
           "goal_difference": 4,
-          "position": 9
+          "position": 11
         },
         {
           "team_id": "t_1TAfIz",
@@ -2749,35 +2777,21 @@
           "goals_against": 4,
           "points": 9,
           "goal_difference": 4,
-          "position": 10
-        },
-        {
-          "team_id": "t_0HSzvM",
-          "team_name": "Real Betis",
-          "team_logo": "https://cdn.pitchapi.dev/images/teams/3032d6554f9f217984830cb35b054bd116c0546d5f31686fe446efafe48e79e1.webp",
-          "played": 4,
-          "wins": 3,
-          "draws": 0,
-          "losses": 1,
-          "goals_for": 8,
-          "goals_against": 6,
-          "points": 9,
-          "goal_difference": 2,
-          "position": 11
-        },
-        {
-          "team_id": "t_386iz1",
-          "team_name": "Borussia Dortmund",
-          "team_logo": "https://cdn.pitchapi.dev/images/teams/9a049cf470f5e8a1b096c1ac46c7a742944c23a6c82be592fd7f2889aa476de5.webp",
-          "played": 4,
-          "wins": 3,
-          "draws": 0,
-          "losses": 1,
-          "goals_for": 7,
-          "goals_against": 5,
-          "points": 9,
-          "goal_difference": 2,
           "position": 12
+        },
+        {
+          "team_id": "t_15TWxO",
+          "team_name": "Galatasaray",
+          "team_logo": "https://cdn.pitchapi.dev/images/teams/b2f762b5bacdd581c3d182ca109615814151ee90e37749cb276d5a9bda88b13a.webp",
+          "played": 5,
+          "wins": 3,
+          "draws": 0,
+          "losses": 2,
+          "goals_for": 9,
+          "goals_against": 9,
+          "points": 9,
+          "goal_difference": 0,
+          "position": 13
         },
         {
           "team_id": "t_1cpjqO",
@@ -2791,7 +2805,7 @@
           "goals_against": 5,
           "points": 8,
           "goal_difference": 7,
-          "position": 13
+          "position": 14
         },
         {
           "team_id": "t_0iJNOA",
@@ -2805,7 +2819,21 @@
           "goals_against": 4,
           "points": 7,
           "goal_difference": 3,
-          "position": 14
+          "position": 15
+        },
+        {
+          "team_id": "t_0SGPHB",
+          "team_name": "Bodø/Glimt",
+          "team_logo": "https://cdn.pitchapi.dev/images/teams/8e8bca727ae90fc0fba027bf099bdaf083ba1031aeacb0a8441f7f19039c8364.webp",
+          "played": 5,
+          "wins": 2,
+          "draws": 1,
+          "losses": 2,
+          "goals_for": 5,
+          "goals_against": 9,
+          "points": 7,
+          "goal_difference": -4,
+          "position": 16
         },
         {
           "team_id": "t_3CPHHF",
@@ -2819,21 +2847,21 @@
           "goals_against": 6,
           "points": 6,
           "goal_difference": 2,
-          "position": 15
+          "position": 17
         },
         {
           "team_id": "t_1ta56l",
           "team_name": "LASK",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/7e1cc9adf796345eed652d70b6425c8add7abc494151cb677e6f60c63eb518ea.webp",
-          "played": 4,
+          "played": 5,
           "wins": 2,
           "draws": 0,
-          "losses": 2,
+          "losses": 3,
           "goals_for": 10,
-          "goals_against": 9,
+          "goals_against": 10,
           "points": 6,
-          "goal_difference": 1,
-          "position": 16
+          "goal_difference": 0,
+          "position": 18
         },
         {
           "team_id": "t_2I313i",
@@ -2847,21 +2875,35 @@
           "goals_against": 8,
           "points": 6,
           "goal_difference": 0,
-          "position": 17
+          "position": 19
         },
         {
-          "team_id": "t_15TWxO",
-          "team_name": "Galatasaray",
-          "team_logo": "https://cdn.pitchapi.dev/images/teams/b2f762b5bacdd581c3d182ca109615814151ee90e37749cb276d5a9bda88b13a.webp",
-          "played": 4,
+          "team_id": "t_0dVrhE",
+          "team_name": "FC Porto",
+          "team_logo": "https://cdn.pitchapi.dev/images/teams/32b58b1949ae598ee4f05086017e0bf309cbc15846c63a60955beccf41726790.webp",
+          "played": 5,
           "wins": 2,
           "draws": 0,
-          "losses": 2,
-          "goals_for": 8,
-          "goals_against": 9,
+          "losses": 3,
+          "goals_for": 7,
+          "goals_against": 7,
           "points": 6,
-          "goal_difference": -1,
-          "position": 18
+          "goal_difference": 0,
+          "position": 20
+        },
+        {
+          "team_id": "t_0oqUbb",
+          "team_name": "RB Leipzig",
+          "team_logo": "https://cdn.pitchapi.dev/images/teams/d0ea8dba830e1ec387985c6fa33f8f4c101f61c955c46054bb406a32e57b4e6d.webp",
+          "played": 5,
+          "wins": 2,
+          "draws": 0,
+          "losses": 3,
+          "goals_for": 8,
+          "goals_against": 12,
+          "points": 6,
+          "goal_difference": -4,
+          "position": 21
         },
         {
           "team_id": "t_2wJJY2",
@@ -2875,7 +2917,7 @@
           "goals_against": 11,
           "points": 5,
           "goal_difference": -5,
-          "position": 19
+          "position": 22
         },
         {
           "team_id": "t_0RhqmW",
@@ -2889,7 +2931,7 @@
           "goals_against": 8,
           "points": 4,
           "goal_difference": 2,
-          "position": 20
+          "position": 23
         },
         {
           "team_id": "t_4Wrrym",
@@ -2903,7 +2945,7 @@
           "goals_against": 4,
           "points": 4,
           "goal_difference": 0,
-          "position": 21
+          "position": 24
         },
         {
           "team_id": "t_0jjyWh",
@@ -2917,7 +2959,7 @@
           "goals_against": 10,
           "points": 4,
           "goal_difference": -1,
-          "position": 22
+          "position": 25
         },
         {
           "team_id": "t_3NIiXl",
@@ -2931,63 +2973,35 @@
           "goals_against": 5,
           "points": 4,
           "goal_difference": -1,
-          "position": 23
-        },
-        {
-          "team_id": "t_1jOgDP",
-          "team_name": "PSV Eindhoven",
-          "team_logo": "https://cdn.pitchapi.dev/images/teams/e89b7540c69dc8b8a7b32bc58f807d304e60d8223890a76a60beaef26980e882.webp",
-          "played": 4,
-          "wins": 1,
-          "draws": 1,
-          "losses": 2,
-          "goals_for": 3,
-          "goals_against": 4,
-          "points": 4,
-          "goal_difference": -1,
-          "position": 24
-        },
-        {
-          "team_id": "t_0SGPHB",
-          "team_name": "Bodø/Glimt",
-          "team_logo": "https://cdn.pitchapi.dev/images/teams/8e8bca727ae90fc0fba027bf099bdaf083ba1031aeacb0a8441f7f19039c8364.webp",
-          "played": 4,
-          "wins": 1,
-          "draws": 1,
-          "losses": 2,
-          "goals_for": 4,
-          "goals_against": 9,
-          "points": 4,
-          "goal_difference": -5,
-          "position": 25
-        },
-        {
-          "team_id": "t_0dVrhE",
-          "team_name": "FC Porto",
-          "team_logo": "https://cdn.pitchapi.dev/images/teams/32b58b1949ae598ee4f05086017e0bf309cbc15846c63a60955beccf41726790.webp",
-          "played": 4,
-          "wins": 1,
-          "draws": 0,
-          "losses": 3,
-          "goals_for": 6,
-          "goals_against": 7,
-          "points": 3,
-          "goal_difference": -1,
           "position": 26
         },
         {
           "team_id": "t_2toJRF",
           "team_name": "Napoli",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/0755206cdb935eb37cd5bd42b54afc629d486c010c12029c096def4f5227db6f.webp",
-          "played": 4,
+          "played": 5,
           "wins": 1,
-          "draws": 0,
+          "draws": 1,
           "losses": 3,
-          "goals_for": 6,
-          "goals_against": 11,
-          "points": 3,
+          "goals_for": 8,
+          "goals_against": 13,
+          "points": 4,
           "goal_difference": -5,
           "position": 27
+        },
+        {
+          "team_id": "t_1jOgDP",
+          "team_name": "PSV Eindhoven",
+          "team_logo": "https://cdn.pitchapi.dev/images/teams/e89b7540c69dc8b8a7b32bc58f807d304e60d8223890a76a60beaef26980e882.webp",
+          "played": 5,
+          "wins": 1,
+          "draws": 1,
+          "losses": 3,
+          "goals_for": 4,
+          "goals_against": 9,
+          "points": 4,
+          "goal_difference": -5,
+          "position": 28
         },
         {
           "team_id": "t_4SV4jg",
@@ -3001,35 +3015,7 @@
           "goals_against": 14,
           "points": 3,
           "goal_difference": -6,
-          "position": 28
-        },
-        {
-          "team_id": "t_2jeqmO",
-          "team_name": "AEK Athens",
-          "team_logo": "https://cdn.pitchapi.dev/images/teams/7a5e1ea3a61aa9dad0ed73f67c8617b24633f76185bc91c8fab87cf6a69f46fe.webp",
-          "played": 4,
-          "wins": 1,
-          "draws": 0,
-          "losses": 3,
-          "goals_for": 5,
-          "goals_against": 11,
-          "points": 3,
-          "goal_difference": -6,
           "position": 29
-        },
-        {
-          "team_id": "t_0oqUbb",
-          "team_name": "RB Leipzig",
-          "team_logo": "https://cdn.pitchapi.dev/images/teams/d0ea8dba830e1ec387985c6fa33f8f4c101f61c955c46054bb406a32e57b4e6d.webp",
-          "played": 4,
-          "wins": 1,
-          "draws": 0,
-          "losses": 3,
-          "goals_for": 5,
-          "goals_against": 11,
-          "points": 3,
-          "goal_difference": -6,
-          "position": 30
         },
         {
           "team_id": "t_30ZV5A",
@@ -3043,34 +3029,48 @@
           "goals_against": 10,
           "points": 3,
           "goal_difference": -6,
+          "position": 30
+        },
+        {
+          "team_id": "t_2jeqmO",
+          "team_name": "AEK Athens",
+          "team_logo": "https://cdn.pitchapi.dev/images/teams/7a5e1ea3a61aa9dad0ed73f67c8617b24633f76185bc91c8fab87cf6a69f46fe.webp",
+          "played": 5,
+          "wins": 1,
+          "draws": 0,
+          "losses": 4,
+          "goals_for": 5,
+          "goals_against": 12,
+          "points": 3,
+          "goal_difference": -7,
           "position": 31
         },
         {
           "team_id": "t_4KvHFN",
           "team_name": "Feyenoord",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/dcf2421ca736dcdb1b71522260d467a0681d0b4bad3308c2e912f58f37a3511d.webp",
-          "played": 4,
+          "played": 5,
           "wins": 1,
           "draws": 0,
-          "losses": 3,
+          "losses": 4,
           "goals_for": 4,
-          "goals_against": 11,
+          "goals_against": 12,
           "points": 3,
-          "goal_difference": -7,
+          "goal_difference": -8,
           "position": 32
         },
         {
           "team_id": "t_38NVJO",
           "team_name": "Lens",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/d7424c5e0e5cb6adc67ed5a1119d16f497a63f31ca406127d9563afc29e59d11.webp",
-          "played": 4,
+          "played": 5,
           "wins": 1,
           "draws": 0,
-          "losses": 3,
-          "goals_for": 4,
-          "goals_against": 16,
+          "losses": 4,
+          "goals_for": 5,
+          "goals_against": 19,
           "points": 3,
-          "goal_difference": -12,
+          "goal_difference": -14,
           "position": 33
         },
         {
@@ -3105,18 +3105,18 @@
           "team_id": "t_2yHOns",
           "team_name": "Slovan Bratislava",
           "team_logo": "https://cdn.pitchapi.dev/images/teams/19a562f7f6053ae9daba69ad68f5a9be26220b39c30e9f0081ab0ab089b441d8.webp",
-          "played": 4,
+          "played": 5,
           "wins": 0,
           "draws": 0,
-          "losses": 4,
+          "losses": 5,
           "goals_for": 1,
-          "goals_against": 17,
+          "goals_against": 19,
           "points": 0,
-          "goal_difference": -16,
+          "goal_difference": -18,
           "position": 36
         }
       ],
-      "matches_counted": 72
+      "matches_counted": 81
     },
     {
       "id": "uefa-europa-league",
