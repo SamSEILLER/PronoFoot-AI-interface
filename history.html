@@ -125,6 +125,7 @@ const list=document.getElementById("engine-list"),error=document.getElementById(
 const keys=["over_1_5","over_2_5","btts"],tierNames={1:"Très favorable",2:"Favorable",3:"Mitigé",4:"Défavorable"};
 const labels={over_1_5:"+1,5 buts",over_2_5:"+2,5 buts",btts:"BTTS"};
 function esc(value){return String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function tierOf(p){if([1,2,3,4].includes(p?.tier))return p.tier;return p?.status==="yes"?1:p?.status==="no"?4:null;}
 function statsFor(records){
  const stats={};for(const key of keys)stats[key]={evaluated:0,success:0};
  const directional={};for(const key of keys)directional[key]={yes:{evaluated:0,success:0},no:{evaluated:0,success:0}};
@@ -135,7 +136,7 @@ function statsFor(records){
   completed++;
   let all=true;
   for(const key of keys){
-   const tier=r.prediction?.[key]?.tier;
+   const tier=tierOf(r.prediction?.[key]);
    if(![1,2,3,4].includes(tier)){all=false;continue;}
    const predicted=tier===1||tier===2;
    const actual=key==="over_1_5"?hs+as>=2:key==="over_2_5"?hs+as>=3:hs>=1&&as>=1;
@@ -153,7 +154,7 @@ function updateKpis(records){
  const {stats,common,completed,directional}=statsFor(records);
  document.getElementById("kpi-archived").textContent=records.length;
  document.getElementById("kpi-evaluated").textContent=completed;
- const upcoming=records.filter(r=>r.evaluation_status==="pending"||(!r.evaluation_status&&(!Number.isFinite(r.actual?.home_score)||!Number.isFinite(r.actual?.away_score)))).length;
+ const upcoming=records.filter(r=>!Number.isFinite(r.actual?.home_score)||!Number.isFinite(r.actual?.away_score)).length;
  document.getElementById("kpi-upcoming").textContent=upcoming;
  for(const [key,short] of [["over_1_5","over15"],["over_2_5","over25"],["btts","btts"]]){
   for(const side of ["yes","no"]){
@@ -169,7 +170,7 @@ function updateKpis(records){
  }
 }
 function tier(value){
- const n=value?.tier;if(![1,2,3,4].includes(n))return '<span class="tier">—</span>';
+ const n=tierOf(value);if(![1,2,3,4].includes(n))return '<span class="tier">—</span>';
  const yes=n===1||n===2;
  return '<span class="tier '+(yes?'t1':'t4')+'">'+(yes?'OUI':'NON')+'</span>';
 }
@@ -177,9 +178,9 @@ function dateLabel(value){
  const d=new Date(value);return Number.isNaN(d.getTime())?"—":d.toLocaleDateString("fr-FR",{day:"2-digit",month:"2-digit",year:"numeric"});
 }
 function competitionLabel(value){return String(value||"Compétition non renseignée").replace(/-/g," ").replace(/\b\w/g,c=>c.toUpperCase());}
-function versionDetails(){
+function versionDetails(id){const threshold=id==="v2"?80:70;
  return '<div class="market-grid"><div class="market-card"><div class="market-icon">▥</div><div><strong>+1,5 buts</strong><span>Au moins 2 buts dans le match</span></div></div><div class="market-card"><div class="market-icon">▥</div><div><strong>+2,5 buts</strong><span>Au moins 3 buts dans le match</span></div></div><div class="market-card"><div class="market-icon">⚽↔⚽</div><div><strong>BTTS</strong><span>Les deux équipes marquent</span></div></div></div>'+
- '<div class="engine-info-grid"><section class="info-card"><h3 class="info-title"><span>◎</span>Pronostic binaire</h3><div class="keep-list"><div class="keep-line"><span class="keep-check">✓</span><span><strong>OUI</strong> — seuil de fréquence atteint (≥ 70 %).</span></div><div class="keep-line"><span class="keep-check">✓</span><span><strong>NON</strong> — seuil inférieur à 70 %.</span></div><div class="keep-line"><span class="keep-check">✓</span><span>Les archives affichent désormais uniquement OUI / NON.</span></div></div></section><section class="info-card"><h3 class="info-title"><span>♧</span>À retenir</h3><div class="keep-list"><div class="keep-line"><span class="keep-check">✓</span><span>Analyse basée sur les matchs de la <strong>même compétition et de la même saison</strong>.</span></div><div class="keep-line"><span class="keep-check">✓</span><span>Fréquences calculées à partir des <strong>résultats historiques des équipes</strong>.</span></div><div class="keep-line"><span class="keep-check">✓</span><span>La fiabilité dépend du <strong>nombre de matchs disponibles</strong> dans l’échantillon.</span></div></div></section></div>'+
+ '<div class="engine-info-grid"><section class="info-card"><h3 class="info-title"><span>◎</span>Pronostic binaire</h3><div class="keep-list"><div class="keep-line"><span class="keep-check">✓</span><span><strong>OUI</strong> — seuil de fréquence atteint (≥ ${threshold} %).</span></div><div class="keep-line"><span class="keep-check">✓</span><span><strong>NON</strong> — seuil inférieur à THRESHOLD_PLACEHOLDER %.</span></div><div class="keep-line"><span class="keep-check">✓</span><span>Les archives affichent désormais uniquement OUI / NON.</span></div></div></section><section class="info-card"><h3 class="info-title"><span>♧</span>À retenir</h3><div class="keep-list"><div class="keep-line"><span class="keep-check">✓</span><span>Analyse basée sur les matchs de la <strong>même compétition et de la même saison</strong>.</span></div><div class="keep-line"><span class="keep-check">✓</span><span>Fréquences calculées à partir des <strong>résultats historiques des équipes</strong>.</span></div><div class="keep-line"><span class="keep-check">✓</span><span>La fiabilité dépend du <strong>nombre de matchs disponibles</strong> dans l’échantillon.</span></div></div></section></div>'+
  '';
 }
 
@@ -191,8 +192,8 @@ function renderMatches(records,container){
  const seasons=[...new Set(records.map(r=>r.season).filter(Boolean))].sort((a,b)=>String(b).localeCompare(String(a),"fr"));
  competitions.forEach(v=>competitionFilter.insertAdjacentHTML("beforeend",'<option value="'+esc(v)+'">'+esc(competitionLabel(v))+'</option>'));
  seasons.forEach(v=>seasonFilter.insertAdjacentHTML("beforeend",'<option value="'+esc(v)+'">'+esc(v)+'</option>'));
- function matchResult(r){const h=r.actual?.home_score,a=r.actual?.away_score;if(!Number.isFinite(h)||!Number.isFinite(a))return "pending";let evaluated=0,success=0;for(const key of keys){const t=r.prediction?.[key]?.tier;if(![1,2,3,4].includes(t))continue;evaluated++;const predicted=t===1||t===2,actual=key==="over_1_5"?h+a>=2:key==="over_2_5"?h+a>=3:h>=1&&a>=1;if(predicted===actual)success++;}if(!evaluated)return "pending";return success>0?"success":"failed";}
- function sortValue(r,key){if(key==="match")return (String(r.home_team||"")+" "+String(r.away_team||"")).toLocaleLowerCase("fr");if(key==="date")return String(r.kickoff_utc||"");if(["over_1_5","over_2_5","btts"].includes(key)){const t=r.prediction?.[key]?.tier;return t===1||t===2?1:t===3||t===4?0:-1;}if(key==="score"){const h=r.actual?.home_score,a=r.actual?.away_score;return Number.isFinite(h)&&Number.isFinite(a)?h*100+a:-1;}return "";}
+ function matchResult(r){const h=r.actual?.home_score,a=r.actual?.away_score;if(!Number.isFinite(h)||!Number.isFinite(a))return "pending";let evaluated=0,success=0;for(const key of keys){const t=tierOf(r.prediction?.[key]);if(![1,2,3,4].includes(t))continue;evaluated++;const predicted=t===1||t===2,actual=key==="over_1_5"?h+a>=2:key==="over_2_5"?h+a>=3:h>=1&&a>=1;if(predicted===actual)success++;}if(!evaluated)return "pending";return success>0?"success":"failed";}
+ function sortValue(r,key){if(key==="match")return (String(r.home_team||"")+" "+String(r.away_team||"")).toLocaleLowerCase("fr");if(key==="date")return String(r.kickoff_utc||"");if(["over_1_5","over_2_5","btts"].includes(key)){const t=tierOf(r.prediction?.[key]);return t===1||t===2?1:t===3||t===4?0:-1;}if(key==="score"){const h=r.actual?.home_score,a=r.actual?.away_score;return Number.isFinite(h)&&Number.isFinite(a)?h*100+a:-1;}return "";}
  function draw(){const q=search.value.trim().toLocaleLowerCase("fr");const filtered=records.filter(r=>{if(![r.home_team,r.away_team].join(" ").toLocaleLowerCase("fr").includes(q))return false;if(competitionFilter.value!=="all"&&r.competition!==competitionFilter.value)return false;if(seasonFilter.value!=="all"&&r.season!==seasonFilter.value)return false;return resultFilter.value==="all"||matchResult(r)===resultFilter.value;}).sort((a,b)=>{const av=sortValue(a,sortKey),bv=sortValue(b,sortKey);return (typeof av==="number"&&typeof bv==="number"?av-bv:String(av).localeCompare(String(bv),"fr"))*sortDirection;});
  const pageSize=Number(pageSizeSelect.value),pages=Math.max(1,Math.ceil(filtered.length/pageSize));page=Math.min(page,pages);const rows=filtered.slice((page-1)*pageSize,page*pageSize);const headers=[["match","Match"],["date","Date"],["over_1_5","+1,5 buts"],["over_2_5","+2,5 buts"],["btts","BTTS"],["score","Score final"]];const th=headers.map(([key,label])=>'<th><button type="button" class="sort-header" data-sort="'+key+'">'+label+' '+(sortKey===key?(sortDirection===1?"↑":"↓"):"↕")+'</button></th>').join("");
  if(!rows.length){table.innerHTML='<div class="empty">Aucun match ne correspond à ces filtres.</div>';pagination.innerHTML="";return;}
@@ -202,12 +203,12 @@ function renderMatches(records,container){
  }
  [search,resultFilter,competitionFilter,seasonFilter,pageSizeSelect].forEach(control=>control.addEventListener(control===search?"input":"change",()=>{page=1;draw();}));draw();
 }
-function renderVersion(v,index){
+let selectedEngineId=null;\nfunction renderVersion(v,index){
  const id=String(v.id||"version-"+index),active=v.status==="active",title=id==="v1"?"Analyse historique":String(v.label||id).replace(/^Moteur\s*V\d+\s*[—-]?\s*/i,"");
  const article=document.createElement("article");article.className="engine-accordion";
- article.innerHTML='<button class="engine-toggle '+(active?"":"archived")+'" type="button" aria-expanded="false"><span class="engine-chip">▦</span><span class="engine-toggle-title">'+esc(id.toUpperCase())+" — "+esc(title)+'</span><span class="engine-toggle-status"><span class="status-pill '+(active?"":"archived")+'">'+(active?"Moteur actif":"Version archivée")+'</span></span><span class="engine-chevron" aria-hidden="true">+</span></button><div class="engine-panel" hidden><div class="version-description">'+(id==="v1"?versionDetails():'<p class="performance-help">'+esc(v.description||"Aucune description disponible.")+"</p>")+'</div></div>';
+ article.innerHTML='<button class="engine-toggle '+(active?"":"archived")+'" type="button" aria-expanded="false"><span class="engine-chip">▦</span><span class="engine-toggle-title">'+esc(id.toUpperCase())+" — "+esc(title)+'</span><span class="engine-toggle-status"><span class="status-pill '+(active?"":"archived")+'">'+(active?"Moteur actif":"Version archivée")+'</span></span><span class="engine-chevron" aria-hidden="true">+</span></button><div class="engine-panel" hidden><div class="version-description">'+(id==="v1"||id==="v2"?versionDetails(id):'<p class="performance-help">'+esc(v.description||"Aucune description disponible.")+"</p>")+'</div></div>';
  const button=article.querySelector(".engine-toggle"),panel=article.querySelector(".engine-panel");
- button.addEventListener("click",()=>{const open=button.getAttribute("aria-expanded")==="true";button.setAttribute("aria-expanded",String(!open));panel.hidden=open;button.querySelector(".engine-chevron").textContent=open?"+":"−";});
+ button.addEventListener("click",()=>{selectedEngineId=id;const open=button.getAttribute("aria-expanded")==="true";button.setAttribute("aria-expanded",String(!open));panel.hidden=open;button.querySelector(".engine-chevron").textContent=open?"+":"−";const selected=loaded.find(x=>x.id===id);if(selected){updateKpis(selected.records);renderMatches(selected.records,document.getElementById("global-match-list"));}});
  return article;
 }
 try{
@@ -224,7 +225,7 @@ try{
   try{
    const res=await fetch("./data/"+encodeURIComponent(v.archive),{cache:"no-store"});if(!res.ok)throw new Error("Archive indisponible");
    const archive=await res.json(),records=Array.isArray(archive.records)?archive.records:[];
-   loaded.push({id:v.id,records});
+   loaded.push({id:v.id,records,version:v});
 
 
   }catch(e){}
