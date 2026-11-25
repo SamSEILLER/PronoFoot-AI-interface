@@ -965,19 +965,14 @@
               sideLabel: index===0 ? "Équipe domicile" : "Équipe extérieure",
               accepted: team.pct!==null && team.pct>70
             }));
-            const available = v1Teams.every(team=>team.pct!==null);
-            const accepted = available && v1Teams.every(team=>team.accepted);
             const teamCards = v1Teams.map(team =>
               '<section class="over15-v1-team '+(team.accepted?'is-yes':'is-no')+'">'
                 +'<div class="over15-v1-team-label">'+team.sideLabel+'</div>'
-                +'<div class="over15-v1-team-result"><strong>'+(team.pct===null?'—':team.pct+' %')+'</strong><span class="over15-v1-chip">'+(team.pct===null?'Indisponible':team.accepted?'✓ OUI':'✕ NON')+'</span></div>'
-                +'<small>'+(team.pct===null?'Pourcentage non calculable':team.accepted?'Seuil dépassé (> 70 %)':'Seuil non atteint (≤ 70 %)')+'</small>'
+                +'<div class="over15-v1-team-result"><strong>'+(team.pct===null?'—':team.pct+' %')+'</strong><span class="over15-v1-chip">'+(team.pct===null?'—':team.accepted?'OUI':'NON')+'</span></div>'
+                +'<small>'+(team.pct===null?'Pourcentage non calculable':team.accepted?'Seuil > 70 % atteint':'Seuil > 70 % non atteint')+'</small>'
               +'</section>'
             ).join("");
-            const verdict = !available ? 'Données insuffisantes' : accepted ? 'OUI' : 'NON';
-            const verdictClass = !available ? 'is-unavailable' : accepted ? 'is-yes' : 'is-no';
-            const verdictText = !available ? 'Historique exploitable insuffisant.' : accepted ? 'Les deux équipes dépassent le seuil strict de 70 %.' : 'Au moins une équipe ne dépasse pas strictement 70 %.';
-            return '<section class="over15-v1-panel"><header><strong>Moteur V1 — Critère d’acceptation</strong><span>Seuil : strictement &gt; 70 % par équipe</span></header><div class="over15-v1-body"><div class="over15-v1-team-grid">'+teamCards+'</div><div class="over15-v1-verdict '+verdictClass+'"><span>Verdict moteur V1</span><strong>'+verdict+'</strong><b>'+(available?(accepted?'Pari accepté':'Pari refusé'):'')+'</b><small>'+verdictText+'</small></div></div></section>';
+            return '<section class="over15-v1-panel"><header><strong>Moteur V1</strong><span>Seuil : &gt; 70 % par équipe</span></header><div class="over15-v1-body"><div class="over15-v1-team-grid">'+teamCards+'</div></div></section>';
           })();
           const tierLabels = {1:"Très favorable",2:"Favorable",3:"Mitigé",4:"Défavorable"};
           const tierColors = {1:"success",2:"positive",3:"warning",4:"danger"};
