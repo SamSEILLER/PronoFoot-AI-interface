@@ -67,6 +67,15 @@ main{width:min(1600px,100%);margin:auto;padding:26px 24px 42px}
 .search-filter{height:38px;min-width:155px;padding:0 10px;border:1px solid #a9c4e2;border-radius:8px;background:#fff;color:var(--ink);font:inherit;font-size:12px}
 @media(max-width:1050px){.match-tools{flex-wrap:wrap}.search-filter{flex:1 1 150px}}
 @media(max-width:700px){.search-filter{width:100%;flex:1 1 auto}}
+
+/* En-tête de tableau moderne : tri intégré, sans boutons natifs */
+th{background:linear-gradient(180deg,#f5f9ff,#eaf2fb);color:#284969;font-size:11px;font-weight:800;text-align:center;padding:10px 12px;border-bottom:1px solid #d7e5f3;}
+th:first-child{text-align:left;border-top-left-radius:8px;}
+th:last-child{border-top-right-radius:8px;}
+.sort-header{display:inline-flex;align-items:center;justify-content:center;gap:7px;width:100%;padding:5px 2px;border:0;border-radius:6px;background:transparent;color:inherit;font:inherit;letter-spacing:.15px;cursor:pointer;transition:background .15s ease,color .15s ease;}
+.sort-header:hover{background:#dceafb;color:#155b98;}
+.sort-header:focus-visible{outline:2px solid #4b9be3;outline-offset:2px;}
+th .sort-header[data-sort="match"]{justify-content:flex-start;}
 </style>
 </head>
 <body>
