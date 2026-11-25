@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at_utc": "2026-11-25T09:47:36.595279Z",
-  "description": "Snapshots J-1 basés sur les fréquences des 10 derniers matchs de même compétition et saison. Niveaux 1 à 4 identiques à l'interface Matchs; minimum 5 matchs valides par équipe. Les scores finaux sont complétés à mesure de leur disponibilité.",
+  "generated_at_utc": "2026-11-25T12:26:41.460254Z",
+  "description": "Snapshots J-1 basés sur les fréquences des 10 derniers matchs de même compétition et saison. V1 : OUI si les deux équipes atteignent 70 %, NON sinon; minimum 2 matchs valides par équipe. Les scores finaux sont complétés à mesure de leur disponibilité.",
   "records": [
     {
       "match_id": "m_0ryVxp",
@@ -14,8 +14,6 @@
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 3,
@@ -25,11 +23,11 @@
             "matches": 4,
             "count": 3,
             "percentage": 75
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 2,
@@ -39,11 +37,11 @@
             "matches": 4,
             "count": 3,
             "percentage": 75
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 3,
@@ -53,7 +51,9 @@
             "matches": 4,
             "count": 2,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -73,8 +73,6 @@
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 4,
@@ -84,11 +82,11 @@
             "matches": 4,
             "count": 4,
             "percentage": 100
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 3,
@@ -98,11 +96,11 @@
             "matches": 4,
             "count": 3,
             "percentage": 75
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "btts": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 3,
@@ -112,7 +110,9 @@
             "matches": 4,
             "count": 2,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -132,8 +132,6 @@
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 3,
@@ -143,11 +141,11 @@
             "matches": 4,
             "count": 3,
             "percentage": 75
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 1,
@@ -157,11 +155,11 @@
             "matches": 4,
             "count": 3,
             "percentage": 75
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 2,
@@ -171,7 +169,9 @@
             "matches": 4,
             "count": 2,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -191,8 +191,6 @@
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 4,
@@ -202,11 +200,11 @@
             "matches": 4,
             "count": 4,
             "percentage": 100
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 4,
@@ -216,11 +214,11 @@
             "matches": 4,
             "count": 4,
             "percentage": 100
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "btts": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 4,
@@ -230,7 +228,9 @@
             "matches": 4,
             "count": 4,
             "percentage": 100
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         }
       },
       "actual": {
@@ -250,8 +250,6 @@
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 4,
@@ -261,11 +259,11 @@
             "matches": 4,
             "count": 4,
             "percentage": 100
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 3,
@@ -275,11 +273,11 @@
             "matches": 4,
             "count": 2,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 3,
@@ -289,7 +287,9 @@
             "matches": 4,
             "count": 3,
             "percentage": 75
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         }
       },
       "actual": {
@@ -309,8 +309,6 @@
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 4,
@@ -320,11 +318,11 @@
             "matches": 4,
             "count": 2,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 2,
@@ -334,11 +332,11 @@
             "matches": 4,
             "count": 2,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 2,
@@ -348,7 +346,9 @@
             "matches": 4,
             "count": 1,
             "percentage": 25
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -368,8 +368,6 @@
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 4,
@@ -379,11 +377,11 @@
             "matches": 4,
             "count": 3,
             "percentage": 75
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 4,
@@ -393,11 +391,11 @@
             "matches": 4,
             "count": 3,
             "percentage": 75
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "btts": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 3,
@@ -407,7 +405,9 @@
             "matches": 4,
             "count": 2,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -427,8 +427,6 @@
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 4,
@@ -438,11 +436,11 @@
             "matches": 4,
             "count": 3,
             "percentage": 75
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 3,
@@ -452,11 +450,11 @@
             "matches": 4,
             "count": 2,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 3,
@@ -466,7 +464,9 @@
             "matches": 4,
             "count": 2,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -486,8 +486,6 @@
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 4,
@@ -497,11 +495,11 @@
             "matches": 4,
             "count": 2,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 3,
@@ -511,11 +509,11 @@
             "matches": 4,
             "count": 2,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 3,
@@ -525,7 +523,9 @@
             "matches": 4,
             "count": 2,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -545,8 +545,6 @@
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 4,
@@ -556,11 +554,11 @@
             "matches": 4,
             "count": 3,
             "percentage": 75
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 1,
@@ -570,11 +568,11 @@
             "matches": 4,
             "count": 2,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 1,
@@ -584,7 +582,9 @@
             "matches": 4,
             "count": 1,
             "percentage": 25
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -604,8 +604,6 @@
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 3,
@@ -615,11 +613,11 @@
             "matches": 4,
             "count": 4,
             "percentage": 100
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 3,
@@ -629,11 +627,11 @@
             "matches": 4,
             "count": 4,
             "percentage": 100
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "btts": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 3,
@@ -643,7 +641,9 @@
             "matches": 4,
             "count": 2,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -663,8 +663,6 @@
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 2,
@@ -674,11 +672,11 @@
             "matches": 4,
             "count": 3,
             "percentage": 75
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 1,
@@ -688,11 +686,11 @@
             "matches": 4,
             "count": 1,
             "percentage": 25
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 1,
@@ -702,7 +700,9 @@
             "matches": 4,
             "count": 0,
             "percentage": 0
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -722,8 +722,6 @@
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 1,
@@ -733,11 +731,11 @@
             "matches": 4,
             "count": 2,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 1,
@@ -747,11 +745,11 @@
             "matches": 4,
             "count": 1,
             "percentage": 25
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 1,
@@ -761,7 +759,9 @@
             "matches": 4,
             "count": 2,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -781,8 +781,6 @@
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 1,
@@ -792,11 +790,11 @@
             "matches": 4,
             "count": 4,
             "percentage": 100
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 1,
@@ -806,11 +804,11 @@
             "matches": 4,
             "count": 2,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 1,
@@ -820,7 +818,9 @@
             "matches": 4,
             "count": 0,
             "percentage": 0
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -840,8 +840,6 @@
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 3,
@@ -851,11 +849,11 @@
             "matches": 4,
             "count": 4,
             "percentage": 100
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 2,
@@ -865,11 +863,11 @@
             "matches": 4,
             "count": 4,
             "percentage": 100
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 1,
@@ -879,7 +877,9 @@
             "matches": 4,
             "count": 3,
             "percentage": 75
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -899,8 +899,6 @@
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 4,
@@ -910,11 +908,11 @@
             "matches": 4,
             "count": 4,
             "percentage": 100
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 3,
@@ -924,11 +922,11 @@
             "matches": 4,
             "count": 3,
             "percentage": 75
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "btts": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 2,
@@ -938,7 +936,9 @@
             "matches": 4,
             "count": 2,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -958,8 +958,6 @@
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 3,
@@ -969,11 +967,11 @@
             "matches": 4,
             "count": 4,
             "percentage": 100
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 3,
@@ -983,11 +981,11 @@
             "matches": 4,
             "count": 3,
             "percentage": 75
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "btts": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 2,
@@ -997,7 +995,9 @@
             "matches": 4,
             "count": 3,
             "percentage": 75
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -1017,8 +1017,6 @@
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 4,
@@ -1028,11 +1026,11 @@
             "matches": 4,
             "count": 3,
             "percentage": 75
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 4,
@@ -1042,11 +1040,11 @@
             "matches": 4,
             "count": 2,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 4,
@@ -1056,7 +1054,9 @@
             "matches": 4,
             "count": 1,
             "percentage": 25
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -1076,8 +1076,6 @@
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 3,
@@ -1087,11 +1085,11 @@
             "matches": 4,
             "count": 4,
             "percentage": 100
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 3,
@@ -1101,11 +1099,11 @@
             "matches": 4,
             "count": 3,
             "percentage": 75
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "btts": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 2,
@@ -1115,7 +1113,9 @@
             "matches": 4,
             "count": 2,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -1135,8 +1135,6 @@
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 4,
@@ -1146,11 +1144,11 @@
             "matches": 4,
             "count": 4,
             "percentage": 100
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 1,
@@ -1160,11 +1158,11 @@
             "matches": 4,
             "count": 4,
             "percentage": 100
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 2,
@@ -1174,7 +1172,9 @@
             "matches": 4,
             "count": 4,
             "percentage": 100
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -1194,8 +1194,6 @@
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 2,
@@ -1205,11 +1203,11 @@
             "matches": 4,
             "count": 4,
             "percentage": 100
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 1,
@@ -1219,11 +1217,11 @@
             "matches": 4,
             "count": 3,
             "percentage": 75
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 2,
@@ -1233,7 +1231,9 @@
             "matches": 4,
             "count": 3,
             "percentage": 75
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -1253,8 +1253,6 @@
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 3,
@@ -1264,11 +1262,11 @@
             "matches": 4,
             "count": 4,
             "percentage": 100
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 2,
@@ -1278,11 +1276,11 @@
             "matches": 4,
             "count": 3,
             "percentage": 75
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 2,
@@ -1292,7 +1290,9 @@
             "matches": 4,
             "count": 2,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -1312,8 +1312,6 @@
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 4,
@@ -1323,11 +1321,11 @@
             "matches": 4,
             "count": 4,
             "percentage": 100
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 4,
@@ -1337,11 +1335,11 @@
             "matches": 4,
             "count": 4,
             "percentage": 100
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "btts": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 3,
@@ -1351,7 +1349,9 @@
             "matches": 4,
             "count": 4,
             "percentage": 100
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         }
       },
       "actual": {
@@ -1371,8 +1371,6 @@
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 3,
@@ -1382,11 +1380,11 @@
             "matches": 4,
             "count": 4,
             "percentage": 100
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 3,
@@ -1396,11 +1394,11 @@
             "matches": 4,
             "count": 2,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 2,
@@ -1410,7 +1408,9 @@
             "matches": 4,
             "count": 2,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -1430,8 +1430,6 @@
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 4,
@@ -1441,11 +1439,11 @@
             "matches": 4,
             "count": 4,
             "percentage": 100
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 4,
@@ -1455,11 +1453,11 @@
             "matches": 4,
             "count": 3,
             "percentage": 75
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "btts": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 3,
@@ -1469,7 +1467,9 @@
             "matches": 4,
             "count": 3,
             "percentage": 75
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         }
       },
       "actual": {
@@ -1489,8 +1489,6 @@
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 4,
@@ -1500,11 +1498,11 @@
             "matches": 4,
             "count": 4,
             "percentage": 100
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 3,
@@ -1514,11 +1512,11 @@
             "matches": 4,
             "count": 4,
             "percentage": 100
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "btts": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 3,
@@ -1528,7 +1526,9 @@
             "matches": 4,
             "count": 3,
             "percentage": 75
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         }
       },
       "actual": {
@@ -1548,8 +1548,6 @@
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 4,
@@ -1559,11 +1557,11 @@
             "matches": 4,
             "count": 4,
             "percentage": 100
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 3,
@@ -1573,11 +1571,11 @@
             "matches": 4,
             "count": 4,
             "percentage": 100
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "btts": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 2,
@@ -1587,7 +1585,9 @@
             "matches": 4,
             "count": 3,
             "percentage": 75
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -1607,8 +1607,6 @@
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
-          "tier": 2,
-          "tier_label": "Favorable",
           "home_frequency": {
             "matches": 10,
             "count": 7,
@@ -1618,11 +1616,11 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 7,
@@ -1632,11 +1630,11 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 5,
@@ -1646,7 +1644,9 @@
             "matches": 10,
             "count": 7,
             "percentage": 70
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -1666,8 +1666,6 @@
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
-          "tier": 2,
-          "tier_label": "Favorable",
           "home_frequency": {
             "matches": 10,
             "count": 7,
@@ -1677,11 +1675,11 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 4,
-          "tier_label": "Défavorable",
           "home_frequency": {
             "matches": 10,
             "count": 5,
@@ -1691,11 +1689,11 @@
             "matches": 10,
             "count": 3,
             "percentage": 30
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 5,
@@ -1705,7 +1703,9 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -1725,8 +1725,6 @@
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
-          "tier": 1,
-          "tier_label": "Très favorable",
           "home_frequency": {
             "matches": 10,
             "count": 9,
@@ -1736,11 +1734,11 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 7,
@@ -1750,11 +1748,11 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 6,
@@ -1764,7 +1762,9 @@
             "matches": 10,
             "count": 5,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -1784,8 +1784,6 @@
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
-          "tier": 1,
-          "tier_label": "Très favorable",
           "home_frequency": {
             "matches": 10,
             "count": 8,
@@ -1795,11 +1793,11 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 5,
@@ -1809,11 +1807,11 @@
             "matches": 10,
             "count": 7,
             "percentage": 70
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 4,
-          "tier_label": "Défavorable",
           "home_frequency": {
             "matches": 10,
             "count": 0,
@@ -1823,7 +1821,9 @@
             "matches": 10,
             "count": 3,
             "percentage": 30
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -1843,8 +1843,6 @@
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
-          "tier": 2,
-          "tier_label": "Favorable",
           "home_frequency": {
             "matches": 10,
             "count": 7,
@@ -1854,11 +1852,11 @@
             "matches": 10,
             "count": 7,
             "percentage": 70
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 4,
-          "tier_label": "Défavorable",
           "home_frequency": {
             "matches": 10,
             "count": 4,
@@ -1868,11 +1866,11 @@
             "matches": 10,
             "count": 5,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 4,
-          "tier_label": "Défavorable",
           "home_frequency": {
             "matches": 10,
             "count": 3,
@@ -1882,7 +1880,9 @@
             "matches": 10,
             "count": 5,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -1902,8 +1902,6 @@
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
-          "tier": 2,
-          "tier_label": "Favorable",
           "home_frequency": {
             "matches": 10,
             "count": 7,
@@ -1913,11 +1911,11 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 4,
-          "tier_label": "Défavorable",
           "home_frequency": {
             "matches": 10,
             "count": 4,
@@ -1927,11 +1925,11 @@
             "matches": 10,
             "count": 4,
             "percentage": 40
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 5,
@@ -1941,7 +1939,9 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -1961,8 +1961,6 @@
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
-          "tier": 1,
-          "tier_label": "Très favorable",
           "home_frequency": {
             "matches": 10,
             "count": 8,
@@ -1972,11 +1970,11 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 3,
@@ -1986,11 +1984,11 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 5,
@@ -2000,7 +1998,9 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -2020,8 +2020,6 @@
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 9,
@@ -2031,11 +2029,11 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 6,
@@ -2045,11 +2043,11 @@
             "matches": 10,
             "count": 5,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 8,
@@ -2059,7 +2057,9 @@
             "matches": 10,
             "count": 5,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -2079,8 +2079,6 @@
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 3,
@@ -2090,11 +2088,11 @@
             "matches": 4,
             "count": 3,
             "percentage": 75
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 3,
@@ -2104,11 +2102,11 @@
             "matches": 4,
             "count": 3,
             "percentage": 75
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "btts": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 2,
@@ -2118,7 +2116,9 @@
             "matches": 4,
             "count": 3,
             "percentage": 75
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -2138,8 +2138,6 @@
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 4,
@@ -2149,11 +2147,11 @@
             "matches": 4,
             "count": 3,
             "percentage": 75
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 4,
@@ -2163,11 +2161,11 @@
             "matches": 4,
             "count": 3,
             "percentage": 75
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "btts": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 1,
@@ -2177,7 +2175,9 @@
             "matches": 4,
             "count": 3,
             "percentage": 75
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -2197,8 +2197,6 @@
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 4,
@@ -2208,11 +2206,11 @@
             "matches": 4,
             "count": 2,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 4,
@@ -2222,11 +2220,11 @@
             "matches": 4,
             "count": 1,
             "percentage": 25
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 4,
@@ -2236,7 +2234,9 @@
             "matches": 4,
             "count": 2,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -2256,8 +2256,6 @@
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 3,
@@ -2267,11 +2265,11 @@
             "matches": 4,
             "count": 4,
             "percentage": 100
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 3,
@@ -2281,11 +2279,11 @@
             "matches": 4,
             "count": 3,
             "percentage": 75
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "btts": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 3,
@@ -2295,7 +2293,9 @@
             "matches": 4,
             "count": 2,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -2315,8 +2315,6 @@
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 4,
@@ -2326,11 +2324,11 @@
             "matches": 4,
             "count": 3,
             "percentage": 75
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 3,
@@ -2340,11 +2338,11 @@
             "matches": 4,
             "count": 3,
             "percentage": 75
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "btts": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 3,
@@ -2354,7 +2352,9 @@
             "matches": 4,
             "count": 3,
             "percentage": 75
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         }
       },
       "actual": {
@@ -2374,8 +2374,6 @@
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 3,
@@ -2385,11 +2383,11 @@
             "matches": 4,
             "count": 3,
             "percentage": 75
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 3,
@@ -2399,11 +2397,11 @@
             "matches": 4,
             "count": 2,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 2,
@@ -2413,7 +2411,9 @@
             "matches": 4,
             "count": 2,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -2433,8 +2433,6 @@
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 4,
@@ -2444,11 +2442,11 @@
             "matches": 4,
             "count": 3,
             "percentage": 75
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 4,
@@ -2458,11 +2456,11 @@
             "matches": 4,
             "count": 3,
             "percentage": 75
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "btts": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 4,
@@ -2472,7 +2470,9 @@
             "matches": 4,
             "count": 3,
             "percentage": 75
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         }
       },
       "actual": {
@@ -2492,8 +2492,6 @@
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 2,
@@ -2503,11 +2501,11 @@
             "matches": 4,
             "count": 3,
             "percentage": 75
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 2,
@@ -2517,11 +2515,11 @@
             "matches": 4,
             "count": 3,
             "percentage": 75
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 1,
@@ -2531,7 +2529,9 @@
             "matches": 4,
             "count": 2,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -2551,8 +2551,6 @@
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 4,
@@ -2562,11 +2560,11 @@
             "matches": 4,
             "count": 4,
             "percentage": 100
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 3,
@@ -2576,11 +2574,11 @@
             "matches": 4,
             "count": 4,
             "percentage": 100
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "btts": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 4,
             "count": 3,
@@ -2590,7 +2588,9 @@
             "matches": 4,
             "count": 2,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -2610,8 +2610,6 @@
       "snapshot_stage": "J-1",
       "prediction": {
         "over_1_5": {
-          "tier": 2,
-          "tier_label": "Favorable",
           "home_frequency": {
             "matches": 10,
             "count": 7,
@@ -2621,11 +2619,11 @@
             "matches": 10,
             "count": 9,
             "percentage": 90
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 7,
@@ -2635,11 +2633,11 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 5,
@@ -2649,7 +2647,9 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -2669,8 +2669,6 @@
       "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
-          "tier": 2,
-          "tier_label": "Favorable",
           "home_frequency": {
             "matches": 10,
             "count": 10,
@@ -2680,11 +2678,11 @@
             "matches": 10,
             "count": 7,
             "percentage": 70
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 4,
-          "tier_label": "Défavorable",
           "home_frequency": {
             "matches": 10,
             "count": 5,
@@ -2694,11 +2692,11 @@
             "matches": 10,
             "count": 3,
             "percentage": 30
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 6,
@@ -2708,7 +2706,9 @@
             "matches": 10,
             "count": 4,
             "percentage": 40
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -2728,8 +2728,6 @@
       "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
-          "tier": 2,
-          "tier_label": "Favorable",
           "home_frequency": {
             "matches": 10,
             "count": 8,
@@ -2739,11 +2737,11 @@
             "matches": 10,
             "count": 7,
             "percentage": 70
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 6,
@@ -2753,11 +2751,11 @@
             "matches": 10,
             "count": 5,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 7,
@@ -2767,7 +2765,9 @@
             "matches": 10,
             "count": 5,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -2787,8 +2787,6 @@
       "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
-          "tier": 1,
-          "tier_label": "Très favorable",
           "home_frequency": {
             "matches": 10,
             "count": 9,
@@ -2798,11 +2796,11 @@
             "matches": 10,
             "count": 10,
             "percentage": 100
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 1,
-          "tier_label": "Très favorable",
           "home_frequency": {
             "matches": 10,
             "count": 8,
@@ -2812,11 +2810,11 @@
             "matches": 10,
             "count": 9,
             "percentage": 90
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "btts": {
-          "tier": 1,
-          "tier_label": "Très favorable",
           "home_frequency": {
             "matches": 10,
             "count": 8,
@@ -2826,7 +2824,9 @@
             "matches": 10,
             "count": 9,
             "percentage": 90
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         }
       },
       "actual": {
@@ -2846,8 +2846,6 @@
       "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 6,
@@ -2857,11 +2855,11 @@
             "matches": 10,
             "count": 9,
             "percentage": 90
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 4,
@@ -2871,11 +2869,11 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 4,
-          "tier_label": "Défavorable",
           "home_frequency": {
             "matches": 10,
             "count": 5,
@@ -2885,7 +2883,9 @@
             "matches": 10,
             "count": 5,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -2905,8 +2905,6 @@
       "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 6,
@@ -2916,11 +2914,11 @@
             "matches": 10,
             "count": 7,
             "percentage": 70
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 4,
-          "tier_label": "Défavorable",
           "home_frequency": {
             "matches": 10,
             "count": 2,
@@ -2930,11 +2928,11 @@
             "matches": 10,
             "count": 3,
             "percentage": 30
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 4,
-          "tier_label": "Défavorable",
           "home_frequency": {
             "matches": 10,
             "count": 5,
@@ -2944,7 +2942,9 @@
             "matches": 10,
             "count": 4,
             "percentage": 40
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -2964,8 +2964,6 @@
       "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
-          "tier": 1,
-          "tier_label": "Très favorable",
           "home_frequency": {
             "matches": 10,
             "count": 8,
@@ -2975,11 +2973,11 @@
             "matches": 10,
             "count": 10,
             "percentage": 100
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 6,
@@ -2989,11 +2987,11 @@
             "matches": 10,
             "count": 7,
             "percentage": 70
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 6,
@@ -3003,7 +3001,9 @@
             "matches": 10,
             "count": 7,
             "percentage": 70
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -3023,8 +3023,6 @@
       "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
-          "tier": 1,
-          "tier_label": "Très favorable",
           "home_frequency": {
             "matches": 10,
             "count": 8,
@@ -3034,11 +3032,11 @@
             "matches": 10,
             "count": 9,
             "percentage": 90
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 1,
-          "tier_label": "Très favorable",
           "home_frequency": {
             "matches": 10,
             "count": 8,
@@ -3048,11 +3046,11 @@
             "matches": 10,
             "count": 9,
             "percentage": 90
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "btts": {
-          "tier": 2,
-          "tier_label": "Favorable",
           "home_frequency": {
             "matches": 10,
             "count": 7,
@@ -3062,7 +3060,9 @@
             "matches": 10,
             "count": 7,
             "percentage": 70
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         }
       },
       "actual": {
@@ -3082,8 +3082,6 @@
       "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 10,
             "count": 9,
@@ -3093,11 +3091,11 @@
             "matches": 0,
             "count": 0,
             "percentage": null
-          }
+          },
+          "status": "unavailable",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 10,
             "count": 5,
@@ -3107,11 +3105,11 @@
             "matches": 0,
             "count": 0,
             "percentage": null
-          }
+          },
+          "status": "unavailable",
+          "threshold": 70
         },
         "btts": {
-          "tier": null,
-          "tier_label": null,
           "home_frequency": {
             "matches": 10,
             "count": 4,
@@ -3121,7 +3119,9 @@
             "matches": 0,
             "count": 0,
             "percentage": null
-          }
+          },
+          "status": "unavailable",
+          "threshold": 70
         }
       },
       "actual": {
@@ -3141,8 +3141,6 @@
       "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
-          "tier": 2,
-          "tier_label": "Favorable",
           "home_frequency": {
             "matches": 10,
             "count": 7,
@@ -3152,11 +3150,11 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 3,
@@ -3166,11 +3164,11 @@
             "matches": 10,
             "count": 7,
             "percentage": 70
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 4,
-          "tier_label": "Défavorable",
           "home_frequency": {
             "matches": 10,
             "count": 4,
@@ -3180,7 +3178,9 @@
             "matches": 10,
             "count": 4,
             "percentage": 40
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -3200,8 +3200,6 @@
       "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
-          "tier": 1,
-          "tier_label": "Très favorable",
           "home_frequency": {
             "matches": 10,
             "count": 8,
@@ -3211,11 +3209,11 @@
             "matches": 10,
             "count": 9,
             "percentage": 90
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 2,
-          "tier_label": "Favorable",
           "home_frequency": {
             "matches": 10,
             "count": 7,
@@ -3225,11 +3223,11 @@
             "matches": 10,
             "count": 7,
             "percentage": 70
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 6,
@@ -3239,7 +3237,9 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -3259,8 +3259,6 @@
       "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
-          "tier": 1,
-          "tier_label": "Très favorable",
           "home_frequency": {
             "matches": 10,
             "count": 9,
@@ -3270,11 +3268,11 @@
             "matches": 10,
             "count": 10,
             "percentage": 100
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 6,
@@ -3284,11 +3282,11 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 5,
@@ -3298,7 +3296,9 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -3318,8 +3318,6 @@
       "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 6,
@@ -3329,11 +3327,11 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 5,
@@ -3343,11 +3341,11 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 3,
@@ -3357,7 +3355,9 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -3377,8 +3377,6 @@
       "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
-          "tier": 1,
-          "tier_label": "Très favorable",
           "home_frequency": {
             "matches": 10,
             "count": 9,
@@ -3388,11 +3386,11 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 4,
-          "tier_label": "Défavorable",
           "home_frequency": {
             "matches": 10,
             "count": 4,
@@ -3402,11 +3400,11 @@
             "matches": 10,
             "count": 5,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 5,
@@ -3416,7 +3414,9 @@
             "matches": 10,
             "count": 7,
             "percentage": 70
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -3436,8 +3436,6 @@
       "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 6,
@@ -3447,11 +3445,11 @@
             "matches": 10,
             "count": 9,
             "percentage": 90
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 4,
-          "tier_label": "Défavorable",
           "home_frequency": {
             "matches": 10,
             "count": 5,
@@ -3461,11 +3459,11 @@
             "matches": 10,
             "count": 5,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 4,
-          "tier_label": "Défavorable",
           "home_frequency": {
             "matches": 10,
             "count": 3,
@@ -3475,7 +3473,9 @@
             "matches": 10,
             "count": 5,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -3495,8 +3495,6 @@
       "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
-          "tier": 1,
-          "tier_label": "Très favorable",
           "home_frequency": {
             "matches": 10,
             "count": 10,
@@ -3506,11 +3504,11 @@
             "matches": 10,
             "count": 9,
             "percentage": 90
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 6,
@@ -3520,11 +3518,11 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 7,
@@ -3534,7 +3532,9 @@
             "matches": 10,
             "count": 5,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -3554,8 +3554,6 @@
       "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
-          "tier": 2,
-          "tier_label": "Favorable",
           "home_frequency": {
             "matches": 10,
             "count": 7,
@@ -3565,11 +3563,11 @@
             "matches": 10,
             "count": 9,
             "percentage": 90
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 4,
-          "tier_label": "Défavorable",
           "home_frequency": {
             "matches": 10,
             "count": 5,
@@ -3579,11 +3577,11 @@
             "matches": 10,
             "count": 4,
             "percentage": 40
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 4,
@@ -3593,7 +3591,9 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -3613,8 +3613,6 @@
       "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
-          "tier": 2,
-          "tier_label": "Favorable",
           "home_frequency": {
             "matches": 9,
             "count": 8,
@@ -3624,11 +3622,11 @@
             "matches": 9,
             "count": 7,
             "percentage": 77.78
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 9,
             "count": 6,
@@ -3638,11 +3636,11 @@
             "matches": 9,
             "count": 6,
             "percentage": 66.67
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 9,
             "count": 7,
@@ -3652,7 +3650,9 @@
             "matches": 9,
             "count": 4,
             "percentage": 44.44
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -3672,8 +3672,6 @@
       "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 5,
@@ -3683,11 +3681,11 @@
             "matches": 10,
             "count": 9,
             "percentage": 90
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 3,
@@ -3697,11 +3695,11 @@
             "matches": 10,
             "count": 9,
             "percentage": 90
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 3,
@@ -3711,7 +3709,9 @@
             "matches": 10,
             "count": 7,
             "percentage": 70
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -3731,8 +3731,6 @@
       "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
-          "tier": 1,
-          "tier_label": "Très favorable",
           "home_frequency": {
             "matches": 10,
             "count": 10,
@@ -3742,11 +3740,11 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 1,
-          "tier_label": "Très favorable",
           "home_frequency": {
             "matches": 10,
             "count": 9,
@@ -3756,11 +3754,11 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "btts": {
-          "tier": 2,
-          "tier_label": "Favorable",
           "home_frequency": {
             "matches": 10,
             "count": 7,
@@ -3770,7 +3768,9 @@
             "matches": 10,
             "count": 7,
             "percentage": 70
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         }
       },
       "actual": {
@@ -3790,8 +3790,6 @@
       "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
-          "tier": 2,
-          "tier_label": "Favorable",
           "home_frequency": {
             "matches": 10,
             "count": 7,
@@ -3801,11 +3799,11 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 5,
@@ -3815,11 +3813,11 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 4,
-          "tier_label": "Défavorable",
           "home_frequency": {
             "matches": 10,
             "count": 3,
@@ -3829,7 +3827,9 @@
             "matches": 10,
             "count": 4,
             "percentage": 40
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -3849,8 +3849,6 @@
       "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
-          "tier": 2,
-          "tier_label": "Favorable",
           "home_frequency": {
             "matches": 9,
             "count": 9,
@@ -3860,11 +3858,11 @@
             "matches": 9,
             "count": 7,
             "percentage": 77.78
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 2,
-          "tier_label": "Favorable",
           "home_frequency": {
             "matches": 9,
             "count": 8,
@@ -3874,11 +3872,11 @@
             "matches": 9,
             "count": 7,
             "percentage": 77.78
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 9,
             "count": 8,
@@ -3888,7 +3886,9 @@
             "matches": 9,
             "count": 6,
             "percentage": 66.67
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -3908,8 +3908,6 @@
       "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 6,
@@ -3919,11 +3917,11 @@
             "matches": 10,
             "count": 9,
             "percentage": 90
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 4,
-          "tier_label": "Défavorable",
           "home_frequency": {
             "matches": 10,
             "count": 4,
@@ -3933,11 +3931,11 @@
             "matches": 10,
             "count": 5,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 4,
-          "tier_label": "Défavorable",
           "home_frequency": {
             "matches": 10,
             "count": 5,
@@ -3947,7 +3945,9 @@
             "matches": 10,
             "count": 2,
             "percentage": 20
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -3967,8 +3967,6 @@
       "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
-          "tier": 1,
-          "tier_label": "Très favorable",
           "home_frequency": {
             "matches": 10,
             "count": 10,
@@ -3978,11 +3976,11 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 8,
@@ -3992,11 +3990,11 @@
             "matches": 10,
             "count": 5,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 8,
@@ -4006,7 +4004,9 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -4026,8 +4026,6 @@
       "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
-          "tier": 1,
-          "tier_label": "Très favorable",
           "home_frequency": {
             "matches": 10,
             "count": 8,
@@ -4037,11 +4035,11 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 6,
@@ -4051,11 +4049,11 @@
             "matches": 10,
             "count": 7,
             "percentage": 70
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 7,
@@ -4065,7 +4063,9 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -4085,8 +4085,6 @@
       "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 6,
@@ -4096,11 +4094,11 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 6,
@@ -4110,11 +4108,11 @@
             "matches": 10,
             "count": 4,
             "percentage": 40
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 4,
-          "tier_label": "Défavorable",
           "home_frequency": {
             "matches": 10,
             "count": 5,
@@ -4124,7 +4122,9 @@
             "matches": 10,
             "count": 4,
             "percentage": 40
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -4144,8 +4144,6 @@
       "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 10,
@@ -4155,11 +4153,11 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 10,
@@ -4169,11 +4167,11 @@
             "matches": 10,
             "count": 5,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 8,
@@ -4183,7 +4181,9 @@
             "matches": 10,
             "count": 5,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -4203,8 +4203,6 @@
       "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
-          "tier": 1,
-          "tier_label": "Très favorable",
           "home_frequency": {
             "matches": 10,
             "count": 8,
@@ -4214,11 +4212,11 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 7,
@@ -4228,11 +4226,11 @@
             "matches": 10,
             "count": 5,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 4,
-          "tier_label": "Défavorable",
           "home_frequency": {
             "matches": 10,
             "count": 3,
@@ -4242,7 +4240,9 @@
             "matches": 10,
             "count": 4,
             "percentage": 40
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -4262,8 +4262,6 @@
       "snapshot_stage": "J-2",
       "prediction": {
         "over_1_5": {
-          "tier": 2,
-          "tier_label": "Favorable",
           "home_frequency": {
             "matches": 10,
             "count": 10,
@@ -4273,11 +4271,11 @@
             "matches": 10,
             "count": 7,
             "percentage": 70
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 4,
-          "tier_label": "Défavorable",
           "home_frequency": {
             "matches": 10,
             "count": 3,
@@ -4287,11 +4285,11 @@
             "matches": 10,
             "count": 4,
             "percentage": 40
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 4,
-          "tier_label": "Défavorable",
           "home_frequency": {
             "matches": 10,
             "count": 4,
@@ -4301,7 +4299,9 @@
             "matches": 10,
             "count": 4,
             "percentage": 40
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -4321,8 +4321,6 @@
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
-          "tier": 1,
-          "tier_label": "Très favorable",
           "home_frequency": {
             "matches": 10,
             "count": 10,
@@ -4332,11 +4330,11 @@
             "matches": 10,
             "count": 9,
             "percentage": 90
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 8,
@@ -4346,11 +4344,11 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 7,
@@ -4360,7 +4358,9 @@
             "matches": 10,
             "count": 5,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -4380,8 +4380,6 @@
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
-          "tier": 2,
-          "tier_label": "Favorable",
           "home_frequency": {
             "matches": 10,
             "count": 7,
@@ -4391,11 +4389,11 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 5,
@@ -4405,11 +4403,11 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 5,
@@ -4419,7 +4417,9 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -4439,8 +4439,6 @@
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 8,
@@ -4450,11 +4448,11 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 8,
@@ -4464,11 +4462,11 @@
             "matches": 10,
             "count": 3,
             "percentage": 30
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 4,
-          "tier_label": "Défavorable",
           "home_frequency": {
             "matches": 10,
             "count": 5,
@@ -4478,7 +4476,9 @@
             "matches": 10,
             "count": 3,
             "percentage": 30
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -4498,8 +4498,6 @@
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
-          "tier": 1,
-          "tier_label": "Très favorable",
           "home_frequency": {
             "matches": 10,
             "count": 8,
@@ -4509,11 +4507,11 @@
             "matches": 10,
             "count": 10,
             "percentage": 100
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 5,
@@ -4523,11 +4521,11 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 6,
@@ -4537,7 +4535,9 @@
             "matches": 10,
             "count": 7,
             "percentage": 70
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -4557,8 +4557,6 @@
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
-          "tier": 1,
-          "tier_label": "Très favorable",
           "home_frequency": {
             "matches": 10,
             "count": 10,
@@ -4568,11 +4566,11 @@
             "matches": 10,
             "count": 9,
             "percentage": 90
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 9,
@@ -4582,11 +4580,11 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 2,
-          "tier_label": "Favorable",
           "home_frequency": {
             "matches": 10,
             "count": 8,
@@ -4596,7 +4594,9 @@
             "matches": 10,
             "count": 7,
             "percentage": 70
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         }
       },
       "actual": {
@@ -4616,8 +4616,6 @@
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
-          "tier": 1,
-          "tier_label": "Très favorable",
           "home_frequency": {
             "matches": 10,
             "count": 8,
@@ -4627,11 +4625,11 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 4,
@@ -4641,11 +4639,11 @@
             "matches": 10,
             "count": 7,
             "percentage": 70
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 2,
-          "tier_label": "Favorable",
           "home_frequency": {
             "matches": 10,
             "count": 7,
@@ -4655,7 +4653,9 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         }
       },
       "actual": {
@@ -4675,8 +4675,6 @@
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
-          "tier": 1,
-          "tier_label": "Très favorable",
           "home_frequency": {
             "matches": 10,
             "count": 8,
@@ -4686,11 +4684,11 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 8,
@@ -4700,11 +4698,11 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 8,
@@ -4714,7 +4712,9 @@
             "matches": 10,
             "count": 5,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -4734,8 +4734,6 @@
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
-          "tier": 2,
-          "tier_label": "Favorable",
           "home_frequency": {
             "matches": 10,
             "count": 7,
@@ -4745,11 +4743,11 @@
             "matches": 10,
             "count": 9,
             "percentage": 90
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 4,
-          "tier_label": "Défavorable",
           "home_frequency": {
             "matches": 10,
             "count": 3,
@@ -4759,11 +4757,11 @@
             "matches": 10,
             "count": 4,
             "percentage": 40
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 4,
-          "tier_label": "Défavorable",
           "home_frequency": {
             "matches": 10,
             "count": 5,
@@ -4773,7 +4771,9 @@
             "matches": 10,
             "count": 4,
             "percentage": 40
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -4793,8 +4793,6 @@
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
-          "tier": 1,
-          "tier_label": "Très favorable",
           "home_frequency": {
             "matches": 10,
             "count": 8,
@@ -4804,11 +4802,11 @@
             "matches": 10,
             "count": 9,
             "percentage": 90
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 6,
@@ -4818,11 +4816,11 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 3,
@@ -4832,7 +4830,9 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -4852,8 +4852,6 @@
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
-          "tier": 2,
-          "tier_label": "Favorable",
           "home_frequency": {
             "matches": 10,
             "count": 7,
@@ -4863,11 +4861,11 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 5,
@@ -4877,11 +4875,11 @@
             "matches": 10,
             "count": 7,
             "percentage": 70
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 4,
@@ -4891,7 +4889,9 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -4911,8 +4911,6 @@
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
-          "tier": 1,
-          "tier_label": "Très favorable",
           "home_frequency": {
             "matches": 10,
             "count": 9,
@@ -4922,11 +4920,11 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 6,
@@ -4936,11 +4934,11 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 8,
@@ -4950,7 +4948,9 @@
             "matches": 10,
             "count": 4,
             "percentage": 40
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -4970,8 +4970,6 @@
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
-          "tier": 1,
-          "tier_label": "Très favorable",
           "home_frequency": {
             "matches": 10,
             "count": 8,
@@ -4981,11 +4979,11 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 1,
-          "tier_label": "Très favorable",
           "home_frequency": {
             "matches": 10,
             "count": 8,
@@ -4995,11 +4993,11 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 6,
@@ -5009,7 +5007,9 @@
             "matches": 10,
             "count": 7,
             "percentage": 70
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -5029,8 +5029,6 @@
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 8,
@@ -5040,11 +5038,11 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 4,
-          "tier_label": "Défavorable",
           "home_frequency": {
             "matches": 10,
             "count": 5,
@@ -5054,11 +5052,11 @@
             "matches": 10,
             "count": 4,
             "percentage": 40
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 6,
@@ -5068,7 +5066,9 @@
             "matches": 10,
             "count": 2,
             "percentage": 20
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -5088,8 +5088,6 @@
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 9,
             "count": 5,
@@ -5099,11 +5097,11 @@
             "matches": 9,
             "count": 6,
             "percentage": 66.67
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 4,
-          "tier_label": "Défavorable",
           "home_frequency": {
             "matches": 9,
             "count": 4,
@@ -5113,11 +5111,11 @@
             "matches": 9,
             "count": 5,
             "percentage": 55.56
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 4,
-          "tier_label": "Défavorable",
           "home_frequency": {
             "matches": 9,
             "count": 3,
@@ -5127,7 +5125,9 @@
             "matches": 9,
             "count": 5,
             "percentage": 55.56
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -5147,8 +5147,6 @@
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
-          "tier": 2,
-          "tier_label": "Favorable",
           "home_frequency": {
             "matches": 10,
             "count": 7,
@@ -5158,11 +5156,11 @@
             "matches": 10,
             "count": 7,
             "percentage": 70
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 4,
-          "tier_label": "Défavorable",
           "home_frequency": {
             "matches": 10,
             "count": 5,
@@ -5172,11 +5170,11 @@
             "matches": 10,
             "count": 5,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 6,
@@ -5186,7 +5184,9 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -5206,8 +5206,6 @@
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
-          "tier": 2,
-          "tier_label": "Favorable",
           "home_frequency": {
             "matches": 10,
             "count": 7,
@@ -5217,11 +5215,11 @@
             "matches": 10,
             "count": 9,
             "percentage": 90
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 6,
@@ -5231,11 +5229,11 @@
             "matches": 10,
             "count": 7,
             "percentage": 70
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 4,
-          "tier_label": "Défavorable",
           "home_frequency": {
             "matches": 10,
             "count": 4,
@@ -5245,7 +5243,9 @@
             "matches": 10,
             "count": 4,
             "percentage": 40
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -5265,8 +5265,6 @@
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
-          "tier": 1,
-          "tier_label": "Très favorable",
           "home_frequency": {
             "matches": 10,
             "count": 9,
@@ -5276,11 +5274,11 @@
             "matches": 10,
             "count": 9,
             "percentage": 90
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 2,
-          "tier_label": "Favorable",
           "home_frequency": {
             "matches": 10,
             "count": 7,
@@ -5290,11 +5288,11 @@
             "matches": 10,
             "count": 7,
             "percentage": 70
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "btts": {
-          "tier": 4,
-          "tier_label": "Défavorable",
           "home_frequency": {
             "matches": 10,
             "count": 5,
@@ -5304,7 +5302,9 @@
             "matches": 10,
             "count": 5,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -5324,8 +5324,6 @@
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
-          "tier": 1,
-          "tier_label": "Très favorable",
           "home_frequency": {
             "matches": 10,
             "count": 8,
@@ -5335,11 +5333,11 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 6,
@@ -5349,11 +5347,11 @@
             "matches": 10,
             "count": 7,
             "percentage": 70
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 6,
@@ -5363,7 +5361,9 @@
             "matches": 10,
             "count": 7,
             "percentage": 70
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -5383,8 +5383,6 @@
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 9,
@@ -5394,11 +5392,11 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 6,
@@ -5408,11 +5406,11 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 7,
@@ -5422,7 +5420,9 @@
             "matches": 10,
             "count": 4,
             "percentage": 40
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -5442,8 +5442,6 @@
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
-          "tier": 2,
-          "tier_label": "Favorable",
           "home_frequency": {
             "matches": 10,
             "count": 7,
@@ -5453,11 +5451,11 @@
             "matches": 10,
             "count": 9,
             "percentage": 90
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 3,
@@ -5467,11 +5465,11 @@
             "matches": 10,
             "count": 7,
             "percentage": 70
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 3,
@@ -5481,7 +5479,9 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -5501,8 +5501,6 @@
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 9,
@@ -5512,11 +5510,11 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 6,
@@ -5526,11 +5524,11 @@
             "matches": 10,
             "count": 4,
             "percentage": 40
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 6,
@@ -5540,7 +5538,9 @@
             "matches": 10,
             "count": 5,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -5560,8 +5560,6 @@
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
-          "tier": 2,
-          "tier_label": "Favorable",
           "home_frequency": {
             "matches": 10,
             "count": 7,
@@ -5571,11 +5569,11 @@
             "matches": 10,
             "count": 7,
             "percentage": 70
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 6,
@@ -5585,11 +5583,11 @@
             "matches": 10,
             "count": 3,
             "percentage": 30
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 6,
@@ -5599,7 +5597,9 @@
             "matches": 10,
             "count": 4,
             "percentage": 40
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -5619,8 +5619,6 @@
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 6,
@@ -5630,11 +5628,11 @@
             "matches": 10,
             "count": 9,
             "percentage": 90
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 6,
@@ -5644,11 +5642,11 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 4,
-          "tier_label": "Défavorable",
           "home_frequency": {
             "matches": 10,
             "count": 4,
@@ -5658,7 +5656,9 @@
             "matches": 10,
             "count": 5,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -5678,8 +5678,6 @@
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 9,
@@ -5689,11 +5687,11 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 6,
@@ -5703,11 +5701,11 @@
             "matches": 10,
             "count": 2,
             "percentage": 20
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 4,
-          "tier_label": "Défavorable",
           "home_frequency": {
             "matches": 10,
             "count": 5,
@@ -5717,7 +5715,9 @@
             "matches": 10,
             "count": 5,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -5737,8 +5737,6 @@
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
-          "tier": 2,
-          "tier_label": "Favorable",
           "home_frequency": {
             "matches": 10,
             "count": 7,
@@ -5748,11 +5746,11 @@
             "matches": 10,
             "count": 10,
             "percentage": 100
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 6,
@@ -5762,11 +5760,11 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 5,
@@ -5776,7 +5774,9 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -5796,8 +5796,6 @@
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
-          "tier": 2,
-          "tier_label": "Favorable",
           "home_frequency": {
             "matches": 9,
             "count": 7,
@@ -5807,11 +5805,11 @@
             "matches": 9,
             "count": 8,
             "percentage": 88.89
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 2,
-          "tier_label": "Favorable",
           "home_frequency": {
             "matches": 9,
             "count": 7,
@@ -5821,11 +5819,11 @@
             "matches": 9,
             "count": 7,
             "percentage": 77.78
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 9,
             "count": 6,
@@ -5835,7 +5833,9 @@
             "matches": 9,
             "count": 6,
             "percentage": 66.67
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -5855,8 +5855,6 @@
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
-          "tier": 2,
-          "tier_label": "Favorable",
           "home_frequency": {
             "matches": 9,
             "count": 7,
@@ -5866,11 +5864,11 @@
             "matches": 9,
             "count": 9,
             "percentage": 100
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 2,
-          "tier_label": "Favorable",
           "home_frequency": {
             "matches": 9,
             "count": 7,
@@ -5880,11 +5878,11 @@
             "matches": 9,
             "count": 8,
             "percentage": 88.89
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 9,
             "count": 6,
@@ -5894,7 +5892,9 @@
             "matches": 9,
             "count": 7,
             "percentage": 77.78
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -5914,8 +5914,6 @@
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
-          "tier": 2,
-          "tier_label": "Favorable",
           "home_frequency": {
             "matches": 9,
             "count": 7,
@@ -5925,11 +5923,11 @@
             "matches": 9,
             "count": 9,
             "percentage": 100
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 9,
             "count": 4,
@@ -5939,11 +5937,11 @@
             "matches": 9,
             "count": 7,
             "percentage": 77.78
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 4,
-          "tier_label": "Défavorable",
           "home_frequency": {
             "matches": 9,
             "count": 4,
@@ -5953,7 +5951,9 @@
             "matches": 9,
             "count": 3,
             "percentage": 33.33
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -5973,8 +5973,6 @@
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 9,
             "count": 9,
@@ -5984,11 +5982,11 @@
             "matches": 9,
             "count": 5,
             "percentage": 55.56
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 9,
             "count": 8,
@@ -5998,11 +5996,11 @@
             "matches": 9,
             "count": 4,
             "percentage": 44.44
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 9,
             "count": 6,
@@ -6012,7 +6010,9 @@
             "matches": 9,
             "count": 3,
             "percentage": 33.33
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -6032,8 +6032,6 @@
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 9,
             "count": 8,
@@ -6043,11 +6041,11 @@
             "matches": 9,
             "count": 6,
             "percentage": 66.67
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 9,
             "count": 8,
@@ -6057,11 +6055,11 @@
             "matches": 9,
             "count": 5,
             "percentage": 55.56
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 9,
             "count": 6,
@@ -6071,7 +6069,9 @@
             "matches": 9,
             "count": 4,
             "percentage": 44.44
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -6091,8 +6091,6 @@
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
-          "tier": 1,
-          "tier_label": "Très favorable",
           "home_frequency": {
             "matches": 10,
             "count": 9,
@@ -6102,11 +6100,11 @@
             "matches": 10,
             "count": 9,
             "percentage": 90
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 2,
-          "tier_label": "Favorable",
           "home_frequency": {
             "matches": 10,
             "count": 7,
@@ -6116,11 +6114,11 @@
             "matches": 10,
             "count": 7,
             "percentage": 70
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 7,
@@ -6130,7 +6128,9 @@
             "matches": 10,
             "count": 5,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -6150,8 +6150,6 @@
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 8,
@@ -6161,11 +6159,11 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 4,
-          "tier_label": "Défavorable",
           "home_frequency": {
             "matches": 10,
             "count": 5,
@@ -6175,11 +6173,11 @@
             "matches": 10,
             "count": 4,
             "percentage": 40
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 4,
-          "tier_label": "Défavorable",
           "home_frequency": {
             "matches": 10,
             "count": 5,
@@ -6189,7 +6187,9 @@
             "matches": 10,
             "count": 4,
             "percentage": 40
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -6209,8 +6209,6 @@
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 6,
@@ -6220,11 +6218,11 @@
             "matches": 10,
             "count": 7,
             "percentage": 70
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 4,
-          "tier_label": "Défavorable",
           "home_frequency": {
             "matches": 10,
             "count": 5,
@@ -6234,11 +6232,11 @@
             "matches": 10,
             "count": 4,
             "percentage": 40
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 6,
@@ -6248,7 +6246,9 @@
             "matches": 10,
             "count": 7,
             "percentage": 70
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -6268,8 +6268,6 @@
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
-          "tier": 2,
-          "tier_label": "Favorable",
           "home_frequency": {
             "matches": 10,
             "count": 8,
@@ -6279,11 +6277,11 @@
             "matches": 10,
             "count": 7,
             "percentage": 70
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 4,
-          "tier_label": "Défavorable",
           "home_frequency": {
             "matches": 10,
             "count": 5,
@@ -6293,11 +6291,11 @@
             "matches": 10,
             "count": 5,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 6,
@@ -6307,7 +6305,9 @@
             "matches": 10,
             "count": 4,
             "percentage": 40
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -6327,8 +6327,6 @@
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 7,
@@ -6338,11 +6336,11 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 7,
@@ -6352,11 +6350,11 @@
             "matches": 10,
             "count": 3,
             "percentage": 30
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 6,
@@ -6366,7 +6364,9 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -6386,8 +6386,6 @@
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
-          "tier": 1,
-          "tier_label": "Très favorable",
           "home_frequency": {
             "matches": 10,
             "count": 8,
@@ -6397,11 +6395,11 @@
             "matches": 10,
             "count": 10,
             "percentage": 100
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 5,
@@ -6411,11 +6409,11 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 5,
@@ -6425,7 +6423,9 @@
             "matches": 10,
             "count": 7,
             "percentage": 70
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -6445,8 +6445,6 @@
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
-          "tier": 1,
-          "tier_label": "Très favorable",
           "home_frequency": {
             "matches": 10,
             "count": 8,
@@ -6456,11 +6454,11 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 4,
-          "tier_label": "Défavorable",
           "home_frequency": {
             "matches": 10,
             "count": 5,
@@ -6470,11 +6468,11 @@
             "matches": 10,
             "count": 4,
             "percentage": 40
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 7,
@@ -6484,7 +6482,9 @@
             "matches": 10,
             "count": 1,
             "percentage": 10
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -6504,8 +6504,6 @@
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
-          "tier": 1,
-          "tier_label": "Très favorable",
           "home_frequency": {
             "matches": 10,
             "count": 9,
@@ -6515,11 +6513,11 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 9,
@@ -6529,11 +6527,11 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 9,
@@ -6543,7 +6541,9 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -6563,8 +6563,6 @@
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
-          "tier": 2,
-          "tier_label": "Favorable",
           "home_frequency": {
             "matches": 10,
             "count": 9,
@@ -6574,11 +6572,11 @@
             "matches": 10,
             "count": 7,
             "percentage": 70
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 5,
@@ -6588,11 +6586,11 @@
             "matches": 10,
             "count": 7,
             "percentage": 70
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 4,
-          "tier_label": "Défavorable",
           "home_frequency": {
             "matches": 10,
             "count": 5,
@@ -6602,7 +6600,9 @@
             "matches": 10,
             "count": 5,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -6622,8 +6622,6 @@
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 6,
@@ -6633,11 +6631,11 @@
             "matches": 10,
             "count": 9,
             "percentage": 90
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 4,
-          "tier_label": "Défavorable",
           "home_frequency": {
             "matches": 10,
             "count": 5,
@@ -6647,11 +6645,11 @@
             "matches": 10,
             "count": 4,
             "percentage": 40
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 4,
@@ -6661,7 +6659,9 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -6681,8 +6681,6 @@
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
-          "tier": 1,
-          "tier_label": "Très favorable",
           "home_frequency": {
             "matches": 10,
             "count": 8,
@@ -6692,11 +6690,11 @@
             "matches": 10,
             "count": 8,
             "percentage": 80
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 7,
@@ -6706,11 +6704,11 @@
             "matches": 10,
             "count": 2,
             "percentage": 20
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 2,
@@ -6720,7 +6718,9 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
@@ -6740,8 +6740,6 @@
       "snapshot_stage": "J-1_RECOVERY",
       "prediction": {
         "over_1_5": {
-          "tier": 1,
-          "tier_label": "Très favorable",
           "home_frequency": {
             "matches": 10,
             "count": 8,
@@ -6751,11 +6749,11 @@
             "matches": 10,
             "count": 9,
             "percentage": 90
-          }
+          },
+          "status": "yes",
+          "threshold": 70
         },
         "over_2_5": {
-          "tier": 4,
-          "tier_label": "Défavorable",
           "home_frequency": {
             "matches": 10,
             "count": 5,
@@ -6765,11 +6763,11 @@
             "matches": 10,
             "count": 5,
             "percentage": 50
-          }
+          },
+          "status": "no",
+          "threshold": 70
         },
         "btts": {
-          "tier": 3,
-          "tier_label": "Mitigé",
           "home_frequency": {
             "matches": 10,
             "count": 5,
@@ -6779,7 +6777,9 @@
             "matches": 10,
             "count": 6,
             "percentage": 60
-          }
+          },
+          "status": "no",
+          "threshold": 70
         }
       },
       "actual": {
