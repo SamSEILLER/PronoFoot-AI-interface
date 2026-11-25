@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-11-25T13:08:55.576694+00:00",
+  "generated_at_utc": "2026-11-25T22:36:48.613854+00:00",
   "sources": {
     "pitchapi": {
       "status": "PARTIAL",
@@ -13734,6 +13734,71 @@
             "id": "t_1ngZfb",
             "name": "San Jose Earthquakes",
             "image_url": "https://cdn.pitchapi.dev/images/teams/05ae77d53490f69f82e6d06859411e7124ce07ec45d97b5b3001b374e63a7cae.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_0Lkpuz",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-28T05:00:00+00:00",
+      "collected_at_utc": "2026-11-25T22:36:47.827038+00:00",
+      "competition": "J1 League",
+      "home_team": "Kyoto Sanga FC",
+      "away_team": "Cerezo Osaka",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_0Lkpuz",
+        "home_team": {
+          "id": "t_3lBlnh",
+          "name": "Kyoto Sanga FC",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/f6f22a291c2c45a447da60b35d4a05e96d27845fce841e44141412ff3491d823.webp"
+        },
+        "away_team": {
+          "id": "t_4gLxod",
+          "name": "Cerezo Osaka",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/692e6c878909c25c9805ba10f5856295bccc448cdbf6c3df5dfd42db58d345fe.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_0Lkpuz",
+          "home_team": {
+            "id": "t_3lBlnh",
+            "name": "Kyoto Sanga FC",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/f6f22a291c2c45a447da60b35d4a05e96d27845fce841e44141412ff3491d823.webp"
+          },
+          "away_team": {
+            "id": "t_4gLxod",
+            "name": "Cerezo Osaka",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/692e6c878909c25c9805ba10f5856295bccc448cdbf6c3df5dfd42db58d345fe.webp"
           },
           "home": {
             "formation": "",
@@ -94585,6 +94650,71 @@
       "schema_version": 1,
       "provider": "PitchAPI",
       "match_id": "m_1zMkVF",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-28T05:00:00+00:00",
+      "collected_at_utc": "2026-11-25T22:36:47.827038+00:00",
+      "competition": "J1 League",
+      "home_team": "Shimizu S-Pulse",
+      "away_team": "Urawa Red Diamonds",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_1zMkVF",
+        "home_team": {
+          "id": "t_1E6Pbm",
+          "name": "Shimizu S-Pulse",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/22adf2897224b16a5258aaf5a8bad6008e2d56497a6d100c14728f3931f2dc6c.webp"
+        },
+        "away_team": {
+          "id": "t_2SxYow",
+          "name": "Urawa Red Diamonds",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/7b189717adf187d6429ba053c0e99d5e8b24af65d78fe99137512f9142b3d879.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_1zMkVF",
+          "home_team": {
+            "id": "t_1E6Pbm",
+            "name": "Shimizu S-Pulse",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/22adf2897224b16a5258aaf5a8bad6008e2d56497a6d100c14728f3931f2dc6c.webp"
+          },
+          "away_team": {
+            "id": "t_2SxYow",
+            "name": "Urawa Red Diamonds",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/7b189717adf187d6429ba053c0e99d5e8b24af65d78fe99137512f9142b3d879.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_1zMkVF",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-28T05:00:00+00:00",
       "collected_at_utc": "2026-11-20T18:38:55.917538+00:00",
@@ -112004,6 +112134,71 @@
                 "pitch_y": 0
               }
             ]
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_2YeRqx",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-28T06:00:00+00:00",
+      "collected_at_utc": "2026-11-25T22:36:47.827038+00:00",
+      "competition": "J1 League",
+      "home_team": "Vissel Kobe",
+      "away_team": "JEF United Chiba",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_2YeRqx",
+        "home_team": {
+          "id": "t_0LfLJ4",
+          "name": "Vissel Kobe",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/c03df521134bbe5dcd0b3e9c5d03241c7dc44aa95106de32e4e876262773e605.webp"
+        },
+        "away_team": {
+          "id": "t_25A1QK",
+          "name": "JEF United Chiba",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/b335ff892f763c6306c346fa015678bc966436ffdd49db0bcd5aa6a5304d1268.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_2YeRqx",
+          "home_team": {
+            "id": "t_0LfLJ4",
+            "name": "Vissel Kobe",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/c03df521134bbe5dcd0b3e9c5d03241c7dc44aa95106de32e4e876262773e605.webp"
+          },
+          "away_team": {
+            "id": "t_25A1QK",
+            "name": "JEF United Chiba",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/b335ff892f763c6306c346fa015678bc966436ffdd49db0bcd5aa6a5304d1268.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
           }
         }
       }
@@ -132168,6 +132363,71 @@
       "schema_version": 1,
       "provider": "PitchAPI",
       "match_id": "m_36k6uj",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-28T03:00:00+00:00",
+      "collected_at_utc": "2026-11-25T22:36:47.827038+00:00",
+      "competition": "MLS",
+      "home_team": "Real Salt Lake",
+      "away_team": "Vancouver Whitecaps",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_36k6uj",
+        "home_team": {
+          "id": "t_2o7nsk",
+          "name": "Real Salt Lake",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/9150053efa5637124416ca40fc49f1f1b4655dcf99bf3a7f5f4fad0715cfaa61.webp"
+        },
+        "away_team": {
+          "id": "t_2CuHdk",
+          "name": "Vancouver Whitecaps",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/df0e3f588a02d715b111562ddc56a10d4c07a7b0e0d9161152360e6cba09b909.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_36k6uj",
+          "home_team": {
+            "id": "t_2o7nsk",
+            "name": "Real Salt Lake",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/9150053efa5637124416ca40fc49f1f1b4655dcf99bf3a7f5f4fad0715cfaa61.webp"
+          },
+          "away_team": {
+            "id": "t_2CuHdk",
+            "name": "Vancouver Whitecaps",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/df0e3f588a02d715b111562ddc56a10d4c07a7b0e0d9161152360e6cba09b909.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_36k6uj",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-28T03:00:00+00:00",
       "collected_at_utc": "2026-11-20T18:38:55.917538+00:00",
@@ -152145,6 +152405,71 @@
       "schema_version": 1,
       "provider": "PitchAPI",
       "match_id": "m_3U7fq9",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-28T07:00:00+00:00",
+      "collected_at_utc": "2026-11-25T22:36:47.827038+00:00",
+      "competition": "J1 League",
+      "home_team": "Kashiwa Reysol",
+      "away_team": "Sanfrecce Hiroshima",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_3U7fq9",
+        "home_team": {
+          "id": "t_49j3Z1",
+          "name": "Kashiwa Reysol",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/e63f20e3288c9199c5c3f8c0b53ab41fdbebbca6e1f9d3c292aead3119ea63cf.webp"
+        },
+        "away_team": {
+          "id": "t_4Oonn6",
+          "name": "Sanfrecce Hiroshima",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/e5b0ecf98a46b261aa6de1108102a858ac32c651babce189e62598cde2268338.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_3U7fq9",
+          "home_team": {
+            "id": "t_49j3Z1",
+            "name": "Kashiwa Reysol",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/e63f20e3288c9199c5c3f8c0b53ab41fdbebbca6e1f9d3c292aead3119ea63cf.webp"
+          },
+          "away_team": {
+            "id": "t_4Oonn6",
+            "name": "Sanfrecce Hiroshima",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/e5b0ecf98a46b261aa6de1108102a858ac32c651babce189e62598cde2268338.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_3U7fq9",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-28T07:00:00+00:00",
       "collected_at_utc": "2026-11-21T00:51:43.609781+00:00",
@@ -155752,6 +156077,71 @@
                 "pitch_y": 0
               }
             ]
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_3aYreU",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-28T06:00:00+00:00",
+      "collected_at_utc": "2026-11-25T22:36:47.827038+00:00",
+      "competition": "J1 League",
+      "home_team": "Kashima Antlers",
+      "away_team": "Fagiano Okayama FC",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_3aYreU",
+        "home_team": {
+          "id": "t_3RSWKx",
+          "name": "Kashima Antlers",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/d933c712bc9fcd3c920f090c2fb009be1e8e2dbaa6cae7716676bd59823d70a1.webp"
+        },
+        "away_team": {
+          "id": "t_2fx2NT",
+          "name": "Fagiano Okayama FC",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/593bad4c81f93182a2721fab888521ef3ff9357a015eb1b582735ceae4569b64.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_3aYreU",
+          "home_team": {
+            "id": "t_3RSWKx",
+            "name": "Kashima Antlers",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/d933c712bc9fcd3c920f090c2fb009be1e8e2dbaa6cae7716676bd59823d70a1.webp"
+          },
+          "away_team": {
+            "id": "t_2fx2NT",
+            "name": "Fagiano Okayama FC",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/593bad4c81f93182a2721fab888521ef3ff9357a015eb1b582735ceae4569b64.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
           }
         }
       }
