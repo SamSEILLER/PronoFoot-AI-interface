@@ -1161,7 +1161,28 @@
                 +'<small>'+(team.pct===null?'Pourcentage non calculable':team.accepted?'Seuil ≥ 70 % atteint':'Seuil ≥ 70 % non atteint')+'</small>'
               +'</section>'
             ).join("");
-            return '<section class="over15-v1-panel"><header><strong>Moteur V1</strong><span>Seuil : ≥ 70 % par équipe</span></header><div class="over15-v1-body"><div class="over15-v1-team-grid">'+teamCards+'</div></div></section>';
+            const enoughV1 = v1Teams.every(team=>team.validCount>=2 && team.pct!==null);
+            const passedV1 = enoughV1 && v1Teams.every(team=>team.pct>=70);
+            const labelV1 = enoughV1 ? (passedV1?'OUI':'NON') : 'INDISPONIBLE';
+            return '<section class="over15-v1-panel"><header><strong>Moteur V1 · '+labelV1+'</strong><span>Seuil : ≥ 70 % par équipe</span></header><div class="over15-v1-body"><div class="over15-v1-team-grid">'+teamCards+'</div></div></section>';
+          })();
+          const v2Html = (() => {
+            const v2Teams = teamStats.map((team,index) => ({
+              ...team,
+              sideLabel: index===0 ? "Équipe domicile" : "Équipe extérieure",
+              accepted: team.pct!==null && team.pct>=80
+            }));
+            const enoughV2 = v2Teams.every(team=>team.validCount>=2 && team.pct!==null);
+            const passedV2 = enoughV2 && v2Teams.every(team=>team.pct>=80);
+            const teamCards = v2Teams.map(team =>
+              '<section class="over15-v1-team '+(team.accepted?'is-yes':'is-no')+'">'
+                +'<div class="over15-v1-team-label">'+team.sideLabel+'</div>'
+                +'<div class="over15-v1-team-result"><strong>'+(team.pct===null?'—':team.pct+' %')+'</strong><span class="over15-v1-chip">'+(team.pct===null?'—':team.accepted?'OUI':'NON')+'</span></div>'
+                +'<small>'+(team.pct===null?'Pourcentage non calculable':team.accepted?'Seuil ≥ 80 % atteint':'Seuil ≥ 80 % non atteint')+'</small>'
+              +'</section>'
+            ).join("");
+            const labelV2 = enoughV2 ? (passedV2?'OUI':'NON') : 'INDISPONIBLE';
+            return '<section class="over15-v1-panel"><header><strong>Moteur V2 · '+labelV2+'</strong><span>Seuil : ≥ 80 % par équipe</span></header><div class="over15-v1-body"><div class="over15-v1-team-grid">'+teamCards+'</div></div></section>';
           })();
           const tierLabels = {1:"Très favorable",2:"Favorable",3:"Mitigé",4:"Défavorable"};
           const tierHtml = tier===null
@@ -1173,7 +1194,7 @@
               ? "Part des matchs où l’équipe a marqué au moins 1 but parmi les "+sampleCounts[0]+" derniers matchs disponibles, dans la même compétition et la même saison."
               : "Aucun match terminé avec un score exploitable n’est disponible dans la même compétition et la même saison.")
             : "Part des matchs où chaque équipe a marqué au moins 1 but parmi les derniers matchs disponibles, dans la même compétition et la même saison ("+teamStats.map(team=>team.validCount+" pour "+team.name).join(", ")+").";
-          experimentBtts.innerHTML = '<section class="over15-experiment"><div class="over15-experiment-intro"><div><h4>Fréquence historique de buts marqués</h4><p class="over15-experiment-note">'+escapeHtml(sampleDescription)+'</p></div><span class="over15-sample-tag">10 matchs max.</span></div><div class="over15-team-grid">'+cards.join("")+'</div>'+v1Html+tierHtml+'<p class="over15-experiment-caveat">Indicateur descriptif du passé. Il ne constitue ni une probabilité de match ni une recommandation de pari. Les matchs sans score valide sont exclus. Le pourcentage mesure les matchs où l’équipe a marqué au moins un but. Ce n’est pas la fréquence du BTTS.</p></section>';
+          experimentBtts.innerHTML = '<section class="over15-experiment"><div class="over15-experiment-intro"><div><h4>Fréquence historique de buts marqués</h4><p class="over15-experiment-note">'+escapeHtml(sampleDescription)+'</p></div><span class="over15-sample-tag">10 matchs max.</span></div><div class="over15-team-grid">'+cards.join("")+'</div>'+v1Html+v2Html+tierHtml+'<p class="over15-experiment-caveat">Indicateur descriptif du passé. Il ne constitue ni une probabilité de match ni une recommandation de pari. Les matchs sans score valide sont exclus. Le pourcentage mesure les matchs où l’équipe a marqué au moins un but. Ce n’est pas la fréquence du BTTS.</p></section>';
         };
         renderBttsExperiment();
         const renderRecentTeamStats = () => {
