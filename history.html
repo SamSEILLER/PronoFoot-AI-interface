@@ -160,48 +160,44 @@ function versionDetails(){
 }
 
 function renderMatches(records,container){
- const ordered=[...records].sort((a,b)=>String(b.kickoff_utc||"").localeCompare(String(a.kickoff_utc||"")));
- let page=1;const pageSize=15;
- container.innerHTML='<section class="match-section"><div class="match-head"><h3>☷ Tous les matchs archivés</h3><div class="match-tools"><input class="search-input" type="search" placeholder="Rechercher un match…" aria-label="Rechercher un match"><select class="market-filter" aria-label="Filtrer par marché"><option value="all">Tous les marchés</option><option value="over_1_5">+1,5 buts</option><option value="over_2_5">+2,5 buts</option><option value="btts">BTTS</option></select><select class="search-filter prediction-filter" aria-label="Filtrer par pronostic"><option value="all">Pronostic : OUI et NON</option><option value="yes">Pronostic : OUI</option><option value="no">Pronostic : NON</option></select><select class="search-filter result-filter" aria-label="Filtrer par résultat"><option value="all">Tous les résultats</option><option value="success">Réussi</option><option value="failed">Échoué</option><option value="pending">En attente</option></select></div></div><div class="match-table"></div><div class="pagination"></div></section>';
- const search=container.querySelector(".search-input"),marketFilter=container.querySelector(".market-filter"),predictionFilter=container.querySelector(".prediction-filter"),resultFilter=container.querySelector(".result-filter"),table=container.querySelector(".match-table"),pagination=container.querySelector(".pagination");
+ let page=1;
+ container.innerHTML='<section class="match-section"><div class="match-head"><h3>☷ Tous les matchs archivés</h3><div class="match-tools"><input class="search-input" type="search" placeholder="Match, équipe ou compétition…" aria-label="Rechercher match équipe compétition"><select class="market-filter" aria-label="Marché"><option value="all">Tous les marchés</option><option value="over_1_5">+1,5 buts</option><option value="over_2_5">+2,5 buts</option><option value="btts">BTTS</option></select><select class="search-filter prediction-filter" aria-label="Pronostic"><option value="all">Pronostic : Tous</option><option value="yes">OUI</option><option value="no">NON</option></select><select class="search-filter result-filter" aria-label="Résultat"><option value="all">Résultat : Tous</option><option value="success">Réussi</option><option value="failed">Échoué</option><option value="pending">En attente</option></select><button type="button" class="reset-filters">Réinitialiser</button></div></div><details class="advanced-filters"><summary>Filtres avancés</summary><div class="advanced-filter-grid"><label>Compétition<select class="competition-filter"><option value="all">Toutes</option></select></label><label>Du<input type="date" class="date-from"></label><label>Au<input type="date" class="date-to"></label><label>Saison<select class="season-filter"><option value="all">Toutes</option></select></label><label>Ordre<select class="sort-filter"><option value="newest">Plus récent</option><option value="oldest">Plus ancien</option></select></label><label>Par page<select class="page-size"><option value="10">10</option><option value="15">15</option><option value="25">25</option><option value="50">50</option></select></label></div></details><div class="match-table"></div><div class="pagination"></div></section>';
+ const search=container.querySelector(".search-input"),marketFilter=container.querySelector(".market-filter"),predictionFilter=container.querySelector(".prediction-filter"),resultFilter=container.querySelector(".result-filter"),competitionFilter=container.querySelector(".competition-filter"),dateFrom=container.querySelector(".date-from"),dateTo=container.querySelector(".date-to"),seasonFilter=container.querySelector(".season-filter"),sortFilter=container.querySelector(".sort-filter"),pageSizeSelect=container.querySelector(".page-size"),reset=container.querySelector(".reset-filters"),table=container.querySelector(".match-table"),pagination=container.querySelector(".pagination");
+ const competitions=[...new Set(records.map(r=>r.competition).filter(Boolean))].sort((a,b)=>String(a).localeCompare(String(b),"fr"));
+ const seasons=[...new Set(records.map(r=>r.season).filter(Boolean))].sort((a,b)=>String(b).localeCompare(String(a),"fr"));
+ competitions.forEach(v=>competitionFilter.insertAdjacentHTML("beforeend",'<option value="'+esc(v)+'">'+esc(competitionLabel(v))+'</option>'));
+ seasons.forEach(v=>seasonFilter.insertAdjacentHTML("beforeend",'<option value="'+esc(v)+'">'+esc(v)+'</option>'));
  function matchesMarketFilters(r,key){
-  const tierValue=r.prediction?.[key]?.tier;
-  if(![1,2,3,4].includes(tierValue))return false;
-  const side=tierValue===1||tierValue===2?"yes":"no";
+  const t=r.prediction?.[key]?.tier;if(![1,2,3,4].includes(t))return false;
+  const side=t===1||t===2?"yes":"no";
   if(predictionFilter.value!=="all"&&side!==predictionFilter.value)return false;
-
   if(resultFilter.value!=="all"){
-   const h=r.actual?.home_score,a=r.actual?.away_score,hasScore=Number.isFinite(h)&&Number.isFinite(a);
-   if(resultFilter.value==="pending"){if(hasScore)return false;}
-   else{
-    if(!hasScore)return false;
-    const actualYes=key==="over_1_5"?h+a>=2:key==="over_2_5"?h+a>=3:h>=1&&a>=1;
-    const predictedYes=side==="yes",success=predictedYes===actualYes;
-    if(resultFilter.value==="success"&&!success)return false;
-    if(resultFilter.value==="failed"&&success)return false;
-   }
+   const h=r.actual?.home_score,a=r.actual?.away_score,has=Number.isFinite(h)&&Number.isFinite(a);
+   if(resultFilter.value==="pending"){if(has)return false;}
+   else{if(!has)return false;const actual=key==="over_1_5"?h+a>=2:key==="over_2_5"?h+a>=3:h>=1&&a>=1;const success=(side==="yes")===actual;if(resultFilter.value==="success"&&!success)return false;if(resultFilter.value==="failed"&&success)return false;}
   }
   return true;
  }
  function draw(){
   const q=search.value.trim().toLocaleLowerCase("fr"),market=marketFilter.value;
-  const filtered=ordered.filter(r=>{
+  const filtered=records.filter(r=>{
    const hay=[r.home_team,r.away_team,r.competition,r.season].join(" ").toLocaleLowerCase("fr");
-   const markets=market==="all"?keys:[market];
-   const hasMarket=markets.some(key=>matchesMarketFilters(r,key));
-   return hay.includes(q)&&hasMarket;
-  });
-  const pages=Math.max(1,Math.ceil(filtered.length/pageSize));page=Math.min(page,pages);
+   if(!hay.includes(q))return false;
+   if(competitionFilter.value!=="all"&&r.competition!==competitionFilter.value)return false;
+   if(seasonFilter.value!=="all"&&r.season!==seasonFilter.value)return false;
+   const date=String(r.kickoff_utc||"").slice(0,10);
+   if(dateFrom.value&&date<dateFrom.value)return false;if(dateTo.value&&date>dateTo.value)return false;
+   return (market==="all"?keys:[market]).some(k=>matchesMarketFilters(r,k));
+  }).sort((a,b)=>String(a.kickoff_utc||"").localeCompare(String(b.kickoff_utc||""))*(sortFilter.value==="oldest"?1:-1));
+  const pageSize=Number(pageSizeSelect.value),pages=Math.max(1,Math.ceil(filtered.length/pageSize));page=Math.min(page,pages);
   const rows=filtered.slice((page-1)*pageSize,page*pageSize);
-  if(!rows.length){table.innerHTML='<div class="empty">Aucun match ne correspond à cette recherche.</div>';pagination.innerHTML="";return;}
-  table.innerHTML='<div class="table-wrap"><table><thead><tr><th>Match</th><th>Date</th><th>+1,5 buts</th><th>+2,5 buts</th><th>BTTS</th><th>Score final</th></tr></thead><tbody>'+rows.map(r=>{
-   const h=r.actual?.home_score,a=r.actual?.away_score,score=Number.isFinite(h)&&Number.isFinite(a)?h+" – "+a:"À jouer / en attente";
-   return '<tr><td><span class="teams">'+esc(r.home_team)+" – "+esc(r.away_team)+'</span><span class="match-meta">'+esc(competitionLabel(r.competition))+" · "+esc(r.season||"")+'</span></td><td>'+dateLabel(r.kickoff_utc)+'</td><td>'+tier(r.prediction?.over_1_5)+'</td><td>'+tier(r.prediction?.over_2_5)+'</td><td>'+tier(r.prediction?.btts)+'</td><td class="score">'+score+'</td></tr>';
-  }).join("")+'</tbody></table></div>';
-  pagination.innerHTML='<span>Matchs '+(filtered.length?(page-1)*pageSize+1:0)+" à "+Math.min(page*pageSize,filtered.length)+" sur "+filtered.length+'</span><div class="pagination-controls"><button type="button" data-step="-1" '+(page===1?"disabled":"")+'>Précédent</button><button type="button" data-step="1" '+(page===pages?"disabled":"")+'>Suivant</button></div>';
+  if(!rows.length){table.innerHTML='<div class="empty">Aucun match ne correspond à ces filtres.</div>';pagination.innerHTML="";return;}
+  table.innerHTML='<div class="table-wrap"><table><thead><tr><th>Match</th><th>Date</th><th>+1,5 buts</th><th>+2,5 buts</th><th>BTTS</th><th>Score final</th></tr></thead><tbody>'+rows.map(r=>{const h=r.actual?.home_score,a=r.actual?.away_score,score=Number.isFinite(h)&&Number.isFinite(a)?h+" – "+a:"À jouer / en attente";return '<tr><td><span class="teams">'+esc(r.home_team)+" – "+esc(r.away_team)+'</span><span class="match-meta">'+esc(competitionLabel(r.competition))+" · "+esc(r.season||"")+'</span></td><td>'+dateLabel(r.kickoff_utc)+'</td><td>'+tier(r.prediction?.over_1_5)+'</td><td>'+tier(r.prediction?.over_2_5)+'</td><td>'+tier(r.prediction?.btts)+'</td><td class="score">'+score+'</td></tr>';}).join("")+'</tbody></table></div>';
+  pagination.innerHTML='<span>Matchs '+((page-1)*pageSize+1)+" à "+Math.min(page*pageSize,filtered.length)+" sur "+filtered.length+' · Page '+page+'/'+pages+'</span><div class="pagination-controls"><button type="button" data-step="-1" '+(page===1?"disabled":"")+'>&lt; Précédent</button><button type="button" data-step="1" '+(page===pages?"disabled":"")+'>Suivant &gt;</button></div>';
   pagination.querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{page+=Number(b.dataset.step);draw();}));
  }
- [search,marketFilter,predictionFilter,resultFilter].forEach(control=>control.addEventListener(control===search?"input":"change",()=>{page=1;draw();}));
+ [search,marketFilter,predictionFilter,resultFilter,competitionFilter,dateFrom,dateTo,seasonFilter,sortFilter,pageSizeSelect].forEach(control=>control.addEventListener(control===search?"input":"change",()=>{page=1;draw();}));
+ reset.addEventListener("click",()=>{search.value="";marketFilter.value="all";predictionFilter.value="all";resultFilter.value="all";competitionFilter.value="all";dateFrom.value="";dateTo.value="";seasonFilter.value="all";sortFilter.value="newest";pageSizeSelect.value="10";page=1;draw();});
  draw();
 }
 function renderVersion(v,index){
