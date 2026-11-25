@@ -949,7 +949,7 @@
               +'<p>'+(team.validCount?team.over+' / '+team.validCount+' matchs avec au moins 2 buts':'Aucun score exploitable')
               +'</p></section>'
           );
-          const sufficient = teamStats.every(team=>team.validCount>=5 && team.pct!==null);
+          const sufficient = teamStats.every(team=>team.validCount>=2 && team.pct!==null);
           const both = teamStats.every(team=>team.pct!==null);
           let tier = null;
           if (tier === null && sufficient && both) {
@@ -972,7 +972,7 @@
                 +'<small>'+(team.pct===null?'Pourcentage non calculable':team.accepted?'Seuil ≥ 70 % atteint':'Seuil ≥ 70 % non atteint')+'</small>'
               +'</section>'
             ).join("");
-            const v1Enough = v1Teams.every(team=>team.validCount>=5 && team.pct!==null);
+            const v1Enough = v1Teams.every(team=>team.validCount>=2 && team.pct!==null);
             const v1Passed = v1Enough && v1Teams.every(team=>team.pct>=70);
             const v1Label = v1Enough ? (v1Passed ? 'OUI' : 'NON') : 'INDISPONIBLE';
             return '<section class="over15-v1-panel"><header><strong>Moteur V1 · '+v1Label+'</strong><span>Seuil : ≥ 70 % par équipe</span></header><div class="over15-v1-body"><div class="over15-v1-team-grid">'+teamCards+'</div></div></section>';
@@ -983,7 +983,7 @@
               sideLabel: index===0 ? "Équipe domicile" : "Équipe extérieure",
               accepted: team.pct!==null && team.pct>=80
             }));
-            const enough = v2Teams.every(team=>team.validCount>=5 && team.pct!==null);
+            const enough = v2Teams.every(team=>team.validCount>=2 && team.pct!==null);
             const passed = enough && v2Teams.every(team=>team.pct>=80);
             const teamCards = v2Teams.map(team =>
               '<section class="over15-v1-team '+(team.accepted?'is-yes':'is-no')+'">'
@@ -998,7 +998,7 @@
           const tierLabels = {1:"Très favorable",2:"Favorable",3:"Mitigé",4:"Défavorable"};
           const tierColors = {1:"success",2:"positive",3:"warning",4:"danger"};
           const tierHtml = tier===null
-            ? '<div class="over15-prediction over15-tier-unavailable"><span class="over15-prediction-kicker">Pronostic expérimental</span><strong>Données insuffisantes</strong><small>5 matchs valides minimum par équipe requis.</small></div>'
+            ? '<div class="over15-prediction over15-tier-unavailable"><span class="over15-prediction-kicker">Pronostic expérimental</span><strong>Données insuffisantes</strong><small>2 matchs valides minimum par équipe requis.</small></div>'
             : '<div class="over15-prediction over15-tier-'+tier+'"><span class="over15-prediction-kicker">Pronostic expérimental</span><strong>Niveau '+tier+' · '+tierLabels[tier]+'</strong><small>Classement descriptif basé sur les fréquences historiques, pas une probabilité calibrée.</small></div>';
           const sampleCounts = [...new Set(teamStats.map(team=>team.validCount))];
           const sampleDescription = sampleCounts.length===1
@@ -1045,7 +1045,7 @@
               +'<p>'+(team.validCount?team.over+' / '+team.validCount+' matchs avec au moins 3 buts':'Aucun score exploitable')
               +'</p></section>'
           );
-          const sufficient = teamStats.every(team=>team.validCount>=5 && team.pct!==null);
+          const sufficient = teamStats.every(team=>team.validCount>=2 && team.pct!==null);
           let tier = null;
           if (sufficient) {
             const [homePct,awayPct]=teamStats.map(team=>team.pct);
@@ -1071,7 +1071,7 @@
           })();
           const tierLabels = {1:"Très favorable",2:"Favorable",3:"Mitigé",4:"Défavorable"};
           const tierHtml = tier===null
-            ? '<div class="over15-prediction over15-tier-unavailable"><span class="over15-prediction-kicker">Pronostic expérimental</span><strong>Données insuffisantes</strong><small>5 matchs valides minimum par équipe requis.</small></div>'
+            ? '<div class="over15-prediction over15-tier-unavailable"><span class="over15-prediction-kicker">Pronostic expérimental</span><strong>Données insuffisantes</strong><small>2 matchs valides minimum par équipe requis.</small></div>'
             : '<div class="over15-prediction over15-tier-'+tier+'"><span class="over15-prediction-kicker">Pronostic expérimental</span><strong>Niveau '+tier+' · '+tierLabels[tier]+'</strong><small>Classement descriptif basé sur les fréquences historiques, pas une probabilité calibrée.</small></div>';
           const sampleCounts = [...new Set(teamStats.map(team=>team.validCount))];
           const sampleDescription = sampleCounts.length===1
@@ -1118,7 +1118,7 @@
               +'<p>'+(team.validCount?team.scoredAtLeastOne+' / '+team.validCount+' matchs où l’équipe a marqué au moins 1 but':'Aucun score exploitable')
               +'</p></section>'
           );
-          const sufficient = teamStats.every(team=>team.validCount>=5 && team.pct!==null);
+          const sufficient = teamStats.every(team=>team.validCount>=2 && team.pct!==null);
           let tier = null;
           if (sufficient) {
             const [homePct,awayPct]=teamStats.map(team=>team.pct);
@@ -1144,7 +1144,7 @@
           })();
           const tierLabels = {1:"Très favorable",2:"Favorable",3:"Mitigé",4:"Défavorable"};
           const tierHtml = tier===null
-            ? '<div class="over15-prediction over15-tier-unavailable"><span class="over15-prediction-kicker">Pronostic expérimental</span><strong>Données insuffisantes</strong><small>5 matchs valides minimum par équipe requis.</small></div>'
+            ? '<div class="over15-prediction over15-tier-unavailable"><span class="over15-prediction-kicker">Pronostic expérimental</span><strong>Données insuffisantes</strong><small>2 matchs valides minimum par équipe requis.</small></div>'
             : '<div class="over15-prediction over15-tier-'+tier+'"><span class="over15-prediction-kicker">Pronostic expérimental</span><strong>Niveau '+tier+' · '+tierLabels[tier]+'</strong><small>Classement descriptif basé sur les fréquences historiques, pas une probabilité calibrée.</small></div>';
           const sampleCounts = [...new Set(teamStats.map(team=>team.validCount))];
           const sampleDescription = sampleCounts.length===1
