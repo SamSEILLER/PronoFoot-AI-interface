@@ -204,6 +204,7 @@ function renderMatches(records,container){
  [search,resultFilter,competitionFilter,seasonFilter,pageSizeSelect].forEach(control=>control.addEventListener(control===search?"input":"change",()=>{page=1;draw();}));draw();
 }
 let selectedEngineId=null;
+const loaded=[];
 function renderVersion(v,index){
  const id=String(v.id||"version-"+index),active=v.status==="active",title=id==="v1"?"Analyse historique":String(v.label||id).replace(/^Moteur\s*V\d+\s*[—-]?\s*/i,"");
  const article=document.createElement("article");article.className="engine-accordion";
@@ -218,7 +219,6 @@ try{
  const catalog=await response.json(),versions=Array.isArray(catalog.versions)?catalog.versions:[];
  if(!versions.length)throw new Error("Aucun moteur n’est référencé dans le catalogue.");
  list.replaceChildren(...versions.map(renderVersion));
- const loaded=[];
  await Promise.all(versions.map(async v=>{
   if(!v.archive)return;
   const article=[...list.querySelectorAll(".engine-accordion")].find(a=>a.querySelector(".engine-toggle-title")?.textContent.startsWith(String(v.id).toUpperCase()+" — "));
