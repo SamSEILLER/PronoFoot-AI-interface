@@ -1033,6 +1033,21 @@
             else if (homePct>=60 || awayPct>=60) tier=3;
             else tier=4;
           }
+          const v1Html = (() => {
+            const v1Teams = teamStats.map((team,index) => ({
+              ...team,
+              sideLabel: index===0 ? "Équipe domicile" : "Équipe extérieure",
+              accepted: team.pct!==null && team.pct>70
+            }));
+            const teamCards = v1Teams.map(team =>
+              '<section class="over15-v1-team '+(team.accepted?'is-yes':'is-no')+'">'
+                +'<div class="over15-v1-team-label">'+team.sideLabel+'</div>'
+                +'<div class="over15-v1-team-result"><strong>'+(team.pct===null?'—':team.pct+' %')+'</strong><span class="over15-v1-chip">'+(team.pct===null?'—':team.accepted?'OUI':'NON')+'</span></div>'
+                +'<small>'+(team.pct===null?'Pourcentage non calculable':team.accepted?'Seuil > 70 % atteint':'Seuil > 70 % non atteint')+'</small>'
+              +'</section>'
+            ).join("");
+            return '<section class="over15-v1-panel"><header><strong>Moteur V1</strong><span>Seuil : &gt; 70 % par équipe</span></header><div class="over15-v1-body"><div class="over15-v1-team-grid">'+teamCards+'</div></div></section>';
+          })();
           const tierLabels = {1:"Très favorable",2:"Favorable",3:"Mitigé",4:"Défavorable"};
           const tierHtml = tier===null
             ? '<div class="over15-prediction over15-tier-unavailable"><span class="over15-prediction-kicker">Pronostic expérimental</span><strong>Données insuffisantes</strong><small>5 matchs valides minimum par équipe requis.</small></div>'
@@ -1043,7 +1058,7 @@
               ? "Part des matchs terminés avec au moins 3 buts parmi les "+sampleCounts[0]+" derniers matchs disponibles, dans la même compétition et la même saison."
               : "Aucun match terminé avec un score exploitable n’est disponible dans la même compétition et la même saison.")
             : "Part des matchs terminés avec au moins 3 buts parmi les derniers matchs disponibles, dans la même compétition et la même saison ("+teamStats.map(team=>team.validCount+" pour "+team.name).join(", ")+").";
-          experimentOver25.innerHTML = '<section class="over15-experiment"><div class="over15-experiment-intro"><div><h4>Fréquence historique du +2,5 buts</h4><p class="over15-experiment-note">'+escapeHtml(sampleDescription)+'</p></div><span class="over15-sample-tag">10 matchs max.</span></div><div class="over15-team-grid">'+cards.join("")+'</div>'+tierHtml+'<p class="over15-experiment-caveat">Indicateur descriptif du passé. Il ne constitue ni une probabilité de match ni une recommandation de pari. Les matchs sans score valide sont exclus.</p></section>';
+          experimentOver25.innerHTML = '<section class="over15-experiment"><div class="over15-experiment-intro"><div><h4>Fréquence historique du +2,5 buts</h4><p class="over15-experiment-note">'+escapeHtml(sampleDescription)+'</p></div><span class="over15-sample-tag">10 matchs max.</span></div><div class="over15-team-grid">'+cards.join("")+'</div>'+v1Html+tierHtml+'<p class="over15-experiment-caveat">Indicateur descriptif du passé. Il ne constitue ni une probabilité de match ni une recommandation de pari. Les matchs sans score valide sont exclus.</p></section>';
         };
         renderOver25Experiment();
         const renderBttsExperiment = () => {
@@ -1091,6 +1106,21 @@
             else if (homePct>=60 || awayPct>=60) tier=3;
             else tier=4;
           }
+          const v1Html = (() => {
+            const v1Teams = teamStats.map((team,index) => ({
+              ...team,
+              sideLabel: index===0 ? "Équipe domicile" : "Équipe extérieure",
+              accepted: team.pct!==null && team.pct>70
+            }));
+            const teamCards = v1Teams.map(team =>
+              '<section class="over15-v1-team '+(team.accepted?'is-yes':'is-no')+'">'
+                +'<div class="over15-v1-team-label">'+team.sideLabel+'</div>'
+                +'<div class="over15-v1-team-result"><strong>'+(team.pct===null?'—':team.pct+' %')+'</strong><span class="over15-v1-chip">'+(team.pct===null?'—':team.accepted?'OUI':'NON')+'</span></div>'
+                +'<small>'+(team.pct===null?'Pourcentage non calculable':team.accepted?'Seuil > 70 % atteint':'Seuil > 70 % non atteint')+'</small>'
+              +'</section>'
+            ).join("");
+            return '<section class="over15-v1-panel"><header><strong>Moteur V1</strong><span>Seuil : &gt; 70 % par équipe</span></header><div class="over15-v1-body"><div class="over15-v1-team-grid">'+teamCards+'</div></div></section>';
+          })();
           const tierLabels = {1:"Très favorable",2:"Favorable",3:"Mitigé",4:"Défavorable"};
           const tierHtml = tier===null
             ? '<div class="over15-prediction over15-tier-unavailable"><span class="over15-prediction-kicker">Pronostic expérimental</span><strong>Données insuffisantes</strong><small>5 matchs valides minimum par équipe requis.</small></div>'
@@ -1101,7 +1131,7 @@
               ? "Part des matchs où les deux équipes ont marqué parmi les "+sampleCounts[0]+" derniers matchs disponibles, dans la même compétition et la même saison."
               : "Aucun match terminé avec un score exploitable n’est disponible dans la même compétition et la même saison.")
             : "Part des matchs où les deux équipes ont marqué parmi les derniers matchs disponibles, dans la même compétition et la même saison ("+teamStats.map(team=>team.validCount+" pour "+team.name).join(", ")+").";
-          experimentBtts.innerHTML = '<section class="over15-experiment"><div class="over15-experiment-intro"><div><h4>Fréquence historique du BTTS</h4><p class="over15-experiment-note">'+escapeHtml(sampleDescription)+'</p></div><span class="over15-sample-tag">10 matchs max.</span></div><div class="over15-team-grid">'+cards.join("")+'</div>'+tierHtml+'<p class="over15-experiment-caveat">Indicateur descriptif du passé. Il ne constitue ni une probabilité de match ni une recommandation de pari. Les matchs sans score valide sont exclus. BTTS signifie que les deux équipes ont marqué au moins un but.</p></section>';
+          experimentBtts.innerHTML = '<section class="over15-experiment"><div class="over15-experiment-intro"><div><h4>Fréquence historique du BTTS</h4><p class="over15-experiment-note">'+escapeHtml(sampleDescription)+'</p></div><span class="over15-sample-tag">10 matchs max.</span></div><div class="over15-team-grid">'+cards.join("")+'</div>'+v1Html+tierHtml+'<p class="over15-experiment-caveat">Indicateur descriptif du passé. Il ne constitue ni une probabilité de match ni une recommandation de pari. Les matchs sans score valide sont exclus. BTTS signifie que les deux équipes ont marqué au moins un but.</p></section>';
         };
         renderBttsExperiment();
         const renderRecentTeamStats = () => {
