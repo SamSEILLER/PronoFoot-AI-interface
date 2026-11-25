@@ -76,6 +76,12 @@ th:last-child{border-top-right-radius:8px;}
 .sort-header:hover{background:#dceafb;color:#155b98;}
 .sort-header:focus-visible{outline:2px solid #4b9be3;outline-offset:2px;}
 th .sort-header[data-sort="match"]{justify-content:flex-start;}
+
+/* Titres de tri plus lisibles et largeur/position stable au clic */
+.sort-header{font-size:13px;font-weight:900;min-height:30px;white-space:nowrap;}
+.sort-header:active{transform:none;}
+.sort-header:hover{background:#dceafb;color:#155b98;}
+.sort-header:focus,.sort-header:focus-visible{outline:none;box-shadow:none;}
 </style>
 </head>
 <body>
