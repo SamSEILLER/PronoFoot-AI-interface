@@ -82,6 +82,15 @@ th .sort-header[data-sort="match"]{justify-content:flex-start;}
 .sort-header:active{transform:none;}
 .sort-header:hover{background:#dceafb;color:#155b98;}
 .sort-header:focus,.sort-header:focus-visible{outline:none;box-shadow:none;}
+
+/* Largeurs fixes des colonnes dans la liste d'archives */
+.match-table table{table-layout:fixed;}
+.match-table th:nth-child(1),.match-table td:nth-child(1){width:34%;}
+.match-table th:nth-child(2),.match-table td:nth-child(2){width:13%;}
+.match-table th:nth-child(3),.match-table td:nth-child(3),.match-table th:nth-child(4),.match-table td:nth-child(4),.match-table th:nth-child(5),.match-table td:nth-child(5){width:11%;}
+.match-table th:nth-child(6),.match-table td:nth-child(6){width:20%;}
+.match-table td:nth-child(1){white-space:normal;overflow-wrap:anywhere;}
+.match-table td:nth-child(2),.match-table td:nth-child(3),.match-table td:nth-child(4),.match-table td:nth-child(5),.match-table td:nth-child(6){text-align:center;}
 </style>
 </head>
 <body>
