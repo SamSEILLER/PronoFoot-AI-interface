@@ -974,6 +974,25 @@
             ).join("");
             return '<section class="over15-v1-panel"><header><strong>Moteur V1</strong><span>Seuil : ≥ 70 % par équipe</span></header><div class="over15-v1-body"><div class="over15-v1-team-grid">'+teamCards+'</div></div></section>';
           })();
+          const v2Html = (() => {
+            const v2Teams = teamStats.map((team,index) => ({
+              ...team,
+              sideLabel: index===0 ? "Équipe domicile" : "Équipe extérieure",
+              accepted: team.pct!==null && team.pct>=80
+            }));
+            const enough = v2Teams.every(team=>team.validCount>=5 && team.pct!==null);
+            const passed = enough && v2Teams.every(team=>team.pct>=80);
+            const teamCards = v2Teams.map(team =>
+              '<section class="over15-v1-team '+(team.accepted?'is-yes':'is-no')+'">'
+                +'<div class="over15-v1-team-label">'+team.sideLabel+'</div>'
+                +'<div class="over15-v1-team-result"><strong>'+(team.pct===null?'—':team.pct+' %')+'</strong><span class="over15-v1-chip">'+(team.pct===null?'—':team.accepted?'OUI':'NON')+'</span></div>'
+                +'<small>'+(team.pct===null?'Pourcentage non calculable':team.accepted?'Seuil ≥ 80 % atteint':'Seuil ≥ 80 % non atteint')+'</small>'
+              +'</section>'
+            ).join("");
+            const verdict = !enough ? "Données insuffisantes" : passed ? "OUI · V2 validé" : "NON · V2 non validé";
+            const detail = !enough ? "5 matchs valides minimum par équipe requis." : passed ? "Les deux équipes atteignent au moins 80 %." : "Les deux équipes doivent atteindre simultanément ≥ 80 %.";
+            return '<section class="over15-v1-panel"><header><strong>Moteur V2</strong><span>Seuil : ≥ 80 % par équipe</span></header><div class="over15-v1-body"><div class="over15-v1-team-grid">'+teamCards+'</div><div class="over15-prediction '+(passed?'over15-tier-1':'over15-tier-4')+'"><span class="over15-prediction-kicker">Résultat V2</span><strong>'+verdict+'</strong><small>'+detail+'</small></div></div></section>';
+          })();
           const tierLabels = {1:"Très favorable",2:"Favorable",3:"Mitigé",4:"Défavorable"};
           const tierColors = {1:"success",2:"positive",3:"warning",4:"danger"};
           const tierHtml = tier===null
@@ -985,7 +1004,7 @@
               ? "Part des matchs terminés avec au moins 2 buts parmi les "+sampleCounts[0]+" derniers matchs disponibles, dans la même compétition et la même saison."
               : "Aucun match terminé avec un score exploitable n’est disponible dans la même compétition et la même saison.")
             : "Part des matchs terminés avec au moins 2 buts parmi les derniers matchs disponibles, dans la même compétition et la même saison ("+teamStats.map(team=>team.validCount+" pour "+team.name).join(", ")+").";
-          experiment.innerHTML = '<section class="over15-experiment"><div class="over15-experiment-intro"><div><h4>Fréquence historique du +1,5 buts</h4><p class="over15-experiment-note">'+escapeHtml(sampleDescription)+'</p></div><span class="over15-sample-tag">10 matchs max.</span></div><div class="over15-team-grid">'+cards.join("")+'</div>'+v1Html+tierHtml+'<p class="over15-experiment-caveat">Indicateur descriptif du passé. Il ne constitue ni une probabilité de match ni une recommandation de pari. Les matchs sans score valide sont exclus.</p></section>';
+          experiment.innerHTML = '<section class="over15-experiment"><div class="over15-experiment-intro"><div><h4>Fréquence historique du +1,5 buts</h4><p class="over15-experiment-note">'+escapeHtml(sampleDescription)+'</p></div><span class="over15-sample-tag">10 matchs max.</span></div><div class="over15-team-grid"></div>'+v1Html+v2Html+tierHtml+'<p class="over15-experiment-caveat">Indicateur descriptif du passé. Il ne constitue ni une probabilité de match ni une recommandation de pari. Les matchs sans score valide sont exclus.</p></section>';
         };
         renderOver15Experiment();
         const renderOver25Experiment = () => {
