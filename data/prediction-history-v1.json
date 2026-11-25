@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at_utc": "2026-11-25T13:58:16.118957Z",
+  "generated_at_utc": "2026-11-25T14:03:58.108244Z",
   "description": "Snapshots J-1 basés sur les fréquences des 10 derniers matchs de même compétition et saison. V1 : OUI si les deux équipes atteignent 70 %, NON sinon; minimum 2 matchs valides par équipe. Les scores finaux sont complétés à mesure de leur disponibilité.",
   "records": [
     {
@@ -3088,11 +3088,11 @@
             "percentage": 90
           },
           "away_frequency": {
-            "matches": 0,
-            "count": 0,
-            "percentage": null
+            "matches": 10,
+            "count": 9,
+            "percentage": 90
           },
-          "status": "unavailable",
+          "status": "yes",
           "threshold": 70
         },
         "over_2_5": {
@@ -3102,11 +3102,11 @@
             "percentage": 50
           },
           "away_frequency": {
-            "matches": 0,
-            "count": 0,
-            "percentage": null
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
           },
-          "status": "unavailable",
+          "status": "no",
           "threshold": 70
         },
         "btts": {
@@ -3116,11 +3116,11 @@
             "percentage": 40
           },
           "away_frequency": {
-            "matches": 0,
-            "count": 0,
-            "percentage": null
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
           },
-          "status": "unavailable",
+          "status": "no",
           "threshold": 70
         }
       },
