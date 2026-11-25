@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "document_type": "pronofoot_chatgpt_player_availability",
-  "generated_at_utc": "2026-11-25T12:41:43.867173+00:00",
+  "generated_at_utc": "2026-11-25T22:26:46.754888+00:00",
   "window": {
-    "start_utc": "2026-11-25T12:41:43.867173+00:00",
-    "end_utc": "2026-12-02T12:41:43.867173+00:00",
+    "start_utc": "2026-11-25T22:26:46.754888+00:00",
+    "end_utc": "2026-12-02T22:26:46.754888+00:00",
     "days": 7
   },
   "instructions": {
@@ -31,726 +31,6 @@
     "history_rule": "Les faits sourcés des observations précédentes restent documentés tant qu'aucune source plus récente ne les contredit explicitement. Une recherche vide, partielle ou not_checked ne supprime jamais ces faits. Conserver leur date et leur source ; un retour ou une disponibilité explicitement documenté(e) peut remplacer un ancien signalement pour le même joueur."
   },
   "matches": [
-    {
-      "match_id": "m_0n69Si",
-      "provider_match_id": "m_0n69Si",
-      "competition": "Ligue des champions UEFA",
-      "competition_slug": "uefa-champions-league",
-      "season": "2026/2027",
-      "kickoff_utc": "2026-11-25T17:45:00+00:00",
-      "home_team": {
-        "name": "Slavia Prague",
-        "team_id": "t_41GCDg"
-      },
-      "away_team": {
-        "name": "Villarreal",
-        "team_id": "t_4SV4jg"
-      },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
-      "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
-      },
-      "facts": [],
-      "sources": [],
-      "previous_observations": [
-        {
-          "match_id": "m_0n69Si",
-          "provider_match_id": "m_0n69Si",
-          "competition": "Ligue des champions UEFA",
-          "competition_slug": "uefa-champions-league",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-25T17:45:00+00:00",
-          "home_team": {
-            "name": "Slavia Prague",
-            "team_id": "t_41GCDg"
-          },
-          "away_team": {
-            "name": "Villarreal",
-            "team_id": "t_4SV4jg"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-20T13:45:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "db8e1bac8e099e74d3ef069e0632bf2f3c7302ed84ac60f3a75a05d2e621e4c8",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-20T14:05:55.501663+00:00"
-        },
-        {
-          "match_id": "m_0n69Si",
-          "provider_match_id": "m_0n69Si",
-          "competition": "Ligue des champions UEFA",
-          "competition_slug": "uefa-champions-league",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-25T17:45:00+00:00",
-          "home_team": {
-            "name": "Slavia Prague",
-            "team_id": "t_41GCDg"
-          },
-          "away_team": {
-            "name": "Villarreal",
-            "team_id": "t_4SV4jg"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-20T21:21:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "ea9c260a8396bd7c6de3d26b9b369430a194d553d95b6bc7b6e4ee81b6d01709",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-20T21:27:23.991753+00:00"
-        }
-      ]
-    },
-    {
-      "match_id": "m_18IfVI",
-      "provider_match_id": "m_18IfVI",
-      "competition": "Ligue des champions UEFA",
-      "competition_slug": "uefa-champions-league",
-      "season": "2026/2027",
-      "kickoff_utc": "2026-11-25T17:45:00+00:00",
-      "home_team": {
-        "name": "Sabah FK",
-        "team_id": "t_30ZV5A"
-      },
-      "away_team": {
-        "name": "Barcelona",
-        "team_id": "t_32jSEF"
-      },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
-      "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
-      },
-      "facts": [],
-      "sources": [],
-      "previous_observations": [
-        {
-          "match_id": "m_18IfVI",
-          "provider_match_id": "m_18IfVI",
-          "competition": "Ligue des champions UEFA",
-          "competition_slug": "uefa-champions-league",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-25T17:45:00+00:00",
-          "home_team": {
-            "name": "Sabah FK",
-            "team_id": "t_30ZV5A"
-          },
-          "away_team": {
-            "name": "Barcelona",
-            "team_id": "t_32jSEF"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-20T13:45:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "4e3f13a8733855e9277ed343f2cf2db65abe7e70e5cc9f0473ad5d426be6df7e",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-20T14:05:55.501674+00:00"
-        },
-        {
-          "match_id": "m_18IfVI",
-          "provider_match_id": "m_18IfVI",
-          "competition": "Ligue des champions UEFA",
-          "competition_slug": "uefa-champions-league",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-25T17:45:00+00:00",
-          "home_team": {
-            "name": "Sabah FK",
-            "team_id": "t_30ZV5A"
-          },
-          "away_team": {
-            "name": "Barcelona",
-            "team_id": "t_32jSEF"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-20T21:21:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "00e1bfaa5f76d87f26b1b9fe395b5e2d195c435067be7e21c8ff422ddfe645bf",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-20T21:27:23.991769+00:00"
-        }
-      ]
-    },
-    {
-      "match_id": "m_0nnJoD",
-      "provider_match_id": "m_0nnJoD",
-      "competition": "Ligue des champions UEFA",
-      "competition_slug": "uefa-champions-league",
-      "season": "2026/2027",
-      "kickoff_utc": "2026-11-25T20:00:00+00:00",
-      "home_team": {
-        "name": "Lille",
-        "team_id": "t_0tnX1I"
-      },
-      "away_team": {
-        "name": "Bayern München",
-        "team_id": "t_1cpjqO"
-      },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
-      "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
-      },
-      "facts": [],
-      "sources": [],
-      "previous_observations": [
-        {
-          "match_id": "m_0nnJoD",
-          "provider_match_id": "m_0nnJoD",
-          "competition": "Ligue des champions UEFA",
-          "competition_slug": "uefa-champions-league",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-25T20:00:00+00:00",
-          "home_team": {
-            "name": "Lille",
-            "team_id": "t_0tnX1I"
-          },
-          "away_team": {
-            "name": "Bayern München",
-            "team_id": "t_1cpjqO"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-20T13:45:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "58950ef4e659115f9a7324152e4b4eb2f4b7afc7a2cb408607d5dc3303eb4da4",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-20T14:05:55.501686+00:00"
-        },
-        {
-          "match_id": "m_0nnJoD",
-          "provider_match_id": "m_0nnJoD",
-          "competition": "Ligue des champions UEFA",
-          "competition_slug": "uefa-champions-league",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-25T20:00:00+00:00",
-          "home_team": {
-            "name": "Lille",
-            "team_id": "t_0tnX1I"
-          },
-          "away_team": {
-            "name": "Bayern München",
-            "team_id": "t_1cpjqO"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-20T21:21:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "13136b6f8ec0676b4cc05ff3b817cc697efa6bafa5895dca24774f45ebe3cf50",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-20T21:27:23.991787+00:00"
-        }
-      ]
-    },
-    {
-      "match_id": "m_1WLVGt",
-      "provider_match_id": "m_1WLVGt",
-      "competition": "Ligue des champions UEFA",
-      "competition_slug": "uefa-champions-league",
-      "season": "2026/2027",
-      "kickoff_utc": "2026-11-25T20:00:00+00:00",
-      "home_team": {
-        "name": "Atlético Madrid",
-        "team_id": "t_3NIiXl"
-      },
-      "away_team": {
-        "name": "Viking",
-        "team_id": "t_0jjyWh"
-      },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
-      "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
-      },
-      "facts": [],
-      "sources": [],
-      "previous_observations": [
-        {
-          "match_id": "m_1WLVGt",
-          "provider_match_id": "m_1WLVGt",
-          "competition": "Ligue des champions UEFA",
-          "competition_slug": "uefa-champions-league",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-25T20:00:00+00:00",
-          "home_team": {
-            "name": "Atlético Madrid",
-            "team_id": "t_3NIiXl"
-          },
-          "away_team": {
-            "name": "Viking",
-            "team_id": "t_0jjyWh"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-20T13:45:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "76581432edccd5564a26c7a71e7d85ae81b0eaa72372c90429777769d860b014",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-20T14:05:55.501697+00:00"
-        },
-        {
-          "match_id": "m_1WLVGt",
-          "provider_match_id": "m_1WLVGt",
-          "competition": "Ligue des champions UEFA",
-          "competition_slug": "uefa-champions-league",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-25T20:00:00+00:00",
-          "home_team": {
-            "name": "Atlético Madrid",
-            "team_id": "t_3NIiXl"
-          },
-          "away_team": {
-            "name": "Viking",
-            "team_id": "t_0jjyWh"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-20T21:21:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "b1ff9ac29d6217212ac0f504e4663505b76f81e74e6681331c6c799cdb45472a",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-20T21:27:23.991803+00:00"
-        }
-      ]
-    },
-    {
-      "match_id": "m_3FjwuH",
-      "provider_match_id": "m_3FjwuH",
-      "competition": "Ligue des champions UEFA",
-      "competition_slug": "uefa-champions-league",
-      "season": "2026/2027",
-      "kickoff_utc": "2026-11-25T20:00:00+00:00",
-      "home_team": {
-        "name": "Shakhtar Donetsk",
-        "team_id": "t_4Wrrym"
-      },
-      "away_team": {
-        "name": "Fenerbahçe",
-        "team_id": "t_2wJJY2"
-      },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
-      "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
-      },
-      "facts": [],
-      "sources": [],
-      "previous_observations": [
-        {
-          "match_id": "m_3FjwuH",
-          "provider_match_id": "m_3FjwuH",
-          "competition": "Ligue des champions UEFA",
-          "competition_slug": "uefa-champions-league",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-25T20:00:00+00:00",
-          "home_team": {
-            "name": "Shakhtar Donetsk",
-            "team_id": "t_4Wrrym"
-          },
-          "away_team": {
-            "name": "Fenerbahçe",
-            "team_id": "t_2wJJY2"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-20T13:45:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "31070ca8f5e78bfece86d61f477ecea4992638da10cafb1d638c67d378229697",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-20T14:05:55.501709+00:00"
-        },
-        {
-          "match_id": "m_3FjwuH",
-          "provider_match_id": "m_3FjwuH",
-          "competition": "Ligue des champions UEFA",
-          "competition_slug": "uefa-champions-league",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-25T20:00:00+00:00",
-          "home_team": {
-            "name": "Shakhtar Donetsk",
-            "team_id": "t_4Wrrym"
-          },
-          "away_team": {
-            "name": "Fenerbahçe",
-            "team_id": "t_2wJJY2"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-20T21:21:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "a4284278d3ba8564ade8b0832e79a0bc02a69547c52c0526dbce01aa6ab10d3e",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-20T21:27:23.991820+00:00"
-        }
-      ]
-    },
-    {
-      "match_id": "m_0vHscK",
-      "provider_match_id": "m_0vHscK",
-      "competition": "Ligue des champions UEFA",
-      "competition_slug": "uefa-champions-league",
-      "season": "2026/2027",
-      "kickoff_utc": "2026-11-25T20:00:00+00:00",
-      "home_team": {
-        "name": "Sporting CP",
-        "team_id": "t_1TAfIz"
-      },
-      "away_team": {
-        "name": "Manchester United",
-        "team_id": "t_2I313i"
-      },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
-      "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
-      },
-      "facts": [],
-      "sources": [],
-      "previous_observations": [
-        {
-          "match_id": "m_0vHscK",
-          "provider_match_id": "m_0vHscK",
-          "competition": "Ligue des champions UEFA",
-          "competition_slug": "uefa-champions-league",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-25T20:00:00+00:00",
-          "home_team": {
-            "name": "Sporting CP",
-            "team_id": "t_1TAfIz"
-          },
-          "away_team": {
-            "name": "Manchester United",
-            "team_id": "t_2I313i"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-20T13:45:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "55cd6a30e48b66ccbb380c5ed1af62b703ae778d9f5a0e103faf638455cf613c",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-20T14:05:55.501721+00:00"
-        },
-        {
-          "match_id": "m_0vHscK",
-          "provider_match_id": "m_0vHscK",
-          "competition": "Ligue des champions UEFA",
-          "competition_slug": "uefa-champions-league",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-25T20:00:00+00:00",
-          "home_team": {
-            "name": "Sporting CP",
-            "team_id": "t_1TAfIz"
-          },
-          "away_team": {
-            "name": "Manchester United",
-            "team_id": "t_2I313i"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-20T21:21:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "54a4f087b378431ba1fa7d0dc3e0fbf738d67ea5630655b555f62ce41aab2dc0",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-20T21:27:23.991836+00:00"
-        }
-      ]
-    },
-    {
-      "match_id": "m_2bTWR8",
-      "provider_match_id": "m_2bTWR8",
-      "competition": "Ligue des champions UEFA",
-      "competition_slug": "uefa-champions-league",
-      "season": "2026/2027",
-      "kickoff_utc": "2026-11-25T20:00:00+00:00",
-      "home_team": {
-        "name": "Club Brugge",
-        "team_id": "t_1mTmMO"
-      },
-      "away_team": {
-        "name": "Liverpool",
-        "team_id": "t_0BrMnM"
-      },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
-      "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
-      },
-      "facts": [],
-      "sources": [],
-      "previous_observations": [
-        {
-          "match_id": "m_2bTWR8",
-          "provider_match_id": "m_2bTWR8",
-          "competition": "Ligue des champions UEFA",
-          "competition_slug": "uefa-champions-league",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-25T20:00:00+00:00",
-          "home_team": {
-            "name": "Club Brugge",
-            "team_id": "t_1mTmMO"
-          },
-          "away_team": {
-            "name": "Liverpool",
-            "team_id": "t_0BrMnM"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-20T13:45:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "6d7f6d73f38727c34775c404cc4363839808456434a95a344b9c238bebc073c9",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-20T14:05:55.501732+00:00"
-        },
-        {
-          "match_id": "m_2bTWR8",
-          "provider_match_id": "m_2bTWR8",
-          "competition": "Ligue des champions UEFA",
-          "competition_slug": "uefa-champions-league",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-25T20:00:00+00:00",
-          "home_team": {
-            "name": "Club Brugge",
-            "team_id": "t_1mTmMO"
-          },
-          "away_team": {
-            "name": "Liverpool",
-            "team_id": "t_0BrMnM"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-20T21:21:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "193acd0f346a7915b7fca01af8e1d885225d1164137d5a2afa91f1fb1e340f0b",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-20T21:27:23.991852+00:00"
-        }
-      ]
-    },
-    {
-      "match_id": "m_29gc42",
-      "provider_match_id": "m_29gc42",
-      "competition": "Ligue des champions UEFA",
-      "competition_slug": "uefa-champions-league",
-      "season": "2026/2027",
-      "kickoff_utc": "2026-11-25T20:00:00+00:00",
-      "home_team": {
-        "name": "Inter",
-        "team_id": "t_3CPHHF"
-      },
-      "away_team": {
-        "name": "VfB Stuttgart",
-        "team_id": "t_0iJNOA"
-      },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
-      "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
-      },
-      "facts": [],
-      "sources": [],
-      "previous_observations": [
-        {
-          "match_id": "m_29gc42",
-          "provider_match_id": "m_29gc42",
-          "competition": "Ligue des champions UEFA",
-          "competition_slug": "uefa-champions-league",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-25T20:00:00+00:00",
-          "home_team": {
-            "name": "Inter",
-            "team_id": "t_3CPHHF"
-          },
-          "away_team": {
-            "name": "VfB Stuttgart",
-            "team_id": "t_0iJNOA"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-20T13:45:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "62638ac9b2b05fbb6d3d95d49866bc4175df537c1762aa601db275616fbd24ca",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-20T14:05:55.501743+00:00"
-        },
-        {
-          "match_id": "m_29gc42",
-          "provider_match_id": "m_29gc42",
-          "competition": "Ligue des champions UEFA",
-          "competition_slug": "uefa-champions-league",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-25T20:00:00+00:00",
-          "home_team": {
-            "name": "Inter",
-            "team_id": "t_3CPHHF"
-          },
-          "away_team": {
-            "name": "VfB Stuttgart",
-            "team_id": "t_0iJNOA"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-20T21:21:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "a3cd11e99c881344e2ca0d0934c1501a0caa10fa7c72f32bc6215874be089dde",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-20T21:27:23.991867+00:00"
-        }
-      ]
-    },
-    {
-      "match_id": "m_36394c",
-      "provider_match_id": "m_36394c",
-      "competition": "Ligue des champions UEFA",
-      "competition_slug": "uefa-champions-league",
-      "season": "2026/2027",
-      "kickoff_utc": "2026-11-25T20:00:00+00:00",
-      "home_team": {
-        "name": "Paris Saint-Germain",
-        "team_id": "t_41iFW3"
-      },
-      "away_team": {
-        "name": "Roma",
-        "team_id": "t_0RhqmW"
-      },
-      "research_status": "not_researched",
-      "checked_at_utc": null,
-      "coverage": {
-        "home": "not_checked",
-        "away": "not_checked"
-      },
-      "facts": [],
-      "sources": [],
-      "previous_observations": [
-        {
-          "match_id": "m_36394c",
-          "provider_match_id": "m_36394c",
-          "competition": "Ligue des champions UEFA",
-          "competition_slug": "uefa-champions-league",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-25T20:00:00+00:00",
-          "home_team": {
-            "name": "Paris Saint-Germain",
-            "team_id": "t_41iFW3"
-          },
-          "away_team": {
-            "name": "Roma",
-            "team_id": "t_0RhqmW"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-20T13:45:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "7fd6d03a39f3f2c73a7dbd152e6722424be8ad43c1f6e401af108b79b2c23300",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-20T14:05:55.501753+00:00"
-        },
-        {
-          "match_id": "m_36394c",
-          "provider_match_id": "m_36394c",
-          "competition": "Ligue des champions UEFA",
-          "competition_slug": "uefa-champions-league",
-          "season": "2026/2027",
-          "kickoff_utc": "2026-11-25T20:00:00+00:00",
-          "home_team": {
-            "name": "Paris Saint-Germain",
-            "team_id": "t_41iFW3"
-          },
-          "away_team": {
-            "name": "Roma",
-            "team_id": "t_0RhqmW"
-          },
-          "research_status": "partial",
-          "checked_at_utc": "2026-11-20T21:21:00+00:00",
-          "coverage": {
-            "home": "not_checked",
-            "away": "not_checked"
-          },
-          "facts": [],
-          "sources": [],
-          "observation_id": "27ccba4769a2e0d073823df3fac9f6e2246c5beeabf2e9209d6dbcd7454dce1b",
-          "provider": "ChatGPT",
-          "imported_at_utc": "2026-11-20T21:27:23.991883+00:00"
-        }
-      ]
-    },
     {
       "match_id": "m_2aKzEl",
       "provider_match_id": "m_2aKzEl",
@@ -4305,6 +3585,256 @@
       "away_team": {
         "name": "Ipswich Town",
         "team_id": "t_2C9laO"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_44JFxH",
+      "provider_match_id": "m_44JFxH",
+      "competition": "La Liga",
+      "competition_slug": "es-la-liga",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-12-02T18:00:00+00:00",
+      "home_team": {
+        "name": "Real Sociedad",
+        "team_id": "t_1hKtUw"
+      },
+      "away_team": {
+        "name": "Real Madrid",
+        "team_id": "t_4NZcri"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_1mNrnL",
+      "provider_match_id": "m_1mNrnL",
+      "competition": "Premier League",
+      "competition_slug": "gb-premier-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-12-02T19:30:00+00:00",
+      "home_team": {
+        "name": "Hull City",
+        "team_id": "t_0HV3k6"
+      },
+      "away_team": {
+        "name": "Nottingham Forest",
+        "team_id": "t_0msSwp"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_45PBCV",
+      "provider_match_id": "m_45PBCV",
+      "competition": "Premier League",
+      "competition_slug": "gb-premier-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-12-02T19:30:00+00:00",
+      "home_team": {
+        "name": "Manchester City",
+        "team_id": "t_0UCNPX"
+      },
+      "away_team": {
+        "name": "Leeds United",
+        "team_id": "t_19Nr9K"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_109S60",
+      "provider_match_id": "m_109S60",
+      "competition": "Premier League",
+      "competition_slug": "gb-premier-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-12-02T19:30:00+00:00",
+      "home_team": {
+        "name": "Chelsea",
+        "team_id": "t_4R934X"
+      },
+      "away_team": {
+        "name": "Crystal Palace",
+        "team_id": "t_4bz4EP"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_2ca0e2",
+      "provider_match_id": "m_2ca0e2",
+      "competition": "Premier League",
+      "competition_slug": "gb-premier-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-12-02T19:30:00+00:00",
+      "home_team": {
+        "name": "Liverpool",
+        "team_id": "t_0BrMnM"
+      },
+      "away_team": {
+        "name": "Sunderland",
+        "team_id": "t_2xPV6y"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_32EZEH",
+      "provider_match_id": "m_32EZEH",
+      "competition": "Premier League",
+      "competition_slug": "gb-premier-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-12-02T20:15:00+00:00",
+      "home_team": {
+        "name": "Brentford",
+        "team_id": "t_2ihyjC"
+      },
+      "away_team": {
+        "name": "Arsenal",
+        "team_id": "t_1gkhxH"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_2q2SV8",
+      "provider_match_id": "m_2q2SV8",
+      "competition": "Premier League",
+      "competition_slug": "gb-premier-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-12-02T20:15:00+00:00",
+      "home_team": {
+        "name": "AFC Bournemouth",
+        "team_id": "t_1iaglr"
+      },
+      "away_team": {
+        "name": "Brighton & Hove Albion",
+        "team_id": "t_3eV7Ev"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_1J5cPp",
+      "provider_match_id": "m_1J5cPp",
+      "competition": "Premier League",
+      "competition_slug": "gb-premier-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-12-02T20:15:00+00:00",
+      "home_team": {
+        "name": "Newcastle United",
+        "team_id": "t_2eQl9k"
+      },
+      "away_team": {
+        "name": "Manchester United",
+        "team_id": "t_2I313i"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_0clzxH",
+      "provider_match_id": "m_0clzxH",
+      "competition": "Premier League",
+      "competition_slug": "gb-premier-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-12-02T20:15:00+00:00",
+      "home_team": {
+        "name": "Aston Villa",
+        "team_id": "t_4RqKpo"
+      },
+      "away_team": {
+        "name": "Everton",
+        "team_id": "t_21IR9d"
+      },
+      "research_status": "not_researched",
+      "checked_at_utc": null,
+      "coverage": {
+        "home": "not_checked",
+        "away": "not_checked"
+      },
+      "facts": [],
+      "sources": [],
+      "previous_observations": []
+    },
+    {
+      "match_id": "m_0fuQ35",
+      "provider_match_id": "m_0fuQ35",
+      "competition": "La Liga",
+      "competition_slug": "es-la-liga",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-12-02T20:30:00+00:00",
+      "home_team": {
+        "name": "Barcelona",
+        "team_id": "t_32jSEF"
+      },
+      "away_team": {
+        "name": "Atlético Madrid",
+        "team_id": "t_3NIiXl"
       },
       "research_status": "not_researched",
       "checked_at_utc": null,
