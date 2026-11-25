@@ -1085,16 +1085,16 @@
               })
               .sort((a,b)=>String(b.kickoff_utc||"").localeCompare(String(a.kickoff_utc||"")))
               .slice(0,10);
-            const btts = recent.filter(item=>Number(item.home_score)>=1 && Number(item.away_score)>=1).length;
+            const scoredAtLeastOne = recent.filter(item => (String(item.home_team_id)===team.id ? Number(item.home_score) : Number(item.away_score)) >= 1).length;
             const count = recent.length;
-            const pct = count ? Math.round(btts/count*100) : null;
-            return {name:team.name,btts,validCount:count,pct};
+            const pct = count ? Math.round(scoredAtLeastOne/count*100) : null;
+            return {name:team.name,scoredAtLeastOne,validCount:count,pct};
           });
           const cards = teamStats.map(team =>
             '<section class="over15-team-card">'
               +'<div class="over15-team-heading"><strong>'+escapeHtml(team.name)+'</strong><span>'+(team.pct===null?'—':team.pct+' %')+'</span></div>'
               +'<div class="over15-progress" role="img" aria-label="'+escapeHtml(team.name)+': '+(team.pct===null?'données insuffisantes':team.pct+' %')+'"><span style="width:'+(team.pct===null?0:team.pct)+'%"></span></div>'
-              +'<p>'+(team.validCount?team.btts+' / '+team.validCount+' matchs avec les deux équipes qui marquent':'Aucun score exploitable')
+              +'<p>'+(team.validCount?team.scoredAtLeastOne+' / '+team.validCount+' matchs où l’équipe a marqué au moins 1 but':'Aucun score exploitable')
               +'</p></section>'
           );
           const sufficient = teamStats.every(team=>team.validCount>=5 && team.pct!==null);
@@ -1128,10 +1128,10 @@
           const sampleCounts = [...new Set(teamStats.map(team=>team.validCount))];
           const sampleDescription = sampleCounts.length===1
             ? (sampleCounts[0]
-              ? "Part des matchs où les deux équipes ont marqué parmi les "+sampleCounts[0]+" derniers matchs disponibles, dans la même compétition et la même saison."
+              ? "Part des matchs où l’équipe a marqué au moins 1 but parmi les "+sampleCounts[0]+" derniers matchs disponibles, dans la même compétition et la même saison."
               : "Aucun match terminé avec un score exploitable n’est disponible dans la même compétition et la même saison.")
-            : "Part des matchs où les deux équipes ont marqué parmi les derniers matchs disponibles, dans la même compétition et la même saison ("+teamStats.map(team=>team.validCount+" pour "+team.name).join(", ")+").";
-          experimentBtts.innerHTML = '<section class="over15-experiment"><div class="over15-experiment-intro"><div><h4>Fréquence historique du BTTS</h4><p class="over15-experiment-note">'+escapeHtml(sampleDescription)+'</p></div><span class="over15-sample-tag">10 matchs max.</span></div><div class="over15-team-grid">'+cards.join("")+'</div>'+v1Html+tierHtml+'<p class="over15-experiment-caveat">Indicateur descriptif du passé. Il ne constitue ni une probabilité de match ni une recommandation de pari. Les matchs sans score valide sont exclus. BTTS signifie que les deux équipes ont marqué au moins un but.</p></section>';
+            : "Part des matchs où chaque équipe a marqué au moins 1 but parmi les derniers matchs disponibles, dans la même compétition et la même saison ("+teamStats.map(team=>team.validCount+" pour "+team.name).join(", ")+").";
+          experimentBtts.innerHTML = '<section class="over15-experiment"><div class="over15-experiment-intro"><div><h4>Fréquence historique de buts marqués</h4><p class="over15-experiment-note">'+escapeHtml(sampleDescription)+'</p></div><span class="over15-sample-tag">10 matchs max.</span></div><div class="over15-team-grid">'+cards.join("")+'</div>'+v1Html+tierHtml+'<p class="over15-experiment-caveat">Indicateur descriptif du passé. Il ne constitue ni une probabilité de match ni une recommandation de pari. Les matchs sans score valide sont exclus. Le pourcentage mesure les matchs où l’équipe a marqué au moins un but. Ce n’est pas la fréquence du BTTS.</p></section>';
         };
         renderBttsExperiment();
         const renderRecentTeamStats = () => {
