@@ -963,16 +963,16 @@
             const v1Teams = teamStats.map((team,index) => ({
               ...team,
               sideLabel: index===0 ? "Équipe domicile" : "Équipe extérieure",
-              accepted: team.pct!==null && team.pct>70
+              accepted: team.pct!==null && team.pct>=70
             }));
             const teamCards = v1Teams.map(team =>
               '<section class="over15-v1-team '+(team.accepted?'is-yes':'is-no')+'">'
                 +'<div class="over15-v1-team-label">'+team.sideLabel+'</div>'
                 +'<div class="over15-v1-team-result"><strong>'+(team.pct===null?'—':team.pct+' %')+'</strong><span class="over15-v1-chip">'+(team.pct===null?'—':team.accepted?'OUI':'NON')+'</span></div>'
-                +'<small>'+(team.pct===null?'Pourcentage non calculable':team.accepted?'Seuil > 70 % atteint':'Seuil > 70 % non atteint')+'</small>'
+                +'<small>'+(team.pct===null?'Pourcentage non calculable':team.accepted?'Seuil ≥ 70 % atteint':'Seuil ≥ 70 % non atteint')+'</small>'
               +'</section>'
             ).join("");
-            return '<section class="over15-v1-panel"><header><strong>Moteur V1</strong><span>Seuil : &gt; 70 % par équipe</span></header><div class="over15-v1-body"><div class="over15-v1-team-grid">'+teamCards+'</div></div></section>';
+            return '<section class="over15-v1-panel"><header><strong>Moteur V1</strong><span>Seuil : ≥ 70 % par équipe</span></header><div class="over15-v1-body"><div class="over15-v1-team-grid">'+teamCards+'</div></div></section>';
           })();
           const tierLabels = {1:"Très favorable",2:"Favorable",3:"Mitigé",4:"Défavorable"};
           const tierColors = {1:"success",2:"positive",3:"warning",4:"danger"};
@@ -1037,16 +1037,16 @@
             const v1Teams = teamStats.map((team,index) => ({
               ...team,
               sideLabel: index===0 ? "Équipe domicile" : "Équipe extérieure",
-              accepted: team.pct!==null && team.pct>70
+              accepted: team.pct!==null && team.pct>=70
             }));
             const teamCards = v1Teams.map(team =>
               '<section class="over15-v1-team '+(team.accepted?'is-yes':'is-no')+'">'
                 +'<div class="over15-v1-team-label">'+team.sideLabel+'</div>'
                 +'<div class="over15-v1-team-result"><strong>'+(team.pct===null?'—':team.pct+' %')+'</strong><span class="over15-v1-chip">'+(team.pct===null?'—':team.accepted?'OUI':'NON')+'</span></div>'
-                +'<small>'+(team.pct===null?'Pourcentage non calculable':team.accepted?'Seuil > 70 % atteint':'Seuil > 70 % non atteint')+'</small>'
+                +'<small>'+(team.pct===null?'Pourcentage non calculable':team.accepted?'Seuil ≥ 70 % atteint':'Seuil ≥ 70 % non atteint')+'</small>'
               +'</section>'
             ).join("");
-            return '<section class="over15-v1-panel"><header><strong>Moteur V1</strong><span>Seuil : &gt; 70 % par équipe</span></header><div class="over15-v1-body"><div class="over15-v1-team-grid">'+teamCards+'</div></div></section>';
+            return '<section class="over15-v1-panel"><header><strong>Moteur V1</strong><span>Seuil : ≥ 70 % par équipe</span></header><div class="over15-v1-body"><div class="over15-v1-team-grid">'+teamCards+'</div></div></section>';
           })();
           const tierLabels = {1:"Très favorable",2:"Favorable",3:"Mitigé",4:"Défavorable"};
           const tierHtml = tier===null
@@ -1110,16 +1110,16 @@
             const v1Teams = teamStats.map((team,index) => ({
               ...team,
               sideLabel: index===0 ? "Équipe domicile" : "Équipe extérieure",
-              accepted: team.pct!==null && team.pct>70
+              accepted: team.pct!==null && team.pct>=70
             }));
             const teamCards = v1Teams.map(team =>
               '<section class="over15-v1-team '+(team.accepted?'is-yes':'is-no')+'">'
                 +'<div class="over15-v1-team-label">'+team.sideLabel+'</div>'
                 +'<div class="over15-v1-team-result"><strong>'+(team.pct===null?'—':team.pct+' %')+'</strong><span class="over15-v1-chip">'+(team.pct===null?'—':team.accepted?'OUI':'NON')+'</span></div>'
-                +'<small>'+(team.pct===null?'Pourcentage non calculable':team.accepted?'Seuil > 70 % atteint':'Seuil > 70 % non atteint')+'</small>'
+                +'<small>'+(team.pct===null?'Pourcentage non calculable':team.accepted?'Seuil ≥ 70 % atteint':'Seuil ≥ 70 % non atteint')+'</small>'
               +'</section>'
             ).join("");
-            return '<section class="over15-v1-panel"><header><strong>Moteur V1</strong><span>Seuil : &gt; 70 % par équipe</span></header><div class="over15-v1-body"><div class="over15-v1-team-grid">'+teamCards+'</div></div></section>';
+            return '<section class="over15-v1-panel"><header><strong>Moteur V1</strong><span>Seuil : ≥ 70 % par équipe</span></header><div class="over15-v1-body"><div class="over15-v1-team-grid">'+teamCards+'</div></div></section>';
           })();
           const tierLabels = {1:"Très favorable",2:"Favorable",3:"Mitigé",4:"Défavorable"};
           const tierHtml = tier===null
