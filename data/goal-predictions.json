@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-11-25T12:51:56.389687Z",
+  "generated_at_utc": "2026-11-25T13:03:16.858584Z",
   "provider": "pitchapi_processed_history",
   "scope": "same_competition_same_season_strictly_prior_matches",
   "model": "venue_attack_defence_poisson_baseline_v1",
@@ -18241,685 +18241,6 @@
         "calibration_status": "not_calibrated"
       }
     },
-    "m_4Rx6JG": {
-      "match_id": "m_4Rx6JG",
-      "competition_slug": "jp-j1-league",
-      "season": "2026",
-      "kickoff_utc": "2026-11-25T10:00:00Z",
-      "home_team": "Avispa Fukuoka",
-      "home_team_id": "t_2u1BXQ",
-      "away_team": "Yokohama F.Marinos",
-      "away_team_id": "t_1mTqNS",
-      "history_cutoff_exclusive_utc": "2026-11-25T10:00:00Z",
-      "features": {
-        "match_id": "m_4Rx6JG",
-        "competition_slug": "jp-j1-league",
-        "season": "2026",
-        "kickoff_utc": "2026-11-25T10:00:00Z",
-        "home_team_id": "t_2u1BXQ",
-        "away_team_id": "t_1mTqNS",
-        "home": {
-          "venue": {
-            "played": 18,
-            "goals_for_per_match": 1.1667,
-            "goals_against_per_match": 1.5
-          },
-          "overall": {
-            "played": 35,
-            "goals_for_per_match": 1.0,
-            "goals_against_per_match": 1.6
-          },
-          "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
-          },
-          "selected": {
-            "played": 18,
-            "goals_for_per_match": 1.1667,
-            "goals_against_per_match": 1.5
-          },
-          "selected_source": "venue"
-        },
-        "away": {
-          "venue": {
-            "played": 18,
-            "goals_for_per_match": 1.5,
-            "goals_against_per_match": 1.2222
-          },
-          "overall": {
-            "played": 35,
-            "goals_for_per_match": 1.5714,
-            "goals_against_per_match": 1.3429
-          },
-          "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
-          },
-          "selected": {
-            "played": 18,
-            "goals_for_per_match": 1.5,
-            "goals_against_per_match": 1.2222
-          },
-          "selected_source": "venue"
-        },
-        "competition": {
-          "home": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
-          },
-          "away": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
-          }
-        },
-        "history_cutoff_exclusive_utc": "2026-11-25T10:00:00Z"
-      },
-      "expected_goals": {
-        "status": "estimated",
-        "model": "venue_attack_defence_poisson_baseline_v1",
-        "lambda_home": 1.0763,
-        "lambda_away": 1.6357,
-        "total_expected_goals": 2.712,
-        "prior_matches": 5.0,
-        "samples": {
-          "home": 18,
-          "away": 18
-        },
-        "sample_level": "high",
-        "sources": {
-          "home": "venue",
-          "away": "venue"
-        },
-        "formula": "competition_venue_average × shrunk_attack_ratio × shrunk_opponent_defence_ratio",
-        "calibration_status": "not_calibrated"
-      }
-    },
-    "m_2J8kY5": {
-      "match_id": "m_2J8kY5",
-      "competition_slug": "jp-j1-league",
-      "season": "2026",
-      "kickoff_utc": "2026-11-25T10:00:00Z",
-      "home_team": "Fagiano Okayama FC",
-      "home_team_id": "t_2fx2NT",
-      "away_team": "Shimizu S-Pulse",
-      "away_team_id": "t_1E6Pbm",
-      "history_cutoff_exclusive_utc": "2026-11-25T10:00:00Z",
-      "features": {
-        "match_id": "m_2J8kY5",
-        "competition_slug": "jp-j1-league",
-        "season": "2026",
-        "kickoff_utc": "2026-11-25T10:00:00Z",
-        "home_team_id": "t_2fx2NT",
-        "away_team_id": "t_1E6Pbm",
-        "home": {
-          "venue": {
-            "played": 17,
-            "goals_for_per_match": 1.1176,
-            "goals_against_per_match": 1.3529
-          },
-          "overall": {
-            "played": 35,
-            "goals_for_per_match": 1.2571,
-            "goals_against_per_match": 1.3714
-          },
-          "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
-          },
-          "selected": {
-            "played": 17,
-            "goals_for_per_match": 1.1176,
-            "goals_against_per_match": 1.3529
-          },
-          "selected_source": "venue"
-        },
-        "away": {
-          "venue": {
-            "played": 17,
-            "goals_for_per_match": 0.8235,
-            "goals_against_per_match": 1.4706
-          },
-          "overall": {
-            "played": 35,
-            "goals_for_per_match": 0.8857,
-            "goals_against_per_match": 1.4
-          },
-          "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
-          },
-          "selected": {
-            "played": 17,
-            "goals_for_per_match": 0.8235,
-            "goals_against_per_match": 1.4706
-          },
-          "selected_source": "venue"
-        },
-        "competition": {
-          "home": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
-          },
-          "away": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
-          }
-        },
-        "history_cutoff_exclusive_utc": "2026-11-25T10:00:00Z"
-      },
-      "expected_goals": {
-        "status": "estimated",
-        "model": "venue_attack_defence_poisson_baseline_v1",
-        "lambda_home": 1.2051,
-        "lambda_away": 0.9628,
-        "total_expected_goals": 2.1679,
-        "prior_matches": 5.0,
-        "samples": {
-          "home": 17,
-          "away": 17
-        },
-        "sample_level": "high",
-        "sources": {
-          "home": "venue",
-          "away": "venue"
-        },
-        "formula": "competition_venue_average × shrunk_attack_ratio × shrunk_opponent_defence_ratio",
-        "calibration_status": "not_calibrated"
-      }
-    },
-    "m_1d29Gk": {
-      "match_id": "m_1d29Gk",
-      "competition_slug": "jp-j1-league",
-      "season": "2026",
-      "kickoff_utc": "2026-11-25T10:00:00Z",
-      "home_team": "FC Tokyo",
-      "home_team_id": "t_17gQhK",
-      "away_team": "Sanfrecce Hiroshima",
-      "away_team_id": "t_4Oonn6",
-      "history_cutoff_exclusive_utc": "2026-11-25T10:00:00Z",
-      "features": {
-        "match_id": "m_1d29Gk",
-        "competition_slug": "jp-j1-league",
-        "season": "2026",
-        "kickoff_utc": "2026-11-25T10:00:00Z",
-        "home_team_id": "t_17gQhK",
-        "away_team_id": "t_4Oonn6",
-        "home": {
-          "venue": {
-            "played": 18,
-            "goals_for_per_match": 1.7778,
-            "goals_against_per_match": 1.0
-          },
-          "overall": {
-            "played": 35,
-            "goals_for_per_match": 1.9143,
-            "goals_against_per_match": 0.8286
-          },
-          "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
-          },
-          "selected": {
-            "played": 18,
-            "goals_for_per_match": 1.7778,
-            "goals_against_per_match": 1.0
-          },
-          "selected_source": "venue"
-        },
-        "away": {
-          "venue": {
-            "played": 17,
-            "goals_for_per_match": 1.4706,
-            "goals_against_per_match": 1.1176
-          },
-          "overall": {
-            "played": 34,
-            "goals_for_per_match": 1.8529,
-            "goals_against_per_match": 0.9706
-          },
-          "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
-          },
-          "selected": {
-            "played": 17,
-            "goals_for_per_match": 1.4706,
-            "goals_against_per_match": 1.1176
-          },
-          "selected_source": "venue"
-        },
-        "competition": {
-          "home": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
-          },
-          "away": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
-          }
-        },
-        "history_cutoff_exclusive_utc": "2026-11-25T10:00:00Z"
-      },
-      "expected_goals": {
-        "status": "estimated",
-        "model": "venue_attack_defence_poisson_baseline_v1",
-        "lambda_home": 1.4028,
-        "lambda_away": 1.1756,
-        "total_expected_goals": 2.5784,
-        "prior_matches": 5.0,
-        "samples": {
-          "home": 18,
-          "away": 17
-        },
-        "sample_level": "high",
-        "sources": {
-          "home": "venue",
-          "away": "venue"
-        },
-        "formula": "competition_venue_average × shrunk_attack_ratio × shrunk_opponent_defence_ratio",
-        "calibration_status": "not_calibrated"
-      }
-    },
-    "m_3vziZg": {
-      "match_id": "m_3vziZg",
-      "competition_slug": "jp-j1-league",
-      "season": "2026",
-      "kickoff_utc": "2026-11-25T10:00:00Z",
-      "home_team": "Mito Hollyhock",
-      "home_team_id": "t_01uUy2",
-      "away_team": "Tokyo Verdy",
-      "away_team_id": "t_2HK8gL",
-      "history_cutoff_exclusive_utc": "2026-11-25T10:00:00Z",
-      "features": {
-        "match_id": "m_3vziZg",
-        "competition_slug": "jp-j1-league",
-        "season": "2026",
-        "kickoff_utc": "2026-11-25T10:00:00Z",
-        "home_team_id": "t_01uUy2",
-        "away_team_id": "t_2HK8gL",
-        "home": {
-          "venue": {
-            "played": 17,
-            "goals_for_per_match": 1.0,
-            "goals_against_per_match": 1.4706
-          },
-          "overall": {
-            "played": 35,
-            "goals_for_per_match": 0.9429,
-            "goals_against_per_match": 1.8286
-          },
-          "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
-          },
-          "selected": {
-            "played": 17,
-            "goals_for_per_match": 1.0,
-            "goals_against_per_match": 1.4706
-          },
-          "selected_source": "venue"
-        },
-        "away": {
-          "venue": {
-            "played": 16,
-            "goals_for_per_match": 1.0,
-            "goals_against_per_match": 1.25
-          },
-          "overall": {
-            "played": 35,
-            "goals_for_per_match": 0.9714,
-            "goals_against_per_match": 1.4857
-          },
-          "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
-          },
-          "selected": {
-            "played": 16,
-            "goals_for_per_match": 1.0,
-            "goals_against_per_match": 1.25
-          },
-          "selected_source": "venue"
-        },
-        "competition": {
-          "home": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
-          },
-          "away": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
-          }
-        },
-        "history_cutoff_exclusive_utc": "2026-11-25T10:00:00Z"
-      },
-      "expected_goals": {
-        "status": "estimated",
-        "model": "venue_attack_defence_poisson_baseline_v1",
-        "lambda_home": 0.9856,
-        "lambda_away": 1.1823,
-        "total_expected_goals": 2.1679,
-        "prior_matches": 5.0,
-        "samples": {
-          "home": 17,
-          "away": 16
-        },
-        "sample_level": "high",
-        "sources": {
-          "home": "venue",
-          "away": "venue"
-        },
-        "formula": "competition_venue_average × shrunk_attack_ratio × shrunk_opponent_defence_ratio",
-        "calibration_status": "not_calibrated"
-      }
-    },
-    "m_1lENxU": {
-      "match_id": "m_1lENxU",
-      "competition_slug": "jp-j1-league",
-      "season": "2026",
-      "kickoff_utc": "2026-11-25T10:00:00Z",
-      "home_team": "JEF United Chiba",
-      "home_team_id": "t_25A1QK",
-      "away_team": "Nagoya Grampus",
-      "away_team_id": "t_1mrdfo",
-      "history_cutoff_exclusive_utc": "2026-11-25T10:00:00Z",
-      "features": {
-        "match_id": "m_1lENxU",
-        "competition_slug": "jp-j1-league",
-        "season": "2026",
-        "kickoff_utc": "2026-11-25T10:00:00Z",
-        "home_team_id": "t_25A1QK",
-        "away_team_id": "t_1mrdfo",
-        "home": {
-          "venue": {
-            "played": 17,
-            "goals_for_per_match": 1.0588,
-            "goals_against_per_match": 1.4118
-          },
-          "overall": {
-            "played": 35,
-            "goals_for_per_match": 1.0857,
-            "goals_against_per_match": 1.6857
-          },
-          "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
-          },
-          "selected": {
-            "played": 17,
-            "goals_for_per_match": 1.0588,
-            "goals_against_per_match": 1.4118
-          },
-          "selected_source": "venue"
-        },
-        "away": {
-          "venue": {
-            "played": 18,
-            "goals_for_per_match": 1.3333,
-            "goals_against_per_match": 1.7778
-          },
-          "overall": {
-            "played": 35,
-            "goals_for_per_match": 1.4,
-            "goals_against_per_match": 1.5714
-          },
-          "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
-          },
-          "selected": {
-            "played": 18,
-            "goals_for_per_match": 1.3333,
-            "goals_against_per_match": 1.7778
-          },
-          "selected_source": "venue"
-        },
-        "competition": {
-          "home": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
-          },
-          "away": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
-          }
-        },
-        "history_cutoff_exclusive_utc": "2026-11-25T10:00:00Z"
-      },
-      "expected_goals": {
-        "status": "estimated",
-        "model": "venue_attack_defence_poisson_baseline_v1",
-        "lambda_home": 1.3494,
-        "lambda_away": 1.4173,
-        "total_expected_goals": 2.7667,
-        "prior_matches": 5.0,
-        "samples": {
-          "home": 17,
-          "away": 18
-        },
-        "sample_level": "high",
-        "sources": {
-          "home": "venue",
-          "away": "venue"
-        },
-        "formula": "competition_venue_average × shrunk_attack_ratio × shrunk_opponent_defence_ratio",
-        "calibration_status": "not_calibrated"
-      }
-    },
-    "m_4ReOc3": {
-      "match_id": "m_4ReOc3",
-      "competition_slug": "jp-j1-league",
-      "season": "2026",
-      "kickoff_utc": "2026-11-25T10:00:00Z",
-      "home_team": "V-Varen Nagasaki",
-      "home_team_id": "t_1W837G",
-      "away_team": "Kawasaki Frontale",
-      "away_team_id": "t_37dBko",
-      "history_cutoff_exclusive_utc": "2026-11-25T10:00:00Z",
-      "features": {
-        "match_id": "m_4ReOc3",
-        "competition_slug": "jp-j1-league",
-        "season": "2026",
-        "kickoff_utc": "2026-11-25T10:00:00Z",
-        "home_team_id": "t_1W837G",
-        "away_team_id": "t_37dBko",
-        "home": {
-          "venue": {
-            "played": 16,
-            "goals_for_per_match": 1.375,
-            "goals_against_per_match": 1.25
-          },
-          "overall": {
-            "played": 34,
-            "goals_for_per_match": 1.1176,
-            "goals_against_per_match": 1.3824
-          },
-          "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
-          },
-          "selected": {
-            "played": 16,
-            "goals_for_per_match": 1.375,
-            "goals_against_per_match": 1.25
-          },
-          "selected_source": "venue"
-        },
-        "away": {
-          "venue": {
-            "played": 17,
-            "goals_for_per_match": 1.1765,
-            "goals_against_per_match": 1.3529
-          },
-          "overall": {
-            "played": 35,
-            "goals_for_per_match": 1.5143,
-            "goals_against_per_match": 1.5429
-          },
-          "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
-          },
-          "selected": {
-            "played": 17,
-            "goals_for_per_match": 1.1765,
-            "goals_against_per_match": 1.3529
-          },
-          "selected_source": "venue"
-        },
-        "competition": {
-          "home": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
-          },
-          "away": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
-          }
-        },
-        "history_cutoff_exclusive_utc": "2026-11-25T10:00:00Z"
-      },
-      "expected_goals": {
-        "status": "estimated",
-        "model": "venue_attack_defence_poisson_baseline_v1",
-        "lambda_home": 1.3195,
-        "lambda_away": 1.1715,
-        "total_expected_goals": 2.491,
-        "prior_matches": 5.0,
-        "samples": {
-          "home": 16,
-          "away": 17
-        },
-        "sample_level": "high",
-        "sources": {
-          "home": "venue",
-          "away": "venue"
-        },
-        "formula": "competition_venue_average × shrunk_attack_ratio × shrunk_opponent_defence_ratio",
-        "calibration_status": "not_calibrated"
-      }
-    },
-    "m_3GEDIo": {
-      "match_id": "m_3GEDIo",
-      "competition_slug": "jp-j1-league",
-      "season": "2026",
-      "kickoff_utc": "2026-11-25T10:30:00Z",
-      "home_team": "Urawa Red Diamonds",
-      "home_team_id": "t_2SxYow",
-      "away_team": "Cerezo Osaka",
-      "away_team_id": "t_4gLxod",
-      "history_cutoff_exclusive_utc": "2026-11-25T10:30:00Z",
-      "features": {
-        "match_id": "m_3GEDIo",
-        "competition_slug": "jp-j1-league",
-        "season": "2026",
-        "kickoff_utc": "2026-11-25T10:30:00Z",
-        "home_team_id": "t_2SxYow",
-        "away_team_id": "t_4gLxod",
-        "home": {
-          "venue": {
-            "played": 16,
-            "goals_for_per_match": 1.5625,
-            "goals_against_per_match": 1.4375
-          },
-          "overall": {
-            "played": 35,
-            "goals_for_per_match": 1.4286,
-            "goals_against_per_match": 1.4857
-          },
-          "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
-          },
-          "selected": {
-            "played": 16,
-            "goals_for_per_match": 1.5625,
-            "goals_against_per_match": 1.4375
-          },
-          "selected_source": "venue"
-        },
-        "away": {
-          "venue": {
-            "played": 17,
-            "goals_for_per_match": 1.1765,
-            "goals_against_per_match": 1.7059
-          },
-          "overall": {
-            "played": 35,
-            "goals_for_per_match": 1.3429,
-            "goals_against_per_match": 1.4286
-          },
-          "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
-          },
-          "selected": {
-            "played": 17,
-            "goals_for_per_match": 1.1765,
-            "goals_against_per_match": 1.7059
-          },
-          "selected_source": "venue"
-        },
-        "competition": {
-          "home": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
-          },
-          "away": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
-          }
-        },
-        "history_cutoff_exclusive_utc": "2026-11-25T10:30:00Z"
-      },
-      "expected_goals": {
-        "status": "estimated",
-        "model": "venue_attack_defence_poisson_baseline_v1",
-        "lambda_home": 1.7433,
-        "lambda_away": 1.3043,
-        "total_expected_goals": 3.0476,
-        "prior_matches": 5.0,
-        "samples": {
-          "home": 16,
-          "away": 17
-        },
-        "sample_level": "high",
-        "sources": {
-          "home": "venue",
-          "away": "venue"
-        },
-        "formula": "competition_venue_average × shrunk_attack_ratio × shrunk_opponent_defence_ratio",
-        "calibration_status": "not_calibrated"
-      }
-    },
     "m_1zMkVF": {
       "match_id": "m_1zMkVF",
       "competition_slug": "jp-j1-league",
@@ -18944,14 +18265,14 @@
             "goals_against_per_match": 1.3333
           },
           "overall": {
-            "played": 35,
-            "goals_for_per_match": 0.8857,
-            "goals_against_per_match": 1.4
+            "played": 36,
+            "goals_for_per_match": 0.8611,
+            "goals_against_per_match": 1.4167
           },
           "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
+            "played": 356,
+            "goals_for_per_match": 1.4522,
+            "goals_against_per_match": 1.2978
           },
           "selected": {
             "played": 18,
@@ -18967,14 +18288,14 @@
             "goals_against_per_match": 1.5263
           },
           "overall": {
-            "played": 35,
-            "goals_for_per_match": 1.4286,
-            "goals_against_per_match": 1.4857
+            "played": 36,
+            "goals_for_per_match": 1.4444,
+            "goals_against_per_match": 1.5
           },
           "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
+            "played": 356,
+            "goals_for_per_match": 1.2978,
+            "goals_against_per_match": 1.4522
           },
           "selected": {
             "played": 19,
@@ -18985,14 +18306,14 @@
         },
         "competition": {
           "home": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
+            "played": 356,
+            "goals_for_per_match": 1.4522,
+            "goals_against_per_match": 1.2978
           },
           "away": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
+            "played": 356,
+            "goals_for_per_match": 1.2978,
+            "goals_against_per_match": 1.4522
           }
         },
         "history_cutoff_exclusive_utc": "2026-11-28T05:00:00Z"
@@ -19000,9 +18321,9 @@
       "expected_goals": {
         "status": "estimated",
         "model": "venue_attack_defence_poisson_baseline_v1",
-        "lambda_home": 1.0972,
-        "lambda_away": 1.3418,
-        "total_expected_goals": 2.439,
+        "lambda_home": 1.0974,
+        "lambda_away": 1.3401,
+        "total_expected_goals": 2.4375,
         "prior_matches": 5.0,
         "samples": {
           "home": 18,
@@ -19046,9 +18367,9 @@
             "goals_against_per_match": 1.6
           },
           "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
+            "played": 356,
+            "goals_for_per_match": 1.4522,
+            "goals_against_per_match": 1.2978
           },
           "selected": {
             "played": 17,
@@ -19059,37 +18380,37 @@
         },
         "away": {
           "venue": {
-            "played": 17,
-            "goals_for_per_match": 1.1765,
-            "goals_against_per_match": 1.7059
+            "played": 18,
+            "goals_for_per_match": 1.2222,
+            "goals_against_per_match": 1.7222
           },
           "overall": {
-            "played": 35,
-            "goals_for_per_match": 1.3429,
-            "goals_against_per_match": 1.4286
+            "played": 36,
+            "goals_for_per_match": 1.3611,
+            "goals_against_per_match": 1.4444
           },
           "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
+            "played": 356,
+            "goals_for_per_match": 1.2978,
+            "goals_against_per_match": 1.4522
           },
           "selected": {
-            "played": 17,
-            "goals_for_per_match": 1.1765,
-            "goals_against_per_match": 1.7059
+            "played": 18,
+            "goals_for_per_match": 1.2222,
+            "goals_against_per_match": 1.7222
           },
           "selected_source": "venue"
         },
         "competition": {
           "home": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
+            "played": 356,
+            "goals_for_per_match": 1.4522,
+            "goals_against_per_match": 1.2978
           },
           "away": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
+            "played": 356,
+            "goals_for_per_match": 1.2978,
+            "goals_against_per_match": 1.4522
           }
         },
         "history_cutoff_exclusive_utc": "2026-11-28T05:00:00Z"
@@ -19097,13 +18418,13 @@
       "expected_goals": {
         "status": "estimated",
         "model": "venue_attack_defence_poisson_baseline_v1",
-        "lambda_home": 1.7156,
-        "lambda_away": 1.4984,
-        "total_expected_goals": 3.214,
+        "lambda_home": 1.7318,
+        "lambda_away": 1.5396,
+        "total_expected_goals": 3.2714,
         "prior_matches": 5.0,
         "samples": {
           "home": 17,
-          "away": 17
+          "away": 18
         },
         "sample_level": "high",
         "sources": {
@@ -19143,9 +18464,9 @@
             "goals_against_per_match": 1.1143
           },
           "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
+            "played": 356,
+            "goals_for_per_match": 1.4522,
+            "goals_against_per_match": 1.2978
           },
           "selected": {
             "played": 18,
@@ -19161,14 +18482,14 @@
             "goals_against_per_match": 1.9444
           },
           "overall": {
-            "played": 35,
-            "goals_for_per_match": 1.0857,
-            "goals_against_per_match": 1.6857
+            "played": 36,
+            "goals_for_per_match": 1.0833,
+            "goals_against_per_match": 1.6944
           },
           "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
+            "played": 356,
+            "goals_for_per_match": 1.2978,
+            "goals_against_per_match": 1.4522
           },
           "selected": {
             "played": 18,
@@ -19179,14 +18500,14 @@
         },
         "competition": {
           "home": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
+            "played": 356,
+            "goals_for_per_match": 1.4522,
+            "goals_against_per_match": 1.2978
           },
           "away": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
+            "played": 356,
+            "goals_for_per_match": 1.2978,
+            "goals_against_per_match": 1.4522
           }
         },
         "history_cutoff_exclusive_utc": "2026-11-28T06:00:00Z"
@@ -19194,9 +18515,9 @@
       "expected_goals": {
         "status": "estimated",
         "model": "venue_attack_defence_poisson_baseline_v1",
-        "lambda_home": 2.2143,
-        "lambda_away": 0.9458,
-        "total_expected_goals": 3.1601,
+        "lambda_home": 2.2148,
+        "lambda_away": 0.9449,
+        "total_expected_goals": 3.1597,
         "prior_matches": 5.0,
         "samples": {
           "home": 18,
@@ -19240,9 +18561,9 @@
             "goals_against_per_match": 1.1143
           },
           "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
+            "played": 356,
+            "goals_for_per_match": 1.4522,
+            "goals_against_per_match": 1.2978
           },
           "selected": {
             "played": 18,
@@ -19258,14 +18579,14 @@
             "goals_against_per_match": 1.3889
           },
           "overall": {
-            "played": 35,
-            "goals_for_per_match": 1.2571,
-            "goals_against_per_match": 1.3714
+            "played": 36,
+            "goals_for_per_match": 1.2778,
+            "goals_against_per_match": 1.3333
           },
           "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
+            "played": 356,
+            "goals_for_per_match": 1.2978,
+            "goals_against_per_match": 1.4522
           },
           "selected": {
             "played": 18,
@@ -19276,14 +18597,14 @@
         },
         "competition": {
           "home": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
+            "played": 356,
+            "goals_for_per_match": 1.4522,
+            "goals_against_per_match": 1.2978
           },
           "away": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
+            "played": 356,
+            "goals_for_per_match": 1.2978,
+            "goals_against_per_match": 1.4522
           }
         },
         "history_cutoff_exclusive_utc": "2026-11-28T06:00:00Z"
@@ -19291,9 +18612,9 @@
       "expected_goals": {
         "status": "estimated",
         "model": "venue_attack_defence_poisson_baseline_v1",
-        "lambda_home": 1.6485,
-        "lambda_away": 0.8029,
-        "total_expected_goals": 2.4514,
+        "lambda_home": 1.6488,
+        "lambda_away": 0.8022,
+        "total_expected_goals": 2.451,
         "prior_matches": 5.0,
         "samples": {
           "home": 18,
@@ -19337,9 +18658,9 @@
             "goals_against_per_match": 1.3714
           },
           "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
+            "played": 356,
+            "goals_for_per_match": 1.4522,
+            "goals_against_per_match": 1.2978
           },
           "selected": {
             "played": 18,
@@ -19350,37 +18671,37 @@
         },
         "away": {
           "venue": {
-            "played": 17,
-            "goals_for_per_match": 1.4706,
-            "goals_against_per_match": 1.1176
+            "played": 18,
+            "goals_for_per_match": 1.5,
+            "goals_against_per_match": 1.1667
           },
           "overall": {
-            "played": 34,
-            "goals_for_per_match": 1.8529,
-            "goals_against_per_match": 0.9706
+            "played": 35,
+            "goals_for_per_match": 1.8571,
+            "goals_against_per_match": 1.0
           },
           "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
+            "played": 356,
+            "goals_for_per_match": 1.2978,
+            "goals_against_per_match": 1.4522
           },
           "selected": {
-            "played": 17,
-            "goals_for_per_match": 1.4706,
-            "goals_against_per_match": 1.1176
+            "played": 18,
+            "goals_for_per_match": 1.5,
+            "goals_against_per_match": 1.1667
           },
           "selected_source": "venue"
         },
         "competition": {
           "home": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
+            "played": 356,
+            "goals_for_per_match": 1.4522,
+            "goals_against_per_match": 1.2978
           },
           "away": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
+            "played": 356,
+            "goals_for_per_match": 1.2978,
+            "goals_against_per_match": 1.4522
           }
         },
         "history_cutoff_exclusive_utc": "2026-11-28T07:00:00Z"
@@ -19388,13 +18709,13 @@
       "expected_goals": {
         "status": "estimated",
         "model": "venue_attack_defence_poisson_baseline_v1",
-        "lambda_home": 1.3314,
-        "lambda_away": 1.4158,
-        "total_expected_goals": 2.7472,
+        "lambda_home": 1.3708,
+        "lambda_away": 1.4385,
+        "total_expected_goals": 2.8093,
         "prior_matches": 5.0,
         "samples": {
           "home": 18,
-          "away": 17
+          "away": 18
         },
         "sample_level": "high",
         "sources": {
@@ -19429,14 +18750,14 @@
             "goals_against_per_match": 1.4706
           },
           "overall": {
-            "played": 35,
-            "goals_for_per_match": 1.5714,
-            "goals_against_per_match": 1.3429
+            "played": 36,
+            "goals_for_per_match": 1.5833,
+            "goals_against_per_match": 1.3333
           },
           "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
+            "played": 356,
+            "goals_for_per_match": 1.4522,
+            "goals_against_per_match": 1.2978
           },
           "selected": {
             "played": 17,
@@ -19452,14 +18773,14 @@
             "goals_against_per_match": 0.6471
           },
           "overall": {
-            "played": 35,
-            "goals_for_per_match": 1.9143,
-            "goals_against_per_match": 0.8286
+            "played": 36,
+            "goals_for_per_match": 1.9167,
+            "goals_against_per_match": 0.8611
           },
           "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
+            "played": 356,
+            "goals_for_per_match": 1.2978,
+            "goals_against_per_match": 1.4522
           },
           "selected": {
             "played": 17,
@@ -19470,14 +18791,14 @@
         },
         "competition": {
           "home": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
+            "played": 356,
+            "goals_for_per_match": 1.4522,
+            "goals_against_per_match": 1.2978
           },
           "away": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
+            "played": 356,
+            "goals_for_per_match": 1.2978,
+            "goals_against_per_match": 1.4522
           }
         },
         "history_cutoff_exclusive_utc": "2026-11-29T05:00:00Z"
@@ -19485,9 +18806,9 @@
       "expected_goals": {
         "status": "estimated",
         "model": "venue_attack_defence_poisson_baseline_v1",
-        "lambda_home": 0.916,
-        "lambda_away": 2.0826,
-        "total_expected_goals": 2.9986,
+        "lambda_home": 0.9162,
+        "lambda_away": 2.0799,
+        "total_expected_goals": 2.9961,
         "prior_matches": 5.0,
         "samples": {
           "home": 17,
@@ -19521,24 +18842,24 @@
         "away_team_id": "t_1W837G",
         "home": {
           "venue": {
-            "played": 17,
+            "played": 18,
             "goals_for_per_match": 1.0,
-            "goals_against_per_match": 1.4706
+            "goals_against_per_match": 1.3889
           },
           "overall": {
-            "played": 35,
-            "goals_for_per_match": 0.9429,
-            "goals_against_per_match": 1.8286
+            "played": 36,
+            "goals_for_per_match": 0.9444,
+            "goals_against_per_match": 1.7778
           },
           "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
+            "played": 356,
+            "goals_for_per_match": 1.4522,
+            "goals_against_per_match": 1.2978
           },
           "selected": {
-            "played": 17,
+            "played": 18,
             "goals_for_per_match": 1.0,
-            "goals_against_per_match": 1.4706
+            "goals_against_per_match": 1.3889
           },
           "selected_source": "venue"
         },
@@ -19549,14 +18870,14 @@
             "goals_against_per_match": 1.5
           },
           "overall": {
-            "played": 34,
-            "goals_for_per_match": 1.1176,
-            "goals_against_per_match": 1.3824
+            "played": 35,
+            "goals_for_per_match": 1.1143,
+            "goals_against_per_match": 1.4
           },
           "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
+            "played": 356,
+            "goals_for_per_match": 1.2978,
+            "goals_against_per_match": 1.4522
           },
           "selected": {
             "played": 18,
@@ -19567,14 +18888,14 @@
         },
         "competition": {
           "home": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
+            "played": 356,
+            "goals_for_per_match": 1.4522,
+            "goals_against_per_match": 1.2978
           },
           "away": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
+            "played": 356,
+            "goals_for_per_match": 1.2978,
+            "goals_against_per_match": 1.4522
           }
         },
         "history_cutoff_exclusive_utc": "2026-11-29T05:00:00Z"
@@ -19582,12 +18903,12 @@
       "expected_goals": {
         "status": "estimated",
         "model": "venue_attack_defence_poisson_baseline_v1",
-        "lambda_home": 1.131,
-        "lambda_away": 1.0795,
-        "total_expected_goals": 2.2105,
+        "lambda_home": 1.1266,
+        "lambda_away": 1.0315,
+        "total_expected_goals": 2.1581,
         "prior_matches": 5.0,
         "samples": {
-          "home": 17,
+          "home": 18,
           "away": 18
         },
         "sample_level": "high",
@@ -19623,14 +18944,14 @@
             "goals_against_per_match": 1.7222
           },
           "overall": {
-            "played": 35,
-            "goals_for_per_match": 1.5143,
-            "goals_against_per_match": 1.5429
+            "played": 36,
+            "goals_for_per_match": 1.5278,
+            "goals_against_per_match": 1.5278
           },
           "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
+            "played": 356,
+            "goals_for_per_match": 1.4522,
+            "goals_against_per_match": 1.2978
           },
           "selected": {
             "played": 18,
@@ -19651,9 +18972,9 @@
             "goals_against_per_match": 1.4286
           },
           "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
+            "played": 356,
+            "goals_for_per_match": 1.2978,
+            "goals_against_per_match": 1.4522
           },
           "selected": {
             "played": 18,
@@ -19664,14 +18985,14 @@
         },
         "competition": {
           "home": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
+            "played": 356,
+            "goals_for_per_match": 1.4522,
+            "goals_against_per_match": 1.2978
           },
           "away": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
+            "played": 356,
+            "goals_for_per_match": 1.2978,
+            "goals_against_per_match": 1.4522
           }
         },
         "history_cutoff_exclusive_utc": "2026-11-29T06:00:00Z"
@@ -19679,9 +19000,9 @@
       "expected_goals": {
         "status": "estimated",
         "model": "venue_attack_defence_poisson_baseline_v1",
-        "lambda_home": 1.7952,
-        "lambda_away": 1.6123,
-        "total_expected_goals": 3.4075,
+        "lambda_home": 1.7955,
+        "lambda_away": 1.6103,
+        "total_expected_goals": 3.4058,
         "prior_matches": 5.0,
         "samples": {
           "home": 18,
@@ -19720,14 +19041,14 @@
             "goals_against_per_match": 1.3529
           },
           "overall": {
-            "played": 35,
-            "goals_for_per_match": 1.4,
-            "goals_against_per_match": 1.5714
+            "played": 36,
+            "goals_for_per_match": 1.4167,
+            "goals_against_per_match": 1.5556
           },
           "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
+            "played": 356,
+            "goals_for_per_match": 1.4522,
+            "goals_against_per_match": 1.2978
           },
           "selected": {
             "played": 17,
@@ -19743,14 +19064,14 @@
             "goals_against_per_match": 1.7059
           },
           "overall": {
-            "played": 35,
+            "played": 36,
             "goals_for_per_match": 1.0,
-            "goals_against_per_match": 1.6
+            "goals_against_per_match": 1.6111
           },
           "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
+            "played": 356,
+            "goals_for_per_match": 1.2978,
+            "goals_against_per_match": 1.4522
           },
           "selected": {
             "played": 17,
@@ -19761,14 +19082,14 @@
         },
         "competition": {
           "home": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
+            "played": 356,
+            "goals_for_per_match": 1.4522,
+            "goals_against_per_match": 1.2978
           },
           "away": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
+            "played": 356,
+            "goals_for_per_match": 1.2978,
+            "goals_against_per_match": 1.4522
           }
         },
         "history_cutoff_exclusive_utc": "2026-11-29T06:00:00Z"
@@ -19776,9 +19097,9 @@
       "expected_goals": {
         "status": "estimated",
         "model": "venue_attack_defence_poisson_baseline_v1",
-        "lambda_home": 1.664,
-        "lambda_away": 0.9628,
-        "total_expected_goals": 2.6268,
+        "lambda_home": 1.6644,
+        "lambda_away": 0.9618,
+        "total_expected_goals": 2.6262,
         "prior_matches": 5.0,
         "samples": {
           "home": 17,
@@ -19822,9 +19143,9 @@
             "goals_against_per_match": 0.9143
           },
           "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
+            "played": 356,
+            "goals_for_per_match": 1.4522,
+            "goals_against_per_match": 1.2978
           },
           "selected": {
             "played": 18,
@@ -19835,37 +19156,37 @@
         },
         "away": {
           "venue": {
-            "played": 16,
-            "goals_for_per_match": 1.0,
-            "goals_against_per_match": 1.25
+            "played": 17,
+            "goals_for_per_match": 0.9412,
+            "goals_against_per_match": 1.2353
           },
           "overall": {
-            "played": 35,
-            "goals_for_per_match": 0.9714,
-            "goals_against_per_match": 1.4857
+            "played": 36,
+            "goals_for_per_match": 0.9444,
+            "goals_against_per_match": 1.4722
           },
           "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
+            "played": 356,
+            "goals_for_per_match": 1.2978,
+            "goals_against_per_match": 1.4522
           },
           "selected": {
-            "played": 16,
-            "goals_for_per_match": 1.0,
-            "goals_against_per_match": 1.25
+            "played": 17,
+            "goals_for_per_match": 0.9412,
+            "goals_against_per_match": 1.2353
           },
           "selected_source": "venue"
         },
         "competition": {
           "home": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
+            "played": 356,
+            "goals_for_per_match": 1.4522,
+            "goals_against_per_match": 1.2978
           },
           "away": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
+            "played": 356,
+            "goals_for_per_match": 1.2978,
+            "goals_against_per_match": 1.4522
           }
         },
         "history_cutoff_exclusive_utc": "2026-11-29T07:00:00Z"
@@ -19873,13 +19194,13 @@
       "expected_goals": {
         "status": "estimated",
         "model": "venue_attack_defence_poisson_baseline_v1",
-        "lambda_home": 1.137,
-        "lambda_away": 0.8794,
-        "total_expected_goals": 2.0164,
+        "lambda_home": 1.1254,
+        "lambda_away": 0.8387,
+        "total_expected_goals": 1.9641,
         "prior_matches": 5.0,
         "samples": {
           "home": 18,
-          "away": 16
+          "away": 17
         },
         "sample_level": "high",
         "sources": {
@@ -19909,60 +19230,60 @@
         "away_team_id": "t_37dBko",
         "home": {
           "venue": {
-            "played": 18,
-            "goals_for_per_match": 1.7778,
-            "goals_against_per_match": 1.0
+            "played": 19,
+            "goals_for_per_match": 1.7895,
+            "goals_against_per_match": 1.0526
           },
           "overall": {
-            "played": 35,
-            "goals_for_per_match": 1.9143,
-            "goals_against_per_match": 0.8286
+            "played": 36,
+            "goals_for_per_match": 1.9167,
+            "goals_against_per_match": 0.8611
           },
           "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
+            "played": 356,
+            "goals_for_per_match": 1.4522,
+            "goals_against_per_match": 1.2978
           },
           "selected": {
-            "played": 18,
-            "goals_for_per_match": 1.7778,
-            "goals_against_per_match": 1.0
+            "played": 19,
+            "goals_for_per_match": 1.7895,
+            "goals_against_per_match": 1.0526
           },
           "selected_source": "venue"
         },
         "away": {
           "venue": {
-            "played": 17,
-            "goals_for_per_match": 1.1765,
-            "goals_against_per_match": 1.3529
+            "played": 18,
+            "goals_for_per_match": 1.2222,
+            "goals_against_per_match": 1.3333
           },
           "overall": {
-            "played": 35,
-            "goals_for_per_match": 1.5143,
-            "goals_against_per_match": 1.5429
+            "played": 36,
+            "goals_for_per_match": 1.5278,
+            "goals_against_per_match": 1.5278
           },
           "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
+            "played": 356,
+            "goals_for_per_match": 1.2978,
+            "goals_against_per_match": 1.4522
           },
           "selected": {
-            "played": 17,
-            "goals_for_per_match": 1.1765,
-            "goals_against_per_match": 1.3529
+            "played": 18,
+            "goals_for_per_match": 1.2222,
+            "goals_against_per_match": 1.3333
           },
           "selected_source": "venue"
         },
         "competition": {
           "home": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
+            "played": 356,
+            "goals_for_per_match": 1.4522,
+            "goals_against_per_match": 1.2978
           },
           "away": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
+            "played": 356,
+            "goals_for_per_match": 1.2978,
+            "goals_against_per_match": 1.4522
           }
         },
         "history_cutoff_exclusive_utc": "2026-12-04T09:30:00Z"
@@ -19970,13 +19291,13 @@
       "expected_goals": {
         "status": "estimated",
         "model": "venue_attack_defence_poisson_baseline_v1",
-        "lambda_home": 1.6165,
-        "lambda_away": 0.9888,
-        "total_expected_goals": 2.6053,
+        "lambda_home": 1.6091,
+        "lambda_away": 1.0534,
+        "total_expected_goals": 2.6625,
         "prior_matches": 5.0,
         "samples": {
-          "home": 18,
-          "away": 17
+          "home": 19,
+          "away": 18
         },
         "sample_level": "high",
         "sources": {
@@ -20006,24 +19327,24 @@
         "away_team_id": "t_3RSWKx",
         "home": {
           "venue": {
-            "played": 17,
-            "goals_for_per_match": 1.0588,
-            "goals_against_per_match": 1.4118
+            "played": 18,
+            "goals_for_per_match": 1.0556,
+            "goals_against_per_match": 1.4444
           },
           "overall": {
-            "played": 35,
-            "goals_for_per_match": 1.0857,
-            "goals_against_per_match": 1.6857
+            "played": 36,
+            "goals_for_per_match": 1.0833,
+            "goals_against_per_match": 1.6944
           },
           "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
+            "played": 356,
+            "goals_for_per_match": 1.4522,
+            "goals_against_per_match": 1.2978
           },
           "selected": {
-            "played": 17,
-            "goals_for_per_match": 1.0588,
-            "goals_against_per_match": 1.4118
+            "played": 18,
+            "goals_for_per_match": 1.0556,
+            "goals_against_per_match": 1.4444
           },
           "selected_source": "venue"
         },
@@ -20039,9 +19360,9 @@
             "goals_against_per_match": 1.1143
           },
           "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
+            "played": 356,
+            "goals_for_per_match": 1.2978,
+            "goals_against_per_match": 1.4522
           },
           "selected": {
             "played": 17,
@@ -20052,14 +19373,14 @@
         },
         "competition": {
           "home": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
+            "played": 356,
+            "goals_for_per_match": 1.4522,
+            "goals_against_per_match": 1.2978
           },
           "away": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
+            "played": 356,
+            "goals_for_per_match": 1.2978,
+            "goals_against_per_match": 1.4522
           }
         },
         "history_cutoff_exclusive_utc": "2026-12-05T04:00:00Z"
@@ -20067,12 +19388,12 @@
       "expected_goals": {
         "status": "estimated",
         "model": "venue_attack_defence_poisson_baseline_v1",
-        "lambda_home": 1.2671,
-        "lambda_away": 1.7248,
-        "total_expected_goals": 2.9919,
+        "lambda_home": 1.2602,
+        "lambda_away": 1.7558,
+        "total_expected_goals": 3.016,
         "prior_matches": 5.0,
         "samples": {
-          "home": 17,
+          "home": 18,
           "away": 17
         },
         "sample_level": "high",
@@ -20108,14 +19429,14 @@
             "goals_against_per_match": 1.6842
           },
           "overall": {
-            "played": 35,
-            "goals_for_per_match": 0.9714,
-            "goals_against_per_match": 1.4857
+            "played": 36,
+            "goals_for_per_match": 0.9444,
+            "goals_against_per_match": 1.4722
           },
           "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
+            "played": 356,
+            "goals_for_per_match": 1.4522,
+            "goals_against_per_match": 1.2978
           },
           "selected": {
             "played": 19,
@@ -20136,9 +19457,9 @@
             "goals_against_per_match": 1.6
           },
           "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
+            "played": 356,
+            "goals_for_per_match": 1.2978,
+            "goals_against_per_match": 1.4522
           },
           "selected": {
             "played": 18,
@@ -20149,14 +19470,14 @@
         },
         "competition": {
           "home": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
+            "played": 356,
+            "goals_for_per_match": 1.4522,
+            "goals_against_per_match": 1.2978
           },
           "away": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
+            "played": 356,
+            "goals_for_per_match": 1.2978,
+            "goals_against_per_match": 1.4522
           }
         },
         "history_cutoff_exclusive_utc": "2026-12-05T05:00:00Z"
@@ -20164,9 +19485,9 @@
       "expected_goals": {
         "status": "estimated",
         "model": "venue_attack_defence_poisson_baseline_v1",
-        "lambda_home": 1.0795,
-        "lambda_away": 1.2634,
-        "total_expected_goals": 2.3429,
+        "lambda_home": 1.0797,
+        "lambda_away": 1.2619,
+        "total_expected_goals": 2.3416,
         "prior_matches": 5.0,
         "samples": {
           "home": 19,
@@ -20200,60 +19521,60 @@
         "away_team_id": "t_1mrdfo",
         "home": {
           "venue": {
-            "played": 16,
-            "goals_for_per_match": 1.5625,
-            "goals_against_per_match": 1.4375
+            "played": 17,
+            "goals_for_per_match": 1.5882,
+            "goals_against_per_match": 1.4706
           },
           "overall": {
-            "played": 35,
-            "goals_for_per_match": 1.4286,
-            "goals_against_per_match": 1.4857
+            "played": 36,
+            "goals_for_per_match": 1.4444,
+            "goals_against_per_match": 1.5
           },
           "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
+            "played": 356,
+            "goals_for_per_match": 1.4522,
+            "goals_against_per_match": 1.2978
           },
           "selected": {
-            "played": 16,
-            "goals_for_per_match": 1.5625,
-            "goals_against_per_match": 1.4375
+            "played": 17,
+            "goals_for_per_match": 1.5882,
+            "goals_against_per_match": 1.4706
           },
           "selected_source": "venue"
         },
         "away": {
           "venue": {
-            "played": 18,
-            "goals_for_per_match": 1.3333,
-            "goals_against_per_match": 1.7778
+            "played": 19,
+            "goals_for_per_match": 1.3684,
+            "goals_against_per_match": 1.7368
           },
           "overall": {
-            "played": 35,
-            "goals_for_per_match": 1.4,
-            "goals_against_per_match": 1.5714
+            "played": 36,
+            "goals_for_per_match": 1.4167,
+            "goals_against_per_match": 1.5556
           },
           "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
+            "played": 356,
+            "goals_for_per_match": 1.2978,
+            "goals_against_per_match": 1.4522
           },
           "selected": {
-            "played": 18,
-            "goals_for_per_match": 1.3333,
-            "goals_against_per_match": 1.7778
+            "played": 19,
+            "goals_for_per_match": 1.3684,
+            "goals_against_per_match": 1.7368
           },
           "selected_source": "venue"
         },
         "competition": {
           "home": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
+            "played": 356,
+            "goals_for_per_match": 1.4522,
+            "goals_against_per_match": 1.2978
           },
           "away": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
+            "played": 356,
+            "goals_for_per_match": 1.2978,
+            "goals_against_per_match": 1.4522
           }
         },
         "history_cutoff_exclusive_utc": "2026-12-05T05:00:00Z"
@@ -20261,13 +19582,13 @@
       "expected_goals": {
         "status": "estimated",
         "model": "venue_attack_defence_poisson_baseline_v1",
-        "lambda_home": 1.8054,
-        "lambda_away": 1.436,
-        "total_expected_goals": 3.2414,
+        "lambda_home": 1.7989,
+        "lambda_away": 1.493,
+        "total_expected_goals": 3.2919,
         "prior_matches": 5.0,
         "samples": {
-          "home": 16,
-          "away": 18
+          "home": 17,
+          "away": 19
         },
         "sample_level": "high",
         "sources": {
@@ -20297,60 +19618,60 @@
         "away_team_id": "t_1E6Pbm",
         "home": {
           "venue": {
-            "played": 16,
-            "goals_for_per_match": 1.375,
-            "goals_against_per_match": 1.25
+            "played": 17,
+            "goals_for_per_match": 1.3529,
+            "goals_against_per_match": 1.2941
           },
           "overall": {
-            "played": 34,
-            "goals_for_per_match": 1.1176,
-            "goals_against_per_match": 1.3824
+            "played": 35,
+            "goals_for_per_match": 1.1143,
+            "goals_against_per_match": 1.4
           },
           "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
+            "played": 356,
+            "goals_for_per_match": 1.4522,
+            "goals_against_per_match": 1.2978
           },
           "selected": {
-            "played": 16,
-            "goals_for_per_match": 1.375,
-            "goals_against_per_match": 1.25
+            "played": 17,
+            "goals_for_per_match": 1.3529,
+            "goals_against_per_match": 1.2941
           },
           "selected_source": "venue"
         },
         "away": {
           "venue": {
-            "played": 17,
-            "goals_for_per_match": 0.8235,
-            "goals_against_per_match": 1.4706
+            "played": 18,
+            "goals_for_per_match": 0.7778,
+            "goals_against_per_match": 1.5
           },
           "overall": {
-            "played": 35,
-            "goals_for_per_match": 0.8857,
-            "goals_against_per_match": 1.4
+            "played": 36,
+            "goals_for_per_match": 0.8611,
+            "goals_against_per_match": 1.4167
           },
           "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
+            "played": 356,
+            "goals_for_per_match": 1.2978,
+            "goals_against_per_match": 1.4522
           },
           "selected": {
-            "played": 17,
-            "goals_for_per_match": 0.8235,
-            "goals_against_per_match": 1.4706
+            "played": 18,
+            "goals_for_per_match": 0.7778,
+            "goals_against_per_match": 1.5
           },
           "selected_source": "venue"
         },
         "competition": {
           "home": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
+            "played": 356,
+            "goals_for_per_match": 1.4522,
+            "goals_against_per_match": 1.2978
           },
           "away": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
+            "played": 356,
+            "goals_for_per_match": 1.2978,
+            "goals_against_per_match": 1.4522
           }
         },
         "history_cutoff_exclusive_utc": "2026-12-05T06:00:00Z"
@@ -20358,13 +19679,13 @@
       "expected_goals": {
         "status": "estimated",
         "model": "venue_attack_defence_poisson_baseline_v1",
-        "lambda_home": 1.4068,
-        "lambda_away": 0.906,
-        "total_expected_goals": 2.3128,
+        "lambda_home": 1.4109,
+        "lambda_away": 0.8889,
+        "total_expected_goals": 2.2998,
         "prior_matches": 5.0,
         "samples": {
-          "home": 16,
-          "away": 17
+          "home": 17,
+          "away": 18
         },
         "sample_level": "high",
         "sources": {
@@ -20399,14 +19720,14 @@
             "goals_against_per_match": 1.1667
           },
           "overall": {
-            "played": 35,
-            "goals_for_per_match": 1.3429,
-            "goals_against_per_match": 1.4286
+            "played": 36,
+            "goals_for_per_match": 1.3611,
+            "goals_against_per_match": 1.4444
           },
           "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
+            "played": 356,
+            "goals_for_per_match": 1.4522,
+            "goals_against_per_match": 1.2978
           },
           "selected": {
             "played": 18,
@@ -20422,14 +19743,14 @@
             "goals_against_per_match": 2.1667
           },
           "overall": {
-            "played": 35,
-            "goals_for_per_match": 0.9429,
-            "goals_against_per_match": 1.8286
+            "played": 36,
+            "goals_for_per_match": 0.9444,
+            "goals_against_per_match": 1.7778
           },
           "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
+            "played": 356,
+            "goals_for_per_match": 1.2978,
+            "goals_against_per_match": 1.4522
           },
           "selected": {
             "played": 18,
@@ -20440,14 +19761,14 @@
         },
         "competition": {
           "home": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
+            "played": 356,
+            "goals_for_per_match": 1.4522,
+            "goals_against_per_match": 1.2978
           },
           "away": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
+            "played": 356,
+            "goals_for_per_match": 1.2978,
+            "goals_against_per_match": 1.4522
           }
         },
         "history_cutoff_exclusive_utc": "2026-12-05T06:00:00Z"
@@ -20455,9 +19776,9 @@
       "expected_goals": {
         "status": "estimated",
         "model": "venue_attack_defence_poisson_baseline_v1",
-        "lambda_home": 2.0627,
-        "lambda_away": 0.9014,
-        "total_expected_goals": 2.9641,
+        "lambda_home": 2.0632,
+        "lambda_away": 0.9005,
+        "total_expected_goals": 2.9637,
         "prior_matches": 5.0,
         "samples": {
           "home": 18,
@@ -20496,14 +19817,14 @@
             "goals_against_per_match": 0.8235
           },
           "overall": {
-            "played": 34,
-            "goals_for_per_match": 1.8529,
-            "goals_against_per_match": 0.9706
+            "played": 35,
+            "goals_for_per_match": 1.8571,
+            "goals_against_per_match": 1.0
           },
           "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
+            "played": 356,
+            "goals_for_per_match": 1.4522,
+            "goals_against_per_match": 1.2978
           },
           "selected": {
             "played": 17,
@@ -20524,9 +19845,9 @@
             "goals_against_per_match": 1.1143
           },
           "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
+            "played": 356,
+            "goals_for_per_match": 1.2978,
+            "goals_against_per_match": 1.4522
           },
           "selected": {
             "played": 17,
@@ -20537,14 +19858,14 @@
         },
         "competition": {
           "home": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
+            "played": 356,
+            "goals_for_per_match": 1.4522,
+            "goals_against_per_match": 1.2978
           },
           "away": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
+            "played": 356,
+            "goals_for_per_match": 1.2978,
+            "goals_against_per_match": 1.4522
           }
         },
         "history_cutoff_exclusive_utc": "2026-12-06T05:00:00Z"
@@ -20552,9 +19873,9 @@
       "expected_goals": {
         "status": "estimated",
         "model": "venue_attack_defence_poisson_baseline_v1",
-        "lambda_home": 1.8195,
-        "lambda_away": 0.9628,
-        "total_expected_goals": 2.7823,
+        "lambda_home": 1.8199,
+        "lambda_away": 0.9618,
+        "total_expected_goals": 2.7817,
         "prior_matches": 5.0,
         "samples": {
           "home": 17,
@@ -20598,9 +19919,9 @@
             "goals_against_per_match": 1.4286
           },
           "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
+            "played": 356,
+            "goals_for_per_match": 1.4522,
+            "goals_against_per_match": 1.2978
           },
           "selected": {
             "played": 17,
@@ -20611,37 +19932,37 @@
         },
         "away": {
           "venue": {
-            "played": 18,
-            "goals_for_per_match": 1.5,
-            "goals_against_per_match": 1.2222
+            "played": 19,
+            "goals_for_per_match": 1.5263,
+            "goals_against_per_match": 1.2105
           },
           "overall": {
-            "played": 35,
-            "goals_for_per_match": 1.5714,
-            "goals_against_per_match": 1.3429
+            "played": 36,
+            "goals_for_per_match": 1.5833,
+            "goals_against_per_match": 1.3333
           },
           "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
+            "played": 356,
+            "goals_for_per_match": 1.2978,
+            "goals_against_per_match": 1.4522
           },
           "selected": {
-            "played": 18,
-            "goals_for_per_match": 1.5,
-            "goals_against_per_match": 1.2222
+            "played": 19,
+            "goals_for_per_match": 1.5263,
+            "goals_against_per_match": 1.2105
           },
           "selected_source": "venue"
         },
         "competition": {
           "home": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
+            "played": 356,
+            "goals_for_per_match": 1.4522,
+            "goals_against_per_match": 1.2978
           },
           "away": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
+            "played": 356,
+            "goals_for_per_match": 1.2978,
+            "goals_against_per_match": 1.4522
           }
         },
         "history_cutoff_exclusive_utc": "2026-12-06T06:00:00Z"
@@ -20649,13 +19970,13 @@
       "expected_goals": {
         "status": "estimated",
         "model": "venue_attack_defence_poisson_baseline_v1",
-        "lambda_home": 1.2446,
-        "lambda_away": 1.5057,
-        "total_expected_goals": 2.7503,
+        "lambda_home": 1.2337,
+        "lambda_away": 1.5272,
+        "total_expected_goals": 2.7609,
         "prior_matches": 5.0,
         "samples": {
           "home": 17,
-          "away": 18
+          "away": 19
         },
         "sample_level": "high",
         "sources": {
@@ -20695,9 +20016,9 @@
             "goals_against_per_match": 1.3714
           },
           "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
+            "played": 356,
+            "goals_for_per_match": 1.4522,
+            "goals_against_per_match": 1.2978
           },
           "selected": {
             "played": 18,
@@ -20713,14 +20034,14 @@
             "goals_against_per_match": 1.7059
           },
           "overall": {
-            "played": 35,
+            "played": 36,
             "goals_for_per_match": 1.0,
-            "goals_against_per_match": 1.6
+            "goals_against_per_match": 1.6111
           },
           "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
+            "played": 356,
+            "goals_for_per_match": 1.2978,
+            "goals_against_per_match": 1.4522
           },
           "selected": {
             "played": 17,
@@ -20731,14 +20052,14 @@
         },
         "competition": {
           "home": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
+            "played": 356,
+            "goals_for_per_match": 1.4522,
+            "goals_against_per_match": 1.2978
           },
           "away": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
+            "played": 356,
+            "goals_for_per_match": 1.2978,
+            "goals_against_per_match": 1.4522
           }
         },
         "history_cutoff_exclusive_utc": "2026-12-06T07:00:00Z"
@@ -20746,9 +20067,9 @@
       "expected_goals": {
         "status": "estimated",
         "model": "venue_attack_defence_poisson_baseline_v1",
-        "lambda_home": 1.8384,
-        "lambda_away": 0.921,
-        "total_expected_goals": 2.7594,
+        "lambda_home": 1.8388,
+        "lambda_away": 0.9201,
+        "total_expected_goals": 2.7589,
         "prior_matches": 5.0,
         "samples": {
           "home": 18,
@@ -20792,9 +20113,9 @@
             "goals_against_per_match": 0.9143
           },
           "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
+            "played": 356,
+            "goals_for_per_match": 1.4522,
+            "goals_against_per_match": 1.2978
           },
           "selected": {
             "played": 18,
@@ -20810,14 +20131,14 @@
             "goals_against_per_match": 1.3889
           },
           "overall": {
-            "played": 35,
-            "goals_for_per_match": 1.2571,
-            "goals_against_per_match": 1.3714
+            "played": 36,
+            "goals_for_per_match": 1.2778,
+            "goals_against_per_match": 1.3333
           },
           "competition_venue": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
+            "played": 356,
+            "goals_for_per_match": 1.2978,
+            "goals_against_per_match": 1.4522
           },
           "selected": {
             "played": 18,
@@ -20828,14 +20149,14 @@
         },
         "competition": {
           "home": {
-            "played": 349,
-            "goals_for_per_match": 1.4527,
-            "goals_against_per_match": 1.2951
+            "played": 356,
+            "goals_for_per_match": 1.4522,
+            "goals_against_per_match": 1.2978
           },
           "away": {
-            "played": 349,
-            "goals_for_per_match": 1.2951,
-            "goals_against_per_match": 1.4527
+            "played": 356,
+            "goals_for_per_match": 1.2978,
+            "goals_against_per_match": 1.4522
           }
         },
         "history_cutoff_exclusive_utc": "2026-12-06T07:00:00Z"
@@ -20843,9 +20164,9 @@
       "expected_goals": {
         "status": "estimated",
         "model": "venue_attack_defence_poisson_baseline_v1",
-        "lambda_home": 1.2286,
-        "lambda_away": 1.1245,
-        "total_expected_goals": 2.3531,
+        "lambda_home": 1.2288,
+        "lambda_away": 1.1232,
+        "total_expected_goals": 2.352,
         "prior_matches": 5.0,
         "samples": {
           "home": 18,
@@ -20862,9 +20183,9 @@
     }
   },
   "quality": {
-    "history_matches_loaded": 1875,
-    "fixtures_loaded": 215,
-    "fixtures_with_predictions": 215,
+    "history_matches_loaded": 1882,
+    "fixtures_loaded": 208,
+    "fixtures_with_predictions": 208,
     "fixtures_without_features": 0,
     "feature_builder": {
       "matches_with_features": 2090,

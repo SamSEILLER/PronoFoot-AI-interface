@@ -1,92 +1,8 @@
 {
   "provider": "pitchapi_processed_history",
-  "generated_at_utc": "2026-11-25T12:51:56.117179+00:00",
-  "matches_considered": 9497,
+  "generated_at_utc": "2026-11-25T13:03:16.616974+00:00",
+  "matches_considered": 9504,
   "pairs": {
-    "avispa fukuoka|yokohama f marinos": {
-      "team_a": "Avispa Fukuoka",
-      "team_b": "Yokohama F.Marinos",
-      "matches": [
-        {
-          "date": "2025-09-20T10:00:00Z",
-          "home": "Yokohama F.Marinos",
-          "away": "Avispa Fukuoka",
-          "score_home": 2,
-          "score_away": 0,
-          "competition_id": "jp-j1-league",
-          "competition_name": "J1 League"
-        },
-        {
-          "date": "2025-04-12T05:00:00Z",
-          "home": "Avispa Fukuoka",
-          "away": "Yokohama F.Marinos",
-          "score_home": 2,
-          "score_away": 1,
-          "competition_id": "jp-j1-league",
-          "competition_name": "J1 League"
-        },
-        {
-          "date": "2024-06-26T10:00:00Z",
-          "home": "Avispa Fukuoka",
-          "away": "Yokohama F.Marinos",
-          "score_home": 2,
-          "score_away": 1,
-          "competition_id": "jp-j1-league",
-          "competition_name": "J1 League"
-        },
-        {
-          "date": "2024-03-01T10:00:00Z",
-          "home": "Yokohama F.Marinos",
-          "away": "Avispa Fukuoka",
-          "score_home": 0,
-          "score_away": 1,
-          "competition_id": "jp-j1-league",
-          "competition_name": "J1 League"
-        }
-      ]
-    },
-    "fc tokyo|sanfrecce hiroshima": {
-      "team_a": "FC Tokyo",
-      "team_b": "Sanfrecce Hiroshima",
-      "matches": [
-        {
-          "date": "2025-10-17T10:00:00Z",
-          "home": "Sanfrecce Hiroshima",
-          "away": "FC Tokyo",
-          "score_home": 0,
-          "score_away": 0,
-          "competition_id": "jp-j1-league",
-          "competition_name": "J1 League"
-        },
-        {
-          "date": "2025-05-25T06:00:00Z",
-          "home": "FC Tokyo",
-          "away": "Sanfrecce Hiroshima",
-          "score_home": 0,
-          "score_away": 3,
-          "competition_id": "jp-j1-league",
-          "competition_name": "J1 League"
-        },
-        {
-          "date": "2024-08-31T09:30:00Z",
-          "home": "Sanfrecce Hiroshima",
-          "away": "FC Tokyo",
-          "score_home": 3,
-          "score_away": 2,
-          "competition_id": "jp-j1-league",
-          "competition_name": "J1 League"
-        },
-        {
-          "date": "2024-03-02T06:00:00Z",
-          "home": "FC Tokyo",
-          "away": "Sanfrecce Hiroshima",
-          "score_home": 1,
-          "score_away": 1,
-          "competition_id": "jp-j1-league",
-          "competition_name": "J1 League"
-        }
-      ]
-    },
     "sanfrecce hiroshima|vissel kobe": {
       "team_a": "Sanfrecce Hiroshima",
       "team_b": "Vissel Kobe",
@@ -1066,48 +982,6 @@
           "away": "Avispa Fukuoka",
           "score_home": 0,
           "score_away": 2,
-          "competition_id": "jp-j1-league",
-          "competition_name": "J1 League"
-        }
-      ]
-    },
-    "cerezo osaka|urawa red diamonds": {
-      "team_a": "Cerezo Osaka",
-      "team_b": "Urawa Red Diamonds",
-      "matches": [
-        {
-          "date": "2025-05-28T10:30:00Z",
-          "home": "Urawa Red Diamonds",
-          "away": "Cerezo Osaka",
-          "score_home": 0,
-          "score_away": 0,
-          "competition_id": "jp-j1-league",
-          "competition_name": "J1 League"
-        },
-        {
-          "date": "2025-03-28T10:00:00Z",
-          "home": "Cerezo Osaka",
-          "away": "Urawa Red Diamonds",
-          "score_home": 1,
-          "score_away": 1,
-          "competition_id": "jp-j1-league",
-          "competition_name": "J1 League"
-        },
-        {
-          "date": "2024-10-05T07:00:00Z",
-          "home": "Urawa Red Diamonds",
-          "away": "Cerezo Osaka",
-          "score_home": 0,
-          "score_away": 1,
-          "competition_id": "jp-j1-league",
-          "competition_name": "J1 League"
-        },
-        {
-          "date": "2024-06-15T10:00:00Z",
-          "home": "Cerezo Osaka",
-          "away": "Urawa Red Diamonds",
-          "score_home": 2,
-          "score_away": 1,
           "competition_id": "jp-j1-league",
           "competition_name": "J1 League"
         }
@@ -5073,48 +4947,6 @@
         }
       ]
     },
-    "fagiano okayama fc|shimizu s pulse": {
-      "team_a": "Fagiano Okayama FC",
-      "team_b": "Shimizu S-Pulse",
-      "matches": [
-        {
-          "date": "2026-05-17T05:00:00Z",
-          "home": "Fagiano Okayama FC",
-          "away": "Shimizu S-Pulse",
-          "score_home": 2,
-          "score_away": 0,
-          "competition_id": "jp-j1-league",
-          "competition_name": "J1 League"
-        },
-        {
-          "date": "2026-03-14T05:00:00Z",
-          "home": "Shimizu S-Pulse",
-          "away": "Fagiano Okayama FC",
-          "score_home": 1,
-          "score_away": 1,
-          "competition_id": "jp-j1-league",
-          "competition_name": "J1 League"
-        },
-        {
-          "date": "2025-12-06T05:00:00Z",
-          "home": "Shimizu S-Pulse",
-          "away": "Fagiano Okayama FC",
-          "score_home": 1,
-          "score_away": 2,
-          "competition_id": "jp-j1-league",
-          "competition_name": "J1 League"
-        },
-        {
-          "date": "2025-03-02T05:00:00Z",
-          "home": "Fagiano Okayama FC",
-          "away": "Shimizu S-Pulse",
-          "score_home": 1,
-          "score_away": 1,
-          "competition_id": "jp-j1-league",
-          "competition_name": "J1 League"
-        }
-      ]
-    },
     "shimizu s pulse|urawa red diamonds": {
       "team_a": "Shimizu S-Pulse",
       "team_b": "Urawa Red Diamonds",
@@ -5736,30 +5568,6 @@
           "score_away": 1,
           "competition_id": "gb-premier-league",
           "competition_name": "Premier League"
-        }
-      ]
-    },
-    "mito hollyhock|tokyo verdy": {
-      "team_a": "Mito Hollyhock",
-      "team_b": "Tokyo Verdy",
-      "matches": [
-        {
-          "date": "2026-05-16T05:00:00Z",
-          "home": "Mito Hollyhock",
-          "away": "Tokyo Verdy",
-          "score_home": 0,
-          "score_away": 1,
-          "competition_id": "jp-j1-league",
-          "competition_name": "J1 League"
-        },
-        {
-          "date": "2026-02-08T07:00:00Z",
-          "home": "Tokyo Verdy",
-          "away": "Mito Hollyhock",
-          "score_home": 3,
-          "score_away": 1,
-          "competition_id": "jp-j1-league",
-          "competition_name": "J1 League"
         }
       ]
     },

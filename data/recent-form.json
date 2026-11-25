@@ -1,8 +1,8 @@
 {
   "provider": "pitchapi_processed_history",
-  "generated_at_utc": "2026-11-25T12:51:56.117179+00:00",
+  "generated_at_utc": "2026-11-25T13:03:16.616974+00:00",
   "recent_limit_per_competition": 5,
-  "matches_considered": 9497,
+  "matches_considered": 9504,
   "teams": {
     "inter miami cf": {
       "name": "Inter Miami CF",
@@ -88,13 +88,6 @@
       "name": "Sanfrecce Hiroshima",
       "matches": [
         {
-          "date": "2026-10-21T10:00:00Z",
-          "result": "D",
-          "score": "0-4",
-          "opponent": "V-Varen Nagasaki",
-          "competition_id": "jp-j1-league"
-        },
-        {
           "date": "2026-10-24T05:00:00Z",
           "result": "V",
           "score": "4-0",
@@ -121,19 +114,19 @@
           "score": "2-2",
           "opponent": "Yokohama F.Marinos",
           "competition_id": "jp-j1-league"
+        },
+        {
+          "date": "2026-11-25T10:00:00Z",
+          "result": "N",
+          "score": "2-2",
+          "opponent": "FC Tokyo",
+          "competition_id": "jp-j1-league"
         }
       ]
     },
     "urawa red diamonds": {
       "name": "Urawa Red Diamonds",
       "matches": [
-        {
-          "date": "2026-10-21T10:30:00Z",
-          "result": "V",
-          "score": "3-2",
-          "opponent": "JEF United Chiba",
-          "competition_id": "jp-j1-league"
-        },
         {
           "date": "2026-10-25T06:00:00Z",
           "result": "V",
@@ -161,19 +154,19 @@
           "score": "1-2",
           "opponent": "Kyoto Sanga FC",
           "competition_id": "jp-j1-league"
+        },
+        {
+          "date": "2026-11-25T10:30:00Z",
+          "result": "N",
+          "score": "2-2",
+          "opponent": "Cerezo Osaka",
+          "competition_id": "jp-j1-league"
         }
       ]
     },
     "nagoya grampus": {
       "name": "Nagoya Grampus",
       "matches": [
-        {
-          "date": "2026-10-21T10:00:00Z",
-          "result": "N",
-          "score": "1-1",
-          "opponent": "Cerezo Osaka",
-          "competition_id": "jp-j1-league"
-        },
         {
           "date": "2026-10-25T05:00:00Z",
           "result": "N",
@@ -200,6 +193,13 @@
           "result": "N",
           "score": "0-0",
           "opponent": "Tokyo Verdy",
+          "competition_id": "jp-j1-league"
+        },
+        {
+          "date": "2026-11-25T10:00:00Z",
+          "result": "V",
+          "score": "2-1",
+          "opponent": "JEF United Chiba",
           "competition_id": "jp-j1-league"
         }
       ]
@@ -288,13 +288,6 @@
       "name": "Avispa Fukuoka",
       "matches": [
         {
-          "date": "2026-10-21T10:00:00Z",
-          "result": "D",
-          "score": "1-2",
-          "opponent": "Gamba Osaka",
-          "competition_id": "jp-j1-league"
-        },
-        {
           "date": "2026-10-24T06:00:00Z",
           "result": "D",
           "score": "1-3",
@@ -321,19 +314,19 @@
           "score": "0-1",
           "opponent": "Kawasaki Frontale",
           "competition_id": "jp-j1-league"
+        },
+        {
+          "date": "2026-11-25T10:00:00Z",
+          "result": "D",
+          "score": "1-2",
+          "opponent": "Yokohama F.Marinos",
+          "competition_id": "jp-j1-league"
         }
       ]
     },
     "kawasaki frontale": {
       "name": "Kawasaki Frontale",
       "matches": [
-        {
-          "date": "2026-10-21T10:00:00Z",
-          "result": "V",
-          "score": "2-1",
-          "opponent": "Vissel Kobe",
-          "competition_id": "jp-j1-league"
-        },
         {
           "date": "2026-10-25T07:00:00Z",
           "result": "V",
@@ -360,6 +353,13 @@
           "result": "V",
           "score": "1-0",
           "opponent": "Avispa Fukuoka",
+          "competition_id": "jp-j1-league"
+        },
+        {
+          "date": "2026-11-25T10:00:00Z",
+          "result": "V",
+          "score": "2-1",
+          "opponent": "V-Varen Nagasaki",
           "competition_id": "jp-j1-league"
         }
       ]
@@ -448,13 +448,6 @@
       "name": "Cerezo Osaka",
       "matches": [
         {
-          "date": "2026-10-21T10:00:00Z",
-          "result": "N",
-          "score": "1-1",
-          "opponent": "Nagoya Grampus",
-          "competition_id": "jp-j1-league"
-        },
-        {
           "date": "2026-10-25T06:00:00Z",
           "result": "N",
           "score": "2-2",
@@ -481,19 +474,19 @@
           "score": "0-3",
           "opponent": "FC Tokyo",
           "competition_id": "jp-j1-league"
+        },
+        {
+          "date": "2026-11-25T10:30:00Z",
+          "result": "N",
+          "score": "2-2",
+          "opponent": "Urawa Red Diamonds",
+          "competition_id": "jp-j1-league"
         }
       ]
     },
     "fc tokyo": {
       "name": "FC Tokyo",
       "matches": [
-        {
-          "date": "2026-10-21T10:00:00Z",
-          "result": "N",
-          "score": "0-0",
-          "opponent": "Kashiwa Reysol",
-          "competition_id": "jp-j1-league"
-        },
         {
           "date": "2026-10-25T07:00:00Z",
           "result": "V",
@@ -520,6 +513,13 @@
           "result": "V",
           "score": "3-0",
           "opponent": "Cerezo Osaka",
+          "competition_id": "jp-j1-league"
+        },
+        {
+          "date": "2026-11-25T10:00:00Z",
+          "result": "N",
+          "score": "2-2",
+          "opponent": "Sanfrecce Hiroshima",
           "competition_id": "jp-j1-league"
         }
       ]
@@ -1048,13 +1048,6 @@
       "name": "Tokyo Verdy",
       "matches": [
         {
-          "date": "2026-10-21T10:00:00Z",
-          "result": "N",
-          "score": "2-2",
-          "opponent": "Yokohama F.Marinos",
-          "competition_id": "jp-j1-league"
-        },
-        {
           "date": "2026-10-24T06:00:00Z",
           "result": "V",
           "score": "3-1",
@@ -1081,19 +1074,19 @@
           "score": "0-0",
           "opponent": "Nagoya Grampus",
           "competition_id": "jp-j1-league"
+        },
+        {
+          "date": "2026-11-25T10:00:00Z",
+          "result": "D",
+          "score": "0-1",
+          "opponent": "Mito Hollyhock",
+          "competition_id": "jp-j1-league"
         }
       ]
     },
     "yokohama f marinos": {
       "name": "Yokohama F.Marinos",
       "matches": [
-        {
-          "date": "2026-10-21T10:00:00Z",
-          "result": "N",
-          "score": "2-2",
-          "opponent": "Tokyo Verdy",
-          "competition_id": "jp-j1-league"
-        },
         {
           "date": "2026-10-25T05:00:00Z",
           "result": "N",
@@ -1120,6 +1113,13 @@
           "result": "N",
           "score": "2-2",
           "opponent": "Sanfrecce Hiroshima",
+          "competition_id": "jp-j1-league"
+        },
+        {
+          "date": "2026-11-25T10:00:00Z",
+          "result": "V",
+          "score": "2-1",
+          "opponent": "Avispa Fukuoka",
           "competition_id": "jp-j1-league"
         }
       ]
@@ -9064,13 +9064,6 @@
       "name": "Fagiano Okayama FC",
       "matches": [
         {
-          "date": "2026-10-21T10:00:00Z",
-          "result": "V",
-          "score": "2-0",
-          "opponent": "Mito Hollyhock",
-          "competition_id": "jp-j1-league"
-        },
-        {
           "date": "2026-10-25T07:00:00Z",
           "result": "D",
           "score": "1-2",
@@ -9097,19 +9090,19 @@
           "score": "1-0",
           "opponent": "Gamba Osaka",
           "competition_id": "jp-j1-league"
+        },
+        {
+          "date": "2026-11-25T10:00:00Z",
+          "result": "V",
+          "score": "2-0",
+          "opponent": "Shimizu S-Pulse",
+          "competition_id": "jp-j1-league"
         }
       ]
     },
     "shimizu s pulse": {
       "name": "Shimizu S-Pulse",
       "matches": [
-        {
-          "date": "2026-10-21T10:00:00Z",
-          "result": "D",
-          "score": "0-5",
-          "opponent": "Machida Zelvia",
-          "competition_id": "jp-j1-league"
-        },
         {
           "date": "2026-10-24T05:00:00Z",
           "result": "D",
@@ -9136,6 +9129,13 @@
           "result": "N",
           "score": "1-1",
           "opponent": "Kashima Antlers",
+          "competition_id": "jp-j1-league"
+        },
+        {
+          "date": "2026-11-25T10:00:00Z",
+          "result": "D",
+          "score": "0-2",
+          "opponent": "Fagiano Okayama FC",
           "competition_id": "jp-j1-league"
         }
       ]
@@ -10317,13 +10317,6 @@
       "name": "JEF United Chiba",
       "matches": [
         {
-          "date": "2026-10-21T10:30:00Z",
-          "result": "D",
-          "score": "2-3",
-          "opponent": "Urawa Red Diamonds",
-          "competition_id": "jp-j1-league"
-        },
-        {
           "date": "2026-10-25T06:00:00Z",
           "result": "N",
           "score": "2-2",
@@ -10350,19 +10343,19 @@
           "score": "1-0",
           "opponent": "Kashiwa Reysol",
           "competition_id": "jp-j1-league"
+        },
+        {
+          "date": "2026-11-25T10:00:00Z",
+          "result": "D",
+          "score": "1-2",
+          "opponent": "Nagoya Grampus",
+          "competition_id": "jp-j1-league"
         }
       ]
     },
     "mito hollyhock": {
       "name": "Mito Hollyhock",
       "matches": [
-        {
-          "date": "2026-10-21T10:00:00Z",
-          "result": "D",
-          "score": "0-2",
-          "opponent": "Fagiano Okayama FC",
-          "competition_id": "jp-j1-league"
-        },
         {
           "date": "2026-10-25T07:00:00Z",
           "result": "D",
@@ -10390,19 +10383,19 @@
           "score": "2-1",
           "opponent": "Vissel Kobe",
           "competition_id": "jp-j1-league"
+        },
+        {
+          "date": "2026-11-25T10:00:00Z",
+          "result": "V",
+          "score": "1-0",
+          "opponent": "Tokyo Verdy",
+          "competition_id": "jp-j1-league"
         }
       ]
     },
     "v varen nagasaki": {
       "name": "V-Varen Nagasaki",
       "matches": [
-        {
-          "date": "2026-10-21T10:00:00Z",
-          "result": "V",
-          "score": "4-0",
-          "opponent": "Sanfrecce Hiroshima",
-          "competition_id": "jp-j1-league"
-        },
         {
           "date": "2026-10-25T06:00:00Z",
           "result": "D",
@@ -10429,6 +10422,13 @@
           "result": "N",
           "score": "0-0",
           "opponent": "Machida Zelvia",
+          "competition_id": "jp-j1-league"
+        },
+        {
+          "date": "2026-11-25T10:00:00Z",
+          "result": "D",
+          "score": "1-2",
+          "opponent": "Kawasaki Frontale",
           "competition_id": "jp-j1-league"
         }
       ]
