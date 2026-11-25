@@ -972,7 +972,10 @@
                 +'<small>'+(team.pct===null?'Pourcentage non calculable':team.accepted?'Seuil ≥ 70 % atteint':'Seuil ≥ 70 % non atteint')+'</small>'
               +'</section>'
             ).join("");
-            return '<section class="over15-v1-panel"><header><strong>Moteur V1</strong><span>Seuil : ≥ 70 % par équipe</span></header><div class="over15-v1-body"><div class="over15-v1-team-grid">'+teamCards+'</div></div></section>';
+            const v1Enough = v1Teams.every(team=>team.validCount>=5 && team.pct!==null);
+            const v1Passed = v1Enough && v1Teams.every(team=>team.pct>=70);
+            const v1Label = v1Enough ? (v1Passed ? 'OUI' : 'NON') : 'INDISPONIBLE';
+            return '<section class="over15-v1-panel"><header><strong>Moteur V1 · '+v1Label+'</strong><span>Seuil : ≥ 70 % par équipe</span></header><div class="over15-v1-body"><div class="over15-v1-team-grid">'+teamCards+'</div></div></section>';
           })();
           const v2Html = (() => {
             const v2Teams = teamStats.map((team,index) => ({
@@ -989,9 +992,8 @@
                 +'<small>'+(team.pct===null?'Pourcentage non calculable':team.accepted?'Seuil ≥ 80 % atteint':'Seuil ≥ 80 % non atteint')+'</small>'
               +'</section>'
             ).join("");
-            const verdict = !enough ? "Données insuffisantes" : passed ? "OUI · V2 validé" : "NON · V2 non validé";
-            const detail = !enough ? "5 matchs valides minimum par équipe requis." : passed ? "Les deux équipes atteignent au moins 80 %." : "Les deux équipes doivent atteindre simultanément ≥ 80 %.";
-            return '<section class="over15-v1-panel"><header><strong>Moteur V2</strong><span>Seuil : ≥ 80 % par équipe</span></header><div class="over15-v1-body"><div class="over15-v1-team-grid">'+teamCards+'</div><div class="over15-prediction '+(passed?'over15-tier-1':'over15-tier-4')+'"><span class="over15-prediction-kicker">Résultat V2</span><strong>'+verdict+'</strong><small>'+detail+'</small></div></div></section>';
+            const v2Label = enough ? (passed ? 'OUI' : 'NON') : 'INDISPONIBLE';
+            return '<section class="over15-v1-panel"><header><strong>Moteur V2 · '+v2Label+'</strong><span>Seuil : ≥ 80 % par équipe</span></header><div class="over15-v1-body"><div class="over15-v1-team-grid">'+teamCards+'</div></div></section>';
           })();
           const tierLabels = {1:"Très favorable",2:"Favorable",3:"Mitigé",4:"Défavorable"};
           const tierColors = {1:"success",2:"positive",3:"warning",4:"danger"};
