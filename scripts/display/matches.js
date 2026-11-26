@@ -1031,14 +1031,23 @@
             };
             const homeFreq=frequency(homeId), awayFreq=frequency(awayId);
             const homeVenue=venueMetrics(homeId,"home"), awayVenue=venueMetrics(awayId,"away");
-            const available=homeFreq.pct!==null&&awayFreq.pct!==null&&homeVenue.gf!==null&&homeVenue.ga!==null&&awayVenue.gf!==null&&awayVenue.ga!==null;
-            const passed=available&&homeFreq.pct>=THRESHOLDS.over15Pct&&awayFreq.pct>=THRESHOLDS.over15Pct&&homeVenue.gf>=THRESHOLDS.homeGF&&homeVenue.ga>=THRESHOLDS.homeGA&&awayVenue.gf>=THRESHOLDS.awayGF&&awayVenue.ga>=THRESHOLDS.awayGA;
+            const checks=[
+              {name:"Fréquence +1,5 équipe domicile",value:homeFreq.pct,display:homeFreq.pct===null?"Données insuffisantes":homeFreq.over+"/"+homeFreq.n+" ("+homeFreq.pct.toFixed(0)+" %)",threshold:THRESHOLDS.over15Pct,op:">=",pass:homeFreq.pct!==null&&homeFreq.pct>=THRESHOLDS.over15Pct},
+              {name:"Fréquence +1,5 équipe extérieur",value:awayFreq.pct,display:awayFreq.pct===null?"Données insuffisantes":awayFreq.over+"/"+awayFreq.n+" ("+awayFreq.pct.toFixed(0)+" %)",threshold:THRESHOLDS.over15Pct,op:">=",pass:awayFreq.pct!==null&&awayFreq.pct>=THRESHOLDS.over15Pct},
+              {name:"Domicile — buts marqués / match",display:homeVenue.gf===null?"Données insuffisantes":homeVenue.gf.toFixed(2),threshold:THRESHOLDS.homeGF,op:">=",pass:homeVenue.gf!==null&&homeVenue.gf>=THRESHOLDS.homeGF},
+              {name:"Domicile — buts encaissés / match",display:homeVenue.ga===null?"Données insuffisantes":homeVenue.ga.toFixed(2),threshold:THRESHOLDS.homeGA,op:">=",pass:homeVenue.ga!==null&&homeVenue.ga>=THRESHOLDS.homeGA},
+              {name:"Extérieur — buts marqués / match",display:awayVenue.gf===null?"Données insuffisantes":awayVenue.gf.toFixed(2),threshold:THRESHOLDS.awayGF,op:">=",pass:awayVenue.gf!==null&&awayVenue.gf>=THRESHOLDS.awayGF},
+              {name:"Extérieur — buts encaissés / match",display:awayVenue.ga===null?"Données insuffisantes":awayVenue.ga.toFixed(2),threshold:THRESHOLDS.awayGA,op:">=",pass:awayVenue.ga!==null&&awayVenue.ga>=THRESHOLDS.awayGA}
+            ];
+            const available=checks.every(x=>x.value===undefined?x.display!=="Données insuffisantes":x.value!==null);
+            const passed=available&&checks.every(x=>x.pass);
             const label=available?(passed?"OUI":"NON"):"INDISPONIBLE";
             const color=label==="OUI"?"#15803d":label==="NON"?"#dc2626":"#64748b";
-            const sampleText="Échantillons : +1,5 "+homeFreq.over+"/"+homeFreq.n+" (dom. équipe) et "+awayFreq.over+"/"+awayFreq.n+" (ext. équipe) ; stats domicile "+homeVenue.n+"/5, extérieur "+awayVenue.n+"/5 (minimum 2).";
-            const thresholdText="Seuils V3 : fréquence +1,5 ≥ "+THRESHOLDS.over15Pct+" % ; domicile marqué ≥ "+THRESHOLDS.homeGF+" / encaissé ≥ "+THRESHOLDS.homeGA+" ; extérieur marqué ≥ "+THRESHOLDS.awayGF+" / encaissé ≥ "+THRESHOLDS.awayGA+".";
-            return '<section class="over15-v1-panel"><header><strong style="color:'+color+'">Moteur V3 · '+label+'</strong><span>+1,5 ≥ '+THRESHOLDS.over15Pct+' % · échantillon 2 à 5 matchs</span></header><div class="over15-v1-body"><small>'+thresholdText+' '+sampleText+' INDISPONIBLE si un échantillon requis contient moins de 2 matchs.</small></div></section>';
-          })();;;
+            const sampleText="Échantillons : fréquence +1,5 sur "+homeFreq.n+" matchs (dom.) et "+awayFreq.n+" (ext.) ; stats domicile "+homeVenue.n+"/5, extérieur "+awayVenue.n+"/5 (minimum 2).";
+            const thresholdText="Seuils V3 : fréquence +1,5 ≥ "+THRESHOLDS.over15Pct+" % ; domicile marqué ≥ "+THRESHOLDS.homeGF+" / encaissé ≥ "+THRESHOLDS.homeGA ; extérieur marqué ≥ "+THRESHOLDS.awayGF+" / encaissé ≥ "+THRESHOLDS.awayGA+".";
+            const diagnostic='<div style="display:grid;grid-template-columns:1fr auto auto;gap:4px 10px;margin-top:8px;font-size:12px;"><strong>Critère</strong><strong>Valeur</strong><strong>Résultat</strong>'+checks.map(x=>'<span>'+x.name+'</span><span>'+x.display+' (seuil '+x.op+' '+x.threshold+(x.name.indexOf("Fréquence")>=0?" %":"")+' )</span><span style="font-weight:700;color:'+(x.pass?"#15803d":x.display==="Données insuffisantes"?"#64748b":"#dc2626")+'">'+(x.display==="Données insuffisantes"?"N/D":x.pass?"OK":"BLOQUE")+'</span>').join("")+'</div>';
+            return '<section class="over15-v1-panel"><header><strong style="color:'+color+'">Moteur V3 · '+label+'</strong><span>+1,5 ≥ '+THRESHOLDS.over15Pct+' % · échantillon 2 à 5 matchs</span></header><div class="over15-v1-body"><small>'+thresholdText+' '+sampleText+'</small>'+diagnostic+'</div></section>';
+          })();;;;
           const tierLabels = {1:"Très favorable",2:"Favorable",3:"Mitigé",4:"Défavorable"};
           const tierColors = {1:"success",2:"positive",3:"warning",4:"danger"};
           const tierHtml = tier===null
