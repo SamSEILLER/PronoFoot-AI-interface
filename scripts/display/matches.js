@@ -1001,6 +1001,7 @@
             const cutoff = Date.parse(selectedDetailMatch.kickoff_utc||"");
             const MIN_MATCHES = 2;
             const SAMPLE_SIZE = 5;
+            const THRESHOLDS = { over15Pct:60, homeGF:1.3, homeGA:0.9, awayGF:0.9, awayGA:1.3 };
             const validScore = item => {
               const hg=Number(item.home_score), ag=Number(item.away_score);
               return Number.isInteger(hg)&&Number.isInteger(ag)&&hg>=0&&ag>=0;
@@ -1031,12 +1032,13 @@
             const homeFreq=frequency(homeId), awayFreq=frequency(awayId);
             const homeVenue=venueMetrics(homeId,"home"), awayVenue=venueMetrics(awayId,"away");
             const available=homeFreq.pct!==null&&awayFreq.pct!==null&&homeVenue.gf!==null&&homeVenue.ga!==null&&awayVenue.gf!==null&&awayVenue.ga!==null;
-            const passed=available&&homeFreq.pct>=80&&awayFreq.pct>=80&&homeVenue.gf>=1.5&&homeVenue.ga>=1.0&&awayVenue.gf>=1.0&&awayVenue.ga>=1.5;
+            const passed=available&&homeFreq.pct>=THRESHOLDS.over15Pct&&awayFreq.pct>=THRESHOLDS.over15Pct&&homeVenue.gf>=THRESHOLDS.homeGF&&homeVenue.ga>=THRESHOLDS.homeGA&&awayVenue.gf>=THRESHOLDS.awayGF&&awayVenue.ga>=THRESHOLDS.awayGA;
             const label=available?(passed?"OUI":"NON"):"INDISPONIBLE";
             const color=label==="OUI"?"#15803d":label==="NON"?"#dc2626":"#64748b";
-            const sampleText="Échantillons : +1,5 "+homeFreq.n+"/5 (dom.) et "+awayFreq.n+"/5 (ext.) ; stats de lieu "+homeVenue.n+"/5 et "+awayVenue.n+"/5 (min. 2 matchs).";
-            return '<section class="over15-v1-panel"><header><strong style="color:'+color+'">Moteur V3 · '+label+'</strong><span>+1,5 ≥ 80 % · jusqu’à 5 matchs (minimum 2)</span></header><div class="over15-v1-body"><small>Critères : domicile marqué ≥ 1,5 et encaissé ≥ 1,0 ; extérieur marqué ≥ 1,0 et encaissé ≥ 1,5. '+sampleText+' Données insuffisantes si un échantillon contient moins de 2 matchs.</small></div></section>';
-          })();;
+            const sampleText="Échantillons : +1,5 "+homeFreq.over+"/"+homeFreq.n+" (dom. équipe) et "+awayFreq.over+"/"+awayFreq.n+" (ext. équipe) ; stats domicile "+homeVenue.n+"/5, extérieur "+awayVenue.n+"/5 (minimum 2).";
+            const thresholdText="Seuils V3 : fréquence +1,5 ≥ "+THRESHOLDS.over15Pct+" % ; domicile marqué ≥ "+THRESHOLDS.homeGF+" / encaissé ≥ "+THRESHOLDS.homeGA ; extérieur marqué ≥ "+THRESHOLDS.awayGF+" / encaissé ≥ "+THRESHOLDS.awayGA+".";
+            return '<section class="over15-v1-panel"><header><strong style="color:'+color+'">Moteur V3 · '+label+'</strong><span>+1,5 ≥ '+THRESHOLDS.over15Pct+' % · échantillon 2 à 5 matchs</span></header><div class="over15-v1-body"><small>'+thresholdText+' '+sampleText+' INDISPONIBLE si un échantillon requis contient moins de 2 matchs.</small></div></section>';
+          })();;;
           const tierLabels = {1:"Très favorable",2:"Favorable",3:"Mitigé",4:"Défavorable"};
           const tierColors = {1:"success",2:"positive",3:"warning",4:"danger"};
           const tierHtml = tier===null
