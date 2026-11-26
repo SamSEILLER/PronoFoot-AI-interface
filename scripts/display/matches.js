@@ -1052,8 +1052,8 @@
             const checks=[
               {name:"Fréquence +1,5 équipe domicile",value:homeFreq.pct,display:homeFreq.pct===null?"Données insuffisantes":homeFreq.over+"/"+homeFreq.n+" ("+homeFreq.pct.toFixed(0)+" %)",threshold:THRESHOLDS.over15Pct,op:">=",pass:homeFreq.pct!==null&&homeFreq.pct>=THRESHOLDS.over15Pct},
               {name:"Fréquence +1,5 équipe extérieur",value:awayFreq.pct,display:awayFreq.pct===null?"Données insuffisantes":awayFreq.over+"/"+awayFreq.n+" ("+awayFreq.pct.toFixed(0)+" %)",threshold:THRESHOLDS.over15Pct,op:">=",pass:awayFreq.pct!==null&&awayFreq.pct>=THRESHOLDS.over15Pct},
-              {name:"Tendance équipe domicile",display:homeTrend.label+" ("+homeTrend.nPrevious+" préc. / "+homeTrend.nLatest+" réc.)",threshold:"Stable ou hausse",op:"=",pass:homeTrend.pass===true},
-              {name:"Tendance équipe extérieure",display:awayTrend.label+" ("+awayTrend.nPrevious+" préc. / "+awayTrend.nLatest+" réc.)",threshold:"Stable ou hausse",op:"=",pass:awayTrend.pass===true},
+              {name:"Tendance équipe domicile",value:homeTrend.pass,display:homeTrend.label+" ("+homeTrend.nPrevious+" préc. / "+homeTrend.nLatest+" réc.)",threshold:"Stable ou hausse",op:"=",pass:homeTrend.pass===true},
+              {name:"Tendance équipe extérieure",value:awayTrend.pass,display:awayTrend.label+" ("+awayTrend.nPrevious+" préc. / "+awayTrend.nLatest+" réc.)",threshold:"Stable ou hausse",op:"=",pass:awayTrend.pass===true},
               {name:"Domicile — buts marqués / match",display:homeVenue.gf===null?"Données insuffisantes":homeVenue.gf.toFixed(2),threshold:THRESHOLDS.homeGF,op:">=",pass:homeVenue.gf!==null&&homeVenue.gf>=THRESHOLDS.homeGF},
               {name:"Domicile — buts encaissés / match",display:homeVenue.ga===null?"Données insuffisantes":homeVenue.ga.toFixed(2),threshold:THRESHOLDS.homeGA,op:">=",pass:homeVenue.ga!==null&&homeVenue.ga>=THRESHOLDS.homeGA},
               {name:"Extérieur — buts marqués / match",display:awayVenue.gf===null?"Données insuffisantes":awayVenue.gf.toFixed(2),threshold:THRESHOLDS.awayGF,op:">=",pass:awayVenue.gf!==null&&awayVenue.gf>=THRESHOLDS.awayGF},
