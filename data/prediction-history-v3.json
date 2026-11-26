@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "generated_at_utc": "2026-11-26T07:00:00Z",
+  "method_id": "OVER15-EXPERIMENT-V3",
+  "created_this_run": 0,
+  "description": "Archive initialisée. Les prédictions V3 seront générées et publiées par le workflow quotidien. Critères: fréquence Over 1.5 ≥85% sur 10 matchs (minimum 2), buts marqués/match >1.5 et encaissés/match >1.0 sur les 5 derniers matchs de même compétition/saison, pour chaque équipe. Aucune comparaison entre moteurs.",
+  "records": []
+}
