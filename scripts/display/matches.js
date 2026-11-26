@@ -1685,11 +1685,6 @@
         const xgHome = hasExpectedGoals ? formatLambda(expectedGoals.lambda_home) : "Indisponible";
         const xgAway = hasExpectedGoals ? formatLambda(expectedGoals.lambda_away) : "Indisponible";
         const xgTotal = hasExpectedGoals ? formatLambda(expectedGoals.total_expected_goals) : "Indisponible";
-        const xgNote = hasExpectedGoals
-          ? "Poisson · modèle non calibré · échantillon : " + Number(expectedGoals.samples?.home || 0)
-            + " matchs domicile / " + Number(expectedGoals.samples?.away || 0) + " matchs extérieur · "
-            + escape(match.competition) + " · saison " + escape(match.season) + "."
-          : "Estimation indisponible : données pré-match ou championnat/saison correspondants insuffisants.";
         detailPanel.innerHTML = `
           <div class="match-detail-content">
             <div class="match-detail-top">
@@ -1701,12 +1696,19 @@
               <div class="match-detail-vs">VS</div>
               <div class="match-detail-team">${awayLogo ? '<img src="'+escape(awayLogo)+'" alt="Logo '+escape(match.away_team)+'">':""}<strong>${escape(match.away_team)}</strong><small class="match-team-position">${awayPosition ? "# "+awayPosition:"Classement indisponible"}</small></div>
             </div>
-            <div class="match-detail-xg">
-              <span class="match-detail-xg-label">Buts attendus estimés (λ) · Poisson</span>
-              <span class="match-detail-xg-note">${hasExpectedGoals
-                ? "Domicile : λ "+xgHome+" | Extérieur : λ "+xgAway+" | Total λ : "+xgTotal
-                : "Indisponible — historique pré-match ou championnat/saison correspondants insuffisants"}</span>
-              <span class="match-detail-xg-note">${xgNote}</span>
+            <div class="match-detail-xg" style="margin-top:14px;padding:14px;border:1px solid var(--border-color,#e2e8f0);border-radius:14px;background:var(--surface-secondary,#f8fafc)">
+              <span class="match-detail-xg-label" style="display:block;font-size:0.82rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px">Buts attendus estimés</span>
+              ${hasExpectedGoals ? `
+                <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;text-align:center">
+                  <div style="padding:10px 6px;border-radius:10px;background:var(--surface-primary,#fff)"><small style="display:block;color:var(--text-secondary,#64748b)">Domicile</small><strong style="font-size:1.35rem">λ ${xgHome}</strong></div>
+                  <div style="padding:10px 6px;border-radius:10px;background:var(--surface-primary,#fff)"><small style="display:block;color:var(--text-secondary,#64748b)">Extérieur</small><strong style="font-size:1.35rem">λ ${xgAway}</strong></div>
+                  <div style="padding:10px 6px;border-radius:10px;background:var(--surface-primary,#fff)"><small style="display:block;color:var(--text-secondary,#64748b)">Total</small><strong style="font-size:1.35rem">λ ${xgTotal}</strong></div>
+                </div>
+                <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:6px;justify-content:center">
+                  <span style="padding:4px 9px;border-radius:999px;background:var(--surface-primary,#fff);font-size:.78rem;color:var(--text-secondary,#64748b)">${Number(expectedGoals.samples?.home || 0)} matchs domicile</span>
+                  <span style="padding:4px 9px;border-radius:999px;background:var(--surface-primary,#fff);font-size:.78rem;color:var(--text-secondary,#64748b)">${Number(expectedGoals.samples?.away || 0)} matchs extérieur</span>
+                </div>
+              ` : `<div style="font-size:.9rem;color:var(--text-secondary,#64748b)">Estimation indisponible — historique pré-match insuffisant.</div>`}
             </div>
             <div class="match-detail-accordions" aria-label="Données détaillées du match">
               <details class="match-detail-accordion" name="match-detail">
