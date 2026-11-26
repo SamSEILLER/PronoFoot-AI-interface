@@ -1015,11 +1015,23 @@
             const available = sameScope && record?.prediction?.over_1_5 === "estimated"
               && Number.isFinite(lambdaHome) && Number.isFinite(lambdaAway)
               && Number.isFinite(lambdaTotal) && Number.isFinite(probability);
+            const trend = sameScope ? (record?.trend?.match || {}) : {};
+            const trendLabel = ({up:"EN HAUSSE ↑",stable:"STABLE →",down:"EN BAISSE ↓",indeterminate:"INDÉTERMINÉE"})[trend.label] || "INDÉTERMINÉE";
+            const trendColor = trend.label === "up" ? "#15803d" : trend.label === "down" ? "#b91c1c" : trend.label === "stable" ? "#a16207" : "#64748b";
+            const trendMessage = trend.status === "estimated"
+              ? "Tendance calculée sur les 5 derniers matchs comparés aux 5 précédents, données pré-match."
+              : "Tendance non disponible : historique récent insuffisant pour les deux équipes. Elle sera affichée dès que les données le permettront.";
+            const trendHtml = '<div style="border:1px solid #e2e8f0;border-radius:8px;padding:9px;margin-top:10px">'
+              +'<strong style="color:'+trendColor+'">Tendance du match · '+trendLabel+'</strong>'
+              +'<div><small>'+escapeHtml(trendMessage)+'</small></div>'
+              +(trend.status === "estimated" && Number.isFinite(Number(trend.trend_proxy_goals_per_match))
+                ? '<small>Variation indicative : '+Number(trend.trend_proxy_goals_per_match).toFixed(2)+' but/match</small>' : '')
+              +'</div>';
             if (!available) {
               const reason = sameScope && record?.prediction?.over_1_5 === "unavailable"
                 ? "Historique insuffisant ou estimation Poisson indisponible."
                 : "Archive V3 Poisson récente non disponible pour ce match. La génération et publication de l'archive V3 restent à synchroniser.";
-              return '<section class="over15-v1-panel"><header><strong style="color:#64748b">Moteur V3 · INDISPONIBLE</strong><span>Poisson · fenêtre récente 10</span></header><div class="over15-v1-body"><small>'+escapeHtml(reason)+' Aucun seuil de sélection appliqué.</small></div></section>';
+              return '<section class="over15-v1-panel"><header><strong style="color:#64748b">Moteur V3 · INDISPONIBLE</strong><span>Poisson · fenêtre récente 10</span></header><div class="over15-v1-body"><small>'+escapeHtml(reason)+' Aucun seuil de sélection appliqué.</small>'+trendHtml+'</div></section>';
             }
             const sampleHome = Number(record.criteria?.home?.matches_recent ?? model.samples?.home ?? 0);
             const sampleAway = Number(record.criteria?.away?.matches_recent ?? model.samples?.away ?? 0);
@@ -1030,6 +1042,7 @@
               +'<div><strong>λ extérieur</strong><div>'+lambdaAway.toFixed(2)+'</div><small>'+sampleAway+' matchs récents</small></div>'
               +'<div><strong>λ total</strong><div>'+lambdaTotal.toFixed(2)+'</div></div>'
               +'<div><strong>Probabilité +1,5</strong><div style="font-size:1.35em;font-weight:700">'+probability.toFixed(1)+' %</div></div></div>'
+              +trendHtml
               +'<small>Référence compétition : '+baselineN+' matchs récents. Jusqu’à 10 matchs antérieurs, même compétition/saison. Estimation expérimentale non calibrée ; pas une recommandation de pari ni une value.</small></div></section>';
           })();          const tierLabels = {1:"Très favorable",2:"Favorable",3:"Mitigé",4:"Défavorable"};
           const tierColors = {1:"success",2:"positive",3:"warning",4:"danger"};
