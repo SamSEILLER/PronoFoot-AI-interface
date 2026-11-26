@@ -1001,7 +1001,7 @@
             const cutoff = Date.parse(selectedDetailMatch.kickoff_utc||"");
             const MIN_MATCHES = 2;
             const SAMPLE_SIZE = 5;
-            const THRESHOLDS = { over15Pct:60, homeGF:1.3, homeGA:0.9, awayGF:0.9, awayGA:1.3 };
+            const THRESHOLDS = { over15Pct:70, homeGF:1.3, homeGA:0.9, awayGF:0.9, awayGA:1.3 };
             const validScore = item => {
               const hg=Number(item.home_score), ag=Number(item.away_score);
               return Number.isInteger(hg)&&Number.isInteger(ag)&&hg>=0&&ag>=0;
