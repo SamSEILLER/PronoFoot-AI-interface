@@ -1709,7 +1709,7 @@
                   <div style="padding:12px 8px;border-radius:16px;background:rgba(255,255,255,.78);text-align:center;border:1px solid rgba(255,255,255,.9)">
                     <small style="display:block;color:#245a9b;font-size:.82rem;margin-bottom:4px">Extérieur</small><strong style="font-size:1.45rem;color:#174e91;white-space:nowrap">λ ${xgAway}</strong>
                   </div>
-                  <div style="padding:12px 8px;border-radius:16px;background:rgba(255,255,255,.55);text-align:center;border:1px solid rgba(255,255,255,.95;box-shadow:inset 0 0 0 1px rgba(255,255,255,.4)">
+                  <div style="padding:12px 8px;border-radius:16px;background:rgba(255,255,255,.55);text-align:center;border:1px solid rgba(255,255,255,.95);box-shadow:inset 0 0 0 1px rgba(255,255,255,.4)">
                     <small style="display:block;color:#102c5c;font-size:.82rem;margin-bottom:4px">Total</small><strong style="font-size:1.45rem;color:#102c5c;white-space:nowrap">λ ${xgTotal}</strong>
                   </div>
                 </div>
