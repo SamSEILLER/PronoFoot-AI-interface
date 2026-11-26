@@ -1,7 +1,7 @@
 {
   "provider": "pitchapi_processed_history",
-  "generated_at_utc": "2026-11-26T07:08:04.887458+00:00",
-  "matches_considered": 9504,
+  "generated_at_utc": "2026-11-26T12:10:41.336825+00:00",
+  "matches_considered": 9513,
   "pairs": {
     "sanfrecce hiroshima|vissel kobe": {
       "team_a": "Sanfrecce Hiroshima",
@@ -4080,6 +4080,48 @@
         }
       ]
     },
+    "athletic club|rayo vallecano": {
+      "team_a": "Athletic Club",
+      "team_b": "Rayo Vallecano",
+      "matches": [
+        {
+          "date": "2026-02-28T13:00:00Z",
+          "home": "Rayo Vallecano",
+          "away": "Athletic Club",
+          "score_home": 1,
+          "score_away": 1,
+          "competition_id": "es-la-liga",
+          "competition_name": "La Liga"
+        },
+        {
+          "date": "2025-08-25T17:30:00Z",
+          "home": "Athletic Club",
+          "away": "Rayo Vallecano",
+          "score_home": 1,
+          "score_away": 0,
+          "competition_id": "es-la-liga",
+          "competition_name": "La Liga"
+        },
+        {
+          "date": "2025-04-13T19:00:00Z",
+          "home": "Athletic Club",
+          "away": "Rayo Vallecano",
+          "score_home": 3,
+          "score_away": 1,
+          "competition_id": "es-la-liga",
+          "competition_name": "La Liga"
+        },
+        {
+          "date": "2024-12-01T17:30:00Z",
+          "home": "Rayo Vallecano",
+          "away": "Athletic Club",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "es-la-liga",
+          "competition_name": "La Liga"
+        }
+      ]
+    },
     "athletic club|real madrid": {
       "team_a": "Athletic Club",
       "team_b": "Real Madrid",
@@ -4971,6 +5013,30 @@
         }
       ]
     },
+    "arsenal|real madrid": {
+      "team_a": "Arsenal",
+      "team_b": "Real Madrid",
+      "matches": [
+        {
+          "date": "2025-04-16T19:00:00Z",
+          "home": "Real Madrid",
+          "away": "Arsenal",
+          "score_home": 1,
+          "score_away": 2,
+          "competition_id": "uefa-champions-league",
+          "competition_name": "Ligue des champions UEFA"
+        },
+        {
+          "date": "2025-04-08T19:00:00Z",
+          "home": "Arsenal",
+          "away": "Real Madrid",
+          "score_home": 3,
+          "score_away": 0,
+          "competition_id": "uefa-champions-league",
+          "competition_name": "Ligue des champions UEFA"
+        }
+      ]
+    },
     "aston villa|paris saint germain": {
       "team_a": "Aston Villa",
       "team_b": "Paris Saint-Germain",
@@ -5499,6 +5565,21 @@
         }
       ]
     },
+    "atletico madrid|psv eindhoven": {
+      "team_a": "Atlético Madrid",
+      "team_b": "PSV Eindhoven",
+      "matches": [
+        {
+          "date": "2025-12-09T20:00:00Z",
+          "home": "PSV Eindhoven",
+          "away": "Atlético Madrid",
+          "score_home": 2,
+          "score_away": 3,
+          "competition_id": "uefa-champions-league",
+          "competition_name": "Ligue des champions UEFA"
+        }
+      ]
+    },
     "newcastle united|sunderland": {
       "team_a": "Newcastle United",
       "team_b": "Sunderland",
@@ -5568,6 +5649,21 @@
           "score_away": 1,
           "competition_id": "gb-premier-league",
           "competition_name": "Premier League"
+        }
+      ]
+    },
+    "borussia dortmund|inter": {
+      "team_a": "Borussia Dortmund",
+      "team_b": "Inter",
+      "matches": [
+        {
+          "date": "2026-01-28T20:00:00Z",
+          "home": "Borussia Dortmund",
+          "away": "Inter",
+          "score_home": 0,
+          "score_away": 2,
+          "competition_id": "uefa-champions-league",
+          "competition_name": "Ligue des champions UEFA"
         }
       ]
     },
