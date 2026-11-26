@@ -1182,7 +1182,7 @@
               +'</section>'
             ).join("");
             const labelV2 = enoughV2 ? (passedV2?'OUI':'NON') : 'INDISPONIBLE';
-            return '<section class="over15-v1-panel"><header><strong>Moteur V2 · '+labelV2+'</strong><span>Fréquence +1,5 ≥ 80 % par équipe</span></header></section>';
+            return '<section class="over15-v1-panel"><header><strong>Moteur V2 · '+labelV2+'</strong><span>Équipe marque ≥ 80 %</span></header></section>';
           })();
           const tierLabels = {1:"Très favorable",2:"Favorable",3:"Mitigé",4:"Défavorable"};
           const tierHtml = tier===null
