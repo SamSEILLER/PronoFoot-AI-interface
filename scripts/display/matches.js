@@ -1696,18 +1696,27 @@
         const awayLogo = safeLogoUrl(match.provider_record?.away_team?.image_url);
         const escape = (value) => String(value ?? "").replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
         const predictionKey = String(match.match_id || match.provider_match_id || match.id || "");
-        const expectedGoals = goalPredictionsIndex.get(predictionKey)?.expected_goals;
-        const hasExpectedGoals = expectedGoals?.status === "estimated"
+        const goalPredictionRecord = goalPredictionsIndex.get(predictionKey);
+        const expectedGoals = goalPredictionRecord?.expected_goals;
+        // Strictly restrict estimates to the same competition and season as the fixture.
+        const goalPredictionScopeMatches = Boolean(match.competition_slug && match.season
+          && goalPredictionRecord?.competition_slug === match.competition_slug
+          && goalPredictionRecord?.season === match.season);
+        const hasExpectedGoals = goalPredictionScopeMatches && expectedGoals?.status === "estimated"
           && Number.isFinite(Number(expectedGoals.lambda_home))
           && Number.isFinite(Number(expectedGoals.lambda_away));
         const formatLambda = (value) => Number(value).toFixed(2);
+        const probabilityToScore = (lambda) => 100 * (1 - Math.exp(-Number(lambda)));
         const xgHome = hasExpectedGoals ? formatLambda(expectedGoals.lambda_home) : "Indisponible";
         const xgAway = hasExpectedGoals ? formatLambda(expectedGoals.lambda_away) : "Indisponible";
         const xgTotal = hasExpectedGoals ? formatLambda(expectedGoals.total_expected_goals) : "Indisponible";
+        const pHomeScore = hasExpectedGoals ? probabilityToScore(expectedGoals.lambda_home).toFixed(1) + "%" : "—";
+        const pAwayScore = hasExpectedGoals ? probabilityToScore(expectedGoals.lambda_away).toFixed(1) + "%" : "—";
         const xgNote = hasExpectedGoals
-          ? "Modèle statistique non calibré · échantillon : " + Number(expectedGoals.samples?.home || 0)
-            + " matchs domicile / " + Number(expectedGoals.samples?.away || 0) + " matchs extérieur."
-          : "Estimation indisponible : historique pré-match ou moyenne de compétition insuffisants.";
+          ? "Poisson · modèle non calibré · échantillon : " + Number(expectedGoals.samples?.home || 0)
+            + " matchs domicile / " + Number(expectedGoals.samples?.away || 0) + " matchs extérieur · "
+            + escape(match.competition) + " · saison " + escape(match.season) + "."
+          : "Estimation indisponible : données pré-match ou championnat/saison correspondants insuffisants.";
         detailPanel.innerHTML = `
           <div class="match-detail-content">
             <div class="match-detail-top">
@@ -1720,8 +1729,11 @@
               <div class="match-detail-team">${awayLogo ? '<img src="'+escape(awayLogo)+'" alt="Logo '+escape(match.away_team)+'">':""}<strong>${escape(match.away_team)}</strong><small class="match-team-position">${awayPosition ? "# "+awayPosition:"Classement indisponible"}</small></div>
             </div>
             <div class="match-detail-xg">
-              <span class="match-detail-xg-label">Buts attendus estimés (λ)</span>
-              <span class="match-detail-xg-note">Indisponible pour le moment</span>
+              <span class="match-detail-xg-label">Buts attendus estimés (λ) · Poisson</span>
+              <span class="match-detail-xg-note">${hasExpectedGoals
+                ? "Domicile : λ "+xgHome+" · Probabilité de marquer ≥ 1 : "+pHomeScore+" | Extérieur : λ "+xgAway+" · Probabilité de marquer ≥ 1 : "+pAwayScore+" | Total λ : "+xgTotal
+                : "Indisponible — historique pré-match ou championnat/saison correspondants insuffisants"}</span>
+              <span class="match-detail-xg-note">${xgNote}</span>
             </div>
             <div class="match-detail-accordions" aria-label="Données détaillées du match">
               <details class="match-detail-accordion" name="match-detail">
