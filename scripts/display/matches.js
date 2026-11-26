@@ -975,7 +975,7 @@
             const v1Enough = v1Teams.every(team=>team.validCount>=2 && team.pct!==null);
             const v1Passed = v1Enough && v1Teams.every(team=>team.pct>=70);
             const v1Label = v1Enough ? (v1Passed ? 'OUI' : 'NON') : 'INDISPONIBLE';
-            return '<section class="over15-v1-panel"><header><strong>Moteur V1 · '+v1Label+'</strong><span>Fréquence +1,5 ≥ 70 % par équipe</span></header></section>';
+            return '<section class="over15-v1-panel"><header><strong style="color:'+(v1Label==='OUI'?'#15803d':v1Label==='NON'?'#dc2626':'#64748b')+'">Moteur V1 · '+v1Label+'</strong><span>Fréquence +1,5 ≥ 70 % par équipe</span></header></section>';
           })();
           const v2Html = (() => {
             const v2Teams = teamStats.map((team,index) => ({
@@ -993,7 +993,7 @@
               +'</section>'
             ).join("");
             const v2Label = enough ? (passed ? 'OUI' : 'NON') : 'INDISPONIBLE';
-            return '<section class="over15-v1-panel"><header><strong>Moteur V2 · '+v2Label+'</strong><span>Fréquence +1,5 ≥ 80 % par équipe</span></header></section>';
+            return '<section class="over15-v1-panel"><header><strong style="color:'+(v2Label==='OUI'?'#15803d':v2Label==='NON'?'#dc2626':'#64748b')+'">Moteur V2 · '+v2Label+'</strong><span>Fréquence +1,5 ≥ 80 % par équipe</span></header></section>';
           })();
           const tierLabels = {1:"Très favorable",2:"Favorable",3:"Mitigé",4:"Défavorable"};
           const tierColors = {1:"success",2:"positive",3:"warning",4:"danger"};
@@ -1070,7 +1070,7 @@
             const v1Enough = v1Teams.every(team=>team.validCount>=2 && team.pct!==null);
             const v1Passed = v1Enough && v1Teams.every(team=>team.pct>=70);
             const v1Label = v1Enough ? (v1Passed ? 'OUI' : 'NON') : 'INDISPONIBLE';
-            return '<section class="over15-v1-panel"><header><strong>Moteur V1 · '+v1Label+'</strong><span>Fréquence +2,5 ≥ 70 % par équipe</span></header></section>';
+            return '<section class="over15-v1-panel"><header><strong style="color:'+(v1Label==='OUI'?'#15803d':v1Label==='NON'?'#dc2626':'#64748b')+'">Moteur V1 · '+v1Label+'</strong><span>Fréquence +2,5 ≥ 70 % par équipe</span></header></section>';
           })();
           const v2Html = (() => {
             const v2Teams = teamStats.map((team,index) => ({
@@ -1088,7 +1088,7 @@
               +'</section>'
             ).join("");
             const v2Label = enough ? (passed ? 'OUI' : 'NON') : 'INDISPONIBLE';
-            return '<section class="over15-v1-panel"><header><strong>Moteur V2 · '+v2Label+'</strong><span>Fréquence +2,5 ≥ 80 % par équipe</span></header></section>';
+            return '<section class="over15-v1-panel"><header><strong style="color:'+(v2Label==='OUI'?'#15803d':v2Label==='NON'?'#dc2626':'#64748b')+'">Moteur V2 · '+v2Label+'</strong><span>Fréquence +2,5 ≥ 80 % par équipe</span></header></section>';
           })();
           const tierLabels = {1:"Très favorable",2:"Favorable",3:"Mitigé",4:"Défavorable"};
           const tierHtml = tier===null
@@ -1164,7 +1164,7 @@
             const enoughV1 = v1Teams.every(team=>team.validCount>=2 && team.pct!==null);
             const passedV1 = enoughV1 && v1Teams.every(team=>team.pct>=70);
             const labelV1 = enoughV1 ? (passedV1?'OUI':'NON') : 'INDISPONIBLE';
-            return '<section class="over15-v1-panel"><header><strong>Moteur V1 · '+labelV1+'</strong><span>Équipe marque ≥ 70 %</span></header></section>';
+            return '<section class="over15-v1-panel"><header><strong style="color:'+(labelV1==='OUI'?'#15803d':labelV1==='NON'?'#dc2626':'#64748b')+'">Moteur V1 · '+labelV1+'</strong><span>Équipe marque ≥ 70 %</span></header></section>';
           })();
           const v2Html = (() => {
             const v2Teams = teamStats.map((team,index) => ({
@@ -1182,7 +1182,7 @@
               +'</section>'
             ).join("");
             const labelV2 = enoughV2 ? (passedV2?'OUI':'NON') : 'INDISPONIBLE';
-            return '<section class="over15-v1-panel"><header><strong>Moteur V2 · '+labelV2+'</strong><span>Équipe marque ≥ 80 %</span></header></section>';
+            return '<section class="over15-v1-panel"><header><strong style="color:'+(labelV2==='OUI'?'#15803d':labelV2==='NON'?'#dc2626':'#64748b')+'">Moteur V2 · '+labelV2+'</strong><span>Équipe marque ≥ 80 %</span></header></section>';
           })();
           const tierLabels = {1:"Très favorable",2:"Favorable",3:"Mitigé",4:"Défavorable"};
           const tierHtml = tier===null
