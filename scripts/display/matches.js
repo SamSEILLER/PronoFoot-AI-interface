@@ -1697,17 +1697,15 @@
               <div class="match-detail-team">${awayLogo ? '<img src="'+escape(awayLogo)+'" alt="Logo '+escape(match.away_team)+'">':""}<strong>${escape(match.away_team)}</strong><small class="match-team-position">${awayPosition ? "# "+awayPosition:"Classement indisponible"}</small></div>
             </div>
             <div class="match-detail-xg" style="margin-top:14px;padding:12px 4px">
-              <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;font-weight:700;font-size:.9rem;color:var(--text-primary,#172b4d)">
-                <span aria-hidden="true">⚽</span><span>Buts attendus (λ)</span>
-              </div>
+              <div style="font-weight:700;font-size:.95rem;color:var(--text-primary,#172b4d);margin-bottom:14px">⚽ Buts attendus</div>
               ${hasExpectedGoals ? `
-                <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;text-align:center;align-items:center">
-                  <div><small style="display:block;color:var(--text-secondary,#64748b);margin-bottom:4px">Domicile</small><strong style="font-size:1.35rem;white-space:nowrap">λ ${xgHome}</strong></div>
-                  <div><small style="display:block;color:var(--text-secondary,#64748b);margin-bottom:4px">Extérieur</small><strong style="font-size:1.35rem;white-space:nowrap">λ ${xgAway}</strong></div>
-                  <div><small style="display:block;color:var(--text-secondary,#64748b);margin-bottom:4px">Total</small><strong style="font-size:1.35rem;color:var(--accent-color,#2563eb);white-space:nowrap">λ ${xgTotal}</strong></div>
+                <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;text-align:center;align-items:center">
+                  <div><small style="display:block;color:var(--text-secondary,#64748b);font-size:.8rem;margin-bottom:5px">Domicile</small><strong style="font-size:1.65rem;white-space:nowrap">λ ${xgHome}</strong></div>
+                  <div><small style="display:block;color:var(--text-secondary,#64748b);font-size:.8rem;margin-bottom:5px">Extérieur</small><strong style="font-size:1.65rem;white-space:nowrap">λ ${xgAway}</strong></div>
+                  <div><small style="display:block;color:var(--text-secondary,#64748b);font-size:.8rem;margin-bottom:5px">Total</small><strong style="font-size:1.65rem;color:var(--accent-color,#2563eb);white-space:nowrap">λ ${xgTotal}</strong></div>
                 </div>
-                <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:4px;justify-content:center;font-size:.76rem;color:var(--text-secondary,#64748b)">
-                  <span>${Number(expectedGoals.samples?.home || 0)} matchs domicile</span><span>·</span><span>${Number(expectedGoals.samples?.away || 0)} matchs extérieur</span>
+                <div style="margin-top:12px;text-align:center;font-size:.78rem;color:var(--text-secondary,#64748b)">
+                  ${Number(expectedGoals.samples?.home || 0)} matchs domicile · ${Number(expectedGoals.samples?.away || 0)} matchs extérieur
                 </div>
               ` : `
                 <div style="font-size:.9rem;color:var(--text-secondary,#64748b)">Estimation indisponible — historique pré-match insuffisant.</div>
