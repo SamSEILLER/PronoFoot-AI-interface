@@ -999,6 +999,8 @@
             const homeId = String(selectedDetailMatch.home_team_id||"");
             const awayId = String(selectedDetailMatch.away_team_id||"");
             const cutoff = Date.parse(selectedDetailMatch.kickoff_utc||"");
+            const MIN_MATCHES = 2;
+            const SAMPLE_SIZE = 5;
             const validScore = item => {
               const hg=Number(item.home_score), ag=Number(item.away_score);
               return Number.isInteger(hg)&&Number.isInteger(ag)&&hg>=0&&ag>=0;
@@ -1012,26 +1014,29 @@
                 .sort((a,b)=>String(b.kickoff_utc||"").localeCompare(String(a.kickoff_utc||"")));
             };
             const frequency = teamId => {
-              const recent=priorMatches(teamId).slice(0,5);
-              return recent.length===5 ? recent.filter(item=>Number(item.home_score)+Number(item.away_score)>=2).length/5*100 : null;
+              const recent=priorMatches(teamId).slice(0,SAMPLE_SIZE);
+              if(recent.length<MIN_MATCHES)return {pct:null,n:recent.length,over:0};
+              const over=recent.filter(item=>Number(item.home_score)+Number(item.away_score)>=2).length;
+              return {pct:over/recent.length*100,n:recent.length,over};
             };
             const venueMetrics = (teamId, venue) => {
               const recent=priorMatches(teamId).filter(item=>venue==="home"
                 ? String(item.home_team_id||"")===teamId
-                : String(item.away_team_id||"")===teamId).slice(0,5);
-              if(recent.length!==5)return {gf:null,ga:null,n:recent.length};
-              const gf=recent.reduce((sum,item)=>sum+(venue==="home"?Number(item.home_score):Number(item.away_score)),0)/5;
-              const ga=recent.reduce((sum,item)=>sum+(venue==="home"?Number(item.away_score):Number(item.home_score)),0)/5;
-              return {gf,ga,n:5};
+                : String(item.away_team_id||"")===teamId).slice(0,SAMPLE_SIZE);
+              if(recent.length<MIN_MATCHES)return {gf:null,ga:null,n:recent.length};
+              const gf=recent.reduce((sum,item)=>sum+(venue==="home"?Number(item.home_score):Number(item.away_score)),0)/recent.length;
+              const ga=recent.reduce((sum,item)=>sum+(venue==="home"?Number(item.away_score):Number(item.home_score)),0)/recent.length;
+              return {gf,ga,n:recent.length};
             };
             const homeFreq=frequency(homeId), awayFreq=frequency(awayId);
             const homeVenue=venueMetrics(homeId,"home"), awayVenue=venueMetrics(awayId,"away");
-            const available=homeFreq!==null&&awayFreq!==null&&homeVenue.gf!==null&&homeVenue.ga!==null&&awayVenue.gf!==null&&awayVenue.ga!==null;
-            const passed=available&&homeFreq>=80&&awayFreq>=80&&homeVenue.gf>=1.5&&homeVenue.ga>=1.0&&awayVenue.gf>=1.0&&awayVenue.ga>=1.5;
+            const available=homeFreq.pct!==null&&awayFreq.pct!==null&&homeVenue.gf!==null&&homeVenue.ga!==null&&awayVenue.gf!==null&&awayVenue.ga!==null;
+            const passed=available&&homeFreq.pct>=80&&awayFreq.pct>=80&&homeVenue.gf>=1.5&&homeVenue.ga>=1.0&&awayVenue.gf>=1.0&&awayVenue.ga>=1.5;
             const label=available?(passed?"OUI":"NON"):"INDISPONIBLE";
             const color=label==="OUI"?"#15803d":label==="NON"?"#dc2626":"#64748b";
-            return '<section class="over15-v1-panel"><header><strong style="color:'+color+'">Moteur V3 · '+label+'</strong><span>+1,5 ≥ 80 % (5) · Stats domicile/extérieur (5)</span></header><div class="over15-v1-body"><small>Critères : domicile marqué ≥ 1,5 et encaissé ≥ 1,0 ; extérieur marqué ≥ 1,0 et encaissé ≥ 1,5. Données insuffisantes si moins de 5 matchs dans un échantillon requis.</small></div></section>';
-          })();
+            const sampleText="Échantillons : +1,5 "+homeFreq.n+"/5 (dom.) et "+awayFreq.n+"/5 (ext.) ; stats de lieu "+homeVenue.n+"/5 et "+awayVenue.n+"/5 (min. 2 matchs).";
+            return '<section class="over15-v1-panel"><header><strong style="color:'+color+'">Moteur V3 · '+label+'</strong><span>+1,5 ≥ 80 % · jusqu’à 5 matchs (minimum 2)</span></header><div class="over15-v1-body"><small>Critères : domicile marqué ≥ 1,5 et encaissé ≥ 1,0 ; extérieur marqué ≥ 1,0 et encaissé ≥ 1,5. '+sampleText+' Données insuffisantes si un échantillon contient moins de 2 matchs.</small></div></section>';
+          })();;
           const tierLabels = {1:"Très favorable",2:"Favorable",3:"Mitigé",4:"Défavorable"};
           const tierColors = {1:"success",2:"positive",3:"warning",4:"danger"};
           const tierHtml = tier===null
