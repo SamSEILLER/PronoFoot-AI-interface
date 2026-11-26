@@ -21,6 +21,15 @@
       "status": "archived",
       "created_at_utc": "2026-11-25T14:03:58.235979Z",
       "description": "Reconstruction rétroactive V2 : fréquences des 10 derniers matchs de même compétition et saison, pré-match uniquement. OUI si les deux équipes atteignent 80 %, NON sinon; minimum 2 matchs valides par équipe. Correspondance fixture stricte équipes normalisées + date; ambigu ou absent = INDISPONIBLE. Archive indépendante de V1."
+    },
+    {
+      "id": "v3",
+      "label": "Moteur V3 — expérimentation Over 1.5 (26/11/2026)",
+      "archive": "prediction-history-v3.json",
+      "engine_model": "over15_frequency85_team_stats5_v3",
+      "status": "experimental",
+      "created_at_utc": "2026-11-26T07:00:00Z",
+      "description": "Expérimentation +1,5 : chaque équipe doit avoir une fréquence Over 1.5 ≥ 85 % sur ses 10 derniers matchs (minimum 2), buts marqués/match > 1.5 et buts encaissés/match > 1.0 sur ses 5 derniers matchs de même compétition et saison. Toutes les conditions sont obligatoires. Statistiques pré-match uniquement; aucune comparaison automatique entre moteurs."
     }
   ]
 }
