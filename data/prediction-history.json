@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at_utc": "2026-11-26T05:00:14.439184Z",
+  "generated_at_utc": "2026-11-26T05:10:24.003695Z",
   "description": "Snapshots J-1 basés sur les fréquences des 10 derniers matchs de même compétition et saison. V1 : OUI si les deux équipes atteignent 70 %, NON sinon; minimum 2 matchs valides par équipe. Les scores finaux sont complétés à mesure de leur disponibilité.",
   "records": [
     {
@@ -7202,5 +7202,5 @@
       "evaluation_status": "evaluated"
     }
   ],
-  "created_this_run": 7
+  "created_this_run": 0
 }

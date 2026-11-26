@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-11-25T22:36:48.613854+00:00",
+  "generated_at_utc": "2026-11-26T05:09:55.880781+00:00",
   "sources": {
     "pitchapi": {
       "status": "PARTIAL",
@@ -9156,6 +9156,71 @@
                 "pitch_y": 0
               }
             ]
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_08z59s",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-28T13:00:00+00:00",
+      "collected_at_utc": "2026-11-26T05:09:53.836586+00:00",
+      "competition": "La Liga",
+      "home_team": "Real Betis",
+      "away_team": "Rayo Vallecano",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_08z59s",
+        "home_team": {
+          "id": "t_0HSzvM",
+          "name": "Real Betis",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/3032d6554f9f217984830cb35b054bd116c0546d5f31686fe446efafe48e79e1.webp"
+        },
+        "away_team": {
+          "id": "t_17aOG3",
+          "name": "Rayo Vallecano",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/812173cd09cb7bfc750a9f8923ade529144c4210847198baba02c07655ebdc0d.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_08z59s",
+          "home_team": {
+            "id": "t_0HSzvM",
+            "name": "Real Betis",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/3032d6554f9f217984830cb35b054bd116c0546d5f31686fe446efafe48e79e1.webp"
+          },
+          "away_team": {
+            "id": "t_17aOG3",
+            "name": "Rayo Vallecano",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/812173cd09cb7bfc750a9f8923ade529144c4210847198baba02c07655ebdc0d.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
           }
         }
       }
@@ -50255,6 +50320,71 @@
       "schema_version": 1,
       "provider": "PitchAPI",
       "match_id": "m_17iYnz",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-28T14:30:00+00:00",
+      "collected_at_utc": "2026-11-26T05:09:53.836586+00:00",
+      "competition": "Bundesliga",
+      "home_team": "Paderborn",
+      "away_team": "Schalke 04",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_17iYnz",
+        "home_team": {
+          "id": "t_3j2hQL",
+          "name": "Paderborn",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/587f916f87bf03b606e1661d39cd8b2d6977c3fa206239cd84549e3f110e88a0.webp"
+        },
+        "away_team": {
+          "id": "t_2yQXrt",
+          "name": "Schalke 04",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/8ace7ac79ea52faa76a9d14e828a42ac9186d4a4eb84b8c2ee2ee0f890f2109c.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_17iYnz",
+          "home_team": {
+            "id": "t_3j2hQL",
+            "name": "Paderborn",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/587f916f87bf03b606e1661d39cd8b2d6977c3fa206239cd84549e3f110e88a0.webp"
+          },
+          "away_team": {
+            "id": "t_2yQXrt",
+            "name": "Schalke 04",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/8ace7ac79ea52faa76a9d14e828a42ac9186d4a4eb84b8c2ee2ee0f890f2109c.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_17iYnz",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-28T14:30:00+00:00",
       "collected_at_utc": "2026-11-21T08:21:23.179699+00:00",
@@ -69178,6 +69308,71 @@
       "schema_version": 1,
       "provider": "PitchAPI",
       "match_id": "m_1Kxps6",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-28T14:00:00+00:00",
+      "collected_at_utc": "2026-11-26T05:09:53.836586+00:00",
+      "competition": "Serie A",
+      "home_team": "Frosinone",
+      "away_team": "Parma",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_1Kxps6",
+        "home_team": {
+          "id": "t_1YXpHZ",
+          "name": "Frosinone",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/097fc95a83112a7fa163b200006b2fdffd2823180101ff48cf116ec881a3d0f0.webp"
+        },
+        "away_team": {
+          "id": "t_2QjZae",
+          "name": "Parma",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/2bc9e6c9d46925f545749ecd287f49bb9ab6671e48084d1ad6093334b4df069d.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_1Kxps6",
+          "home_team": {
+            "id": "t_1YXpHZ",
+            "name": "Frosinone",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/097fc95a83112a7fa163b200006b2fdffd2823180101ff48cf116ec881a3d0f0.webp"
+          },
+          "away_team": {
+            "id": "t_2QjZae",
+            "name": "Parma",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/2bc9e6c9d46925f545749ecd287f49bb9ab6671e48084d1ad6093334b4df069d.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_1Kxps6",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-28T14:00:00+00:00",
       "collected_at_utc": "2026-11-21T08:21:23.179699+00:00",
@@ -69288,6 +69483,71 @@
             "id": "t_2lHmy6",
             "name": "Lorient",
             "image_url": "https://cdn.pitchapi.dev/images/teams/1f56f4e83b5165a9233d27bda3d67602e4517667cdc7c7584558bf9fedbfbfa3.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_1LXkdY",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-28T17:00:00+00:00",
+      "collected_at_utc": "2026-11-26T05:09:53.836586+00:00",
+      "competition": "Serie A",
+      "home_team": "Torino",
+      "away_team": "Lazio",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_1LXkdY",
+        "home_team": {
+          "id": "t_1fXtzU",
+          "name": "Torino",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/9228f7a3cf4ea300f3381a9a39828e08ec959a59ccfa86d1918809dcb520a4f2.webp"
+        },
+        "away_team": {
+          "id": "t_0KBH0z",
+          "name": "Lazio",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/a6553d42eb04063e4cdafc1a197c2cc6d7ab7c35a66ca26caeeba1a6391a4175.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_1LXkdY",
+          "home_team": {
+            "id": "t_1fXtzU",
+            "name": "Torino",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/9228f7a3cf4ea300f3381a9a39828e08ec959a59ccfa86d1918809dcb520a4f2.webp"
+          },
+          "away_team": {
+            "id": "t_0KBH0z",
+            "name": "Lazio",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/a6553d42eb04063e4cdafc1a197c2cc6d7ab7c35a66ca26caeeba1a6391a4175.webp"
           },
           "home": {
             "formation": "",
@@ -98175,6 +98435,71 @@
       "schema_version": 1,
       "provider": "PitchAPI",
       "match_id": "m_29RFV7",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-28T15:15:00+00:00",
+      "collected_at_utc": "2026-11-26T05:09:53.836586+00:00",
+      "competition": "La Liga",
+      "home_team": "Málaga",
+      "away_team": "Athletic Club",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_29RFV7",
+        "home_team": {
+          "id": "t_2DcXQn",
+          "name": "Málaga",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/3da2b557c37768939a618508757dbf4923370ed95b9b79a02645e0396dae068b.webp"
+        },
+        "away_team": {
+          "id": "t_3kZPrE",
+          "name": "Athletic Club",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/3df8987ea318edccd9c2d8887b27324fa47c275eea7604e9e9c8539f5a69cda3.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_29RFV7",
+          "home_team": {
+            "id": "t_2DcXQn",
+            "name": "Málaga",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/3da2b557c37768939a618508757dbf4923370ed95b9b79a02645e0396dae068b.webp"
+          },
+          "away_team": {
+            "id": "t_3kZPrE",
+            "name": "Athletic Club",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/3df8987ea318edccd9c2d8887b27324fa47c275eea7604e9e9c8539f5a69cda3.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_29RFV7",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-28T15:15:00+00:00",
       "collected_at_utc": "2026-11-21T08:21:23.179699+00:00",
@@ -104958,6 +105283,71 @@
                 "pitch_y": 0
               }
             ]
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_2KbgcS",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-28T16:15:00+00:00",
+      "collected_at_utc": "2026-11-26T05:09:53.836586+00:00",
+      "competition": "Ligue 1",
+      "home_team": "Angers",
+      "away_team": "Lens",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_2KbgcS",
+        "home_team": {
+          "id": "t_0ZkdUF",
+          "name": "Angers",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/97e37649cadc979d8f16bc30ef4064d4144b44dad5392d4eb8585ff6947d367a.webp"
+        },
+        "away_team": {
+          "id": "t_38NVJO",
+          "name": "Lens",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/d7424c5e0e5cb6adc67ed5a1119d16f497a63f31ca406127d9563afc29e59d11.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_2KbgcS",
+          "home_team": {
+            "id": "t_0ZkdUF",
+            "name": "Angers",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/97e37649cadc979d8f16bc30ef4064d4144b44dad5392d4eb8585ff6947d367a.webp"
+          },
+          "away_team": {
+            "id": "t_38NVJO",
+            "name": "Lens",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/d7424c5e0e5cb6adc67ed5a1119d16f497a63f31ca406127d9563afc29e59d11.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
           }
         }
       }
@@ -123303,6 +123693,71 @@
       "schema_version": 1,
       "provider": "PitchAPI",
       "match_id": "m_2rCZIv",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-28T15:00:00+00:00",
+      "collected_at_utc": "2026-11-26T05:09:53.836586+00:00",
+      "competition": "Belgian Pro League",
+      "home_team": "Westerlo",
+      "away_team": "RAAL La Louvière",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_2rCZIv",
+        "home_team": {
+          "id": "t_0wF6Y2",
+          "name": "Westerlo",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/4d888268adcbd3da47135174ef4f6f80e1c9e9d0b54f4b2d0c2cc65ba1d36c48.webp"
+        },
+        "away_team": {
+          "id": "t_1vesUg",
+          "name": "RAAL La Louvière",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/52aa86bfdabf4fddaa476fd48d5d239231423a2e3e7152083808d41a3ecefa10.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_2rCZIv",
+          "home_team": {
+            "id": "t_0wF6Y2",
+            "name": "Westerlo",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/4d888268adcbd3da47135174ef4f6f80e1c9e9d0b54f4b2d0c2cc65ba1d36c48.webp"
+          },
+          "away_team": {
+            "id": "t_1vesUg",
+            "name": "RAAL La Louvière",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/52aa86bfdabf4fddaa476fd48d5d239231423a2e3e7152083808d41a3ecefa10.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_2rCZIv",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-28T15:00:00+00:00",
       "collected_at_utc": "2026-11-21T08:21:23.179699+00:00",
@@ -123348,6 +123803,71 @@
             "id": "t_1vesUg",
             "name": "RAAL La Louvière",
             "image_url": "https://cdn.pitchapi.dev/images/teams/52aa86bfdabf4fddaa476fd48d5d239231423a2e3e7152083808d41a3ecefa10.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_2u1O22",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-28T14:30:00+00:00",
+      "collected_at_utc": "2026-11-26T05:09:53.836586+00:00",
+      "competition": "Bundesliga",
+      "home_team": "1. FC Köln",
+      "away_team": "Elversberg",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_2u1O22",
+        "home_team": {
+          "id": "t_0x6Gji",
+          "name": "1. FC Köln",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/b586b79d51436583827db4053e71f243046c61dd2523b5a50d7cc05a921900ec.webp"
+        },
+        "away_team": {
+          "id": "t_0qsY4J",
+          "name": "Elversberg",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/98b28fb2c34b0949734eda402fd3becbc6ba1b1c2867e0ec858fbc7a748bfa78.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_2u1O22",
+          "home_team": {
+            "id": "t_0x6Gji",
+            "name": "1. FC Köln",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/b586b79d51436583827db4053e71f243046c61dd2523b5a50d7cc05a921900ec.webp"
+          },
+          "away_team": {
+            "id": "t_0qsY4J",
+            "name": "Elversberg",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/98b28fb2c34b0949734eda402fd3becbc6ba1b1c2867e0ec858fbc7a748bfa78.webp"
           },
           "home": {
             "formation": "",
@@ -130978,6 +131498,71 @@
                 "pitch_y": 0
               }
             ]
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_35NS0w",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-28T15:00:00+00:00",
+      "collected_at_utc": "2026-11-26T05:09:53.836586+00:00",
+      "competition": "Premier League",
+      "home_team": "Leeds United",
+      "away_team": "Coventry City",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_35NS0w",
+        "home_team": {
+          "id": "t_19Nr9K",
+          "name": "Leeds United",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/753bf898ff7c656b5f49ca6c9d45b53049fd68f26f683117dec22f6428b92620.webp"
+        },
+        "away_team": {
+          "id": "t_0C4xyR",
+          "name": "Coventry City",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/6bfdc5bca0f54e9ecb03c27941a777e0fd63d96a57f3a0c6f6e1aaca96d533b6.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_35NS0w",
+          "home_team": {
+            "id": "t_19Nr9K",
+            "name": "Leeds United",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/753bf898ff7c656b5f49ca6c9d45b53049fd68f26f683117dec22f6428b92620.webp"
+          },
+          "away_team": {
+            "id": "t_0C4xyR",
+            "name": "Coventry City",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/6bfdc5bca0f54e9ecb03c27941a777e0fd63d96a57f3a0c6f6e1aaca96d533b6.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
           }
         }
       }
@@ -142708,6 +143293,71 @@
       "schema_version": 1,
       "provider": "PitchAPI",
       "match_id": "m_3Hzh67",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-28T14:30:00+00:00",
+      "collected_at_utc": "2026-11-26T05:09:53.836586+00:00",
+      "competition": "Bundesliga",
+      "home_team": "Hamburger SV",
+      "away_team": "Bayern München",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_3Hzh67",
+        "home_team": {
+          "id": "t_1pQZDX",
+          "name": "Hamburger SV",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/aeb175ab92cb3317ad4f19f71de974531b67a4552a18b2be523c81f4384f375f.webp"
+        },
+        "away_team": {
+          "id": "t_1cpjqO",
+          "name": "Bayern München",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/1e2afd379a7d354c930f790c1f9ab0c2b50654cf4d47f20ffb269b8cfe309bca.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_3Hzh67",
+          "home_team": {
+            "id": "t_1pQZDX",
+            "name": "Hamburger SV",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/aeb175ab92cb3317ad4f19f71de974531b67a4552a18b2be523c81f4384f375f.webp"
+          },
+          "away_team": {
+            "id": "t_1cpjqO",
+            "name": "Bayern München",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/1e2afd379a7d354c930f790c1f9ab0c2b50654cf4d47f20ffb269b8cfe309bca.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_3Hzh67",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-28T14:30:00+00:00",
       "collected_at_utc": "2026-11-21T08:21:23.179699+00:00",
@@ -152515,6 +153165,71 @@
             "id": "t_4Oonn6",
             "name": "Sanfrecce Hiroshima",
             "image_url": "https://cdn.pitchapi.dev/images/teams/e5b0ecf98a46b261aa6de1108102a858ac32c651babce189e62598cde2268338.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_3VtobK",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-28T14:30:00+00:00",
+      "collected_at_utc": "2026-11-26T05:09:53.836586+00:00",
+      "competition": "Bundesliga",
+      "home_team": "Mainz 05",
+      "away_team": "Union Berlin",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_3VtobK",
+        "home_team": {
+          "id": "t_3pp390",
+          "name": "Mainz 05",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/78d5a44b02c256582756d96a8783071ad2369b050e514c17359836acca508669.webp"
+        },
+        "away_team": {
+          "id": "t_1VWvPZ",
+          "name": "Union Berlin",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/12972f5dd87b070eac925c03c551c66a612801a33cd23516daae2cd0977ae1c0.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_3VtobK",
+          "home_team": {
+            "id": "t_3pp390",
+            "name": "Mainz 05",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/78d5a44b02c256582756d96a8783071ad2369b050e514c17359836acca508669.webp"
+          },
+          "away_team": {
+            "id": "t_1VWvPZ",
+            "name": "Union Berlin",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/12972f5dd87b070eac925c03c551c66a612801a33cd23516daae2cd0977ae1c0.webp"
           },
           "home": {
             "formation": "",
@@ -168623,6 +169338,71 @@
                 "pitch_y": 0
               }
             ]
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_3to0Yd",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-28T15:30:00+00:00",
+      "collected_at_utc": "2026-11-26T05:09:53.836586+00:00",
+      "competition": "Primeira Liga",
+      "home_team": "Arouca",
+      "away_team": "Rio Ave",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_3to0Yd",
+        "home_team": {
+          "id": "t_0LVHGt",
+          "name": "Arouca",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/058b56600b5c2b95b4432f14d73e49eab6ca694e75b558d97fc15ba08da65456.webp"
+        },
+        "away_team": {
+          "id": "t_1r1ant",
+          "name": "Rio Ave",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/450f3e8aee59d66af4a25e1fa236c21aa7dab9fd9c979ec6faf215407e1c8aaa.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_3to0Yd",
+          "home_team": {
+            "id": "t_0LVHGt",
+            "name": "Arouca",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/058b56600b5c2b95b4432f14d73e49eab6ca694e75b558d97fc15ba08da65456.webp"
+          },
+          "away_team": {
+            "id": "t_1r1ant",
+            "name": "Rio Ave",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/450f3e8aee59d66af4a25e1fa236c21aa7dab9fd9c979ec6faf215407e1c8aaa.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
           }
         }
       }
@@ -186872,6 +187652,71 @@
                 "pitch_y": 0
               }
             ]
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_4AXxqK",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-28T15:00:00+00:00",
+      "collected_at_utc": "2026-11-26T05:09:53.836586+00:00",
+      "competition": "Premier League",
+      "home_team": "Manchester United",
+      "away_team": "Brentford",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_4AXxqK",
+        "home_team": {
+          "id": "t_2I313i",
+          "name": "Manchester United",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/d64e82187ecc985ae095feba4db1dd6607f7009424f39a745102713bb0e1e6bb.webp"
+        },
+        "away_team": {
+          "id": "t_2ihyjC",
+          "name": "Brentford",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/b914ebfd30484229c1ef50cb5af2d029a2d17cab7a76b3761c02125657b2a40a.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_4AXxqK",
+          "home_team": {
+            "id": "t_2I313i",
+            "name": "Manchester United",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/d64e82187ecc985ae095feba4db1dd6607f7009424f39a745102713bb0e1e6bb.webp"
+          },
+          "away_team": {
+            "id": "t_2ihyjC",
+            "name": "Brentford",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/b914ebfd30484229c1ef50cb5af2d029a2d17cab7a76b3761c02125657b2a40a.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
           }
         }
       }
@@ -213664,6 +214509,71 @@
             "id": "t_32jSEF",
             "name": "Barcelona",
             "image_url": "https://cdn.pitchapi.dev/images/teams/71881ba9f1d678143d4d2b88feab251ce8a840eca4c46768e756e73e5170687c.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_4fcrbQ",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-28T15:30:00+00:00",
+      "collected_at_utc": "2026-11-26T05:09:53.836586+00:00",
+      "competition": "Primeira Liga",
+      "home_team": "Moreirense",
+      "away_team": "Santa Clara",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_4fcrbQ",
+        "home_team": {
+          "id": "t_0t0HHy",
+          "name": "Moreirense",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/6d598a9dac1d99892e130b508b13c0468684f286a28c95862e3ba80644d7b9f4.webp"
+        },
+        "away_team": {
+          "id": "t_2TePe3",
+          "name": "Santa Clara",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/fa8fe8daca85df8a4ece1f701195026dc3195701ad44cd2c0b235d5346ed911a.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_4fcrbQ",
+          "home_team": {
+            "id": "t_0t0HHy",
+            "name": "Moreirense",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/6d598a9dac1d99892e130b508b13c0468684f286a28c95862e3ba80644d7b9f4.webp"
+          },
+          "away_team": {
+            "id": "t_2TePe3",
+            "name": "Santa Clara",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/fa8fe8daca85df8a4ece1f701195026dc3195701ad44cd2c0b235d5346ed911a.webp"
           },
           "home": {
             "formation": "",
