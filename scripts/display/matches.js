@@ -1036,7 +1036,7 @@
             const label=available?(passed?"OUI":"NON"):"INDISPONIBLE";
             const color=label==="OUI"?"#15803d":label==="NON"?"#dc2626":"#64748b";
             const sampleText="Échantillons : +1,5 "+homeFreq.over+"/"+homeFreq.n+" (dom. équipe) et "+awayFreq.over+"/"+awayFreq.n+" (ext. équipe) ; stats domicile "+homeVenue.n+"/5, extérieur "+awayVenue.n+"/5 (minimum 2).";
-            const thresholdText="Seuils V3 : fréquence +1,5 ≥ "+THRESHOLDS.over15Pct+" % ; domicile marqué ≥ "+THRESHOLDS.homeGF+" / encaissé ≥ "+THRESHOLDS.homeGA ; extérieur marqué ≥ "+THRESHOLDS.awayGF+" / encaissé ≥ "+THRESHOLDS.awayGA+".";
+            const thresholdText="Seuils V3 : fréquence +1,5 ≥ "+THRESHOLDS.over15Pct+" % ; domicile marqué ≥ "+THRESHOLDS.homeGF+" / encaissé ≥ "+THRESHOLDS.homeGA+" ; extérieur marqué ≥ "+THRESHOLDS.awayGF+" / encaissé ≥ "+THRESHOLDS.awayGA+".";
             return '<section class="over15-v1-panel"><header><strong style="color:'+color+'">Moteur V3 · '+label+'</strong><span>+1,5 ≥ '+THRESHOLDS.over15Pct+' % · échantillon 2 à 5 matchs</span></header><div class="over15-v1-body"><small>'+thresholdText+' '+sampleText+' INDISPONIBLE si un échantillon requis contient moins de 2 matchs.</small></div></section>';
           })();;;
           const tierLabels = {1:"Très favorable",2:"Favorable",3:"Mitigé",4:"Défavorable"};
