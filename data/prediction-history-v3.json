@@ -1,8 +1,1290 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-11-26T07:00:00Z",
+  "generated_at_utc": "2026-11-26T09:23:39.752986Z",
   "method_id": "OVER15-EXPERIMENT-V3",
-  "created_this_run": 0,
-  "description": "Archive initialisée. Les prédictions V3 seront générées et publiées par le workflow quotidien. Critères: fréquence Over 1.5 ≥85% sur 10 matchs (minimum 2), buts marqués/match >1.5 et encaissés/match >1.0 sur les 5 derniers matchs de même compétition/saison, pour chaque équipe. Aucune comparaison entre moteurs.",
-  "records": []
+  "created_this_run": 25,
+  "description": "V3 pré-match : fréquence Over 1.5 >= 85 % pour chaque équipe sur les 10 derniers matchs (minimum 2), buts marqués/match > 1.5 et buts encaissés/match > 1.0 pour chaque équipe sur les 5 derniers matchs de même compétition et saison. Toutes les conditions sont obligatoires. Données pré-match uniquement.",
+  "records": [
+    {
+      "match_id": "m_2DxeZN",
+      "competition": "pt-primeira-liga",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-27T20:15:00Z",
+      "home_team": "Marítimo",
+      "away_team": "Nacional",
+      "snapshot_at_utc": "2026-11-26T09:23:39.752986Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "no"
+      },
+      "criteria": {
+        "threshold_frequency_pct": 85,
+        "frequency_window": 10,
+        "team_stats_window": 5,
+        "minimum_sample_per_team": 2,
+        "home": {
+          "matches_frequency": 9,
+          "over_1_5_count": 9,
+          "over_1_5_percentage": 100.0,
+          "matches_team_stats": 5,
+          "goals_for_per_match": 0.6,
+          "goals_against_per_match": 2.6,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "away": {
+          "matches_frequency": 10,
+          "over_1_5_count": 6,
+          "over_1_5_percentage": 60.0,
+          "matches_team_stats": 5,
+          "goals_for_per_match": 0.8,
+          "goals_against_per_match": 1.6,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "all_conditions_met": false,
+        "reasons_not_selected": [
+          "home_goals_for_not_above_1_5",
+          "away_over_1_5_below_85",
+          "away_goals_for_not_above_1_5"
+        ]
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_3xkED2",
+      "competition": "gb-premier-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-27T20:00:00Z",
+      "home_team": "Nottingham Forest",
+      "away_team": "Chelsea",
+      "snapshot_at_utc": "2026-11-26T09:23:39.752986Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "no"
+      },
+      "criteria": {
+        "threshold_frequency_pct": 85,
+        "frequency_window": 10,
+        "team_stats_window": 5,
+        "minimum_sample_per_team": 2,
+        "home": {
+          "matches_frequency": 10,
+          "over_1_5_count": 7,
+          "over_1_5_percentage": 70.0,
+          "matches_team_stats": 5,
+          "goals_for_per_match": 0.8,
+          "goals_against_per_match": 1.4,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "away": {
+          "matches_frequency": 10,
+          "over_1_5_count": 9,
+          "over_1_5_percentage": 90.0,
+          "matches_team_stats": 5,
+          "goals_for_per_match": 1.0,
+          "goals_against_per_match": 1.4,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "all_conditions_met": false,
+        "reasons_not_selected": [
+          "home_over_1_5_below_85",
+          "home_goals_for_not_above_1_5",
+          "away_goals_for_not_above_1_5"
+        ]
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_3N7OsF",
+      "competition": "es-la-liga",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-27T20:00:00Z",
+      "home_team": "Levante",
+      "away_team": "Racing Santander",
+      "snapshot_at_utc": "2026-11-26T09:23:39.752986Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "no"
+      },
+      "criteria": {
+        "threshold_frequency_pct": 85,
+        "frequency_window": 10,
+        "team_stats_window": 5,
+        "minimum_sample_per_team": 2,
+        "home": {
+          "matches_frequency": 10,
+          "over_1_5_count": 8,
+          "over_1_5_percentage": 80.0,
+          "matches_team_stats": 5,
+          "goals_for_per_match": 1.0,
+          "goals_against_per_match": 1.2,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "away": {
+          "matches_frequency": 10,
+          "over_1_5_count": 10,
+          "over_1_5_percentage": 100.0,
+          "matches_team_stats": 5,
+          "goals_for_per_match": 1.4,
+          "goals_against_per_match": 1.8,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "all_conditions_met": false,
+        "reasons_not_selected": [
+          "home_over_1_5_below_85",
+          "home_goals_for_not_above_1_5",
+          "away_goals_for_not_above_1_5"
+        ]
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_398Ugm",
+      "competition": "it-serie-a",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-27T19:45:00Z",
+      "home_team": "Venezia",
+      "away_team": "Bologna",
+      "snapshot_at_utc": "2026-11-26T09:23:39.752986Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "no"
+      },
+      "criteria": {
+        "threshold_frequency_pct": 85,
+        "frequency_window": 10,
+        "team_stats_window": 5,
+        "minimum_sample_per_team": 2,
+        "home": {
+          "matches_frequency": 10,
+          "over_1_5_count": 7,
+          "over_1_5_percentage": 70.0,
+          "matches_team_stats": 5,
+          "goals_for_per_match": 0.4,
+          "goals_against_per_match": 1.8,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "away": {
+          "matches_frequency": 10,
+          "over_1_5_count": 9,
+          "over_1_5_percentage": 90.0,
+          "matches_team_stats": 5,
+          "goals_for_per_match": 2.2,
+          "goals_against_per_match": 1.0,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "all_conditions_met": false,
+        "reasons_not_selected": [
+          "home_over_1_5_below_85",
+          "home_goals_for_not_above_1_5",
+          "away_goals_against_not_above_1"
+        ]
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_1oxRzF",
+      "competition": "fr-ligue-1",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-27T19:45:00Z",
+      "home_team": "Brest",
+      "away_team": "Paris FC",
+      "snapshot_at_utc": "2026-11-26T09:23:39.752986Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "no"
+      },
+      "criteria": {
+        "threshold_frequency_pct": 85,
+        "frequency_window": 10,
+        "team_stats_window": 5,
+        "minimum_sample_per_team": 2,
+        "home": {
+          "matches_frequency": 10,
+          "over_1_5_count": 8,
+          "over_1_5_percentage": 80.0,
+          "matches_team_stats": 5,
+          "goals_for_per_match": 1.4,
+          "goals_against_per_match": 0.6,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "away": {
+          "matches_frequency": 10,
+          "over_1_5_count": 7,
+          "over_1_5_percentage": 70.0,
+          "matches_team_stats": 5,
+          "goals_for_per_match": 2.6,
+          "goals_against_per_match": 1.2,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "all_conditions_met": false,
+        "reasons_not_selected": [
+          "home_over_1_5_below_85",
+          "home_goals_for_not_above_1_5",
+          "home_goals_against_not_above_1",
+          "away_over_1_5_below_85"
+        ]
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_3DtXWR",
+      "competition": "be-first-division-a",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-27T19:45:00Z",
+      "home_team": "OH Leuven",
+      "away_team": "Kortrijk",
+      "snapshot_at_utc": "2026-11-26T09:23:39.752986Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "no"
+      },
+      "criteria": {
+        "threshold_frequency_pct": 85,
+        "frequency_window": 10,
+        "team_stats_window": 5,
+        "minimum_sample_per_team": 2,
+        "home": {
+          "matches_frequency": 10,
+          "over_1_5_count": 8,
+          "over_1_5_percentage": 80.0,
+          "matches_team_stats": 5,
+          "goals_for_per_match": 1.4,
+          "goals_against_per_match": 1.0,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "away": {
+          "matches_frequency": 10,
+          "over_1_5_count": 6,
+          "over_1_5_percentage": 60.0,
+          "matches_team_stats": 5,
+          "goals_for_per_match": 0.4,
+          "goals_against_per_match": 1.8,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "all_conditions_met": false,
+        "reasons_not_selected": [
+          "home_over_1_5_below_85",
+          "home_goals_for_not_above_1_5",
+          "home_goals_against_not_above_1",
+          "away_over_1_5_below_85",
+          "away_goals_for_not_above_1_5"
+        ]
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_0toF5d",
+      "competition": "de-bundesliga",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-27T19:30:00Z",
+      "home_team": "Werder Bremen",
+      "away_team": "Borussia Mönchengladbach",
+      "snapshot_at_utc": "2026-11-26T09:23:39.752986Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "no"
+      },
+      "criteria": {
+        "threshold_frequency_pct": 85,
+        "frequency_window": 10,
+        "team_stats_window": 5,
+        "minimum_sample_per_team": 2,
+        "home": {
+          "matches_frequency": 10,
+          "over_1_5_count": 9,
+          "over_1_5_percentage": 90.0,
+          "matches_team_stats": 5,
+          "goals_for_per_match": 2.2,
+          "goals_against_per_match": 1.0,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "away": {
+          "matches_frequency": 10,
+          "over_1_5_count": 8,
+          "over_1_5_percentage": 80.0,
+          "matches_team_stats": 5,
+          "goals_for_per_match": 1.0,
+          "goals_against_per_match": 1.6,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "all_conditions_met": false,
+        "reasons_not_selected": [
+          "home_goals_against_not_above_1",
+          "away_over_1_5_below_85",
+          "away_goals_for_not_above_1_5"
+        ]
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_0ryVxp",
+      "competition": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T20:00:00Z",
+      "home_team": "Sparta Prague",
+      "away_team": "AZ Alkmaar",
+      "snapshot_at_utc": "2026-11-26T09:23:39.752986Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "no"
+      },
+      "criteria": {
+        "threshold_frequency_pct": 85,
+        "frequency_window": 10,
+        "team_stats_window": 5,
+        "minimum_sample_per_team": 2,
+        "home": {
+          "matches_frequency": 4,
+          "over_1_5_count": 3,
+          "over_1_5_percentage": 75.0,
+          "matches_team_stats": 4,
+          "goals_for_per_match": 1.5,
+          "goals_against_per_match": 1.5,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "away": {
+          "matches_frequency": 4,
+          "over_1_5_count": 3,
+          "over_1_5_percentage": 75.0,
+          "matches_team_stats": 4,
+          "goals_for_per_match": 1.75,
+          "goals_against_per_match": 1.0,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "all_conditions_met": false,
+        "reasons_not_selected": [
+          "home_over_1_5_below_85",
+          "home_goals_for_not_above_1_5",
+          "away_over_1_5_below_85",
+          "away_goals_against_not_above_1"
+        ]
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_0snBmF",
+      "competition": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T20:00:00Z",
+      "home_team": "Ferencváros",
+      "away_team": "NK Celje",
+      "snapshot_at_utc": "2026-11-26T09:23:39.752986Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "no"
+      },
+      "criteria": {
+        "threshold_frequency_pct": 85,
+        "frequency_window": 10,
+        "team_stats_window": 5,
+        "minimum_sample_per_team": 2,
+        "home": {
+          "matches_frequency": 4,
+          "over_1_5_count": 4,
+          "over_1_5_percentage": 100.0,
+          "matches_team_stats": 4,
+          "goals_for_per_match": 2.75,
+          "goals_against_per_match": 0.75,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "away": {
+          "matches_frequency": 4,
+          "over_1_5_count": 4,
+          "over_1_5_percentage": 100.0,
+          "matches_team_stats": 4,
+          "goals_for_per_match": 1.25,
+          "goals_against_per_match": 2.25,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "all_conditions_met": false,
+        "reasons_not_selected": [
+          "home_goals_against_not_above_1",
+          "away_goals_for_not_above_1_5"
+        ]
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_12vC0r",
+      "competition": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T20:00:00Z",
+      "home_team": "Sunderland",
+      "away_team": "Jagiellonia Białystok",
+      "snapshot_at_utc": "2026-11-26T09:23:39.752986Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "no"
+      },
+      "criteria": {
+        "threshold_frequency_pct": 85,
+        "frequency_window": 10,
+        "team_stats_window": 5,
+        "minimum_sample_per_team": 2,
+        "home": {
+          "matches_frequency": 4,
+          "over_1_5_count": 3,
+          "over_1_5_percentage": 75.0,
+          "matches_team_stats": 4,
+          "goals_for_per_match": 1.0,
+          "goals_against_per_match": 1.0,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "away": {
+          "matches_frequency": 4,
+          "over_1_5_count": 3,
+          "over_1_5_percentage": 75.0,
+          "matches_team_stats": 4,
+          "goals_for_per_match": 1.0,
+          "goals_against_per_match": 1.75,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "all_conditions_met": false,
+        "reasons_not_selected": [
+          "home_over_1_5_below_85",
+          "home_goals_for_not_above_1_5",
+          "home_goals_against_not_above_1",
+          "away_over_1_5_below_85",
+          "away_goals_for_not_above_1_5"
+        ]
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_4CEVyM",
+      "competition": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T20:00:00Z",
+      "home_team": "Torreense",
+      "away_team": "Celtic",
+      "snapshot_at_utc": "2026-11-26T09:23:39.752986Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "no"
+      },
+      "criteria": {
+        "threshold_frequency_pct": 85,
+        "frequency_window": 10,
+        "team_stats_window": 5,
+        "minimum_sample_per_team": 2,
+        "home": {
+          "matches_frequency": 4,
+          "over_1_5_count": 4,
+          "over_1_5_percentage": 100.0,
+          "matches_team_stats": 4,
+          "goals_for_per_match": 1.75,
+          "goals_against_per_match": 2.25,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "away": {
+          "matches_frequency": 4,
+          "over_1_5_count": 4,
+          "over_1_5_percentage": 100.0,
+          "matches_team_stats": 4,
+          "goals_for_per_match": 1.5,
+          "goals_against_per_match": 2.75,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "all_conditions_met": false,
+        "reasons_not_selected": [
+          "away_goals_for_not_above_1_5"
+        ]
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_1IDFXG",
+      "competition": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T20:00:00Z",
+      "home_team": "Crystal Palace",
+      "away_team": "Real Sociedad",
+      "snapshot_at_utc": "2026-11-26T09:23:39.752986Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "no"
+      },
+      "criteria": {
+        "threshold_frequency_pct": 85,
+        "frequency_window": 10,
+        "team_stats_window": 5,
+        "minimum_sample_per_team": 2,
+        "home": {
+          "matches_frequency": 4,
+          "over_1_5_count": 4,
+          "over_1_5_percentage": 100.0,
+          "matches_team_stats": 4,
+          "goals_for_per_match": 2.25,
+          "goals_against_per_match": 1.5,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "away": {
+          "matches_frequency": 4,
+          "over_1_5_count": 4,
+          "over_1_5_percentage": 100.0,
+          "matches_team_stats": 4,
+          "goals_for_per_match": 2.25,
+          "goals_against_per_match": 1.0,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "all_conditions_met": false,
+        "reasons_not_selected": [
+          "away_goals_against_not_above_1"
+        ]
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_2yFf8O",
+      "competition": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T20:00:00Z",
+      "home_team": "Hoffenheim",
+      "away_team": "Sturm Graz",
+      "snapshot_at_utc": "2026-11-26T09:23:39.752986Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "no"
+      },
+      "criteria": {
+        "threshold_frequency_pct": 85,
+        "frequency_window": 10,
+        "team_stats_window": 5,
+        "minimum_sample_per_team": 2,
+        "home": {
+          "matches_frequency": 4,
+          "over_1_5_count": 4,
+          "over_1_5_percentage": 100.0,
+          "matches_team_stats": 4,
+          "goals_for_per_match": 1.5,
+          "goals_against_per_match": 1.5,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "away": {
+          "matches_frequency": 4,
+          "over_1_5_count": 2,
+          "over_1_5_percentage": 50.0,
+          "matches_team_stats": 4,
+          "goals_for_per_match": 0.75,
+          "goals_against_per_match": 1.5,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "all_conditions_met": false,
+        "reasons_not_selected": [
+          "home_goals_for_not_above_1_5",
+          "away_over_1_5_below_85",
+          "away_goals_for_not_above_1_5"
+        ]
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_04Y9Kg",
+      "competition": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T20:00:00Z",
+      "home_team": "Juventus",
+      "away_team": "Omonia Nicosia",
+      "snapshot_at_utc": "2026-11-26T09:23:39.752986Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "no"
+      },
+      "criteria": {
+        "threshold_frequency_pct": 85,
+        "frequency_window": 10,
+        "team_stats_window": 5,
+        "minimum_sample_per_team": 2,
+        "home": {
+          "matches_frequency": 4,
+          "over_1_5_count": 4,
+          "over_1_5_percentage": 100.0,
+          "matches_team_stats": 4,
+          "goals_for_per_match": 2.75,
+          "goals_against_per_match": 1.0,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "away": {
+          "matches_frequency": 4,
+          "over_1_5_count": 3,
+          "over_1_5_percentage": 75.0,
+          "matches_team_stats": 4,
+          "goals_for_per_match": 1.5,
+          "goals_against_per_match": 1.75,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "all_conditions_met": false,
+        "reasons_not_selected": [
+          "home_goals_against_not_above_1",
+          "away_over_1_5_below_85",
+          "away_goals_for_not_above_1_5"
+        ]
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_30yUrS",
+      "competition": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T20:00:00Z",
+      "home_team": "Lyon",
+      "away_team": "Lillestrøm",
+      "snapshot_at_utc": "2026-11-26T09:23:39.752986Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "no"
+      },
+      "criteria": {
+        "threshold_frequency_pct": 85,
+        "frequency_window": 10,
+        "team_stats_window": 5,
+        "minimum_sample_per_team": 2,
+        "home": {
+          "matches_frequency": 4,
+          "over_1_5_count": 4,
+          "over_1_5_percentage": 100.0,
+          "matches_team_stats": 4,
+          "goals_for_per_match": 1.5,
+          "goals_against_per_match": 1.75,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "away": {
+          "matches_frequency": 4,
+          "over_1_5_count": 3,
+          "over_1_5_percentage": 75.0,
+          "matches_team_stats": 4,
+          "goals_for_per_match": 0.5,
+          "goals_against_per_match": 2.5,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "all_conditions_met": false,
+        "reasons_not_selected": [
+          "home_goals_for_not_above_1_5",
+          "away_over_1_5_below_85",
+          "away_goals_for_not_above_1_5"
+        ]
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_1NPdGz",
+      "competition": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T20:00:00Z",
+      "home_team": "NEC Nijmegen",
+      "away_team": "Rennes",
+      "snapshot_at_utc": "2026-11-26T09:23:39.752986Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "no"
+      },
+      "criteria": {
+        "threshold_frequency_pct": 85,
+        "frequency_window": 10,
+        "team_stats_window": 5,
+        "minimum_sample_per_team": 2,
+        "home": {
+          "matches_frequency": 4,
+          "over_1_5_count": 4,
+          "over_1_5_percentage": 100.0,
+          "matches_team_stats": 4,
+          "goals_for_per_match": 2.0,
+          "goals_against_per_match": 2.25,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "away": {
+          "matches_frequency": 4,
+          "over_1_5_count": 2,
+          "over_1_5_percentage": 50.0,
+          "matches_team_stats": 4,
+          "goals_for_per_match": 1.0,
+          "goals_against_per_match": 0.75,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "all_conditions_met": false,
+        "reasons_not_selected": [
+          "away_over_1_5_below_85",
+          "away_goals_for_not_above_1_5",
+          "away_goals_against_not_above_1"
+        ]
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_1R2Vyf",
+      "competition": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T20:00:00Z",
+      "home_team": "OFI Crete",
+      "away_team": "Anderlecht",
+      "snapshot_at_utc": "2026-11-26T09:23:39.752986Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "no"
+      },
+      "criteria": {
+        "threshold_frequency_pct": 85,
+        "frequency_window": 10,
+        "team_stats_window": 5,
+        "minimum_sample_per_team": 2,
+        "home": {
+          "matches_frequency": 4,
+          "over_1_5_count": 4,
+          "over_1_5_percentage": 100.0,
+          "matches_team_stats": 4,
+          "goals_for_per_match": 1.25,
+          "goals_against_per_match": 1.0,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "away": {
+          "matches_frequency": 4,
+          "over_1_5_count": 3,
+          "over_1_5_percentage": 75.0,
+          "matches_team_stats": 4,
+          "goals_for_per_match": 1.5,
+          "goals_against_per_match": 0.75,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "all_conditions_met": false,
+        "reasons_not_selected": [
+          "home_goals_for_not_above_1_5",
+          "home_goals_against_not_above_1",
+          "away_over_1_5_below_85",
+          "away_goals_for_not_above_1_5",
+          "away_goals_against_not_above_1"
+        ]
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_2aKzEl",
+      "competition": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T17:45:00Z",
+      "home_team": "Celta Vigo",
+      "away_team": "AFC Bournemouth",
+      "snapshot_at_utc": "2026-11-26T09:23:39.752986Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "no"
+      },
+      "criteria": {
+        "threshold_frequency_pct": 85,
+        "frequency_window": 10,
+        "team_stats_window": 5,
+        "minimum_sample_per_team": 2,
+        "home": {
+          "matches_frequency": 4,
+          "over_1_5_count": 3,
+          "over_1_5_percentage": 75.0,
+          "matches_team_stats": 4,
+          "goals_for_per_match": 1.0,
+          "goals_against_per_match": 1.5,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "away": {
+          "matches_frequency": 4,
+          "over_1_5_count": 4,
+          "over_1_5_percentage": 100.0,
+          "matches_team_stats": 4,
+          "goals_for_per_match": 2.75,
+          "goals_against_per_match": 0.5,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "all_conditions_met": false,
+        "reasons_not_selected": [
+          "home_over_1_5_below_85",
+          "home_goals_for_not_above_1_5",
+          "away_goals_against_not_above_1"
+        ]
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_0dkmnA",
+      "competition": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T17:45:00Z",
+      "home_team": "Dinamo Zagreb",
+      "away_team": "Bayer Leverkusen",
+      "snapshot_at_utc": "2026-11-26T09:23:39.752986Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "no"
+      },
+      "criteria": {
+        "threshold_frequency_pct": 85,
+        "frequency_window": 10,
+        "team_stats_window": 5,
+        "minimum_sample_per_team": 2,
+        "home": {
+          "matches_frequency": 4,
+          "over_1_5_count": 2,
+          "over_1_5_percentage": 50.0,
+          "matches_team_stats": 4,
+          "goals_for_per_match": 1.25,
+          "goals_against_per_match": 1.0,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "away": {
+          "matches_frequency": 4,
+          "over_1_5_count": 3,
+          "over_1_5_percentage": 75.0,
+          "matches_team_stats": 4,
+          "goals_for_per_match": 2.0,
+          "goals_against_per_match": 0.25,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "all_conditions_met": false,
+        "reasons_not_selected": [
+          "home_over_1_5_below_85",
+          "home_goals_for_not_above_1_5",
+          "home_goals_against_not_above_1",
+          "away_over_1_5_below_85",
+          "away_goals_against_not_above_1"
+        ]
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_3SZtsw",
+      "competition": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T17:45:00Z",
+      "home_team": "Marseille",
+      "away_team": "Levski Sofia",
+      "snapshot_at_utc": "2026-11-26T09:23:39.752986Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "no"
+      },
+      "criteria": {
+        "threshold_frequency_pct": 85,
+        "frequency_window": 10,
+        "team_stats_window": 5,
+        "minimum_sample_per_team": 2,
+        "home": {
+          "matches_frequency": 4,
+          "over_1_5_count": 1,
+          "over_1_5_percentage": 25.0,
+          "matches_team_stats": 4,
+          "goals_for_per_match": 0.5,
+          "goals_against_per_match": 1.5,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "away": {
+          "matches_frequency": 4,
+          "over_1_5_count": 2,
+          "over_1_5_percentage": 50.0,
+          "matches_team_stats": 4,
+          "goals_for_per_match": 1.0,
+          "goals_against_per_match": 0.75,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "all_conditions_met": false,
+        "reasons_not_selected": [
+          "home_over_1_5_below_85",
+          "home_goals_for_not_above_1_5",
+          "away_over_1_5_below_85",
+          "away_goals_for_not_above_1_5",
+          "away_goals_against_not_above_1"
+        ]
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_0ADq1e",
+      "competition": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T17:45:00Z",
+      "home_team": "Olympiacos",
+      "away_team": "Milan",
+      "snapshot_at_utc": "2026-11-26T09:23:39.752986Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "no"
+      },
+      "criteria": {
+        "threshold_frequency_pct": 85,
+        "frequency_window": 10,
+        "team_stats_window": 5,
+        "minimum_sample_per_team": 2,
+        "home": {
+          "matches_frequency": 4,
+          "over_1_5_count": 1,
+          "over_1_5_percentage": 25.0,
+          "matches_team_stats": 4,
+          "goals_for_per_match": 1.0,
+          "goals_against_per_match": 0.25,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "away": {
+          "matches_frequency": 4,
+          "over_1_5_count": 4,
+          "over_1_5_percentage": 100.0,
+          "matches_team_stats": 4,
+          "goals_for_per_match": 1.0,
+          "goals_against_per_match": 1.75,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "all_conditions_met": false,
+        "reasons_not_selected": [
+          "home_over_1_5_below_85",
+          "home_goals_for_not_above_1_5",
+          "home_goals_against_not_above_1",
+          "away_goals_for_not_above_1_5"
+        ]
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_1rxRZA",
+      "competition": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T17:45:00Z",
+      "home_team": "Salzburg",
+      "away_team": "Ararat Armenia",
+      "snapshot_at_utc": "2026-11-26T09:23:39.752986Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "no"
+      },
+      "criteria": {
+        "threshold_frequency_pct": 85,
+        "frequency_window": 10,
+        "team_stats_window": 5,
+        "minimum_sample_per_team": 2,
+        "home": {
+          "matches_frequency": 4,
+          "over_1_5_count": 3,
+          "over_1_5_percentage": 75.0,
+          "matches_team_stats": 4,
+          "goals_for_per_match": 0.75,
+          "goals_against_per_match": 2.0,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "away": {
+          "matches_frequency": 4,
+          "over_1_5_count": 4,
+          "over_1_5_percentage": 100.0,
+          "matches_team_stats": 4,
+          "goals_for_per_match": 1.0,
+          "goals_against_per_match": 3.5,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "all_conditions_met": false,
+        "reasons_not_selected": [
+          "home_over_1_5_below_85",
+          "home_goals_for_not_above_1_5",
+          "away_goals_for_not_above_1_5"
+        ]
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_1NQ9Kt",
+      "competition": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T17:45:00Z",
+      "home_team": "Union St.Gilloise",
+      "away_team": "Lech Poznań",
+      "snapshot_at_utc": "2026-11-26T09:23:39.752986Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "no"
+      },
+      "criteria": {
+        "threshold_frequency_pct": 85,
+        "frequency_window": 10,
+        "team_stats_window": 5,
+        "minimum_sample_per_team": 2,
+        "home": {
+          "matches_frequency": 4,
+          "over_1_5_count": 4,
+          "over_1_5_percentage": 100.0,
+          "matches_team_stats": 4,
+          "goals_for_per_match": 2.5,
+          "goals_against_per_match": 0.5,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "away": {
+          "matches_frequency": 4,
+          "over_1_5_count": 4,
+          "over_1_5_percentage": 100.0,
+          "matches_team_stats": 4,
+          "goals_for_per_match": 0.5,
+          "goals_against_per_match": 3.0,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "all_conditions_met": false,
+        "reasons_not_selected": [
+          "home_goals_against_not_above_1",
+          "away_goals_for_not_above_1_5"
+        ]
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_1UYxQd",
+      "competition": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T17:45:00Z",
+      "home_team": "Viktoria Plzeň",
+      "away_team": "Benfica",
+      "snapshot_at_utc": "2026-11-26T09:23:39.752986Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "no"
+      },
+      "criteria": {
+        "threshold_frequency_pct": 85,
+        "frequency_window": 10,
+        "team_stats_window": 5,
+        "minimum_sample_per_team": 2,
+        "home": {
+          "matches_frequency": 4,
+          "over_1_5_count": 3,
+          "over_1_5_percentage": 75.0,
+          "matches_team_stats": 4,
+          "goals_for_per_match": 0.75,
+          "goals_against_per_match": 1.75,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "away": {
+          "matches_frequency": 4,
+          "over_1_5_count": 4,
+          "over_1_5_percentage": 100.0,
+          "matches_team_stats": 4,
+          "goals_for_per_match": 3.25,
+          "goals_against_per_match": 0.75,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "all_conditions_met": false,
+        "reasons_not_selected": [
+          "home_over_1_5_below_85",
+          "home_goals_for_not_above_1_5",
+          "away_goals_against_not_above_1"
+        ]
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_2wltyW",
+      "competition": "uefa-europa-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-26T17:45:00Z",
+      "home_team": "Beşiktaş",
+      "away_team": "Hapoel Beer Sheva",
+      "snapshot_at_utc": "2026-11-26T09:23:39.752986Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "no"
+      },
+      "criteria": {
+        "threshold_frequency_pct": 85,
+        "frequency_window": 10,
+        "team_stats_window": 5,
+        "minimum_sample_per_team": 2,
+        "home": {
+          "matches_frequency": 4,
+          "over_1_5_count": 4,
+          "over_1_5_percentage": 100.0,
+          "matches_team_stats": 4,
+          "goals_for_per_match": 2.75,
+          "goals_against_per_match": 2.0,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "away": {
+          "matches_frequency": 4,
+          "over_1_5_count": 3,
+          "over_1_5_percentage": 75.0,
+          "matches_team_stats": 4,
+          "goals_for_per_match": 0.25,
+          "goals_against_per_match": 2.0,
+          "frequency_window": 10,
+          "team_stats_window": 5
+        },
+        "all_conditions_met": false,
+        "reasons_not_selected": [
+          "away_over_1_5_below_85",
+          "away_goals_for_not_above_1_5"
+        ]
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    }
+  ]
 }
