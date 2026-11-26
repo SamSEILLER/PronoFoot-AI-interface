@@ -265,15 +265,20 @@
       .catch((error) => { console.warn("Statistiques détaillées et tirs récents indisponibles.", error); return null; }),
     fetch("./data/prediction-history.json?v=" + Date.now(), { cache: "no-store" })
       .then((response) => { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); })
-      .catch((error) => { console.warn("Archive des pronostics expérimentaux indisponible.", error); return null; })
+      .catch((error) => { console.warn("Archive des pronostics expérimentaux indisponible.", error); return null; }),
+    fetch("./data/prediction-history-v3.json?v=" + Date.now(), { cache: "no-store" })
+      .then((response) => { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); })
+      .catch((error) => { console.warn("Archive V3 Poisson indisponible.", error); return null; })
   ])
-    .then(([matches, standings, goalPredictions, matchAnalytics, predictionHistory]) => {
+    .then(([matches, standings, goalPredictions, matchAnalytics, predictionHistory, predictionHistoryV3]) => {
       const matchRecords = matches;
       if (!Array.isArray(matchRecords)) throw new Error("Format de données inattendu");
 
       const standingsIndex = buildStandingsIndex(standings);
       const goalPredictionsIndex = buildGoalPredictionsIndex(goalPredictions);
       const predictionHistoryIndex = new Map((Array.isArray(predictionHistory?.records) ? predictionHistory.records : [])
+        .map(record => [String(record.match_id || ""), record]));
+      const predictionHistoryV3Index = new Map((Array.isArray(predictionHistoryV3?.records) ? predictionHistoryV3.records : [])
         .map(record => [String(record.match_id || ""), record]));
       const matchAnalyticsIndex = new Map();
       (Array.isArray(matchAnalytics?.competitions) ? matchAnalytics.competitions : []).forEach((competition) => {
@@ -996,79 +1001,37 @@
             return '<section class="over15-v1-panel"><header><strong style="color:'+(v2Label==='OUI'?'#15803d':v2Label==='NON'?'#dc2626':'#64748b')+'">Moteur V2 · '+v2Label+'</strong><span>Fréquence +1,5 ≥ 80 % par équipe</span></header></section>';
           })();
           const v3Html = (() => {
-            const homeId = String(selectedDetailMatch.home_team_id||"");
-            const awayId = String(selectedDetailMatch.away_team_id||"");
-            const cutoff = Date.parse(selectedDetailMatch.kickoff_utc||"");
-            const MIN_MATCHES = 2;
-            const SAMPLE_SIZE = 5;
-            const THRESHOLDS = { over15Pct:70, homeGF:1.3, homeGA:0.9, awayGF:0.9, awayGA:1.3 };
-            const validScore = item => {
-              const hg=Number(item.home_score), ag=Number(item.away_score);
-              return Number.isInteger(hg)&&Number.isInteger(ag)&&hg>=0&&ag>=0;
-            };
-            const priorMatches = teamId => {
-              const entry=analytics.teams.get(teamId);
-              return (entry?.recent_match_ids||[]).map(id=>analytics.matchesById.get(String(id))).filter(Boolean)
-                .filter(item=>String(item.season||"")===String(selectedDetailMatch.season||""))
-                .filter(item=>Date.parse(item.kickoff_utc||"")<cutoff)
-                .filter(validScore)
-                .sort((a,b)=>String(b.kickoff_utc||"").localeCompare(String(a.kickoff_utc||"")));
-            };
-            const frequency = teamId => {
-              const recent=priorMatches(teamId).slice(0,SAMPLE_SIZE);
-              if(recent.length<MIN_MATCHES)return {pct:null,n:recent.length,over:0};
-              const over=recent.filter(item=>Number(item.home_score)+Number(item.away_score)>=2).length;
-              return {pct:over/recent.length*100,n:recent.length,over};
-            };
-            const venueMetrics = (teamId, venue) => {
-              const recent=priorMatches(teamId).filter(item=>venue==="home"
-                ? String(item.home_team_id||"")===teamId
-                : String(item.away_team_id||"")===teamId).slice(0,SAMPLE_SIZE);
-              if(recent.length<MIN_MATCHES)return {gf:null,ga:null,n:recent.length};
-              const gf=recent.reduce((sum,item)=>sum+(venue==="home"?Number(item.home_score):Number(item.away_score)),0)/recent.length;
-              const ga=recent.reduce((sum,item)=>sum+(venue==="home"?Number(item.away_score):Number(item.home_score)),0)/recent.length;
-              return {gf,ga,n:recent.length};
-            };
-            const homeFreq=frequency(homeId), awayFreq=frequency(awayId);
-            const homeVenue=venueMetrics(homeId,"home"), awayVenue=venueMetrics(awayId,"away");
-            const trendMetrics = teamId => {
-              const recent=priorMatches(teamId).slice(0,10);
-              const previous=recent.slice(5,10), latest=recent.slice(0,5);
-              const pointsFor = item => {
-                const isHome=String(item.home_team_id||"")===teamId;
-                const gf=Number(item[isHome?"home_score":"away_score"]);
-                const ga=Number(item[isHome?"away_score":"home_score"]);
-                return {gf,ga,points:gf>ga?3:gf===ga?1:0};
-              };
-              const mean = (period,key) => period.length ? period.reduce((sum,item)=>sum+pointsFor(item)[key],0)/period.length : null;
-              if(previous.length<3||latest.length<3)return {label:"Données insuffisantes",pass:null,nPrevious:previous.length,nLatest:latest.length};
-              const pointsDelta=mean(latest,"points")-mean(previous,"points");
-              const goalsDelta=mean(latest,"gf")-mean(previous,"gf");
-              const concededDelta=mean(latest,"ga")-mean(previous,"ga");
-              const isDeclining=pointsDelta<=-0.45&&(goalsDelta<=-0.25||concededDelta>=0.25);
-              return {label:isDeclining?"Baisse":"Stable ou hausse",pass:!isDeclining,nPrevious:previous.length,nLatest:latest.length};
-            };
-            const homeTrend=trendMetrics(homeId), awayTrend=trendMetrics(awayId);
-            const checks=[
-              {name:"Fréquence +1,5 équipe domicile",value:homeFreq.pct,display:homeFreq.pct===null?"Données insuffisantes":homeFreq.over+"/"+homeFreq.n+" ("+homeFreq.pct.toFixed(0)+" %)",threshold:THRESHOLDS.over15Pct,op:">=",pass:homeFreq.pct!==null&&homeFreq.pct>=THRESHOLDS.over15Pct},
-              {name:"Fréquence +1,5 équipe extérieur",value:awayFreq.pct,display:awayFreq.pct===null?"Données insuffisantes":awayFreq.over+"/"+awayFreq.n+" ("+awayFreq.pct.toFixed(0)+" %)",threshold:THRESHOLDS.over15Pct,op:">=",pass:awayFreq.pct!==null&&awayFreq.pct>=THRESHOLDS.over15Pct},
-              {name:"Tendance équipe domicile",value:homeTrend.pass,display:homeTrend.label+" ("+homeTrend.nPrevious+" préc. / "+homeTrend.nLatest+" réc.)",threshold:"Stable ou hausse",op:"=",pass:homeTrend.pass===true},
-              {name:"Tendance équipe extérieure",value:awayTrend.pass,display:awayTrend.label+" ("+awayTrend.nPrevious+" préc. / "+awayTrend.nLatest+" réc.)",threshold:"Stable ou hausse",op:"=",pass:awayTrend.pass===true},
-              {name:"Domicile — buts marqués / match",display:homeVenue.gf===null?"Données insuffisantes":homeVenue.gf.toFixed(2),threshold:THRESHOLDS.homeGF,op:">=",pass:homeVenue.gf!==null&&homeVenue.gf>=THRESHOLDS.homeGF},
-              {name:"Domicile — buts encaissés / match",display:homeVenue.ga===null?"Données insuffisantes":homeVenue.ga.toFixed(2),threshold:THRESHOLDS.homeGA,op:">=",pass:homeVenue.ga!==null&&homeVenue.ga>=THRESHOLDS.homeGA},
-              {name:"Extérieur — buts marqués / match",display:awayVenue.gf===null?"Données insuffisantes":awayVenue.gf.toFixed(2),threshold:THRESHOLDS.awayGF,op:">=",pass:awayVenue.gf!==null&&awayVenue.gf>=THRESHOLDS.awayGF},
-              {name:"Extérieur — buts encaissés / match",display:awayVenue.ga===null?"Données insuffisantes":awayVenue.ga.toFixed(2),threshold:THRESHOLDS.awayGA,op:">=",pass:awayVenue.ga!==null&&awayVenue.ga>=THRESHOLDS.awayGA}
-            ];
-            const available=checks.every(x=>x.value===undefined?x.display!=="Données insuffisantes":x.value!==null);
-            const passed=available&&checks.every(x=>x.pass);
-            const label=available?(passed?"OUI":"NON"):"INDISPONIBLE";
-            const color=label==="OUI"?"#15803d":label==="NON"?"#dc2626":"#64748b";
-            const sampleText="Échantillons : fréquence +1,5 sur "+homeFreq.n+" matchs (dom.) et "+awayFreq.n+" (ext.) ; stats domicile "+homeVenue.n+"/5, extérieur "+awayVenue.n+"/5 ; tendance : "+homeTrend.nPrevious+"/"+homeTrend.nLatest+" dom., "+awayTrend.nPrevious+"/"+awayTrend.nLatest+" ext. (minimum 3 par période).";
-            const thresholdText="Seuils V3 : fréquence +1,5 ≥ "+THRESHOLDS.over15Pct+" % ; domicile marqué ≥ "+THRESHOLDS.homeGF+" / encaissé ≥ "+THRESHOLDS.homeGA+" ; extérieur marqué ≥ "+THRESHOLDS.awayGF+" / encaissé ≥ "+THRESHOLDS.awayGA+".";
-            const diagnostic='<div style="display:grid;grid-template-columns:1fr auto auto;gap:4px 10px;margin-top:8px;font-size:12px;"><strong>Critère</strong><strong>Valeur</strong><strong>Résultat</strong>'+checks.map(x=>'<span>'+x.name+'</span><span>'+x.display+' (seuil '+x.op+' '+x.threshold+(x.name.indexOf("Fréquence")>=0?" %":"")+' )</span><span style="font-weight:700;color:'+(x.pass?"#15803d":x.display==="Données insuffisantes"?"#64748b":"#dc2626")+'">'+(x.display==="Données insuffisantes"?"N/D":x.pass?"OK":"BLOQUE")+'</span>').join("")+'</div>';
-            return '<section class="over15-v1-panel"><header><strong style="color:'+color+'">Moteur V3 · '+label+'</strong><span>+1,5 ≥ '+THRESHOLDS.over15Pct+' % · échantillon 2 à 5 matchs</span></header><div class="over15-v1-body"><small>'+thresholdText+' '+sampleText+'</small>'+diagnostic+'</div></section>';
-          })();;;;
-          const tierLabels = {1:"Très favorable",2:"Favorable",3:"Mitigé",4:"Défavorable"};
+            const matchId = String(selectedDetailMatch.match_id || selectedDetailMatch.provider_match_id || selectedDetailMatch.id || "");
+            const record = predictionHistoryV3Index.get(matchId);
+            const sameScope = Boolean(record
+              && String(record.competition || record.competition_slug || "") === String(selectedDetailMatch.competition_slug || "")
+              && String(record.season || "") === String(selectedDetailMatch.season || "")
+              && String(record.kickoff_utc || "") === String(selectedDetailMatch.kickoff_utc || ""));
+            const model = record?.model || {};
+            const lambdaHome = Number(model.lambda_home);
+            const lambdaAway = Number(model.lambda_away);
+            const lambdaTotal = Number(model.lambda_total ?? (lambdaHome + lambdaAway));
+            const probability = Number(model.probability_over_1_5_pct ?? record?.prediction?.probability_over_1_5_pct);
+            const available = sameScope && record?.prediction?.over_1_5 === "estimated"
+              && Number.isFinite(lambdaHome) && Number.isFinite(lambdaAway)
+              && Number.isFinite(lambdaTotal) && Number.isFinite(probability);
+            if (!available) {
+              const reason = sameScope && record?.prediction?.over_1_5 === "unavailable"
+                ? "Historique insuffisant ou estimation Poisson indisponible."
+                : "Archive V3 Poisson récente non disponible pour ce match. La génération et publication de l'archive V3 restent à synchroniser.";
+              return '<section class="over15-v1-panel"><header><strong style="color:#64748b">Moteur V3 · INDISPONIBLE</strong><span>Poisson · fenêtre récente 10</span></header><div class="over15-v1-body"><small>'+escapeHtml(reason)+' Aucun seuil de sélection appliqué.</small></div></section>';
+            }
+            const sampleHome = Number(record.criteria?.home?.matches_recent ?? model.samples?.home ?? 0);
+            const sampleAway = Number(record.criteria?.away?.matches_recent ?? model.samples?.away ?? 0);
+            const baselineN = Number(model.competition_baseline_sample || 0);
+            return '<section class="over15-v1-panel"><header><strong style="color:#2563eb">Moteur V3 · ESTIMATION</strong><span>Poisson · non calibré</span></header><div class="over15-v1-body">'
+              +'<div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:8px 0">'
+              +'<div><strong>λ domicile</strong><div>'+lambdaHome.toFixed(2)+'</div><small>'+sampleHome+' matchs récents</small></div>'
+              +'<div><strong>λ extérieur</strong><div>'+lambdaAway.toFixed(2)+'</div><small>'+sampleAway+' matchs récents</small></div>'
+              +'<div><strong>λ total</strong><div>'+lambdaTotal.toFixed(2)+'</div></div>'
+              +'<div><strong>Probabilité +1,5</strong><div style="font-size:1.35em;font-weight:700">'+probability.toFixed(1)+' %</div></div></div>'
+              +'<small>Référence compétition : '+baselineN+' matchs récents. Jusqu’à 10 matchs antérieurs, même compétition/saison. Estimation expérimentale non calibrée ; pas une recommandation de pari ni une value.</small></div></section>';
+          })();          const tierLabels = {1:"Très favorable",2:"Favorable",3:"Mitigé",4:"Défavorable"};
           const tierColors = {1:"success",2:"positive",3:"warning",4:"danger"};
           const tierHtml = tier===null
             ? '<div class="over15-prediction over15-tier-unavailable"><span class="over15-prediction-kicker">Pronostic expérimental</span><strong>Données insuffisantes</strong><small>2 matchs valides minimum par équipe requis.</small></div>'
