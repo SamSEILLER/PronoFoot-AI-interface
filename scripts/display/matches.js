@@ -1044,7 +1044,7 @@
             const label=available?(passed?"OUI":"NON"):"INDISPONIBLE";
             const color=label==="OUI"?"#15803d":label==="NON"?"#dc2626":"#64748b";
             const sampleText="Échantillons : fréquence +1,5 sur "+homeFreq.n+" matchs (dom.) et "+awayFreq.n+" (ext.) ; stats domicile "+homeVenue.n+"/5, extérieur "+awayVenue.n+"/5 (minimum 2).";
-            const thresholdText="Seuils V3 : fréquence +1,5 ≥ "+THRESHOLDS.over15Pct+" % ; domicile marqué ≥ "+THRESHOLDS.homeGF+" / encaissé ≥ "+THRESHOLDS.homeGA ; extérieur marqué ≥ "+THRESHOLDS.awayGF+" / encaissé ≥ "+THRESHOLDS.awayGA+".";
+            const thresholdText="Seuils V3 : fréquence +1,5 ≥ "+THRESHOLDS.over15Pct+" % ; domicile marqué ≥ "+THRESHOLDS.homeGF+" / encaissé ≥ "+THRESHOLDS.homeGA+" ; extérieur marqué ≥ "+THRESHOLDS.awayGF+" / encaissé ≥ "+THRESHOLDS.awayGA+".";
             const diagnostic='<div style="display:grid;grid-template-columns:1fr auto auto;gap:4px 10px;margin-top:8px;font-size:12px;"><strong>Critère</strong><strong>Valeur</strong><strong>Résultat</strong>'+checks.map(x=>'<span>'+x.name+'</span><span>'+x.display+' (seuil '+x.op+' '+x.threshold+(x.name.indexOf("Fréquence")>=0?" %":"")+' )</span><span style="font-weight:700;color:'+(x.pass?"#15803d":x.display==="Données insuffisantes"?"#64748b":"#dc2626")+'">'+(x.display==="Données insuffisantes"?"N/D":x.pass?"OK":"BLOQUE")+'</span>').join("")+'</div>';
             return '<section class="over15-v1-panel"><header><strong style="color:'+color+'">Moteur V3 · '+label+'</strong><span>+1,5 ≥ '+THRESHOLDS.over15Pct+' % · échantillon 2 à 5 matchs</span></header><div class="over15-v1-body"><small>'+thresholdText+' '+sampleText+'</small>'+diagnostic+'</div></section>';
           })();;;;
