@@ -142,5 +142,31 @@
     ],
     "betting_policy": "Aucune recommandation de pari ni value sans cote réelle vérifiable, calibration et validation hors échantillon."
   },
-  "created_at_utc": "2026-11-17T00:00:00Z"
+  "created_at_utc": "2026-11-17T00:00:00Z",
+  "engine_v3": {
+    "method_id": "OVER15-EXPERIMENT-V3",
+    "name": "Moteur V3 — filtre strict +1.5",
+    "version": "3.0.0",
+    "criteria": [
+      {
+        "id": "frequency_over_1_5",
+        "label": "Fréquence Over 1.5 ≥ 85 %",
+        "sample": "10 derniers matchs de même compétition et saison",
+        "minimum_matches_per_team": 2
+      },
+      {
+        "id": "goals_for_average",
+        "label": "Buts marqués / match > 1.5",
+        "sample": "5 derniers matchs de même compétition et saison"
+      },
+      {
+        "id": "goals_against_average",
+        "label": "Buts encaissés / match > 1.0",
+        "sample": "5 derniers matchs de même compétition et saison"
+      }
+    ],
+    "selection_rule": "Les 3 critères sont appliqués aux deux équipes. Sélection uniquement si les six conditions sont remplies; sinon NO BET / non sélectionné.",
+    "missing_data_rule": "Donnée manquante, fixture ambiguë ou échantillon insuffisant = INDISPONIBLE, jamais sélectionné.",
+    "no_engine_comparison": true
+  }
 }
