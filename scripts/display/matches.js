@@ -1682,12 +1682,9 @@
           && Number.isFinite(Number(expectedGoals.lambda_home))
           && Number.isFinite(Number(expectedGoals.lambda_away));
         const formatLambda = (value) => Number(value).toFixed(2);
-        const probabilityToScore = (lambda) => 100 * (1 - Math.exp(-Number(lambda)));
         const xgHome = hasExpectedGoals ? formatLambda(expectedGoals.lambda_home) : "Indisponible";
         const xgAway = hasExpectedGoals ? formatLambda(expectedGoals.lambda_away) : "Indisponible";
         const xgTotal = hasExpectedGoals ? formatLambda(expectedGoals.total_expected_goals) : "Indisponible";
-        const pHomeScore = hasExpectedGoals ? probabilityToScore(expectedGoals.lambda_home).toFixed(1) + "%" : "—";
-        const pAwayScore = hasExpectedGoals ? probabilityToScore(expectedGoals.lambda_away).toFixed(1) + "%" : "—";
         const xgNote = hasExpectedGoals
           ? "Poisson · modèle non calibré · échantillon : " + Number(expectedGoals.samples?.home || 0)
             + " matchs domicile / " + Number(expectedGoals.samples?.away || 0) + " matchs extérieur · "
@@ -1707,7 +1704,7 @@
             <div class="match-detail-xg">
               <span class="match-detail-xg-label">Buts attendus estimés (λ) · Poisson</span>
               <span class="match-detail-xg-note">${hasExpectedGoals
-                ? "Domicile : λ "+xgHome+" · Probabilité de marquer ≥ 1 : "+pHomeScore+" | Extérieur : λ "+xgAway+" · Probabilité de marquer ≥ 1 : "+pAwayScore+" | Total λ : "+xgTotal
+                ? "Domicile : λ "+xgHome+" | Extérieur : λ "+xgAway+" | Total λ : "+xgTotal
                 : "Indisponible — historique pré-match ou championnat/saison correspondants insuffisants"}</span>
               <span class="match-detail-xg-note">${xgNote}</span>
             </div>
