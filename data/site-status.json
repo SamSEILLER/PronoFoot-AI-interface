@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-11-26T07:07:38.008994Z",
+  "generated_at_utc": "2026-11-26T07:08:04.513478Z",
   "status": "ok",
   "label": "Opérationnel",
   "threshold_hours": 24,
   "history": {
     "status": "ok",
     "last_success_at_utc": "2026-11-25T14:03:57.425705Z",
-    "age_hours": 17.06,
+    "age_hours": 17.07,
     "fresh_within_24h": true,
     "threshold_hours": 24,
     "provider": "PitchAPI",
