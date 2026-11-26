@@ -975,7 +975,7 @@
             const v1Enough = v1Teams.every(team=>team.validCount>=2 && team.pct!==null);
             const v1Passed = v1Enough && v1Teams.every(team=>team.pct>=70);
             const v1Label = v1Enough ? (v1Passed ? 'OUI' : 'NON') : 'INDISPONIBLE';
-            return '<section class="over15-v1-panel"><header><strong>Moteur V1 · '+v1Label+'</strong><span>Seuil : ≥ 70 % par équipe</span></header><div class="over15-v1-body"><div class="over15-v1-team-grid">'+teamCards+'</div></div></section>';
+            return '<section class="over15-v1-panel"><header><strong>Moteur V1 · '+v1Label+'</strong><span>Fréquence +1,5 ≥ 70 % par équipe</span></header></section>';
           })();
           const v2Html = (() => {
             const v2Teams = teamStats.map((team,index) => ({
@@ -1182,7 +1182,7 @@
               +'</section>'
             ).join("");
             const labelV2 = enoughV2 ? (passedV2?'OUI':'NON') : 'INDISPONIBLE';
-            return '<section class="over15-v1-panel"><header><strong>Moteur V2 · '+labelV2+'</strong><span>Seuil : ≥ 80 % par équipe</span></header><div class="over15-v1-body"><div class="over15-v1-team-grid">'+teamCards+'</div></div></section>';
+            return '<section class="over15-v1-panel"><header><strong>Moteur V2 · '+labelV2+'</strong><span>Fréquence +1,5 ≥ 80 % par équipe</span></header></section>';
           })();
           const tierLabels = {1:"Très favorable",2:"Favorable",3:"Mitigé",4:"Défavorable"};
           const tierHtml = tier===null
