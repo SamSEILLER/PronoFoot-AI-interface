@@ -1,8 +1,421 @@
 {
   "schema_version": 2,
-  "generated_at_utc": "2026-11-25T22:37:14.344482Z",
+  "generated_at_utc": "2026-11-26T05:00:14.439184Z",
   "description": "Snapshots J-1 basés sur les fréquences des 10 derniers matchs de même compétition et saison. V1 : OUI si les deux équipes atteignent 70 %, NON sinon; minimum 2 matchs valides par équipe. Les scores finaux sont complétés à mesure de leur disponibilité.",
   "records": [
+    {
+      "match_id": "m_2DxeZN",
+      "competition": "pt-primeira-liga",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-27T20:15:00Z",
+      "home_team": "Marítimo",
+      "away_team": "Nacional",
+      "snapshot_at_utc": "2026-11-26T05:00:14.439184Z",
+      "snapshot_stage": "J-1",
+      "prediction": {
+        "over_1_5": {
+          "status": "no",
+          "threshold": 70,
+          "home_frequency": {
+            "matches": 9,
+            "count": 9,
+            "percentage": 100
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          }
+        },
+        "over_2_5": {
+          "status": "no",
+          "threshold": 70,
+          "home_frequency": {
+            "matches": 9,
+            "count": 7,
+            "percentage": 78
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 4,
+            "percentage": 40
+          }
+        },
+        "btts": {
+          "status": "no",
+          "threshold": 70,
+          "home_frequency": {
+            "matches": 9,
+            "count": 6,
+            "percentage": 67
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 3,
+            "percentage": 30
+          }
+        }
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending"
+    },
+    {
+      "match_id": "m_3xkED2",
+      "competition": "gb-premier-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-27T20:00:00Z",
+      "home_team": "Nottingham Forest",
+      "away_team": "Chelsea",
+      "snapshot_at_utc": "2026-11-26T05:00:14.439184Z",
+      "snapshot_stage": "J-1",
+      "prediction": {
+        "over_1_5": {
+          "status": "yes",
+          "threshold": 70,
+          "home_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 9,
+            "percentage": 90
+          }
+        },
+        "over_2_5": {
+          "status": "no",
+          "threshold": 70,
+          "home_frequency": {
+            "matches": 10,
+            "count": 4,
+            "percentage": 40
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          }
+        },
+        "btts": {
+          "status": "no",
+          "threshold": 70,
+          "home_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50
+          }
+        }
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending"
+    },
+    {
+      "match_id": "m_3N7OsF",
+      "competition": "es-la-liga",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-27T20:00:00Z",
+      "home_team": "Levante",
+      "away_team": "Racing Santander",
+      "snapshot_at_utc": "2026-11-26T05:00:14.439184Z",
+      "snapshot_stage": "J-1",
+      "prediction": {
+        "over_1_5": {
+          "status": "yes",
+          "threshold": 70,
+          "home_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 10,
+            "percentage": 100
+          }
+        },
+        "over_2_5": {
+          "status": "no",
+          "threshold": 70,
+          "home_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 9,
+            "percentage": 90
+          }
+        },
+        "btts": {
+          "status": "yes",
+          "threshold": 70,
+          "home_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70
+          }
+        }
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending"
+    },
+    {
+      "match_id": "m_398Ugm",
+      "competition": "it-serie-a",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-27T19:45:00Z",
+      "home_team": "Venezia",
+      "away_team": "Bologna",
+      "snapshot_at_utc": "2026-11-26T05:00:14.439184Z",
+      "snapshot_stage": "J-1",
+      "prediction": {
+        "over_1_5": {
+          "status": "yes",
+          "threshold": 70,
+          "home_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 9,
+            "percentage": 90
+          }
+        },
+        "over_2_5": {
+          "status": "no",
+          "threshold": 70,
+          "home_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          }
+        },
+        "btts": {
+          "status": "no",
+          "threshold": 70,
+          "home_frequency": {
+            "matches": 10,
+            "count": 4,
+            "percentage": 40
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80
+          }
+        }
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending"
+    },
+    {
+      "match_id": "m_1oxRzF",
+      "competition": "fr-ligue-1",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-27T19:45:00Z",
+      "home_team": "Brest",
+      "away_team": "Paris FC",
+      "snapshot_at_utc": "2026-11-26T05:00:14.439184Z",
+      "snapshot_stage": "J-1",
+      "prediction": {
+        "over_1_5": {
+          "status": "yes",
+          "threshold": 70,
+          "home_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70
+          }
+        },
+        "over_2_5": {
+          "status": "no",
+          "threshold": 70,
+          "home_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70
+          }
+        },
+        "btts": {
+          "status": "no",
+          "threshold": 70,
+          "home_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50
+          }
+        }
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending"
+    },
+    {
+      "match_id": "m_3DtXWR",
+      "competition": "be-first-division-a",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-27T19:45:00Z",
+      "home_team": "OH Leuven",
+      "away_team": "Kortrijk",
+      "snapshot_at_utc": "2026-11-26T05:00:14.439184Z",
+      "snapshot_stage": "J-1",
+      "prediction": {
+        "over_1_5": {
+          "status": "no",
+          "threshold": 70,
+          "home_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          }
+        },
+        "over_2_5": {
+          "status": "no",
+          "threshold": 70,
+          "home_frequency": {
+            "matches": 10,
+            "count": 4,
+            "percentage": 40
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 4,
+            "percentage": 40
+          }
+        },
+        "btts": {
+          "status": "no",
+          "threshold": 70,
+          "home_frequency": {
+            "matches": 10,
+            "count": 5,
+            "percentage": 50
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 3,
+            "percentage": 30
+          }
+        }
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending"
+    },
+    {
+      "match_id": "m_0toF5d",
+      "competition": "de-bundesliga",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-27T19:30:00Z",
+      "home_team": "Werder Bremen",
+      "away_team": "Borussia Mönchengladbach",
+      "snapshot_at_utc": "2026-11-26T05:00:14.439184Z",
+      "snapshot_stage": "J-1",
+      "prediction": {
+        "over_1_5": {
+          "status": "yes",
+          "threshold": 70,
+          "home_frequency": {
+            "matches": 10,
+            "count": 9,
+            "percentage": 90
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80
+          }
+        },
+        "over_2_5": {
+          "status": "yes",
+          "threshold": 70,
+          "home_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 8,
+            "percentage": 80
+          }
+        },
+        "btts": {
+          "status": "no",
+          "threshold": 70,
+          "home_frequency": {
+            "matches": 10,
+            "count": 7,
+            "percentage": 70
+          },
+          "away_frequency": {
+            "matches": 10,
+            "count": 6,
+            "percentage": 60
+          }
+        }
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending"
+    },
     {
       "match_id": "m_0ryVxp",
       "competition": "uefa-europa-league",
@@ -6789,5 +7202,5 @@
       "evaluation_status": "evaluated"
     }
   ],
-  "created_this_run": 0
+  "created_this_run": 7
 }
