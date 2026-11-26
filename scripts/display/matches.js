@@ -1696,33 +1696,23 @@
               <div class="match-detail-vs">VS</div>
               <div class="match-detail-team">${awayLogo ? '<img src="'+escape(awayLogo)+'" alt="Logo '+escape(match.away_team)+'">':""}<strong>${escape(match.away_team)}</strong><small class="match-team-position">${awayPosition ? "# "+awayPosition:"Classement indisponible"}</small></div>
             </div>
-            <div class="match-detail-xg" style="margin-top:14px;padding:18px 16px;border:1px solid #d8e4f4;border-radius:18px;background:linear-gradient(120deg,#eef6ff 0%,#e9edff 100%);box-shadow:0 2px 8px rgba(30,64,175,.04)">
+            <div class="match-detail-xg" style="margin-top:14px;padding:12px 4px">
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;font-weight:700;font-size:.9rem;color:var(--text-primary,#172b4d)">
+                <span aria-hidden="true">⚽</span><span>Buts attendus (λ)</span>
+              </div>
               ${hasExpectedGoals ? `
-                <div style="display:grid;grid-template-columns:minmax(150px,1.05fr) repeat(3,minmax(90px,.8fr));gap:10px;align-items:center">
-                  <div style="display:flex;align-items:center;gap:12px;padding:8px 4px;color:#102c5c;font-weight:800;font-size:.95rem">
-                    <span aria-hidden="true" style="font-size:1.35rem">⚽</span>
-                    <span style="line-height:1.25">Buts attendus (λ)</span>
-                  </div>
-                  <div style="padding:12px 8px;border-radius:16px;background:rgba(255,255,255,.78);text-align:center;border:1px solid rgba(255,255,255,.9)">
-                    <small style="display:block;color:#245a9b;font-size:.82rem;margin-bottom:4px">Domicile</small><strong style="font-size:1.45rem;color:#174e91;white-space:nowrap">λ ${xgHome}</strong>
-                  </div>
-                  <div style="padding:12px 8px;border-radius:16px;background:rgba(255,255,255,.78);text-align:center;border:1px solid rgba(255,255,255,.9)">
-                    <small style="display:block;color:#245a9b;font-size:.82rem;margin-bottom:4px">Extérieur</small><strong style="font-size:1.45rem;color:#174e91;white-space:nowrap">λ ${xgAway}</strong>
-                  </div>
-                  <div style="padding:12px 8px;border-radius:16px;background:rgba(255,255,255,.55);text-align:center;border:1px solid rgba(255,255,255,.95);box-shadow:inset 0 0 0 1px rgba(255,255,255,.4)">
-                    <small style="display:block;color:#102c5c;font-size:.82rem;margin-bottom:4px">Total</small><strong style="font-size:1.45rem;color:#102c5c;white-space:nowrap">λ ${xgTotal}</strong>
-                  </div>
+                <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;text-align:center;align-items:center">
+                  <div><small style="display:block;color:var(--text-secondary,#64748b);margin-bottom:4px">Domicile</small><strong style="font-size:1.35rem;white-space:nowrap">λ ${xgHome}</strong></div>
+                  <div><small style="display:block;color:var(--text-secondary,#64748b);margin-bottom:4px">Extérieur</small><strong style="font-size:1.35rem;white-space:nowrap">λ ${xgAway}</strong></div>
+                  <div><small style="display:block;color:var(--text-secondary,#64748b);margin-bottom:4px">Total</small><strong style="font-size:1.35rem;color:var(--accent-color,#2563eb);white-space:nowrap">λ ${xgTotal}</strong></div>
                 </div>
-                <div style="margin-top:14px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center">
-                  <span style="display:inline-flex;align-items:center;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.8);font-size:.8rem;color:#245a9b;border:1px solid #dce7f5">${Number(expectedGoals.samples?.home || 0)} matchs domicile</span>
-                  <span style="display:inline-flex;align-items:center;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.8);font-size:.8rem;color:#245a9b;border:1px solid #dce7f5">${Number(expectedGoals.samples?.away || 0)} matchs extérieur</span>
+                <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:4px;justify-content:center;font-size:.76rem;color:var(--text-secondary,#64748b)">
+                  <span>${Number(expectedGoals.samples?.home || 0)} matchs domicile</span><span>·</span><span>${Number(expectedGoals.samples?.away || 0)} matchs extérieur</span>
                 </div>
               ` : `
-                <div style="font-weight:800;color:#102c5c;margin-bottom:8px">Buts attendus (λ)</div>
-                <div style="font-size:.9rem;color:#64748b">Estimation indisponible — historique pré-match insuffisant.</div>
+                <div style="font-size:.9rem;color:var(--text-secondary,#64748b)">Estimation indisponible — historique pré-match insuffisant.</div>
               `}
-            </div>
-            <div class="match-detail-accordions" aria-label="Données détaillées du match">
+            </div>            <div class="match-detail-accordions" aria-label="Données détaillées du match">
               <details class="match-detail-accordion" name="match-detail">
                 <summary><span class="match-detail-accordion-icon">${detailTabs[0].icon}</span><span>Vue d'ensemble</span><span class="match-detail-accordion-chevron" aria-hidden="true">⌄</span></summary>
                 <div class="match-detail-accordion-body" data-detail-panel="overview">Chargement des données…</div>
