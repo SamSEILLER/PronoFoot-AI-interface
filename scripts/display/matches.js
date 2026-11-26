@@ -1027,10 +1027,10 @@
             const homeFreq=frequency(homeId), awayFreq=frequency(awayId);
             const homeVenue=venueMetrics(homeId,"home"), awayVenue=venueMetrics(awayId,"away");
             const available=homeFreq!==null&&awayFreq!==null&&homeVenue.gf!==null&&homeVenue.ga!==null&&awayVenue.gf!==null&&awayVenue.ga!==null;
-            const passed=available&&homeFreq>=85&&awayFreq>=85&&homeVenue.gf>1.5&&homeVenue.ga>1.0&&awayVenue.gf>1.0&&awayVenue.ga>1.5;
+            const passed=available&&homeFreq>=80&&awayFreq>=80&&homeVenue.gf>1.5&&homeVenue.ga>1.0&&awayVenue.gf>1.0&&awayVenue.ga>1.5;
             const label=available?(passed?"OUI":"NON"):"INDISPONIBLE";
             const color=label==="OUI"?"#15803d":label==="NON"?"#dc2626":"#64748b";
-            return '<section class="over15-v1-panel"><header><strong style="color:'+color+'">Moteur V3 · '+label+'</strong><span>+1,5 ≥ 85 % (5) · Stats domicile/extérieur (5)</span></header><div class="over15-v1-body"><small>Critères : domicile marqué > 1,5 et encaissé > 1,0 ; extérieur marqué > 1,0 et encaissé > 1,5. Données insuffisantes si moins de 5 matchs dans un échantillon requis.</small></div></section>';
+            return '<section class="over15-v1-panel"><header><strong style="color:'+color+'">Moteur V3 · '+label+'</strong><span>+1,5 ≥ 80 % (5) · Stats domicile/extérieur (5)</span></header><div class="over15-v1-body"><small>Critères : domicile marqué > 1,5 et encaissé > 1,0 ; extérieur marqué > 1,0 et encaissé > 1,5. Données insuffisantes si moins de 5 matchs dans un échantillon requis.</small></div></section>';
           })();
           const tierLabels = {1:"Très favorable",2:"Favorable",3:"Mitigé",4:"Défavorable"};
           const tierColors = {1:"success",2:"positive",3:"warning",4:"danger"};
