@@ -995,6 +995,43 @@
             const v2Label = enough ? (passed ? 'OUI' : 'NON') : 'INDISPONIBLE';
             return '<section class="over15-v1-panel"><header><strong style="color:'+(v2Label==='OUI'?'#15803d':v2Label==='NON'?'#dc2626':'#64748b')+'">Moteur V2 · '+v2Label+'</strong><span>Fréquence +1,5 ≥ 80 % par équipe</span></header></section>';
           })();
+          const v3Html = (() => {
+            const homeId = String(selectedDetailMatch.home_team_id||"");
+            const awayId = String(selectedDetailMatch.away_team_id||"");
+            const cutoff = Date.parse(selectedDetailMatch.kickoff_utc||"");
+            const validScore = item => {
+              const hg=Number(item.home_score), ag=Number(item.away_score);
+              return Number.isInteger(hg)&&Number.isInteger(ag)&&hg>=0&&ag>=0;
+            };
+            const priorMatches = teamId => {
+              const entry=analytics.teams.get(teamId);
+              return (entry?.recent_match_ids||[]).map(id=>analytics.matchesById.get(String(id))).filter(Boolean)
+                .filter(item=>String(item.season||"")===String(selectedDetailMatch.season||""))
+                .filter(item=>Date.parse(item.kickoff_utc||"")<cutoff)
+                .filter(validScore)
+                .sort((a,b)=>String(b.kickoff_utc||"").localeCompare(String(a.kickoff_utc||"")));
+            };
+            const frequency = teamId => {
+              const recent=priorMatches(teamId).slice(0,5);
+              return recent.length===5 ? recent.filter(item=>Number(item.home_score)+Number(item.away_score)>=2).length/5*100 : null;
+            };
+            const venueMetrics = (teamId, venue) => {
+              const recent=priorMatches(teamId).filter(item=>venue==="home"
+                ? String(item.home_team_id||"")===teamId
+                : String(item.away_team_id||"")===teamId).slice(0,5);
+              if(recent.length!==5)return {gf:null,ga:null,n:recent.length};
+              const gf=recent.reduce((sum,item)=>sum+(venue==="home"?Number(item.home_score):Number(item.away_score)),0)/5;
+              const ga=recent.reduce((sum,item)=>sum+(venue==="home"?Number(item.away_score):Number(item.home_score)),0)/5;
+              return {gf,ga,n:5};
+            };
+            const homeFreq=frequency(homeId), awayFreq=frequency(awayId);
+            const homeVenue=venueMetrics(homeId,"home"), awayVenue=venueMetrics(awayId,"away");
+            const available=homeFreq!==null&&awayFreq!==null&&homeVenue.gf!==null&&homeVenue.ga!==null&&awayVenue.gf!==null&&awayVenue.ga!==null;
+            const passed=available&&homeFreq>=85&&awayFreq>=85&&homeVenue.gf>1.5&&homeVenue.ga>1.0&&awayVenue.gf>1.0&&awayVenue.ga>1.5;
+            const label=available?(passed?"OUI":"NON"):"INDISPONIBLE";
+            const color=label==="OUI"?"#15803d":label==="NON"?"#dc2626":"#64748b";
+            return '<section class="over15-v1-panel"><header><strong style="color:'+color+'">Moteur V3 · '+label+'</strong><span>+1,5 ≥ 85 % (5) · Stats domicile/extérieur (5)</span></header><div class="over15-v1-body"><small>Critères : domicile marqué > 1,5 et encaissé > 1,0 ; extérieur marqué > 1,0 et encaissé > 1,5. Données insuffisantes si moins de 5 matchs dans un échantillon requis.</small></div></section>';
+          })();
           const tierLabels = {1:"Très favorable",2:"Favorable",3:"Mitigé",4:"Défavorable"};
           const tierColors = {1:"success",2:"positive",3:"warning",4:"danger"};
           const tierHtml = tier===null
@@ -1006,7 +1043,7 @@
               ? "Part des matchs terminés avec au moins 2 buts parmi les "+sampleCounts[0]+" derniers matchs disponibles, dans la même compétition et la même saison."
               : "Aucun match terminé avec un score exploitable n’est disponible dans la même compétition et la même saison.")
             : "Part des matchs terminés avec au moins 2 buts parmi les derniers matchs disponibles, dans la même compétition et la même saison ("+teamStats.map(team=>team.validCount+" pour "+team.name).join(", ")+").";
-          experiment.innerHTML = '<section class="over15-experiment"><div class="over15-experiment-intro"><div><h4>Fréquence historique du +1,5 buts</h4><p class="over15-experiment-note">'+escapeHtml(sampleDescription)+'</p></div><span class="over15-sample-tag">10 matchs max.</span></div><div class="over15-team-grid">'+cards.join("")+'</div>'+v1Html+v2Html+tierHtml+'<p class="over15-experiment-caveat">Indicateur descriptif du passé. Il ne constitue ni une probabilité de match ni une recommandation de pari. Les matchs sans score valide sont exclus.</p></section>';
+          experiment.innerHTML = '<section class="over15-experiment"><div class="over15-experiment-intro"><div><h4>Fréquence historique du +1,5 buts</h4><p class="over15-experiment-note">'+escapeHtml(sampleDescription)+'</p></div><span class="over15-sample-tag">10 matchs max.</span></div><div class="over15-team-grid">'+cards.join("")+'</div>'+v1Html+v2Html+v3Html+tierHtml+'<p class="over15-experiment-caveat">Indicateur descriptif du passé. Il ne constitue ni une probabilité de match ni une recommandation de pari. Les matchs sans score valide sont exclus.</p></section>';
         };
         renderOver15Experiment();
         const renderOver25Experiment = () => {
