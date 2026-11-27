@@ -12,24 +12,6 @@
       "created_at_utc": "2026-11-23T00:57:51.139905Z",
       "status": "active",
       "description": "Classification descriptive des fréquences historiques pour +1,5 buts, +2,5 buts et BTTS. Jusqu'aux 10 derniers matchs de même compétition et saison; minimum 5 matchs valides par équipe; niveaux 1 à 4 identiques à la page Matchs. Aucun pick OUI/NON ni probabilité Poisson. Les snapshots restent figés et les scores finaux sont complétés à mesure de leur disponibilité."
-    },
-    {
-      "id": "v2",
-      "label": "Moteur V2 — reconstruction rétroactive du 25/11/2026",
-      "archive": "prediction-history-v2.json",
-      "engine_model": "historical_team_goal_frequency_tiers_v2",
-      "status": "archived",
-      "created_at_utc": "2026-11-25T14:03:58.235979Z",
-      "description": "Reconstruction rétroactive V2 : fréquences des 10 derniers matchs de même compétition et saison, pré-match uniquement. OUI si les deux équipes atteignent 80 %, NON sinon; minimum 2 matchs valides par équipe. Correspondance fixture stricte équipes normalisées + date; ambigu ou absent = INDISPONIBLE. Archive indépendante de V1."
-    },
-    {
-      "id": "v3",
-      "label": "Moteur V3 — Method C + probabilité +1,5 (27/11/2026)",
-      "archive": "prediction-history-v3.json",
-      "engine_model": "method_c_venue_attack_defence_arithmetic_mean_v1",
-      "status": "experimental",
-      "created_at_utc": "2026-11-27T07:33:00Z",
-      "description": "Lambdas Method C : moyenne arithmétique attaque/défense selon le lieu, même compétition/saison et strictement pré-match. Probabilité Over 1.5 conservée et calculée par Poisson à partir du total des lambdas. Fréquences récentes et tendance 5 derniers vs 5 précédents conservées à titre descriptif; modèle non calibré."
     }
   ]
 }
