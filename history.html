@@ -219,8 +219,8 @@ function renderMatches(records,container,engineId){
 }
 let selectedEngineId=null;
 const loaded=[];
-function renderVersion(v,index){
- const id=String(v.id||"version-"+index),active=v.status==="active",title=id==="v1"?"Analyse historique":String(v.label||id).replace(/^Moteur\s*V\d+\s*[—-]?\s*/i,"");
+function renderVersion(v,index,activeVersion){
+ const id=String(v.id||"version-"+index),active=id===String(activeVersion||""),title=id==="v1"?"Analyse historique":String(v.label||id).replace(/^Moteur\s*V\d+\s*[—-]?\s*/i,"");
  const article=document.createElement("article");article.className="engine-accordion";
  article.innerHTML='<div class="engine-toggle '+(active?"":"archived")+'"><button class="engine-select" type="button"><span class="engine-chip">▦</span><span class="engine-toggle-title">'+esc(id.toUpperCase())+" — "+esc(title)+'</span><span class="engine-toggle-status"><span class="status-pill '+(active?"":"archived")+'">'+(active?"Moteur actif":"Version archivée")+'</span></span></button><button class="engine-chevron" type="button" aria-label="Afficher les informations du moteur" aria-expanded="false">+</button></div><div class="engine-panel" hidden><div class="version-description">'+(id==="v1"?versionDetails(id):'<p class="performance-help">'+esc(v.description||"Aucune description disponible.")+"</p>")+'</div></div>';
  const selectButton=article.querySelector(".engine-select"),chevron=article.querySelector(".engine-chevron"),panel=article.querySelector(".engine-panel");
@@ -233,7 +233,7 @@ try{
  if(!response.ok)throw new Error("Catalogue des moteurs indisponible (HTTP "+response.status+").");
  const catalog=await response.json(),versions=Array.isArray(catalog.versions)?catalog.versions:[];
  if(!versions.length)throw new Error("Aucun moteur n’est référencé dans le catalogue.");
- list.replaceChildren(...versions.map(renderVersion));
+ list.replaceChildren(...versions.map((v,index)=>renderVersion(v,index,catalog.active_version)));
  await Promise.all(versions.map(async v=>{
   if(!v.archive)return;
   const article=[...list.querySelectorAll(".engine-accordion")].find(a=>a.querySelector(".engine-toggle-title")?.textContent.startsWith(String(v.id).toUpperCase()+" — "));
