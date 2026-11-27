@@ -1697,7 +1697,7 @@
               <div class="match-detail-team">${awayLogo ? '<img src="'+escape(awayLogo)+'" alt="Logo '+escape(match.away_team)+'">':""}<strong>${escape(match.away_team)}</strong><small class="match-team-position">${awayPosition ? "# "+awayPosition:"Classement indisponible"}</small></div>
             </div>
             <div class="match-detail-xg" style="display:block;width:100%;clear:both;margin-top:14px;padding:12px 0">
-              <div style="display:block;margin-bottom:10px;font-size:.88rem;font-weight:700;color:var(--text-primary,#172b4d)">Buts attendus</div>
+              <div style="display:block;text-align:center;margin-bottom:12px;font-size:.9rem;font-weight:700;letter-spacing:.02em;color:var(--text-primary,#172b4d)">Buts attendus</div>
               ${hasExpectedGoals ? `
                 <div style="display:grid;width:100%;grid-template-columns:repeat(3,minmax(0,1fr));align-items:start;text-align:center">
                   <div style="min-width:0"><div style="font-size:.75rem;color:var(--text-secondary,#64748b);margin-bottom:3px">Domicile</div><div style="font-size:1.35rem;font-weight:700;line-height:1.2;white-space:nowrap">λ ${xgHome}</div></div>
