@@ -1,7 +1,7 @@
 {
   "provider": "pitchapi_processed_history",
-  "generated_at_utc": "2026-11-27T08:38:51.285302+00:00",
-  "matches_considered": 9513,
+  "generated_at_utc": "2026-11-27T09:45:21.653929+00:00",
+  "matches_considered": 9531,
   "pairs": {
     "sanfrecce hiroshima|vissel kobe": {
       "team_a": "Sanfrecce Hiroshima",
@@ -2223,6 +2223,21 @@
           "score_away": 1,
           "competition_id": "gb-premier-league",
           "competition_name": "Premier League"
+        }
+      ]
+    },
+    "salzburg|sparta prague": {
+      "team_a": "Salzburg",
+      "team_b": "Sparta Prague",
+      "matches": [
+        {
+          "date": "2024-09-18T16:45:00Z",
+          "home": "Sparta Prague",
+          "away": "Salzburg",
+          "score_home": 3,
+          "score_away": 0,
+          "competition_id": "uefa-champions-league",
+          "competition_name": "Ligue des champions UEFA"
         }
       ]
     },
@@ -4944,6 +4959,21 @@
           "score_away": 0,
           "competition_id": "es-la-liga",
           "competition_name": "La Liga"
+        }
+      ]
+    },
+    "anderlecht|hoffenheim": {
+      "team_a": "Anderlecht",
+      "team_b": "Hoffenheim",
+      "matches": [
+        {
+          "date": "2025-01-30T20:00:00Z",
+          "home": "Anderlecht",
+          "away": "Hoffenheim",
+          "score_home": 3,
+          "score_away": 4,
+          "competition_id": "uefa-europa-league",
+          "competition_name": "Ligue Europa UEFA"
         }
       ]
     },
