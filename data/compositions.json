@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-11-26T15:26:31.310311+00:00",
+  "generated_at_utc": "2026-11-27T00:39:40.431900+00:00",
   "sources": {
     "pitchapi": {
       "status": "PARTIAL",
@@ -13659,6 +13659,71 @@
     {
       "schema_version": 1,
       "provider": "PitchAPI",
+      "match_id": "m_0C1WnG",
+      "snapshot": "J-7",
+      "kickoff_utc": "2026-12-04T09:30:00+00:00",
+      "collected_at_utc": "2026-11-27T00:39:38.002208+00:00",
+      "competition": "J1 League",
+      "home_team": "FC Tokyo",
+      "away_team": "Kawasaki Frontale",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_0C1WnG",
+        "home_team": {
+          "id": "t_17gQhK",
+          "name": "FC Tokyo",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/f615b6c25401d6c580656741b7b4673c69c51b6cd7b9b81de36c2eb33a109b86.webp"
+        },
+        "away_team": {
+          "id": "t_37dBko",
+          "name": "Kawasaki Frontale",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/4a1738813ff2f7c13b04962a4db57c4982ba9ac1762b28e35e8357d2d729deb4.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_0C1WnG",
+          "home_team": {
+            "id": "t_17gQhK",
+            "name": "FC Tokyo",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/f615b6c25401d6c580656741b7b4673c69c51b6cd7b9b81de36c2eb33a109b86.webp"
+          },
+          "away_team": {
+            "id": "t_37dBko",
+            "name": "Kawasaki Frontale",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/4a1738813ff2f7c13b04962a4db57c4982ba9ac1762b28e35e8357d2d729deb4.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
       "match_id": "m_0CxFsu",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-29T18:00:00+00:00",
@@ -15602,6 +15667,869 @@
             "confirmed": false,
             "starters": null,
             "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_0Lkpuz",
+      "snapshot": "J-1",
+      "kickoff_utc": "2026-11-28T05:00:00+00:00",
+      "collected_at_utc": "2026-11-27T00:39:38.002208+00:00",
+      "competition": "J1 League",
+      "home_team": "Kyoto Sanga FC",
+      "away_team": "Cerezo Osaka",
+      "status": "provided",
+      "lineups": {
+        "match_id": "m_0Lkpuz",
+        "home_team": {
+          "id": "t_3lBlnh",
+          "name": "Kyoto Sanga FC",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/f6f22a291c2c45a447da60b35d4a05e96d27845fce841e44141412ff3491d823.webp"
+        },
+        "away_team": {
+          "id": "t_4gLxod",
+          "name": "Cerezo Osaka",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/692e6c878909c25c9805ba10f5856295bccc448cdbf6c3df5dfd42db58d345fe.webp"
+        },
+        "home": {
+          "formation": "3-4-2-1",
+          "confirmed": false,
+          "lineup_type": "lastStarting11",
+          "coach": {
+            "name": "Ranko Popović"
+          },
+          "starters": [
+            {
+              "player_id": "p_0AtnbI",
+              "name": "Gakuji Ota",
+              "shirt_number": "1",
+              "position_id": 11,
+              "is_captain": false,
+              "pitch_x": 0.1,
+              "pitch_y": 0.5
+            },
+            {
+              "player_id": "p_0CGxKk",
+              "name": "Yusuke Ishida",
+              "shirt_number": "40",
+              "position_id": 33,
+              "is_captain": false,
+              "pitch_x": 0.29,
+              "pitch_y": 0.79
+            },
+            {
+              "player_id": "p_3AAloB",
+              "name": "Weverton",
+              "shirt_number": "43",
+              "position_id": 35,
+              "is_captain": false,
+              "pitch_x": 0.29,
+              "pitch_y": 0.5
+            },
+            {
+              "player_id": "p_3lPNNt",
+              "name": "Kodai Nagata",
+              "shirt_number": "15",
+              "position_id": 37,
+              "is_captain": false,
+              "pitch_x": 0.29,
+              "pitch_y": 0.21
+            },
+            {
+              "player_id": "p_1VXYns",
+              "name": "Sung-Jun Yoon",
+              "shirt_number": "25",
+              "position_id": 62,
+              "is_captain": false,
+              "pitch_x": 0.49,
+              "pitch_y": 0.88
+            },
+            {
+              "player_id": "p_2W4Kdf",
+              "name": "Shimpei Fukuoka",
+              "shirt_number": "10",
+              "position_id": 64,
+              "is_captain": false,
+              "pitch_x": 0.49,
+              "pitch_y": 0.63
+            },
+            {
+              "player_id": "p_29uBW5",
+              "name": "João Pedro",
+              "shirt_number": "6",
+              "position_id": 66,
+              "is_captain": false,
+              "pitch_x": 0.49,
+              "pitch_y": 0.38
+            },
+            {
+              "player_id": "p_33l72Z",
+              "name": "Ryuma Nakano",
+              "shirt_number": "48",
+              "position_id": 68,
+              "is_captain": false,
+              "pitch_x": 0.49,
+              "pitch_y": 0.13
+            },
+            {
+              "player_id": "p_1VQdXw",
+              "name": "Maceió",
+              "shirt_number": "38",
+              "position_id": 84,
+              "is_captain": false,
+              "pitch_x": 0.68,
+              "pitch_y": 0.7
+            },
+            {
+              "player_id": "p_2ML3Cu",
+              "name": "Masaya Okugawa",
+              "shirt_number": "7",
+              "position_id": 86,
+              "is_captain": false,
+              "pitch_x": 0.68,
+              "pitch_y": 0.3
+            },
+            {
+              "player_id": "p_2IY7cH",
+              "name": "Shun Nagasawa",
+              "shirt_number": "93",
+              "position_id": 105,
+              "is_captain": false,
+              "pitch_x": 0.87,
+              "pitch_y": 0.5
+            }
+          ],
+          "subs": [
+            {
+              "player_id": "p_1jNllX",
+              "name": "Kentaro Kakoi",
+              "shirt_number": "21",
+              "position_id": 0,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_1J3iGQ",
+              "name": "Hisashi Tawiah",
+              "shirt_number": "5",
+              "position_id": 1,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_0Qp0us",
+              "name": "Kyo Sato",
+              "shirt_number": "44",
+              "position_id": 1,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_4bPP2W",
+              "name": "Yoshinori Suzuki",
+              "shirt_number": "50",
+              "position_id": 1,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_01iQvt",
+              "name": "Hiroto Morooka",
+              "shirt_number": "24",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_35m91o",
+              "name": "Takaaki Shichi",
+              "shirt_number": "62",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_2IlF7k",
+              "name": "Thiago",
+              "shirt_number": "14",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_3daInf",
+              "name": "David Silva",
+              "shirt_number": "19",
+              "position_id": 3,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_3lIbEV",
+              "name": "Haruki Arai",
+              "shirt_number": "77",
+              "position_id": 3,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_38ON5l",
+              "name": "Kou Sakai",
+              "shirt_number": "29",
+              "position_id": 3,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_2RaUr7",
+              "name": "Rafael Elias",
+              "shirt_number": "9",
+              "position_id": 3,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_2LePP4",
+              "name": "Temma Matsuda",
+              "shirt_number": "18",
+              "position_id": 3,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            }
+          ]
+        },
+        "away": {
+          "formation": "4-4-2",
+          "confirmed": false,
+          "lineup_type": "lastStarting11",
+          "coach": {
+            "name": "Pablo Machín"
+          },
+          "starters": [
+            {
+              "player_id": "p_38CkhS",
+              "name": "Koto Abe",
+              "shirt_number": "31",
+              "position_id": 11,
+              "is_captain": false,
+              "pitch_x": 0.1,
+              "pitch_y": 0.5
+            },
+            {
+              "player_id": "p_0491FM",
+              "name": "Hayato Okuda",
+              "shirt_number": "16",
+              "position_id": 32,
+              "is_captain": false,
+              "pitch_x": 0.36,
+              "pitch_y": 0.88
+            },
+            {
+              "player_id": "p_3MIIbp",
+              "name": "Dion Cools",
+              "shirt_number": "27",
+              "position_id": 34,
+              "is_captain": false,
+              "pitch_x": 0.36,
+              "pitch_y": 0.63
+            },
+            {
+              "player_id": "p_1hJvKb",
+              "name": "Rikito Inoue",
+              "shirt_number": "4",
+              "position_id": 36,
+              "is_captain": false,
+              "pitch_x": 0.36,
+              "pitch_y": 0.38
+            },
+            {
+              "player_id": "p_4KmP1a",
+              "name": "Ayumu Ohata",
+              "shirt_number": "66",
+              "position_id": 38,
+              "is_captain": false,
+              "pitch_x": 0.36,
+              "pitch_y": 0.13
+            },
+            {
+              "player_id": "p_1mlbFr",
+              "name": "Yota Komi",
+              "shirt_number": "41",
+              "position_id": 72,
+              "is_captain": false,
+              "pitch_x": 0.61,
+              "pitch_y": 0.88
+            },
+            {
+              "player_id": "p_3OgGsP",
+              "name": "Jackson Irvine",
+              "shirt_number": "36",
+              "position_id": 74,
+              "is_captain": false,
+              "pitch_x": 0.61,
+              "pitch_y": 0.63
+            },
+            {
+              "player_id": "p_09npk0",
+              "name": "Shunta Tanaka",
+              "shirt_number": "10",
+              "position_id": 76,
+              "is_captain": false,
+              "pitch_x": 0.61,
+              "pitch_y": 0.38
+            },
+            {
+              "player_id": "p_404w57",
+              "name": "Yumeki Yokoyama",
+              "shirt_number": "14",
+              "position_id": 78,
+              "is_captain": false,
+              "pitch_x": 0.61,
+              "pitch_y": 0.13
+            },
+            {
+              "player_id": "p_390yvn",
+              "name": "Solomon Sakuragawa",
+              "shirt_number": "9",
+              "position_id": 104,
+              "is_captain": false,
+              "pitch_x": 0.87,
+              "pitch_y": 0.7
+            },
+            {
+              "player_id": "p_0daqjh",
+              "name": "Thiago",
+              "shirt_number": "11",
+              "position_id": 106,
+              "is_captain": false,
+              "pitch_x": 0.87,
+              "pitch_y": 0.3
+            }
+          ],
+          "subs": [
+            {
+              "player_id": "p_3xWFTN",
+              "name": "Ken Isibor",
+              "shirt_number": "46",
+              "position_id": 0,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_0l1qyT",
+              "name": "Javier Hernández",
+              "shirt_number": "15",
+              "position_id": 1,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_3RcbSL",
+              "name": "Kyohei Noborizato",
+              "shirt_number": "6",
+              "position_id": 1,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_4dhjtz",
+              "name": "Shinnosuke Hatanaka",
+              "shirt_number": "44",
+              "position_id": 1,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_2ifqNh",
+              "name": "Travis Takahashi",
+              "shirt_number": "97",
+              "position_id": 1,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_2yfmkR",
+              "name": "Reiya Sakata",
+              "shirt_number": "17",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_32wTGS",
+              "name": "Takumi Nakamura",
+              "shirt_number": "2",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_01BtIs",
+              "name": "Teppei Shiojiri",
+              "shirt_number": "42",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_1GE5JT",
+              "name": "Satoki Uejo",
+              "shirt_number": "7",
+              "position_id": 3,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            }
+          ]
+        }
+      },
+      "message": null,
+      "raw_response": {
+        "data": {
+          "match_id": "m_0Lkpuz",
+          "home_team": {
+            "id": "t_3lBlnh",
+            "name": "Kyoto Sanga FC",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/f6f22a291c2c45a447da60b35d4a05e96d27845fce841e44141412ff3491d823.webp"
+          },
+          "away_team": {
+            "id": "t_4gLxod",
+            "name": "Cerezo Osaka",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/692e6c878909c25c9805ba10f5856295bccc448cdbf6c3df5dfd42db58d345fe.webp"
+          },
+          "home": {
+            "formation": "3-4-2-1",
+            "confirmed": false,
+            "lineup_type": "lastStarting11",
+            "coach": {
+              "name": "Ranko Popović"
+            },
+            "starters": [
+              {
+                "player_id": "p_0AtnbI",
+                "name": "Gakuji Ota",
+                "shirt_number": "1",
+                "position_id": 11,
+                "is_captain": false,
+                "pitch_x": 0.1,
+                "pitch_y": 0.5
+              },
+              {
+                "player_id": "p_0CGxKk",
+                "name": "Yusuke Ishida",
+                "shirt_number": "40",
+                "position_id": 33,
+                "is_captain": false,
+                "pitch_x": 0.29,
+                "pitch_y": 0.79
+              },
+              {
+                "player_id": "p_3AAloB",
+                "name": "Weverton",
+                "shirt_number": "43",
+                "position_id": 35,
+                "is_captain": false,
+                "pitch_x": 0.29,
+                "pitch_y": 0.5
+              },
+              {
+                "player_id": "p_3lPNNt",
+                "name": "Kodai Nagata",
+                "shirt_number": "15",
+                "position_id": 37,
+                "is_captain": false,
+                "pitch_x": 0.29,
+                "pitch_y": 0.21
+              },
+              {
+                "player_id": "p_1VXYns",
+                "name": "Sung-Jun Yoon",
+                "shirt_number": "25",
+                "position_id": 62,
+                "is_captain": false,
+                "pitch_x": 0.49,
+                "pitch_y": 0.88
+              },
+              {
+                "player_id": "p_2W4Kdf",
+                "name": "Shimpei Fukuoka",
+                "shirt_number": "10",
+                "position_id": 64,
+                "is_captain": false,
+                "pitch_x": 0.49,
+                "pitch_y": 0.63
+              },
+              {
+                "player_id": "p_29uBW5",
+                "name": "João Pedro",
+                "shirt_number": "6",
+                "position_id": 66,
+                "is_captain": false,
+                "pitch_x": 0.49,
+                "pitch_y": 0.38
+              },
+              {
+                "player_id": "p_33l72Z",
+                "name": "Ryuma Nakano",
+                "shirt_number": "48",
+                "position_id": 68,
+                "is_captain": false,
+                "pitch_x": 0.49,
+                "pitch_y": 0.13
+              },
+              {
+                "player_id": "p_1VQdXw",
+                "name": "Maceió",
+                "shirt_number": "38",
+                "position_id": 84,
+                "is_captain": false,
+                "pitch_x": 0.68,
+                "pitch_y": 0.7
+              },
+              {
+                "player_id": "p_2ML3Cu",
+                "name": "Masaya Okugawa",
+                "shirt_number": "7",
+                "position_id": 86,
+                "is_captain": false,
+                "pitch_x": 0.68,
+                "pitch_y": 0.3
+              },
+              {
+                "player_id": "p_2IY7cH",
+                "name": "Shun Nagasawa",
+                "shirt_number": "93",
+                "position_id": 105,
+                "is_captain": false,
+                "pitch_x": 0.87,
+                "pitch_y": 0.5
+              }
+            ],
+            "subs": [
+              {
+                "player_id": "p_1jNllX",
+                "name": "Kentaro Kakoi",
+                "shirt_number": "21",
+                "position_id": 0,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_1J3iGQ",
+                "name": "Hisashi Tawiah",
+                "shirt_number": "5",
+                "position_id": 1,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_0Qp0us",
+                "name": "Kyo Sato",
+                "shirt_number": "44",
+                "position_id": 1,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_4bPP2W",
+                "name": "Yoshinori Suzuki",
+                "shirt_number": "50",
+                "position_id": 1,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_01iQvt",
+                "name": "Hiroto Morooka",
+                "shirt_number": "24",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_35m91o",
+                "name": "Takaaki Shichi",
+                "shirt_number": "62",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_2IlF7k",
+                "name": "Thiago",
+                "shirt_number": "14",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_3daInf",
+                "name": "David Silva",
+                "shirt_number": "19",
+                "position_id": 3,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_3lIbEV",
+                "name": "Haruki Arai",
+                "shirt_number": "77",
+                "position_id": 3,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_38ON5l",
+                "name": "Kou Sakai",
+                "shirt_number": "29",
+                "position_id": 3,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_2RaUr7",
+                "name": "Rafael Elias",
+                "shirt_number": "9",
+                "position_id": 3,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_2LePP4",
+                "name": "Temma Matsuda",
+                "shirt_number": "18",
+                "position_id": 3,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              }
+            ]
+          },
+          "away": {
+            "formation": "4-4-2",
+            "confirmed": false,
+            "lineup_type": "lastStarting11",
+            "coach": {
+              "name": "Pablo Machín"
+            },
+            "starters": [
+              {
+                "player_id": "p_38CkhS",
+                "name": "Koto Abe",
+                "shirt_number": "31",
+                "position_id": 11,
+                "is_captain": false,
+                "pitch_x": 0.1,
+                "pitch_y": 0.5
+              },
+              {
+                "player_id": "p_0491FM",
+                "name": "Hayato Okuda",
+                "shirt_number": "16",
+                "position_id": 32,
+                "is_captain": false,
+                "pitch_x": 0.36,
+                "pitch_y": 0.88
+              },
+              {
+                "player_id": "p_3MIIbp",
+                "name": "Dion Cools",
+                "shirt_number": "27",
+                "position_id": 34,
+                "is_captain": false,
+                "pitch_x": 0.36,
+                "pitch_y": 0.63
+              },
+              {
+                "player_id": "p_1hJvKb",
+                "name": "Rikito Inoue",
+                "shirt_number": "4",
+                "position_id": 36,
+                "is_captain": false,
+                "pitch_x": 0.36,
+                "pitch_y": 0.38
+              },
+              {
+                "player_id": "p_4KmP1a",
+                "name": "Ayumu Ohata",
+                "shirt_number": "66",
+                "position_id": 38,
+                "is_captain": false,
+                "pitch_x": 0.36,
+                "pitch_y": 0.13
+              },
+              {
+                "player_id": "p_1mlbFr",
+                "name": "Yota Komi",
+                "shirt_number": "41",
+                "position_id": 72,
+                "is_captain": false,
+                "pitch_x": 0.61,
+                "pitch_y": 0.88
+              },
+              {
+                "player_id": "p_3OgGsP",
+                "name": "Jackson Irvine",
+                "shirt_number": "36",
+                "position_id": 74,
+                "is_captain": false,
+                "pitch_x": 0.61,
+                "pitch_y": 0.63
+              },
+              {
+                "player_id": "p_09npk0",
+                "name": "Shunta Tanaka",
+                "shirt_number": "10",
+                "position_id": 76,
+                "is_captain": false,
+                "pitch_x": 0.61,
+                "pitch_y": 0.38
+              },
+              {
+                "player_id": "p_404w57",
+                "name": "Yumeki Yokoyama",
+                "shirt_number": "14",
+                "position_id": 78,
+                "is_captain": false,
+                "pitch_x": 0.61,
+                "pitch_y": 0.13
+              },
+              {
+                "player_id": "p_390yvn",
+                "name": "Solomon Sakuragawa",
+                "shirt_number": "9",
+                "position_id": 104,
+                "is_captain": false,
+                "pitch_x": 0.87,
+                "pitch_y": 0.7
+              },
+              {
+                "player_id": "p_0daqjh",
+                "name": "Thiago",
+                "shirt_number": "11",
+                "position_id": 106,
+                "is_captain": false,
+                "pitch_x": 0.87,
+                "pitch_y": 0.3
+              }
+            ],
+            "subs": [
+              {
+                "player_id": "p_3xWFTN",
+                "name": "Ken Isibor",
+                "shirt_number": "46",
+                "position_id": 0,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_0l1qyT",
+                "name": "Javier Hernández",
+                "shirt_number": "15",
+                "position_id": 1,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_3RcbSL",
+                "name": "Kyohei Noborizato",
+                "shirt_number": "6",
+                "position_id": 1,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_4dhjtz",
+                "name": "Shinnosuke Hatanaka",
+                "shirt_number": "44",
+                "position_id": 1,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_2ifqNh",
+                "name": "Travis Takahashi",
+                "shirt_number": "97",
+                "position_id": 1,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_2yfmkR",
+                "name": "Reiya Sakata",
+                "shirt_number": "17",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_32wTGS",
+                "name": "Takumi Nakamura",
+                "shirt_number": "2",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_01BtIs",
+                "name": "Teppei Shiojiri",
+                "shirt_number": "42",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_1GE5JT",
+                "name": "Satoki Uejo",
+                "shirt_number": "7",
+                "position_id": 3,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              }
+            ]
           }
         }
       }
@@ -73565,6 +74493,71 @@
       "schema_version": 1,
       "provider": "PitchAPI",
       "match_id": "m_1HNA3N",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-29T11:30:00+00:00",
+      "collected_at_utc": "2026-11-27T00:39:38.002208+00:00",
+      "competition": "Serie A",
+      "home_team": "Udinese",
+      "away_team": "Fiorentina",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_1HNA3N",
+        "home_team": {
+          "id": "t_2ur07g",
+          "name": "Udinese",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/bf074b2992c5c0d8bb4fefdf71b549070c402656ac2e6405a52e8ee9ef6c8801.webp"
+        },
+        "away_team": {
+          "id": "t_3QzSiW",
+          "name": "Fiorentina",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/52f92c4c2ae57c14bc3d2ead58a2f899ab2fa12bebb91e6f627af2b99608dfce.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_1HNA3N",
+          "home_team": {
+            "id": "t_2ur07g",
+            "name": "Udinese",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/bf074b2992c5c0d8bb4fefdf71b549070c402656ac2e6405a52e8ee9ef6c8801.webp"
+          },
+          "away_team": {
+            "id": "t_3QzSiW",
+            "name": "Fiorentina",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/52f92c4c2ae57c14bc3d2ead58a2f899ab2fa12bebb91e6f627af2b99608dfce.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_1HNA3N",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-29T11:30:00+00:00",
       "collected_at_utc": "2026-11-22T02:20:38.702402+00:00",
@@ -75370,6 +76363,71 @@
                 "pitch_y": 0
               }
             ]
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_1HxufU",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-29T05:00:00+00:00",
+      "collected_at_utc": "2026-11-27T00:39:38.002208+00:00",
+      "competition": "J1 League",
+      "home_team": "Mito Hollyhock",
+      "away_team": "V-Varen Nagasaki",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_1HxufU",
+        "home_team": {
+          "id": "t_01uUy2",
+          "name": "Mito Hollyhock",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/477958a4b5247f08dc01efdfaeb2dcf6a9bc83fefa19e6d587cd55495d94035f.webp"
+        },
+        "away_team": {
+          "id": "t_1W837G",
+          "name": "V-Varen Nagasaki",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/3d89356de46f5a186983072ad4b65f55b45815a687bb764dc22d2a7716fda5d8.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_1HxufU",
+          "home_team": {
+            "id": "t_01uUy2",
+            "name": "Mito Hollyhock",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/477958a4b5247f08dc01efdfaeb2dcf6a9bc83fefa19e6d587cd55495d94035f.webp"
+          },
+          "away_team": {
+            "id": "t_1W837G",
+            "name": "V-Varen Nagasaki",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/3d89356de46f5a186983072ad4b65f55b45815a687bb764dc22d2a7716fda5d8.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
           }
         }
       }
@@ -89044,6 +90102,71 @@
                 "pitch_y": 0
               }
             ]
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_1UlTIh",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-29T03:30:00+00:00",
+      "collected_at_utc": "2026-11-27T00:39:38.002208+00:00",
+      "competition": "MLS",
+      "home_team": "Portland Timbers",
+      "away_team": "FC Dallas",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_1UlTIh",
+        "home_team": {
+          "id": "t_0ptYTE",
+          "name": "Portland Timbers",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/550c9258f2dd3b75f4a15d1d78ccf3318aae6d3b0380c4963bd99b5538f6822d.webp"
+        },
+        "away_team": {
+          "id": "t_1Rkw2U",
+          "name": "FC Dallas",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/5ffa253ed1109a32378858b11a3e90ca1ebd49cc8b098eb3a884936381833524.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_1UlTIh",
+          "home_team": {
+            "id": "t_0ptYTE",
+            "name": "Portland Timbers",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/550c9258f2dd3b75f4a15d1d78ccf3318aae6d3b0380c4963bd99b5538f6822d.webp"
+          },
+          "away_team": {
+            "id": "t_1Rkw2U",
+            "name": "FC Dallas",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/5ffa253ed1109a32378858b11a3e90ca1ebd49cc8b098eb3a884936381833524.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
           }
         }
       }
@@ -108343,6 +109466,815 @@
       "schema_version": 1,
       "provider": "PitchAPI",
       "match_id": "m_1zMkVF",
+      "snapshot": "J-1",
+      "kickoff_utc": "2026-11-28T05:00:00+00:00",
+      "collected_at_utc": "2026-11-27T00:39:38.002208+00:00",
+      "competition": "J1 League",
+      "home_team": "Shimizu S-Pulse",
+      "away_team": "Urawa Red Diamonds",
+      "status": "provided",
+      "lineups": {
+        "match_id": "m_1zMkVF",
+        "home_team": {
+          "id": "t_1E6Pbm",
+          "name": "Shimizu S-Pulse",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/22adf2897224b16a5258aaf5a8bad6008e2d56497a6d100c14728f3931f2dc6c.webp"
+        },
+        "away_team": {
+          "id": "t_2SxYow",
+          "name": "Urawa Red Diamonds",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/7b189717adf187d6429ba053c0e99d5e8b24af65d78fe99137512f9142b3d879.webp"
+        },
+        "home": {
+          "formation": "3-4-2-1",
+          "confirmed": false,
+          "lineup_type": "lastStarting11",
+          "coach": {
+            "name": "Takayuki Yoshida"
+          },
+          "starters": [
+            {
+              "player_id": "p_17rhYV",
+              "name": "Yuya Oki",
+              "shirt_number": "1",
+              "position_id": 11,
+              "is_captain": false,
+              "pitch_x": 0.1,
+              "pitch_y": 0.5
+            },
+            {
+              "player_id": "p_2cISQV",
+              "name": "Seung-Wook Park",
+              "shirt_number": "14",
+              "position_id": 33,
+              "is_captain": false,
+              "pitch_x": 0.29,
+              "pitch_y": 0.79
+            },
+            {
+              "player_id": "p_3JUzxs",
+              "name": "Jelani Sumiyoshi",
+              "shirt_number": "51",
+              "position_id": 35,
+              "is_captain": false,
+              "pitch_x": 0.29,
+              "pitch_y": 0.5
+            },
+            {
+              "player_id": "p_3QH0wh",
+              "name": "Mateus Brunetti",
+              "shirt_number": "25",
+              "position_id": 37,
+              "is_captain": false,
+              "pitch_x": 0.29,
+              "pitch_y": 0.21
+            },
+            {
+              "player_id": "p_11ucQN",
+              "name": "Hidehiro Sugai",
+              "shirt_number": "24",
+              "position_id": 62,
+              "is_captain": false,
+              "pitch_x": 0.49,
+              "pitch_y": 0.88
+            },
+            {
+              "player_id": "p_2vuxUO",
+              "name": "Kei Koizumi",
+              "shirt_number": "37",
+              "position_id": 64,
+              "is_captain": false,
+              "pitch_x": 0.49,
+              "pitch_y": 0.63
+            },
+            {
+              "player_id": "p_14dgys",
+              "name": "Doo-Jae Won",
+              "shirt_number": "6",
+              "position_id": 66,
+              "is_captain": false,
+              "pitch_x": 0.49,
+              "pitch_y": 0.38
+            },
+            {
+              "player_id": "p_1fjztZ",
+              "name": "Capixaba",
+              "shirt_number": "7",
+              "position_id": 68,
+              "is_captain": false,
+              "pitch_x": 0.49,
+              "pitch_y": 0.13
+            },
+            {
+              "player_id": "p_38NHvs",
+              "name": "Kai Matsuzaki",
+              "shirt_number": "21",
+              "position_id": 84,
+              "is_captain": false,
+              "pitch_x": 0.68,
+              "pitch_y": 0.7
+            },
+            {
+              "player_id": "p_2Y38cO",
+              "name": "Ryo Germain",
+              "shirt_number": "13",
+              "position_id": 86,
+              "is_captain": false,
+              "pitch_x": 0.68,
+              "pitch_y": 0.3
+            },
+            {
+              "player_id": "p_1RjHHx",
+              "name": "Kosuke Kinoshita",
+              "shirt_number": "19",
+              "position_id": 105,
+              "is_captain": false,
+              "pitch_x": 0.87,
+              "pitch_y": 0.5
+            }
+          ],
+          "subs": [
+            {
+              "player_id": "p_4CF9uy",
+              "name": "Togo Umeda",
+              "shirt_number": "16",
+              "position_id": 0,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_0mxwp9",
+              "name": "Yuji Takahashi",
+              "shirt_number": "3",
+              "position_id": 1,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_4ZXWaE",
+              "name": "Yuki Honda",
+              "shirt_number": "15",
+              "position_id": 1,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_28Z2s1",
+              "name": "Kazuki Kozuka",
+              "shirt_number": "81",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_2eyJ5e",
+              "name": "Tomoya Fujii",
+              "shirt_number": "50",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_2USKMz",
+              "name": "Yudai Shimamoto",
+              "shirt_number": "47",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_0fnGPo",
+              "name": "Kenta Inoue",
+              "shirt_number": "8",
+              "position_id": 3,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_40AskZ",
+              "name": "Koya Kitagawa",
+              "shirt_number": "49",
+              "position_id": 3,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_46vQh2",
+              "name": "Se-Hun Oh",
+              "shirt_number": "9",
+              "position_id": 3,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            }
+          ]
+        },
+        "away": {
+          "formation": "4-1-2-3",
+          "confirmed": false,
+          "lineup_type": "lastStarting11",
+          "coach": {
+            "name": "Gwi-Jea Jo"
+          },
+          "starters": [
+            {
+              "player_id": "p_3LVHB6",
+              "name": "Shusaku Nishikawa",
+              "shirt_number": "1",
+              "position_id": 11,
+              "is_captain": false,
+              "pitch_x": 0.1,
+              "pitch_y": 0.5
+            },
+            {
+              "player_id": "p_0vtE0Y",
+              "name": "Kotaro Hayashi",
+              "shirt_number": "18",
+              "position_id": 32,
+              "is_captain": false,
+              "pitch_x": 0.29,
+              "pitch_y": 0.88
+            },
+            {
+              "player_id": "p_2XaYjo",
+              "name": "Danilo Boza",
+              "shirt_number": "3",
+              "position_id": 34,
+              "is_captain": false,
+              "pitch_x": 0.29,
+              "pitch_y": 0.63
+            },
+            {
+              "player_id": "p_1mXv9t",
+              "name": "Kenta Nemoto",
+              "shirt_number": "5",
+              "position_id": 36,
+              "is_captain": false,
+              "pitch_x": 0.29,
+              "pitch_y": 0.38
+            },
+            {
+              "player_id": "p_374v49",
+              "name": "Yoichi Naganuma",
+              "shirt_number": "88",
+              "position_id": 38,
+              "is_captain": false,
+              "pitch_x": 0.29,
+              "pitch_y": 0.13
+            },
+            {
+              "player_id": "p_23y20U",
+              "name": "Samuel Gustafson",
+              "shirt_number": "11",
+              "position_id": 65,
+              "is_captain": false,
+              "pitch_x": 0.49,
+              "pitch_y": 0.5
+            },
+            {
+              "player_id": "p_2roSlB",
+              "name": "Tatsuki Seko",
+              "shirt_number": "12",
+              "position_id": 84,
+              "is_captain": false,
+              "pitch_x": 0.68,
+              "pitch_y": 0.7
+            },
+            {
+              "player_id": "p_0QjtuC",
+              "name": "Ryoma Watanabe",
+              "shirt_number": "13",
+              "position_id": 86,
+              "is_captain": false,
+              "pitch_x": 0.68,
+              "pitch_y": 0.3
+            },
+            {
+              "player_id": "p_4ccI2s",
+              "name": "Takuro Kaneko",
+              "shirt_number": "7",
+              "position_id": 103,
+              "is_captain": false,
+              "pitch_x": 0.87,
+              "pitch_y": 0.83
+            },
+            {
+              "player_id": "p_0s6Br4",
+              "name": "Ado Onaiwu",
+              "shirt_number": "45",
+              "position_id": 105,
+              "is_captain": false,
+              "pitch_x": 0.87,
+              "pitch_y": 0.5
+            },
+            {
+              "player_id": "p_3rna4l",
+              "name": "Matheus Sávio",
+              "shirt_number": "10",
+              "position_id": 107,
+              "is_captain": false,
+              "pitch_x": 0.87,
+              "pitch_y": 0.17
+            }
+          ],
+          "subs": [
+            {
+              "player_id": "p_2p03Gj",
+              "name": "Yoshiaki Arai",
+              "shirt_number": "44",
+              "position_id": 0,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_3FYHvn",
+              "name": "Eiichi Katayama",
+              "shirt_number": "32",
+              "position_id": 1,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_48sBYP",
+              "name": "Kota Kudo",
+              "shirt_number": "15",
+              "position_id": 1,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_2rhXHM",
+              "name": "Shuta Sasa",
+              "shirt_number": "33",
+              "position_id": 1,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_3dVghq",
+              "name": "Hayate Ueki",
+              "shirt_number": "37",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_1AMyIf",
+              "name": "Harumi Minamino",
+              "shirt_number": "42",
+              "position_id": 3,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_3Rp4u0",
+              "name": "Hiiro Komori",
+              "shirt_number": "17",
+              "position_id": 3,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_3Nhj34",
+              "name": "Jumpei Hayakawa",
+              "shirt_number": "39",
+              "position_id": 3,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_0QBA3V",
+              "name": "Renji Hidano",
+              "shirt_number": "36",
+              "position_id": 3,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            }
+          ]
+        }
+      },
+      "message": null,
+      "raw_response": {
+        "data": {
+          "match_id": "m_1zMkVF",
+          "home_team": {
+            "id": "t_1E6Pbm",
+            "name": "Shimizu S-Pulse",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/22adf2897224b16a5258aaf5a8bad6008e2d56497a6d100c14728f3931f2dc6c.webp"
+          },
+          "away_team": {
+            "id": "t_2SxYow",
+            "name": "Urawa Red Diamonds",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/7b189717adf187d6429ba053c0e99d5e8b24af65d78fe99137512f9142b3d879.webp"
+          },
+          "home": {
+            "formation": "3-4-2-1",
+            "confirmed": false,
+            "lineup_type": "lastStarting11",
+            "coach": {
+              "name": "Takayuki Yoshida"
+            },
+            "starters": [
+              {
+                "player_id": "p_17rhYV",
+                "name": "Yuya Oki",
+                "shirt_number": "1",
+                "position_id": 11,
+                "is_captain": false,
+                "pitch_x": 0.1,
+                "pitch_y": 0.5
+              },
+              {
+                "player_id": "p_2cISQV",
+                "name": "Seung-Wook Park",
+                "shirt_number": "14",
+                "position_id": 33,
+                "is_captain": false,
+                "pitch_x": 0.29,
+                "pitch_y": 0.79
+              },
+              {
+                "player_id": "p_3JUzxs",
+                "name": "Jelani Sumiyoshi",
+                "shirt_number": "51",
+                "position_id": 35,
+                "is_captain": false,
+                "pitch_x": 0.29,
+                "pitch_y": 0.5
+              },
+              {
+                "player_id": "p_3QH0wh",
+                "name": "Mateus Brunetti",
+                "shirt_number": "25",
+                "position_id": 37,
+                "is_captain": false,
+                "pitch_x": 0.29,
+                "pitch_y": 0.21
+              },
+              {
+                "player_id": "p_11ucQN",
+                "name": "Hidehiro Sugai",
+                "shirt_number": "24",
+                "position_id": 62,
+                "is_captain": false,
+                "pitch_x": 0.49,
+                "pitch_y": 0.88
+              },
+              {
+                "player_id": "p_2vuxUO",
+                "name": "Kei Koizumi",
+                "shirt_number": "37",
+                "position_id": 64,
+                "is_captain": false,
+                "pitch_x": 0.49,
+                "pitch_y": 0.63
+              },
+              {
+                "player_id": "p_14dgys",
+                "name": "Doo-Jae Won",
+                "shirt_number": "6",
+                "position_id": 66,
+                "is_captain": false,
+                "pitch_x": 0.49,
+                "pitch_y": 0.38
+              },
+              {
+                "player_id": "p_1fjztZ",
+                "name": "Capixaba",
+                "shirt_number": "7",
+                "position_id": 68,
+                "is_captain": false,
+                "pitch_x": 0.49,
+                "pitch_y": 0.13
+              },
+              {
+                "player_id": "p_38NHvs",
+                "name": "Kai Matsuzaki",
+                "shirt_number": "21",
+                "position_id": 84,
+                "is_captain": false,
+                "pitch_x": 0.68,
+                "pitch_y": 0.7
+              },
+              {
+                "player_id": "p_2Y38cO",
+                "name": "Ryo Germain",
+                "shirt_number": "13",
+                "position_id": 86,
+                "is_captain": false,
+                "pitch_x": 0.68,
+                "pitch_y": 0.3
+              },
+              {
+                "player_id": "p_1RjHHx",
+                "name": "Kosuke Kinoshita",
+                "shirt_number": "19",
+                "position_id": 105,
+                "is_captain": false,
+                "pitch_x": 0.87,
+                "pitch_y": 0.5
+              }
+            ],
+            "subs": [
+              {
+                "player_id": "p_4CF9uy",
+                "name": "Togo Umeda",
+                "shirt_number": "16",
+                "position_id": 0,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_0mxwp9",
+                "name": "Yuji Takahashi",
+                "shirt_number": "3",
+                "position_id": 1,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_4ZXWaE",
+                "name": "Yuki Honda",
+                "shirt_number": "15",
+                "position_id": 1,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_28Z2s1",
+                "name": "Kazuki Kozuka",
+                "shirt_number": "81",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_2eyJ5e",
+                "name": "Tomoya Fujii",
+                "shirt_number": "50",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_2USKMz",
+                "name": "Yudai Shimamoto",
+                "shirt_number": "47",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_0fnGPo",
+                "name": "Kenta Inoue",
+                "shirt_number": "8",
+                "position_id": 3,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_40AskZ",
+                "name": "Koya Kitagawa",
+                "shirt_number": "49",
+                "position_id": 3,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_46vQh2",
+                "name": "Se-Hun Oh",
+                "shirt_number": "9",
+                "position_id": 3,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              }
+            ]
+          },
+          "away": {
+            "formation": "4-1-2-3",
+            "confirmed": false,
+            "lineup_type": "lastStarting11",
+            "coach": {
+              "name": "Gwi-Jea Jo"
+            },
+            "starters": [
+              {
+                "player_id": "p_3LVHB6",
+                "name": "Shusaku Nishikawa",
+                "shirt_number": "1",
+                "position_id": 11,
+                "is_captain": false,
+                "pitch_x": 0.1,
+                "pitch_y": 0.5
+              },
+              {
+                "player_id": "p_0vtE0Y",
+                "name": "Kotaro Hayashi",
+                "shirt_number": "18",
+                "position_id": 32,
+                "is_captain": false,
+                "pitch_x": 0.29,
+                "pitch_y": 0.88
+              },
+              {
+                "player_id": "p_2XaYjo",
+                "name": "Danilo Boza",
+                "shirt_number": "3",
+                "position_id": 34,
+                "is_captain": false,
+                "pitch_x": 0.29,
+                "pitch_y": 0.63
+              },
+              {
+                "player_id": "p_1mXv9t",
+                "name": "Kenta Nemoto",
+                "shirt_number": "5",
+                "position_id": 36,
+                "is_captain": false,
+                "pitch_x": 0.29,
+                "pitch_y": 0.38
+              },
+              {
+                "player_id": "p_374v49",
+                "name": "Yoichi Naganuma",
+                "shirt_number": "88",
+                "position_id": 38,
+                "is_captain": false,
+                "pitch_x": 0.29,
+                "pitch_y": 0.13
+              },
+              {
+                "player_id": "p_23y20U",
+                "name": "Samuel Gustafson",
+                "shirt_number": "11",
+                "position_id": 65,
+                "is_captain": false,
+                "pitch_x": 0.49,
+                "pitch_y": 0.5
+              },
+              {
+                "player_id": "p_2roSlB",
+                "name": "Tatsuki Seko",
+                "shirt_number": "12",
+                "position_id": 84,
+                "is_captain": false,
+                "pitch_x": 0.68,
+                "pitch_y": 0.7
+              },
+              {
+                "player_id": "p_0QjtuC",
+                "name": "Ryoma Watanabe",
+                "shirt_number": "13",
+                "position_id": 86,
+                "is_captain": false,
+                "pitch_x": 0.68,
+                "pitch_y": 0.3
+              },
+              {
+                "player_id": "p_4ccI2s",
+                "name": "Takuro Kaneko",
+                "shirt_number": "7",
+                "position_id": 103,
+                "is_captain": false,
+                "pitch_x": 0.87,
+                "pitch_y": 0.83
+              },
+              {
+                "player_id": "p_0s6Br4",
+                "name": "Ado Onaiwu",
+                "shirt_number": "45",
+                "position_id": 105,
+                "is_captain": false,
+                "pitch_x": 0.87,
+                "pitch_y": 0.5
+              },
+              {
+                "player_id": "p_3rna4l",
+                "name": "Matheus Sávio",
+                "shirt_number": "10",
+                "position_id": 107,
+                "is_captain": false,
+                "pitch_x": 0.87,
+                "pitch_y": 0.17
+              }
+            ],
+            "subs": [
+              {
+                "player_id": "p_2p03Gj",
+                "name": "Yoshiaki Arai",
+                "shirt_number": "44",
+                "position_id": 0,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_3FYHvn",
+                "name": "Eiichi Katayama",
+                "shirt_number": "32",
+                "position_id": 1,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_48sBYP",
+                "name": "Kota Kudo",
+                "shirt_number": "15",
+                "position_id": 1,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_2rhXHM",
+                "name": "Shuta Sasa",
+                "shirt_number": "33",
+                "position_id": 1,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_3dVghq",
+                "name": "Hayate Ueki",
+                "shirt_number": "37",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_1AMyIf",
+                "name": "Harumi Minamino",
+                "shirt_number": "42",
+                "position_id": 3,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_3Rp4u0",
+                "name": "Hiiro Komori",
+                "shirt_number": "17",
+                "position_id": 3,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_3Nhj34",
+                "name": "Jumpei Hayakawa",
+                "shirt_number": "39",
+                "position_id": 3,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_0QBA3V",
+                "name": "Renji Hidano",
+                "shirt_number": "36",
+                "position_id": 3,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_1zMkVF",
       "snapshot": "J-2",
       "kickoff_utc": "2026-11-28T05:00:00+00:00",
       "collected_at_utc": "2026-11-25T22:36:47.827038+00:00",
@@ -119782,6 +121714,71 @@
       "schema_version": 1,
       "provider": "PitchAPI",
       "match_id": "m_2LCXhb",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-29T06:00:00+00:00",
+      "collected_at_utc": "2026-11-27T00:39:38.002208+00:00",
+      "competition": "J1 League",
+      "home_team": "Kawasaki Frontale",
+      "away_team": "Gamba Osaka",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_2LCXhb",
+        "home_team": {
+          "id": "t_37dBko",
+          "name": "Kawasaki Frontale",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/4a1738813ff2f7c13b04962a4db57c4982ba9ac1762b28e35e8357d2d729deb4.webp"
+        },
+        "away_team": {
+          "id": "t_1pt1Bj",
+          "name": "Gamba Osaka",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/aea083eeb1b851aacdcfd244f0205b783c32b9dbe89d6fe3cd97c85db8a7a3a9.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_2LCXhb",
+          "home_team": {
+            "id": "t_37dBko",
+            "name": "Kawasaki Frontale",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/4a1738813ff2f7c13b04962a4db57c4982ba9ac1762b28e35e8357d2d729deb4.webp"
+          },
+          "away_team": {
+            "id": "t_1pt1Bj",
+            "name": "Gamba Osaka",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/aea083eeb1b851aacdcfd244f0205b783c32b9dbe89d6fe3cd97c85db8a7a3a9.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_2LCXhb",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-29T06:00:00+00:00",
       "collected_at_utc": "2026-11-21T22:13:43.470059+00:00",
@@ -126958,6 +128955,851 @@
       "schema_version": 1,
       "provider": "PitchAPI",
       "match_id": "m_2YeRqx",
+      "snapshot": "J-1",
+      "kickoff_utc": "2026-11-28T06:00:00+00:00",
+      "collected_at_utc": "2026-11-27T00:39:38.002208+00:00",
+      "competition": "J1 League",
+      "home_team": "Vissel Kobe",
+      "away_team": "JEF United Chiba",
+      "status": "provided",
+      "lineups": {
+        "match_id": "m_2YeRqx",
+        "home_team": {
+          "id": "t_0LfLJ4",
+          "name": "Vissel Kobe",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/c03df521134bbe5dcd0b3e9c5d03241c7dc44aa95106de32e4e876262773e605.webp"
+        },
+        "away_team": {
+          "id": "t_25A1QK",
+          "name": "JEF United Chiba",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/b335ff892f763c6306c346fa015678bc966436ffdd49db0bcd5aa6a5304d1268.webp"
+        },
+        "home": {
+          "formation": "4-3-3",
+          "confirmed": false,
+          "lineup_type": "lastStarting11",
+          "coach": {
+            "name": "Michael Skibbe"
+          },
+          "starters": [
+            {
+              "player_id": "p_2a7pnC",
+              "name": "Shota Arai",
+              "shirt_number": "21",
+              "position_id": 11,
+              "is_captain": false,
+              "pitch_x": 0.1,
+              "pitch_y": 0.5
+            },
+            {
+              "player_id": "p_1h5roC",
+              "name": "Nanasei Iino",
+              "shirt_number": "2",
+              "position_id": 32,
+              "is_captain": false,
+              "pitch_x": 0.36,
+              "pitch_y": 0.88
+            },
+            {
+              "player_id": "p_1anbzB",
+              "name": "Tetsushi Yamakawa",
+              "shirt_number": "4",
+              "position_id": 34,
+              "is_captain": false,
+              "pitch_x": 0.36,
+              "pitch_y": 0.63
+            },
+            {
+              "player_id": "p_1jxhip",
+              "name": "Takuya Iwanami",
+              "shirt_number": "31",
+              "position_id": 36,
+              "is_captain": false,
+              "pitch_x": 0.36,
+              "pitch_y": 0.38
+            },
+            {
+              "player_id": "p_0YWscz",
+              "name": "Katsuya Nagato",
+              "shirt_number": "41",
+              "position_id": 38,
+              "is_captain": false,
+              "pitch_x": 0.36,
+              "pitch_y": 0.13
+            },
+            {
+              "player_id": "p_1QiaPY",
+              "name": "Kota Watanabe",
+              "shirt_number": "20",
+              "position_id": 73,
+              "is_captain": false,
+              "pitch_x": 0.61,
+              "pitch_y": 0.79
+            },
+            {
+              "player_id": "p_2IjzXQ",
+              "name": "Yuya Kuwasaki",
+              "shirt_number": "25",
+              "position_id": 75,
+              "is_captain": false,
+              "pitch_x": 0.61,
+              "pitch_y": 0.5
+            },
+            {
+              "player_id": "p_2OEARR",
+              "name": "Yuta Goke",
+              "shirt_number": "5",
+              "position_id": 77,
+              "is_captain": false,
+              "pitch_x": 0.61,
+              "pitch_y": 0.21
+            },
+            {
+              "player_id": "p_3kfqfl",
+              "name": "Erik",
+              "shirt_number": "94",
+              "position_id": 103,
+              "is_captain": false,
+              "pitch_x": 0.87,
+              "pitch_y": 0.79
+            },
+            {
+              "player_id": "p_1FzTHU",
+              "name": "Ren Komatsu",
+              "shirt_number": "29",
+              "position_id": 105,
+              "is_captain": false,
+              "pitch_x": 0.87,
+              "pitch_y": 0.5
+            },
+            {
+              "player_id": "p_0KANs2",
+              "name": "Jean Patrick",
+              "shirt_number": "26",
+              "position_id": 107,
+              "is_captain": false,
+              "pitch_x": 0.87,
+              "pitch_y": 0.21
+            }
+          ],
+          "subs": [
+            {
+              "player_id": "p_3wFMYz",
+              "name": "Daiya Maekawa",
+              "shirt_number": "1",
+              "position_id": 0,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_3YztlA",
+              "name": "Shuichi Gonda",
+              "shirt_number": "71",
+              "position_id": 0,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_1cEMR5",
+              "name": "Diego",
+              "shirt_number": "15",
+              "position_id": 1,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_3H1oPl",
+              "name": "Gotoku Sakai",
+              "shirt_number": "24",
+              "position_id": 1,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_2uPyOF",
+              "name": "Matheus Thuler",
+              "shirt_number": "3",
+              "position_id": 1,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_3JBZTA",
+              "name": "Kento Hamasaki",
+              "shirt_number": "28",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_3ZPZ6f",
+              "name": "Mitsuki Hidaka",
+              "shirt_number": "44",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_4daEWd",
+              "name": "Yosuke Ideguchi",
+              "shirt_number": "7",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_309nNp",
+              "name": "Anderson Lopes",
+              "shirt_number": "9",
+              "position_id": 3,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_36keXl",
+              "name": "Hyoei Kawabata",
+              "shirt_number": "62",
+              "position_id": 3,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_1OPP2V",
+              "name": "Yuya Osako",
+              "shirt_number": "10",
+              "position_id": 3,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            }
+          ]
+        },
+        "away": {
+          "formation": "4-4-2",
+          "confirmed": false,
+          "lineup_type": "lastStarting11",
+          "coach": {
+            "name": "Yoshiyuki Kobayashi"
+          },
+          "starters": [
+            {
+              "player_id": "p_48Z9n3",
+              "name": "José Suárez",
+              "shirt_number": "19",
+              "position_id": 11,
+              "is_captain": false,
+              "pitch_x": 0.1,
+              "pitch_y": 0.5
+            },
+            {
+              "player_id": "p_0hjN8U",
+              "name": "Takayuki Mae",
+              "shirt_number": "15",
+              "position_id": 32,
+              "is_captain": false,
+              "pitch_x": 0.36,
+              "pitch_y": 0.88
+            },
+            {
+              "player_id": "p_2Y0gss",
+              "name": "Daisuke Suzuki",
+              "shirt_number": "13",
+              "position_id": 34,
+              "is_captain": false,
+              "pitch_x": 0.36,
+              "pitch_y": 0.63
+            },
+            {
+              "player_id": "p_2JydZQ",
+              "name": "Boniface Nduka",
+              "shirt_number": "2",
+              "position_id": 36,
+              "is_captain": false,
+              "pitch_x": 0.36,
+              "pitch_y": 0.38
+            },
+            {
+              "player_id": "p_1eFQKW",
+              "name": "Masaru Hidaka",
+              "shirt_number": "67",
+              "position_id": 38,
+              "is_captain": false,
+              "pitch_x": 0.36,
+              "pitch_y": 0.13
+            },
+            {
+              "player_id": "p_23ZXF0",
+              "name": "Daichi Ishikawa",
+              "shirt_number": "20",
+              "position_id": 72,
+              "is_captain": false,
+              "pitch_x": 0.61,
+              "pitch_y": 0.88
+            },
+            {
+              "player_id": "p_0h2Tom",
+              "name": "Yusuke Kobayashi",
+              "shirt_number": "5",
+              "position_id": 74,
+              "is_captain": false,
+              "pitch_x": 0.61,
+              "pitch_y": 0.63
+            },
+            {
+              "player_id": "p_2703mf",
+              "name": "Takuya Yasui",
+              "shirt_number": "41",
+              "position_id": 76,
+              "is_captain": false,
+              "pitch_x": 0.61,
+              "pitch_y": 0.38
+            },
+            {
+              "player_id": "p_0YRKnv",
+              "name": "Takumi Tsukui",
+              "shirt_number": "8",
+              "position_id": 78,
+              "is_captain": false,
+              "pitch_x": 0.61,
+              "pitch_y": 0.13
+            },
+            {
+              "player_id": "p_06Mq3U",
+              "name": "Erison",
+              "shirt_number": "99",
+              "position_id": 104,
+              "is_captain": false,
+              "pitch_x": 0.87,
+              "pitch_y": 0.7
+            },
+            {
+              "player_id": "p_2ld85R",
+              "name": "Ken Yamura",
+              "shirt_number": "29",
+              "position_id": 106,
+              "is_captain": false,
+              "pitch_x": 0.87,
+              "pitch_y": 0.3
+            }
+          ],
+          "subs": [
+            {
+              "player_id": "p_3psxbO",
+              "name": "Ryota Suzuki",
+              "shirt_number": "23",
+              "position_id": 0,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_2ITuZx",
+              "name": "Koji Toriumi",
+              "shirt_number": "24",
+              "position_id": 1,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_13ldvZ",
+              "name": "Rikuto Ishio",
+              "shirt_number": "39",
+              "position_id": 1,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_4H4Sok",
+              "name": "Takahiro Iida",
+              "shirt_number": "22",
+              "position_id": 1,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_2dvF1V",
+              "name": "Kazuki Tanaka",
+              "shirt_number": "7",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_1imMFH",
+              "name": "Makoto Himeno",
+              "shirt_number": "37",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_4ShxVv",
+              "name": "Taishi Taguchi",
+              "shirt_number": "4",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_4QA3m3",
+              "name": "Hiroto Goya",
+              "shirt_number": "9",
+              "position_id": 3,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_1JGIqA",
+              "name": "Leonardo Rocha",
+              "shirt_number": "45",
+              "position_id": 3,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            }
+          ]
+        }
+      },
+      "message": null,
+      "raw_response": {
+        "data": {
+          "match_id": "m_2YeRqx",
+          "home_team": {
+            "id": "t_0LfLJ4",
+            "name": "Vissel Kobe",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/c03df521134bbe5dcd0b3e9c5d03241c7dc44aa95106de32e4e876262773e605.webp"
+          },
+          "away_team": {
+            "id": "t_25A1QK",
+            "name": "JEF United Chiba",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/b335ff892f763c6306c346fa015678bc966436ffdd49db0bcd5aa6a5304d1268.webp"
+          },
+          "home": {
+            "formation": "4-3-3",
+            "confirmed": false,
+            "lineup_type": "lastStarting11",
+            "coach": {
+              "name": "Michael Skibbe"
+            },
+            "starters": [
+              {
+                "player_id": "p_2a7pnC",
+                "name": "Shota Arai",
+                "shirt_number": "21",
+                "position_id": 11,
+                "is_captain": false,
+                "pitch_x": 0.1,
+                "pitch_y": 0.5
+              },
+              {
+                "player_id": "p_1h5roC",
+                "name": "Nanasei Iino",
+                "shirt_number": "2",
+                "position_id": 32,
+                "is_captain": false,
+                "pitch_x": 0.36,
+                "pitch_y": 0.88
+              },
+              {
+                "player_id": "p_1anbzB",
+                "name": "Tetsushi Yamakawa",
+                "shirt_number": "4",
+                "position_id": 34,
+                "is_captain": false,
+                "pitch_x": 0.36,
+                "pitch_y": 0.63
+              },
+              {
+                "player_id": "p_1jxhip",
+                "name": "Takuya Iwanami",
+                "shirt_number": "31",
+                "position_id": 36,
+                "is_captain": false,
+                "pitch_x": 0.36,
+                "pitch_y": 0.38
+              },
+              {
+                "player_id": "p_0YWscz",
+                "name": "Katsuya Nagato",
+                "shirt_number": "41",
+                "position_id": 38,
+                "is_captain": false,
+                "pitch_x": 0.36,
+                "pitch_y": 0.13
+              },
+              {
+                "player_id": "p_1QiaPY",
+                "name": "Kota Watanabe",
+                "shirt_number": "20",
+                "position_id": 73,
+                "is_captain": false,
+                "pitch_x": 0.61,
+                "pitch_y": 0.79
+              },
+              {
+                "player_id": "p_2IjzXQ",
+                "name": "Yuya Kuwasaki",
+                "shirt_number": "25",
+                "position_id": 75,
+                "is_captain": false,
+                "pitch_x": 0.61,
+                "pitch_y": 0.5
+              },
+              {
+                "player_id": "p_2OEARR",
+                "name": "Yuta Goke",
+                "shirt_number": "5",
+                "position_id": 77,
+                "is_captain": false,
+                "pitch_x": 0.61,
+                "pitch_y": 0.21
+              },
+              {
+                "player_id": "p_3kfqfl",
+                "name": "Erik",
+                "shirt_number": "94",
+                "position_id": 103,
+                "is_captain": false,
+                "pitch_x": 0.87,
+                "pitch_y": 0.79
+              },
+              {
+                "player_id": "p_1FzTHU",
+                "name": "Ren Komatsu",
+                "shirt_number": "29",
+                "position_id": 105,
+                "is_captain": false,
+                "pitch_x": 0.87,
+                "pitch_y": 0.5
+              },
+              {
+                "player_id": "p_0KANs2",
+                "name": "Jean Patrick",
+                "shirt_number": "26",
+                "position_id": 107,
+                "is_captain": false,
+                "pitch_x": 0.87,
+                "pitch_y": 0.21
+              }
+            ],
+            "subs": [
+              {
+                "player_id": "p_3wFMYz",
+                "name": "Daiya Maekawa",
+                "shirt_number": "1",
+                "position_id": 0,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_3YztlA",
+                "name": "Shuichi Gonda",
+                "shirt_number": "71",
+                "position_id": 0,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_1cEMR5",
+                "name": "Diego",
+                "shirt_number": "15",
+                "position_id": 1,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_3H1oPl",
+                "name": "Gotoku Sakai",
+                "shirt_number": "24",
+                "position_id": 1,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_2uPyOF",
+                "name": "Matheus Thuler",
+                "shirt_number": "3",
+                "position_id": 1,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_3JBZTA",
+                "name": "Kento Hamasaki",
+                "shirt_number": "28",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_3ZPZ6f",
+                "name": "Mitsuki Hidaka",
+                "shirt_number": "44",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_4daEWd",
+                "name": "Yosuke Ideguchi",
+                "shirt_number": "7",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_309nNp",
+                "name": "Anderson Lopes",
+                "shirt_number": "9",
+                "position_id": 3,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_36keXl",
+                "name": "Hyoei Kawabata",
+                "shirt_number": "62",
+                "position_id": 3,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_1OPP2V",
+                "name": "Yuya Osako",
+                "shirt_number": "10",
+                "position_id": 3,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              }
+            ]
+          },
+          "away": {
+            "formation": "4-4-2",
+            "confirmed": false,
+            "lineup_type": "lastStarting11",
+            "coach": {
+              "name": "Yoshiyuki Kobayashi"
+            },
+            "starters": [
+              {
+                "player_id": "p_48Z9n3",
+                "name": "José Suárez",
+                "shirt_number": "19",
+                "position_id": 11,
+                "is_captain": false,
+                "pitch_x": 0.1,
+                "pitch_y": 0.5
+              },
+              {
+                "player_id": "p_0hjN8U",
+                "name": "Takayuki Mae",
+                "shirt_number": "15",
+                "position_id": 32,
+                "is_captain": false,
+                "pitch_x": 0.36,
+                "pitch_y": 0.88
+              },
+              {
+                "player_id": "p_2Y0gss",
+                "name": "Daisuke Suzuki",
+                "shirt_number": "13",
+                "position_id": 34,
+                "is_captain": false,
+                "pitch_x": 0.36,
+                "pitch_y": 0.63
+              },
+              {
+                "player_id": "p_2JydZQ",
+                "name": "Boniface Nduka",
+                "shirt_number": "2",
+                "position_id": 36,
+                "is_captain": false,
+                "pitch_x": 0.36,
+                "pitch_y": 0.38
+              },
+              {
+                "player_id": "p_1eFQKW",
+                "name": "Masaru Hidaka",
+                "shirt_number": "67",
+                "position_id": 38,
+                "is_captain": false,
+                "pitch_x": 0.36,
+                "pitch_y": 0.13
+              },
+              {
+                "player_id": "p_23ZXF0",
+                "name": "Daichi Ishikawa",
+                "shirt_number": "20",
+                "position_id": 72,
+                "is_captain": false,
+                "pitch_x": 0.61,
+                "pitch_y": 0.88
+              },
+              {
+                "player_id": "p_0h2Tom",
+                "name": "Yusuke Kobayashi",
+                "shirt_number": "5",
+                "position_id": 74,
+                "is_captain": false,
+                "pitch_x": 0.61,
+                "pitch_y": 0.63
+              },
+              {
+                "player_id": "p_2703mf",
+                "name": "Takuya Yasui",
+                "shirt_number": "41",
+                "position_id": 76,
+                "is_captain": false,
+                "pitch_x": 0.61,
+                "pitch_y": 0.38
+              },
+              {
+                "player_id": "p_0YRKnv",
+                "name": "Takumi Tsukui",
+                "shirt_number": "8",
+                "position_id": 78,
+                "is_captain": false,
+                "pitch_x": 0.61,
+                "pitch_y": 0.13
+              },
+              {
+                "player_id": "p_06Mq3U",
+                "name": "Erison",
+                "shirt_number": "99",
+                "position_id": 104,
+                "is_captain": false,
+                "pitch_x": 0.87,
+                "pitch_y": 0.7
+              },
+              {
+                "player_id": "p_2ld85R",
+                "name": "Ken Yamura",
+                "shirt_number": "29",
+                "position_id": 106,
+                "is_captain": false,
+                "pitch_x": 0.87,
+                "pitch_y": 0.3
+              }
+            ],
+            "subs": [
+              {
+                "player_id": "p_3psxbO",
+                "name": "Ryota Suzuki",
+                "shirt_number": "23",
+                "position_id": 0,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_2ITuZx",
+                "name": "Koji Toriumi",
+                "shirt_number": "24",
+                "position_id": 1,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_13ldvZ",
+                "name": "Rikuto Ishio",
+                "shirt_number": "39",
+                "position_id": 1,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_4H4Sok",
+                "name": "Takahiro Iida",
+                "shirt_number": "22",
+                "position_id": 1,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_2dvF1V",
+                "name": "Kazuki Tanaka",
+                "shirt_number": "7",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_1imMFH",
+                "name": "Makoto Himeno",
+                "shirt_number": "37",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_4ShxVv",
+                "name": "Taishi Taguchi",
+                "shirt_number": "4",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_4QA3m3",
+                "name": "Hiroto Goya",
+                "shirt_number": "9",
+                "position_id": 3,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_1JGIqA",
+                "name": "Leonardo Rocha",
+                "shirt_number": "45",
+                "position_id": 3,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_2YeRqx",
       "snapshot": "J-2",
       "kickoff_utc": "2026-11-28T06:00:00+00:00",
       "collected_at_utc": "2026-11-25T22:36:47.827038+00:00",
@@ -133990,6 +136832,71 @@
                 "pitch_y": 0
               }
             ]
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_2hlk40",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-29T06:00:00+00:00",
+      "collected_at_utc": "2026-11-27T00:39:38.002208+00:00",
+      "competition": "J1 League",
+      "home_team": "Nagoya Grampus",
+      "away_team": "Avispa Fukuoka",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_2hlk40",
+        "home_team": {
+          "id": "t_1mrdfo",
+          "name": "Nagoya Grampus",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/9a5b30c93d657b9b52bd57fde9efbd98b6008e8be22026ab5608794d24fdb317.webp"
+        },
+        "away_team": {
+          "id": "t_2u1BXQ",
+          "name": "Avispa Fukuoka",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/99cf3b497f10d87e37f6c2b64598310dc5d8a189d6fe2c1fecf06a13f68c3a63.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_2hlk40",
+          "home_team": {
+            "id": "t_1mrdfo",
+            "name": "Nagoya Grampus",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/9a5b30c93d657b9b52bd57fde9efbd98b6008e8be22026ab5608794d24fdb317.webp"
+          },
+          "away_team": {
+            "id": "t_2u1BXQ",
+            "name": "Avispa Fukuoka",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/99cf3b497f10d87e37f6c2b64598310dc5d8a189d6fe2c1fecf06a13f68c3a63.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
           }
         }
       }
@@ -143996,6 +146903,71 @@
       "schema_version": 1,
       "provider": "PitchAPI",
       "match_id": "m_30gNoT",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-29T12:00:00+00:00",
+      "collected_at_utc": "2026-11-27T00:39:38.002208+00:00",
+      "competition": "Premier League",
+      "home_team": "Everton",
+      "away_team": "Liverpool",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_30gNoT",
+        "home_team": {
+          "id": "t_21IR9d",
+          "name": "Everton",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/a755328b0286a79ef4e19406b2c63417922769a93ca17365b7333d4173cb9a2b.webp"
+        },
+        "away_team": {
+          "id": "t_0BrMnM",
+          "name": "Liverpool",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/5538ce3ddde32fc5d72918ee128c4b04a49443a3586aec8e7e99d911d3d36c99.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_30gNoT",
+          "home_team": {
+            "id": "t_21IR9d",
+            "name": "Everton",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/a755328b0286a79ef4e19406b2c63417922769a93ca17365b7333d4173cb9a2b.webp"
+          },
+          "away_team": {
+            "id": "t_0BrMnM",
+            "name": "Liverpool",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/5538ce3ddde32fc5d72918ee128c4b04a49443a3586aec8e7e99d911d3d36c99.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_30gNoT",
       "snapshot": "J-7",
       "kickoff_utc": "2026-11-29T12:00:00+00:00",
       "collected_at_utc": "2026-11-22T02:20:38.702402+00:00",
@@ -145801,6 +148773,71 @@
                 "pitch_y": 0
               }
             ]
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_31mPhe",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-29T07:00:00+00:00",
+      "collected_at_utc": "2026-11-27T00:39:38.002208+00:00",
+      "competition": "J1 League",
+      "home_team": "Machida Zelvia",
+      "away_team": "Tokyo Verdy",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_31mPhe",
+        "home_team": {
+          "id": "t_2731yf",
+          "name": "Machida Zelvia",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/f94e85fedc4b8ea4f1ede7c9eebd263f24fbcf493f36ff65c3eb72926f472edb.webp"
+        },
+        "away_team": {
+          "id": "t_2HK8gL",
+          "name": "Tokyo Verdy",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/f29595d5e2325b3b5bd49f953fd29b00c963db63c88898d75634c97686e127a8.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_31mPhe",
+          "home_team": {
+            "id": "t_2731yf",
+            "name": "Machida Zelvia",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/f94e85fedc4b8ea4f1ede7c9eebd263f24fbcf493f36ff65c3eb72926f472edb.webp"
+          },
+          "away_team": {
+            "id": "t_2HK8gL",
+            "name": "Tokyo Verdy",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/f29595d5e2325b3b5bd49f953fd29b00c963db63c88898d75634c97686e127a8.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
           }
         }
       }
@@ -157789,6 +160826,71 @@
                 "pitch_y": 0
               }
             ]
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_3B1YkJ",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-29T12:30:00+00:00",
+      "collected_at_utc": "2026-11-27T00:39:38.002208+00:00",
+      "competition": "Belgian Pro League",
+      "home_team": "St.Truiden",
+      "away_team": "Genk",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_3B1YkJ",
+        "home_team": {
+          "id": "t_11R95l",
+          "name": "St.Truiden",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/dd6e3aa3a230e69a5b13c385696a5e357528a93e2c9ae68d88835e2cb5bfb9e9.webp"
+        },
+        "away_team": {
+          "id": "t_3o2Gex",
+          "name": "Genk",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/9b96ee679f6ab109dcea2d24d1d5b67b8f5bf968038cbddc036966df9cdbdcaf.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_3B1YkJ",
+          "home_team": {
+            "id": "t_11R95l",
+            "name": "St.Truiden",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/dd6e3aa3a230e69a5b13c385696a5e357528a93e2c9ae68d88835e2cb5bfb9e9.webp"
+          },
+          "away_team": {
+            "id": "t_3o2Gex",
+            "name": "Genk",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/9b96ee679f6ab109dcea2d24d1d5b67b8f5bf968038cbddc036966df9cdbdcaf.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
           }
         }
       }
@@ -175335,6 +178437,869 @@
       "schema_version": 1,
       "provider": "PitchAPI",
       "match_id": "m_3U7fq9",
+      "snapshot": "J-1",
+      "kickoff_utc": "2026-11-28T07:00:00+00:00",
+      "collected_at_utc": "2026-11-27T00:39:38.002208+00:00",
+      "competition": "J1 League",
+      "home_team": "Kashiwa Reysol",
+      "away_team": "Sanfrecce Hiroshima",
+      "status": "provided",
+      "lineups": {
+        "match_id": "m_3U7fq9",
+        "home_team": {
+          "id": "t_49j3Z1",
+          "name": "Kashiwa Reysol",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/e63f20e3288c9199c5c3f8c0b53ab41fdbebbca6e1f9d3c292aead3119ea63cf.webp"
+        },
+        "away_team": {
+          "id": "t_4Oonn6",
+          "name": "Sanfrecce Hiroshima",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/e5b0ecf98a46b261aa6de1108102a858ac32c651babce189e62598cde2268338.webp"
+        },
+        "home": {
+          "formation": "3-4-2-1",
+          "confirmed": false,
+          "lineup_type": "lastStarting11",
+          "coach": {
+            "name": "Ricardo Rodríguez"
+          },
+          "starters": [
+            {
+              "player_id": "p_4LSlIL",
+              "name": "Kengo Nagai",
+              "shirt_number": "29",
+              "position_id": 11,
+              "is_captain": false,
+              "pitch_x": 0.1,
+              "pitch_y": 0.5
+            },
+            {
+              "player_id": "p_20HX5N",
+              "name": "Wataru Harada",
+              "shirt_number": "42",
+              "position_id": 33,
+              "is_captain": false,
+              "pitch_x": 0.29,
+              "pitch_y": 0.79
+            },
+            {
+              "player_id": "p_40fJuX",
+              "name": "Taiyo Koga",
+              "shirt_number": "4",
+              "position_id": 35,
+              "is_captain": false,
+              "pitch_x": 0.29,
+              "pitch_y": 0.5
+            },
+            {
+              "player_id": "p_1u0S43",
+              "name": "Hiromu Mitsumaru",
+              "shirt_number": "2",
+              "position_id": 37,
+              "is_captain": false,
+              "pitch_x": 0.29,
+              "pitch_y": 0.21
+            },
+            {
+              "player_id": "p_2M7h24",
+              "name": "Tojiro Kubo",
+              "shirt_number": "24",
+              "position_id": 62,
+              "is_captain": false,
+              "pitch_x": 0.49,
+              "pitch_y": 0.88
+            },
+            {
+              "player_id": "p_0RQfZT",
+              "name": "Nobuteru Nakagawa",
+              "shirt_number": "39",
+              "position_id": 64,
+              "is_captain": false,
+              "pitch_x": 0.49,
+              "pitch_y": 0.63
+            },
+            {
+              "player_id": "p_3XNjQL",
+              "name": "Riki Harakawa",
+              "shirt_number": "40",
+              "position_id": 66,
+              "is_captain": false,
+              "pitch_x": 0.49,
+              "pitch_y": 0.38
+            },
+            {
+              "player_id": "p_2p4KEb",
+              "name": "Keita Endo",
+              "shirt_number": "5",
+              "position_id": 68,
+              "is_captain": false,
+              "pitch_x": 0.49,
+              "pitch_y": 0.13
+            },
+            {
+              "player_id": "p_3CfPVQ",
+              "name": "Yoshio Koizumi",
+              "shirt_number": "8",
+              "position_id": 84,
+              "is_captain": false,
+              "pitch_x": 0.68,
+              "pitch_y": 0.7
+            },
+            {
+              "player_id": "p_40gul0",
+              "name": "Hinata Yamauchi",
+              "shirt_number": "87",
+              "position_id": 86,
+              "is_captain": false,
+              "pitch_x": 0.68,
+              "pitch_y": 0.3
+            },
+            {
+              "player_id": "p_44OfS6",
+              "name": "Shota Fujio",
+              "shirt_number": "15",
+              "position_id": 105,
+              "is_captain": false,
+              "pitch_x": 0.87,
+              "pitch_y": 0.5
+            }
+          ],
+          "subs": [
+            {
+              "player_id": "p_3Mlaxy",
+              "name": "Ryosuke Kojima",
+              "shirt_number": "25",
+              "position_id": 0,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_2BOlI3",
+              "name": "Yushin Kaneko",
+              "shirt_number": "63",
+              "position_id": 0,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_1emGci",
+              "name": "Daiki Sugioka",
+              "shirt_number": "26",
+              "position_id": 1,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_3CKGAR",
+              "name": "Tomoya Inukai",
+              "shirt_number": "13",
+              "position_id": 1,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_0TzLPj",
+              "name": "Kenshin Yuba",
+              "shirt_number": "44",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_3tW3F1",
+              "name": "Koya Yuruki",
+              "shirt_number": "16",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_0GjE6e",
+              "name": "Masaki Watai",
+              "shirt_number": "11",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_0hfkoU",
+              "name": "Yuito Kamo",
+              "shirt_number": "43",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_1iJcIq",
+              "name": "Yusei Yamanouchi",
+              "shirt_number": "32",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_4Apkyf",
+              "name": "Yusuke Segawa",
+              "shirt_number": "20",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_3ueaNe",
+              "name": "Mao Hosoya",
+              "shirt_number": "9",
+              "position_id": 3,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_2CbUoL",
+              "name": "Yuki Kakita",
+              "shirt_number": "18",
+              "position_id": 3,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            }
+          ]
+        },
+        "away": {
+          "formation": "3-4-2-1",
+          "confirmed": false,
+          "lineup_type": "lastStarting11",
+          "coach": {
+            "name": "Bartosch Gaul"
+          },
+          "starters": [
+            {
+              "player_id": "p_4RrtUl",
+              "name": "Keisuke Osako",
+              "shirt_number": "1",
+              "position_id": 11,
+              "is_captain": false,
+              "pitch_x": 0.1,
+              "pitch_y": 0.5
+            },
+            {
+              "player_id": "p_2XRFu6",
+              "name": "Shuto Nakano",
+              "shirt_number": "15",
+              "position_id": 33,
+              "is_captain": false,
+              "pitch_x": 0.29,
+              "pitch_y": 0.79
+            },
+            {
+              "player_id": "p_1l3Vix",
+              "name": "Hayato Araki",
+              "shirt_number": "4",
+              "position_id": 35,
+              "is_captain": false,
+              "pitch_x": 0.29,
+              "pitch_y": 0.5
+            },
+            {
+              "player_id": "p_0S1Yov",
+              "name": "Ju-Sung Kim",
+              "shirt_number": "37",
+              "position_id": 37,
+              "is_captain": false,
+              "pitch_x": 0.29,
+              "pitch_y": 0.21
+            },
+            {
+              "player_id": "p_2RP0eE",
+              "name": "Naoto Arai",
+              "shirt_number": "5",
+              "position_id": 62,
+              "is_captain": false,
+              "pitch_x": 0.49,
+              "pitch_y": 0.88
+            },
+            {
+              "player_id": "p_49ZPny",
+              "name": "Hayao Kawabe",
+              "shirt_number": "6",
+              "position_id": 64,
+              "is_captain": false,
+              "pitch_x": 0.49,
+              "pitch_y": 0.63
+            },
+            {
+              "player_id": "p_42oYiF",
+              "name": "Yotaro Nakajima",
+              "shirt_number": "35",
+              "position_id": 66,
+              "is_captain": false,
+              "pitch_x": 0.49,
+              "pitch_y": 0.38
+            },
+            {
+              "player_id": "p_0sNCW0",
+              "name": "Shunki Higashi",
+              "shirt_number": "7",
+              "position_id": 68,
+              "is_captain": false,
+              "pitch_x": 0.49,
+              "pitch_y": 0.13
+            },
+            {
+              "player_id": "p_4MWZsM",
+              "name": "Shun Ayukawa",
+              "shirt_number": "23",
+              "position_id": 84,
+              "is_captain": false,
+              "pitch_x": 0.68,
+              "pitch_y": 0.7
+            },
+            {
+              "player_id": "p_3UdrXO",
+              "name": "Akito Suzuki",
+              "shirt_number": "10",
+              "position_id": 86,
+              "is_captain": false,
+              "pitch_x": 0.68,
+              "pitch_y": 0.3
+            },
+            {
+              "player_id": "p_2KlTS0",
+              "name": "Sébastien Haller",
+              "shirt_number": "22",
+              "position_id": 105,
+              "is_captain": false,
+              "pitch_x": 0.87,
+              "pitch_y": 0.5
+            }
+          ],
+          "subs": [
+            {
+              "player_id": "p_0OL7pl",
+              "name": "Issei Ouchi",
+              "shirt_number": "99",
+              "position_id": 0,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_0Ce9gJ",
+              "name": "Yudai Tanaka",
+              "shirt_number": "21",
+              "position_id": 0,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_2Ak6g9",
+              "name": "Daiki Suga",
+              "shirt_number": "18",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_2FlpqP",
+              "name": "Naoki Maeda",
+              "shirt_number": "41",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_12X7uB",
+              "name": "Rento Noguchi",
+              "shirt_number": "46",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_20yuhn",
+              "name": "Shimon Kobayashi",
+              "shirt_number": "45",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_0fkY97",
+              "name": "Sota Koshimichi",
+              "shirt_number": "32",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_02QDkQ",
+              "name": "Taishi Matsumoto",
+              "shirt_number": "14",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_3ZjXmn",
+              "name": "Kusini Yengi",
+              "shirt_number": "9",
+              "position_id": 3,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            }
+          ]
+        }
+      },
+      "message": null,
+      "raw_response": {
+        "data": {
+          "match_id": "m_3U7fq9",
+          "home_team": {
+            "id": "t_49j3Z1",
+            "name": "Kashiwa Reysol",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/e63f20e3288c9199c5c3f8c0b53ab41fdbebbca6e1f9d3c292aead3119ea63cf.webp"
+          },
+          "away_team": {
+            "id": "t_4Oonn6",
+            "name": "Sanfrecce Hiroshima",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/e5b0ecf98a46b261aa6de1108102a858ac32c651babce189e62598cde2268338.webp"
+          },
+          "home": {
+            "formation": "3-4-2-1",
+            "confirmed": false,
+            "lineup_type": "lastStarting11",
+            "coach": {
+              "name": "Ricardo Rodríguez"
+            },
+            "starters": [
+              {
+                "player_id": "p_4LSlIL",
+                "name": "Kengo Nagai",
+                "shirt_number": "29",
+                "position_id": 11,
+                "is_captain": false,
+                "pitch_x": 0.1,
+                "pitch_y": 0.5
+              },
+              {
+                "player_id": "p_20HX5N",
+                "name": "Wataru Harada",
+                "shirt_number": "42",
+                "position_id": 33,
+                "is_captain": false,
+                "pitch_x": 0.29,
+                "pitch_y": 0.79
+              },
+              {
+                "player_id": "p_40fJuX",
+                "name": "Taiyo Koga",
+                "shirt_number": "4",
+                "position_id": 35,
+                "is_captain": false,
+                "pitch_x": 0.29,
+                "pitch_y": 0.5
+              },
+              {
+                "player_id": "p_1u0S43",
+                "name": "Hiromu Mitsumaru",
+                "shirt_number": "2",
+                "position_id": 37,
+                "is_captain": false,
+                "pitch_x": 0.29,
+                "pitch_y": 0.21
+              },
+              {
+                "player_id": "p_2M7h24",
+                "name": "Tojiro Kubo",
+                "shirt_number": "24",
+                "position_id": 62,
+                "is_captain": false,
+                "pitch_x": 0.49,
+                "pitch_y": 0.88
+              },
+              {
+                "player_id": "p_0RQfZT",
+                "name": "Nobuteru Nakagawa",
+                "shirt_number": "39",
+                "position_id": 64,
+                "is_captain": false,
+                "pitch_x": 0.49,
+                "pitch_y": 0.63
+              },
+              {
+                "player_id": "p_3XNjQL",
+                "name": "Riki Harakawa",
+                "shirt_number": "40",
+                "position_id": 66,
+                "is_captain": false,
+                "pitch_x": 0.49,
+                "pitch_y": 0.38
+              },
+              {
+                "player_id": "p_2p4KEb",
+                "name": "Keita Endo",
+                "shirt_number": "5",
+                "position_id": 68,
+                "is_captain": false,
+                "pitch_x": 0.49,
+                "pitch_y": 0.13
+              },
+              {
+                "player_id": "p_3CfPVQ",
+                "name": "Yoshio Koizumi",
+                "shirt_number": "8",
+                "position_id": 84,
+                "is_captain": false,
+                "pitch_x": 0.68,
+                "pitch_y": 0.7
+              },
+              {
+                "player_id": "p_40gul0",
+                "name": "Hinata Yamauchi",
+                "shirt_number": "87",
+                "position_id": 86,
+                "is_captain": false,
+                "pitch_x": 0.68,
+                "pitch_y": 0.3
+              },
+              {
+                "player_id": "p_44OfS6",
+                "name": "Shota Fujio",
+                "shirt_number": "15",
+                "position_id": 105,
+                "is_captain": false,
+                "pitch_x": 0.87,
+                "pitch_y": 0.5
+              }
+            ],
+            "subs": [
+              {
+                "player_id": "p_3Mlaxy",
+                "name": "Ryosuke Kojima",
+                "shirt_number": "25",
+                "position_id": 0,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_2BOlI3",
+                "name": "Yushin Kaneko",
+                "shirt_number": "63",
+                "position_id": 0,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_1emGci",
+                "name": "Daiki Sugioka",
+                "shirt_number": "26",
+                "position_id": 1,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_3CKGAR",
+                "name": "Tomoya Inukai",
+                "shirt_number": "13",
+                "position_id": 1,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_0TzLPj",
+                "name": "Kenshin Yuba",
+                "shirt_number": "44",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_3tW3F1",
+                "name": "Koya Yuruki",
+                "shirt_number": "16",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_0GjE6e",
+                "name": "Masaki Watai",
+                "shirt_number": "11",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_0hfkoU",
+                "name": "Yuito Kamo",
+                "shirt_number": "43",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_1iJcIq",
+                "name": "Yusei Yamanouchi",
+                "shirt_number": "32",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_4Apkyf",
+                "name": "Yusuke Segawa",
+                "shirt_number": "20",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_3ueaNe",
+                "name": "Mao Hosoya",
+                "shirt_number": "9",
+                "position_id": 3,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_2CbUoL",
+                "name": "Yuki Kakita",
+                "shirt_number": "18",
+                "position_id": 3,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              }
+            ]
+          },
+          "away": {
+            "formation": "3-4-2-1",
+            "confirmed": false,
+            "lineup_type": "lastStarting11",
+            "coach": {
+              "name": "Bartosch Gaul"
+            },
+            "starters": [
+              {
+                "player_id": "p_4RrtUl",
+                "name": "Keisuke Osako",
+                "shirt_number": "1",
+                "position_id": 11,
+                "is_captain": false,
+                "pitch_x": 0.1,
+                "pitch_y": 0.5
+              },
+              {
+                "player_id": "p_2XRFu6",
+                "name": "Shuto Nakano",
+                "shirt_number": "15",
+                "position_id": 33,
+                "is_captain": false,
+                "pitch_x": 0.29,
+                "pitch_y": 0.79
+              },
+              {
+                "player_id": "p_1l3Vix",
+                "name": "Hayato Araki",
+                "shirt_number": "4",
+                "position_id": 35,
+                "is_captain": false,
+                "pitch_x": 0.29,
+                "pitch_y": 0.5
+              },
+              {
+                "player_id": "p_0S1Yov",
+                "name": "Ju-Sung Kim",
+                "shirt_number": "37",
+                "position_id": 37,
+                "is_captain": false,
+                "pitch_x": 0.29,
+                "pitch_y": 0.21
+              },
+              {
+                "player_id": "p_2RP0eE",
+                "name": "Naoto Arai",
+                "shirt_number": "5",
+                "position_id": 62,
+                "is_captain": false,
+                "pitch_x": 0.49,
+                "pitch_y": 0.88
+              },
+              {
+                "player_id": "p_49ZPny",
+                "name": "Hayao Kawabe",
+                "shirt_number": "6",
+                "position_id": 64,
+                "is_captain": false,
+                "pitch_x": 0.49,
+                "pitch_y": 0.63
+              },
+              {
+                "player_id": "p_42oYiF",
+                "name": "Yotaro Nakajima",
+                "shirt_number": "35",
+                "position_id": 66,
+                "is_captain": false,
+                "pitch_x": 0.49,
+                "pitch_y": 0.38
+              },
+              {
+                "player_id": "p_0sNCW0",
+                "name": "Shunki Higashi",
+                "shirt_number": "7",
+                "position_id": 68,
+                "is_captain": false,
+                "pitch_x": 0.49,
+                "pitch_y": 0.13
+              },
+              {
+                "player_id": "p_4MWZsM",
+                "name": "Shun Ayukawa",
+                "shirt_number": "23",
+                "position_id": 84,
+                "is_captain": false,
+                "pitch_x": 0.68,
+                "pitch_y": 0.7
+              },
+              {
+                "player_id": "p_3UdrXO",
+                "name": "Akito Suzuki",
+                "shirt_number": "10",
+                "position_id": 86,
+                "is_captain": false,
+                "pitch_x": 0.68,
+                "pitch_y": 0.3
+              },
+              {
+                "player_id": "p_2KlTS0",
+                "name": "Sébastien Haller",
+                "shirt_number": "22",
+                "position_id": 105,
+                "is_captain": false,
+                "pitch_x": 0.87,
+                "pitch_y": 0.5
+              }
+            ],
+            "subs": [
+              {
+                "player_id": "p_0OL7pl",
+                "name": "Issei Ouchi",
+                "shirt_number": "99",
+                "position_id": 0,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_0Ce9gJ",
+                "name": "Yudai Tanaka",
+                "shirt_number": "21",
+                "position_id": 0,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_2Ak6g9",
+                "name": "Daiki Suga",
+                "shirt_number": "18",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_2FlpqP",
+                "name": "Naoki Maeda",
+                "shirt_number": "41",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_12X7uB",
+                "name": "Rento Noguchi",
+                "shirt_number": "46",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_20yuhn",
+                "name": "Shimon Kobayashi",
+                "shirt_number": "45",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_0fkY97",
+                "name": "Sota Koshimichi",
+                "shirt_number": "32",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_02QDkQ",
+                "name": "Taishi Matsumoto",
+                "shirt_number": "14",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_3ZjXmn",
+                "name": "Kusini Yengi",
+                "shirt_number": "9",
+                "position_id": 3,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_3U7fq9",
       "snapshot": "J-2",
       "kickoff_utc": "2026-11-28T07:00:00+00:00",
       "collected_at_utc": "2026-11-25T22:36:47.827038+00:00",
@@ -179080,6 +183045,869 @@
       "schema_version": 1,
       "provider": "PitchAPI",
       "match_id": "m_3aYreU",
+      "snapshot": "J-1",
+      "kickoff_utc": "2026-11-28T06:00:00+00:00",
+      "collected_at_utc": "2026-11-27T00:39:38.002208+00:00",
+      "competition": "J1 League",
+      "home_team": "Kashima Antlers",
+      "away_team": "Fagiano Okayama FC",
+      "status": "provided",
+      "lineups": {
+        "match_id": "m_3aYreU",
+        "home_team": {
+          "id": "t_3RSWKx",
+          "name": "Kashima Antlers",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/d933c712bc9fcd3c920f090c2fb009be1e8e2dbaa6cae7716676bd59823d70a1.webp"
+        },
+        "away_team": {
+          "id": "t_2fx2NT",
+          "name": "Fagiano Okayama FC",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/593bad4c81f93182a2721fab888521ef3ff9357a015eb1b582735ceae4569b64.webp"
+        },
+        "home": {
+          "formation": "4-4-2",
+          "confirmed": false,
+          "lineup_type": "lastStarting11",
+          "coach": {
+            "name": "Toru Oniki"
+          },
+          "starters": [
+            {
+              "player_id": "p_1Xtnpu",
+              "name": "Tomoki Hayakawa",
+              "shirt_number": "1",
+              "position_id": 11,
+              "is_captain": false,
+              "pitch_x": 0.1,
+              "pitch_y": 0.5
+            },
+            {
+              "player_id": "p_1lw8gp",
+              "name": "Keisuke Tsukui",
+              "shirt_number": "23",
+              "position_id": 32,
+              "is_captain": false,
+              "pitch_x": 0.36,
+              "pitch_y": 0.88
+            },
+            {
+              "player_id": "p_0lnqGv",
+              "name": "Naomichi Ueda",
+              "shirt_number": "55",
+              "position_id": 34,
+              "is_captain": false,
+              "pitch_x": 0.36,
+              "pitch_y": 0.63
+            },
+            {
+              "player_id": "p_2tgjSR",
+              "name": "Kaito Chida",
+              "shirt_number": "4",
+              "position_id": 36,
+              "is_captain": false,
+              "pitch_x": 0.36,
+              "pitch_y": 0.38
+            },
+            {
+              "player_id": "p_1M9Bma",
+              "name": "Ryoya Ogawa",
+              "shirt_number": "7",
+              "position_id": 38,
+              "is_captain": false,
+              "pitch_x": 0.36,
+              "pitch_y": 0.13
+            },
+            {
+              "player_id": "p_3PLSga",
+              "name": "Yuta Matsumura",
+              "shirt_number": "27",
+              "position_id": 72,
+              "is_captain": false,
+              "pitch_x": 0.61,
+              "pitch_y": 0.88
+            },
+            {
+              "player_id": "p_2KD05n",
+              "name": "Gaku Shibasaki",
+              "shirt_number": "10",
+              "position_id": 74,
+              "is_captain": false,
+              "pitch_x": 0.61,
+              "pitch_y": 0.63
+            },
+            {
+              "player_id": "p_3wgM2d",
+              "name": "Kento Misao",
+              "shirt_number": "6",
+              "position_id": 76,
+              "is_captain": false,
+              "pitch_x": 0.61,
+              "pitch_y": 0.38
+            },
+            {
+              "player_id": "p_3PDMiI",
+              "name": "José Élber",
+              "shirt_number": "17",
+              "position_id": 78,
+              "is_captain": false,
+              "pitch_x": 0.61,
+              "pitch_y": 0.13
+            },
+            {
+              "player_id": "p_3mhMKe",
+              "name": "Aleksandar Čavrić",
+              "shirt_number": "77",
+              "position_id": 104,
+              "is_captain": false,
+              "pitch_x": 0.87,
+              "pitch_y": 0.7
+            },
+            {
+              "player_id": "p_3Gk3rJ",
+              "name": "Léo Ceará",
+              "shirt_number": "9",
+              "position_id": 106,
+              "is_captain": false,
+              "pitch_x": 0.87,
+              "pitch_y": 0.3
+            }
+          ],
+          "subs": [
+            {
+              "player_id": "p_2geZWA",
+              "name": "Taiki Yamada",
+              "shirt_number": "21",
+              "position_id": 0,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_2JRRLX",
+              "name": "Yuji Kajikawa",
+              "shirt_number": "29",
+              "position_id": 0,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_3T9cbz",
+              "name": "Haruto Matsumoto",
+              "shirt_number": "32",
+              "position_id": 1,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_2E6Nn2",
+              "name": "Ikuma Sekigawa",
+              "shirt_number": "5",
+              "position_id": 1,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_2iJmck",
+              "name": "Haruki Hayashi",
+              "shirt_number": "24",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_09SFPK",
+              "name": "Matheus Bueno",
+              "shirt_number": "8",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_2bIpdh",
+              "name": "Rui Onuki",
+              "shirt_number": "42",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_4Fe6m0",
+              "name": "Yugo Okawa",
+              "shirt_number": "28",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_3o9n2u",
+              "name": "Daigo Hirashima",
+              "shirt_number": "44",
+              "position_id": 3,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_0pz2zI",
+              "name": "Homare Tokuda",
+              "shirt_number": "34",
+              "position_id": 3,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_2iIicu",
+              "name": "Minato Yoshida",
+              "shirt_number": "30",
+              "position_id": 3,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_0iQ0Uw",
+              "name": "Yuma Suzuki",
+              "shirt_number": "40",
+              "position_id": 3,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            }
+          ]
+        },
+        "away": {
+          "formation": "3-4-2-1",
+          "confirmed": false,
+          "lineup_type": "lastStarting11",
+          "coach": {
+            "name": "Takashi Kiyama"
+          },
+          "starters": [
+            {
+              "player_id": "p_0RgauG",
+              "name": "Lennart Moser",
+              "shirt_number": "1",
+              "position_id": 11,
+              "is_captain": false,
+              "pitch_x": 0.1,
+              "pitch_y": 0.5
+            },
+            {
+              "player_id": "p_1k40Um",
+              "name": "Soichiro Mori",
+              "shirt_number": "44",
+              "position_id": 33,
+              "is_captain": false,
+              "pitch_x": 0.29,
+              "pitch_y": 0.79
+            },
+            {
+              "player_id": "p_014IjY",
+              "name": "Yugo Tatsuta",
+              "shirt_number": "48",
+              "position_id": 35,
+              "is_captain": false,
+              "pitch_x": 0.29,
+              "pitch_y": 0.5
+            },
+            {
+              "player_id": "p_0tBXjv",
+              "name": "Yoshitake Suzuki",
+              "shirt_number": "43",
+              "position_id": 37,
+              "is_captain": false,
+              "pitch_x": 0.29,
+              "pitch_y": 0.21
+            },
+            {
+              "player_id": "p_11zhGO",
+              "name": "Masaya Matsumoto",
+              "shirt_number": "28",
+              "position_id": 62,
+              "is_captain": false,
+              "pitch_x": 0.49,
+              "pitch_y": 0.88
+            },
+            {
+              "player_id": "p_2zeLzJ",
+              "name": "Eiji Miyamoto",
+              "shirt_number": "41",
+              "position_id": 64,
+              "is_captain": false,
+              "pitch_x": 0.49,
+              "pitch_y": 0.63
+            },
+            {
+              "player_id": "p_26f2tS",
+              "name": "Oberdan",
+              "shirt_number": "80",
+              "position_id": 66,
+              "is_captain": false,
+              "pitch_x": 0.49,
+              "pitch_y": 0.38
+            },
+            {
+              "player_id": "p_2kxEMn",
+              "name": "Towa Yamane",
+              "shirt_number": "88",
+              "position_id": 68,
+              "is_captain": false,
+              "pitch_x": 0.49,
+              "pitch_y": 0.13
+            },
+            {
+              "player_id": "p_0xhoy4",
+              "name": "Sang-Ho Na",
+              "shirt_number": "10",
+              "position_id": 84,
+              "is_captain": false,
+              "pitch_x": 0.68,
+              "pitch_y": 0.7
+            },
+            {
+              "player_id": "p_0tZvSm",
+              "name": "Ataru Esaka",
+              "shirt_number": "8",
+              "position_id": 86,
+              "is_captain": false,
+              "pitch_x": 0.68,
+              "pitch_y": 0.3
+            },
+            {
+              "player_id": "p_12C5cD",
+              "name": "Lucão",
+              "shirt_number": "99",
+              "position_id": 105,
+              "is_captain": false,
+              "pitch_x": 0.87,
+              "pitch_y": 0.5
+            }
+          ],
+          "subs": [
+            {
+              "player_id": "p_2DPnvK",
+              "name": "Taro Hamada",
+              "shirt_number": "52",
+              "position_id": 0,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_0zSHXw",
+              "name": "Haruka Motoyama",
+              "shirt_number": "26",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_3RWRQD",
+              "name": "Ibuki Fujita",
+              "shirt_number": "24",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_0as32u",
+              "name": "Kosuke Shirai",
+              "shirt_number": "51",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_4KTzRY",
+              "name": "Kota Kawano",
+              "shirt_number": "20",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_4X6KTz",
+              "name": "Noah Kenshin Browne",
+              "shirt_number": "79",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_26cvAE",
+              "name": "Ryo Takeuchi",
+              "shirt_number": "7",
+              "position_id": 2,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_41k6Y7",
+              "name": "Léo Gaúcho",
+              "shirt_number": "9",
+              "position_id": 3,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            },
+            {
+              "player_id": "p_3y6uFw",
+              "name": "Ryoga Sato",
+              "shirt_number": "19",
+              "position_id": 3,
+              "is_captain": false,
+              "pitch_x": 0,
+              "pitch_y": 0
+            }
+          ]
+        }
+      },
+      "message": null,
+      "raw_response": {
+        "data": {
+          "match_id": "m_3aYreU",
+          "home_team": {
+            "id": "t_3RSWKx",
+            "name": "Kashima Antlers",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/d933c712bc9fcd3c920f090c2fb009be1e8e2dbaa6cae7716676bd59823d70a1.webp"
+          },
+          "away_team": {
+            "id": "t_2fx2NT",
+            "name": "Fagiano Okayama FC",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/593bad4c81f93182a2721fab888521ef3ff9357a015eb1b582735ceae4569b64.webp"
+          },
+          "home": {
+            "formation": "4-4-2",
+            "confirmed": false,
+            "lineup_type": "lastStarting11",
+            "coach": {
+              "name": "Toru Oniki"
+            },
+            "starters": [
+              {
+                "player_id": "p_1Xtnpu",
+                "name": "Tomoki Hayakawa",
+                "shirt_number": "1",
+                "position_id": 11,
+                "is_captain": false,
+                "pitch_x": 0.1,
+                "pitch_y": 0.5
+              },
+              {
+                "player_id": "p_1lw8gp",
+                "name": "Keisuke Tsukui",
+                "shirt_number": "23",
+                "position_id": 32,
+                "is_captain": false,
+                "pitch_x": 0.36,
+                "pitch_y": 0.88
+              },
+              {
+                "player_id": "p_0lnqGv",
+                "name": "Naomichi Ueda",
+                "shirt_number": "55",
+                "position_id": 34,
+                "is_captain": false,
+                "pitch_x": 0.36,
+                "pitch_y": 0.63
+              },
+              {
+                "player_id": "p_2tgjSR",
+                "name": "Kaito Chida",
+                "shirt_number": "4",
+                "position_id": 36,
+                "is_captain": false,
+                "pitch_x": 0.36,
+                "pitch_y": 0.38
+              },
+              {
+                "player_id": "p_1M9Bma",
+                "name": "Ryoya Ogawa",
+                "shirt_number": "7",
+                "position_id": 38,
+                "is_captain": false,
+                "pitch_x": 0.36,
+                "pitch_y": 0.13
+              },
+              {
+                "player_id": "p_3PLSga",
+                "name": "Yuta Matsumura",
+                "shirt_number": "27",
+                "position_id": 72,
+                "is_captain": false,
+                "pitch_x": 0.61,
+                "pitch_y": 0.88
+              },
+              {
+                "player_id": "p_2KD05n",
+                "name": "Gaku Shibasaki",
+                "shirt_number": "10",
+                "position_id": 74,
+                "is_captain": false,
+                "pitch_x": 0.61,
+                "pitch_y": 0.63
+              },
+              {
+                "player_id": "p_3wgM2d",
+                "name": "Kento Misao",
+                "shirt_number": "6",
+                "position_id": 76,
+                "is_captain": false,
+                "pitch_x": 0.61,
+                "pitch_y": 0.38
+              },
+              {
+                "player_id": "p_3PDMiI",
+                "name": "José Élber",
+                "shirt_number": "17",
+                "position_id": 78,
+                "is_captain": false,
+                "pitch_x": 0.61,
+                "pitch_y": 0.13
+              },
+              {
+                "player_id": "p_3mhMKe",
+                "name": "Aleksandar Čavrić",
+                "shirt_number": "77",
+                "position_id": 104,
+                "is_captain": false,
+                "pitch_x": 0.87,
+                "pitch_y": 0.7
+              },
+              {
+                "player_id": "p_3Gk3rJ",
+                "name": "Léo Ceará",
+                "shirt_number": "9",
+                "position_id": 106,
+                "is_captain": false,
+                "pitch_x": 0.87,
+                "pitch_y": 0.3
+              }
+            ],
+            "subs": [
+              {
+                "player_id": "p_2geZWA",
+                "name": "Taiki Yamada",
+                "shirt_number": "21",
+                "position_id": 0,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_2JRRLX",
+                "name": "Yuji Kajikawa",
+                "shirt_number": "29",
+                "position_id": 0,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_3T9cbz",
+                "name": "Haruto Matsumoto",
+                "shirt_number": "32",
+                "position_id": 1,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_2E6Nn2",
+                "name": "Ikuma Sekigawa",
+                "shirt_number": "5",
+                "position_id": 1,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_2iJmck",
+                "name": "Haruki Hayashi",
+                "shirt_number": "24",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_09SFPK",
+                "name": "Matheus Bueno",
+                "shirt_number": "8",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_2bIpdh",
+                "name": "Rui Onuki",
+                "shirt_number": "42",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_4Fe6m0",
+                "name": "Yugo Okawa",
+                "shirt_number": "28",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_3o9n2u",
+                "name": "Daigo Hirashima",
+                "shirt_number": "44",
+                "position_id": 3,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_0pz2zI",
+                "name": "Homare Tokuda",
+                "shirt_number": "34",
+                "position_id": 3,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_2iIicu",
+                "name": "Minato Yoshida",
+                "shirt_number": "30",
+                "position_id": 3,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_0iQ0Uw",
+                "name": "Yuma Suzuki",
+                "shirt_number": "40",
+                "position_id": 3,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              }
+            ]
+          },
+          "away": {
+            "formation": "3-4-2-1",
+            "confirmed": false,
+            "lineup_type": "lastStarting11",
+            "coach": {
+              "name": "Takashi Kiyama"
+            },
+            "starters": [
+              {
+                "player_id": "p_0RgauG",
+                "name": "Lennart Moser",
+                "shirt_number": "1",
+                "position_id": 11,
+                "is_captain": false,
+                "pitch_x": 0.1,
+                "pitch_y": 0.5
+              },
+              {
+                "player_id": "p_1k40Um",
+                "name": "Soichiro Mori",
+                "shirt_number": "44",
+                "position_id": 33,
+                "is_captain": false,
+                "pitch_x": 0.29,
+                "pitch_y": 0.79
+              },
+              {
+                "player_id": "p_014IjY",
+                "name": "Yugo Tatsuta",
+                "shirt_number": "48",
+                "position_id": 35,
+                "is_captain": false,
+                "pitch_x": 0.29,
+                "pitch_y": 0.5
+              },
+              {
+                "player_id": "p_0tBXjv",
+                "name": "Yoshitake Suzuki",
+                "shirt_number": "43",
+                "position_id": 37,
+                "is_captain": false,
+                "pitch_x": 0.29,
+                "pitch_y": 0.21
+              },
+              {
+                "player_id": "p_11zhGO",
+                "name": "Masaya Matsumoto",
+                "shirt_number": "28",
+                "position_id": 62,
+                "is_captain": false,
+                "pitch_x": 0.49,
+                "pitch_y": 0.88
+              },
+              {
+                "player_id": "p_2zeLzJ",
+                "name": "Eiji Miyamoto",
+                "shirt_number": "41",
+                "position_id": 64,
+                "is_captain": false,
+                "pitch_x": 0.49,
+                "pitch_y": 0.63
+              },
+              {
+                "player_id": "p_26f2tS",
+                "name": "Oberdan",
+                "shirt_number": "80",
+                "position_id": 66,
+                "is_captain": false,
+                "pitch_x": 0.49,
+                "pitch_y": 0.38
+              },
+              {
+                "player_id": "p_2kxEMn",
+                "name": "Towa Yamane",
+                "shirt_number": "88",
+                "position_id": 68,
+                "is_captain": false,
+                "pitch_x": 0.49,
+                "pitch_y": 0.13
+              },
+              {
+                "player_id": "p_0xhoy4",
+                "name": "Sang-Ho Na",
+                "shirt_number": "10",
+                "position_id": 84,
+                "is_captain": false,
+                "pitch_x": 0.68,
+                "pitch_y": 0.7
+              },
+              {
+                "player_id": "p_0tZvSm",
+                "name": "Ataru Esaka",
+                "shirt_number": "8",
+                "position_id": 86,
+                "is_captain": false,
+                "pitch_x": 0.68,
+                "pitch_y": 0.3
+              },
+              {
+                "player_id": "p_12C5cD",
+                "name": "Lucão",
+                "shirt_number": "99",
+                "position_id": 105,
+                "is_captain": false,
+                "pitch_x": 0.87,
+                "pitch_y": 0.5
+              }
+            ],
+            "subs": [
+              {
+                "player_id": "p_2DPnvK",
+                "name": "Taro Hamada",
+                "shirt_number": "52",
+                "position_id": 0,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_0zSHXw",
+                "name": "Haruka Motoyama",
+                "shirt_number": "26",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_3RWRQD",
+                "name": "Ibuki Fujita",
+                "shirt_number": "24",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_0as32u",
+                "name": "Kosuke Shirai",
+                "shirt_number": "51",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_4KTzRY",
+                "name": "Kota Kawano",
+                "shirt_number": "20",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_4X6KTz",
+                "name": "Noah Kenshin Browne",
+                "shirt_number": "79",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_26cvAE",
+                "name": "Ryo Takeuchi",
+                "shirt_number": "7",
+                "position_id": 2,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_41k6Y7",
+                "name": "Léo Gaúcho",
+                "shirt_number": "9",
+                "position_id": 3,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              },
+              {
+                "player_id": "p_3y6uFw",
+                "name": "Ryoga Sato",
+                "shirt_number": "19",
+                "position_id": 3,
+                "is_captain": false,
+                "pitch_x": 0,
+                "pitch_y": 0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_3aYreU",
       "snapshot": "J-2",
       "kickoff_utc": "2026-11-28T06:00:00+00:00",
       "collected_at_utc": "2026-11-25T22:36:47.827038+00:00",
@@ -182751,6 +187579,71 @@
             "id": "t_3i7zAH",
             "name": "Getafe",
             "image_url": "https://cdn.pitchapi.dev/images/teams/20e0f7f9929f4ff5886dc12a076fc16c191d455f36be5c2f90d9fd83798d9f77.webp"
+          },
+          "home": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          },
+          "away": {
+            "formation": "",
+            "confirmed": false,
+            "starters": null,
+            "subs": null
+          }
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "provider": "PitchAPI",
+      "match_id": "m_3jNltC",
+      "snapshot": "J-2",
+      "kickoff_utc": "2026-11-29T05:00:00+00:00",
+      "collected_at_utc": "2026-11-27T00:39:38.002208+00:00",
+      "competition": "J1 League",
+      "home_team": "Yokohama F.Marinos",
+      "away_team": "FC Tokyo",
+      "status": "metadata_only",
+      "lineups": {
+        "match_id": "m_3jNltC",
+        "home_team": {
+          "id": "t_1mTqNS",
+          "name": "Yokohama F.Marinos",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/75e1e0a290d0d8d4fa2e1c286ed90c0dd77c2b6d2f855b05141fc06c35329f47.webp"
+        },
+        "away_team": {
+          "id": "t_17gQhK",
+          "name": "FC Tokyo",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/f615b6c25401d6c580656741b7b4673c69c51b6cd7b9b81de36c2eb33a109b86.webp"
+        },
+        "home": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        },
+        "away": {
+          "formation": "",
+          "confirmed": false,
+          "starters": null,
+          "subs": null
+        }
+      },
+      "message": "Endpoint accessible, mais aucun titulaire ni remplaçant n'est fourni à cette échéance.",
+      "raw_response": {
+        "data": {
+          "match_id": "m_3jNltC",
+          "home_team": {
+            "id": "t_1mTqNS",
+            "name": "Yokohama F.Marinos",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/75e1e0a290d0d8d4fa2e1c286ed90c0dd77c2b6d2f855b05141fc06c35329f47.webp"
+          },
+          "away_team": {
+            "id": "t_17gQhK",
+            "name": "FC Tokyo",
+            "image_url": "https://cdn.pitchapi.dev/images/teams/f615b6c25401d6c580656741b7b4673c69c51b6cd7b9b81de36c2eb33a109b86.webp"
           },
           "home": {
             "formation": "",
