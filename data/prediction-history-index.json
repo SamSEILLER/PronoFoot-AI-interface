@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "active_version": "v1",
+  "active_version": "v2",
   "versions": [
     {
       "id": "v1",
@@ -15,21 +15,12 @@
     },
     {
       "id": "v2",
-      "label": "Moteur V2 — reconstruction rétroactive du 25/11/2026",
+      "label": "Moteur V2 — Method C Poisson (27/11/2026)",
       "archive": "prediction-history-v2.json",
-      "engine_model": "historical_team_goal_frequency_tiers_v2",
-      "status": "archived",
-      "created_at_utc": "2026-11-25T14:03:58.235979Z",
-      "description": "Reconstruction rétroactive V2 : fréquences des 10 derniers matchs de même compétition et saison, pré-match uniquement. OUI si les deux équipes atteignent 80 %, NON sinon; minimum 2 matchs valides par équipe. Correspondance fixture stricte équipes normalisées + date; ambigu ou absent = INDISPONIBLE. Archive indépendante de V1."
-    },
-    {
-      "id": "v3",
-      "label": "Moteur V3 — Method C + probabilité +1,5 (27/11/2026)",
-      "archive": "prediction-history-v3.json",
-      "engine_model": "method_c_venue_attack_defence_arithmetic_mean_v1",
-      "status": "experimental",
-      "created_at_utc": "2026-11-27T07:33:00Z",
-      "description": "Lambdas Method C : moyenne arithmétique attaque/défense selon le lieu, même compétition/saison et strictement pré-match. Probabilité Over 1.5 conservée et calculée par Poisson à partir du total des lambdas. Fréquences récentes et tendance 5 derniers vs 5 précédents conservées à titre descriptif; modèle non calibré."
+      "engine_model": "method_c_venue_attack_defence_arithmetic_mean_v2",
+      "status": "active",
+      "created_at_utc": "2026-11-27T09:09:00Z",
+      "description": "Method C : lambdas attaque/défense selon le lieu, même compétition/saison, strictement pré-match. Probabilité Over 1.5 via Poisson sur lambda total; modèle expérimental non calibré. Aucun snapshot rétroactif créé."
     }
   ]
 }
