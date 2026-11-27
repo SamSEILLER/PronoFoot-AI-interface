@@ -1,10 +1,3598 @@
 {
   "schema_version": 2,
-  "generated_at_utc": "2026-11-26T12:59:39.256657Z",
-  "method_id": "OVER15-EXPERIMENT-V3-RECENT10-POISSON",
-  "created_this_run": 25,
-  "description": "V3 expérimental : Poisson sur les 10 derniers matchs antérieurs et tendance comparant les 5 derniers aux 5 précédents; même compétition/saison, données strictement pré-match. Probabilité Over 1.5 sans seuil; modèle non calibré. Tendance indicative et non calibrée.",
+  "generated_at_utc": "2026-11-27T09:37:23.329145Z",
+  "method_id": "OVER15-EXPERIMENT-V3-METHOD-C-POISSON",
+  "created_this_run": 46,
+  "description": "V3 expérimental : lambdas Method C (moyenne arithmétique des taux attaque/défense selon le lieu), mêmes compétition/saison et données strictement pré-match. Probabilité Over 1.5 calculée par Poisson sur lambda total, sans seuil; modèle non calibré. Tendance 5 derniers vs 5 précédents conservée à titre indicatif.",
   "records": [
+    {
+      "match_id": "m_3oXBmV",
+      "competition": "us-mls",
+      "season": "2026",
+      "kickoff_utc": "2026-11-28T23:30:00Z",
+      "home_team": "FC Cincinnati",
+      "away_team": "Nashville SC",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "estimated",
+        "probability_over_1_5": 0.813658,
+        "probability_over_1_5_pct": 81.37,
+        "lambda_total": 3.0883
+      },
+      "model": {
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
+        "calibration_status": "not_calibrated",
+        "prior_matches": 5.0,
+        "recent_window": 10,
+        "lambda_home": 1.4706,
+        "lambda_away": 1.6177,
+        "lambda_total": 3.0883,
+        "probability_over_1_5_pct": 81.37,
+        "competition_baseline_sample": 10
+      },
+      "trend": {
+        "match": {
+          "status": "estimated",
+          "label": "down",
+          "trend_proxy_goals_per_match": -0.5,
+          "threshold": 0.2,
+          "method": "average_team_recent5_vs_previous5_goal_rates"
+        },
+        "home": {
+          "status": "estimated",
+          "label": "down",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.4,
+          "previous_goals_for_per_match": 1.8,
+          "recent_goals_against_per_match": 1.0,
+          "previous_goals_against_per_match": 1.4,
+          "delta_goals_for": -0.4,
+          "delta_goals_against": -0.4,
+          "trend_proxy_goals_per_match": -0.4,
+          "threshold": 0.2
+        },
+        "away": {
+          "status": "estimated",
+          "label": "down",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.4,
+          "previous_goals_for_per_match": 2.8,
+          "recent_goals_against_per_match": 0.6,
+          "previous_goals_against_per_match": 0.4,
+          "delta_goals_for": -1.4,
+          "delta_goals_against": 0.2,
+          "trend_proxy_goals_per_match": -0.6,
+          "threshold": 0.2
+        }
+      },
+      "criteria": {
+        "home": {
+          "matches_recent": 10,
+          "over_1_5_count": 8,
+          "over_1_5_percentage": 80.0,
+          "goals_for_per_match": 1.6,
+          "goals_against_per_match": 1.2,
+          "recent_window": 10
+        },
+        "away": {
+          "matches_recent": 10,
+          "over_1_5_count": 8,
+          "over_1_5_percentage": 80.0,
+          "goals_for_per_match": 2.1,
+          "goals_against_per_match": 0.5,
+          "recent_window": 10
+        },
+        "minimum_sample_per_team": 2,
+        "recent_window": 10,
+        "all_conditions_met": null,
+        "reasons_not_selected": []
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_2fJgQV",
+      "competition": "us-mls",
+      "season": "2026",
+      "kickoff_utc": "2026-11-28T21:30:00Z",
+      "home_team": "Philadelphia Union",
+      "away_team": "New England Revolution",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "estimated",
+        "probability_over_1_5": 0.800852,
+        "probability_over_1_5_pct": 80.09,
+        "lambda_total": 3.0
+      },
+      "model": {
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
+        "calibration_status": "not_calibrated",
+        "prior_matches": 5.0,
+        "recent_window": 10,
+        "lambda_home": 1.7353,
+        "lambda_away": 1.2647,
+        "lambda_total": 3.0,
+        "probability_over_1_5_pct": 80.09,
+        "competition_baseline_sample": 10
+      },
+      "trend": {
+        "match": {
+          "status": "estimated",
+          "label": "down",
+          "trend_proxy_goals_per_match": -0.85,
+          "threshold": 0.2,
+          "method": "average_team_recent5_vs_previous5_goal_rates"
+        },
+        "home": {
+          "status": "estimated",
+          "label": "down",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.0,
+          "previous_goals_for_per_match": 3.0,
+          "recent_goals_against_per_match": 1.2,
+          "previous_goals_against_per_match": 1.8,
+          "delta_goals_for": -2.0,
+          "delta_goals_against": -0.6,
+          "trend_proxy_goals_per_match": -1.3,
+          "threshold": 0.2
+        },
+        "away": {
+          "status": "estimated",
+          "label": "down",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.6,
+          "previous_goals_for_per_match": 1.6,
+          "recent_goals_against_per_match": 1.2,
+          "previous_goals_against_per_match": 2.0,
+          "delta_goals_for": 0.0,
+          "delta_goals_against": -0.8,
+          "trend_proxy_goals_per_match": -0.4,
+          "threshold": 0.2
+        }
+      },
+      "criteria": {
+        "home": {
+          "matches_recent": 10,
+          "over_1_5_count": 8,
+          "over_1_5_percentage": 80.0,
+          "goals_for_per_match": 2.0,
+          "goals_against_per_match": 1.5,
+          "recent_window": 10
+        },
+        "away": {
+          "matches_recent": 10,
+          "over_1_5_count": 8,
+          "over_1_5_percentage": 80.0,
+          "goals_for_per_match": 1.6,
+          "goals_against_per_match": 1.6,
+          "recent_window": 10
+        },
+        "minimum_sample_per_team": 2,
+        "recent_window": 10,
+        "all_conditions_met": null,
+        "reasons_not_selected": []
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_18cs8d",
+      "competition": "pt-primeira-liga",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-28T20:30:00Z",
+      "home_team": "Vitória de Guimarães",
+      "away_team": "Estrela da Amadora",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "estimated",
+        "probability_over_1_5": 0.800852,
+        "probability_over_1_5_pct": 80.09,
+        "lambda_total": 3.0
+      },
+      "model": {
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
+        "calibration_status": "not_calibrated",
+        "prior_matches": 5.0,
+        "recent_window": 10,
+        "lambda_home": 1.8,
+        "lambda_away": 1.2,
+        "lambda_total": 3.0,
+        "probability_over_1_5_pct": 80.09,
+        "competition_baseline_sample": 10
+      },
+      "trend": {
+        "match": {
+          "status": "estimated",
+          "label": "down",
+          "trend_proxy_goals_per_match": -0.35,
+          "threshold": 0.2,
+          "method": "average_team_recent5_vs_previous5_goal_rates"
+        },
+        "home": {
+          "status": "estimated",
+          "label": "stable",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.4,
+          "previous_goals_for_per_match": 0.8,
+          "recent_goals_against_per_match": 1.0,
+          "previous_goals_against_per_match": 1.2,
+          "delta_goals_for": 0.6,
+          "delta_goals_against": -0.2,
+          "trend_proxy_goals_per_match": 0.2,
+          "threshold": 0.2
+        },
+        "away": {
+          "status": "estimated",
+          "label": "down",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 0.6,
+          "previous_goals_for_per_match": 2.4,
+          "recent_goals_against_per_match": 2.0,
+          "previous_goals_against_per_match": 2.0,
+          "delta_goals_for": -1.8,
+          "delta_goals_against": 0.0,
+          "trend_proxy_goals_per_match": -0.9,
+          "threshold": 0.2
+        }
+      },
+      "criteria": {
+        "home": {
+          "matches_recent": 10,
+          "over_1_5_count": 6,
+          "over_1_5_percentage": 60.0,
+          "goals_for_per_match": 1.1,
+          "goals_against_per_match": 1.1,
+          "recent_window": 10
+        },
+        "away": {
+          "matches_recent": 10,
+          "over_1_5_count": 9,
+          "over_1_5_percentage": 90.0,
+          "goals_for_per_match": 1.5,
+          "goals_against_per_match": 2.0,
+          "recent_window": 10
+        },
+        "minimum_sample_per_team": 2,
+        "recent_window": 10,
+        "all_conditions_met": null,
+        "reasons_not_selected": []
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_3rnAZg",
+      "competition": "es-la-liga",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-28T20:00:00Z",
+      "home_team": "Real Madrid",
+      "away_team": "Deportivo Alavés",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "estimated",
+        "probability_over_1_5": 0.824405,
+        "probability_over_1_5_pct": 82.44,
+        "lambda_total": 3.1667
+      },
+      "model": {
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
+        "calibration_status": "not_calibrated",
+        "prior_matches": 5.0,
+        "recent_window": 10,
+        "lambda_home": 2.5,
+        "lambda_away": 0.6667,
+        "lambda_total": 3.1667,
+        "probability_over_1_5_pct": 82.44,
+        "competition_baseline_sample": 10
+      },
+      "trend": {
+        "match": {
+          "status": "estimated",
+          "label": "up",
+          "trend_proxy_goals_per_match": 0.2,
+          "threshold": 0.2,
+          "method": "average_team_recent5_vs_previous5_goal_rates"
+        },
+        "home": {
+          "status": "estimated",
+          "label": "stable",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 2.8,
+          "previous_goals_for_per_match": 1.8,
+          "recent_goals_against_per_match": 0.6,
+          "previous_goals_against_per_match": 1.2,
+          "delta_goals_for": 1.0,
+          "delta_goals_against": -0.6,
+          "trend_proxy_goals_per_match": 0.2,
+          "threshold": 0.2
+        },
+        "away": {
+          "status": "estimated",
+          "label": "up",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.2,
+          "previous_goals_for_per_match": 1.4,
+          "recent_goals_against_per_match": 2.0,
+          "previous_goals_against_per_match": 1.4,
+          "delta_goals_for": -0.2,
+          "delta_goals_against": 0.6,
+          "trend_proxy_goals_per_match": 0.2,
+          "threshold": 0.2
+        }
+      },
+      "criteria": {
+        "home": {
+          "matches_recent": 10,
+          "over_1_5_count": 8,
+          "over_1_5_percentage": 80.0,
+          "goals_for_per_match": 2.3,
+          "goals_against_per_match": 0.9,
+          "recent_window": 10
+        },
+        "away": {
+          "matches_recent": 10,
+          "over_1_5_count": 7,
+          "over_1_5_percentage": 70.0,
+          "goals_for_per_match": 1.3,
+          "goals_against_per_match": 1.7,
+          "recent_window": 10
+        },
+        "minimum_sample_per_team": 2,
+        "recent_window": 10,
+        "all_conditions_met": null,
+        "reasons_not_selected": []
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_1wivS8",
+      "competition": "it-serie-a",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-28T19:45:00Z",
+      "home_team": "Inter",
+      "away_team": "Genoa",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "estimated",
+        "probability_over_1_5": 0.837302,
+        "probability_over_1_5_pct": 83.73,
+        "lambda_total": 3.2667
+      },
+      "model": {
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
+        "calibration_status": "not_calibrated",
+        "prior_matches": 5.0,
+        "recent_window": 10,
+        "lambda_home": 2.1833,
+        "lambda_away": 1.0834,
+        "lambda_total": 3.2667,
+        "probability_over_1_5_pct": 83.73,
+        "competition_baseline_sample": 10
+      },
+      "trend": {
+        "match": {
+          "status": "estimated",
+          "label": "down",
+          "trend_proxy_goals_per_match": -0.45,
+          "threshold": 0.2,
+          "method": "average_team_recent5_vs_previous5_goal_rates"
+        },
+        "home": {
+          "status": "estimated",
+          "label": "down",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 2.2,
+          "previous_goals_for_per_match": 3.2,
+          "recent_goals_against_per_match": 1.6,
+          "previous_goals_against_per_match": 1.6,
+          "delta_goals_for": -1.0,
+          "delta_goals_against": 0.0,
+          "trend_proxy_goals_per_match": -0.5,
+          "threshold": 0.2
+        },
+        "away": {
+          "status": "estimated",
+          "label": "down",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.6,
+          "previous_goals_for_per_match": 1.0,
+          "recent_goals_against_per_match": 0.6,
+          "previous_goals_against_per_match": 2.0,
+          "delta_goals_for": 0.6,
+          "delta_goals_against": -1.4,
+          "trend_proxy_goals_per_match": -0.4,
+          "threshold": 0.2
+        }
+      },
+      "criteria": {
+        "home": {
+          "matches_recent": 10,
+          "over_1_5_count": 10,
+          "over_1_5_percentage": 100.0,
+          "goals_for_per_match": 2.7,
+          "goals_against_per_match": 1.6,
+          "recent_window": 10
+        },
+        "away": {
+          "matches_recent": 10,
+          "over_1_5_count": 9,
+          "over_1_5_percentage": 90.0,
+          "goals_for_per_match": 1.3,
+          "goals_against_per_match": 1.3,
+          "recent_window": 10
+        },
+        "minimum_sample_per_team": 2,
+        "recent_window": 10,
+        "all_conditions_met": null,
+        "reasons_not_selected": []
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_4f73g7",
+      "competition": "fr-ligue-1",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-28T19:45:00Z",
+      "home_team": "Le Havre",
+      "away_team": "Strasbourg",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "estimated",
+        "probability_over_1_5": 0.855053,
+        "probability_over_1_5_pct": 85.51,
+        "lambda_total": 3.4168
+      },
+      "model": {
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
+        "calibration_status": "not_calibrated",
+        "prior_matches": 5.0,
+        "recent_window": 10,
+        "lambda_home": 1.5834,
+        "lambda_away": 1.8334,
+        "lambda_total": 3.4168,
+        "probability_over_1_5_pct": 85.51,
+        "competition_baseline_sample": 10
+      },
+      "trend": {
+        "match": {
+          "status": "estimated",
+          "label": "up",
+          "trend_proxy_goals_per_match": 0.55,
+          "threshold": 0.2,
+          "method": "average_team_recent5_vs_previous5_goal_rates"
+        },
+        "home": {
+          "status": "estimated",
+          "label": "up",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.2,
+          "previous_goals_for_per_match": 0.8,
+          "recent_goals_against_per_match": 3.4,
+          "previous_goals_against_per_match": 1.4,
+          "delta_goals_for": 0.4,
+          "delta_goals_against": 2.0,
+          "trend_proxy_goals_per_match": 1.2,
+          "threshold": 0.2
+        },
+        "away": {
+          "status": "estimated",
+          "label": "stable",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.4,
+          "previous_goals_for_per_match": 2.2,
+          "recent_goals_against_per_match": 2.2,
+          "previous_goals_against_per_match": 1.6,
+          "delta_goals_for": -0.8,
+          "delta_goals_against": 0.6,
+          "trend_proxy_goals_per_match": -0.1,
+          "threshold": 0.2
+        }
+      },
+      "criteria": {
+        "home": {
+          "matches_recent": 10,
+          "over_1_5_count": 8,
+          "over_1_5_percentage": 80.0,
+          "goals_for_per_match": 1.0,
+          "goals_against_per_match": 2.4,
+          "recent_window": 10
+        },
+        "away": {
+          "matches_recent": 10,
+          "over_1_5_count": 9,
+          "over_1_5_percentage": 90.0,
+          "goals_for_per_match": 1.8,
+          "goals_against_per_match": 1.9,
+          "recent_window": 10
+        },
+        "minimum_sample_per_team": 2,
+        "recent_window": 10,
+        "all_conditions_met": null,
+        "reasons_not_selected": []
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_1LWSAq",
+      "competition": "fr-ligue-1",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-28T19:45:00Z",
+      "home_team": "Paris Saint-Germain",
+      "away_team": "Lorient",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "estimated",
+        "probability_over_1_5": 0.551874,
+        "probability_over_1_5_pct": 55.19,
+        "lambda_total": 1.85
+      },
+      "model": {
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
+        "calibration_status": "not_calibrated",
+        "prior_matches": 5.0,
+        "recent_window": 10,
+        "lambda_home": 1.075,
+        "lambda_away": 0.775,
+        "lambda_total": 1.85,
+        "probability_over_1_5_pct": 55.19,
+        "competition_baseline_sample": 10
+      },
+      "trend": {
+        "match": {
+          "status": "estimated",
+          "label": "stable",
+          "trend_proxy_goals_per_match": -0.1,
+          "threshold": 0.2,
+          "method": "average_team_recent5_vs_previous5_goal_rates"
+        },
+        "home": {
+          "status": "estimated",
+          "label": "up",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 2.8,
+          "previous_goals_for_per_match": 1.8,
+          "recent_goals_against_per_match": 0.8,
+          "previous_goals_against_per_match": 1.2,
+          "delta_goals_for": 1.0,
+          "delta_goals_against": -0.4,
+          "trend_proxy_goals_per_match": 0.3,
+          "threshold": 0.2
+        },
+        "away": {
+          "status": "estimated",
+          "label": "down",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 0.8,
+          "previous_goals_for_per_match": 1.2,
+          "recent_goals_against_per_match": 0.6,
+          "previous_goals_against_per_match": 1.2,
+          "delta_goals_for": -0.4,
+          "delta_goals_against": -0.6,
+          "trend_proxy_goals_per_match": -0.5,
+          "threshold": 0.2
+        }
+      },
+      "criteria": {
+        "home": {
+          "matches_recent": 10,
+          "over_1_5_count": 8,
+          "over_1_5_percentage": 80.0,
+          "goals_for_per_match": 2.3,
+          "goals_against_per_match": 1.0,
+          "recent_window": 10
+        },
+        "away": {
+          "matches_recent": 10,
+          "over_1_5_count": 6,
+          "over_1_5_percentage": 60.0,
+          "goals_for_per_match": 1.0,
+          "goals_against_per_match": 0.9,
+          "recent_window": 10
+        },
+        "minimum_sample_per_team": 2,
+        "recent_window": 10,
+        "all_conditions_met": null,
+        "reasons_not_selected": []
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_1m7rKw",
+      "competition": "fr-ligue-1",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-28T19:45:00Z",
+      "home_team": "Nice",
+      "away_team": "Troyes",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "estimated",
+        "probability_over_1_5": 0.705779,
+        "probability_over_1_5_pct": 70.58,
+        "lambda_total": 2.4666
+      },
+      "model": {
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
+        "calibration_status": "not_calibrated",
+        "prior_matches": 5.0,
+        "recent_window": 10,
+        "lambda_home": 1.6,
+        "lambda_away": 0.8666,
+        "lambda_total": 2.4666,
+        "probability_over_1_5_pct": 70.58,
+        "competition_baseline_sample": 10
+      },
+      "trend": {
+        "match": {
+          "status": "estimated",
+          "label": "stable",
+          "trend_proxy_goals_per_match": 0.1,
+          "threshold": 0.2,
+          "method": "average_team_recent5_vs_previous5_goal_rates"
+        },
+        "home": {
+          "status": "estimated",
+          "label": "up",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 2.4,
+          "previous_goals_for_per_match": 1.0,
+          "recent_goals_against_per_match": 1.6,
+          "previous_goals_against_per_match": 1.4,
+          "delta_goals_for": 1.4,
+          "delta_goals_against": 0.2,
+          "trend_proxy_goals_per_match": 0.8,
+          "threshold": 0.2
+        },
+        "away": {
+          "status": "estimated",
+          "label": "down",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.2,
+          "previous_goals_for_per_match": 0.8,
+          "recent_goals_against_per_match": 1.0,
+          "previous_goals_against_per_match": 2.6,
+          "delta_goals_for": 0.4,
+          "delta_goals_against": -1.6,
+          "trend_proxy_goals_per_match": -0.6,
+          "threshold": 0.2
+        }
+      },
+      "criteria": {
+        "home": {
+          "matches_recent": 10,
+          "over_1_5_count": 9,
+          "over_1_5_percentage": 90.0,
+          "goals_for_per_match": 1.7,
+          "goals_against_per_match": 1.5,
+          "recent_window": 10
+        },
+        "away": {
+          "matches_recent": 10,
+          "over_1_5_count": 8,
+          "over_1_5_percentage": 80.0,
+          "goals_for_per_match": 1.0,
+          "goals_against_per_match": 1.8,
+          "recent_window": 10
+        },
+        "minimum_sample_per_team": 2,
+        "recent_window": 10,
+        "all_conditions_met": null,
+        "reasons_not_selected": []
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_2UeyHL",
+      "competition": "fr-ligue-1",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-28T19:45:00Z",
+      "home_team": "Le Mans",
+      "away_team": "Lille",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "estimated",
+        "probability_over_1_5": 0.75134,
+        "probability_over_1_5_pct": 75.13,
+        "lambda_total": 2.7
+      },
+      "model": {
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
+        "calibration_status": "not_calibrated",
+        "prior_matches": 5.0,
+        "recent_window": 10,
+        "lambda_home": 1.1,
+        "lambda_away": 1.6,
+        "lambda_total": 2.7,
+        "probability_over_1_5_pct": 75.13,
+        "competition_baseline_sample": 10
+      },
+      "trend": {
+        "match": {
+          "status": "estimated",
+          "label": "down",
+          "trend_proxy_goals_per_match": -0.3,
+          "threshold": 0.2,
+          "method": "average_team_recent5_vs_previous5_goal_rates"
+        },
+        "home": {
+          "status": "estimated",
+          "label": "down",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.0,
+          "previous_goals_for_per_match": 1.6,
+          "recent_goals_against_per_match": 1.8,
+          "previous_goals_against_per_match": 2.0,
+          "delta_goals_for": -0.6,
+          "delta_goals_against": -0.2,
+          "trend_proxy_goals_per_match": -0.4,
+          "threshold": 0.2
+        },
+        "away": {
+          "status": "estimated",
+          "label": "stable",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.0,
+          "previous_goals_for_per_match": 1.4,
+          "recent_goals_against_per_match": 0.8,
+          "previous_goals_against_per_match": 0.8,
+          "delta_goals_for": -0.4,
+          "delta_goals_against": 0.0,
+          "trend_proxy_goals_per_match": -0.2,
+          "threshold": 0.2
+        }
+      },
+      "criteria": {
+        "home": {
+          "matches_recent": 10,
+          "over_1_5_count": 10,
+          "over_1_5_percentage": 100.0,
+          "goals_for_per_match": 1.3,
+          "goals_against_per_match": 1.9,
+          "recent_window": 10
+        },
+        "away": {
+          "matches_recent": 10,
+          "over_1_5_count": 6,
+          "over_1_5_percentage": 60.0,
+          "goals_for_per_match": 1.2,
+          "goals_against_per_match": 0.8,
+          "recent_window": 10
+        },
+        "minimum_sample_per_team": 2,
+        "recent_window": 10,
+        "all_conditions_met": null,
+        "reasons_not_selected": []
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_0lEnns",
+      "competition": "be-first-division-a",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-28T19:45:00Z",
+      "home_team": "Lommel",
+      "away_team": "Zulte Waregem",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "estimated",
+        "probability_over_1_5": 0.676775,
+        "probability_over_1_5_pct": 67.68,
+        "lambda_total": 2.3334
+      },
+      "model": {
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
+        "calibration_status": "not_calibrated",
+        "prior_matches": 5.0,
+        "recent_window": 10,
+        "lambda_home": 1.5834,
+        "lambda_away": 0.75,
+        "lambda_total": 2.3334,
+        "probability_over_1_5_pct": 67.68,
+        "competition_baseline_sample": 10
+      },
+      "trend": {
+        "match": {
+          "status": "estimated",
+          "label": "up",
+          "trend_proxy_goals_per_match": 0.6,
+          "threshold": 0.2,
+          "method": "average_team_recent5_vs_previous5_goal_rates"
+        },
+        "home": {
+          "status": "estimated",
+          "label": "up",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 2.0,
+          "previous_goals_for_per_match": 1.0,
+          "recent_goals_against_per_match": 1.4,
+          "previous_goals_against_per_match": 1.2,
+          "delta_goals_for": 1.0,
+          "delta_goals_against": 0.2,
+          "trend_proxy_goals_per_match": 0.6,
+          "threshold": 0.2
+        },
+        "away": {
+          "status": "estimated",
+          "label": "up",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.0,
+          "previous_goals_for_per_match": 1.6,
+          "recent_goals_against_per_match": 3.0,
+          "previous_goals_against_per_match": 1.2,
+          "delta_goals_for": -0.6,
+          "delta_goals_against": 1.8,
+          "trend_proxy_goals_per_match": 0.6,
+          "threshold": 0.2
+        }
+      },
+      "criteria": {
+        "home": {
+          "matches_recent": 10,
+          "over_1_5_count": 7,
+          "over_1_5_percentage": 70.0,
+          "goals_for_per_match": 1.5,
+          "goals_against_per_match": 1.3,
+          "recent_window": 10
+        },
+        "away": {
+          "matches_recent": 10,
+          "over_1_5_count": 9,
+          "over_1_5_percentage": 90.0,
+          "goals_for_per_match": 1.3,
+          "goals_against_per_match": 2.1,
+          "recent_window": 10
+        },
+        "minimum_sample_per_team": 2,
+        "recent_window": 10,
+        "all_conditions_met": null,
+        "reasons_not_selected": []
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_3yaq0f",
+      "competition": "be-first-division-a",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-28T19:45:00Z",
+      "home_team": "Sporting Charleroi",
+      "away_team": "SK Beveren",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "estimated",
+        "probability_over_1_5": 0.919892,
+        "probability_over_1_5_pct": 91.99,
+        "lambda_total": 4.1666
+      },
+      "model": {
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
+        "calibration_status": "not_calibrated",
+        "prior_matches": 5.0,
+        "recent_window": 10,
+        "lambda_home": 2.9166,
+        "lambda_away": 1.25,
+        "lambda_total": 4.1666,
+        "probability_over_1_5_pct": 91.99,
+        "competition_baseline_sample": 10
+      },
+      "trend": {
+        "match": {
+          "status": "estimated",
+          "label": "up",
+          "trend_proxy_goals_per_match": 0.45,
+          "threshold": 0.2,
+          "method": "average_team_recent5_vs_previous5_goal_rates"
+        },
+        "home": {
+          "status": "estimated",
+          "label": "up",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 2.6,
+          "previous_goals_for_per_match": 2.2,
+          "recent_goals_against_per_match": 1.6,
+          "previous_goals_against_per_match": 1.2,
+          "delta_goals_for": 0.4,
+          "delta_goals_against": 0.4,
+          "trend_proxy_goals_per_match": 0.4,
+          "threshold": 0.2
+        },
+        "away": {
+          "status": "estimated",
+          "label": "up",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.4,
+          "previous_goals_for_per_match": 1.0,
+          "recent_goals_against_per_match": 2.4,
+          "previous_goals_against_per_match": 1.8,
+          "delta_goals_for": 0.4,
+          "delta_goals_against": 0.6,
+          "trend_proxy_goals_per_match": 0.5,
+          "threshold": 0.2
+        }
+      },
+      "criteria": {
+        "home": {
+          "matches_recent": 10,
+          "over_1_5_count": 8,
+          "over_1_5_percentage": 80.0,
+          "goals_for_per_match": 2.4,
+          "goals_against_per_match": 1.4,
+          "recent_window": 10
+        },
+        "away": {
+          "matches_recent": 10,
+          "over_1_5_count": 8,
+          "over_1_5_percentage": 80.0,
+          "goals_for_per_match": 1.2,
+          "goals_against_per_match": 2.1,
+          "recent_window": 10
+        },
+        "minimum_sample_per_team": 2,
+        "recent_window": 10,
+        "all_conditions_met": null,
+        "reasons_not_selected": []
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_0Kpxdv",
+      "competition": "us-mls",
+      "season": "2026",
+      "kickoff_utc": "2026-11-28T19:30:00Z",
+      "home_team": "Houston Dynamo FC",
+      "away_team": "San Jose Earthquakes",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "estimated",
+        "probability_over_1_5": 0.718683,
+        "probability_over_1_5_pct": 71.87,
+        "lambda_total": 2.5294
+      },
+      "model": {
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
+        "calibration_status": "not_calibrated",
+        "prior_matches": 5.0,
+        "recent_window": 10,
+        "lambda_home": 1.2941,
+        "lambda_away": 1.2353,
+        "lambda_total": 2.5294,
+        "probability_over_1_5_pct": 71.87,
+        "competition_baseline_sample": 10
+      },
+      "trend": {
+        "match": {
+          "status": "estimated",
+          "label": "down",
+          "trend_proxy_goals_per_match": -0.4,
+          "threshold": 0.2,
+          "method": "average_team_recent5_vs_previous5_goal_rates"
+        },
+        "home": {
+          "status": "estimated",
+          "label": "down",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 0.6,
+          "previous_goals_for_per_match": 1.8,
+          "recent_goals_against_per_match": 1.2,
+          "previous_goals_against_per_match": 2.2,
+          "delta_goals_for": -1.2,
+          "delta_goals_against": -1.0,
+          "trend_proxy_goals_per_match": -1.1,
+          "threshold": 0.2
+        },
+        "away": {
+          "status": "estimated",
+          "label": "up",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.4,
+          "previous_goals_for_per_match": 1.6,
+          "recent_goals_against_per_match": 2.0,
+          "previous_goals_against_per_match": 1.2,
+          "delta_goals_for": -0.2,
+          "delta_goals_against": 0.8,
+          "trend_proxy_goals_per_match": 0.3,
+          "threshold": 0.2
+        }
+      },
+      "criteria": {
+        "home": {
+          "matches_recent": 10,
+          "over_1_5_count": 7,
+          "over_1_5_percentage": 70.0,
+          "goals_for_per_match": 1.2,
+          "goals_against_per_match": 1.7,
+          "recent_window": 10
+        },
+        "away": {
+          "matches_recent": 10,
+          "over_1_5_count": 10,
+          "over_1_5_percentage": 100.0,
+          "goals_for_per_match": 1.5,
+          "goals_against_per_match": 1.6,
+          "recent_window": 10
+        },
+        "minimum_sample_per_team": 2,
+        "recent_window": 10,
+        "all_conditions_met": null,
+        "reasons_not_selected": []
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_1TuCqj",
+      "competition": "pt-primeira-liga",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-28T18:00:00Z",
+      "home_team": "Académico Viseu",
+      "away_team": "Alverca",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "estimated",
+        "probability_over_1_5": 0.808196,
+        "probability_over_1_5_pct": 80.82,
+        "lambda_total": 3.05
+      },
+      "model": {
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
+        "calibration_status": "not_calibrated",
+        "prior_matches": 5.0,
+        "recent_window": 10,
+        "lambda_home": 1.35,
+        "lambda_away": 1.7,
+        "lambda_total": 3.05,
+        "probability_over_1_5_pct": 80.82,
+        "competition_baseline_sample": 10
+      },
+      "trend": {
+        "match": {
+          "status": "estimated",
+          "label": "down",
+          "trend_proxy_goals_per_match": -0.35,
+          "threshold": 0.2,
+          "method": "average_team_recent5_vs_previous5_goal_rates"
+        },
+        "home": {
+          "status": "estimated",
+          "label": "stable",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.6,
+          "previous_goals_for_per_match": 1.0,
+          "recent_goals_against_per_match": 0.8,
+          "previous_goals_against_per_match": 1.4,
+          "delta_goals_for": 0.6,
+          "delta_goals_against": -0.6,
+          "trend_proxy_goals_per_match": 0.0,
+          "threshold": 0.2
+        },
+        "away": {
+          "status": "estimated",
+          "label": "down",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.2,
+          "previous_goals_for_per_match": 1.6,
+          "recent_goals_against_per_match": 0.8,
+          "previous_goals_against_per_match": 1.8,
+          "delta_goals_for": -0.4,
+          "delta_goals_against": -1.0,
+          "trend_proxy_goals_per_match": -0.7,
+          "threshold": 0.2
+        }
+      },
+      "criteria": {
+        "home": {
+          "matches_recent": 10,
+          "over_1_5_count": 7,
+          "over_1_5_percentage": 70.0,
+          "goals_for_per_match": 1.3,
+          "goals_against_per_match": 1.1,
+          "recent_window": 10
+        },
+        "away": {
+          "matches_recent": 10,
+          "over_1_5_count": 7,
+          "over_1_5_percentage": 70.0,
+          "goals_for_per_match": 1.4,
+          "goals_against_per_match": 1.3,
+          "recent_window": 10
+        },
+        "minimum_sample_per_team": 2,
+        "recent_window": 10,
+        "all_conditions_met": null,
+        "reasons_not_selected": []
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_2a6aiA",
+      "competition": "gb-premier-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-28T17:30:00Z",
+      "home_team": "Ipswich Town",
+      "away_team": "Aston Villa",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "estimated",
+        "probability_over_1_5": 0.815298,
+        "probability_over_1_5_pct": 81.53,
+        "lambda_total": 3.1
+      },
+      "model": {
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
+        "calibration_status": "not_calibrated",
+        "prior_matches": 5.0,
+        "recent_window": 10,
+        "lambda_home": 1.6,
+        "lambda_away": 1.5,
+        "lambda_total": 3.1,
+        "probability_over_1_5_pct": 81.53,
+        "competition_baseline_sample": 10
+      },
+      "trend": {
+        "match": {
+          "status": "estimated",
+          "label": "stable",
+          "trend_proxy_goals_per_match": -0.05,
+          "threshold": 0.2,
+          "method": "average_team_recent5_vs_previous5_goal_rates"
+        },
+        "home": {
+          "status": "estimated",
+          "label": "down",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.2,
+          "previous_goals_for_per_match": 1.4,
+          "recent_goals_against_per_match": 2.0,
+          "previous_goals_against_per_match": 2.2,
+          "delta_goals_for": -0.2,
+          "delta_goals_against": -0.2,
+          "trend_proxy_goals_per_match": -0.2,
+          "threshold": 0.2
+        },
+        "away": {
+          "status": "estimated",
+          "label": "stable",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.6,
+          "previous_goals_for_per_match": 1.2,
+          "recent_goals_against_per_match": 1.2,
+          "previous_goals_against_per_match": 1.4,
+          "delta_goals_for": 0.4,
+          "delta_goals_against": -0.2,
+          "trend_proxy_goals_per_match": 0.1,
+          "threshold": 0.2
+        }
+      },
+      "criteria": {
+        "home": {
+          "matches_recent": 10,
+          "over_1_5_count": 9,
+          "over_1_5_percentage": 90.0,
+          "goals_for_per_match": 1.3,
+          "goals_against_per_match": 2.1,
+          "recent_window": 10
+        },
+        "away": {
+          "matches_recent": 10,
+          "over_1_5_count": 6,
+          "over_1_5_percentage": 60.0,
+          "goals_for_per_match": 1.4,
+          "goals_against_per_match": 1.3,
+          "recent_window": 10
+        },
+        "minimum_sample_per_team": 2,
+        "recent_window": 10,
+        "all_conditions_met": null,
+        "reasons_not_selected": []
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_3PhJyQ",
+      "competition": "de-bundesliga",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-28T17:30:00Z",
+      "home_team": "VfB Stuttgart",
+      "away_team": "Eintracht Frankfurt",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "estimated",
+        "probability_over_1_5": 0.874311,
+        "probability_over_1_5_pct": 87.43,
+        "lambda_total": 3.6
+      },
+      "model": {
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
+        "calibration_status": "not_calibrated",
+        "prior_matches": 5.0,
+        "recent_window": 10,
+        "lambda_home": 2.175,
+        "lambda_away": 1.425,
+        "lambda_total": 3.6,
+        "probability_over_1_5_pct": 87.43,
+        "competition_baseline_sample": 10
+      },
+      "trend": {
+        "match": {
+          "status": "estimated",
+          "label": "down",
+          "trend_proxy_goals_per_match": -0.9,
+          "threshold": 0.2,
+          "method": "average_team_recent5_vs_previous5_goal_rates"
+        },
+        "home": {
+          "status": "estimated",
+          "label": "down",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.4,
+          "previous_goals_for_per_match": 1.6,
+          "recent_goals_against_per_match": 1.2,
+          "previous_goals_against_per_match": 1.8,
+          "delta_goals_for": -0.2,
+          "delta_goals_against": -0.6,
+          "trend_proxy_goals_per_match": -0.4,
+          "threshold": 0.2
+        },
+        "away": {
+          "status": "estimated",
+          "label": "down",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.4,
+          "previous_goals_for_per_match": 1.8,
+          "recent_goals_against_per_match": 0.8,
+          "previous_goals_against_per_match": 3.2,
+          "delta_goals_for": -0.4,
+          "delta_goals_against": -2.4,
+          "trend_proxy_goals_per_match": -1.4,
+          "threshold": 0.2
+        }
+      },
+      "criteria": {
+        "home": {
+          "matches_recent": 10,
+          "over_1_5_count": 6,
+          "over_1_5_percentage": 60.0,
+          "goals_for_per_match": 1.5,
+          "goals_against_per_match": 1.5,
+          "recent_window": 10
+        },
+        "away": {
+          "matches_recent": 10,
+          "over_1_5_count": 7,
+          "over_1_5_percentage": 70.0,
+          "goals_for_per_match": 1.6,
+          "goals_against_per_match": 2.0,
+          "recent_window": 10
+        },
+        "minimum_sample_per_team": 2,
+        "recent_window": 10,
+        "all_conditions_met": null,
+        "reasons_not_selected": []
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_0Ug8cm",
+      "competition": "es-la-liga",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-28T17:30:00Z",
+      "home_team": "Elche",
+      "away_team": "Atlético Madrid",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "estimated",
+        "probability_over_1_5": 0.778467,
+        "probability_over_1_5_pct": 77.85,
+        "lambda_total": 2.8571
+      },
+      "model": {
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
+        "calibration_status": "not_calibrated",
+        "prior_matches": 5.0,
+        "recent_window": 10,
+        "lambda_home": 0.6905,
+        "lambda_away": 2.1666,
+        "lambda_total": 2.8571,
+        "probability_over_1_5_pct": 77.85,
+        "competition_baseline_sample": 10
+      },
+      "trend": {
+        "match": {
+          "status": "estimated",
+          "label": "down",
+          "trend_proxy_goals_per_match": -0.7,
+          "threshold": 0.2,
+          "method": "average_team_recent5_vs_previous5_goal_rates"
+        },
+        "home": {
+          "status": "estimated",
+          "label": "down",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 0.8,
+          "previous_goals_for_per_match": 1.6,
+          "recent_goals_against_per_match": 0.8,
+          "previous_goals_against_per_match": 1.6,
+          "delta_goals_for": -0.8,
+          "delta_goals_against": -0.8,
+          "trend_proxy_goals_per_match": -0.8,
+          "threshold": 0.2
+        },
+        "away": {
+          "status": "estimated",
+          "label": "down",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.6,
+          "previous_goals_for_per_match": 2.2,
+          "recent_goals_against_per_match": 0.4,
+          "previous_goals_against_per_match": 1.0,
+          "delta_goals_for": -0.6,
+          "delta_goals_against": -0.6,
+          "trend_proxy_goals_per_match": -0.6,
+          "threshold": 0.2
+        }
+      },
+      "criteria": {
+        "home": {
+          "matches_recent": 10,
+          "over_1_5_count": 7,
+          "over_1_5_percentage": 70.0,
+          "goals_for_per_match": 1.2,
+          "goals_against_per_match": 1.2,
+          "recent_window": 10
+        },
+        "away": {
+          "matches_recent": 10,
+          "over_1_5_count": 8,
+          "over_1_5_percentage": 80.0,
+          "goals_for_per_match": 1.9,
+          "goals_against_per_match": 0.7,
+          "recent_window": 10
+        },
+        "minimum_sample_per_team": 2,
+        "recent_window": 10,
+        "all_conditions_met": null,
+        "reasons_not_selected": []
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_206qPP",
+      "competition": "us-mls",
+      "season": "2026",
+      "kickoff_utc": "2026-11-28T17:30:00Z",
+      "home_team": "Charlotte FC",
+      "away_team": "Chicago Fire FC",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "estimated",
+        "probability_over_1_5": 0.844239,
+        "probability_over_1_5_pct": 84.42,
+        "lambda_total": 3.3235
+      },
+      "model": {
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
+        "calibration_status": "not_calibrated",
+        "prior_matches": 5.0,
+        "recent_window": 10,
+        "lambda_home": 1.9412,
+        "lambda_away": 1.3823,
+        "lambda_total": 3.3235,
+        "probability_over_1_5_pct": 84.42,
+        "competition_baseline_sample": 10
+      },
+      "trend": {
+        "match": {
+          "status": "estimated",
+          "label": "up",
+          "trend_proxy_goals_per_match": 0.85,
+          "threshold": 0.2,
+          "method": "average_team_recent5_vs_previous5_goal_rates"
+        },
+        "home": {
+          "status": "estimated",
+          "label": "up",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 3.0,
+          "previous_goals_for_per_match": 1.6,
+          "recent_goals_against_per_match": 1.4,
+          "previous_goals_against_per_match": 1.8,
+          "delta_goals_for": 1.4,
+          "delta_goals_against": -0.4,
+          "trend_proxy_goals_per_match": 0.5,
+          "threshold": 0.2
+        },
+        "away": {
+          "status": "estimated",
+          "label": "up",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 2.6,
+          "previous_goals_for_per_match": 1.4,
+          "recent_goals_against_per_match": 2.4,
+          "previous_goals_against_per_match": 1.2,
+          "delta_goals_for": 1.2,
+          "delta_goals_against": 1.2,
+          "trend_proxy_goals_per_match": 1.2,
+          "threshold": 0.2
+        }
+      },
+      "criteria": {
+        "home": {
+          "matches_recent": 10,
+          "over_1_5_count": 9,
+          "over_1_5_percentage": 90.0,
+          "goals_for_per_match": 2.3,
+          "goals_against_per_match": 1.6,
+          "recent_window": 10
+        },
+        "away": {
+          "matches_recent": 10,
+          "over_1_5_count": 8,
+          "over_1_5_percentage": 80.0,
+          "goals_for_per_match": 2.0,
+          "goals_against_per_match": 1.8,
+          "recent_window": 10
+        },
+        "minimum_sample_per_team": 2,
+        "recent_window": 10,
+        "all_conditions_met": null,
+        "reasons_not_selected": []
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_3iQK3N",
+      "competition": "be-first-division-a",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-28T17:15:00Z",
+      "home_team": "Cercle Brugge",
+      "away_team": "KV Mechelen",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "estimated",
+        "probability_over_1_5": 0.729393,
+        "probability_over_1_5_pct": 72.94,
+        "lambda_total": 2.5834
+      },
+      "model": {
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
+        "calibration_status": "not_calibrated",
+        "prior_matches": 5.0,
+        "recent_window": 10,
+        "lambda_home": 1.3334,
+        "lambda_away": 1.25,
+        "lambda_total": 2.5834,
+        "probability_over_1_5_pct": 72.94,
+        "competition_baseline_sample": 10
+      },
+      "trend": {
+        "match": {
+          "status": "estimated",
+          "label": "up",
+          "trend_proxy_goals_per_match": 0.6,
+          "threshold": 0.2,
+          "method": "average_team_recent5_vs_previous5_goal_rates"
+        },
+        "home": {
+          "status": "estimated",
+          "label": "up",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.4,
+          "previous_goals_for_per_match": 0.6,
+          "recent_goals_against_per_match": 1.6,
+          "previous_goals_against_per_match": 1.8,
+          "delta_goals_for": 0.8,
+          "delta_goals_against": -0.2,
+          "trend_proxy_goals_per_match": 0.3,
+          "threshold": 0.2
+        },
+        "away": {
+          "status": "estimated",
+          "label": "up",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.8,
+          "previous_goals_for_per_match": 0.4,
+          "recent_goals_against_per_match": 2.2,
+          "previous_goals_against_per_match": 1.8,
+          "delta_goals_for": 1.4,
+          "delta_goals_against": 0.4,
+          "trend_proxy_goals_per_match": 0.9,
+          "threshold": 0.2
+        }
+      },
+      "criteria": {
+        "home": {
+          "matches_recent": 10,
+          "over_1_5_count": 6,
+          "over_1_5_percentage": 60.0,
+          "goals_for_per_match": 1.0,
+          "goals_against_per_match": 1.7,
+          "recent_window": 10
+        },
+        "away": {
+          "matches_recent": 10,
+          "over_1_5_count": 7,
+          "over_1_5_percentage": 70.0,
+          "goals_for_per_match": 1.1,
+          "goals_against_per_match": 2.0,
+          "recent_window": 10
+        },
+        "minimum_sample_per_team": 2,
+        "recent_window": 10,
+        "all_conditions_met": null,
+        "reasons_not_selected": []
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_1LXkdY",
+      "competition": "it-serie-a",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-28T17:00:00Z",
+      "home_team": "Torino",
+      "away_team": "Lazio",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "estimated",
+        "probability_over_1_5": 0.824392,
+        "probability_over_1_5_pct": 82.44,
+        "lambda_total": 3.1666
+      },
+      "model": {
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
+        "calibration_status": "not_calibrated",
+        "prior_matches": 5.0,
+        "recent_window": 10,
+        "lambda_home": 1.0,
+        "lambda_away": 2.1666,
+        "lambda_total": 3.1666,
+        "probability_over_1_5_pct": 82.44,
+        "competition_baseline_sample": 10
+      },
+      "trend": {
+        "match": {
+          "status": "estimated",
+          "label": "up",
+          "trend_proxy_goals_per_match": 0.2,
+          "threshold": 0.2,
+          "method": "average_team_recent5_vs_previous5_goal_rates"
+        },
+        "home": {
+          "status": "estimated",
+          "label": "stable",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.0,
+          "previous_goals_for_per_match": 1.6,
+          "recent_goals_against_per_match": 1.8,
+          "previous_goals_against_per_match": 1.0,
+          "delta_goals_for": -0.6,
+          "delta_goals_against": 0.8,
+          "trend_proxy_goals_per_match": 0.1,
+          "threshold": 0.2
+        },
+        "away": {
+          "status": "estimated",
+          "label": "up",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 2.8,
+          "previous_goals_for_per_match": 2.4,
+          "recent_goals_against_per_match": 1.0,
+          "previous_goals_against_per_match": 0.8,
+          "delta_goals_for": 0.4,
+          "delta_goals_against": 0.2,
+          "trend_proxy_goals_per_match": 0.3,
+          "threshold": 0.2
+        }
+      },
+      "criteria": {
+        "home": {
+          "matches_recent": 10,
+          "over_1_5_count": 9,
+          "over_1_5_percentage": 90.0,
+          "goals_for_per_match": 1.3,
+          "goals_against_per_match": 1.4,
+          "recent_window": 10
+        },
+        "away": {
+          "matches_recent": 10,
+          "over_1_5_count": 10,
+          "over_1_5_percentage": 100.0,
+          "goals_for_per_match": 2.6,
+          "goals_against_per_match": 0.9,
+          "recent_window": 10
+        },
+        "minimum_sample_per_team": 2,
+        "recent_window": 10,
+        "all_conditions_met": null,
+        "reasons_not_selected": []
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_2KbgcS",
+      "competition": "fr-ligue-1",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-28T16:15:00Z",
+      "home_team": "Angers",
+      "away_team": "Lens",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "estimated",
+        "probability_over_1_5": 0.774531,
+        "probability_over_1_5_pct": 77.45,
+        "lambda_total": 2.8333
+      },
+      "model": {
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
+        "calibration_status": "not_calibrated",
+        "prior_matches": 5.0,
+        "recent_window": 10,
+        "lambda_home": 1.2167,
+        "lambda_away": 1.6166,
+        "lambda_total": 2.8333,
+        "probability_over_1_5_pct": 77.45,
+        "competition_baseline_sample": 10
+      },
+      "trend": {
+        "match": {
+          "status": "estimated",
+          "label": "stable",
+          "trend_proxy_goals_per_match": -0.05,
+          "threshold": 0.2,
+          "method": "average_team_recent5_vs_previous5_goal_rates"
+        },
+        "home": {
+          "status": "estimated",
+          "label": "stable",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 0.4,
+          "previous_goals_for_per_match": 1.4,
+          "recent_goals_against_per_match": 2.6,
+          "previous_goals_against_per_match": 1.6,
+          "delta_goals_for": -1.0,
+          "delta_goals_against": 1.0,
+          "trend_proxy_goals_per_match": 0.0,
+          "threshold": 0.2
+        },
+        "away": {
+          "status": "estimated",
+          "label": "stable",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.4,
+          "previous_goals_for_per_match": 1.2,
+          "recent_goals_against_per_match": 1.2,
+          "previous_goals_against_per_match": 1.6,
+          "delta_goals_for": 0.2,
+          "delta_goals_against": -0.4,
+          "trend_proxy_goals_per_match": -0.1,
+          "threshold": 0.2
+        }
+      },
+      "criteria": {
+        "home": {
+          "matches_recent": 10,
+          "over_1_5_count": 8,
+          "over_1_5_percentage": 80.0,
+          "goals_for_per_match": 0.9,
+          "goals_against_per_match": 2.1,
+          "recent_window": 10
+        },
+        "away": {
+          "matches_recent": 10,
+          "over_1_5_count": 8,
+          "over_1_5_percentage": 80.0,
+          "goals_for_per_match": 1.3,
+          "goals_against_per_match": 1.4,
+          "recent_window": 10
+        },
+        "minimum_sample_per_team": 2,
+        "recent_window": 10,
+        "all_conditions_met": null,
+        "reasons_not_selected": []
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_4fcrbQ",
+      "competition": "pt-primeira-liga",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-28T15:30:00Z",
+      "home_team": "Moreirense",
+      "away_team": "Santa Clara",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "estimated",
+        "probability_over_1_5": 0.691559,
+        "probability_over_1_5_pct": 69.16,
+        "lambda_total": 2.4
+      },
+      "model": {
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
+        "calibration_status": "not_calibrated",
+        "prior_matches": 5.0,
+        "recent_window": 10,
+        "lambda_home": 0.825,
+        "lambda_away": 1.575,
+        "lambda_total": 2.4,
+        "probability_over_1_5_pct": 69.16,
+        "competition_baseline_sample": 10
+      },
+      "trend": {
+        "match": {
+          "status": "estimated",
+          "label": "down",
+          "trend_proxy_goals_per_match": -0.35,
+          "threshold": 0.2,
+          "method": "average_team_recent5_vs_previous5_goal_rates"
+        },
+        "home": {
+          "status": "estimated",
+          "label": "down",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.2,
+          "previous_goals_for_per_match": 1.0,
+          "recent_goals_against_per_match": 1.0,
+          "previous_goals_against_per_match": 2.2,
+          "delta_goals_for": 0.2,
+          "delta_goals_against": -1.2,
+          "trend_proxy_goals_per_match": -0.5,
+          "threshold": 0.2
+        },
+        "away": {
+          "status": "estimated",
+          "label": "down",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.0,
+          "previous_goals_for_per_match": 1.8,
+          "recent_goals_against_per_match": 0.8,
+          "previous_goals_against_per_match": 0.4,
+          "delta_goals_for": -0.8,
+          "delta_goals_against": 0.4,
+          "trend_proxy_goals_per_match": -0.2,
+          "threshold": 0.2
+        }
+      },
+      "criteria": {
+        "home": {
+          "matches_recent": 10,
+          "over_1_5_count": 7,
+          "over_1_5_percentage": 70.0,
+          "goals_for_per_match": 1.1,
+          "goals_against_per_match": 1.6,
+          "recent_window": 10
+        },
+        "away": {
+          "matches_recent": 10,
+          "over_1_5_count": 6,
+          "over_1_5_percentage": 60.0,
+          "goals_for_per_match": 1.4,
+          "goals_against_per_match": 0.6,
+          "recent_window": 10
+        },
+        "minimum_sample_per_team": 2,
+        "recent_window": 10,
+        "all_conditions_met": null,
+        "reasons_not_selected": []
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_3to0Yd",
+      "competition": "pt-primeira-liga",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-28T15:30:00Z",
+      "home_team": "Arouca",
+      "away_team": "Rio Ave",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "estimated",
+        "probability_over_1_5": 0.702287,
+        "probability_over_1_5_pct": 70.23,
+        "lambda_total": 2.45
+      },
+      "model": {
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
+        "calibration_status": "not_calibrated",
+        "prior_matches": 5.0,
+        "recent_window": 10,
+        "lambda_home": 1.775,
+        "lambda_away": 0.675,
+        "lambda_total": 2.45,
+        "probability_over_1_5_pct": 70.23,
+        "competition_baseline_sample": 10
+      },
+      "trend": {
+        "match": {
+          "status": "estimated",
+          "label": "down",
+          "trend_proxy_goals_per_match": -0.4,
+          "threshold": 0.2,
+          "method": "average_team_recent5_vs_previous5_goal_rates"
+        },
+        "home": {
+          "status": "estimated",
+          "label": "down",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.0,
+          "previous_goals_for_per_match": 1.4,
+          "recent_goals_against_per_match": 0.6,
+          "previous_goals_against_per_match": 1.0,
+          "delta_goals_for": -0.4,
+          "delta_goals_against": -0.4,
+          "trend_proxy_goals_per_match": -0.4,
+          "threshold": 0.2
+        },
+        "away": {
+          "status": "estimated",
+          "label": "down",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 0.8,
+          "previous_goals_for_per_match": 1.0,
+          "recent_goals_against_per_match": 2.0,
+          "previous_goals_against_per_match": 2.6,
+          "delta_goals_for": -0.2,
+          "delta_goals_against": -0.6,
+          "trend_proxy_goals_per_match": -0.4,
+          "threshold": 0.2
+        }
+      },
+      "criteria": {
+        "home": {
+          "matches_recent": 10,
+          "over_1_5_count": 5,
+          "over_1_5_percentage": 50.0,
+          "goals_for_per_match": 1.2,
+          "goals_against_per_match": 0.8,
+          "recent_window": 10
+        },
+        "away": {
+          "matches_recent": 10,
+          "over_1_5_count": 8,
+          "over_1_5_percentage": 80.0,
+          "goals_for_per_match": 0.9,
+          "goals_against_per_match": 2.3,
+          "recent_window": 10
+        },
+        "minimum_sample_per_team": 2,
+        "recent_window": 10,
+        "all_conditions_met": null,
+        "reasons_not_selected": []
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_29RFV7",
+      "competition": "es-la-liga",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-28T15:15:00Z",
+      "home_team": "Málaga",
+      "away_team": "Athletic Club",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "estimated",
+        "probability_over_1_5": 0.712703,
+        "probability_over_1_5_pct": 71.27,
+        "lambda_total": 2.5
+      },
+      "model": {
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
+        "calibration_status": "not_calibrated",
+        "prior_matches": 5.0,
+        "recent_window": 10,
+        "lambda_home": 1.1,
+        "lambda_away": 1.4,
+        "lambda_total": 2.5,
+        "probability_over_1_5_pct": 71.27,
+        "competition_baseline_sample": 10
+      },
+      "trend": {
+        "match": {
+          "status": "estimated",
+          "label": "up",
+          "trend_proxy_goals_per_match": 0.7,
+          "threshold": 0.2,
+          "method": "average_team_recent5_vs_previous5_goal_rates"
+        },
+        "home": {
+          "status": "estimated",
+          "label": "up",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.0,
+          "previous_goals_for_per_match": 0.6,
+          "recent_goals_against_per_match": 2.2,
+          "previous_goals_against_per_match": 1.2,
+          "delta_goals_for": 0.4,
+          "delta_goals_against": 1.0,
+          "trend_proxy_goals_per_match": 0.7,
+          "threshold": 0.2
+        },
+        "away": {
+          "status": "estimated",
+          "label": "up",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.6,
+          "previous_goals_for_per_match": 1.2,
+          "recent_goals_against_per_match": 1.2,
+          "previous_goals_against_per_match": 0.2,
+          "delta_goals_for": 0.4,
+          "delta_goals_against": 1.0,
+          "trend_proxy_goals_per_match": 0.7,
+          "threshold": 0.2
+        }
+      },
+      "criteria": {
+        "home": {
+          "matches_recent": 10,
+          "over_1_5_count": 7,
+          "over_1_5_percentage": 70.0,
+          "goals_for_per_match": 0.8,
+          "goals_against_per_match": 1.7,
+          "recent_window": 10
+        },
+        "away": {
+          "matches_recent": 10,
+          "over_1_5_count": 7,
+          "over_1_5_percentage": 70.0,
+          "goals_for_per_match": 1.4,
+          "goals_against_per_match": 0.7,
+          "recent_window": 10
+        },
+        "minimum_sample_per_team": 2,
+        "recent_window": 10,
+        "all_conditions_met": null,
+        "reasons_not_selected": []
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_35NS0w",
+      "competition": "gb-premier-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-28T15:00:00Z",
+      "home_team": "Leeds United",
+      "away_team": "Coventry City",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "estimated",
+        "probability_over_1_5": 0.669146,
+        "probability_over_1_5_pct": 66.91,
+        "lambda_total": 2.3
+      },
+      "model": {
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
+        "calibration_status": "not_calibrated",
+        "prior_matches": 5.0,
+        "recent_window": 10,
+        "lambda_home": 1.7,
+        "lambda_away": 0.6,
+        "lambda_total": 2.3,
+        "probability_over_1_5_pct": 66.91,
+        "competition_baseline_sample": 10
+      },
+      "trend": {
+        "match": {
+          "status": "estimated",
+          "label": "stable",
+          "trend_proxy_goals_per_match": 0.15,
+          "threshold": 0.2,
+          "method": "average_team_recent5_vs_previous5_goal_rates"
+        },
+        "home": {
+          "status": "estimated",
+          "label": "stable",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.2,
+          "previous_goals_for_per_match": 1.4,
+          "recent_goals_against_per_match": 0.8,
+          "previous_goals_against_per_match": 1.0,
+          "delta_goals_for": -0.2,
+          "delta_goals_against": -0.2,
+          "trend_proxy_goals_per_match": -0.2,
+          "threshold": 0.2
+        },
+        "away": {
+          "status": "estimated",
+          "label": "up",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.6,
+          "previous_goals_for_per_match": 1.0,
+          "recent_goals_against_per_match": 2.0,
+          "previous_goals_against_per_match": 1.6,
+          "delta_goals_for": 0.6,
+          "delta_goals_against": 0.4,
+          "trend_proxy_goals_per_match": 0.5,
+          "threshold": 0.2
+        }
+      },
+      "criteria": {
+        "home": {
+          "matches_recent": 10,
+          "over_1_5_count": 7,
+          "over_1_5_percentage": 70.0,
+          "goals_for_per_match": 1.3,
+          "goals_against_per_match": 0.9,
+          "recent_window": 10
+        },
+        "away": {
+          "matches_recent": 10,
+          "over_1_5_count": 6,
+          "over_1_5_percentage": 60.0,
+          "goals_for_per_match": 1.3,
+          "goals_against_per_match": 1.8,
+          "recent_window": 10
+        },
+        "minimum_sample_per_team": 2,
+        "recent_window": 10,
+        "all_conditions_met": null,
+        "reasons_not_selected": []
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_4AXxqK",
+      "competition": "gb-premier-league",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-28T15:00:00Z",
+      "home_team": "Manchester United",
+      "away_team": "Brentford",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "estimated",
+        "probability_over_1_5": 0.864112,
+        "probability_over_1_5_pct": 86.41,
+        "lambda_total": 3.5
+      },
+      "model": {
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
+        "calibration_status": "not_calibrated",
+        "prior_matches": 5.0,
+        "recent_window": 10,
+        "lambda_home": 1.8,
+        "lambda_away": 1.7,
+        "lambda_total": 3.5,
+        "probability_over_1_5_pct": 86.41,
+        "competition_baseline_sample": 10
+      },
+      "trend": {
+        "match": {
+          "status": "estimated",
+          "label": "stable",
+          "trend_proxy_goals_per_match": 0.05,
+          "threshold": 0.2,
+          "method": "average_team_recent5_vs_previous5_goal_rates"
+        },
+        "home": {
+          "status": "estimated",
+          "label": "up",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.0,
+          "previous_goals_for_per_match": 1.8,
+          "recent_goals_against_per_match": 2.8,
+          "previous_goals_against_per_match": 1.4,
+          "delta_goals_for": -0.8,
+          "delta_goals_against": 1.4,
+          "trend_proxy_goals_per_match": 0.3,
+          "threshold": 0.2
+        },
+        "away": {
+          "status": "estimated",
+          "label": "stable",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.6,
+          "previous_goals_for_per_match": 1.8,
+          "recent_goals_against_per_match": 1.0,
+          "previous_goals_against_per_match": 1.2,
+          "delta_goals_for": -0.2,
+          "delta_goals_against": -0.2,
+          "trend_proxy_goals_per_match": -0.2,
+          "threshold": 0.2
+        }
+      },
+      "criteria": {
+        "home": {
+          "matches_recent": 10,
+          "over_1_5_count": 9,
+          "over_1_5_percentage": 90.0,
+          "goals_for_per_match": 1.4,
+          "goals_against_per_match": 2.1,
+          "recent_window": 10
+        },
+        "away": {
+          "matches_recent": 10,
+          "over_1_5_count": 10,
+          "over_1_5_percentage": 100.0,
+          "goals_for_per_match": 1.7,
+          "goals_against_per_match": 1.1,
+          "recent_window": 10
+        },
+        "minimum_sample_per_team": 2,
+        "recent_window": 10,
+        "all_conditions_met": null,
+        "reasons_not_selected": []
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_2rCZIv",
+      "competition": "be-first-division-a",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-28T15:00:00Z",
+      "home_team": "Westerlo",
+      "away_team": "RAAL La Louvière",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "estimated",
+        "probability_over_1_5": 0.950253,
+        "probability_over_1_5_pct": 95.03,
+        "lambda_total": 4.75
+      },
+      "model": {
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
+        "calibration_status": "not_calibrated",
+        "prior_matches": 5.0,
+        "recent_window": 10,
+        "lambda_home": 2.9166,
+        "lambda_away": 1.8334,
+        "lambda_total": 4.75,
+        "probability_over_1_5_pct": 95.03,
+        "competition_baseline_sample": 10
+      },
+      "trend": {
+        "match": {
+          "status": "estimated",
+          "label": "up",
+          "trend_proxy_goals_per_match": 0.5,
+          "threshold": 0.2,
+          "method": "average_team_recent5_vs_previous5_goal_rates"
+        },
+        "home": {
+          "status": "estimated",
+          "label": "up",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 2.2,
+          "previous_goals_for_per_match": 2.4,
+          "recent_goals_against_per_match": 3.0,
+          "previous_goals_against_per_match": 1.6,
+          "delta_goals_for": -0.2,
+          "delta_goals_against": 1.4,
+          "trend_proxy_goals_per_match": 0.6,
+          "threshold": 0.2
+        },
+        "away": {
+          "status": "estimated",
+          "label": "up",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.2,
+          "previous_goals_for_per_match": 1.0,
+          "recent_goals_against_per_match": 2.6,
+          "previous_goals_against_per_match": 2.0,
+          "delta_goals_for": 0.2,
+          "delta_goals_against": 0.6,
+          "trend_proxy_goals_per_match": 0.4,
+          "threshold": 0.2
+        }
+      },
+      "criteria": {
+        "home": {
+          "matches_recent": 10,
+          "over_1_5_count": 9,
+          "over_1_5_percentage": 90.0,
+          "goals_for_per_match": 2.3,
+          "goals_against_per_match": 2.3,
+          "recent_window": 10
+        },
+        "away": {
+          "matches_recent": 10,
+          "over_1_5_count": 9,
+          "over_1_5_percentage": 90.0,
+          "goals_for_per_match": 1.1,
+          "goals_against_per_match": 2.3,
+          "recent_window": 10
+        },
+        "minimum_sample_per_team": 2,
+        "recent_window": 10,
+        "all_conditions_met": null,
+        "reasons_not_selected": []
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_2u1O22",
+      "competition": "de-bundesliga",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-28T14:30:00Z",
+      "home_team": "1. FC Köln",
+      "away_team": "Elversberg",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "estimated",
+        "probability_over_1_5": 0.768922,
+        "probability_over_1_5_pct": 76.89,
+        "lambda_total": 2.8
+      },
+      "model": {
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
+        "calibration_status": "not_calibrated",
+        "prior_matches": 5.0,
+        "recent_window": 10,
+        "lambda_home": 1.7,
+        "lambda_away": 1.1,
+        "lambda_total": 2.8,
+        "probability_over_1_5_pct": 76.89,
+        "competition_baseline_sample": 10
+      },
+      "trend": {
+        "match": {
+          "status": "estimated",
+          "label": "down",
+          "trend_proxy_goals_per_match": -0.3,
+          "threshold": 0.2,
+          "method": "average_team_recent5_vs_previous5_goal_rates"
+        },
+        "home": {
+          "status": "estimated",
+          "label": "down",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 0.6,
+          "previous_goals_for_per_match": 1.6,
+          "recent_goals_against_per_match": 1.0,
+          "previous_goals_against_per_match": 2.0,
+          "delta_goals_for": -1.0,
+          "delta_goals_against": -1.0,
+          "trend_proxy_goals_per_match": -1.0,
+          "threshold": 0.2
+        },
+        "away": {
+          "status": "estimated",
+          "label": "up",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.8,
+          "previous_goals_for_per_match": 1.6,
+          "recent_goals_against_per_match": 2.2,
+          "previous_goals_against_per_match": 1.6,
+          "delta_goals_for": 0.2,
+          "delta_goals_against": 0.6,
+          "trend_proxy_goals_per_match": 0.4,
+          "threshold": 0.2
+        }
+      },
+      "criteria": {
+        "home": {
+          "matches_recent": 10,
+          "over_1_5_count": 8,
+          "over_1_5_percentage": 80.0,
+          "goals_for_per_match": 1.1,
+          "goals_against_per_match": 1.5,
+          "recent_window": 10
+        },
+        "away": {
+          "matches_recent": 10,
+          "over_1_5_count": 7,
+          "over_1_5_percentage": 70.0,
+          "goals_for_per_match": 1.7,
+          "goals_against_per_match": 1.9,
+          "recent_window": 10
+        },
+        "minimum_sample_per_team": 2,
+        "recent_window": 10,
+        "all_conditions_met": null,
+        "reasons_not_selected": []
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_17iYnz",
+      "competition": "de-bundesliga",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-28T14:30:00Z",
+      "home_team": "Paderborn",
+      "away_team": "Schalke 04",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "estimated",
+        "probability_over_1_5": 0.712703,
+        "probability_over_1_5_pct": 71.27,
+        "lambda_total": 2.5
+      },
+      "model": {
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
+        "calibration_status": "not_calibrated",
+        "prior_matches": 5.0,
+        "recent_window": 10,
+        "lambda_home": 1.4,
+        "lambda_away": 1.1,
+        "lambda_total": 2.5,
+        "probability_over_1_5_pct": 71.27,
+        "competition_baseline_sample": 10
+      },
+      "trend": {
+        "match": {
+          "status": "estimated",
+          "label": "stable",
+          "trend_proxy_goals_per_match": -0.05,
+          "threshold": 0.2,
+          "method": "average_team_recent5_vs_previous5_goal_rates"
+        },
+        "home": {
+          "status": "estimated",
+          "label": "up",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.0,
+          "previous_goals_for_per_match": 0.6,
+          "recent_goals_against_per_match": 1.6,
+          "previous_goals_against_per_match": 1.4,
+          "delta_goals_for": 0.4,
+          "delta_goals_against": 0.2,
+          "trend_proxy_goals_per_match": 0.3,
+          "threshold": 0.2
+        },
+        "away": {
+          "status": "estimated",
+          "label": "down",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 0.2,
+          "previous_goals_for_per_match": 0.8,
+          "recent_goals_against_per_match": 1.0,
+          "previous_goals_against_per_match": 1.2,
+          "delta_goals_for": -0.6,
+          "delta_goals_against": -0.2,
+          "trend_proxy_goals_per_match": -0.4,
+          "threshold": 0.2
+        }
+      },
+      "criteria": {
+        "home": {
+          "matches_recent": 10,
+          "over_1_5_count": 6,
+          "over_1_5_percentage": 60.0,
+          "goals_for_per_match": 0.8,
+          "goals_against_per_match": 1.5,
+          "recent_window": 10
+        },
+        "away": {
+          "matches_recent": 10,
+          "over_1_5_count": 5,
+          "over_1_5_percentage": 50.0,
+          "goals_for_per_match": 0.5,
+          "goals_against_per_match": 1.1,
+          "recent_window": 10
+        },
+        "minimum_sample_per_team": 2,
+        "recent_window": 10,
+        "all_conditions_met": null,
+        "reasons_not_selected": []
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_3VtobK",
+      "competition": "de-bundesliga",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-28T14:30:00Z",
+      "home_team": "Mainz 05",
+      "away_team": "Union Berlin",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "estimated",
+        "probability_over_1_5": 0.890475,
+        "probability_over_1_5_pct": 89.05,
+        "lambda_total": 3.775
+      },
+      "model": {
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
+        "calibration_status": "not_calibrated",
+        "prior_matches": 5.0,
+        "recent_window": 10,
+        "lambda_home": 2.45,
+        "lambda_away": 1.325,
+        "lambda_total": 3.775,
+        "probability_over_1_5_pct": 89.05,
+        "competition_baseline_sample": 10
+      },
+      "trend": {
+        "match": {
+          "status": "estimated",
+          "label": "down",
+          "trend_proxy_goals_per_match": -0.75,
+          "threshold": 0.2,
+          "method": "average_team_recent5_vs_previous5_goal_rates"
+        },
+        "home": {
+          "status": "estimated",
+          "label": "down",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.2,
+          "previous_goals_for_per_match": 2.6,
+          "recent_goals_against_per_match": 2.4,
+          "previous_goals_against_per_match": 2.0,
+          "delta_goals_for": -1.4,
+          "delta_goals_against": 0.4,
+          "trend_proxy_goals_per_match": -0.5,
+          "threshold": 0.2
+        },
+        "away": {
+          "status": "estimated",
+          "label": "down",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 0.6,
+          "previous_goals_for_per_match": 1.0,
+          "recent_goals_against_per_match": 1.8,
+          "previous_goals_against_per_match": 3.4,
+          "delta_goals_for": -0.4,
+          "delta_goals_against": -1.6,
+          "trend_proxy_goals_per_match": -1.0,
+          "threshold": 0.2
+        }
+      },
+      "criteria": {
+        "home": {
+          "matches_recent": 10,
+          "over_1_5_count": 8,
+          "over_1_5_percentage": 80.0,
+          "goals_for_per_match": 1.9,
+          "goals_against_per_match": 2.2,
+          "recent_window": 10
+        },
+        "away": {
+          "matches_recent": 10,
+          "over_1_5_count": 8,
+          "over_1_5_percentage": 80.0,
+          "goals_for_per_match": 0.8,
+          "goals_against_per_match": 2.6,
+          "recent_window": 10
+        },
+        "minimum_sample_per_team": 2,
+        "recent_window": 10,
+        "all_conditions_met": null,
+        "reasons_not_selected": []
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_3Hzh67",
+      "competition": "de-bundesliga",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-28T14:30:00Z",
+      "home_team": "Hamburger SV",
+      "away_team": "Bayern München",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "estimated",
+        "probability_over_1_5": 0.804555,
+        "probability_over_1_5_pct": 80.46,
+        "lambda_total": 3.025
+      },
+      "model": {
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
+        "calibration_status": "not_calibrated",
+        "prior_matches": 5.0,
+        "recent_window": 10,
+        "lambda_home": 1.25,
+        "lambda_away": 1.775,
+        "lambda_total": 3.025,
+        "probability_over_1_5_pct": 80.46,
+        "competition_baseline_sample": 10
+      },
+      "trend": {
+        "match": {
+          "status": "estimated",
+          "label": "down",
+          "trend_proxy_goals_per_match": -0.3,
+          "threshold": 0.2,
+          "method": "average_team_recent5_vs_previous5_goal_rates"
+        },
+        "home": {
+          "status": "estimated",
+          "label": "down",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.0,
+          "previous_goals_for_per_match": 1.0,
+          "recent_goals_against_per_match": 1.8,
+          "previous_goals_against_per_match": 3.0,
+          "delta_goals_for": 0.0,
+          "delta_goals_against": -1.2,
+          "trend_proxy_goals_per_match": -0.6,
+          "threshold": 0.2
+        },
+        "away": {
+          "status": "estimated",
+          "label": "stable",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 2.8,
+          "previous_goals_for_per_match": 3.2,
+          "recent_goals_against_per_match": 1.2,
+          "previous_goals_against_per_match": 0.8,
+          "delta_goals_for": -0.4,
+          "delta_goals_against": 0.4,
+          "trend_proxy_goals_per_match": -0.0,
+          "threshold": 0.2
+        }
+      },
+      "criteria": {
+        "home": {
+          "matches_recent": 10,
+          "over_1_5_count": 8,
+          "over_1_5_percentage": 80.0,
+          "goals_for_per_match": 1.0,
+          "goals_against_per_match": 2.4,
+          "recent_window": 10
+        },
+        "away": {
+          "matches_recent": 10,
+          "over_1_5_count": 9,
+          "over_1_5_percentage": 90.0,
+          "goals_for_per_match": 3.0,
+          "goals_against_per_match": 1.0,
+          "recent_window": 10
+        },
+        "minimum_sample_per_team": 2,
+        "recent_window": 10,
+        "all_conditions_met": null,
+        "reasons_not_selected": []
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_1Kxps6",
+      "competition": "it-serie-a",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-28T14:00:00Z",
+      "home_team": "Frosinone",
+      "away_team": "Parma",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "estimated",
+        "probability_over_1_5": 0.833106,
+        "probability_over_1_5_pct": 83.31,
+        "lambda_total": 3.2334
+      },
+      "model": {
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
+        "calibration_status": "not_calibrated",
+        "prior_matches": 5.0,
+        "recent_window": 10,
+        "lambda_home": 2.2334,
+        "lambda_away": 1.0,
+        "lambda_total": 3.2334,
+        "probability_over_1_5_pct": 83.31,
+        "competition_baseline_sample": 10
+      },
+      "trend": {
+        "match": {
+          "status": "estimated",
+          "label": "up",
+          "trend_proxy_goals_per_match": 0.3,
+          "threshold": 0.2,
+          "method": "average_team_recent5_vs_previous5_goal_rates"
+        },
+        "home": {
+          "status": "estimated",
+          "label": "up",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 2.4,
+          "previous_goals_for_per_match": 2.0,
+          "recent_goals_against_per_match": 2.2,
+          "previous_goals_against_per_match": 1.6,
+          "delta_goals_for": 0.4,
+          "delta_goals_against": 0.6,
+          "trend_proxy_goals_per_match": 0.5,
+          "threshold": 0.2
+        },
+        "away": {
+          "status": "estimated",
+          "label": "stable",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.2,
+          "previous_goals_for_per_match": 0.8,
+          "recent_goals_against_per_match": 1.8,
+          "previous_goals_against_per_match": 2.0,
+          "delta_goals_for": 0.4,
+          "delta_goals_against": -0.2,
+          "trend_proxy_goals_per_match": 0.1,
+          "threshold": 0.2
+        }
+      },
+      "criteria": {
+        "home": {
+          "matches_recent": 10,
+          "over_1_5_count": 9,
+          "over_1_5_percentage": 90.0,
+          "goals_for_per_match": 2.2,
+          "goals_against_per_match": 1.9,
+          "recent_window": 10
+        },
+        "away": {
+          "matches_recent": 10,
+          "over_1_5_count": 9,
+          "over_1_5_percentage": 90.0,
+          "goals_for_per_match": 1.0,
+          "goals_against_per_match": 1.9,
+          "recent_window": 10
+        },
+        "minimum_sample_per_team": 2,
+        "recent_window": 10,
+        "all_conditions_met": null,
+        "reasons_not_selected": []
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_08z59s",
+      "competition": "es-la-liga",
+      "season": "2026/2027",
+      "kickoff_utc": "2026-11-28T13:00:00Z",
+      "home_team": "Real Betis",
+      "away_team": "Rayo Vallecano",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "estimated",
+        "probability_over_1_5": 0.845397,
+        "probability_over_1_5_pct": 84.54,
+        "lambda_total": 3.3332
+      },
+      "model": {
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
+        "calibration_status": "not_calibrated",
+        "prior_matches": 5.0,
+        "recent_window": 10,
+        "lambda_home": 2.1666,
+        "lambda_away": 1.1666,
+        "lambda_total": 3.3332,
+        "probability_over_1_5_pct": 84.54,
+        "competition_baseline_sample": 10
+      },
+      "trend": {
+        "match": {
+          "status": "estimated",
+          "label": "down",
+          "trend_proxy_goals_per_match": -0.6,
+          "threshold": 0.2,
+          "method": "average_team_recent5_vs_previous5_goal_rates"
+        },
+        "home": {
+          "status": "estimated",
+          "label": "stable",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.4,
+          "previous_goals_for_per_match": 2.0,
+          "recent_goals_against_per_match": 1.4,
+          "previous_goals_against_per_match": 0.8,
+          "delta_goals_for": -0.6,
+          "delta_goals_against": 0.6,
+          "trend_proxy_goals_per_match": -0.0,
+          "threshold": 0.2
+        },
+        "away": {
+          "status": "estimated",
+          "label": "down",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 0.8,
+          "previous_goals_for_per_match": 1.8,
+          "recent_goals_against_per_match": 1.2,
+          "previous_goals_against_per_match": 2.6,
+          "delta_goals_for": -1.0,
+          "delta_goals_against": -1.4,
+          "trend_proxy_goals_per_match": -1.2,
+          "threshold": 0.2
+        }
+      },
+      "criteria": {
+        "home": {
+          "matches_recent": 10,
+          "over_1_5_count": 7,
+          "over_1_5_percentage": 70.0,
+          "goals_for_per_match": 1.7,
+          "goals_against_per_match": 1.1,
+          "recent_window": 10
+        },
+        "away": {
+          "matches_recent": 10,
+          "over_1_5_count": 8,
+          "over_1_5_percentage": 80.0,
+          "goals_for_per_match": 1.3,
+          "goals_against_per_match": 1.9,
+          "recent_window": 10
+        },
+        "minimum_sample_per_team": 2,
+        "recent_window": 10,
+        "all_conditions_met": null,
+        "reasons_not_selected": []
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_3U7fq9",
+      "competition": "jp-j1-league",
+      "season": "2026",
+      "kickoff_utc": "2026-11-28T07:00:00Z",
+      "home_team": "Kashiwa Reysol",
+      "away_team": "Sanfrecce Hiroshima",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "estimated",
+        "probability_over_1_5": 0.769874,
+        "probability_over_1_5_pct": 76.99,
+        "lambda_total": 2.8056
+      },
+      "model": {
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
+        "calibration_status": "not_calibrated",
+        "prior_matches": 5.0,
+        "recent_window": 10,
+        "lambda_home": 1.4167,
+        "lambda_away": 1.3889,
+        "lambda_total": 2.8056,
+        "probability_over_1_5_pct": 76.99,
+        "competition_baseline_sample": 10
+      },
+      "trend": {
+        "match": {
+          "status": "estimated",
+          "label": "down",
+          "trend_proxy_goals_per_match": -0.6,
+          "threshold": 0.2,
+          "method": "average_team_recent5_vs_previous5_goal_rates"
+        },
+        "home": {
+          "status": "estimated",
+          "label": "down",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.8,
+          "previous_goals_for_per_match": 2.4,
+          "recent_goals_against_per_match": 0.8,
+          "previous_goals_against_per_match": 2.2,
+          "delta_goals_for": -0.6,
+          "delta_goals_against": -1.4,
+          "trend_proxy_goals_per_match": -1.0,
+          "threshold": 0.2
+        },
+        "away": {
+          "status": "estimated",
+          "label": "stable",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 2.2,
+          "previous_goals_for_per_match": 2.4,
+          "recent_goals_against_per_match": 0.8,
+          "previous_goals_against_per_match": 1.0,
+          "delta_goals_for": -0.2,
+          "delta_goals_against": -0.2,
+          "trend_proxy_goals_per_match": -0.2,
+          "threshold": 0.2
+        }
+      },
+      "criteria": {
+        "home": {
+          "matches_recent": 10,
+          "over_1_5_count": 8,
+          "over_1_5_percentage": 80.0,
+          "goals_for_per_match": 2.1,
+          "goals_against_per_match": 1.5,
+          "recent_window": 10
+        },
+        "away": {
+          "matches_recent": 10,
+          "over_1_5_count": 8,
+          "over_1_5_percentage": 80.0,
+          "goals_for_per_match": 2.3,
+          "goals_against_per_match": 0.9,
+          "recent_window": 10
+        },
+        "minimum_sample_per_team": 2,
+        "recent_window": 10,
+        "all_conditions_met": null,
+        "reasons_not_selected": []
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_2YeRqx",
+      "competition": "jp-j1-league",
+      "season": "2026",
+      "kickoff_utc": "2026-11-28T06:00:00Z",
+      "home_team": "Vissel Kobe",
+      "away_team": "JEF United Chiba",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "estimated",
+        "probability_over_1_5": 0.792376,
+        "probability_over_1_5_pct": 79.24,
+        "lambda_total": 2.9443
+      },
+      "model": {
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
+        "calibration_status": "not_calibrated",
+        "prior_matches": 5.0,
+        "recent_window": 10,
+        "lambda_home": 1.8888,
+        "lambda_away": 1.0555,
+        "lambda_total": 2.9443,
+        "probability_over_1_5_pct": 79.24,
+        "competition_baseline_sample": 10
+      },
+      "trend": {
+        "match": {
+          "status": "estimated",
+          "label": "stable",
+          "trend_proxy_goals_per_match": -0.15,
+          "threshold": 0.2,
+          "method": "average_team_recent5_vs_previous5_goal_rates"
+        },
+        "home": {
+          "status": "estimated",
+          "label": "down",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.4,
+          "previous_goals_for_per_match": 2.2,
+          "recent_goals_against_per_match": 1.4,
+          "previous_goals_against_per_match": 1.2,
+          "delta_goals_for": -0.8,
+          "delta_goals_against": 0.2,
+          "trend_proxy_goals_per_match": -0.3,
+          "threshold": 0.2
+        },
+        "away": {
+          "status": "estimated",
+          "label": "stable",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.6,
+          "previous_goals_for_per_match": 1.0,
+          "recent_goals_against_per_match": 0.8,
+          "previous_goals_against_per_match": 1.4,
+          "delta_goals_for": 0.6,
+          "delta_goals_against": -0.6,
+          "trend_proxy_goals_per_match": 0.0,
+          "threshold": 0.2
+        }
+      },
+      "criteria": {
+        "home": {
+          "matches_recent": 10,
+          "over_1_5_count": 8,
+          "over_1_5_percentage": 80.0,
+          "goals_for_per_match": 1.8,
+          "goals_against_per_match": 1.3,
+          "recent_window": 10
+        },
+        "away": {
+          "matches_recent": 10,
+          "over_1_5_count": 7,
+          "over_1_5_percentage": 70.0,
+          "goals_for_per_match": 1.3,
+          "goals_against_per_match": 1.1,
+          "recent_window": 10
+        },
+        "minimum_sample_per_team": 2,
+        "recent_window": 10,
+        "all_conditions_met": null,
+        "reasons_not_selected": []
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_3aYreU",
+      "competition": "jp-j1-league",
+      "season": "2026",
+      "kickoff_utc": "2026-11-28T06:00:00Z",
+      "home_team": "Kashima Antlers",
+      "away_team": "Fagiano Okayama FC",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "estimated",
+        "probability_over_1_5": 0.729393,
+        "probability_over_1_5_pct": 72.94,
+        "lambda_total": 2.5834
+      },
+      "model": {
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
+        "calibration_status": "not_calibrated",
+        "prior_matches": 5.0,
+        "recent_window": 10,
+        "lambda_home": 1.5834,
+        "lambda_away": 1.0,
+        "lambda_total": 2.5834,
+        "probability_over_1_5_pct": 72.94,
+        "competition_baseline_sample": 10
+      },
+      "trend": {
+        "match": {
+          "status": "estimated",
+          "label": "stable",
+          "trend_proxy_goals_per_match": 0.1,
+          "threshold": 0.2,
+          "method": "average_team_recent5_vs_previous5_goal_rates"
+        },
+        "home": {
+          "status": "estimated",
+          "label": "up",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.8,
+          "previous_goals_for_per_match": 1.6,
+          "recent_goals_against_per_match": 1.8,
+          "previous_goals_against_per_match": 1.2,
+          "delta_goals_for": 0.2,
+          "delta_goals_against": 0.6,
+          "trend_proxy_goals_per_match": 0.4,
+          "threshold": 0.2
+        },
+        "away": {
+          "status": "estimated",
+          "label": "down",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.0,
+          "previous_goals_for_per_match": 1.2,
+          "recent_goals_against_per_match": 1.4,
+          "previous_goals_against_per_match": 1.6,
+          "delta_goals_for": -0.2,
+          "delta_goals_against": -0.2,
+          "trend_proxy_goals_per_match": -0.2,
+          "threshold": 0.2
+        }
+      },
+      "criteria": {
+        "home": {
+          "matches_recent": 10,
+          "over_1_5_count": 9,
+          "over_1_5_percentage": 90.0,
+          "goals_for_per_match": 1.7,
+          "goals_against_per_match": 1.5,
+          "recent_window": 10
+        },
+        "away": {
+          "matches_recent": 10,
+          "over_1_5_count": 9,
+          "over_1_5_percentage": 90.0,
+          "goals_for_per_match": 1.1,
+          "goals_against_per_match": 1.5,
+          "recent_window": 10
+        },
+        "minimum_sample_per_team": 2,
+        "recent_window": 10,
+        "all_conditions_met": null,
+        "reasons_not_selected": []
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_1zMkVF",
+      "competition": "jp-j1-league",
+      "season": "2026",
+      "kickoff_utc": "2026-11-28T05:00:00Z",
+      "home_team": "Shimizu S-Pulse",
+      "away_team": "Urawa Red Diamonds",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "estimated",
+        "probability_over_1_5": 0.724756,
+        "probability_over_1_5_pct": 72.48,
+        "lambda_total": 2.5598
+      },
+      "model": {
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
+        "calibration_status": "not_calibrated",
+        "prior_matches": 5.0,
+        "recent_window": 10,
+        "lambda_home": 1.2353,
+        "lambda_away": 1.3245,
+        "lambda_total": 2.5598,
+        "probability_over_1_5_pct": 72.48,
+        "competition_baseline_sample": 10
+      },
+      "trend": {
+        "match": {
+          "status": "estimated",
+          "label": "down",
+          "trend_proxy_goals_per_match": -0.25,
+          "threshold": 0.2,
+          "method": "average_team_recent5_vs_previous5_goal_rates"
+        },
+        "home": {
+          "status": "estimated",
+          "label": "down",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 0.2,
+          "previous_goals_for_per_match": 1.4,
+          "recent_goals_against_per_match": 2.0,
+          "previous_goals_against_per_match": 1.8,
+          "delta_goals_for": -1.2,
+          "delta_goals_against": 0.2,
+          "trend_proxy_goals_per_match": -0.5,
+          "threshold": 0.2
+        },
+        "away": {
+          "status": "estimated",
+          "label": "stable",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.2,
+          "previous_goals_for_per_match": 1.6,
+          "recent_goals_against_per_match": 2.0,
+          "previous_goals_against_per_match": 1.6,
+          "delta_goals_for": -0.4,
+          "delta_goals_against": 0.4,
+          "trend_proxy_goals_per_match": -0.0,
+          "threshold": 0.2
+        }
+      },
+      "criteria": {
+        "home": {
+          "matches_recent": 10,
+          "over_1_5_count": 8,
+          "over_1_5_percentage": 80.0,
+          "goals_for_per_match": 0.8,
+          "goals_against_per_match": 1.9,
+          "recent_window": 10
+        },
+        "away": {
+          "matches_recent": 10,
+          "over_1_5_count": 8,
+          "over_1_5_percentage": 80.0,
+          "goals_for_per_match": 1.4,
+          "goals_against_per_match": 1.8,
+          "recent_window": 10
+        },
+        "minimum_sample_per_team": 2,
+        "recent_window": 10,
+        "all_conditions_met": null,
+        "reasons_not_selected": []
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_0Lkpuz",
+      "competition": "jp-j1-league",
+      "season": "2026",
+      "kickoff_utc": "2026-11-28T05:00:00Z",
+      "home_team": "Kyoto Sanga FC",
+      "away_team": "Cerezo Osaka",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "estimated",
+        "probability_over_1_5": 0.813869,
+        "probability_over_1_5_pct": 81.39,
+        "lambda_total": 3.0898
+      },
+      "model": {
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
+        "calibration_status": "not_calibrated",
+        "prior_matches": 5.0,
+        "recent_window": 10,
+        "lambda_home": 1.6258,
+        "lambda_away": 1.464,
+        "lambda_total": 3.0898,
+        "probability_over_1_5_pct": 81.39,
+        "competition_baseline_sample": 10
+      },
+      "trend": {
+        "match": {
+          "status": "estimated",
+          "label": "up",
+          "trend_proxy_goals_per_match": 0.25,
+          "threshold": 0.2,
+          "method": "average_team_recent5_vs_previous5_goal_rates"
+        },
+        "home": {
+          "status": "estimated",
+          "label": "stable",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 2.0,
+          "previous_goals_for_per_match": 0.8,
+          "recent_goals_against_per_match": 1.0,
+          "previous_goals_against_per_match": 2.0,
+          "delta_goals_for": 1.2,
+          "delta_goals_against": -1.0,
+          "trend_proxy_goals_per_match": 0.1,
+          "threshold": 0.2
+        },
+        "away": {
+          "status": "estimated",
+          "label": "up",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.6,
+          "previous_goals_for_per_match": 1.0,
+          "recent_goals_against_per_match": 2.6,
+          "previous_goals_against_per_match": 2.4,
+          "delta_goals_for": 0.6,
+          "delta_goals_against": 0.2,
+          "trend_proxy_goals_per_match": 0.4,
+          "threshold": 0.2
+        }
+      },
+      "criteria": {
+        "home": {
+          "matches_recent": 10,
+          "over_1_5_count": 9,
+          "over_1_5_percentage": 90.0,
+          "goals_for_per_match": 1.4,
+          "goals_against_per_match": 1.5,
+          "recent_window": 10
+        },
+        "away": {
+          "matches_recent": 10,
+          "over_1_5_count": 9,
+          "over_1_5_percentage": 90.0,
+          "goals_for_per_match": 1.3,
+          "goals_against_per_match": 2.5,
+          "recent_window": 10
+        },
+        "minimum_sample_per_team": 2,
+        "recent_window": 10,
+        "all_conditions_met": null,
+        "reasons_not_selected": []
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_36k6uj",
+      "competition": "us-mls",
+      "season": "2026",
+      "kickoff_utc": "2026-11-28T03:00:00Z",
+      "home_team": "Real Salt Lake",
+      "away_team": "Vancouver Whitecaps",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "estimated",
+        "probability_over_1_5": 0.8052,
+        "probability_over_1_5_pct": 80.52,
+        "lambda_total": 3.0294
+      },
+      "model": {
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
+        "calibration_status": "not_calibrated",
+        "prior_matches": 5.0,
+        "recent_window": 10,
+        "lambda_home": 1.5,
+        "lambda_away": 1.5294,
+        "lambda_total": 3.0294,
+        "probability_over_1_5_pct": 80.52,
+        "competition_baseline_sample": 10
+      },
+      "trend": {
+        "match": {
+          "status": "estimated",
+          "label": "stable",
+          "trend_proxy_goals_per_match": -0.05,
+          "threshold": 0.2,
+          "method": "average_team_recent5_vs_previous5_goal_rates"
+        },
+        "home": {
+          "status": "estimated",
+          "label": "down",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.2,
+          "previous_goals_for_per_match": 2.2,
+          "recent_goals_against_per_match": 1.4,
+          "previous_goals_against_per_match": 0.8,
+          "delta_goals_for": -1.0,
+          "delta_goals_against": 0.6,
+          "trend_proxy_goals_per_match": -0.2,
+          "threshold": 0.2
+        },
+        "away": {
+          "status": "estimated",
+          "label": "stable",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 2.6,
+          "previous_goals_for_per_match": 1.4,
+          "recent_goals_against_per_match": 0.6,
+          "previous_goals_against_per_match": 1.6,
+          "delta_goals_for": 1.2,
+          "delta_goals_against": -1.0,
+          "trend_proxy_goals_per_match": 0.1,
+          "threshold": 0.2
+        }
+      },
+      "criteria": {
+        "home": {
+          "matches_recent": 10,
+          "over_1_5_count": 10,
+          "over_1_5_percentage": 100.0,
+          "goals_for_per_match": 1.7,
+          "goals_against_per_match": 1.1,
+          "recent_window": 10
+        },
+        "away": {
+          "matches_recent": 10,
+          "over_1_5_count": 8,
+          "over_1_5_percentage": 80.0,
+          "goals_for_per_match": 2.0,
+          "goals_against_per_match": 1.1,
+          "recent_window": 10
+        },
+        "minimum_sample_per_team": 2,
+        "recent_window": 10,
+        "all_conditions_met": null,
+        "reasons_not_selected": []
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
+    {
+      "match_id": "m_0ygK7R",
+      "competition": "us-mls",
+      "season": "2026",
+      "kickoff_utc": "2026-11-28T01:00:00Z",
+      "home_team": "Columbus Crew",
+      "away_team": "Inter Miami CF",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
+      "snapshot_stage": "pre_match",
+      "prediction": {
+        "over_1_5": "estimated",
+        "probability_over_1_5": 0.833348,
+        "probability_over_1_5_pct": 83.33,
+        "lambda_total": 3.2353
+      },
+      "model": {
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
+        "calibration_status": "not_calibrated",
+        "prior_matches": 5.0,
+        "recent_window": 10,
+        "lambda_home": 1.6765,
+        "lambda_away": 1.5588,
+        "lambda_total": 3.2353,
+        "probability_over_1_5_pct": 83.33,
+        "competition_baseline_sample": 10
+      },
+      "trend": {
+        "match": {
+          "status": "estimated",
+          "label": "up",
+          "trend_proxy_goals_per_match": 0.3,
+          "threshold": 0.2,
+          "method": "average_team_recent5_vs_previous5_goal_rates"
+        },
+        "home": {
+          "status": "estimated",
+          "label": "up",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 3.2,
+          "previous_goals_for_per_match": 2.2,
+          "recent_goals_against_per_match": 1.0,
+          "previous_goals_against_per_match": 1.0,
+          "delta_goals_for": 1.0,
+          "delta_goals_against": 0.0,
+          "trend_proxy_goals_per_match": 0.5,
+          "threshold": 0.2
+        },
+        "away": {
+          "status": "estimated",
+          "label": "stable",
+          "matches_recent": 5,
+          "matches_previous": 5,
+          "recent_goals_for_per_match": 1.4,
+          "previous_goals_for_per_match": 2.4,
+          "recent_goals_against_per_match": 2.2,
+          "previous_goals_against_per_match": 1.0,
+          "delta_goals_for": -1.0,
+          "delta_goals_against": 1.2,
+          "trend_proxy_goals_per_match": 0.1,
+          "threshold": 0.2
+        }
+      },
+      "criteria": {
+        "home": {
+          "matches_recent": 10,
+          "over_1_5_count": 10,
+          "over_1_5_percentage": 100.0,
+          "goals_for_per_match": 2.7,
+          "goals_against_per_match": 1.0,
+          "recent_window": 10
+        },
+        "away": {
+          "matches_recent": 10,
+          "over_1_5_count": 10,
+          "over_1_5_percentage": 100.0,
+          "goals_for_per_match": 1.9,
+          "goals_against_per_match": 1.6,
+          "recent_window": 10
+        },
+        "minimum_sample_per_team": 2,
+        "recent_window": 10,
+        "all_conditions_met": null,
+        "reasons_not_selected": []
+      },
+      "actual": {
+        "home_score": null,
+        "away_score": null
+      },
+      "evaluation_status": "pending",
+      "mapping_status": "matched"
+    },
     {
       "match_id": "m_2DxeZN",
       "competition": "pt-primeira-liga",
@@ -12,23 +3600,23 @@
       "kickoff_utc": "2026-11-27T20:15:00Z",
       "home_team": "Marítimo",
       "away_team": "Nacional",
-      "snapshot_at_utc": "2026-11-26T12:59:39.256657Z",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
       "snapshot_stage": "pre_match",
       "prediction": {
         "over_1_5": "estimated",
-        "probability_over_1_5": 0.834376,
-        "probability_over_1_5_pct": 83.44,
-        "lambda_total": 3.2434
+        "probability_over_1_5": 0.768922,
+        "probability_over_1_5_pct": 76.89,
+        "lambda_total": 2.8
       },
       "model": {
-        "id": "recent10_poisson_attack_defence_v1",
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
         "calibration_status": "not_calibrated",
         "prior_matches": 5.0,
         "recent_window": 10,
-        "lambda_home": 1.422,
-        "lambda_away": 1.8214,
-        "lambda_total": 3.2434,
-        "probability_over_1_5_pct": 83.44,
+        "lambda_home": 1.275,
+        "lambda_away": 1.525,
+        "lambda_total": 2.8,
+        "probability_over_1_5_pct": 76.89,
         "competition_baseline_sample": 10
       },
       "trend": {
@@ -97,23 +3685,23 @@
       "kickoff_utc": "2026-11-27T20:00:00Z",
       "home_team": "Nottingham Forest",
       "away_team": "Chelsea",
-      "snapshot_at_utc": "2026-11-26T12:59:39.256657Z",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
       "snapshot_stage": "pre_match",
       "prediction": {
         "over_1_5": "estimated",
-        "probability_over_1_5": 0.820864,
-        "probability_over_1_5_pct": 82.09,
-        "lambda_total": 3.1404
+        "probability_over_1_5": 0.620385,
+        "probability_over_1_5_pct": 62.04,
+        "lambda_total": 2.1
       },
       "model": {
-        "id": "recent10_poisson_attack_defence_v1",
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
         "calibration_status": "not_calibrated",
         "prior_matches": 5.0,
         "recent_window": 10,
-        "lambda_home": 1.1762,
-        "lambda_away": 1.9642,
-        "lambda_total": 3.1404,
-        "probability_over_1_5_pct": 82.09,
+        "lambda_home": 1.1,
+        "lambda_away": 1.0,
+        "lambda_total": 2.1,
+        "probability_over_1_5_pct": 62.04,
         "competition_baseline_sample": 10
       },
       "trend": {
@@ -189,23 +3777,23 @@
       "kickoff_utc": "2026-11-27T20:00:00Z",
       "home_team": "Levante",
       "away_team": "Racing Santander",
-      "snapshot_at_utc": "2026-11-26T12:59:39.256657Z",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
       "snapshot_stage": "pre_match",
       "prediction": {
         "over_1_5": "estimated",
-        "probability_over_1_5": 0.890752,
-        "probability_over_1_5_pct": 89.08,
-        "lambda_total": 3.7782
+        "probability_over_1_5": 0.930011,
+        "probability_over_1_5_pct": 93.0,
+        "lambda_total": 4.3334
       },
       "model": {
-        "id": "recent10_poisson_attack_defence_v1",
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
         "calibration_status": "not_calibrated",
         "prior_matches": 5.0,
         "recent_window": 10,
-        "lambda_home": 2.0508,
-        "lambda_away": 1.7274,
-        "lambda_total": 3.7782,
-        "probability_over_1_5_pct": 89.08,
+        "lambda_home": 2.75,
+        "lambda_away": 1.5834,
+        "lambda_total": 4.3334,
+        "probability_over_1_5_pct": 93.0,
         "competition_baseline_sample": 10
       },
       "trend": {
@@ -281,23 +3869,23 @@
       "kickoff_utc": "2026-11-27T19:45:00Z",
       "home_team": "Venezia",
       "away_team": "Bologna",
-      "snapshot_at_utc": "2026-11-26T12:59:39.256657Z",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
       "snapshot_stage": "pre_match",
       "prediction": {
         "over_1_5": "estimated",
-        "probability_over_1_5": 0.820169,
-        "probability_over_1_5_pct": 82.02,
-        "lambda_total": 3.1353
+        "probability_over_1_5": 0.745215,
+        "probability_over_1_5_pct": 74.52,
+        "lambda_total": 2.6666
       },
       "model": {
-        "id": "recent10_poisson_attack_defence_v1",
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
         "calibration_status": "not_calibrated",
         "prior_matches": 5.0,
         "recent_window": 10,
-        "lambda_home": 0.9259,
-        "lambda_away": 2.2094,
-        "lambda_total": 3.1353,
-        "probability_over_1_5_pct": 82.02,
+        "lambda_home": 0.9166,
+        "lambda_away": 1.75,
+        "lambda_total": 2.6666,
+        "probability_over_1_5_pct": 74.52,
         "competition_baseline_sample": 10
       },
       "trend": {
@@ -373,23 +3961,23 @@
       "kickoff_utc": "2026-11-27T19:45:00Z",
       "home_team": "Brest",
       "away_team": "Paris FC",
-      "snapshot_at_utc": "2026-11-26T12:59:39.256657Z",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
       "snapshot_stage": "pre_match",
       "prediction": {
         "over_1_5": "estimated",
-        "probability_over_1_5": 0.765753,
-        "probability_over_1_5_pct": 76.58,
-        "lambda_total": 2.7815
+        "probability_over_1_5": 0.732615,
+        "probability_over_1_5_pct": 73.26,
+        "lambda_total": 2.6
       },
       "model": {
-        "id": "recent10_poisson_attack_defence_v1",
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
         "calibration_status": "not_calibrated",
         "prior_matches": 5.0,
         "recent_window": 10,
-        "lambda_home": 1.2704,
-        "lambda_away": 1.5111,
-        "lambda_total": 2.7815,
-        "probability_over_1_5_pct": 76.58,
+        "lambda_home": 1.5,
+        "lambda_away": 1.1,
+        "lambda_total": 2.6,
+        "probability_over_1_5_pct": 73.26,
         "competition_baseline_sample": 10
       },
       "trend": {
@@ -465,23 +4053,23 @@
       "kickoff_utc": "2026-11-27T19:45:00Z",
       "home_team": "OH Leuven",
       "away_team": "Kortrijk",
-      "snapshot_at_utc": "2026-11-26T12:59:39.256657Z",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
       "snapshot_stage": "pre_match",
       "prediction": {
         "over_1_5": "estimated",
-        "probability_over_1_5": 0.60373,
-        "probability_over_1_5_pct": 60.37,
-        "lambda_total": 2.0363
+        "probability_over_1_5": 0.695156,
+        "probability_over_1_5_pct": 69.52,
+        "lambda_total": 2.4166
       },
       "model": {
-        "id": "recent10_poisson_attack_defence_v1",
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
         "calibration_status": "not_calibrated",
         "prior_matches": 5.0,
         "recent_window": 10,
-        "lambda_home": 1.3722,
-        "lambda_away": 0.6641,
-        "lambda_total": 2.0363,
-        "probability_over_1_5_pct": 60.37,
+        "lambda_home": 1.6666,
+        "lambda_away": 0.75,
+        "lambda_total": 2.4166,
+        "probability_over_1_5_pct": 69.52,
         "competition_baseline_sample": 10
       },
       "trend": {
@@ -557,23 +4145,23 @@
       "kickoff_utc": "2026-11-27T19:30:00Z",
       "home_team": "Werder Bremen",
       "away_team": "Borussia Mönchengladbach",
-      "snapshot_at_utc": "2026-11-26T12:59:39.256657Z",
+      "snapshot_at_utc": "2026-11-27T09:37:23.329145Z",
       "snapshot_stage": "pre_match",
       "prediction": {
         "over_1_5": "estimated",
-        "probability_over_1_5": 0.925113,
-        "probability_over_1_5_pct": 92.51,
-        "lambda_total": 4.25
+        "probability_over_1_5": 0.900815,
+        "probability_over_1_5_pct": 90.08,
+        "lambda_total": 3.9
       },
       "model": {
-        "id": "recent10_poisson_attack_defence_v1",
+        "id": "method_c_venue_attack_defence_arithmetic_mean_v1",
         "calibration_status": "not_calibrated",
         "prior_matches": 5.0,
         "recent_window": 10,
-        "lambda_home": 2.7389,
-        "lambda_away": 1.5111,
-        "lambda_total": 4.25,
-        "probability_over_1_5_pct": 92.51,
+        "lambda_home": 2.9,
+        "lambda_away": 1.0,
+        "lambda_total": 3.9,
+        "probability_over_1_5_pct": 90.08,
         "competition_baseline_sample": 10
       },
       "trend": {
