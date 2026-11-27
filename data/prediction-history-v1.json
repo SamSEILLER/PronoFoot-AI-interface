@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at_utc": "2026-11-27T08:38:51.601663Z",
+  "generated_at_utc": "2026-11-27T09:37:22.561680Z",
   "description": "Snapshots J-1 basés sur les fréquences des 10 derniers matchs de même compétition et saison. V1 : OUI si les deux équipes atteignent 70 %, NON sinon; minimum 2 matchs valides par équipe. Les scores finaux sont complétés à mesure de leur disponibilité.",
   "records": [
     {
@@ -2771,10 +2771,10 @@
         }
       },
       "actual": {
-        "home_score": null,
-        "away_score": null
+        "home_score": 2,
+        "away_score": 4
       },
-      "evaluation_status": "pending"
+      "evaluation_status": "evaluated"
     },
     {
       "match_id": "m_0snBmF",
@@ -2830,10 +2830,10 @@
         }
       },
       "actual": {
-        "home_score": null,
-        "away_score": null
+        "home_score": 0,
+        "away_score": 0
       },
-      "evaluation_status": "pending"
+      "evaluation_status": "evaluated"
     },
     {
       "match_id": "m_12vC0r",
@@ -2889,10 +2889,10 @@
         }
       },
       "actual": {
-        "home_score": null,
-        "away_score": null
+        "home_score": 1,
+        "away_score": 1
       },
-      "evaluation_status": "pending"
+      "evaluation_status": "evaluated"
     },
     {
       "match_id": "m_4CEVyM",
@@ -2948,10 +2948,10 @@
         }
       },
       "actual": {
-        "home_score": null,
-        "away_score": null
+        "home_score": 1,
+        "away_score": 2
       },
-      "evaluation_status": "pending"
+      "evaluation_status": "evaluated"
     },
     {
       "match_id": "m_1IDFXG",
@@ -3007,10 +3007,10 @@
         }
       },
       "actual": {
-        "home_score": null,
-        "away_score": null
+        "home_score": 2,
+        "away_score": 1
       },
-      "evaluation_status": "pending"
+      "evaluation_status": "evaluated"
     },
     {
       "match_id": "m_2yFf8O",
@@ -3066,10 +3066,10 @@
         }
       },
       "actual": {
-        "home_score": null,
-        "away_score": null
+        "home_score": 3,
+        "away_score": 1
       },
-      "evaluation_status": "pending"
+      "evaluation_status": "evaluated"
     },
     {
       "match_id": "m_04Y9Kg",
@@ -3125,10 +3125,10 @@
         }
       },
       "actual": {
-        "home_score": null,
-        "away_score": null
+        "home_score": 4,
+        "away_score": 1
       },
-      "evaluation_status": "pending"
+      "evaluation_status": "evaluated"
     },
     {
       "match_id": "m_30yUrS",
@@ -3184,10 +3184,10 @@
         }
       },
       "actual": {
-        "home_score": null,
-        "away_score": null
+        "home_score": 0,
+        "away_score": 0
       },
-      "evaluation_status": "pending"
+      "evaluation_status": "evaluated"
     },
     {
       "match_id": "m_1NPdGz",
@@ -3243,10 +3243,10 @@
         }
       },
       "actual": {
-        "home_score": null,
-        "away_score": null
+        "home_score": 3,
+        "away_score": 1
       },
-      "evaluation_status": "pending"
+      "evaluation_status": "evaluated"
     },
     {
       "match_id": "m_1R2Vyf",
@@ -3302,10 +3302,10 @@
         }
       },
       "actual": {
-        "home_score": null,
-        "away_score": null
+        "home_score": 1,
+        "away_score": 3
       },
-      "evaluation_status": "pending"
+      "evaluation_status": "evaluated"
     },
     {
       "match_id": "m_2aKzEl",
@@ -3361,10 +3361,10 @@
         }
       },
       "actual": {
-        "home_score": null,
-        "away_score": null
+        "home_score": 1,
+        "away_score": 2
       },
-      "evaluation_status": "pending"
+      "evaluation_status": "evaluated"
     },
     {
       "match_id": "m_0dkmnA",
@@ -3420,10 +3420,10 @@
         }
       },
       "actual": {
-        "home_score": null,
-        "away_score": null
+        "home_score": 0,
+        "away_score": 2
       },
-      "evaluation_status": "pending"
+      "evaluation_status": "evaluated"
     },
     {
       "match_id": "m_3SZtsw",
@@ -3479,10 +3479,10 @@
         }
       },
       "actual": {
-        "home_score": null,
-        "away_score": null
+        "home_score": 1,
+        "away_score": 0
       },
-      "evaluation_status": "pending"
+      "evaluation_status": "evaluated"
     },
     {
       "match_id": "m_0ADq1e",
@@ -3538,10 +3538,10 @@
         }
       },
       "actual": {
-        "home_score": null,
-        "away_score": null
+        "home_score": 2,
+        "away_score": 4
       },
-      "evaluation_status": "pending"
+      "evaluation_status": "evaluated"
     },
     {
       "match_id": "m_1rxRZA",
@@ -3597,10 +3597,10 @@
         }
       },
       "actual": {
-        "home_score": null,
-        "away_score": null
+        "home_score": 2,
+        "away_score": 0
       },
-      "evaluation_status": "pending"
+      "evaluation_status": "evaluated"
     },
     {
       "match_id": "m_1NQ9Kt",
@@ -3656,10 +3656,10 @@
         }
       },
       "actual": {
-        "home_score": null,
-        "away_score": null
+        "home_score": 2,
+        "away_score": 2
       },
-      "evaluation_status": "pending"
+      "evaluation_status": "evaluated"
     },
     {
       "match_id": "m_1UYxQd",
@@ -3715,10 +3715,10 @@
         }
       },
       "actual": {
-        "home_score": null,
-        "away_score": null
+        "home_score": 4,
+        "away_score": 0
       },
-      "evaluation_status": "pending"
+      "evaluation_status": "evaluated"
     },
     {
       "match_id": "m_2wltyW",
@@ -3774,10 +3774,10 @@
         }
       },
       "actual": {
-        "home_score": null,
-        "away_score": null
+        "home_score": 2,
+        "away_score": 1
       },
-      "evaluation_status": "pending"
+      "evaluation_status": "evaluated"
     },
     {
       "match_id": "m_0nnJoD",
