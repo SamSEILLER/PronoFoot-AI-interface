@@ -1,89 +1,9 @@
 {
   "provider": "pitchapi_processed_history",
-  "generated_at_utc": "2026-11-28T02:46:30.490680+00:00",
+  "generated_at_utc": "2026-11-28T10:23:12.163178+00:00",
   "recent_limit_per_competition": 5,
-  "matches_considered": 9531,
+  "matches_considered": 9544,
   "teams": {
-    "inter miami cf": {
-      "name": "Inter Miami CF",
-      "matches": [
-        {
-          "date": "2026-10-24T21:30:00Z",
-          "result": "D",
-          "score": "0-2",
-          "opponent": "Red Bull New York",
-          "competition_id": "us-mls"
-        },
-        {
-          "date": "2026-10-28T23:30:00Z",
-          "result": "N",
-          "score": "2-2",
-          "opponent": "FC Cincinnati",
-          "competition_id": "us-mls"
-        },
-        {
-          "date": "2026-11-02T00:00:00Z",
-          "result": "V",
-          "score": "2-1",
-          "opponent": "New England Revolution",
-          "competition_id": "us-mls"
-        },
-        {
-          "date": "2026-11-07T21:00:00Z",
-          "result": "N",
-          "score": "3-3",
-          "opponent": "Charlotte FC",
-          "competition_id": "us-mls"
-        },
-        {
-          "date": "2026-11-21T23:00:00Z",
-          "result": "D",
-          "score": "0-3",
-          "opponent": "Columbus Crew",
-          "competition_id": "us-mls"
-        }
-      ]
-    },
-    "real salt lake": {
-      "name": "Real Salt Lake",
-      "matches": [
-        {
-          "date": "2026-10-29T00:30:00Z",
-          "result": "V",
-          "score": "2-1",
-          "opponent": "Austin FC",
-          "competition_id": "us-mls"
-        },
-        {
-          "date": "2026-10-31T21:00:00Z",
-          "result": "D",
-          "score": "1-2",
-          "opponent": "San Jose Earthquakes",
-          "competition_id": "us-mls"
-        },
-        {
-          "date": "2026-11-08T00:10:00Z",
-          "result": "V",
-          "score": "2-1",
-          "opponent": "LA Galaxy",
-          "competition_id": "us-mls"
-        },
-        {
-          "date": "2026-11-20T03:00:00Z",
-          "result": "N",
-          "score": "1-1",
-          "opponent": "Seattle Sounders FC",
-          "competition_id": "us-mls"
-        },
-        {
-          "date": "2026-11-23T01:30:00Z",
-          "result": "D",
-          "score": "0-2",
-          "opponent": "Vancouver Whitecaps",
-          "competition_id": "us-mls"
-        }
-      ]
-    },
     "sanfrecce hiroshima": {
       "name": "Sanfrecce Hiroshima",
       "matches": [
@@ -128,13 +48,6 @@
       "name": "Urawa Red Diamonds",
       "matches": [
         {
-          "date": "2026-10-25T06:00:00Z",
-          "result": "V",
-          "score": "1-0",
-          "opponent": "V-Varen Nagasaki",
-          "competition_id": "jp-j1-league"
-        },
-        {
           "date": "2026-10-31T07:00:00Z",
           "result": "D",
           "score": "0-4",
@@ -160,6 +73,13 @@
           "result": "N",
           "score": "2-2",
           "opponent": "Cerezo Osaka",
+          "competition_id": "jp-j1-league"
+        },
+        {
+          "date": "2026-11-28T05:00:00Z",
+          "result": "D",
+          "score": "0-1",
+          "opponent": "Shimizu S-Pulse",
           "competition_id": "jp-j1-league"
         }
       ]
@@ -208,13 +128,6 @@
       "name": "Kashima Antlers",
       "matches": [
         {
-          "date": "2026-10-21T10:00:00Z",
-          "result": "N",
-          "score": "2-2",
-          "opponent": "Kyoto Sanga FC",
-          "competition_id": "jp-j1-league"
-        },
-        {
           "date": "2026-10-24T06:00:00Z",
           "result": "D",
           "score": "2-3",
@@ -241,19 +154,19 @@
           "score": "1-1",
           "opponent": "Shimizu S-Pulse",
           "competition_id": "jp-j1-league"
+        },
+        {
+          "date": "2026-11-28T06:00:00Z",
+          "result": "N",
+          "score": "1-1",
+          "opponent": "Fagiano Okayama FC",
+          "competition_id": "jp-j1-league"
         }
       ]
     },
     "vissel kobe": {
       "name": "Vissel Kobe",
       "matches": [
-        {
-          "date": "2026-10-21T10:00:00Z",
-          "result": "D",
-          "score": "1-2",
-          "opponent": "Kawasaki Frontale",
-          "competition_id": "jp-j1-league"
-        },
         {
           "date": "2026-10-24T06:00:00Z",
           "result": "N",
@@ -280,6 +193,13 @@
           "result": "D",
           "score": "1-2",
           "opponent": "Mito Hollyhock",
+          "competition_id": "jp-j1-league"
+        },
+        {
+          "date": "2026-11-28T06:00:00Z",
+          "result": "V",
+          "score": "3-1",
+          "opponent": "JEF United Chiba",
           "competition_id": "jp-j1-league"
         }
       ]
@@ -448,13 +368,6 @@
       "name": "Cerezo Osaka",
       "matches": [
         {
-          "date": "2026-10-25T06:00:00Z",
-          "result": "N",
-          "score": "2-2",
-          "opponent": "JEF United Chiba",
-          "competition_id": "jp-j1-league"
-        },
-        {
           "date": "2026-10-31T06:00:00Z",
           "result": "D",
           "score": "1-4",
@@ -480,6 +393,13 @@
           "result": "N",
           "score": "2-2",
           "opponent": "Urawa Red Diamonds",
+          "competition_id": "jp-j1-league"
+        },
+        {
+          "date": "2026-11-28T05:00:00Z",
+          "result": "D",
+          "score": "1-4",
+          "opponent": "Kyoto Sanga FC",
           "competition_id": "jp-j1-league"
         }
       ]
@@ -521,46 +441,6 @@
           "score": "2-2",
           "opponent": "Sanfrecce Hiroshima",
           "competition_id": "jp-j1-league"
-        }
-      ]
-    },
-    "columbus crew": {
-      "name": "Columbus Crew",
-      "matches": [
-        {
-          "date": "2026-10-24T19:30:00Z",
-          "result": "V",
-          "score": "4-2",
-          "opponent": "Toronto FC",
-          "competition_id": "us-mls"
-        },
-        {
-          "date": "2026-10-29T00:30:00Z",
-          "result": "V",
-          "score": "2-0",
-          "opponent": "FC Dallas",
-          "competition_id": "us-mls"
-        },
-        {
-          "date": "2026-10-31T18:00:00Z",
-          "result": "V",
-          "score": "3-0",
-          "opponent": "DC United",
-          "competition_id": "us-mls"
-        },
-        {
-          "date": "2026-11-07T21:00:00Z",
-          "result": "V",
-          "score": "4-3",
-          "opponent": "Chicago Fire FC",
-          "competition_id": "us-mls"
-        },
-        {
-          "date": "2026-11-21T23:00:00Z",
-          "result": "V",
-          "score": "3-0",
-          "opponent": "Inter Miami CF",
-          "competition_id": "us-mls"
         }
       ]
     },
@@ -1008,13 +888,6 @@
       "name": "Kyoto Sanga FC",
       "matches": [
         {
-          "date": "2026-10-21T10:00:00Z",
-          "result": "N",
-          "score": "2-2",
-          "opponent": "Kashima Antlers",
-          "competition_id": "jp-j1-league"
-        },
-        {
           "date": "2026-10-24T07:00:00Z",
           "result": "N",
           "score": "2-2",
@@ -1040,6 +913,13 @@
           "result": "V",
           "score": "2-1",
           "opponent": "Urawa Red Diamonds",
+          "competition_id": "jp-j1-league"
+        },
+        {
+          "date": "2026-11-28T05:00:00Z",
+          "result": "V",
+          "score": "4-1",
+          "opponent": "Cerezo Osaka",
           "competition_id": "jp-j1-league"
         }
       ]
@@ -1200,46 +1080,6 @@
           "result": "D",
           "score": "0-1",
           "opponent": "FC Cincinnati",
-          "competition_id": "us-mls"
-        }
-      ]
-    },
-    "vancouver whitecaps": {
-      "name": "Vancouver Whitecaps",
-      "matches": [
-        {
-          "date": "2026-10-25T01:30:00Z",
-          "result": "D",
-          "score": "0-1",
-          "opponent": "Colorado Rapids",
-          "competition_id": "us-mls"
-        },
-        {
-          "date": "2026-10-29T02:40:00Z",
-          "result": "V",
-          "score": "4-1",
-          "opponent": "San Diego FC",
-          "competition_id": "us-mls"
-        },
-        {
-          "date": "2026-11-01T20:30:00Z",
-          "result": "V",
-          "score": "5-1",
-          "opponent": "Seattle Sounders FC",
-          "competition_id": "us-mls"
-        },
-        {
-          "date": "2026-11-07T21:00:00Z",
-          "result": "V",
-          "score": "2-0",
-          "opponent": "CF Montréal",
-          "competition_id": "us-mls"
-        },
-        {
-          "date": "2026-11-23T01:30:00Z",
-          "result": "V",
-          "score": "2-0",
-          "opponent": "Real Salt Lake",
           "competition_id": "us-mls"
         }
       ]
@@ -1473,13 +1313,6 @@
       "name": "OH Leuven",
       "matches": [
         {
-          "date": "2026-10-11T14:00:00Z",
-          "result": "N",
-          "score": "1-1",
-          "opponent": "Union St.Gilloise",
-          "competition_id": "be-first-division-a"
-        },
-        {
           "date": "2026-10-24T16:15:00Z",
           "result": "N",
           "score": "2-2",
@@ -1505,6 +1338,13 @@
           "result": "D",
           "score": "0-1",
           "opponent": "Anderlecht",
+          "competition_id": "be-first-division-a"
+        },
+        {
+          "date": "2026-11-27T19:45:00Z",
+          "result": "N",
+          "score": "2-2",
+          "opponent": "Kortrijk",
           "competition_id": "be-first-division-a"
         }
       ]
@@ -1735,46 +1575,6 @@
           "result": "V",
           "score": "2-1",
           "opponent": "Lommel",
-          "competition_id": "be-first-division-a"
-        }
-      ]
-    },
-    "kortrijk": {
-      "name": "Kortrijk",
-      "matches": [
-        {
-          "date": "2026-10-10T18:45:00Z",
-          "result": "D",
-          "score": "0-3",
-          "opponent": "Genk",
-          "competition_id": "be-first-division-a"
-        },
-        {
-          "date": "2026-10-31T17:15:00Z",
-          "result": "N",
-          "score": "1-1",
-          "opponent": "Standard Liège",
-          "competition_id": "be-first-division-a"
-        },
-        {
-          "date": "2026-11-04T19:30:00Z",
-          "result": "D",
-          "score": "1-3",
-          "opponent": "KV Mechelen",
-          "competition_id": "be-first-division-a"
-        },
-        {
-          "date": "2026-11-08T15:00:00Z",
-          "result": "D",
-          "score": "0-1",
-          "opponent": "Gent",
-          "competition_id": "be-first-division-a"
-        },
-        {
-          "date": "2026-11-22T15:00:00Z",
-          "result": "D",
-          "score": "0-1",
-          "opponent": "Union St.Gilloise",
           "competition_id": "be-first-division-a"
         }
       ]
@@ -2098,13 +1898,6 @@
       "name": "Nacional",
       "matches": [
         {
-          "date": "2026-09-19T14:30:00Z",
-          "result": "D",
-          "score": "0-4",
-          "opponent": "Famalicão",
-          "competition_id": "pt-primeira-liga"
-        },
-        {
           "date": "2026-10-11T14:30:00Z",
           "result": "D",
           "score": "2-3",
@@ -2130,6 +1923,13 @@
           "result": "V",
           "score": "1-0",
           "opponent": "Académico Viseu",
+          "competition_id": "pt-primeira-liga"
+        },
+        {
+          "date": "2026-11-27T20:15:00Z",
+          "result": "V",
+          "score": "2-1",
+          "opponent": "Marítimo",
           "competition_id": "pt-primeira-liga"
         }
       ]
@@ -3623,13 +3423,6 @@
           "competition_id": "uefa-europa-league"
         },
         {
-          "date": "2026-10-18T15:30:00Z",
-          "result": "D",
-          "score": "0-1",
-          "opponent": "Arsenal",
-          "competition_id": "gb-premier-league"
-        },
-        {
           "date": "2026-10-23T19:00:00Z",
           "result": "N",
           "score": "1-1",
@@ -3655,6 +3448,13 @@
           "result": "D",
           "score": "0-2",
           "opponent": "AFC Bournemouth",
+          "competition_id": "gb-premier-league"
+        },
+        {
+          "date": "2026-11-27T20:00:00Z",
+          "result": "V",
+          "score": "3-2",
+          "opponent": "Chelsea",
           "competition_id": "gb-premier-league"
         }
       ]
@@ -4003,13 +3803,6 @@
           "competition_id": "uefa-champions-league"
         },
         {
-          "date": "2026-10-17T18:45:00Z",
-          "result": "N",
-          "score": "1-1",
-          "opponent": "Lille",
-          "competition_id": "fr-ligue-1"
-        },
-        {
           "date": "2026-10-23T18:45:00Z",
           "result": "D",
           "score": "1-2",
@@ -4035,6 +3828,13 @@
           "result": "V",
           "score": "1-0",
           "opponent": "Strasbourg",
+          "competition_id": "fr-ligue-1"
+        },
+        {
+          "date": "2026-11-27T19:45:00Z",
+          "result": "V",
+          "score": "1-0",
+          "opponent": "Paris FC",
           "competition_id": "fr-ligue-1"
         }
       ]
@@ -5748,13 +5548,6 @@
           "competition_id": "uefa-champions-league"
         },
         {
-          "date": "2026-10-17T11:30:00Z",
-          "result": "V",
-          "score": "2-0",
-          "opponent": "Everton",
-          "competition_id": "gb-premier-league"
-        },
-        {
           "date": "2026-10-24T16:30:00Z",
           "result": "D",
           "score": "0-2",
@@ -5780,6 +5573,13 @@
           "result": "D",
           "score": "1-4",
           "opponent": "Leeds United",
+          "competition_id": "gb-premier-league"
+        },
+        {
+          "date": "2026-11-27T20:00:00Z",
+          "result": "D",
+          "score": "2-3",
+          "opponent": "Nottingham Forest",
           "competition_id": "gb-premier-league"
         }
       ]
@@ -6008,13 +5808,6 @@
           "competition_id": "uefa-europa-league"
         },
         {
-          "date": "2026-10-24T13:00:00Z",
-          "result": "V",
-          "score": "2-0",
-          "opponent": "Cagliari",
-          "competition_id": "it-serie-a"
-        },
-        {
           "date": "2026-10-28T17:30:00Z",
           "result": "V",
           "score": "4-2",
@@ -6040,6 +5833,13 @@
           "result": "N",
           "score": "1-1",
           "opponent": "Udinese",
+          "competition_id": "it-serie-a"
+        },
+        {
+          "date": "2026-11-27T19:45:00Z",
+          "result": "N",
+          "score": "0-0",
+          "opponent": "Venezia",
           "competition_id": "it-serie-a"
         }
       ]
@@ -6428,13 +6228,6 @@
       "name": "Venezia",
       "matches": [
         {
-          "date": "2026-10-25T14:00:00Z",
-          "result": "D",
-          "score": "0-1",
-          "opponent": "Genoa",
-          "competition_id": "it-serie-a"
-        },
-        {
           "date": "2026-10-28T17:30:00Z",
           "result": "D",
           "score": "0-2",
@@ -6460,6 +6253,13 @@
           "result": "D",
           "score": "0-4",
           "opponent": "Juventus",
+          "competition_id": "it-serie-a"
+        },
+        {
+          "date": "2026-11-27T19:45:00Z",
+          "result": "N",
+          "score": "0-0",
+          "opponent": "Bologna",
           "competition_id": "it-serie-a"
         }
       ]
@@ -7293,13 +7093,6 @@
       "name": "Borussia Mönchengladbach",
       "matches": [
         {
-          "date": "2026-10-18T15:30:00Z",
-          "result": "D",
-          "score": "1-2",
-          "opponent": "Hoffenheim",
-          "competition_id": "de-bundesliga"
-        },
-        {
           "date": "2026-10-23T18:30:00Z",
           "result": "V",
           "score": "3-2",
@@ -7325,6 +7118,13 @@
           "result": "D",
           "score": "0-1",
           "opponent": "Borussia Dortmund",
+          "competition_id": "de-bundesliga"
+        },
+        {
+          "date": "2026-11-27T19:30:00Z",
+          "result": "N",
+          "score": "3-3",
+          "opponent": "Werder Bremen",
           "competition_id": "de-bundesliga"
         }
       ]
@@ -7898,13 +7698,6 @@
       "name": "Werder Bremen",
       "matches": [
         {
-          "date": "2026-10-17T13:30:00Z",
-          "result": "N",
-          "score": "2-2",
-          "opponent": "Paderborn",
-          "competition_id": "de-bundesliga"
-        },
-        {
           "date": "2026-10-24T13:30:00Z",
           "result": "V",
           "score": "3-2",
@@ -7930,6 +7723,13 @@
           "result": "V",
           "score": "4-0",
           "opponent": "Hamburger SV",
+          "competition_id": "de-bundesliga"
+        },
+        {
+          "date": "2026-11-27T19:30:00Z",
+          "result": "N",
+          "score": "3-3",
+          "opponent": "Borussia Mönchengladbach",
           "competition_id": "de-bundesliga"
         }
       ]
@@ -9303,13 +9103,6 @@
       "name": "Fagiano Okayama FC",
       "matches": [
         {
-          "date": "2026-10-25T07:00:00Z",
-          "result": "D",
-          "score": "1-2",
-          "opponent": "Kawasaki Frontale",
-          "competition_id": "jp-j1-league"
-        },
-        {
           "date": "2026-10-31T05:00:00Z",
           "result": "D",
           "score": "0-4",
@@ -9336,19 +9129,19 @@
           "score": "2-0",
           "opponent": "Shimizu S-Pulse",
           "competition_id": "jp-j1-league"
+        },
+        {
+          "date": "2026-11-28T06:00:00Z",
+          "result": "N",
+          "score": "1-1",
+          "opponent": "Kashima Antlers",
+          "competition_id": "jp-j1-league"
         }
       ]
     },
     "shimizu s pulse": {
       "name": "Shimizu S-Pulse",
       "matches": [
-        {
-          "date": "2026-10-24T05:00:00Z",
-          "result": "D",
-          "score": "0-4",
-          "opponent": "Sanfrecce Hiroshima",
-          "competition_id": "jp-j1-league"
-        },
         {
           "date": "2026-10-31T05:00:00Z",
           "result": "D",
@@ -9375,6 +9168,13 @@
           "result": "D",
           "score": "0-2",
           "opponent": "Fagiano Okayama FC",
+          "competition_id": "jp-j1-league"
+        },
+        {
+          "date": "2026-11-28T05:00:00Z",
+          "result": "V",
+          "score": "1-0",
+          "opponent": "Urawa Red Diamonds",
           "competition_id": "jp-j1-league"
         }
       ]
@@ -10168,13 +9968,6 @@
       "name": "Levante",
       "matches": [
         {
-          "date": "2026-10-21T18:00:00Z",
-          "result": "V",
-          "score": "3-1",
-          "opponent": "Athletic Club",
-          "competition_id": "es-la-liga"
-        },
-        {
           "date": "2026-10-25T17:30:00Z",
           "result": "D",
           "score": "1-2",
@@ -10200,6 +9993,13 @@
           "result": "N",
           "score": "1-1",
           "opponent": "Elche",
+          "competition_id": "es-la-liga"
+        },
+        {
+          "date": "2026-11-27T20:00:00Z",
+          "result": "D",
+          "score": "1-3",
+          "opponent": "Racing Santander",
           "competition_id": "es-la-liga"
         }
       ]
@@ -10323,13 +10123,6 @@
       "name": "Paris FC",
       "matches": [
         {
-          "date": "2026-10-18T15:15:00Z",
-          "result": "V",
-          "score": "4-3",
-          "opponent": "Rennes",
-          "competition_id": "fr-ligue-1"
-        },
-        {
           "date": "2026-10-24T18:45:00Z",
           "result": "D",
           "score": "1-2",
@@ -10355,6 +10148,13 @@
           "result": "V",
           "score": "4-0",
           "opponent": "Angers",
+          "competition_id": "fr-ligue-1"
+        },
+        {
+          "date": "2026-11-27T19:45:00Z",
+          "result": "D",
+          "score": "0-1",
+          "opponent": "Brest",
           "competition_id": "fr-ligue-1"
         }
       ]
@@ -10563,13 +10363,6 @@
       "name": "JEF United Chiba",
       "matches": [
         {
-          "date": "2026-10-25T06:00:00Z",
-          "result": "N",
-          "score": "2-2",
-          "opponent": "Cerezo Osaka",
-          "competition_id": "jp-j1-league"
-        },
-        {
           "date": "2026-11-01T05:00:00Z",
           "result": "V",
           "score": "3-0",
@@ -10595,6 +10388,13 @@
           "result": "D",
           "score": "1-2",
           "opponent": "Nagoya Grampus",
+          "competition_id": "jp-j1-league"
+        },
+        {
+          "date": "2026-11-28T06:00:00Z",
+          "result": "D",
+          "score": "1-3",
+          "opponent": "Vissel Kobe",
           "competition_id": "jp-j1-league"
         }
       ]
@@ -10883,13 +10683,6 @@
       "name": "Racing Santander",
       "matches": [
         {
-          "date": "2026-10-18T12:00:00Z",
-          "result": "D",
-          "score": "0-2",
-          "opponent": "Osasuna",
-          "competition_id": "es-la-liga"
-        },
-        {
           "date": "2026-10-24T14:15:00Z",
           "result": "V",
           "score": "2-1",
@@ -10916,19 +10709,19 @@
           "score": "3-2",
           "opponent": "Real Sociedad",
           "competition_id": "es-la-liga"
+        },
+        {
+          "date": "2026-11-27T20:00:00Z",
+          "result": "V",
+          "score": "3-1",
+          "opponent": "Levante",
+          "competition_id": "es-la-liga"
         }
       ]
     },
     "maritimo": {
       "name": "Marítimo",
       "matches": [
-        {
-          "date": "2026-09-14T19:15:00Z",
-          "result": "D",
-          "score": "1-3",
-          "opponent": "Moreirense",
-          "competition_id": "pt-primeira-liga"
-        },
         {
           "date": "2026-09-19T14:30:00Z",
           "result": "N",
@@ -10955,6 +10748,13 @@
           "result": "D",
           "score": "0-2",
           "opponent": "Santa Clara",
+          "competition_id": "pt-primeira-liga"
+        },
+        {
+          "date": "2026-11-27T20:15:00Z",
+          "result": "D",
+          "score": "1-2",
+          "opponent": "Nacional",
           "competition_id": "pt-primeira-liga"
         }
       ]
